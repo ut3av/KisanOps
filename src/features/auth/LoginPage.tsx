@@ -101,6 +101,8 @@ export const LoginPage: React.FC = () => {
     switchRole(profile.role);
     if (profile.role === 'FARMER') {
       navigate('/farmer');
+    } else if (profile.role === 'OPERATOR') {
+      navigate('/operator');
     } else if (profile.role === 'ADMIN') {
       navigate('/admin');
     } else {

@@ -30,6 +30,13 @@ import {
 } from '../data/seedData';
 import { advanceSimulationStep, getInitialSimulationState, SimulationState } from '../lib/telematicsEngine';
 import { calculateFinalInvoice } from '../lib/billingEngine';
+import {
+  fetchInitialPlatformData,
+  saveBookingToDatabase,
+  updateBookingInDatabase,
+  insertLiveTelemetryToDatabase,
+  subscribeToSupabaseRealtime,
+} from '../lib/dbService';
 
 export interface AppState {
   currentUser: UserProfile;
@@ -47,7 +54,9 @@ export interface AppState {
   currentTelemetry: Record<string, TelemetryPoint>; // machineId -> point
   simulationState: SimulationState;
   isSimulating: boolean;
-  activeDemoScene: number; // 1 to 12
+  activeDemoScene: number;
+  isCloudSynced: boolean;
+  isInitialLoading: boolean;
 }
 
 const STORAGE_KEY = 'kisanops_app_state_v1';
@@ -57,9 +66,11 @@ function getInitialState(): AppState {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       const parsed = JSON.parse(saved);
-      // Validate structure has currentUser
       if (parsed && parsed.currentUser) {
-        return parsed;
+        return {
+          ...parsed,
+          isInitialLoading: true,
+        };
       }
     }
   } catch (e) {
@@ -83,11 +94,14 @@ function getInitialState(): AppState {
     simulationState: getInitialSimulationState(),
     isSimulating: true,
     activeDemoScene: 1,
+    isCloudSynced: false,
+    isInitialLoading: true,
   };
 }
 
 let globalState: AppState = getInitialState();
 const listeners = new Set<() => void>();
+let isInitialized = false;
 
 function notify() {
   try {
@@ -109,7 +123,46 @@ export function useKisanOpsStore() {
     };
   }, []);
 
-  // Telematics Simulation Interval
+  // Initialize from Supabase if configured and setup Realtime channel
+  useEffect(() => {
+    if (!isInitialized) {
+      isInitialized = true;
+      fetchInitialPlatformData().then(cloudData => {
+        globalState = {
+          ...globalState,
+          chcs: cloudData.chcs,
+          machines: cloudData.machines,
+          bookings: cloudData.bookings,
+          maintenanceAlerts: cloudData.maintenanceAlerts,
+          invoices: cloudData.invoices.length > 0 ? cloudData.invoices : globalState.invoices,
+          isCloudSynced: cloudData.isCloudSynced,
+          isInitialLoading: false,
+        };
+        notify();
+      });
+
+      // Realtime listener for cross-tab or remote device updates
+      const sub = subscribeToSupabaseRealtime((event) => {
+        if (event.table === 'bookings' && event.new) {
+          const incoming = event.new;
+          globalState = {
+            ...globalState,
+            bookings: [
+              incoming,
+              ...globalState.bookings.filter(b => b.id !== incoming.id),
+            ],
+          };
+          notify();
+        }
+      });
+
+      return () => {
+        sub.unsubscribe();
+      };
+    }
+  }, []);
+
+  // Telematics Simulation Interval & Live Cloud Ingestion
   useEffect(() => {
     if (!state.isSimulating) return;
 
@@ -117,7 +170,7 @@ export function useKisanOpsStore() {
       const activeBooking = globalState.bookings.find(
         b => b.status === 'DISPATCHED' || b.status === 'IN_PROGRESS'
       );
-      const targetMachineId = activeBooking ? activeBooking.machineId : 'mach-jd-harv-07';
+      const targetMachineId = activeBooking ? activeBooking.machineId : (globalState.machines[0]?.id || 'mach-jd-harv-07');
       const targetStatus: MachineStatus = activeBooking
         ? (activeBooking.status === 'IN_PROGRESS' ? 'ACTIVE' : activeBooking.status === 'DISPATCHED' ? 'DISPATCHED' : 'RESERVED')
         : 'ACTIVE';
@@ -137,17 +190,21 @@ export function useKisanOpsStore() {
         },
       };
 
+      // Non-blocking background sync of telemetry point to Supabase
+      insertLiveTelemetryToDatabase(telemetryPoint);
+
       // Check if fuel anomaly should inject high-priority alert
       if (nextState.isFuelAnomalyActive) {
         const existingAlert = globalState.maintenanceAlerts.find(
           a => a.machineId === targetMachineId && a.alertType === 'FUEL_ANOMALY' && !a.isResolved
         );
         if (!existingAlert) {
+          const targetMachine = globalState.machines.find(m => m.id === targetMachineId);
           const newAlert: PredictiveMaintenanceAlert = {
             id: `alert-fuel-auto-${Date.now()}`,
             machineId: targetMachineId,
-            machineIdentifier: 'JD-HARV-07',
-            machineModel: 'John Deere W70 Harvester',
+            machineIdentifier: targetMachine?.identifier || 'JD-HARV-07',
+            machineModel: targetMachine ? `${targetMachine.brand} ${targetMachine.model}` : 'John Deere W70 Harvester',
             alertType: 'FUEL_ANOMALY',
             severity: 'HIGH',
             description: 'Live sensor telemetry indicates fuel burn rate is +17% above nominal baseline (8.4 L/h).',
@@ -163,7 +220,7 @@ export function useKisanOpsStore() {
             {
               id: `notif-alert-${Date.now()}`,
               title: 'Predictive Alert: Fuel Anomaly',
-              message: 'JD-HARV-07 fuel burn rate +17% above baseline. Inspection advised.',
+              message: `${newAlert.machineIdentifier} fuel burn rate +17% above baseline. Inspection advised.`,
               type: 'MAINTENANCE',
               linkUrl: '/chc/maintenance',
               isRead: false,
@@ -233,12 +290,16 @@ export function useKisanOpsStore() {
         ...globalState.notifications,
       ];
 
+      // Optimistic persistence to Supabase database
+      saveBookingToDatabase(newBooking);
+
       notify();
       return newBooking;
     },
 
     updateBookingStatus: (bookingId: string, newStatus: Booking['status'], actualHours?: number) => {
       let createdInvoice: Invoice | null = null;
+      let updatedBookingRecord: Booking | null = null;
 
       globalState.bookings = globalState.bookings.map(b => {
         if (b.id !== bookingId) return b;
@@ -252,6 +313,7 @@ export function useKisanOpsStore() {
           paymentStatus: newStatus === 'COMPLETED' ? 'CAPTURED' : b.paymentStatus,
           updatedAt: new Date().toISOString(),
         };
+        updatedBookingRecord = updated;
 
         // If completed, automatically calculate and generate invoice
         if (newStatus === 'COMPLETED') {
@@ -300,6 +362,10 @@ export function useKisanOpsStore() {
         return updated;
       });
 
+      if (updatedBookingRecord) {
+        updateBookingInDatabase(bookingId, updatedBookingRecord);
+      }
+
       notify();
       return createdInvoice;
     },
@@ -328,7 +394,6 @@ export function useKisanOpsStore() {
       globalState.maintenanceAlerts = globalState.maintenanceAlerts.map(a =>
         a.id === alertId ? { ...a, isResolved: true, resolvedAt: new Date().toISOString() } : a
       );
-      // Reset fuel anomaly flag if resolving fuel alert
       globalState.simulationState = {
         ...globalState.simulationState,
         isFuelAnomalyActive: false,
@@ -347,47 +412,6 @@ export function useKisanOpsStore() {
 
     toggleSimulation: () => {
       globalState.isSimulating = !globalState.isSimulating;
-      notify();
-    },
-
-    setActiveDemoScene: (sceneNumber: number) => {
-      globalState.activeDemoScene = sceneNumber;
-      
-      // Auto-configure state based on demo scene progression
-      if (sceneNumber === 1 || sceneNumber === 2) {
-        // CHC Manager view
-        globalState.selectedRole = 'CHC_MANAGER';
-        globalState.currentUser = SEEDED_PROFILES[1];
-      } else if (sceneNumber >= 3 && sceneNumber <= 7) {
-        // Farmer view
-        globalState.selectedRole = 'FARMER';
-        globalState.currentUser = SEEDED_PROFILES[0];
-      } else if (sceneNumber >= 8) {
-        // CHC / Operations view
-        globalState.selectedRole = 'CHC_MANAGER';
-        globalState.currentUser = SEEDED_PROFILES[1];
-      }
-
-      if (sceneNumber === 10) {
-        // Trigger Fuel Anomaly
-        globalState.simulationState.isFuelAnomalyActive = true;
-      }
-
-      if (sceneNumber === 11) {
-        // Mark rental completed
-        const booking = globalState.bookings[0];
-        if (booking && booking.status !== 'COMPLETED') {
-          const inv = calculateFinalInvoice({
-            booking: { ...booking, status: 'COMPLETED', actualHours: 6.4 },
-            actualHours: 6.4,
-          });
-          globalState.invoices = [inv, ...globalState.invoices.filter(i => i.bookingId !== booking.id)];
-          globalState.bookings = globalState.bookings.map(b =>
-            b.id === booking.id ? { ...b, status: 'COMPLETED', actualHours: 6.4, paymentStatus: 'CAPTURED' } : b
-          );
-        }
-      }
-
       notify();
     },
 
@@ -417,6 +441,8 @@ export function useKisanOpsStore() {
         simulationState: getInitialSimulationState(),
         isSimulating: true,
         activeDemoScene: 1,
+        isCloudSynced: false,
+        isInitialLoading: false,
       };
       notify();
     },

@@ -168,13 +168,58 @@ export const LandingRoleSelect: React.FC = () => {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
+          {/* Card 3: Machine Operator / Driver Portal */}
+          <div
+            onClick={() => handleSelectRole('OPERATOR')}
+            className="card-premium p-6 sm:p-8 cursor-pointer group flex flex-col justify-between border-2 border-transparent hover:border-[#7aa32c] relative overflow-hidden"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="w-14 h-14 rounded-2xl bg-[#F5FAED] text-[#7aa32c] flex items-center justify-center group-hover:scale-110 transition-transform border border-[#7aa32c]/30">
+                  <Tractor className="w-7 h-7 text-[#7aa32c]" />
+                </div>
+                <span className="text-xs bg-[#F5FAED] text-[#2e4013] font-bold px-3 py-1 rounded-full border border-[#7aa32c]/30">
+                  Driver Console
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-[#1b4d3e] transition-colors">
+                  Continue as Machine Operator
+                </h3>
+                <p className="text-xs text-slate-500 font-medium mt-0.5">
+                  Raju Verma • John Deere Harvester Specialist
+                </p>
+              </div>
+
+              <ul className="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#7aa32c] shrink-0" />
+                  <span>Turn-by-turn field mission & 1-tap farmer dialer</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#7aa32c] shrink-0" />
+                  <span>Productive engine runtime meter start/stop</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#7aa32c] shrink-0" />
+                  <span>Digital diesel refill slip & J1939 fault logger</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between font-bold text-xs text-[#2e4013]">
+              <span>Enter Operator Console</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
         </div>
 
         {/* Quick Admin Access Link */}
         <div className="mt-8 text-center">
           <button
             onClick={() => handleSelectRole('ADMIN')}
-            className="text-xs font-semibold text-slate-500 hover:text-slate-800 flex items-center gap-1.5 mx-auto"
+            className="text-xs font-semibold text-slate-500 hover:text-slate-800 flex items-center gap-1.5 mx-auto cursor-pointer"
           >
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Platform Governance & System Administration</span>

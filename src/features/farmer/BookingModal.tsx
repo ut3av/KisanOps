@@ -15,6 +15,7 @@ import {
 import { Machine, PriceQuote, ActivityType, PaymentMethod } from '../../types';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { useNavigate } from 'react-router-dom';
+import { RazorpayCheckoutModal } from '../../components/common/RazorpayCheckoutModal';
 import clsx from 'clsx';
 
 interface BookingModalProps {
@@ -38,6 +39,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const [startTime, setStartTime] = useState<string>('08:00');
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('AGRICREDIT_DEFERRED');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [showRazorpayModal, setShowRazorpayModal] = useState<boolean>(false);
 
   const { farm, agriCredit } = state;
 
@@ -53,7 +55,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   const isAgriCreditEligible = agriCredit.availableCredit >= estimatedTotal;
 
-  const handleConfirmBooking = () => {
+  const executeFinalBooking = (paymentStatus: 'AUTHORIZED' | 'CAPTURED' = 'AUTHORIZED') => {
     setIsSubmitting(true);
 
     const startDateTime = `${startDate}T${startTime}:00.000Z`;
@@ -61,7 +63,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     const endDateTime = `${startDate}T${endHour.toString().padStart(2, '0')}:00:00.000Z`;
 
     setTimeout(() => {
-      const newBooking = createBooking({
+      createBooking({
         farmerId: state.currentUser.id,
         farmerName: state.currentUser.fullName,
         farmerPhone: state.currentUser.phoneNumber,
@@ -83,15 +85,24 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         hourlyRate,
         estimatedTotal,
         paymentMethod,
-        paymentStatus: paymentMethod === 'AGRICREDIT_DEFERRED' ? 'AUTHORIZED' : 'CAPTURED',
+        paymentStatus,
         operatorName: machine.operatorName || 'Assigned CHC Operator',
         operatorPhone: machine.operatorPhone || state.currentUser.phoneNumber || 'N/A',
       });
 
       setIsSubmitting(false);
+      setShowRazorpayModal(false);
       onClose();
       navigate('/farmer/rentals');
     }, 600);
+  };
+
+  const handleConfirmBooking = () => {
+    if (paymentMethod === 'UPI' || paymentMethod === 'CARD') {
+      setShowRazorpayModal(true);
+    } else {
+      executeFinalBooking('AUTHORIZED');
+    }
   };
 
   return (
@@ -289,6 +300,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           </button>
         </div>
       </div>
+
+      {showRazorpayModal && (
+        <RazorpayCheckoutModal
+          amountRupees={estimatedTotal}
+          customerName={state.currentUser.fullName}
+          customerPhone={state.currentUser.phoneNumber}
+          customerEmail={state.currentUser.email}
+          bookingDescription={`${machine.brand} ${machine.model} (${bookedHours} Hours Rental)`}
+          onSuccess={(paymentId) => {
+            executeFinalBooking('CAPTURED');
+          }}
+          onClose={() => setShowRazorpayModal(false)}
+        />
+      )}
     </div>
   );
 };

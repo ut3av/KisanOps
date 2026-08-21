@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { FarmerLayout } from './components/layout/FarmerLayout';
 import { CHCLayout } from './components/layout/CHCLayout';
 import { AdminLayout } from './components/layout/AdminLayout';
+import { OperatorLayout } from './components/layout/OperatorLayout';
 
 // Landing & Multi-Page Views
 import { LandingPage } from './features/landing/LandingPage';
@@ -41,6 +42,9 @@ import { BookingsManager } from './features/chc/BookingsManager';
 import { PredictiveMaintenance } from './features/chc/PredictiveMaintenance';
 import { RevenueAnalytics } from './features/chc/RevenueAnalytics';
 import { CHCSettings } from './features/chc/CHCSettings';
+
+// Operator Console
+import { OperatorDashboard } from './features/operator/OperatorDashboard';
 
 // Admin Governance
 import { AdminDashboard } from './features/admin/AdminDashboard';
@@ -94,6 +98,11 @@ export const App: React.FC = () => {
             <Route path="maintenance" element={<PredictiveMaintenance />} />
             <Route path="analytics" element={<RevenueAnalytics />} />
             <Route path="settings" element={<CHCSettings />} />
+          </Route>
+
+          {/* Dedicated Machine Operator Mobile Console */}
+          <Route path="/operator" element={<OperatorLayout />}>
+            <Route index element={<OperatorDashboard />} />
           </Route>
 
           {/* Platform Admin Routes */}

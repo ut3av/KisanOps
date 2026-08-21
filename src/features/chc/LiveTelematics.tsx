@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Radio,
   Sparkles,
@@ -10,19 +10,34 @@ import {
   Activity,
   Layers,
   MapPin,
-  Clock
+  Clock,
+  Cpu,
+  Copy,
+  Check,
+  X,
+  Code2
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { TelematicsGaugeCluster } from '../../components/common/TelematicsGauge';
+import { getSampleHardwareConfig } from '../../lib/iotIngestionEngine';
 import clsx from 'clsx';
 
 export const LiveTelematics: React.FC = () => {
   const { state, toggleFuelAnomaly, toggleSimulation } = useKisanOpsStore();
   const { machines, chcs, farm, currentTelemetry, simulationState, isSimulating } = state;
+  const [showIotModal, setShowIotModal] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const targetMachine = machines.find(m => m.id === 'mach-jd-harv-07') || machines[0];
   const telemetry = targetMachine ? currentTelemetry[targetMachine.id] : undefined;
+  const hardwareConfig = getSampleHardwareConfig(targetMachine?.id || 'mach-jd-harv-07');
+
+  const handleCopyCurl = () => {
+    navigator.clipboard.writeText(hardwareConfig.curlSnippet);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
   if (!targetMachine) {
     return (
@@ -58,7 +73,15 @@ export const LiveTelematics: React.FC = () => {
         </div>
 
         {/* Live Controller Actions */}
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={() => setShowIotModal(true)}
+            className="px-3.5 py-2 rounded-xl text-xs font-bold bg-[#1b4d3e] text-white hover:bg-[#153e32] transition-colors shadow-sm flex items-center gap-1.5 cursor-pointer"
+          >
+            <Cpu className="w-4 h-4 text-[#9dc84d]" />
+            <span>IoT Device Webhook API</span>
+          </button>
+
           <button
             onClick={() => toggleFuelAnomaly()}
             className={clsx(
@@ -70,7 +93,7 @@ export const LiveTelematics: React.FC = () => {
           >
             <AlertTriangle className="w-4 h-4" />
             <span>
-              {simulationState.isFuelAnomalyActive ? 'Fuel Anomaly Triggered (+17%)' : 'Inject Fuel Anomaly (+17%)'}
+              {simulationState.isFuelAnomalyActive ? 'Fuel Anomaly Active (+17%)' : 'Inject Anomaly'}
             </span>
           </button>
 
@@ -129,6 +152,83 @@ export const LiveTelematics: React.FC = () => {
           height="480px"
         />
       </div>
+
+      {/* IoT Hardware Webhook API Modal */}
+      {showIotModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm overflow-y-auto">
+          <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-stone-200 my-8 space-y-5 animate-in zoom-in-95">
+            <div className="flex items-start justify-between border-b border-stone-100 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-[#F5FAED] text-[#7aa32c] flex items-center justify-center border border-[#7aa32c]/30">
+                  <Cpu className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-black text-stone-900 font-typewriter">
+                    IoT Hardware & CAN-Bus Ingestion Gateway
+                  </h3>
+                  <p className="text-xs text-stone-500">
+                    Connect Teltonika, Concox, or OBD-II GPS Trackers via HTTP Webhook or Edge Function
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowIotModal(false)}
+                className="p-2 text-stone-400 hover:text-stone-600 rounded-full hover:bg-stone-100 cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="space-y-4 text-xs">
+              <div>
+                <label className="block font-bold text-stone-700 mb-1">
+                  1. Live Ingestion Webhook Endpoint (POST)
+                </label>
+                <div className="p-3 bg-stone-900 text-emerald-400 rounded-xl font-mono text-[11px] break-all select-all flex items-center justify-between gap-2">
+                  <span>{hardwareConfig.endpointUrl}</span>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-between mb-1">
+                  <label className="font-bold text-stone-700">
+                    2. cURL Hardware Test Payload (J1939 ECU Telemetry)
+                  </label>
+                  <button
+                    onClick={handleCopyCurl}
+                    className="text-[11px] font-bold text-[#7aa32c] hover:text-[#5d7c22] flex items-center gap-1 cursor-pointer"
+                  >
+                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                    <span>{copied ? 'Copied to Clipboard!' : 'Copy cURL'}</span>
+                  </button>
+                </div>
+                <pre className="p-3.5 bg-stone-900 text-slate-200 rounded-2xl font-mono text-[11px] overflow-x-auto leading-relaxed border border-stone-800">
+                  {hardwareConfig.curlSnippet}
+                </pre>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200/80 text-emerald-900 space-y-1">
+                <div className="font-bold flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-emerald-700" />
+                  <span>Automated Anomaly Sentinel</span>
+                </div>
+                <p className="text-[11px] text-emerald-800 leading-relaxed">
+                  Incoming hardware streams are automatically evaluated for fuel burn rate deviations (+15% surge triggers an alert) and coolant overheating (&gt;100°C) with instant alerts sent to CHC hub dispatchers.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-stone-100 flex justify-end">
+              <button
+                onClick={() => setShowIotModal(false)}
+                className="px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs cursor-pointer"
+              >
+                Close Gateway
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

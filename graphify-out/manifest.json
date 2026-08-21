@@ -18,9 +18,9 @@
     "semantic_hash": "c1ee9ce6a4fe04105dbf8e619390df5e"
   },
   "src/App.tsx": {
-    "mtime": 1787333853.164803,
-    "seen": 1787334032.5129745,
-    "ast_hash": "2824d0605d1d02cbea767d99ebee88a5",
+    "mtime": 1787334392.620522,
+    "seen": 1787334561.019408,
+    "ast_hash": "f76c6f627b4f2e7357523dc2de74b88a",
     "semantic_hash": ""
   },
   "src/components/common/AgriCreditGauge.tsx": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787333206.3882532,
-    "seen": 1787333230.674579,
-    "ast_hash": "b2ad7c67b722d2e39910264c2c52d699",
+    "mtime": 1787334455.1563034,
+    "seen": 1787334561.0194254,
+    "ast_hash": "78a6f7a3d82b8e685180873c31c12bbf",
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
@@ -90,9 +90,9 @@
     "semantic_hash": ""
   },
   "src/features/auth/LandingRoleSelect.tsx": {
-    "mtime": 1787332933.9608967,
-    "seen": 1787333008.1183462,
-    "ast_hash": "bba6e7dcbf4d5bd7ceed58a269d7e784",
+    "mtime": 1787334429.2992556,
+    "seen": 1787334561.0194292,
+    "ast_hash": "10c247595db6f94975923682f6db34be",
     "semantic_hash": ""
   },
   "src/features/chc/BookingsManager.tsx": {
@@ -126,9 +126,9 @@
     "semantic_hash": ""
   },
   "src/features/chc/LiveTelematics.tsx": {
-    "mtime": 1787333932.4864378,
-    "seen": 1787334032.5130424,
-    "ast_hash": "a4a7a570e1c196afda73c1c0317264bb",
+    "mtime": 1787334485.304233,
+    "seen": 1787334561.0194352,
+    "ast_hash": "44a8bddf8e607cc5af0f316e49f4e0c8",
     "semantic_hash": ""
   },
   "src/features/chc/PredictiveMaintenance.tsx": {
@@ -144,9 +144,9 @@
     "semantic_hash": "0195a02c4ee2cd7bac034ec08913d7b2"
   },
   "src/features/farmer/BookingModal.tsx": {
-    "mtime": 1787333908.8430855,
-    "seen": 1787334032.5130515,
-    "ast_hash": "fd4642018f82e2ab3019a0e0e99fb651",
+    "mtime": 1787334353.9032805,
+    "seen": 1787334561.0194385,
+    "ast_hash": "4e261c4bc6442d7a0a9a41ca653f6b82",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmProfile.tsx": {
@@ -240,10 +240,10 @@
     "semantic_hash": "a3150907ddf2842367caa98e12a33298"
   },
   "src/store/kisanOpsStore.ts": {
-    "mtime": 1787311515.6580098,
-    "seen": 1787312673.7713678,
-    "ast_hash": "facb99bedf870ebfa7c7b167b3a90e5a",
-    "semantic_hash": "facb99bedf870ebfa7c7b167b3a90e5a"
+    "mtime": 1787334262.6652956,
+    "seen": 1787334561.0194793,
+    "ast_hash": "465f207a60c4b3a739c801c58ad8c82d",
+    "semantic_hash": ""
   },
   "src/types/index.ts": {
     "mtime": 1787333900.4012558,
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "src/features/auth/LoginPage.tsx": {
-    "mtime": 1787332452.544442,
-    "seen": 1787332468.2202158,
-    "ast_hash": "9d4e734435bee5a3d86e5c73c8445cf0",
+    "mtime": 1787334410.7390282,
+    "seen": 1787334561.01943,
+    "ast_hash": "370907dbbe372bdc01061ad0f513bd81",
     "semantic_hash": ""
   },
   "src/features/common/NotFoundPage.tsx": {
@@ -669,6 +669,48 @@
     "mtime": 1787332968.0807898,
     "seen": 1787333008.1183975,
     "ast_hash": "0c057ab956e8f39dc9b89ea18ad98839",
+    "semantic_hash": ""
+  },
+  "src/components/common/RazorpayCheckoutModal.tsx": {
+    "mtime": 1787334323.8505113,
+    "seen": 1787334561.019418,
+    "ast_hash": "632371013bb35b51c3f013086bf67b2c",
+    "semantic_hash": ""
+  },
+  "src/components/layout/OperatorLayout.tsx": {
+    "mtime": 1787334361.472093,
+    "seen": 1787334561.019426,
+    "ast_hash": "ddf5faeaf3abaa094e5bc3aa61f934a2",
+    "semantic_hash": ""
+  },
+  "src/features/operator/OperatorDashboard.tsx": {
+    "mtime": 1787334380.815983,
+    "seen": 1787334561.0194652,
+    "ast_hash": "9baa5775d6972b0b32dbf5ca45bf9b6c",
+    "semantic_hash": ""
+  },
+  "src/lib/__tests__/iotAndDb.test.ts": {
+    "mtime": 1787334538.4892974,
+    "seen": 1787334561.019467,
+    "ast_hash": "12f101af84922526bda3ab6d9887c4e3",
+    "semantic_hash": ""
+  },
+  "src/lib/dbService.ts": {
+    "mtime": 1787334533.8597753,
+    "seen": 1787334561.0194707,
+    "ast_hash": "24b962ea748b3a069a3b8e65d8d15a45",
+    "semantic_hash": ""
+  },
+  "src/lib/iotIngestionEngine.ts": {
+    "mtime": 1787334523.1534102,
+    "seen": 1787334561.0194721,
+    "ast_hash": "15e7034683e628de4391b6691c3c3625",
+    "semantic_hash": ""
+  },
+  "supabase/functions/telemetry-webhook/index.ts": {
+    "mtime": 1787334283.5459187,
+    "seen": 1787334561.0194821,
+    "ast_hash": "926eb13295ce8b918c0d65e70b582a85",
     "semantic_hash": ""
   }
 }

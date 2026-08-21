@@ -28,6 +28,7 @@ export const Navbar: React.FC = () => {
     switchRole(role);
     setShowRoleMenu(false);
     if (role === 'FARMER') navigate('/farmer');
+    else if (role === 'OPERATOR') navigate('/operator');
     else if (role === 'ADMIN') navigate('/admin');
     else navigate('/chc');
   };
@@ -67,19 +68,75 @@ export const Navbar: React.FC = () => {
             <span>Sehore, Madhya Pradesh</span>
           </div>
 
-          {/* Active Role Badge (Production Identity) */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-100 border border-slate-200 text-xs font-bold text-slate-800">
-            <span className={clsx(
-              'w-2 h-2 rounded-full',
-              state.selectedRole === 'ADMIN' ? 'bg-purple-500' :
-              state.selectedRole === 'CHC_MANAGER' ? 'bg-sky-500' :
-              'bg-emerald-500'
-            )} />
-            <span>
-              {state.selectedRole === 'ADMIN' ? 'Platform Admin' :
-               state.selectedRole === 'CHC_MANAGER' ? 'CHC Hub Manager' :
-               'Farmer Portal'}
-            </span>
+          {/* Active Role Switcher Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setShowRoleMenu(!showRoleMenu)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-100 border border-slate-200 text-xs font-bold text-slate-800 hover:bg-surface-200 transition-colors cursor-pointer"
+            >
+              <span className={clsx(
+                'w-2 h-2 rounded-full',
+                state.selectedRole === 'ADMIN' ? 'bg-purple-500' :
+                state.selectedRole === 'CHC_MANAGER' ? 'bg-sky-500' :
+                state.selectedRole === 'OPERATOR' ? 'bg-amber-500' :
+                'bg-emerald-500'
+              )} />
+              <span>
+                {state.selectedRole === 'ADMIN' ? 'Platform Admin' :
+                 state.selectedRole === 'CHC_MANAGER' ? 'CHC Hub Manager' :
+                 state.selectedRole === 'OPERATOR' ? 'Machine Operator' :
+                 'Farmer Portal'}
+              </span>
+              <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+            </button>
+
+            {showRoleMenu && (
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-2xl shadow-elevated border border-slate-200 py-1.5 z-50 animate-in fade-in-50">
+                <button
+                  onClick={() => handleRoleChange('FARMER')}
+                  className={clsx(
+                    'w-full text-left px-3.5 py-2 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 cursor-pointer',
+                    state.selectedRole === 'FARMER' ? 'text-emerald-700 font-bold bg-emerald-50/50' : 'text-slate-700'
+                  )}
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span>Farmer Experience</span>
+                </button>
+
+                <button
+                  onClick={() => handleRoleChange('CHC_MANAGER')}
+                  className={clsx(
+                    'w-full text-left px-3.5 py-2 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 cursor-pointer',
+                    state.selectedRole === 'CHC_MANAGER' ? 'text-sky-700 font-bold bg-sky-50/50' : 'text-slate-700'
+                  )}
+                >
+                  <span className="w-2 h-2 rounded-full bg-sky-500" />
+                  <span>CHC Hub Manager</span>
+                </button>
+
+                <button
+                  onClick={() => handleRoleChange('OPERATOR')}
+                  className={clsx(
+                    'w-full text-left px-3.5 py-2 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 cursor-pointer',
+                    state.selectedRole === 'OPERATOR' ? 'text-amber-700 font-bold bg-amber-50/50' : 'text-slate-700'
+                  )}
+                >
+                  <span className="w-2 h-2 rounded-full bg-amber-500" />
+                  <span>Machine Operator</span>
+                </button>
+
+                <button
+                  onClick={() => handleRoleChange('ADMIN')}
+                  className={clsx(
+                    'w-full text-left px-3.5 py-2 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 cursor-pointer',
+                    state.selectedRole === 'ADMIN' ? 'text-purple-700 font-bold bg-purple-50/50' : 'text-slate-700'
+                  )}
+                >
+                  <span className="w-2 h-2 rounded-full bg-purple-500" />
+                  <span>Platform Admin</span>
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Notifications Dropdown */}
