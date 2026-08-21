@@ -208,7 +208,9 @@ export const FarmerMarketplace: React.FC = () => {
                   <img
                     src={machine.imageUrl}
                     alt={machine.model}
-                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-lg">
                     {machine.category}

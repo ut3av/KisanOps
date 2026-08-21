@@ -86,6 +86,8 @@ export const ProductsOperationsPage: React.FC = () => {
               <img
                 src="/images/hero-agronomist.jpg"
                 alt="Deferred AgriCredit Scoring"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,6 +99,8 @@ export const ProductsOperationsPage: React.FC = () => {
               <img
                 src="/images/remote-sensing.jpg"
                 alt="Farm & CHC ERP Suite"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -158,6 +162,8 @@ export const ProductsOperationsPage: React.FC = () => {
               <img
                 src="/images/hero-tractor.jpg"
                 alt="Sustainability ESG"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

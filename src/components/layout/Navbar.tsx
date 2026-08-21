@@ -200,6 +200,8 @@ export const Navbar: React.FC = () => {
               <img
                 src={state.currentUser.avatarUrl}
                 alt={state.currentUser.fullName}
+                loading="lazy"
+                decoding="async"
                 className="w-8 h-8 rounded-full object-cover border border-slate-200"
               />
             ) : (

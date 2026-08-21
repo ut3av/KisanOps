@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/components/common/LeafletFleetMap.tsx": {
-    "mtime": 1787331634.294135,
-    "seen": 1787331662.499566,
-    "ast_hash": "9c93c8eac2567a9f138204eb4f6f0cc0",
+    "mtime": 1787331891.3653615,
+    "seen": 1787331911.7306514,
+    "ast_hash": "5bec4729ce1dcffeede62a73c9000fe1",
     "semantic_hash": ""
   },
   "src/components/common/StatCard.tsx": {
@@ -78,9 +78,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787321931.8645976,
-    "seen": 1787322604.0198066,
-    "ast_hash": "3fbec26cde9373e82a8b2e8276aac07f",
+    "mtime": 1787332111.846352,
+    "seen": 1787332130.577778,
+    "ast_hash": "eae3f4539b3a6be845f2209673f15da1",
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
@@ -126,10 +126,10 @@
     "semantic_hash": ""
   },
   "src/features/chc/FleetManagement.tsx": {
-    "mtime": 1787311268.8076608,
-    "seen": 1787312673.771316,
-    "ast_hash": "89fb15edee36e674855bdb6eb8f82a8a",
-    "semantic_hash": "89fb15edee36e674855bdb6eb8f82a8a"
+    "mtime": 1787332013.5732234,
+    "seen": 1787332130.5778,
+    "ast_hash": "cfacfe4ec8ff963c7ecc379add977fff",
+    "semantic_hash": ""
   },
   "src/features/chc/LiveTelematics.tsx": {
     "mtime": 1787316568.4768238,
@@ -168,15 +168,15 @@
     "semantic_hash": "7cb6cc369981c65b575719b369e7379b"
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787320906.6482856,
-    "seen": 1787322604.0198548,
-    "ast_hash": "c151f5aeb3c198dcd176f650fce1c9ba",
+    "mtime": 1787332003.4289877,
+    "seen": 1787332130.5778184,
+    "ast_hash": "4cdaa78a018cfb4fe93e8aae29bd5cf7",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
-    "mtime": 1787316551.7463279,
-    "seen": 1787322604.0198574,
-    "ast_hash": "c323c1642980ef29ce526072a7712f6f",
+    "mtime": 1787331989.0076935,
+    "seen": 1787332130.5778208,
+    "ast_hash": "d78bd494bc7f2178795cca3ad9e8d64d",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerRentals.tsx": {
@@ -186,9 +186,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/MachineDetailsModal.tsx": {
-    "mtime": 1787316372.5808952,
-    "seen": 1787322604.0198622,
-    "ast_hash": "45e8d7058ddc24c119476dfa26f69fe8",
+    "mtime": 1787331997.1254604,
+    "seen": 1787332130.5778253,
+    "ast_hash": "93160ea3a6b1d7ebf1274ca766e787eb",
     "semantic_hash": ""
   },
   "src/lib/__tests__/engines.test.ts": {
@@ -354,9 +354,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/HeroSection.tsx": {
-    "mtime": 1787323332.839514,
-    "seen": 1787323721.03387,
-    "ast_hash": "dcf0dea87c78bf4a9761906a2a71b6da",
+    "mtime": 1787332092.9795609,
+    "seen": 1787332130.5778368,
+    "ast_hash": "4fc59f29ccede9d54c902af974089692",
     "semantic_hash": ""
   },
   "src/features/landing/components/HowItWorksSection.tsx": {
@@ -384,9 +384,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/ModularProductsSection.tsx": {
-    "mtime": 1787323410.2734473,
-    "seen": 1787323721.0338788,
-    "ast_hash": "72ca7005c399e363b070ce0cc6a7c395",
+    "mtime": 1787332075.0404823,
+    "seen": 1787332130.5778484,
+    "ast_hash": "6273e046b8931926083080350ec000d7",
     "semantic_hash": ""
   },
   "src/features/landing/components/PlatformEcosystemSection.tsx": {
@@ -402,9 +402,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/StatsImpactSection.tsx": {
-    "mtime": 1787322505.658511,
-    "seen": 1787322604.019888,
-    "ast_hash": "4c4adbc1de442d8866e110e7f8351a7d",
+    "mtime": 1787332083.8097353,
+    "seen": 1787332130.5778556,
+    "ast_hash": "3092be1a3b0b517659dbaf4bcf11aa87",
     "semantic_hash": ""
   },
   "src/features/landing/components/TestimonialsSection.tsx": {
@@ -438,21 +438,21 @@
     "semantic_hash": ""
   },
   "src/features/landing/pages/ProductsOperationsPage.tsx": {
-    "mtime": 1787321617.819992,
-    "seen": 1787322604.0198994,
-    "ast_hash": "7d6bd376f7492d5b6ae1d21fb9e8129f",
+    "mtime": 1787332066.7239254,
+    "seen": 1787332130.5778687,
+    "ast_hash": "6abe7801fbe17294b71a89fa759e85c6",
     "semantic_hash": ""
   },
   "src/features/landing/pages/ProductsPostHarvestPage.tsx": {
-    "mtime": 1787321608.6498542,
-    "seen": 1787322604.0199013,
-    "ast_hash": "f54bfabb138f28ee679ff7575fa39579",
+    "mtime": 1787332054.3346188,
+    "seen": 1787332130.5778713,
+    "ast_hash": "aeccf153e6e5c5f23ea8a0a04c0806c7",
     "semantic_hash": ""
   },
   "src/features/landing/pages/ProductsPreHarvestPage.tsx": {
-    "mtime": 1787321597.0255857,
-    "seen": 1787322604.0199034,
-    "ast_hash": "7c96f91c9afb4c380901ff24ac8f42c9",
+    "mtime": 1787332027.470111,
+    "seen": 1787332130.5778735,
+    "ast_hash": "786b17da014dd8ab0443bb7e6d84b21e",
     "semantic_hash": ""
   },
   "src/features/landing/pages/SolutionsPage.tsx": {
@@ -657,6 +657,12 @@
     "mtime": 1787324882.8999245,
     "seen": 1787325115.7568836,
     "ast_hash": "ec010a7dd4ef2dc2f67ab68e23d6790e",
+    "semantic_hash": ""
+  },
+  "src/components/common/LazyImage.tsx": {
+    "mtime": 1787331949.5943751,
+    "seen": 1787332130.5777524,
+    "ast_hash": "32ef53b5135c327983260f58192358ca",
     "semantic_hash": ""
   }
 }

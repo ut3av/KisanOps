@@ -154,6 +154,7 @@ interface LeafletFleetMapProps {
   showRoute?: boolean;
   center?: [number, number];
   zoom?: number;
+  scrollWheelZoom?: boolean;
 }
 
 export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
@@ -166,6 +167,7 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
   showRoute = true,
   center = [23.185, 77.105], // Sehore region midpoint
   zoom = 12,
+  scrollWheelZoom = true,
 }) => {
   const [isMounted, setIsMounted] = useState(false);
   const [baseLayer, setBaseLayer] = useState<MapBaseLayerType>('AGRO_SATELLITE');
@@ -296,7 +298,11 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
         zoom={zoom}
         maxZoom={19}
         minZoom={6}
-        scrollWheelZoom={false}
+        scrollWheelZoom={scrollWheelZoom}
+        touchZoom={true}
+        doubleClickZoom={true}
+        zoomSnap={0.5}
+        zoomDelta={0.5}
         className="w-full h-full"
       >
         {/* Selected Base Tile Layer */}

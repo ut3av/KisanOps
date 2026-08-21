@@ -21,6 +21,8 @@ export const StatsImpactSection: React.FC<StatsImpactSectionProps> = ({
               <img
                 src="/images/real-chc-yard.jpg"
                 alt="Sehore Custom Hiring Centre machinery fleet"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex flex-col justify-end p-6 text-white">

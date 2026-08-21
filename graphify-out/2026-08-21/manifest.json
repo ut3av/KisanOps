@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/components/common/LeafletFleetMap.tsx": {
-    "mtime": 1787331574.74916,
-    "seen": 1787331608.0282204,
-    "ast_hash": "9810938a86f5c70a29f4bd8482fd76a5",
+    "mtime": 1787331891.3653615,
+    "seen": 1787331911.7306514,
+    "ast_hash": "5bec4729ce1dcffeede62a73c9000fe1",
     "semantic_hash": ""
   },
   "src/components/common/StatCard.tsx": {

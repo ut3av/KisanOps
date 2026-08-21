@@ -285,6 +285,8 @@ export const FarmerHome: React.FC = () => {
               <img
                 src={topMatch.machine.imageUrl}
                 alt={topMatch.machine.model}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               <span className="absolute top-2 left-2 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md">

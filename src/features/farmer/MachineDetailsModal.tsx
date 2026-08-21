@@ -74,6 +74,8 @@ export const MachineDetailsModal: React.FC<MachineDetailsModalProps> = ({
               <img
                 src={machine.imageUrl}
                 alt={machine.model}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md rounded-xl p-3 text-white flex justify-between items-center text-xs">

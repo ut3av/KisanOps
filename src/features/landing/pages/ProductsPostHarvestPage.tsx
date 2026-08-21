@@ -86,6 +86,8 @@ export const ProductsPostHarvestPage: React.FC = () => {
               <img
                 src="/images/hero-tractor.jpg"
                 alt="Fleet Telematics & Anomaly Detection"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,6 +99,8 @@ export const ProductsPostHarvestPage: React.FC = () => {
               <img
                 src="/images/hero-agronomist.jpg"
                 alt="Food Traceability"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -158,6 +162,8 @@ export const ProductsPostHarvestPage: React.FC = () => {
               <img
                 src="/images/remote-sensing.jpg"
                 alt="Equipment Marketplace"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

@@ -1,7 +1,7 @@
 # Graph Report - KisanOps  (2026-08-21)
 
 ## Corpus Check
-- 90 files · ~286,314 words
+- 90 files · ~286,299 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `46902ade`
+- Built from commit: `3212d443`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

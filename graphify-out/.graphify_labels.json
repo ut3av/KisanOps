@@ -1,11 +1,11 @@
 {
-  "0": "App.tsx",
+  "0": "react",
   "1": "kisanOpsStore.ts",
   "2": "FarmerMarketplace.tsx",
   "3": "devDependencies",
   "4": "20260821000000_initial_schema.sql",
   "5": "dependencies",
-  "6": "LeafletFleetMap.tsx",
+  "6": "weatherEngine.ts",
   "7": "compilerOptions",
   "8": "compilerOptions",
   "9": "LandingPage.tsx",

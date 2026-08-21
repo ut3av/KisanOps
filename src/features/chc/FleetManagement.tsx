@@ -139,6 +139,8 @@ export const FleetManagement: React.FC = () => {
                         <img
                           src={machine.imageUrl}
                           alt={machine.model}
+                          loading="lazy"
+                          decoding="async"
                           className="w-10 h-10 rounded-xl object-cover border border-slate-200"
                         />
                         <div>
@@ -232,6 +234,8 @@ export const FleetManagement: React.FC = () => {
                 <img
                   src={selectedMachine.imageUrl}
                   alt={selectedMachine.model}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
