@@ -1,126 +1,164 @@
 # Graph Report - KisanOps  (2026-08-21)
 
 ## Corpus Check
-- Corpus is ~39,446 words - fits in a single context window. You may not need a graph.
+- 89 files · ~285,354 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 347 nodes · 744 edges · 20 communities (17 shown, 3 thin omitted)
+- 475 nodes · 970 edges · 28 communities (23 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
-- Token cost: 1,200 input · 800 output
+- Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `2910b337`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- React Components & Live Weather UI
-- KisanOps Core Intelligence Architecture
-- Seeded Agricultural Domain Data
-- Build Tooling & Dev Dependencies
-- Runtime Libraries & Visualization SDKs
-- GIS Fleet Mapping & Doppler Radar
-- TypeScript App Compiler Config
-- Vite & Node Configuration
-- Linter & Code Quality Rules
-- Community 9
-- Community 10
-- Community 11
-- Community 12
-- Community 13
-- Community 14
+- useKisanOpsStore
+- kisanOpsStore.ts
+- index.ts
+- devDependencies
+- 20260821000000_initial_schema.sql
+- dependencies
+- weatherEngine.ts
+- compilerOptions
+- compilerOptions
+- App.tsx
+- schema.sql
+- plugins
+- tsconfig.json
+- AgriCredit Engine
+- Dynamic Pricing Engine
+- 🎬 Step-by-Step 12-Scene Script
+- KisanOps API Specification
+- 2. Core Subsystems
+- KisanOps Database Specification & Data Dictionary
+- KisanOps Deployment Guide
+- BookDemoModal.tsx
+- rules/graphify.md
+- workflows/graphify.md
 
 ## God Nodes (most connected - your core abstractions)
-1. `useKisanOpsStore()` - 44 edges
-2. `react` - 34 edges
-3. `Weather Intelligence & Risk Radar` - 19 edges
-4. `Machine` - 16 edges
-5. `AppState` - 15 edges
-6. `compilerOptions` - 15 edges
-7. `compilerOptions` - 14 edges
-8. `Predictive Demand Engine` - 13 edges
-9. `machines` - 13 edges
-10. `Explainable Recommendation Engine` - 12 edges
+1. `react` - 58 edges
+2. `useKisanOpsStore()` - 50 edges
+3. `Machine` - 16 edges
+4. `AppState` - 15 edges
+5. `compilerOptions` - 15 edges
+6. `compilerOptions` - 14 edges
+7. `machines` - 13 edges
+8. `🎬 Step-by-Step 12-Scene Script` - 13 edges
+9. `profiles` - 12 edges
+10. `LandingNavbar()` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `KisanOps Platform` --integrates--> `Weather Intelligence & Risk Radar`  [EXTRACTED]
-  README.md → src/lib/weatherEngine.ts
-- `LeafletFleetMapProps` --references--> `Machine`  [EXTRACTED]
-  src/components/common/LeafletFleetMap.tsx → src/types/index.ts
 - `TelematicsGaugeClusterProps` --references--> `TelemetryPoint`  [EXTRACTED]
   src/components/common/TelematicsGauge.tsx → src/types/index.ts
-- `LoginPage()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
-  src/features/auth/LoginPage.tsx → src/store/kisanOpsStore.ts
-- `BookingModal()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
-  src/features/farmer/BookingModal.tsx → src/store/kisanOpsStore.ts
+- `BookDemoModal()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
+  src/features/landing/components/BookDemoModal.tsx → src/store/kisanOpsStore.ts
+- `LeafletFleetMapProps` --references--> `Machine`  [EXTRACTED]
+  src/components/common/LeafletFleetMap.tsx → src/types/index.ts
+- `DemoScenarioBar()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
+  src/components/demo/DemoScenarioBar.tsx → src/store/kisanOpsStore.ts
+- `CHCLayout()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
+  src/components/layout/CHCLayout.tsx → src/store/kisanOpsStore.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (20 total, 3 thin omitted)
+## Communities (28 total, 5 thin omitted)
 
-### Community 0 - "React Components & Live Weather UI"
+### Community 0 - "useKisanOpsStore"
+Cohesion: 0.06
+Nodes (39): AgriCreditGauge(), AgriCreditGaugeProps, activeMachineIcon, availableMachineIcon, chcIcon, farmIcon, LeafletFleetMap(), maintenanceIcon (+31 more)
+
+### Community 1 - "kisanOpsStore.ts"
 Cohesion: 0.09
-Nodes (36): react, App(), queryClient, AgriCreditGauge(), AgriCreditGaugeProps, LeafletFleetMap(), StatCard(), StatCardProps (+28 more)
+Nodes (43): LeafletFleetMapProps, SEEDED_AGRICREDIT_PROFILE, SEEDED_ALLOCATION_RECOMMENDATIONS, SEEDED_BOOKINGS, SEEDED_CHCS, SEEDED_DEMAND_FORECASTS, SEEDED_FARM, SEEDED_MACHINES (+35 more)
 
-### Community 1 - "KisanOps Core Intelligence Architecture"
-Cohesion: 0.08
-Nodes (45): activeMachineIcon, availableMachineIcon, chcIcon, farmIcon, LeafletFleetMapProps, maintenanceIcon, TelematicsGaugeClusterProps, SEEDED_AGRICREDIT_PROFILE (+37 more)
+### Community 2 - "index.ts"
+Cohesion: 0.10
+Nodes (33): ExplanationBadge(), ExplanationBadgeProps, PredictiveMaintenance(), BookingModal(), BookingModalProps, FarmerHome(), FarmerMarketplace(), MachineDetailsModal() (+25 more)
 
-### Community 2 - "Seeded Agricultural Domain Data"
-Cohesion: 0.13
-Nodes (30): ExplanationBadge(), ExplanationBadgeProps, BookingModal(), BookingModalProps, FarmerHome(), FarmerMarketplace(), MachineDetailsModal(), MachineDetailsModalProps (+22 more)
-
-### Community 3 - "Build Tooling & Dev Dependencies"
+### Community 3 - "devDependencies"
 Cohesion: 0.06
 Nodes (34): autoprefixer, oxlint, devDependencies, autoprefixer, oxlint, postcss, tailwindcss, @tailwindcss/postcss (+26 more)
 
-### Community 4 - "Runtime Libraries & Visualization SDKs"
+### Community 4 - "20260821000000_initial_schema.sql"
 Cohesion: 0.16
 Nodes (30): audit_logs, booking_events, bookings, chcs, credit_events, credit_profiles, demand_forecasts, disputes (+22 more)
 
-### Community 5 - "GIS Fleet Mapping & Doppler Radar"
+### Community 5 - "dependencies"
 Cohesion: 0.07
 Nodes (29): clsx, jspdf, leaflet, lucide-react, dependencies, clsx, jspdf, leaflet (+21 more)
 
-### Community 6 - "TypeScript App Compiler Config"
-Cohesion: 0.16
-Nodes (22): KisanOps Platform, Doppler Radar Map Player, DopplerRadarPlayer(), DopplerRadarPlayerProps, Weather Radar & Harvest Window Barometer, WeatherRadarCard(), WeatherRadarCardProps, Weather Intelligence & Risk Radar (+14 more)
+### Community 6 - "weatherEngine.ts"
+Cohesion: 0.14
+Nodes (20): KisanOps Platform, DopplerRadarPlayer(), DopplerRadarPlayerProps, WeatherRadarCard(), WeatherRadarCardProps, DemandIntelligence(), CachedForecast, computeHarvestRiskAssessment() (+12 more)
 
-### Community 7 - "Vite & Node Configuration"
+### Community 7 - "compilerOptions"
 Cohesion: 0.10
 Nodes (19): DOM, src, vite/client, compilerOptions, jsx, lib, module, moduleDetection (+11 more)
 
-### Community 8 - "Linter & Code Quality Rules"
+### Community 8 - "compilerOptions"
 Cohesion: 0.10
 Nodes (19): node, vite.config.ts, compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection (+11 more)
 
-### Community 9 - "Community 9"
-Cohesion: 0.32
-Nodes (11): SEEDED_PROFILES, LoginPage(), AuthResponse, isSupabaseConfigured, sendPhoneOtp(), signInWithEmail(), signUpWithEmail(), supabase (+3 more)
+### Community 9 - "App.tsx"
+Cohesion: 0.07
+Nodes (43): react, App(), queryClient, AdminLayout(), CHCLayout(), FarmerLayout(), Navbar(), CHCSettings() (+35 more)
 
-### Community 10 - "Community 10"
+### Community 10 - "schema.sql"
 Cohesion: 0.33
 Nodes (7): auth.users, public, public.chcs, public.farm_crops, public.farms, public.machines, public.profiles
 
-### Community 11 - "Community 11"
+### Community 11 - "plugins"
 Cohesion: 0.22
 Nodes (8): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, oxc, typescript, warn
 
+### Community 20 - "🎬 Step-by-Step 12-Scene Script"
+Cohesion: 0.12
+Nodes (15): KisanOps 5-Minute Deterministic Demo Script, 🧭 Pre-Flight Setup, Scene 10: Predictive Fuel Anomaly Detection, Scene 11: Automated Billing & PDF Invoice, Scene 12: Business Impact & Revenue Analytics, Scene 1: Demand Intelligence Shortage Detection, Scene 2: Deterministic Fleet Allocation, Scene 3: Farmer Activity Requirement (+7 more)
+
+### Community 21 - "KisanOps API Specification"
+Cohesion: 0.13
+Nodes (14): 1. Machinery & Recommendations, 2. Dynamic Pricing, 3. AgriCredit System, 4. Bookings & Lifecycle, 5. Telematics Stream & Anomaly Webhook, 6. Invoices & Settlement, `GET /api/v1/invoices/:booking_id`, `GET /api/v1/machines` (+6 more)
+
+### Community 22 - "2. Core Subsystems"
+Cohesion: 0.18
+Nodes (10): 1. High-Level Architecture Overview, 2.1 Demand Intelligence Subsystem (`src/lib/demandEngine.ts`), 2.2 Explainable Smart Match Subsystem (`src/lib/recommendationEngine.ts`), 2.3 Dynamic Pricing Subsystem (`src/lib/pricingEngine.ts`), 2.4 AgriCredit Engine (`src/lib/creditEngine.ts`), 2.5 Live Telematics & Predictive Maintenance (`src/lib/telematicsEngine.ts`, `src/lib/maintenanceEngine.ts`), 2.6 Automated Billing & Tax Invoicing (`src/lib/billingEngine.ts`), 2. Core Subsystems (+2 more)
+
+### Community 23 - "KisanOps Database Specification & Data Dictionary"
+Cohesion: 0.33
+Nodes (5): 1. Schema Overview, 2. Table Catalog, 3. Row Level Security (RLS) Policies, 4. Migration Files, KisanOps Database Specification & Data Dictionary
+
+### Community 24 - "KisanOps Deployment Guide"
+Cohesion: 0.33
+Nodes (5): 1. Environment Variables, 2. Frontend Deployment (Vercel), 3. Database Deployment (Supabase), 4. Production Health Check, KisanOps Deployment Guide
+
+### Community 25 - "BookDemoModal.tsx"
+Cohesion: 0.40
+Nodes (4): KisanLoader(), KisanLoaderProps, BookDemoModal(), BookDemoModalProps
+
 ## Knowledge Gaps
-- **105 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+100 more)
+- **165 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+160 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `React Components & Live Weather UI` to `KisanOps Core Intelligence Architecture`, `Seeded Agricultural Domain Data`, `TypeScript App Compiler Config`, `Community 9`, `Community 11`?**
-  _High betweenness centrality (0.074) - this node is a cross-community bridge._
-- **Why does `Weather Intelligence & Risk Radar` connect `TypeScript App Compiler Config` to `Seeded Agricultural Domain Data`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Why does `useKisanOpsStore()` connect `React Components & Live Weather UI` to `Community 9`, `Seeded Agricultural Domain Data`, `KisanOps Core Intelligence Architecture`?**
-  _High betweenness centrality (0.029) - this node is a cross-community bridge._
+- **Why does `react` connect `App.tsx` to `useKisanOpsStore`, `kisanOpsStore.ts`, `index.ts`, `weatherEngine.ts`, `plugins`, `BookDemoModal.tsx`?**
+  _High betweenness centrality (0.118) - this node is a cross-community bridge._
+- **Why does `useKisanOpsStore()` connect `useKisanOpsStore` to `kisanOpsStore.ts`, `index.ts`, `weatherEngine.ts`, `App.tsx`, `BookDemoModal.tsx`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+- **Why does `plugins` connect `plugins` to `App.tsx`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
-  _105 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `React Components & Live Weather UI` be split into smaller, more focused modules?**
-  _Cohesion score 0.09117475160724722 - nodes in this community are weakly interconnected._
-- **Should `KisanOps Core Intelligence Architecture` be split into smaller, more focused modules?**
-  _Cohesion score 0.07918552036199095 - nodes in this community are weakly interconnected._
-- **Should `Seeded Agricultural Domain Data` be split into smaller, more focused modules?**
-  _Cohesion score 0.12762762762762764 - nodes in this community are weakly interconnected._
+  _165 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `useKisanOpsStore` be split into smaller, more focused modules?**
+  _Cohesion score 0.05656565656565657 - nodes in this community are weakly interconnected._
+- **Should `kisanOpsStore.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.09268707482993198 - nodes in this community are weakly interconnected._
+- **Should `index.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.09929078014184398 - nodes in this community are weakly interconnected._

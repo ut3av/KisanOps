@@ -19,15 +19,15 @@ export const StatsImpactSection: React.FC<StatsImpactSectionProps> = ({
             {/* Left Image & Badge */}
             <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-stone-200 shadow-md aspect-[4/3] group">
               <img
-                src="/images/hero-agronomist.jpg"
-                alt="AgTech Expertise and Precision"
+                src="/images/real-chc-yard.jpg"
+                alt="Sehore Custom Hiring Centre machinery fleet"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
                 <div className="text-xs font-mono font-bold text-[#9dc84d]">
                   DOMAIN EXCELLENCE
                 </div>
-                <div className="text-lg font-bold">Agriculture-First Architecture</div>
+                <div className="text-base font-bold font-typewriter">Sehore CHC Fleet Hub • 14 Units Active</div>
               </div>
             </div>
 

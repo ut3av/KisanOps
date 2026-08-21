@@ -1,299 +1,300 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Tractor,
-  Satellite,
-  ShoppingBag,
-  Cpu,
+  TrendingUp,
   Truck,
-  Boxes,
-  Layers,
-  LineChart,
-  Building2,
-  Leaf,
-  ArrowRight,
   Sparkles,
   CheckCircle2,
   ShieldCheck,
   Zap,
   Activity,
-  Gauge
+  Gauge,
+  CreditCard,
+  Building2,
+  FileText,
+  Wrench,
+  Fuel,
+  ArrowRight,
+  MapPin,
+  Clock,
+  IndianRupee,
+  Cpu,
+  Tractor,
+  AlertTriangle,
+  Play
 } from 'lucide-react';
 
-interface ProductItem {
+interface EngineModule {
   id: string;
+  category: 'prediction' | 'matching' | 'telematics';
   title: string;
-  category: 'pre-harvest' | 'post-harvest' | 'operations';
+  badge: string;
+  subtitle: string;
   description: string;
+  prdRef: string;
   bullets: string[];
   image: string;
   imageAlt: string;
-  metricBadge: string;
+  metricLabel: string;
   metricValue: string;
   icon: React.ReactNode;
 }
 
-const PRODUCTS: ProductItem[] = [
-  // Pre-Harvest
+const ENGINES: EngineModule[] = [
+  // Category 1: Demand & Allocation Intelligence
   {
-    id: 'farm-management',
-    category: 'pre-harvest',
-    title: 'Farm Management Software',
+    id: 'demand-prediction',
+    category: 'prediction',
+    title: 'Predictive Machinery Demand Engine',
+    badge: 'PRD §17-19',
+    subtitle: '14-Day Regional Harvester & Tractor Deficit Alerts',
     description:
-      'Streamline operations from pre-sowing to harvest. Optimize agronomic practices, track real-time crop growth stages, and manage field inventory through centralized digital integration.',
+      'Eliminate regional machinery shortages before they happen. Yukti correlates upcoming crop maturity stages (+25), historical rental velocity (+20), active bookings (+15), and Doppler weather windows (+10) to forecast machinery demand spikes across districts.',
+    prdRef: 'Demand Score: Harvest season (+30) + Crop stage (+25) = Sehore Harvester Shortage (+34%)',
     bullets: [
-      'Digital field plot boundaries & soil texture logs',
-      'Activity calendar scheduling (Sowing, Tilling, Spraying)',
-      'Labor, chemical inputs and machine usage tracking'
+      '14-day & 30-day regional deficit horizon forecasting',
+      'Explainable weighted scoring factors for hub managers',
+      'Continuous calibration against local APMC sowing dates'
     ],
-    image: '/images/hero-agronomist.jpg',
-    imageAlt: 'Farm Management Software Interface',
-    metricBadge: 'Operational Efficiency',
-    metricValue: '+32% Yield Regularity',
+    image: '/images/real-tractor-field.jpg',
+    imageAlt: 'Real Indian tractor plowing field in Madhya Pradesh',
+    metricLabel: 'Demand Forecast Accuracy',
+    metricValue: '+34% Surge Detected',
+    icon: <TrendingUp className="w-5 h-5 text-[#7aa32c]" />
+  },
+  {
+    id: 'fleet-allocation',
+    category: 'prediction',
+    title: 'Deterministic Machine Allocation Engine',
+    badge: 'PRD §20',
+    subtitle: 'Inter-Hub Relocation & Fleet Rebalancing Optimizer',
+    description:
+      'When Sehore faces a deficit of 2 harvesters, the allocation engine optimizes Hungarian assignment & min-cost routing to relocate surplus equipment from Bhopal CHC, maximizing fleet utilization while minimizing transport overhead.',
+    prdRef: 'Optimization Objective: Maximize fleet utilization (+21%) while minimizing relocation cost',
+    bullets: [
+      'Automated inter-hub equipment dispatch recommendations',
+      'Distance, transport transit time, and ETA calculations',
+      'Idle asset elimination across multi-district CHC networks'
+    ],
+    image: '/images/real-chc-yard.jpg',
+    imageAlt: 'Authentic Indian Custom Hiring Centre machinery yard',
+    metricLabel: 'Asset Utilization Gain',
+    metricValue: '+21% Fleet Reallocation',
+    icon: <Building2 className="w-5 h-5 text-[#7aa32c]" />
+  },
+
+  // Category 2: Smart Matching, Pricing & AgriCredit
+  {
+    id: 'smart-matching',
+    category: 'matching',
+    title: 'Smart 7-Factor Machine Recommendation',
+    badge: 'PRD §11-12',
+    subtitle: 'Explainable Machine Matching for Farm Profiles',
+    description:
+      'Instead of forcing farmers to guess equipment specs, Yukti matches requirements (e.g. Ramesh: 8-acre wheat harvest) against nearby inventory using an explainable 7-factor scoring algorithm.',
+    prdRef: 'Match Score: 25% Task/Crop + 20% Availability + 15% Distance + 15% Health + 10% Price + 10% Reliability + 5% Rating',
+    bullets: [
+      'John Deere Harvester 94% explainable fit for wheat harvest',
+      'Hyperlocal proximity ranking (3.2 km from farm plot)',
+      'Zero technical jargon: Task-first natural language search'
+    ],
+    image: '/images/real-farmer-field.jpg',
+    imageAlt: 'Real Indian farmer checking equipment availability on phone in wheat field',
+    metricLabel: 'Match Precision',
+    metricValue: '94% Explainable Fit',
     icon: <Tractor className="w-5 h-5 text-[#7aa32c]" />
   },
   {
-    id: 'remote-sensing',
-    category: 'pre-harvest',
-    title: 'Remote Sensing & Satellite GIS',
+    id: 'dynamic-pricing',
+    category: 'matching',
+    title: 'Explainable Dynamic Pricing with Safeguards',
+    badge: 'PRD §15-16',
+    subtitle: 'Transparent Hourly Breakdown with Price Ceilings',
     description:
-      'Monitor and manage farms remotely with high-resolution multispectral Sentinel satellite imagery. Track NDVI vegetative indices, nitrogen uptake, and soil moisture stress.',
+      'Every price quote provides a transparent breakdown of base rate, local demand, availability, distance, and machine health adjustments, bounded by strict 80%–130% anti-gouging safeguards.',
+    prdRef: 'Formula: Base (₹850) + High Demand (+₹128) + Low Supply (+₹68) + Distance (+₹35) - Condition (-₹20) = ₹1,061/hr',
     bullets: [
-      '10m-Resolution NDVI crop vigor health heatmaps',
-      'Sub-surface soil moisture stress detection',
-      'Historical canopy index comparison charts'
+      'Guaranteed transparent price breakdown visible to farmer',
+      'Strict production safeguards (80% floor, 130% ceiling)',
+      'Automated seasonal tariff rules for Custom Hiring Centres'
     ],
-    image: '/images/remote-sensing.jpg',
-    imageAlt: 'Satellite GIS NDVI Vegetation Index Portal',
-    metricBadge: 'Crop Health Accuracy',
-    metricValue: '96.8% Detection Precision',
-    icon: <Satellite className="w-5 h-5 text-[#7aa32c]" />
+    image: '/images/real-harvester-field.jpg',
+    imageAlt: 'Real combine harvester operating in golden wheat field in India',
+    metricLabel: 'Pricing Transparency',
+    metricValue: '₹980 - ₹1,061 / hr',
+    icon: <IndianRupee className="w-5 h-5 text-[#7aa32c]" />
   },
   {
-    id: 'm-commerce',
-    category: 'pre-harvest',
-    title: 'M-Commerce & Equipment Rentals',
+    id: 'agricredit',
+    category: 'matching',
+    title: 'AgriCredit Deferred-Payment Orchestration',
+    badge: 'PRD §30-31',
+    subtitle: '0–900 Credit Scoring & 45-Day Post-Harvest Repayment',
     description:
-      'Simplify on-demand equipment booking and agricultural input procurement through intuitive mobile channels with transparent pricing and real-time availability.',
+      'Smallholders access pre-approved deferred rental credit (₹8,000–₹15,000) based on historical acreage, repayment consistency, and verified profile data, settling after selling produce at the APMC mandi.',
+    prdRef: 'AgriCredit Score: 742 / 900 (Excellent) • Eligible Deferred Credit: ₹8,000',
     bullets: [
-      'Self-service machinery booking with activity matching',
-      'Certified implements catalog (Ploughs, Seed drills, Harvesters)',
-      'Transparent distance-based mobilization rates'
+      'Zero upfront cash bottlenecks during peak harvest window',
+      'Non-collateral credit decisioning for rural smallholders',
+      'Automated settlement escrow holds & audit trail'
     ],
-    image: '/images/hero-tractor.jpg',
-    imageAlt: 'M-Commerce Machinery Rental Platform',
-    metricBadge: 'Booking Velocity',
-    metricValue: '< 60 Sec Instant Reserve',
-    icon: <ShoppingBag className="w-5 h-5 text-[#7aa32c]" />
-  },
-  {
-    id: 'crop-advisory',
-    category: 'pre-harvest',
-    title: 'Crop Advisory & IoT Edge Sensors',
-    description:
-      'Deliver automated agronomist advice, micro-climate weather risk predictions, and computer-vision pest diagnostics to safeguard harvest quality.',
-    bullets: [
-      'Localized weather radar and rainfall probability',
-      'Pest infestation risk modeling & spray advisory',
-      'Automated fertigation & irrigation triggers'
-    ],
-    image: '/images/hero-agronomist.jpg',
-    imageAlt: 'Crop Advisory AI Assistant',
-    metricBadge: 'Pest Prevention',
-    metricValue: '48h Early Warning',
-    icon: <Cpu className="w-5 h-5 text-[#7aa32c]" />
+    image: '/images/real-farmer-field.jpg',
+    imageAlt: 'Indian smallholder in wheat field with mobile credit confirmation',
+    metricLabel: 'Credit Decisioning',
+    metricValue: 'Score 742 / ₹8,000 Limit',
+    icon: <CreditCard className="w-5 h-5 text-[#7aa32c]" />
   },
 
-  // Post-Harvest
+  // Category 3: Live Telematics, Maintenance & Billing
   {
-    id: 'supply-chain',
-    category: 'post-harvest',
-    title: 'Supply Chain & Fleet Telematics',
+    id: 'live-telematics',
+    category: 'telematics',
+    title: 'Live CAN-Bus IoT Telematics & Anomaly Detection',
+    badge: 'PRD §23-24',
+    subtitle: 'Real-Time ECU Stream & +17% Fuel Pilferage Alerts',
     description:
-      'Optimize harvest logistics, heavy machinery dispatch, transport routing, and procurement workflows with real-time CAN-Bus IoT streaming and geofenced telematics.',
+      'Simulate and stream real-time J1939 ECU sensor data including GPS location, speed (18 km/h), engine temperature (86°C), fuel consumption (6.8 L/hr), and automated fuel theft anomaly alarms.',
+    prdRef: 'Telemetry: MH-575 • Speed: 18 km/h • Fuel: 67% • Fuel Anomaly (+17% above baseline) Triggered',
     bullets: [
-      'Live GPS fleet tracking with speed & geofencing alerts',
-      'Inter-hub fleet reallocation optimizer (Bhopal ➔ Sehore)',
-      'Driver task dispatching & turnaround optimization'
+      'Continuous real-time GPS & engine operating status telemetry',
+      'Automatic +17% abnormal fuel consumption leakage alert',
+      'Geofence boundary enforcement & ignition monitoring'
     ],
-    image: '/images/hero-tractor.jpg',
-    imageAlt: 'Supply Chain Telematics Control Center',
-    metricBadge: 'Logistics Fleet Gain',
-    metricValue: '+21% Asset Utilization',
-    icon: <Truck className="w-5 h-5 text-[#7aa32c]" />
+    image: '/images/real-tractor-field.jpg',
+    imageAlt: 'Tractor telematics in action in agricultural field',
+    metricLabel: 'Fuel Anomaly Alert',
+    metricValue: '+17% Leakage Caught',
+    icon: <Gauge className="w-5 h-5 text-[#7aa32c]" />
   },
   {
-    id: 'food-traceability',
-    category: 'post-harvest',
-    title: 'Food Traceability & Audit Logs',
+    id: 'predictive-maintenance',
+    category: 'telematics',
+    title: 'Predictive Maintenance & Machine Health Score',
+    badge: 'PRD §25-27',
+    subtitle: '0–100 Health Index & Thermal / Service Warnings',
     description:
-      'Ensure food safety, organic compliance, and chain-of-custody tracking by recording every operational step from seed variety to processing facility.',
+      'Calculate a comprehensive 0–100 Machine Health Index based on 25% maintenance history, 20% engine parameters, 20% fuel efficiency, and 15% usage age to schedule repairs before field breakdowns.',
+    prdRef: 'Machine Health: 82% • Oil service due soon • Inspection recommended within 24 operating hours',
     bullets: [
-      'Immutable harvest batch provenance records',
-      'QR code batch scanning for consumer & buyer verification',
-      'GlobalGAP and organic compliance reporting'
+      'Engine hours vs service interval threshold alerts',
+      'Engine temperature thermal warning prevention',
+      'Scheduled parts replacement ledgers for CHC mechanics'
     ],
-    image: '/images/remote-sensing.jpg',
-    imageAlt: 'Food Traceability Provenance Ledger',
-    metricBadge: 'Audit Readiness',
-    metricValue: '100% Traceable Batches',
-    icon: <Boxes className="w-5 h-5 text-[#7aa32c]" />
+    image: '/images/real-chc-yard.jpg',
+    imageAlt: 'CHC maintenance inspection in machinery yard',
+    metricLabel: 'Fleet Reliability',
+    metricValue: '82% Health Score',
+    icon: <Wrench className="w-5 h-5 text-[#7aa32c]" />
   },
   {
-    id: 'marketplace',
-    category: 'post-harvest',
-    title: 'Digital Machinery Marketplace',
+    id: 'automated-billing',
+    category: 'telematics',
+    title: 'Automated Usage Calculation & GST Invoicing',
+    badge: 'PRD §32-33',
+    subtitle: 'Verified Runtime Invoicing with Instant PDF Generation',
     description:
-      'Connect farm machinery owners, Custom Hiring Centres, and farmers in a transparent digital clearinghouse with dynamic peak-demand pricing.',
+      'Automatically calculate actual runtime hours, base rental, transport charges, fuel surcharges, platform fee, discounts, and 5% GST with instant verified PDF tax invoice generation.',
+    prdRef: 'Invoice #INV-2026-081 • Total: ₹6,472 • Telematics Verified Runtime: 6.5 hrs',
     bullets: [
-      'Multi-CHC shared machinery repository',
-      'Fair dynamic pricing with safety bounds (0.80x–1.30x)',
-      'Verified operator licensing and safety certifications'
+      'Telematics-backed dispute-free hourly billing',
+      'Configurable GST calculation and digital receipts',
+      'Client-side jsPDF instant tax invoice generation'
     ],
-    image: '/images/hero-tractor.jpg',
-    imageAlt: 'Digital Machinery Marketplace Platform',
-    metricBadge: 'Market Liquidity',
-    metricValue: '350+ Active Fleet Units',
-    icon: <Layers className="w-5 h-5 text-[#7aa32c]" />
-  },
-
-  // Operations
-  {
-    id: 'financial-management',
-    category: 'operations',
-    title: 'Financials & Deferred AgriCredit',
-    description:
-      'Empower smallholder farmers with pre-approved deferred rental credit scored by on-ground data, allowing post-harvest settlement within 45 days.',
-    bullets: [
-      'Non-regulated 0-900 algorithmic credit scoring',
-      'Instant deferred credit limits up to ₹10,000',
-      'Automated reconciliation & downloadable GST tax invoices'
-    ],
-    image: '/images/hero-agronomist.jpg',
-    imageAlt: 'AgriCredit Financial Operations Engine',
-    metricBadge: 'Credit Recovery Rate',
-    metricValue: '98.6% On-Time Repayment',
-    icon: <LineChart className="w-5 h-5 text-[#7aa32c]" />
-  },
-  {
-    id: 'farm-erp',
-    category: 'operations',
-    title: 'Enterprise Farm & CHC ERP',
-    description:
-      'Unify labor management, inventory tracking, equipment maintenance schedules, fuel monitoring, and executive P&L analytics under a single glass pane.',
-    bullets: [
-      'Real-time fuel burn rate & anomaly alerts (+17% deviation)',
-      'Predictive maintenance work orders before breakdown',
-      'Gross Merchandise Value (GMV) & utilization analytics'
-    ],
-    image: '/images/hero-tractor.jpg',
-    imageAlt: 'Enterprise AgTech ERP Dashboard',
-    metricBadge: 'Maintenance Downtime',
-    metricValue: '-42% Unplanned Repairs',
-    icon: <Building2 className="w-5 h-5 text-[#7aa32c]" />
-  },
-  {
-    id: 'sustainability',
-    category: 'operations',
-    title: 'Sustainability & Carbon Verification',
-    description:
-      'Track regenerative agriculture practices, diesel fuel conservation, optimized chemical applications, and verifiable carbon credit offsets.',
-    bullets: [
-      'Tillage fuel reduction & emission accounting',
-      'Soil organic matter enrichment logs',
-      'Verifiable ESG audit export for green financing'
-    ],
-    image: '/images/remote-sensing.jpg',
-    imageAlt: 'Sustainability ESG Measurement Portal',
-    metricBadge: 'Emissions Saved',
-    metricValue: '184 Tons CO2e Avoided',
-    icon: <Leaf className="w-5 h-5 text-[#7aa32c]" />
+    image: '/images/real-harvester-field.jpg',
+    imageAlt: 'Harvesting completion and billing calculation in field',
+    metricLabel: 'Billing Accuracy',
+    metricValue: '100% Verified Runtime',
+    icon: <FileText className="w-5 h-5 text-[#7aa32c]" />
   }
 ];
 
 export const ModularProductsSection: React.FC = () => {
   const navigate = useNavigate();
-  const [activeCategory, setActiveCategory] = useState<'pre-harvest' | 'post-harvest' | 'operations'>('pre-harvest');
-  const [activeProductId, setActiveProductId] = useState<string>('farm-management');
+  const [activeCategory, setActiveCategory] = useState<
+    'prediction' | 'matching' | 'telematics'
+  >('prediction');
+  const [activeEngineId, setActiveEngineId] = useState<string>('demand-prediction');
 
-  const filteredProducts = PRODUCTS.filter((p) => p.category === activeCategory);
-  const activeProduct =
-    filteredProducts.find((p) => p.id === activeProductId) || filteredProducts[0];
+  const filteredEngines = ENGINES.filter((e) => e.category === activeCategory);
+  const activeEngine =
+    ENGINES.find((e) => e.id === activeEngineId) || filteredEngines[0];
 
-  const handleTabChange = (category: 'pre-harvest' | 'post-harvest' | 'operations') => {
+  const handleTabChange = (category: 'prediction' | 'matching' | 'telematics') => {
     setActiveCategory(category);
-    const firstProduct = PRODUCTS.find((p) => p.category === category);
-    if (firstProduct) setActiveProductId(firstProduct.id);
+    const firstOfCategory = ENGINES.find((e) => e.category === category);
+    if (firstOfCategory) {
+      setActiveEngineId(firstOfCategory.id);
+    }
   };
 
   return (
-    <section id="modular-products" className="py-20 bg-[#efe7db]/40 border-b border-stone-200/60">
+    <section id="modular-products" className="py-24 bg-[#F5FAED] border-b border-stone-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header (Inspired by KhetiBuddy) */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-stone-200 text-xs font-bold text-[#2e4013] mb-3 shadow-subtle">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#7aa32c]/30 text-xs font-bold text-[#2e4013] mb-3 shadow-subtle">
             <Sparkles className="w-3.5 h-3.5 text-[#7aa32c]" />
-            <span>Modular Enterprise Suite</span>
+            <span>Official PRD Architecture</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1d1f] tracking-tight">
-            Focus on core business operations; we’ll handle the technology.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1c1d1f] tracking-tight">
+            AI-Powered Agricultural Machinery & CHC Operating System
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed">
-            We offer a SaaS platform with modular solutions to digitize every stage of the agri-value chain. Our platform ensures smooth, efficient operations tailored to your business needs with agricultural machinery intelligence.
+          <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-sans">
+            We don’t just help farmers find machinery. Yukti manages the complete machinery lifecycle from demand forecasting and inter-hub fleet allocation to live CAN-Bus telematics and automated GST billing.
           </p>
         </div>
 
-        {/* 3 Major Category Tabs */}
+        {/* 3 Main PRD Lifecycle Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1.5 rounded-full bg-[#efe7db] border border-stone-300/80 shadow-sm">
+          <div className="inline-flex p-1.5 rounded-full bg-[#e8efde] border border-stone-300/70 shadow-inner max-w-full overflow-x-auto">
             <button
-              onClick={() => handleTabChange('pre-harvest')}
-              className={`px-6 sm:px-8 py-3 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeCategory === 'pre-harvest'
-                  ? 'bg-[#4a2711] text-white shadow-md'
-                  : 'text-[#5e615e] hover:text-[#4a2711] hover:bg-white/50'
+              onClick={() => handleTabChange('prediction')}
+              className={`px-5 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap ${
+                activeCategory === 'prediction'
+                  ? 'bg-[#1b4d3e] text-white shadow-md'
+                  : 'text-stone-700 hover:text-stone-900 hover:bg-white/50'
               }`}
             >
-              Pre-Harvest
+              1. Demand & Fleet Allocation
             </button>
 
             <button
-              onClick={() => handleTabChange('post-harvest')}
-              className={`px-6 sm:px-8 py-3 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeCategory === 'post-harvest'
-                  ? 'bg-[#4a2711] text-white shadow-md'
-                  : 'text-[#5e615e] hover:text-[#4a2711] hover:bg-white/50'
+              onClick={() => handleTabChange('matching')}
+              className={`px-5 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap ${
+                activeCategory === 'matching'
+                  ? 'bg-[#1b4d3e] text-white shadow-md'
+                  : 'text-stone-700 hover:text-stone-900 hover:bg-white/50'
               }`}
             >
-              Post-Harvest & Logistics
+              2. Smart Matching & Pricing
             </button>
 
             <button
-              onClick={() => handleTabChange('operations')}
-              className={`px-6 sm:px-8 py-3 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeCategory === 'operations'
-                  ? 'bg-[#4a2711] text-white shadow-md'
-                  : 'text-[#5e615e] hover:text-[#4a2711] hover:bg-white/50'
+              onClick={() => handleTabChange('telematics')}
+              className={`px-5 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap ${
+                activeCategory === 'telematics'
+                  ? 'bg-[#1b4d3e] text-white shadow-md'
+                  : 'text-stone-700 hover:text-stone-900 hover:bg-white/50'
               }`}
             >
-              Operations & Finance
+              3. Live Telematics & Billing
             </button>
           </div>
         </div>
 
-        {/* Two-Column Layout: Left Accordion & Right Live Preview */}
+        {/* Two-Column Layout: Left Engine Accordion & Right Live Preview Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Accordion Items */}
+          {/* Left Column: PRD Engine Selector Cards */}
           <div className="lg:col-span-6 space-y-4">
-            {filteredProducts.map((product) => {
-              const isOpen = product.id === activeProduct.id;
+            {filteredEngines.map((engine) => {
+              const isOpen = engine.id === activeEngine.id;
               return (
                 <div
-                  key={product.id}
-                  onClick={() => setActiveProductId(product.id)}
+                  key={engine.id}
+                  onClick={() => setActiveEngineId(engine.id)}
                   className={`rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden ${
                     isOpen
-                      ? 'bg-white border-[#4a2711] shadow-lg border-l-4 border-l-[#7aa32c]'
+                      ? 'bg-white border-[#1b4d3e] shadow-lg border-l-4 border-l-[#7aa32c]'
                       : 'bg-white/80 border-stone-200/80 hover:bg-white hover:border-stone-300'
                   }`}
                 >
@@ -301,38 +302,49 @@ export const ModularProductsSection: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div
-                          className={`p-2 rounded-xl transition-colors ${
+                          className={`p-2.5 rounded-xl transition-colors ${
                             isOpen
                               ? 'bg-[#F5FAED] text-[#2e4013]'
                               : 'bg-stone-100 text-stone-600'
                           }`}
                         >
-                          {product.icon}
+                          {engine.icon}
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-stone-900">
-                          {product.title}
-                        </h3>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h3 className="text-base sm:text-lg font-bold text-stone-900 leading-snug">
+                              {engine.title}
+                            </h3>
+                          </div>
+                          <div className="text-xs text-stone-500 font-medium">
+                            {engine.subtitle}
+                          </div>
+                        </div>
                       </div>
                       <span
-                        className={`text-xs font-bold px-2.5 py-1 rounded-full ${
+                        className={`text-[11px] font-bold px-2.5 py-1 rounded-full font-typewriter ${
                           isOpen
                             ? 'bg-[#7aa32c]/20 text-[#2e4013]'
                             : 'bg-stone-100 text-stone-500'
                         }`}
                       >
-                        {product.metricValue}
+                        {engine.badge}
                       </span>
                     </div>
 
-                    {/* Expandable Body */}
                     {isOpen && (
-                      <div className="mt-4 pt-4 border-t border-stone-100 space-y-3 animate-in fade-in slide-in-from-top-2 duration-300">
+                      <div className="mt-4 pt-4 border-t border-stone-100 space-y-3 animate-in fade-in slide-in-from-top-1 duration-200">
                         <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                          {product.description}
+                          {engine.description}
                         </p>
 
+                        <div className="p-3 bg-[#F5FAED] rounded-xl border border-[#7aa32c]/20 text-xs font-mono text-[#2e4013]">
+                          <span className="font-bold text-stone-800">Formula / Rule: </span>
+                          {engine.prdRef}
+                        </div>
+
                         <ul className="space-y-1.5 pt-1">
-                          {product.bullets.map((b, idx) => (
+                          {engine.bullets.map((b, idx) => (
                             <li
                               key={idx}
                               className="text-xs text-stone-700 font-medium flex items-center gap-2"
@@ -345,17 +357,18 @@ export const ModularProductsSection: React.FC = () => {
 
                         <div className="pt-2 flex items-center justify-between">
                           <span className="text-[11px] font-bold text-[#7aa32c] uppercase tracking-wider">
-                            {product.metricBadge}
+                            {engine.metricLabel}: {engine.metricValue}
                           </span>
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
-                              navigate(`/products/${product.category}`);
-                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                              if (engine.category === 'prediction') navigate('/chc/demand');
+                              else if (engine.category === 'matching') navigate('/farmer/marketplace');
+                              else navigate('/chc/telematics');
                             }}
-                            className="text-xs font-bold text-[#4a2711] hover:text-[#7aa32c] flex items-center gap-1 cursor-pointer transition-colors"
+                            className="text-xs font-bold text-[#1b4d3e] hover:text-[#7aa32c] flex items-center gap-1 cursor-pointer transition-colors"
                           >
-                            <span>Explore Module</span>
+                            <span>Launch Live in Portal</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         </div>
@@ -367,74 +380,77 @@ export const ModularProductsSection: React.FC = () => {
             })}
           </div>
 
-          {/* Right Column: Visual Preview with Dynamic Screen Mocks */}
-          <div className="lg:col-span-6 sticky top-28">
+          {/* Right Column: Real-Tone Agricultural Photography & Live Telemetry HUD */}
+          <div className="lg:col-span-6 sticky top-28 space-y-4">
             <div className="bg-white rounded-3xl border border-stone-200/90 shadow-2xl p-4 sm:p-6 space-y-4 overflow-hidden relative group">
-              {/* Top Window Bar */}
-              <div className="flex items-center justify-between pb-3 border-b border-stone-100">
+              {/* Browser/Window Header */}
+              <div className="flex items-center justify-between pb-3 border-b border-stone-100 text-xs text-stone-400 font-mono">
                 <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-rose-400" />
                   <div className="w-3 h-3 rounded-full bg-amber-400" />
                   <div className="w-3 h-3 rounded-full bg-emerald-400" />
                 </div>
-                <div className="text-[11px] font-mono text-stone-400 font-semibold truncate max-w-[200px]">
-                  kisanops.ag/{activeProduct.category}/{activeProduct.id}
+                <div className="truncate px-3 py-1 bg-stone-50 rounded-lg text-stone-600 text-[11px]">
+                  yukti.ag/engine/{activeEngine.id}
                 </div>
-                <div className="flex items-center gap-1.5 text-xs font-bold text-[#7aa32c]">
+                <div className="flex items-center gap-1 text-[#7aa32c] font-bold text-[11px]">
                   <Activity className="w-3.5 h-3.5 animate-pulse" />
-                  <span>LIVE DEMO</span>
+                  <span>LIVE PRD ENGINE</span>
                 </div>
               </div>
 
-              {/* Main Image Frame */}
-              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-stone-200 shadow-inner group">
+              {/* Realistic Authentic Agricultural Photo */}
+              <div className="relative rounded-2xl overflow-hidden aspect-[16/10] border border-stone-200 shadow-md">
                 <img
-                  src={activeProduct.image}
-                  alt={activeProduct.imageAlt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  src={activeEngine.image}
+                  alt={activeEngine.imageAlt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Glassmorphic Live Metric Overlay */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                  <div className="glass-pill px-3 py-1.5 rounded-xl text-xs font-bold text-stone-900 flex items-center gap-2">
-                    <Gauge className="w-4 h-4 text-[#7aa32c]" />
-                    <span>{activeProduct.metricBadge}</span>
-                  </div>
-                  <div className="glass-pill px-3 py-1.5 rounded-xl text-xs font-black text-[#2e4013]">
-                    {activeProduct.metricValue}
-                  </div>
+                {/* Floating HUD Telemetry Badge */}
+                <div className="absolute top-4 left-4 px-3 py-1.5 rounded-xl bg-black/75 backdrop-blur-md text-white text-xs font-bold font-typewriter border border-white/20 shadow-lg flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span>{activeEngine.metricLabel}: {activeEngine.metricValue}</span>
                 </div>
 
-                {/* Bottom Overlay Info */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 text-white">
-                  <div className="text-sm font-bold">{activeProduct.title}</div>
-                  <p className="text-[11px] text-stone-300 truncate">
-                    {activeProduct.description}
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-black/80 backdrop-blur-md text-white border border-white/15 space-y-1">
+                  <div className="text-xs font-bold text-[#9dc84d] font-typewriter">
+                    {activeEngine.badge} • {activeEngine.title}
+                  </div>
+                  <p className="text-[11px] text-stone-300 leading-snug line-clamp-2">
+                    {activeEngine.description}
                   </p>
                 </div>
               </div>
 
-              {/* Bottom Quick Metric Tickers */}
-              <div className="grid grid-cols-3 gap-2 pt-1 text-center">
-                <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200">
-                  <div className="text-[10px] uppercase font-bold text-stone-400">
-                    Integration
-                  </div>
-                  <div className="text-xs font-bold text-stone-900">Cloud API & IoT</div>
+              {/* Engine Spec Bar */}
+              <div className="grid grid-cols-3 gap-2 pt-2 text-center text-xs">
+                <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-100">
+                  <div className="text-[10px] text-stone-400 font-bold uppercase">Architecture</div>
+                  <div className="font-bold text-stone-900">Python / PostGIS</div>
                 </div>
-                <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200">
-                  <div className="text-[10px] uppercase font-bold text-stone-400">
-                    Deployment
-                  </div>
-                  <div className="text-xs font-bold text-stone-900">Dedicated Tenant</div>
+                <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-100">
+                  <div className="text-[10px] text-stone-400 font-bold uppercase">Deployment</div>
+                  <div className="font-bold text-stone-900">Dedicated Tenant</div>
                 </div>
-                <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200">
-                  <div className="text-[10px] uppercase font-bold text-stone-400">
-                    SLA Guarantee
-                  </div>
-                  <div className="text-xs font-bold text-[#7aa32c]">99.95% Uptime</div>
+                <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-100">
+                  <div className="text-[10px] text-stone-400 font-bold uppercase">SLA Target</div>
+                  <div className="font-bold text-emerald-700">99.9% Uptime</div>
                 </div>
               </div>
+
+              {/* Portal Launch Button */}
+              <button
+                onClick={() => {
+                  if (activeEngine.category === 'prediction') navigate('/chc/demand');
+                  else if (activeEngine.category === 'matching') navigate('/farmer/marketplace');
+                  else navigate('/chc/telematics');
+                }}
+                className="w-full py-3 rounded-xl bg-[#1b4d3e] hover:bg-[#153e32] text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Play className="w-3.5 h-3.5 fill-[#9dc84d] text-[#9dc84d]" />
+                <span>Test Drive {activeEngine.title}</span>
+              </button>
             </div>
           </div>
         </div>
@@ -442,3 +458,5 @@ export const ModularProductsSection: React.FC = () => {
     </section>
   );
 };
+
+export default ModularProductsSection;

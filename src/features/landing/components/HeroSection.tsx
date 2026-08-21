@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
+  Calendar,
+  ArrowRight,
+  TrendingUp,
+  ShieldCheck,
+  Zap,
+  Activity,
+  Play,
+  Sprout,
+  Building2,
+  ChevronRight,
+  Sparkles,
+  LogIn,
   ArrowUpRight,
   ArrowDownRight,
-  Calendar,
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  Building2,
-  Sprout,
-  CheckCircle2,
-  Play,
-  LogIn
+  Fuel,
+  CreditCard,
+  Gauge
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../../store/kisanOpsStore';
 import { UserRole } from '../../../types';
@@ -30,32 +36,32 @@ interface HeroSlide {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    id: 'farm-management',
-    tabLabel: 'Farm Management',
-    title: 'Cloud based SaaS platform to manage and monitor farming operations.',
-    subtitle: 'Supporting farms and contract farming ops with structured data, compliance, and execution visibility with Yukti.',
-    highlightTag: 'End-to-End Digitization'
+    id: 'demand-allocation',
+    tabLabel: '1. Demand & Fleet Allocation',
+    title: 'Predict machinery demand & optimize inter-hub equipment allocation.',
+    subtitle: 'Yukti correlates upcoming crop maturity, historical rentals, and weather windows to alert CHCs 14 days before harvester shortages occur.',
+    highlightTag: 'PRD §17-20: Predictive AI Allocation'
   },
   {
-    id: 'supply-chain',
-    tabLabel: 'Supply Chain & Telematics',
-    title: 'An intelligence platform to power decisions across agri-food value chain.',
-    subtitle: 'Turning field-level CAN-Bus telematics and GPS data into actionable insights for fleet positioning, sourcing, and dispatch.',
-    highlightTag: 'Live CAN-Bus Telematics'
+    id: 'smart-matching',
+    tabLabel: '2. Smart Match & Dynamic Price',
+    title: 'Explainable 7-factor machine recommendations & transparent pricing.',
+    subtitle: 'From an 8-acre wheat farm in Sehore to the optimal John Deere Harvester with explainable pricing bounded by strict 80%-130% price safeguards.',
+    highlightTag: 'PRD §11-16: 94% Explainable Fit'
   },
   {
-    id: 'agri-erp',
-    tabLabel: 'Agri ERP & Machinery',
-    title: 'A unified operations system to digitize end-to-end machinery workflows.',
-    subtitle: 'Connecting regional farm demand, hub fleet allocation, AgriCredit scoring, dynamic pricing, and automated GST billing in one view.',
-    highlightTag: 'Deterministic Allocation'
+    id: 'live-telematics',
+    tabLabel: '3. Live CAN-Bus Telematics',
+    title: 'Real-time J1939 telemetry stream with instant fuel anomaly alerts.',
+    subtitle: 'Track GPS speed, engine hours, thermal thresholds, and catch abnormal fuel consumption (+17% leakage alarms) directly from the tractor ECU.',
+    highlightTag: 'PRD §23-27: J1939 Sensor Stream'
   },
   {
-    id: 'sustainability',
-    tabLabel: 'Sustainability & Credit',
-    title: 'A digital platform to make agricultural productivity measurable and inclusive.',
-    subtitle: 'Translating on-ground practice records into auditable data for deferred harvest payments, carbon tracking, and compliance.',
-    highlightTag: 'Deferred AgriCredit'
+    id: 'agricredit-billing',
+    tabLabel: '4. AgriCredit & GST Invoicing',
+    title: 'Deferred harvest payments & automated verified usage tax invoices.',
+    subtitle: 'Empower rural smallholders with non-collateral deferred rental limits (0-900 scoring) settled after selling harvest produce at the APMC mandi.',
+    highlightTag: 'PRD §30-33: Score 742 / ₹8,000 Limit'
   }
 ];
 
@@ -108,16 +114,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Heading, Subtitle & CTAs */}
           <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-            {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-stone-200 shadow-subtle text-xs font-bold text-[#2e4013]">
+            {/* Tagline Pill */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#7aa32c]/30 text-xs font-bold text-[#2e4013] shadow-subtle">
               <Sparkles className="w-3.5 h-3.5 text-[#7aa32c]" />
-              <span>{currentSlide.highlightTag}</span>
-              <span className="w-1 h-1 rounded-full bg-stone-300" />
-              <span className="text-stone-500 font-medium">Enterprise AgTech</span>
+              <span className="font-typewriter">{currentSlide.highlightTag}</span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1c1d1f] tracking-tight leading-[1.15]">
+            {/* Main Headline */}
+            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black text-[#1c1d1f] tracking-tight leading-[1.15] animate-in fade-in duration-300">
               {currentSlide.title}
             </h1>
 
@@ -126,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
               {currentSlide.subtitle}
             </p>
 
-            {/* Action Buttons (Matching user photo style) */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
               <button
                 onClick={() => navigate('/login')}
@@ -137,10 +141,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
               </button>
 
               <button
-                onClick={() => navigate('/products/pre-harvest')}
+                onClick={scrollToSolutions}
                 className="px-7 py-3.5 rounded-full bg-[#dbe8ca] hover:bg-[#cfdfba] text-[#2e4013] text-sm sm:text-base font-bold transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center gap-2"
               >
-                <span>Explore Products</span>
+                <span>Explore PRD Modules</span>
                 <ArrowRight className="w-4 h-4 text-[#7aa32c]" />
               </button>
             </div>
@@ -149,7 +153,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
             <div className="pt-4 border-t border-stone-200/80">
               <div className="text-xs font-bold text-stone-500 mb-2.5 flex items-center justify-center lg:justify-start gap-1.5">
                 <Play className="w-3.5 h-3.5 text-[#7aa32c] fill-[#7aa32c]" />
-                <span>Launch Interactive Demo Portals Instantly:</span>
+                <span>Launch Live Production Workspaces:</span>
               </div>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
                 <button
@@ -179,7 +183,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
             </div>
           </div>
 
-          {/* Right Column: Organic Curved Dual-Bubble Frame & Floating Badges */}
+          {/* Right Column: Organic Curved Dual-Bubble Frame with Real Agricultural Photography */}
           <div className="lg:col-span-6 relative flex items-center justify-center">
             {/* Ambient Radial Halo */}
             <div className="absolute inset-0 bg-radial from-[#9dc84d]/40 via-transparent to-transparent blur-xl -z-0" />
@@ -188,7 +192,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
             <div className="relative w-full max-w-[580px] aspect-[4/3] sm:aspect-[16/11]">
               {/* Connected Organic Background Shapes */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                {/* SVG Outline for Connecting Curve */}
                 <svg
                   className="w-full h-full text-[#dbe8ca]/90 drop-shadow-md"
                   viewBox="0 0 600 450"
@@ -205,81 +208,87 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
                 </svg>
               </div>
 
-              {/* Left Bubble: Farm Telemetry & Hologram Visual */}
+              {/* Left Bubble: Real Tractor Working Field (Authentic Indian photo) */}
               <div className="absolute left-2 sm:left-4 top-10 sm:top-12 w-[48%] h-[68%] rounded-[45px] sm:rounded-[60px] overflow-hidden border-4 border-white shadow-xl rotate-[-4deg] hover:rotate-0 transition-transform duration-500 z-10 group">
                 <img
-                  src="/images/hero-tractor.jpg"
-                  alt="Smart Agri Machinery Telematics"
+                  src="/images/real-tractor-field.jpg"
+                  alt="Authentic Indian agricultural tractor in field"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex flex-col justify-end p-3 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex flex-col justify-end p-3 text-white">
                   <div className="text-[10px] font-mono font-bold text-emerald-300 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    <span>CAN-BUS TELEMATICS</span>
+                    <span>CAN-BUS J1939 LIVE</span>
                   </div>
-                  <div className="text-xs font-bold leading-tight">Field 04 • Autonomous 4.5 mph</div>
+                  <div className="text-xs font-bold leading-tight font-typewriter">
+                    Mahindra 575 DI • 18 km/h • 6.8 L/h
+                  </div>
                 </div>
               </div>
 
-              {/* Right Bubble: Modern Agronomist Specialist with Tablet (Exact photo match) */}
+              {/* Right Bubble: Real Indian Farmer in Golden Wheat Field */}
               <div className="absolute right-2 sm:right-4 bottom-6 sm:bottom-8 w-[56%] h-[78%] rounded-[55px] sm:rounded-[75px] overflow-hidden border-4 border-white shadow-2xl rotate-[3deg] hover:rotate-0 transition-transform duration-500 z-20 group">
                 <img
-                  src="/images/hero-agronomist.jpg"
-                  alt="Modern Agronomist with Tablet in Greenhouse"
+                  src="/images/real-farmer-field.jpg"
+                  alt="Real Indian farmer checking harvest schedule in wheat field"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1b4d3e]/70 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
-                  <div className="text-[11px] font-mono text-emerald-200">Crop Health Index: 94%</div>
-                  <div className="text-xs font-bold leading-tight">AI Diagnostic Suite Active</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b4d3e]/85 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
+                  <div className="text-[11px] font-mono text-emerald-200 font-bold">
+                    Ramesh Kumar • Sehore MP
+                  </div>
+                  <div className="text-xs font-bold leading-tight font-typewriter">
+                    8-Acre Wheat • 94% Harvester Fit
+                  </div>
                 </div>
               </div>
 
-              {/* Floating Pill Badge 1: Top-Left (200K+ Acres Digitized) */}
+              {/* Floating Pill Badge 1: Top-Left (+34% Demand Surge Detected) */}
               <div className="absolute -top-2 left-0 sm:left-4 z-30 animate-bounce duration-1000">
                 <div className="glass-pill px-4 py-2.5 rounded-full flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#7aa32c] text-white flex items-center justify-center shrink-0 shadow-sm">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm sm:text-base font-black text-[#1c1d1f] leading-none">
-                      200K+
+                    <div className="text-sm sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
+                      +34%
                     </div>
                     <div className="text-[10px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
-                      Acres Digitized
+                      Demand Surge Caught
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Pill Badge 2: Bottom-Center (24% Reduction in Production Cost) */}
+              {/* Floating Pill Badge 2: Bottom-Center (-38% Machine Downtime) */}
               <div className="absolute -bottom-4 left-1/4 sm:left-1/3 z-30">
                 <div className="glass-pill px-4 py-2.5 rounded-full flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#c2a587] text-white flex items-center justify-center shrink-0 shadow-sm">
                     <ArrowDownRight className="w-4 h-4" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm sm:text-base font-black text-[#1c1d1f] leading-none">
-                      24%
+                    <div className="text-sm sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
+                      -38%
                     </div>
                     <div className="text-[10px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
-                      Reduction in Cost
+                      Unplanned Downtime
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Pill Badge 3: Right-Middle (30% Boost In Productivity) */}
+              {/* Floating Pill Badge 3: Right-Middle (+21% Fleet Utilization) */}
               <div className="absolute top-1/3 -right-2 sm:-right-4 z-30">
                 <div className="glass-pill px-4 py-2.5 rounded-full flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#7aa32c] text-white flex items-center justify-center shrink-0 shadow-sm">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm sm:text-base font-black text-[#1c1d1f] leading-none">
-                      30%
+                    <div className="text-sm sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
+                      +21%
                     </div>
                     <div className="text-[10px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
-                      Boost In Productivity
+                      Fleet Utilization Gain
                     </div>
                   </div>
                 </div>
@@ -291,3 +300,5 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
     </section>
   );
 };
+
+export default HeroSection;
