@@ -134,23 +134,27 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* User Profile */}
-          <div className="flex items-center gap-2 pl-2 border-l border-slate-200">
-            {state.currentUser.avatarUrl ? (
-              <img
-                src={state.currentUser.avatarUrl}
-                alt={state.currentUser.fullName}
-                loading="lazy"
-                decoding="async"
-                className="w-8 h-8 rounded-full object-cover border border-slate-200"
-              />
-            ) : (
-              <div className="w-8 h-8 rounded-full bg-agri-100 text-agri-900 font-bold text-xs flex items-center justify-center">
-                {state.currentUser.fullName.charAt(0)}
+          <div className="flex items-center gap-2.5 pl-2 border-l border-slate-200">
+            {/* First Letter Avatar Circle */}
+            <div className={clsx(
+              "w-8 h-8 rounded-full font-bold text-xs flex items-center justify-center border shadow-xs select-none uppercase shrink-0",
+              state.selectedRole === 'ADMIN' ? "bg-purple-100 text-purple-900 border-purple-200" :
+              state.selectedRole === 'CHC_MANAGER' ? "bg-sky-100 text-sky-900 border-sky-200" :
+              "bg-emerald-100 text-emerald-900 border-emerald-200"
+            )}>
+              {(state.currentUser.fullName || 'U').charAt(0)}
+            </div>
+
+            <div className="hidden sm:block text-left">
+              <div className="text-xs font-bold text-slate-900 leading-tight">
+                {state.currentUser.fullName || 'Yukti User'}
               </div>
-            )}
-            <div className="hidden lg:block text-left">
-              <div className="text-xs font-bold text-slate-800 leading-tight">{state.currentUser.fullName}</div>
-              <div className="text-[10px] text-slate-500">{state.currentUser.email || state.currentUser.phoneNumber}</div>
+              <div className="text-[10px] font-semibold text-slate-500">
+                {state.selectedRole === 'ADMIN' ? 'Platform Administrator' :
+                 state.selectedRole === 'CHC_MANAGER' ? 'CHC Hub Manager' :
+                 state.selectedRole === 'OPERATOR' ? 'Machine Operator' :
+                 'Farmer'}
+              </div>
             </div>
 
             {/* Log Out Button */}

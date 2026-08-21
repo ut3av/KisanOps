@@ -78,9 +78,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787332882.5775583,
-    "seen": 1787333008.1183424,
-    "ast_hash": "fc1881907cb513715733e488233d9982",
+    "mtime": 1787333206.3882532,
+    "seen": 1787333230.674579,
+    "ast_hash": "b2ad7c67b722d2e39910264c2c52d699",
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
