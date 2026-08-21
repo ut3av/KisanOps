@@ -170,8 +170,10 @@ export async function signUpWithEmail(
   password: string,
   fullName: string,
   role: UserRole,
-  phone: string
+  phone?: string
 ): Promise<AuthResponse> {
+  const finalPhone = phone || `+91 ${Math.floor(6000000000 + Math.random() * 3999999999)}`;
+
   if (isSupabaseConfigured) {
     try {
       const { data, error } = await supabase.auth.signUp({
@@ -181,7 +183,7 @@ export async function signUpWithEmail(
           data: {
             full_name: fullName,
             role,
-            phone_number: phone,
+            phone_number: finalPhone,
           },
         },
       });
@@ -191,7 +193,7 @@ export async function signUpWithEmail(
         id: data.user?.id || `user-${Date.now()}`,
         fullName,
         email,
-        phoneNumber: phone,
+        phoneNumber: finalPhone,
         role,
         district: 'Sehore',
         village: 'Bilkisganj',
@@ -210,7 +212,7 @@ export async function signUpWithEmail(
         id: `user-${Date.now()}`,
         fullName,
         email,
-        phoneNumber: phone,
+        phoneNumber: finalPhone,
         role,
         district: 'Sehore',
         village: 'Bilkisganj',

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {
   Tractor,
-  Phone,
   Mail,
   Lock,
   User,
@@ -12,23 +11,17 @@ import {
   ArrowRight,
   CheckCircle2,
   AlertCircle,
-  KeyRound,
   Eye,
   EyeOff,
-  RotateCcw,
-  Database,
   Sprout,
-  Check
+  Database,
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { UserRole, UserProfile } from '../../types';
 import {
-  sendPhoneOtp,
-  verifyPhoneOtp,
   signInWithEmail,
   signUpWithEmail,
   isSupabaseConfigured,
-  supabase
 } from '../../lib/supabaseClient';
 import { SEEDED_PROFILES } from '../../data/seedData';
 import clsx from 'clsx';
@@ -38,75 +31,19 @@ export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState<'SIGN_IN' | 'SIGN_UP'>('SIGN_IN');
-  const [authMethod, setAuthMethod] = useState<'EMAIL' | 'PHONE'>('EMAIL');
   const [selectedRole, setSelectedRole] = useState<UserRole>('FARMER');
 
   // Form Fields - Fresh & Empty Defaults
   const [fullName, setFullName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-  const [phone, setPhone] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [district, setDistrict] = useState<string>('Sehore');
-  const [village, setVillage] = useState<string>('Bilkisganj');
-
-  // OTP State
-  const [otpSent, setOtpSent] = useState<boolean>(false);
-  const [otpCode, setOtpCode] = useState<string>('');
-  const [resendTimer, setResendTimer] = useState<number>(30);
 
   // Status & Error Handling
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [showDemoPersonas, setShowDemoPersonas] = useState<boolean>(false);
-
-  const handleSendOtp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!phone || phone.length < 10) {
-      setErrorMessage('Please enter a valid 10-digit mobile number.');
-      return;
-    }
-
-    setErrorMessage(null);
-    setIsLoading(true);
-
-    const res = await sendPhoneOtp(phone);
-    setIsLoading(false);
-
-    if (res.success) {
-      setOtpSent(true);
-      setSuccessMessage(`Verification OTP sent to +91 ${phone}. ${!isSupabaseConfigured ? '(Verification Code: 123456)' : ''}`);
-      setResendTimer(30);
-    } else {
-      setErrorMessage(res.error || 'Failed to send OTP. Please check your connection.');
-    }
-  };
-
-  const handleVerifyOtp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!otpCode) {
-      setErrorMessage('Please enter the 6-digit verification code.');
-      return;
-    }
-
-    setErrorMessage(null);
-    setIsLoading(true);
-
-    const res = await verifyPhoneOtp(
-      phone,
-      otpCode,
-      selectedRole,
-      activeTab === 'SIGN_UP' ? fullName : undefined
-    );
-    setIsLoading(false);
-
-    if (res.success && res.user) {
-      completeAuth(res.user);
-    } else {
-      setErrorMessage(res.error || 'Invalid verification code. Please try again.');
-    }
-  };
 
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -125,7 +62,7 @@ export const LoginPage: React.FC = () => {
         return;
       }
 
-      const res = await signUpWithEmail(email, password, fullName, selectedRole, phone || '+91 98765 43210');
+      const res = await signUpWithEmail(email, password, fullName, selectedRole);
       setIsLoading(false);
 
       if (res.success && res.user) {
@@ -148,7 +85,7 @@ export const LoginPage: React.FC = () => {
       if (res.success && res.user) {
         completeAuth(res.user);
       } else {
-        setErrorMessage(res.error || 'Invalid email or password.');
+        setErrorMessage(res.error || 'Invalid email or password. Please try again.');
       }
     }
   };
@@ -336,46 +273,6 @@ export const LoginPage: React.FC = () => {
             </div>
           )}
 
-          {/* Sub-toggle for Sign In: Email vs Mobile OTP */}
-          {activeTab === 'SIGN_IN' && (
-            <div className="flex items-center justify-center gap-4 text-xs">
-              <button
-                type="button"
-                onClick={() => {
-                  setAuthMethod('EMAIL');
-                  setOtpSent(false);
-                  setErrorMessage(null);
-                }}
-                className={clsx(
-                  'px-4 py-1.5 rounded-full font-bold transition-all cursor-pointer flex items-center gap-1.5',
-                  authMethod === 'EMAIL'
-                    ? 'bg-stone-900 text-white'
-                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
-                )}
-              >
-                <Mail className="w-3.5 h-3.5" />
-                <span>Email & Password</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setAuthMethod('PHONE');
-                  setErrorMessage(null);
-                }}
-                className={clsx(
-                  'px-4 py-1.5 rounded-full font-bold transition-all cursor-pointer flex items-center gap-1.5',
-                  authMethod === 'PHONE'
-                    ? 'bg-stone-900 text-white'
-                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
-                )}
-              >
-                <Phone className="w-3.5 h-3.5" />
-                <span>Mobile Phone OTP</span>
-              </button>
-            </div>
-          )}
-
           {/* Error / Success Alerts */}
           {errorMessage && (
             <div className="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-800 flex items-start gap-2 animate-in fade-in">
@@ -392,182 +289,87 @@ export const LoginPage: React.FC = () => {
           )}
 
           {/* Form: Email Auth (Sign In or Sign Up) */}
-          {(authMethod === 'EMAIL' || activeTab === 'SIGN_UP') && (
-            <form onSubmit={handleEmailAuth} className="space-y-4">
-              {activeTab === 'SIGN_UP' && (
-                <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">
-                    Full Legal Name
-                  </label>
-                  <div className="relative">
-                    <User className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Ramesh Kumar"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#7aa32c]"
-                    />
-                  </div>
-                </div>
-              )}
-
+          <form onSubmit={handleEmailAuth} className="space-y-4">
+            {activeTab === 'SIGN_UP' && (
               <div>
                 <label className="block text-xs font-bold text-stone-700 mb-1">
-                  Email Address
+                  Full Legal Name
                 </label>
                 <div className="relative">
-                  <Mail className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
+                  <User className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
                   <input
-                    type="email"
+                    type="text"
                     required
-                    placeholder="name@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="e.g. Ramesh Kumar"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
                     className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#7aa32c]"
                   />
                 </div>
               </div>
+            )}
 
-              {activeTab === 'SIGN_UP' && (
-                <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">
-                    Mobile Phone (+91)
-                  </label>
-                  <div className="relative">
-                    <Phone className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
-                    <input
-                      type="tel"
-                      placeholder="9876543210"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#7aa32c]"
-                    />
-                  </div>
-                </div>
-              )}
-
-              <div>
-                <label className="block text-xs font-bold text-stone-700 mb-1">
-                  Password
-                </label>
-                <div className="relative">
-                  <Lock className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
-                  <input
-                    type={showPassword ? 'text' : 'password'}
-                    required
-                    placeholder="Enter secure password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#7aa32c]"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-3 text-stone-400 hover:text-stone-600"
-                  >
-                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                  </button>
-                </div>
+            <div>
+              <label className="block text-xs font-bold text-stone-700 mb-1">
+                Email Address
+              </label>
+              <div className="relative">
+                <Mail className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
+                <input
+                  type="email"
+                  required
+                  placeholder="name@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#7aa32c]"
+                />
               </div>
-
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full py-3.5 rounded-xl bg-[#1b4d3e] hover:bg-[#153e32] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-              >
-                {isLoading ? (
-                  <span>Processing Auth...</span>
-                ) : activeTab === 'SIGN_UP' ? (
-                  <>
-                    <span>Create {selectedRole === 'FARMER' ? 'Farmer' : selectedRole === 'CHC_MANAGER' ? 'CHC Hub' : 'Admin'} Account</span>
-                    <ArrowRight className="w-4 h-4 text-[#9dc84d]" />
-                  </>
-                ) : (
-                  <>
-                    <span>Sign In with Email</span>
-                    <ArrowRight className="w-4 h-4 text-[#9dc84d]" />
-                  </>
-                )}
-              </button>
-            </form>
-          )}
-
-          {/* Form: Mobile Phone OTP (Sign In Only) */}
-          {activeTab === 'SIGN_IN' && authMethod === 'PHONE' && (
-            <div className="space-y-4">
-              {!otpSent ? (
-                <form onSubmit={handleSendOtp} className="space-y-4">
-                  <div>
-                    <label className="block text-xs font-bold text-stone-700 mb-1">
-                      Registered Mobile Number
-                    </label>
-                    <div className="relative">
-                      <div className="absolute left-3.5 top-2.5 text-xs font-bold text-stone-500">
-                        +91
-                      </div>
-                      <input
-                        type="tel"
-                        required
-                        placeholder="98260 41234"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        className="w-full pl-12 pr-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#7aa32c]"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="w-full py-3.5 rounded-xl bg-[#7aa32c] hover:bg-[#6b9125] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-                  >
-                    <span>{isLoading ? 'Sending SMS...' : 'Send Verification OTP'}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </form>
-              ) : (
-                <form onSubmit={handleVerifyOtp} className="space-y-4 animate-in fade-in">
-                  <div>
-                    <div className="flex items-center justify-between mb-1">
-                      <label className="block text-xs font-bold text-stone-700">
-                        Enter 6-Digit SMS Code
-                      </label>
-                      <button
-                        type="button"
-                        onClick={() => setOtpSent(false)}
-                        className="text-[11px] text-[#7aa32c] hover:underline"
-                      >
-                        Change Number
-                      </button>
-                    </div>
-                    <div className="relative">
-                      <KeyRound className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
-                      <input
-                        type="text"
-                        maxLength={6}
-                        required
-                        placeholder="123456"
-                        value={otpCode}
-                        onChange={(e) => setOtpCode(e.target.value)}
-                        className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm font-mono tracking-widest text-stone-900 focus:outline-none focus:border-[#7aa32c]"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="w-full py-3.5 rounded-xl bg-[#1b4d3e] hover:bg-[#153e32] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-                  >
-                    <span>{isLoading ? 'Verifying...' : 'Verify OTP & Launch Workspace'}</span>
-                    <ArrowRight className="w-4 h-4 text-[#9dc84d]" />
-                  </button>
-                </form>
-              )}
             </div>
-          )}
+
+            <div>
+              <label className="block text-xs font-bold text-stone-700 mb-1">
+                Password
+              </label>
+              <div className="relative">
+                <Lock className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  required
+                  placeholder="Enter secure password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#7aa32c]"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-3 text-stone-400 hover:text-stone-600 cursor-pointer"
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full py-3.5 rounded-xl bg-[#1b4d3e] hover:bg-[#153e32] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+            >
+              {isLoading ? (
+                <span>Processing Auth...</span>
+              ) : activeTab === 'SIGN_UP' ? (
+                <>
+                  <span>Create {selectedRole === 'FARMER' ? 'Farmer' : selectedRole === 'CHC_MANAGER' ? 'CHC Hub' : 'Admin'} Account</span>
+                  <ArrowRight className="w-4 h-4 text-[#9dc84d]" />
+                </>
+              ) : (
+                <>
+                  <span>Sign In with Email</span>
+                  <ArrowRight className="w-4 h-4 text-[#9dc84d]" />
+                </>
+              )}
+            </button>
+          </form>
 
           {/* Quick Access Verified Profiles Drawer */}
           <div className="pt-4 border-t border-stone-100">

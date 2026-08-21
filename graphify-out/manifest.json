@@ -318,9 +318,9 @@
     "semantic_hash": ""
   },
   "src/features/auth/LoginPage.tsx": {
-    "mtime": 1787329972.9810345,
-    "seen": 1787330215.383627,
-    "ast_hash": "f73eae506fc42eba9341674e4910260d",
+    "mtime": 1787332452.544442,
+    "seen": 1787332468.2202158,
+    "ast_hash": "9d4e734435bee5a3d86e5c73c8445cf0",
     "semantic_hash": ""
   },
   "src/features/common/NotFoundPage.tsx": {
@@ -336,9 +336,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/BookDemoModal.tsx": {
-    "mtime": 1787330002.373547,
-    "seen": 1787330215.383644,
-    "ast_hash": "9ba823eda0f8a2d627b68bdf1e05a108",
+    "mtime": 1787332437.4349573,
+    "seen": 1787332468.220232,
+    "ast_hash": "51ee27e00792fcc4eb623fe7a48a12c5",
     "semantic_hash": ""
   },
   "src/features/landing/components/CtaBanner.tsx": {
@@ -468,9 +468,9 @@
     "semantic_hash": ""
   },
   "src/lib/supabaseClient.ts": {
-    "mtime": 1787313378.5041244,
-    "seen": 1787322604.0199313,
-    "ast_hash": "08016f1e58ad14c92ec5fac241fe5a53",
+    "mtime": 1787332383.9172466,
+    "seen": 1787332468.2202592,
+    "ast_hash": "5a51e5f2673929ddbec40164dba7fd46",
     "semantic_hash": ""
   },
   "src/lib/weatherEngine.ts": {
@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "supabase/schema.sql": {
-    "mtime": 1787313443.736278,
-    "seen": 1787322604.0199502,
-    "ast_hash": "ff5c1412c03899196fdea3efa46b7286",
+    "mtime": 1787332273.5809948,
+    "seen": 1787332293.573451,
+    "ast_hash": "f43904a2dc891ee5bbf3629a9bf2b167",
     "semantic_hash": ""
   },
   "supabase/seed.sql": {

@@ -300,7 +300,22 @@ CREATE TABLE IF NOT EXISTS public.audit_logs (
 -- 14. Automatic Supabase Auth User ➔ Profile Creation Trigger
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger AS $$
+DECLARE
+    assigned_role user_role := 'FARMER';
+    derived_phone text;
 BEGIN
+    -- Safe role resolution without enum casting exceptions
+    IF new.raw_user_meta_data->>'role' IN ('FARMER', 'OPERATOR', 'CHC_MANAGER', 'FLEET_MANAGER', 'ADMIN') THEN
+        assigned_role := (new.raw_user_meta_data->>'role')::user_role;
+    END IF;
+
+    -- Safe phone resolution avoiding null/empty collisions
+    derived_phone := COALESCE(
+        NULLIF(new.phone, ''),
+        NULLIF(new.raw_user_meta_data->>'phone_number', ''),
+        '+91' || floor(random() * 8999999999 + 1000000000)::text
+    );
+
     INSERT INTO public.profiles (
         id,
         auth_user_id,
@@ -312,15 +327,24 @@ BEGIN
     VALUES (
         gen_random_uuid(),
         new.id,
-        COALESCE(new.raw_user_meta_data->>'full_name', split_part(new.email, '@', 1)),
-        COALESCE(new.phone, new.raw_user_meta_data->>'phone_number', '+91' || floor(random() * (9999999999 - 6000000000 + 1) + 6000000000)::text),
+        COALESCE(NULLIF(new.raw_user_meta_data->>'full_name', ''), split_part(new.email, '@', 1), 'Yukti User'),
+        derived_phone,
         new.email,
-        COALESCE((new.raw_user_meta_data->>'role')::user_role, 'FARMER'::user_role)
+        assigned_role
     )
-    ON CONFLICT (auth_user_id) DO NOTHING;
+    ON CONFLICT (auth_user_id) DO UPDATE SET
+        full_name = EXCLUDED.full_name,
+        email = COALESCE(EXCLUDED.email, public.profiles.email),
+        updated_at = NOW();
+
     RETURN new;
+EXCEPTION
+    WHEN OTHERS THEN
+        -- Prevents 500 "Database error saving new user" if an edge constraint triggers
+        RAISE WARNING 'handle_new_user encountered non-fatal error: %', SQLERRM;
+        RETURN new;
 END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
+$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = public;
 
 DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
 CREATE TRIGGER on_auth_user_created
