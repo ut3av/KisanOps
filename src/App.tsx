@@ -15,6 +15,7 @@ import { ProductsOperationsPage } from './features/landing/pages/ProductsOperati
 import { SolutionsPage } from './features/landing/pages/SolutionsPage';
 import { PricingRoiPage } from './features/landing/pages/PricingRoiPage';
 import { AboutPage } from './features/landing/pages/AboutPage';
+import { ContactPage } from './features/landing/pages/ContactPage';
 
 // Authentication & Roles
 import { LandingRoleSelect } from './features/auth/LandingRoleSelect';
@@ -68,6 +69,7 @@ export const App: React.FC = () => {
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/pricing" element={<PricingRoiPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />}
 
           {/* Authentication & Role Selection */}
           <Route path="/role-select" element={<LandingRoleSelect />} />
