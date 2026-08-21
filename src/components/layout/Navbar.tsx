@@ -81,11 +81,17 @@ export const Navbar: React.FC = () => {
                 state.selectedRole === 'OPERATOR' ? 'bg-amber-500' :
                 'bg-emerald-500'
               )} />
-              <span>
+              <span className="hidden sm:inline">
                 {state.selectedRole === 'ADMIN' ? 'Platform Admin' :
                  state.selectedRole === 'CHC_MANAGER' ? 'CHC Hub Manager' :
                  state.selectedRole === 'OPERATOR' ? 'Machine Operator' :
                  'Farmer Portal'}
+              </span>
+              <span className="sm:hidden">
+                {state.selectedRole === 'ADMIN' ? 'Admin' :
+                 state.selectedRole === 'CHC_MANAGER' ? 'CHC' :
+                 state.selectedRole === 'OPERATOR' ? 'Driver' :
+                 'Farmer'}
               </span>
               <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
             </button>

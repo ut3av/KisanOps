@@ -166,13 +166,13 @@ export const FarmerMarketplace: React.FC = () => {
         </div>
 
         {/* Category Filter Chips */}
-        <div className="flex flex-wrap gap-2 pt-1 border-t border-slate-100">
+        <div className="flex items-center gap-2 pt-1 border-t border-slate-100 overflow-x-auto no-scrollbar sm:flex-wrap">
           {categories.map(cat => (
             <button
               key={cat.value}
               onClick={() => setSelectedCategory(cat.value)}
               className={clsx(
-                'px-3 py-1.5 rounded-xl text-xs font-bold transition-all',
+                'px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap shrink-0 cursor-pointer',
                 selectedCategory === cat.value
                   ? 'bg-agri-800 text-white shadow-sm'
                   : 'bg-surface-100 text-slate-600 hover:bg-surface-200'

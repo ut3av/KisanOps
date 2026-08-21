@@ -38,9 +38,46 @@ export const CHCLayout: React.FC = () => {
     <div className="min-h-screen bg-surface-50 flex flex-col">
       <Navbar />
 
-      <div className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6">
-        {/* Desktop Sidebar Navigation */}
-        <aside className="w-full lg:w-64 shrink-0 space-y-4">
+      {/* Mobile Horizontal Subnav Pill Bar (lg:hidden) */}
+      <div className="lg:hidden bg-white border-b border-slate-200 sticky top-16 z-30 shadow-xs">
+        <div className="flex items-center gap-1.5 px-3 py-2.5 overflow-x-auto no-scrollbar">
+          {chcNavItems.map(item => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.end}
+              className={({ isActive }) =>
+                clsx(
+                  'flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap shrink-0 transition-all',
+                  isActive
+                    ? 'bg-agri-800 text-white shadow-xs'
+                    : 'text-slate-600 bg-surface-50 hover:bg-slate-100'
+                )
+              }
+            >
+              <item.icon className="w-3.5 h-3.5" />
+              <span>{item.label}</span>
+              {item.pulse && (
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 radar-pulse" />
+              )}
+              {item.count !== undefined && item.count > 0 && (
+                <span
+                  className={clsx(
+                    'text-[10px] font-bold px-1.5 py-0.2 rounded-full',
+                    item.alert ? 'bg-rose-500 text-white' : 'bg-slate-200 text-slate-700'
+                  )}
+                >
+                  {item.count}
+                </span>
+              )}
+            </NavLink>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 flex flex-col lg:flex-row gap-6">
+        {/* Desktop Sidebar Navigation (Hidden on Mobile) */}
+        <aside className="hidden lg:block w-64 shrink-0 space-y-4">
           {/* Hub Status Card */}
           <div className="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-subtle">
             <div className="flex items-center justify-between mb-2">
