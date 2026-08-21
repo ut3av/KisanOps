@@ -302,7 +302,7 @@ export function computeHarvestRiskAssessment(
   let actionRecommendation = 'Safe to operate regular combine harvester rotation.';
 
   if (overallRiskLevel === 'CRITICAL_EMERGENCY') {
-    alertTitle = `⚠️ Urgent Rain Alert: ${totalIncomingRainfallMm}mm Rain Expected in ${dryWindowHoursRemaining}h`;
+    alertTitle = `Urgent Rain Alert: ${totalIncomingRainfallMm}mm Rain Expected in ${dryWindowHoursRemaining}h`;
     alertSummary = `Unseasonal precipitation system approaching Sehore / Bilkisganj. Standing wheat crops at high lodging and moisture risk.`;
     actionRecommendation = `Pre-book combine harvester immediately. Complete harvesting within ${Math.round(dryWindowHoursRemaining / 24)} days before soil becomes impassable.`;
   } else if (overallRiskLevel === 'HIGH') {

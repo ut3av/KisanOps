@@ -10,7 +10,8 @@ import {
   ArrowRight,
   Sparkles,
   Zap,
-  CheckCircle2
+  CheckCircle2,
+  Wheat
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { DemoScenarioBar } from '../../components/demo/DemoScenarioBar';
@@ -49,15 +50,15 @@ export const LandingRoleSelect: React.FC = () => {
         {/* Intelligence Flywheel Strip */}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-xs font-semibold text-slate-700">
           <span className="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-subtle">Predict Demand</span>
-          <span className="text-slate-400">➔</span>
+          <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
           <span className="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-subtle">Allocate Fleet</span>
-          <span className="text-slate-400">➔</span>
+          <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
           <span className="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-subtle">Smart Match</span>
-          <span className="text-slate-400">➔</span>
+          <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
           <span className="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-subtle">Deferred Credit</span>
-          <span className="text-slate-400">➔</span>
+          <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
           <span className="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-subtle">Live Telematics</span>
-          <span className="text-slate-400">➔</span>
+          <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
           <span className="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-subtle">Automated Billing</span>
         </div>
 
@@ -74,14 +75,14 @@ export const LandingRoleSelect: React.FC = () => {
       </header>
 
       {/* Role Selection Interactive Cards */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-1">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-1 flex flex-col justify-center">
         <div className="text-center mb-6">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-400">
+          <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest">
             Select Your Role to Enter Platform
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
           {/* Card 1: Farmer Portal */}
           <div
             onClick={() => handleSelectRole('FARMER')}
@@ -89,8 +90,8 @@ export const LandingRoleSelect: React.FC = () => {
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                  🌾
+                <div className="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Wheat className="w-7 h-7 text-emerald-700" />
                 </div>
                 <span className="text-xs bg-emerald-50 text-emerald-700 font-bold px-3 py-1 rounded-full border border-emerald-200">
                   Mobile-First Portal
@@ -135,14 +136,14 @@ export const LandingRoleSelect: React.FC = () => {
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-14 h-14 rounded-2xl bg-agri-100 text-agri-900 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                  🏢
+                <div className="w-14 h-14 rounded-2xl bg-agri-100 text-agri-900 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Building2 className="w-7 h-7 text-agri-800" />
                 </div>
                 <span className="text-xs bg-agri-50 text-agri-800 font-bold px-3 py-1 rounded-full border border-agri-200">
                   Desktop Operations
                 </span>
               </div>
-
+              
               <div>
                 <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-agri-800 transition-colors">
                   Continue as CHC Hub Manager
@@ -159,7 +160,7 @@ export const LandingRoleSelect: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-agri-700 shrink-0" />
-                  <span>Deterministic machine relocation optimizer (Bhopal ➔ Sehore)</span>
+                  <span>Deterministic machine relocation optimizer (Bhopal -&gt; Sehore)</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-agri-700 shrink-0" />

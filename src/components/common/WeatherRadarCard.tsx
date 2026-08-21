@@ -275,10 +275,10 @@ export const WeatherRadarCard: React.FC<WeatherRadarCardProps> = ({
             </div>
             <div>
               <div className="font-extrabold text-xs sm:text-sm">{assessment.alertTitle}</div>
-              <p className="text-xs text-slate-700 mt-0.5">{assessment.alertSummary}</p>
-              <p className="text-xs font-bold text-slate-900 mt-1">
-                👉 Recommendation: {assessment.actionRecommendation}
-              </p>
+              <div className="flex items-center gap-1.5 font-bold text-xs text-slate-900 mt-1.5">
+                <ArrowRight className="w-3.5 h-3.5 text-agri-700 shrink-0" />
+                <span>Recommendation: {assessment.actionRecommendation}</span>
+              </div>
             </div>
           </div>
 
