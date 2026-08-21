@@ -1,5 +1,5 @@
 {
-  "0": "App.tsx",
+  "0": "react",
   "1": "kisanOpsStore.ts",
   "2": "FarmerMarketplace.tsx",
   "3": "devDependencies",
@@ -8,7 +8,7 @@
   "6": "LeafletFleetMap.tsx",
   "7": "compilerOptions",
   "8": "compilerOptions",
-  "9": "react",
+  "9": "LandingPage.tsx",
   "10": "schema.sql",
   "11": "plugins",
   "12": "tsconfig.json",
@@ -27,5 +27,7 @@
   "25": "BookDemoModal.tsx",
   "26": "rules/graphify.md",
   "27": "workflows/graphify.md",
-  "28": "quick_fix_auth.sql"
+  "28": "quick_fix_auth.sql",
+  "29": "TrustMarquee.tsx",
+  "30": "clean_demo_data.sql"
 }

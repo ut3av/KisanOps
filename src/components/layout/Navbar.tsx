@@ -67,80 +67,19 @@ export const Navbar: React.FC = () => {
             <span>Sehore, Madhya Pradesh</span>
           </div>
 
-          {/* Role Switcher Pill */}
-          <div className="relative">
-            <button
-              onClick={() => setShowRoleMenu(!showRoleMenu)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-100 hover:bg-surface-200 border border-slate-200 text-xs font-semibold text-slate-800 transition-colors"
-            >
-              <div className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span>Role: {state.selectedRole.replace('_', ' ')}</span>
-              <ChevronDown className="w-3.5 h-3.5 text-slate-500" />
-            </button>
-
-            {showRoleMenu && (
-              <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-elevated border border-slate-200 py-2 z-50">
-                <div className="px-3 py-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                  Switch Active Persona
-                </div>
-
-                <button
-                  onClick={() => handleRoleChange('FARMER')}
-                  className={clsx(
-                    'w-full text-left px-3 py-2 text-xs flex items-center gap-2 hover:bg-slate-50',
-                    state.selectedRole === 'FARMER' ? 'text-agri-800 font-bold bg-agri-50/60' : 'text-slate-700'
-                  )}
-                >
-                  <User className="w-4 h-4 text-emerald-600" />
-                  <div>
-                    <div className="font-semibold">Farmer View</div>
-                    <div className="text-[10px] text-slate-500">Ramesh Kumar (8 Acres)</div>
-                  </div>
-                </button>
-
-                <button
-                  onClick={() => handleRoleChange('CHC_MANAGER')}
-                  className={clsx(
-                    'w-full text-left px-3 py-2 text-xs flex items-center gap-2 hover:bg-slate-50',
-                    state.selectedRole === 'CHC_MANAGER' ? 'text-agri-800 font-bold bg-agri-50/60' : 'text-slate-700'
-                  )}
-                >
-                  <Building2 className="w-4 h-4 text-sky-600" />
-                  <div>
-                    <div className="font-semibold">CHC Manager</div>
-                    <div className="text-[10px] text-slate-500">Sehore Agri Centre</div>
-                  </div>
-                </button>
-
-                <button
-                  onClick={() => handleRoleChange('OPERATOR')}
-                  className={clsx(
-                    'w-full text-left px-3 py-2 text-xs flex items-center gap-2 hover:bg-slate-50',
-                    state.selectedRole === 'OPERATOR' ? 'text-agri-800 font-bold bg-agri-50/60' : 'text-slate-700'
-                  )}
-                >
-                  <Tractor className="w-4 h-4 text-amber-600" />
-                  <div>
-                    <div className="font-semibold">Machine Operator</div>
-                    <div className="text-[10px] text-slate-500">Raju Verma (4.9 Rating)</div>
-                  </div>
-                </button>
-
-                <button
-                  onClick={() => handleRoleChange('ADMIN')}
-                  className={clsx(
-                    'w-full text-left px-3 py-2 text-xs flex items-center gap-2 hover:bg-slate-50',
-                    state.selectedRole === 'ADMIN' ? 'text-agri-800 font-bold bg-agri-50/60' : 'text-slate-700'
-                  )}
-                >
-                  <ShieldCheck className="w-4 h-4 text-purple-600" />
-                  <div>
-                    <div className="font-semibold">Platform Admin</div>
-                    <div className="text-[10px] text-slate-500">System Governance</div>
-                  </div>
-                </button>
-              </div>
-            )}
+          {/* Active Role Badge (Production Identity) */}
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-100 border border-slate-200 text-xs font-bold text-slate-800">
+            <span className={clsx(
+              'w-2 h-2 rounded-full',
+              state.selectedRole === 'ADMIN' ? 'bg-purple-500' :
+              state.selectedRole === 'CHC_MANAGER' ? 'bg-sky-500' :
+              'bg-emerald-500'
+            )} />
+            <span>
+              {state.selectedRole === 'ADMIN' ? 'Platform Admin' :
+               state.selectedRole === 'CHC_MANAGER' ? 'CHC Hub Manager' :
+               'Farmer Portal'}
+            </span>
           </div>
 
           {/* Notifications Dropdown */}
@@ -211,8 +150,17 @@ export const Navbar: React.FC = () => {
             )}
             <div className="hidden lg:block text-left">
               <div className="text-xs font-bold text-slate-800 leading-tight">{state.currentUser.fullName}</div>
-              <div className="text-[10px] text-slate-500">{state.currentUser.phoneNumber}</div>
+              <div className="text-[10px] text-slate-500">{state.currentUser.email || state.currentUser.phoneNumber}</div>
             </div>
+
+            {/* Log Out Button */}
+            <button
+              onClick={() => navigate('/login')}
+              title="Sign Out"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer ml-1"
+            >
+              <LogOut className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </div>

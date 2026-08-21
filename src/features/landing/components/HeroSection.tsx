@@ -7,9 +7,6 @@ import {
   ShieldCheck,
   Zap,
   Activity,
-  Play,
-  Sprout,
-  Building2,
   ChevronRight,
   Sparkles,
   LogIn,
@@ -17,10 +14,9 @@ import {
   ArrowDownRight,
   Fuel,
   CreditCard,
-  Gauge
+  Gauge,
+  CheckCircle2,
 } from 'lucide-react';
-import { useKisanOpsStore } from '../../../store/kisanOpsStore';
-import { UserRole } from '../../../types';
 
 interface HeroSectionProps {
   onOpenBookDemo?: () => void;
@@ -68,16 +64,8 @@ const HERO_SLIDES: HeroSlide[] = [
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const navigate = useNavigate();
-  const { switchRole } = useKisanOpsStore();
 
   const currentSlide = HERO_SLIDES[activeSlideIndex];
-
-  const handleSelectRole = (role: UserRole) => {
-    switchRole(role);
-    if (role === 'FARMER') navigate('/farmer');
-    else if (role === 'ADMIN') navigate('/admin');
-    else navigate('/chc');
-  };
 
   const scrollToSolutions = () => {
     const el = document.getElementById('modular-products');
@@ -149,36 +137,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
               </button>
             </div>
 
-            {/* Instant Role Launchers Strip */}
-            <div className="pt-4 border-t border-stone-200/80">
-              <div className="text-xs font-bold text-stone-500 mb-2.5 flex items-center justify-center lg:justify-start gap-1.5">
-                <Play className="w-3.5 h-3.5 text-[#7aa32c] fill-[#7aa32c]" />
-                <span>Launch Live Production Workspaces:</span>
+            {/* Verified Certifications Strip */}
+            <div className="pt-4 border-t border-stone-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-semibold text-stone-600">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#7aa32c]" />
+                <span>SMAM Scheme Aligned</span>
               </div>
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
-                <button
-                  onClick={() => handleSelectRole('FARMER')}
-                  className="px-3 py-1.5 rounded-xl bg-white hover:bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold shadow-subtle flex items-center gap-1.5 transition-all hover:scale-105"
-                >
-                  <Sprout className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Farmer Portal</span>
-                </button>
-
-                <button
-                  onClick={() => handleSelectRole('CHC_MANAGER')}
-                  className="px-3 py-1.5 rounded-xl bg-white hover:bg-[#F5FAED] text-[#2e4013] border border-[#7aa32c]/40 text-xs font-bold shadow-subtle flex items-center gap-1.5 transition-all hover:scale-105"
-                >
-                  <Building2 className="w-3.5 h-3.5 text-[#7aa32c]" />
-                  <span>CHC Operations Hub</span>
-                </button>
-
-                <button
-                  onClick={() => handleSelectRole('ADMIN')}
-                  className="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 text-xs font-bold shadow-subtle flex items-center gap-1.5 transition-all hover:scale-105"
-                >
-                  <ShieldCheck className="w-3.5 h-3.5 text-slate-600" />
-                  <span>Admin Hub</span>
-                </button>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#7aa32c]" />
+                <span>e-NAM APMC Integrated</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#7aa32c]" />
+                <span>CAN-Bus J1939 Telematics</span>
               </div>
             </div>
           </div>

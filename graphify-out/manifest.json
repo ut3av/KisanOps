@@ -78,9 +78,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787332111.846352,
-    "seen": 1787332130.577778,
-    "ast_hash": "eae3f4539b3a6be845f2209673f15da1",
+    "mtime": 1787332882.5775583,
+    "seen": 1787333008.1183424,
+    "ast_hash": "fc1881907cb513715733e488233d9982",
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
@@ -90,15 +90,15 @@
     "semantic_hash": "cc564be57ee0267b822463a36c9e1c68"
   },
   "src/features/admin/AdminDashboard.tsx": {
-    "mtime": 1787316421.8693044,
-    "seen": 1787322604.0198123,
-    "ast_hash": "44b1d5472c8db56af9cd4831f140e8d2",
+    "mtime": 1787332960.353303,
+    "seen": 1787333008.1183453,
+    "ast_hash": "7243036e00d43bd2c57445c3b822189a",
     "semantic_hash": ""
   },
   "src/features/auth/LandingRoleSelect.tsx": {
-    "mtime": 1787329960.5784044,
-    "seen": 1787330215.3836257,
-    "ast_hash": "362a8a7e61428de22296c0d21602e54a",
+    "mtime": 1787332933.9608967,
+    "seen": 1787333008.1183462,
+    "ast_hash": "bba6e7dcbf4d5bd7ceed58a269d7e784",
     "semantic_hash": ""
   },
   "src/features/chc/BookingsManager.tsx": {
@@ -354,9 +354,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/HeroSection.tsx": {
-    "mtime": 1787332092.9795609,
-    "seen": 1787332130.5778368,
-    "ast_hash": "4fc59f29ccede9d54c902af974089692",
+    "mtime": 1787332991.9368863,
+    "seen": 1787333008.1183662,
+    "ast_hash": "455b97c7ee681377d4dfc4282f6aa0b2",
     "semantic_hash": ""
   },
   "src/features/landing/components/HowItWorksSection.tsx": {
@@ -378,9 +378,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/LandingNavbar.tsx": {
-    "mtime": 1787324972.145789,
-    "seen": 1787325115.756921,
-    "ast_hash": "5e0c04c8c4c8ba787ecefea1dad7a893",
+    "mtime": 1787332908.5509045,
+    "seen": 1787333008.1183703,
+    "ast_hash": "267d4ccd913e85f91cbfdf520a8ca69c",
     "semantic_hash": ""
   },
   "src/features/landing/components/ModularProductsSection.tsx": {
@@ -669,6 +669,12 @@
     "mtime": 1787332563.8381166,
     "seen": 1787332582.5012314,
     "ast_hash": "879c80181e9318dd547fdd1e7cbcc186",
+    "semantic_hash": ""
+  },
+  "supabase/clean_demo_data.sql": {
+    "mtime": 1787332968.0807898,
+    "seen": 1787333008.1183975,
+    "ast_hash": "0c057ab956e8f39dc9b89ea18ad98839",
     "semantic_hash": ""
   }
 }

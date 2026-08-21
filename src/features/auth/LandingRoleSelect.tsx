@@ -20,11 +20,8 @@ export const LandingRoleSelect: React.FC = () => {
   const { state, switchRole } = useKisanOpsStore();
   const navigate = useNavigate();
 
-  const handleSelectRole = (role: UserRole) => {
-    switchRole(role);
-    if (role === 'FARMER') navigate('/farmer');
-    else if (role === 'ADMIN') navigate('/admin');
-    else navigate('/chc');
+  const handleSelectRole = (_role: UserRole) => {
+    navigate('/login');
   };
 
   return (

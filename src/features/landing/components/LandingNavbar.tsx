@@ -297,57 +297,7 @@ export const LandingNavbar: React.FC = () => {
 
           {/* Right Action Area */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Live Role Portal Launcher Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setPortalDropdownOpen(!portalDropdownOpen)}
-                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-bold text-stone-700 hover:border-stone-400 transition-colors shadow-subtle cursor-pointer"
-              >
-                <Compass className="w-3.5 h-3.5 text-[#7aa32c]" />
-                <span>Live Portals</span>
-                <ChevronDown className="w-3.5 h-3.5 text-stone-400" />
-              </button>
-
-              {portalDropdownOpen && (
-                <div className="absolute right-0 top-full mt-2 w-64 bg-white rounded-2xl shadow-xl border border-stone-200 p-2 z-50 space-y-1 animate-in fade-in zoom-in-95 duration-150">
-                  <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-stone-400">
-                    Switch Workspace Role
-                  </div>
-                  <button
-                    onClick={() => handleLaunchRole('FARMER')}
-                    className="w-full text-left p-2.5 rounded-xl hover:bg-emerald-50 text-xs font-bold text-stone-800 flex items-center gap-2.5 transition-colors cursor-pointer"
-                  >
-                    <Sprout className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <div>
-                      <div>Farmer Mobile App</div>
-                      <div className="text-[10px] text-stone-500 font-normal">Rentals, Plots & AgriCredit</div>
-                    </div>
-                  </button>
-                  <button
-                    onClick={() => handleLaunchRole('CHC_MANAGER')}
-                    className="w-full text-left p-2.5 rounded-xl hover:bg-[#F5FAED] text-xs font-bold text-stone-800 flex items-center gap-2.5 transition-colors cursor-pointer"
-                  >
-                    <Building2 className="w-4 h-4 text-[#7aa32c] shrink-0" />
-                    <div>
-                      <div>CHC Operations Hub</div>
-                      <div className="text-[10px] text-stone-500 font-normal">Telematics, Radar & Allocation</div>
-                    </div>
-                  </button>
-                  <button
-                    onClick={() => handleLaunchRole('ADMIN')}
-                    className="w-full text-left p-2.5 rounded-xl hover:bg-slate-50 text-xs font-bold text-stone-800 flex items-center gap-2.5 transition-colors cursor-pointer"
-                  >
-                    <ShieldCheck className="w-4 h-4 text-slate-700 shrink-0" />
-                    <div>
-                      <div>Platform Governance</div>
-                      <div className="text-[10px] text-stone-500 font-normal">Multi-District Administration</div>
-                    </div>
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {/* Direct Login Button (Replaces Book a Demo) */}
+            {/* Direct Login / Launch Workspace Button */}
             <button
               onClick={() => navigate('/login')}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#1b4d3e] hover:bg-[#153e32] text-white text-xs font-bold shadow-md shadow-[#1b4d3e]/20 transition-all hover:scale-105 active:scale-95 cursor-pointer"
@@ -417,26 +367,7 @@ export const LandingNavbar: React.FC = () => {
             </button>
           </div>
 
-          <div className="pt-3 border-t border-stone-100 space-y-2">
-            <div className="text-xs font-bold text-stone-400 uppercase tracking-wider">
-              Quick Workspace Access
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                onClick={() => handleLaunchRole('FARMER')}
-                className="p-2.5 bg-emerald-50 text-emerald-800 rounded-xl text-xs font-bold text-left flex items-center gap-2"
-              >
-                <Sprout className="w-4 h-4 text-emerald-600" />
-                <span>Farmer App</span>
-              </button>
-              <button
-                onClick={() => handleLaunchRole('CHC_MANAGER')}
-                className="p-2.5 bg-[#F5FAED] text-[#2e4013] rounded-xl text-xs font-bold text-left flex items-center gap-2"
-              >
-                <Building2 className="w-4 h-4 text-[#7aa32c]" />
-                <span>CHC Hub</span>
-              </button>
-            </div>
+          <div className="pt-3 border-t border-stone-100">
             <button
               onClick={() => handleNavClick('/login')}
               className="w-full py-3 rounded-xl bg-[#1b4d3e] text-white text-center font-bold text-xs shadow-md"

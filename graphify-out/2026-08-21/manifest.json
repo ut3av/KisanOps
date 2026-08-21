@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "supabase/schema.sql": {
-    "mtime": 1787332273.5809948,
-    "seen": 1787332293.573451,
-    "ast_hash": "f43904a2dc891ee5bbf3629a9bf2b167",
+    "mtime": 1787332556.7024126,
+    "seen": 1787332582.501235,
+    "ast_hash": "86ba9ae58f890db363fb8558813de40f",
     "semantic_hash": ""
   },
   "supabase/seed.sql": {
@@ -663,6 +663,12 @@
     "mtime": 1787331949.5943751,
     "seen": 1787332130.5777524,
     "ast_hash": "32ef53b5135c327983260f58192358ca",
+    "semantic_hash": ""
+  },
+  "supabase/quick_fix_auth.sql": {
+    "mtime": 1787332563.8381166,
+    "seen": 1787332582.5012314,
+    "ast_hash": "879c80181e9318dd547fdd1e7cbcc186",
     "semantic_hash": ""
   }
 }
