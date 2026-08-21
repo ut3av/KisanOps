@@ -13,7 +13,6 @@ import {
   Zap,
   Activity
 } from 'lucide-react';
-import { DemoScenarioBar } from '../demo/DemoScenarioBar';
 import { Navbar } from './Navbar';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import clsx from 'clsx';
@@ -37,7 +36,6 @@ export const CHCLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-surface-50 flex flex-col">
-      <DemoScenarioBar />
       <Navbar />
 
       <div className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6">

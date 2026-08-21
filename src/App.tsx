@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Layouts
@@ -7,10 +7,22 @@ import { FarmerLayout } from './components/layout/FarmerLayout';
 import { CHCLayout } from './components/layout/CHCLayout';
 import { AdminLayout } from './components/layout/AdminLayout';
 
-// Landing & Roles
+// Landing & Multi-Page Views
 import { LandingPage } from './features/landing/LandingPage';
+import { ProductsPreHarvestPage } from './features/landing/pages/ProductsPreHarvestPage';
+import { ProductsPostHarvestPage } from './features/landing/pages/ProductsPostHarvestPage';
+import { ProductsOperationsPage } from './features/landing/pages/ProductsOperationsPage';
+import { SolutionsPage } from './features/landing/pages/SolutionsPage';
+import { PricingRoiPage } from './features/landing/pages/PricingRoiPage';
+import { AboutPage } from './features/landing/pages/AboutPage';
+import { ContactPage } from './features/landing/pages/ContactPage';
+
+// Authentication & Roles
 import { LandingRoleSelect } from './features/auth/LandingRoleSelect';
 import { LoginPage } from './features/auth/LoginPage';
+
+// Common / 404
+import { NotFoundPage } from './features/common/NotFoundPage';
 
 // Farmer Experience
 import { FarmerHome } from './features/farmer/FarmerHome';
@@ -46,8 +58,18 @@ export const App: React.FC = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          {/* Landing & Authentication */}
+          {/* Main Website Multi-Pages */}
           <Route path="/" element={<LandingPage />} />
+          <Route path="/products/pre-harvest" element={<ProductsPreHarvestPage />} />
+          <Route path="/products/post-harvest" element={<ProductsPostHarvestPage />} />
+          <Route path="/products/operations" element={<ProductsOperationsPage />} />
+          <Route path="/solutions/chc" element={<SolutionsPage />} />
+          <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/pricing" element={<PricingRoiPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+
+          {/* Authentication & Role Selection */}
           <Route path="/role-select" element={<LandingRoleSelect />} />
           <Route path="/login" element={<LoginPage />} />
 
@@ -77,8 +99,8 @@ export const App: React.FC = () => {
             <Route index element={<AdminDashboard />} />
           </Route>
 
-          {/* Catch-all */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* Custom 404 Catch-All */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

@@ -14,7 +14,6 @@ import {
   Wheat
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
-import { DemoScenarioBar } from '../../components/demo/DemoScenarioBar';
 import { UserRole } from '../../types';
 
 export const LandingRoleSelect: React.FC = () => {
@@ -30,8 +29,6 @@ export const LandingRoleSelect: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-surface-50 flex flex-col">
-      <DemoScenarioBar />
-
       {/* Hero Header */}
       <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 text-center">
         <div className="inline-flex items-center gap-2 bg-agri-100/90 text-agri-900 border border-agri-300/60 px-4 py-1.5 rounded-full text-xs font-bold mb-4 shadow-subtle">

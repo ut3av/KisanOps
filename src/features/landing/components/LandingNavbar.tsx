@@ -1,32 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
-  Sprout,
   ChevronDown,
   Menu,
   X,
   Tractor,
   Building2,
   ShieldCheck,
-  Calendar,
   Satellite,
-  BarChart3,
   Cpu,
   Layers,
   ArrowRight,
   Truck,
   Leaf,
   Boxes,
-  Compass
+  Compass,
+  LogIn,
+  CreditCard,
+  Building,
+  QrCode,
+  ShoppingCart,
+  Calculator,
+  Info,
+  PhoneCall,
+  Sparkles,
+  Sprout
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../../store/kisanOpsStore';
 import { UserRole } from '../../../types';
 
-interface LandingNavbarProps {
-  onOpenBookDemo: () => void;
-}
-
-export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) => {
+export const LandingNavbar: React.FC = () => {
   const navigate = useNavigate();
   const { switchRole } = useKisanOpsStore();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,13 +54,11 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
     else navigate('/chc');
   };
 
-  const scrollToSection = (id: string) => {
-    setMobileMenuOpen(false);
+  const handleNavClick = (path: string) => {
     setActiveDropdown(null);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    setMobileMenuOpen(false);
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -71,9 +72,10 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div
+          <Link
+            to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2.5 cursor-pointer group select-none"
+            className="flex items-center gap-2.5 group select-none cursor-pointer"
           >
             <div className="w-10 h-10 rounded-2xl bg-white/90 p-1 flex items-center justify-center shadow-sm border border-stone-200/80 group-hover:scale-105 transition-transform overflow-hidden">
               <img
@@ -95,7 +97,7 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                 Machinery Intelligence & CHC Platform
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
@@ -105,7 +107,10 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
               onMouseEnter={() => setActiveDropdown('products')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors">
+              <button
+                onClick={() => handleNavClick('/products/pre-harvest')}
+                className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors cursor-pointer"
+              >
                 <span>Products</span>
                 <ChevronDown className="w-4 h-4 text-stone-400 transition-transform duration-200" />
               </button>
@@ -114,11 +119,16 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                 <div className="absolute top-full -left-20 w-[680px] bg-white rounded-2xl shadow-xl border border-stone-200/80 p-6 grid grid-cols-3 gap-6 animate-in fade-in slide-in-from-top-2 duration-200">
                   {/* Column 1: Pre-Harvest */}
                   <div className="space-y-3">
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#7aa32c] pb-1 border-b border-stone-100">
-                      Pre-Harvest
-                    </div>
                     <div
-                      onClick={() => scrollToSection('modular-products')}
+                      onClick={() => handleNavClick('/products/pre-harvest')}
+                      className="text-xs font-bold uppercase tracking-wider text-[#7aa32c] pb-1 border-b border-stone-100 cursor-pointer flex items-center justify-between group"
+                    >
+                      <span>Pre-Harvest</span>
+                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+
+                    <div
+                      onClick={() => handleNavClick('/products/pre-harvest')}
                       className="group cursor-pointer p-2 rounded-xl hover:bg-[#F5FAED] transition-colors"
                     >
                       <div className="flex items-center gap-2 font-bold text-xs text-stone-800 group-hover:text-[#28564a]">
@@ -131,7 +141,7 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                     </div>
 
                     <div
-                      onClick={() => scrollToSection('modular-products')}
+                      onClick={() => handleNavClick('/products/pre-harvest')}
                       className="group cursor-pointer p-2 rounded-xl hover:bg-[#F5FAED] transition-colors"
                     >
                       <div className="flex items-center gap-2 font-bold text-xs text-stone-800 group-hover:text-[#28564a]">
@@ -144,7 +154,7 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                     </div>
 
                     <div
-                      onClick={() => scrollToSection('modular-products')}
+                      onClick={() => handleNavClick('/products/pre-harvest')}
                       className="group cursor-pointer p-2 rounded-xl hover:bg-[#F5FAED] transition-colors"
                     >
                       <div className="flex items-center gap-2 font-bold text-xs text-stone-800 group-hover:text-[#28564a]">
@@ -157,13 +167,18 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                     </div>
                   </div>
 
-                  {/* Column 2: Post-Harvest */}
+                  {/* Column 2: Post-Harvest & Logistics */}
                   <div className="space-y-3">
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#7aa32c] pb-1 border-b border-stone-100">
-                      Post-Harvest & Logistics
-                    </div>
                     <div
-                      onClick={() => scrollToSection('modular-products')}
+                      onClick={() => handleNavClick('/products/post-harvest')}
+                      className="text-xs font-bold uppercase tracking-wider text-[#7aa32c] pb-1 border-b border-stone-100 cursor-pointer flex items-center justify-between group"
+                    >
+                      <span>Post-Harvest</span>
+                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+
+                    <div
+                      onClick={() => handleNavClick('/products/post-harvest')}
                       className="group cursor-pointer p-2 rounded-xl hover:bg-[#F5FAED] transition-colors"
                     >
                       <div className="flex items-center gap-2 font-bold text-xs text-stone-800 group-hover:text-[#28564a]">
@@ -176,11 +191,11 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                     </div>
 
                     <div
-                      onClick={() => scrollToSection('modular-products')}
+                      onClick={() => handleNavClick('/products/post-harvest')}
                       className="group cursor-pointer p-2 rounded-xl hover:bg-[#F5FAED] transition-colors"
                     >
                       <div className="flex items-center gap-2 font-bold text-xs text-stone-800 group-hover:text-[#28564a]">
-                        <Boxes className="w-4 h-4 text-[#7aa32c]" />
+                        <QrCode className="w-4 h-4 text-[#7aa32c]" />
                         <span>Food Traceability</span>
                       </div>
                       <p className="text-[11px] text-stone-500 mt-0.5 leading-snug">
@@ -189,11 +204,11 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                     </div>
 
                     <div
-                      onClick={() => scrollToSection('modular-products')}
+                      onClick={() => handleNavClick('/products/post-harvest')}
                       className="group cursor-pointer p-2 rounded-xl hover:bg-[#F5FAED] transition-colors"
                     >
                       <div className="flex items-center gap-2 font-bold text-xs text-stone-800 group-hover:text-[#28564a]">
-                        <Layers className="w-4 h-4 text-[#7aa32c]" />
+                        <ShoppingCart className="w-4 h-4 text-[#7aa32c]" />
                         <span>Equipment Marketplace</span>
                       </div>
                       <p className="text-[11px] text-stone-500 mt-0.5 leading-snug">
@@ -202,17 +217,22 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                     </div>
                   </div>
 
-                  {/* Column 3: Operations */}
+                  {/* Column 3: Operations & Finance */}
                   <div className="space-y-3">
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#7aa32c] pb-1 border-b border-stone-100">
-                      Operations & Finance
-                    </div>
                     <div
-                      onClick={() => scrollToSection('modular-products')}
+                      onClick={() => handleNavClick('/products/operations')}
+                      className="text-xs font-bold uppercase tracking-wider text-[#7aa32c] pb-1 border-b border-stone-100 cursor-pointer flex items-center justify-between group"
+                    >
+                      <span>Operations & Finance</span>
+                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+
+                    <div
+                      onClick={() => handleNavClick('/products/operations')}
                       className="group cursor-pointer p-2 rounded-xl hover:bg-[#F5FAED] transition-colors"
                     >
                       <div className="flex items-center gap-2 font-bold text-xs text-stone-800 group-hover:text-[#28564a]">
-                        <BarChart3 className="w-4 h-4 text-[#7aa32c]" />
+                        <CreditCard className="w-4 h-4 text-[#7aa32c]" />
                         <span>Financials & AgriCredit</span>
                       </div>
                       <p className="text-[11px] text-stone-500 mt-0.5 leading-snug">
@@ -221,20 +241,20 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                     </div>
 
                     <div
-                      onClick={() => scrollToSection('modular-products')}
+                      onClick={() => handleNavClick('/products/operations')}
                       className="group cursor-pointer p-2 rounded-xl hover:bg-[#F5FAED] transition-colors"
                     >
                       <div className="flex items-center gap-2 font-bold text-xs text-stone-800 group-hover:text-[#28564a]">
-                        <Building2 className="w-4 h-4 text-[#7aa32c]" />
+                        <Building className="w-4 h-4 text-[#7aa32c]" />
                         <span>Farm & CHC ERP</span>
                       </div>
                       <p className="text-[11px] text-stone-500 mt-0.5 leading-snug">
-                        Real-time resource, fuel & revenue analytics.
+                        Resource, fuel & GST invoice management.
                       </p>
                     </div>
 
                     <div
-                      onClick={() => scrollToSection('modular-products')}
+                      onClick={() => handleNavClick('/products/operations')}
                       className="group cursor-pointer p-2 rounded-xl hover:bg-[#F5FAED] transition-colors"
                     >
                       <div className="flex items-center gap-2 font-bold text-xs text-stone-800 group-hover:text-[#28564a]">
@@ -242,7 +262,7 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                         <span>Sustainability ESG</span>
                       </div>
                       <p className="text-[11px] text-stone-500 mt-0.5 leading-snug">
-                        Carbon footprint & input optimization tracking.
+                        Carbon footprint & diesel optimization.
                       </p>
                     </div>
                   </div>
@@ -250,134 +270,108 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
               )}
             </div>
 
-            {/* How It Works */}
+            {/* Solutions Link */}
             <button
-              onClick={() => scrollToSection('how-it-works')}
-              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors"
+              onClick={() => handleNavClick('/solutions/chc')}
+              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors cursor-pointer"
             >
-              How it works
+              Solutions
             </button>
 
-            {/* Platform Ecosystem */}
+            {/* Pricing & ROI Link */}
             <button
-              onClick={() => scrollToSection('platform-ecosystem')}
-              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors"
-            >
-              Platform
-            </button>
-
-            {/* Industries */}
-            <button
-              onClick={() => scrollToSection('industries')}
-              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors"
-            >
-              Industries
-            </button>
-
-            {/* ROI Calculator */}
-            <button
-              onClick={() => scrollToSection('roi-calculator')}
-              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors"
+              onClick={() => handleNavClick('/pricing')}
+              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors cursor-pointer"
             >
               ROI Calculator
             </button>
 
-            {/* FAQ */}
+            {/* About Link */}
             <button
-              onClick={() => scrollToSection('faq')}
-              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors"
+              onClick={() => handleNavClick('/about')}
+              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors cursor-pointer"
             >
-              FAQ
+              About Us
+            </button>
+
+            {/* Contact Link */}
+            <button
+              onClick={() => handleNavClick('/contact')}
+              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors cursor-pointer"
+            >
+              Contact
             </button>
           </nav>
 
-          {/* Action CTAs */}
+          {/* Right Action Area */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Launch App Dropdown */}
+            {/* Live Role Portal Launcher Dropdown */}
             <div className="relative">
               <button
                 onClick={() => setPortalDropdownOpen(!portalDropdownOpen)}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-stone-300/80 bg-white text-xs font-bold text-stone-800 hover:bg-stone-50 shadow-sm transition-all"
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-bold text-stone-700 hover:border-stone-400 transition-colors shadow-subtle cursor-pointer"
               >
-                <Compass className="w-4 h-4 text-[#7aa32c]" />
+                <Compass className="w-3.5 h-3.5 text-[#7aa32c]" />
                 <span>Live Portals</span>
                 <ChevronDown className="w-3.5 h-3.5 text-stone-400" />
               </button>
 
               {portalDropdownOpen && (
-                <div className="absolute right-0 top-full mt-2 w-64 bg-white rounded-2xl shadow-xl border border-stone-200 p-2 space-y-1 z-50">
-                  <div
+                <div className="absolute right-0 top-full mt-2 w-64 bg-white rounded-2xl shadow-xl border border-stone-200 p-2 z-50 space-y-1 animate-in fade-in zoom-in-95 duration-150">
+                  <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-stone-400">
+                    Switch Workspace Role
+                  </div>
+                  <button
                     onClick={() => handleLaunchRole('FARMER')}
-                    className="p-2.5 rounded-xl hover:bg-emerald-50 cursor-pointer transition-colors flex items-center gap-3"
+                    className="w-full text-left p-2.5 rounded-xl hover:bg-emerald-50 text-xs font-bold text-stone-800 flex items-center gap-2.5 transition-colors cursor-pointer"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center">
-                      <Sprout className="w-4 h-4" />
-                    </div>
+                    <Sprout className="w-4 h-4 text-emerald-600 shrink-0" />
                     <div>
-                      <div className="text-xs font-bold text-stone-900">Farmer Portal</div>
-                      <div className="text-[10px] text-stone-500">Rentals, AgriCredit & Tracking</div>
+                      <div>Farmer Mobile App</div>
+                      <div className="text-[10px] text-stone-500 font-normal">Rentals, Plots & AgriCredit</div>
                     </div>
-                  </div>
-
-                  <div
+                  </button>
+                  <button
                     onClick={() => handleLaunchRole('CHC_MANAGER')}
-                    className="p-2.5 rounded-xl hover:bg-[#F5FAED] cursor-pointer transition-colors flex items-center gap-3"
+                    className="w-full text-left p-2.5 rounded-xl hover:bg-[#F5FAED] text-xs font-bold text-stone-800 flex items-center gap-2.5 transition-colors cursor-pointer"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#7aa32c]/20 text-[#2e4013] flex items-center justify-center">
-                      <Building2 className="w-4 h-4" />
-                    </div>
+                    <Building2 className="w-4 h-4 text-[#7aa32c] shrink-0" />
                     <div>
-                      <div className="text-xs font-bold text-stone-900">CHC Operations Hub</div>
-                      <div className="text-[10px] text-stone-500">Fleet, Telematics & Dispatch</div>
+                      <div>CHC Operations Hub</div>
+                      <div className="text-[10px] text-stone-500 font-normal">Telematics, Radar & Allocation</div>
                     </div>
-                  </div>
-
-                  <div
+                  </button>
+                  <button
                     onClick={() => handleLaunchRole('ADMIN')}
-                    className="p-2.5 rounded-xl hover:bg-slate-50 cursor-pointer transition-colors flex items-center gap-3"
+                    className="w-full text-left p-2.5 rounded-xl hover:bg-slate-50 text-xs font-bold text-stone-800 flex items-center gap-2.5 transition-colors cursor-pointer"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-slate-100 text-slate-800 flex items-center justify-center">
-                      <ShieldCheck className="w-4 h-4" />
-                    </div>
+                    <ShieldCheck className="w-4 h-4 text-slate-700 shrink-0" />
                     <div>
-                      <div className="text-xs font-bold text-stone-900">Admin Governance</div>
-                      <div className="text-[10px] text-stone-500">System Logs & Analytics</div>
+                      <div>Platform Governance</div>
+                      <div className="text-[10px] text-stone-500 font-normal">Multi-District Administration</div>
                     </div>
-                  </div>
-
-                  <div className="pt-1 border-t border-stone-100">
-                    <button
-                      onClick={() => {
-                        setPortalDropdownOpen(false);
-                        navigate('/login');
-                      }}
-                      className="w-full text-left px-2.5 py-1.5 text-[11px] font-semibold text-stone-600 hover:text-stone-900 flex items-center justify-between"
-                    >
-                      <span>Supabase / Phone OTP Login</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </button>
-                  </div>
+                  </button>
                 </div>
               )}
             </div>
 
-            {/* Book a Demo Button */}
+            {/* Direct Login Button (Replaces Book a Demo) */}
             <button
-              onClick={onOpenBookDemo}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#7aa32c] hover:bg-[#6b9125] text-white text-xs font-bold shadow-md shadow-[#7aa32c]/25 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+              onClick={() => navigate('/login')}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#1b4d3e] hover:bg-[#153e32] text-white text-xs font-bold shadow-md shadow-[#1b4d3e]/20 transition-all hover:scale-105 active:scale-95 cursor-pointer"
             >
-              <Calendar className="w-4 h-4" />
-              <span>Book a Demo</span>
+              <LogIn className="w-4 h-4 text-[#9dc84d]" />
+              <span>Sign In</span>
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Trigger */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
-              onClick={onOpenBookDemo}
-              className="px-3 py-1.5 rounded-full bg-[#7aa32c] text-white text-xs font-bold"
+              onClick={() => navigate('/login')}
+              className="px-3.5 py-1.5 rounded-full bg-[#1b4d3e] text-white text-xs font-bold"
             >
-              Demo
+              Sign In
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -389,51 +383,57 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-stone-200 px-4 pt-4 pb-6 space-y-3 animate-in slide-in-from-top duration-200">
           <div className="space-y-1">
             <button
-              onClick={() => scrollToSection('modular-products')}
+              onClick={() => handleNavClick('/products/pre-harvest')}
               className="w-full text-left py-2 px-3 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-50"
             >
-              Products & Solutions
+              Pre-Harvest Suite
             </button>
             <button
-              onClick={() => scrollToSection('how-it-works')}
+              onClick={() => handleNavClick('/products/post-harvest')}
               className="w-full text-left py-2 px-3 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-50"
             >
-              How It Works
+              Post-Harvest & Logistics
             </button>
             <button
-              onClick={() => scrollToSection('platform-ecosystem')}
+              onClick={() => handleNavClick('/products/operations')}
               className="w-full text-left py-2 px-3 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-50"
             >
-              Multi-Device Platform
+              Operations & AgriCredit
             </button>
             <button
-              onClick={() => scrollToSection('industries')}
+              onClick={() => handleNavClick('/solutions/chc')}
               className="w-full text-left py-2 px-3 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-50"
             >
-              Industries We Serve
+              Solutions for CHCs & Enterprises
             </button>
             <button
-              onClick={() => scrollToSection('roi-calculator')}
+              onClick={() => handleNavClick('/pricing')}
               className="w-full text-left py-2 px-3 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-50"
             >
               ROI Calculator
             </button>
             <button
-              onClick={() => scrollToSection('faq')}
+              onClick={() => handleNavClick('/about')}
               className="w-full text-left py-2 px-3 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-50"
             >
-              FAQ
+              About Us
+            </button>
+            <button
+              onClick={() => handleNavClick('/contact')}
+              className="w-full text-left py-2 px-3 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-50"
+            >
+              Contact Team
             </button>
           </div>
 
           <div className="pt-3 border-t border-stone-100 space-y-2">
             <div className="text-xs font-bold text-stone-400 uppercase tracking-wider">
-              Launch Live Demonstration
+              Quick Workspace Access
             </div>
             <div className="grid grid-cols-2 gap-2">
               <button
@@ -448,14 +448,14 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
                 className="p-2.5 bg-[#F5FAED] text-[#2e4013] rounded-xl text-xs font-bold text-left flex items-center gap-2"
               >
                 <Building2 className="w-4 h-4 text-[#7aa32c]" />
-                <span>CHC Operations</span>
+                <span>CHC Hub</span>
               </button>
             </div>
             <button
-              onClick={onOpenBookDemo}
-              className="w-full py-3 rounded-xl bg-[#7aa32c] text-white text-center font-bold text-xs shadow-md"
+              onClick={() => handleNavClick('/login')}
+              className="w-full py-3 rounded-xl bg-[#1b4d3e] text-white text-center font-bold text-xs shadow-md"
             >
-              Book an Interactive Demo Walkthrough
+              Sign In to Yukti Platform
             </button>
           </div>
         </div>
@@ -463,3 +463,5 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
     </header>
   );
 };
+
+export default LandingNavbar;

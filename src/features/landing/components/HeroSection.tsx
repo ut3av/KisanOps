@@ -10,13 +10,14 @@ import {
   Building2,
   Sprout,
   CheckCircle2,
-  Play
+  Play,
+  LogIn
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../../store/kisanOpsStore';
 import { UserRole } from '../../../types';
 
 interface HeroSectionProps {
-  onOpenBookDemo: () => void;
+  onOpenBookDemo?: () => void;
 }
 
 interface HeroSlide {
@@ -128,18 +129,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
             {/* Action Buttons (Matching user photo style) */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
               <button
-                onClick={onOpenBookDemo}
+                onClick={() => navigate('/login')}
                 className="px-7 py-3.5 rounded-full bg-[#7aa32c] hover:bg-[#6b9125] text-white text-sm sm:text-base font-bold shadow-lg shadow-[#7aa32c]/30 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer flex items-center gap-2"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Book a Demo</span>
+                <LogIn className="w-4 h-4" />
+                <span>Sign In to Platform</span>
               </button>
 
               <button
-                onClick={scrollToSolutions}
+                onClick={() => navigate('/products/pre-harvest')}
                 className="px-7 py-3.5 rounded-full bg-[#dbe8ca] hover:bg-[#cfdfba] text-[#2e4013] text-sm sm:text-base font-bold transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center gap-2"
               >
-                <span>Learn More</span>
+                <span>Explore Products</span>
                 <ArrowRight className="w-4 h-4 text-[#7aa32c]" />
               </button>
             </div>

@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   Sparkles
 } from 'lucide-react';
-import { DemoScenarioBar } from '../demo/DemoScenarioBar';
 import { Navbar } from './Navbar';
 import clsx from 'clsx';
 
@@ -25,7 +24,6 @@ export const FarmerLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-surface-50 flex flex-col">
-      <DemoScenarioBar />
       <Navbar />
 
       {/* Farmer Desktop Header Nav */}

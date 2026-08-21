@@ -1,14 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
-  Sprout,
   Mail,
   Phone,
   MapPin,
   Globe,
   ShieldCheck,
   ArrowUp,
-  ExternalLink
+  ExternalLink,
+  LogIn
 } from 'lucide-react';
 
 export const LandingFooter: React.FC = () => {
@@ -24,7 +24,11 @@ export const LandingFooter: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800/80">
           {/* Col 1: Brand & Contact Info */}
           <div className="space-y-4 lg:col-span-1">
-            <div className="flex items-center gap-2.5 cursor-pointer" onClick={scrollToTop}>
+            <Link
+              to="/"
+              className="flex items-center gap-2.5 cursor-pointer"
+              onClick={scrollToTop}
+            >
               <div className="w-9 h-9 rounded-xl bg-white/90 p-1 flex items-center justify-center border border-stone-700 shadow-sm overflow-hidden">
                 <img
                   src="/images/yukti-logo-transparent.png"
@@ -35,7 +39,7 @@ export const LandingFooter: React.FC = () => {
               <span className="font-typewriter text-2xl font-bold tracking-tight text-white">
                 Yukti
               </span>
-            </div>
+            </Link>
 
             <p className="text-xs text-stone-400 leading-relaxed font-sans">
               Cloud-based SaaS platform for agricultural machinery intelligence, predictive demand allocation, and Custom Hiring Centre operations.
@@ -68,44 +72,44 @@ export const LandingFooter: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
               <li>
-                <a href="#modular-products" className="hover:text-white transition-colors">
+                <Link to="/products/pre-harvest" className="hover:text-white transition-colors">
                   Farm Management Software
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#modular-products" className="hover:text-white transition-colors">
+                <Link to="/products/pre-harvest" className="hover:text-white transition-colors">
                   Remote Sensing & GIS (NDVI)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#modular-products" className="hover:text-white transition-colors">
+                <Link to="/products/post-harvest" className="hover:text-white transition-colors">
                   Supply Chain & Fleet Telematics
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#modular-products" className="hover:text-white transition-colors">
+                <Link to="/products/pre-harvest" className="hover:text-white transition-colors">
                   Crop Advisory & IoT Sensors
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#modular-products" className="hover:text-white transition-colors">
+                <Link to="/products/post-harvest" className="hover:text-white transition-colors">
                   Food Traceability & Audit Logs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#modular-products" className="hover:text-white transition-colors">
+                <Link to="/products/operations" className="hover:text-white transition-colors">
                   Financials & Deferred AgriCredit
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#modular-products" className="hover:text-white transition-colors">
+                <Link to="/products/operations" className="hover:text-white transition-colors">
                   Enterprise Farm & CHC ERP
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#modular-products" className="hover:text-white transition-colors">
+                <Link to="/products/operations" className="hover:text-white transition-colors">
                   Sustainability & Carbon Offsets
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -117,34 +121,34 @@ export const LandingFooter: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
               <li>
-                <a href="#industries" className="hover:text-white transition-colors">
+                <Link to="/solutions/chc" className="hover:text-white transition-colors">
                   Custom Hiring Centres (CHCs)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#industries" className="hover:text-white transition-colors">
+                <Link to="/solutions/chc" className="hover:text-white transition-colors">
                   Enterprise & Corporate Farms
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#industries" className="hover:text-white transition-colors">
-                  Plantations & Vineyards
-                </a>
+                <Link to="/solutions/chc" className="hover:text-white transition-colors">
+                  Plantations & Orchards
+                </Link>
               </li>
               <li>
-                <a href="#industries" className="hover:text-white transition-colors">
+                <Link to="/solutions/chc" className="hover:text-white transition-colors">
                   Agri-Input Manufacturers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#industries" className="hover:text-white transition-colors">
+                <Link to="/solutions/chc" className="hover:text-white transition-colors">
                   Food & Beverage Processors
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#industries" className="hover:text-white transition-colors">
-                  Cooperatives & NGOs
-                </a>
+                <Link to="/solutions/chc" className="hover:text-white transition-colors">
+                  Cooperatives & FPOs
+                </Link>
               </li>
             </ul>
           </div>
@@ -158,7 +162,7 @@ export const LandingFooter: React.FC = () => {
               <li>
                 <button
                   onClick={() => navigate('/farmer')}
-                  className="hover:text-[#7aa32c] transition-colors text-left flex items-center gap-1"
+                  className="hover:text-[#7aa32c] transition-colors text-left flex items-center gap-1 cursor-pointer"
                 >
                   <span>Farmer Mobile Experience</span>
                   <ExternalLink className="w-3 h-3 text-[#7aa32c]" />
@@ -167,7 +171,7 @@ export const LandingFooter: React.FC = () => {
               <li>
                 <button
                   onClick={() => navigate('/chc')}
-                  className="hover:text-[#7aa32c] transition-colors text-left flex items-center gap-1"
+                  className="hover:text-[#7aa32c] transition-colors text-left flex items-center gap-1 cursor-pointer"
                 >
                   <span>CHC Operations Hub</span>
                   <ExternalLink className="w-3 h-3 text-[#7aa32c]" />
@@ -176,7 +180,7 @@ export const LandingFooter: React.FC = () => {
               <li>
                 <button
                   onClick={() => navigate('/admin')}
-                  className="hover:text-[#7aa32c] transition-colors text-left flex items-center gap-1"
+                  className="hover:text-[#7aa32c] transition-colors text-left flex items-center gap-1 cursor-pointer"
                 >
                   <span>Platform Governance Hub</span>
                   <ExternalLink className="w-3 h-3 text-[#7aa32c]" />
@@ -185,9 +189,10 @@ export const LandingFooter: React.FC = () => {
               <li>
                 <button
                   onClick={() => navigate('/login')}
-                  className="hover:text-white transition-colors text-left"
+                  className="hover:text-white transition-colors text-left flex items-center gap-1 cursor-pointer"
                 >
-                  Supabase OTP Login
+                  <LogIn className="w-3 h-3 text-[#7aa32c]" />
+                  <span>Platform Sign In</span>
                 </button>
               </li>
             </ul>
@@ -200,24 +205,19 @@ export const LandingFooter: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
               <li>
-                <a href="#how-it-works" className="hover:text-white transition-colors">
+                <Link to="/about" className="hover:text-white transition-colors">
                   About Yukti
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#how-it-works" className="hover:text-white transition-colors">
-                  Security & Data Privacy (RLS)
-                </a>
+                <Link to="/pricing" className="hover:text-white transition-colors">
+                  ROI & Fleet Calculator
+                </Link>
               </li>
               <li>
-                <a href="#how-it-works" className="hover:text-white transition-colors">
-                  Partner Network
-                </a>
-              </li>
-              <li>
-                <a href="#how-it-works" className="hover:text-white transition-colors">
-                  Careers (We're Hiring)
-                </a>
+                <Link to="/contact" className="hover:text-white transition-colors">
+                  Contact Team & Locations
+                </Link>
               </li>
             </ul>
 
@@ -242,19 +242,19 @@ export const LandingFooter: React.FC = () => {
           <div className="flex items-center gap-6">
             <button
               onClick={() => navigate('/login')}
-              className="hover:text-stone-300 transition-colors"
+              className="hover:text-stone-300 transition-colors cursor-pointer"
             >
-              Admin Login
+              Sign In
             </button>
-            <span className="hover:text-stone-300 transition-colors cursor-pointer">
-              Privacy Policy
-            </span>
-            <span className="hover:text-stone-300 transition-colors cursor-pointer">
-              Terms of Service
-            </span>
+            <Link to="/about" className="hover:text-stone-300 transition-colors">
+              About
+            </Link>
+            <Link to="/contact" className="hover:text-stone-300 transition-colors">
+              Contact
+            </Link>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-full bg-stone-800 hover:bg-[#7aa32c] text-white transition-colors"
+              className="p-2 rounded-full bg-stone-800 hover:bg-[#7aa32c] text-white transition-colors cursor-pointer"
               title="Back to top"
             >
               <ArrowUp className="w-4 h-4" />
@@ -265,3 +265,5 @@ export const LandingFooter: React.FC = () => {
     </footer>
   );
 };
+
+export default LandingFooter;

@@ -11,13 +11,17 @@ import {
   Zap
 } from 'lucide-react';
 
+import { useNavigate } from 'react-router-dom';
+
 interface RoiCalculatorSectionProps {
-  onOpenBookDemo: () => void;
+  onOpenBookDemo?: () => void;
 }
 
 export const RoiCalculatorSection: React.FC<RoiCalculatorSectionProps> = ({
   onOpenBookDemo
 }) => {
+  const navigate = useNavigate();
+  const handleAction = onOpenBookDemo || (() => navigate('/login'));
   const [acres, setAcres] = useState<number>(650);
   const [fleetSize, setFleetSize] = useState<number>(8);
   const [isContractFarming, setIsContractFarming] = useState<boolean>(true);
@@ -189,7 +193,7 @@ export const RoiCalculatorSection: React.FC<RoiCalculatorSectionProps> = ({
 
               {/* Action Button */}
               <button
-                onClick={onOpenBookDemo}
+                onClick={handleAction}
                 className="w-full py-3.5 px-6 rounded-xl bg-[#7aa32c] hover:bg-[#6b9125] text-white text-xs sm:text-sm font-bold shadow-md shadow-[#7aa32c]/20 transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-100 cursor-pointer"
               >
                 <span>Get Full Enterprise ROI Feasibility Report</span>

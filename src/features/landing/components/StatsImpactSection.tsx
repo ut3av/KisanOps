@@ -1,13 +1,16 @@
 import React from 'react';
-import { Award, TrendingUp, CheckCircle2, ShieldCheck, ArrowRight, Sprout } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 interface StatsImpactSectionProps {
-  onOpenBookDemo: () => void;
+  onOpenBookDemo?: () => void;
 }
 
 export const StatsImpactSection: React.FC<StatsImpactSectionProps> = ({
   onOpenBookDemo
 }) => {
+  const navigate = useNavigate();
+  const handleAction = onOpenBookDemo || (() => navigate('/about'));
   return (
     <section className="py-20 bg-[#efe7db]/30 border-b border-stone-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,7 +75,7 @@ export const StatsImpactSection: React.FC<StatsImpactSectionProps> = ({
 
               <div className="pt-2 flex items-center gap-4">
                 <button
-                  onClick={onOpenBookDemo}
+                  onClick={handleAction}
                   className="px-6 py-3 rounded-full bg-[#7aa32c] hover:bg-[#6b9125] text-white text-xs sm:text-sm font-bold shadow-md shadow-[#7aa32c]/20 transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-2"
                 >
                   <span>More About Us</span>

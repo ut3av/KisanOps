@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { DemoScenarioBar } from '../../components/demo/DemoScenarioBar';
+import React from 'react';
 import { LandingNavbar } from './components/LandingNavbar';
 import { HeroSection } from './components/HeroSection';
 import { TrustMarquee } from './components/TrustMarquee';
@@ -13,22 +12,16 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { FaqSection } from './components/FaqSection';
 import { CtaBanner } from './components/CtaBanner';
 import { LandingFooter } from './components/LandingFooter';
-import { BookDemoModal } from './components/BookDemoModal';
 
 export const LandingPage: React.FC = () => {
-  const [isBookDemoOpen, setIsBookDemoOpen] = useState<boolean>(false);
-
   return (
     <div className="min-h-screen bg-[#F5FAED] text-[#0f172a] flex flex-col font-sans selection:bg-[#7aa32c]/20 selection:text-[#2e4013]">
-      {/* Interactive Scenario Bar for Rapid Testing */}
-      <DemoScenarioBar />
-
       {/* Sticky Navigation */}
-      <LandingNavbar onOpenBookDemo={() => setIsBookDemoOpen(true)} />
+      <LandingNavbar />
 
       {/* Hero Banner (Matching the attached photo) */}
       <main className="flex-1">
-        <HeroSection onOpenBookDemo={() => setIsBookDemoOpen(true)} />
+        <HeroSection />
 
         {/* Brands and Ecosystem Marquee */}
         <TrustMarquee />
@@ -46,10 +39,10 @@ export const LandingPage: React.FC = () => {
         <IndustriesSection />
 
         {/* Interactive ROI & Fleet Efficiency Calculator */}
-        <RoiCalculatorSection onOpenBookDemo={() => setIsBookDemoOpen(true)} />
+        <RoiCalculatorSection />
 
-        {/* Why KisanOps & Impact Stats */}
-        <StatsImpactSection onOpenBookDemo={() => setIsBookDemoOpen(true)} />
+        {/* Why Yukti & Impact Stats */}
+        <StatsImpactSection />
 
         {/* Verified Field Testimonials & Case Studies */}
         <TestimonialsSection />
@@ -58,17 +51,11 @@ export const LandingPage: React.FC = () => {
         <FaqSection />
 
         {/* High-Conversion Bottom Banner */}
-        <CtaBanner onOpenBookDemo={() => setIsBookDemoOpen(true)} />
+        <CtaBanner />
       </main>
 
       {/* Comprehensive AgTech SaaS Footer */}
       <LandingFooter />
-
-      {/* Book a Demo Modal */}
-      <BookDemoModal
-        isOpen={isBookDemoOpen}
-        onClose={() => setIsBookDemoOpen(false)}
-      />
     </div>
   );
 };

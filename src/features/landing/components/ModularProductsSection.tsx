@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Tractor,
   Satellite,
@@ -211,6 +212,7 @@ const PRODUCTS: ProductItem[] = [
 ];
 
 export const ModularProductsSection: React.FC = () => {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState<'pre-harvest' | 'post-harvest' | 'operations'>('pre-harvest');
   const [activeProductId, setActiveProductId] = useState<string>('farm-management');
 
@@ -345,10 +347,17 @@ export const ModularProductsSection: React.FC = () => {
                           <span className="text-[11px] font-bold text-[#7aa32c] uppercase tracking-wider">
                             {product.metricBadge}
                           </span>
-                          <span className="text-xs font-bold text-[#4a2711] flex items-center gap-1 hover:underline">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              navigate(`/products/${product.category}`);
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }}
+                            className="text-xs font-bold text-[#4a2711] hover:text-[#7aa32c] flex items-center gap-1 cursor-pointer transition-colors"
+                          >
                             <span>Explore Module</span>
                             <ArrowRight className="w-3.5 h-3.5" />
-                          </span>
+                          </button>
                         </div>
                       </div>
                     )}

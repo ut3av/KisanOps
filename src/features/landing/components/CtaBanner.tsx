@@ -1,11 +1,14 @@
 import React from 'react';
-import { Calendar, PhoneCall, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { LogIn, PhoneCall, Sparkles, CheckCircle2 } from 'lucide-react';
 
 interface CtaBannerProps {
-  onOpenBookDemo: () => void;
+  onOpenBookDemo?: () => void;
 }
 
-export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenBookDemo }) => {
+export const CtaBanner: React.FC<CtaBannerProps> = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-16 bg-[#F5FAED]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,15 +35,15 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenBookDemo }) => {
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                 <button
-                  onClick={onOpenBookDemo}
+                  onClick={() => navigate('/login')}
                   className="px-8 py-4 rounded-full bg-white hover:bg-stone-100 text-[#1b4d3e] text-sm sm:text-base font-extrabold shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
                 >
-                  <Calendar className="w-4 h-4 text-[#7aa32c]" />
-                  <span>Book an Interactive Demo</span>
+                  <LogIn className="w-4 h-4 text-[#7aa32c]" />
+                  <span>Sign In to Platform</span>
                 </button>
 
                 <button
-                  onClick={onOpenBookDemo}
+                  onClick={() => navigate('/contact')}
                   className="px-8 py-4 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/30 text-sm sm:text-base font-bold transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-2"
                 >
                   <PhoneCall className="w-4 h-4" />
@@ -57,7 +60,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenBookDemo }) => {
               <ul className="space-y-2.5 text-xs sm:text-sm text-stone-200">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#9dc84d] shrink-0" />
-                  <span>Live 30-min interactive walkthrough</span>
+                  <span>Instant access to Farmer & CHC portals</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#9dc84d] shrink-0" />
@@ -65,7 +68,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenBookDemo }) => {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#9dc84d] shrink-0" />
-                  <span>Instant access to sandbox demo roles</span>
+                  <span>Live CAN-Bus telematics & GPS sync</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#9dc84d] shrink-0" />
@@ -79,3 +82,5 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenBookDemo }) => {
     </section>
   );
 };
+
+export default CtaBanner;
