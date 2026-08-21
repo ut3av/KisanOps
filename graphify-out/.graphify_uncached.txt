@@ -1,0 +1,14 @@
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\.agents\rules\graphify.md
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\.agents\workflows\graphify.md
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\API.md
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\ARCHITECTURE.md
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\DATABASE.md
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\DEMO.md
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\DEPLOYMENT.md
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\README.md
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\index.html
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\public\favicon.svg
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\public\icons.svg
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\src\assets\hero.png
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\src\assets\react.svg
+C:\Users\vastu\OneDrive\Desktop\Projects\KisanOps\src\assets\vite.svg
