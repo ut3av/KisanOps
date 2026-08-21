@@ -93,6 +93,26 @@
   }
 }
 
+/* Landing Page Animations & Keyframes */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Telematics radar pulse */
 @keyframes pulse-ring {
   0% {
@@ -111,4 +131,26 @@
 
 .radar-pulse {
   animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+/* Organic curved blob border matching the user photo */
+.hero-bubble-left {
+  border-radius: 90px 140px 90px 140px;
+}
+
+.hero-bubble-right {
+  border-radius: 140px 90px 140px 90px;
+}
+
+/* Glassmorphism pill styling */
+.glass-pill {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 32px -4px rgba(46, 64, 19, 0.12), 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+}
+
+.glow-ambient-green {
+  background: radial-gradient(circle at 60% 40%, rgba(157, 200, 77, 0.28) 0%, rgba(245, 250, 237, 0.6) 45%, rgba(255, 255, 255, 0) 70%);
 }

@@ -8,6 +8,7 @@ import { CHCLayout } from './components/layout/CHCLayout';
 import { AdminLayout } from './components/layout/AdminLayout';
 
 // Landing & Roles
+import { LandingPage } from './features/landing/LandingPage';
 import { LandingRoleSelect } from './features/auth/LandingRoleSelect';
 import { LoginPage } from './features/auth/LoginPage';
 
@@ -46,7 +47,8 @@ export const App: React.FC = () => {
       <BrowserRouter>
         <Routes>
           {/* Landing & Authentication */}
-          <Route path="/" element={<LandingRoleSelect />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/role-select" element={<LandingRoleSelect />} />
           <Route path="/login" element={<LoginPage />} />
 
           {/* Farmer Routes */}
