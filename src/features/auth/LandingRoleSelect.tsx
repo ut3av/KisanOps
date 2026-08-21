@@ -99,8 +99,8 @@ export const LandingRoleSelect: React.FC = () => {
                 <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-emerald-800 transition-colors">
                   Continue as Farmer
                 </h3>
-                <p className="text-xs text-slate-500 font-mono mt-0.5">
-                  Demo Account: Ramesh Kumar (8-Acre Wheat Farm, Sehore)
+                <p className="text-xs text-slate-500 font-medium mt-0.5">
+                  Ramesh Kumar • 8-Acre Wheat Farm, Sehore
                 </p>
               </div>
 
@@ -145,8 +145,8 @@ export const LandingRoleSelect: React.FC = () => {
                 <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-agri-800 transition-colors">
                   Continue as CHC Hub Manager
                 </h3>
-                <p className="text-xs text-slate-500 font-mono mt-0.5">
-                  Demo Account: Rajesh Singh (Sehore Agri Centre #01)
+                <p className="text-xs text-slate-500 font-medium mt-0.5">
+                  Rajesh Singh • Sehore Agri Centre #01
                 </p>
               </div>
 

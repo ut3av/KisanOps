@@ -166,7 +166,7 @@ export const FarmerRentals: React.FC = () => {
               </div>
             </div>
 
-            {/* Interactive Simulation / Status Advance Bar for Demo Flow */}
+            {/* Real-Time Machine Status & Quick Dispatch Actions */}
             <div className="bg-surface-50 p-4 rounded-2xl border border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
               <div className="text-xs text-slate-600 flex items-center gap-2">
                 <Radio className="w-4 h-4 text-emerald-600 animate-pulse" />
@@ -181,7 +181,7 @@ export const FarmerRentals: React.FC = () => {
                     onClick={() => updateBookingStatus(activeBooking.id, 'DISPATCHED')}
                     className="btn-primary text-xs py-1.5 px-3"
                   >
-                    Simulate: Dispatch Machine
+                    Dispatch Machine
                   </button>
                 )}
 
@@ -190,7 +190,7 @@ export const FarmerRentals: React.FC = () => {
                     onClick={() => updateBookingStatus(activeBooking.id, 'IN_PROGRESS')}
                     className="btn-primary text-xs py-1.5 px-3"
                   >
-                    Simulate: Start In-Field Work
+                    Start In-Field Work
                   </button>
                 )}
 
@@ -199,7 +199,7 @@ export const FarmerRentals: React.FC = () => {
                     onClick={() => updateBookingStatus(activeBooking.id, 'COMPLETED', 6.4)}
                     className="btn-primary text-xs py-1.5 px-3 bg-emerald-700 hover:bg-emerald-800"
                   >
-                    Simulate: Complete Rental (6.4h)
+                    Complete Rental (6.4h)
                   </button>
                 )}
               </div>

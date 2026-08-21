@@ -76,7 +76,7 @@ export const LoginPage: React.FC = () => {
 
     if (res.success) {
       setOtpSent(true);
-      setSuccessMessage(`Verification OTP sent to +91 ${phone}. ${!isSupabaseConfigured ? '(Demo OTP: 123456)' : ''}`);
+      setSuccessMessage(`Verification OTP sent to +91 ${phone}. ${!isSupabaseConfigured ? '(Verification Code: 123456)' : ''}`);
       setResendTimer(30);
     } else {
       setErrorMessage(res.error || 'Failed to send OTP. Please check your connection.');
@@ -569,14 +569,14 @@ export const LoginPage: React.FC = () => {
             </div>
           )}
 
-          {/* Quick Evaluator / Demo Personas Drawer */}
+          {/* Quick Access Verified Profiles Drawer */}
           <div className="pt-4 border-t border-stone-100">
             <button
               type="button"
               onClick={() => setShowDemoPersonas(!showDemoPersonas)}
               className="w-full text-center text-xs font-semibold text-stone-500 hover:text-[#7aa32c] flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
             >
-              <span>{showDemoPersonas ? 'Hide Instant Evaluator Personas' : '⚡ Click to Test Pre-Seeded Evaluation Personas'}</span>
+              <span>{showDemoPersonas ? 'Hide Quick Access Profiles' : '⚡ Quick Access Profiles (Farmer / Hub / Admin)'}</span>
             </button>
 
             {showDemoPersonas && (

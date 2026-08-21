@@ -67,9 +67,9 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ isOpen, onClose })
               <Calendar className="w-4 h-4 text-[#9dc84d]" />
             </div>
             <div>
-              <h3 className="text-lg font-bold">Schedule an Interactive Demo</h3>
+              <h3 className="text-lg font-bold">Schedule a Platform Walkthrough</h3>
               <p className="text-xs text-emerald-200">
-                Experience Yukti with real field telematics & demand simulations
+                Experience Yukti with real-time field telematics and fleet intelligence
               </p>
             </div>
           </div>
@@ -188,13 +188,13 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ isOpen, onClose })
                   className="w-full py-3.5 rounded-xl bg-[#7aa32c] hover:bg-[#6b9125] text-white font-extrabold text-xs shadow-md shadow-[#7aa32c]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4" />
-                  <span>Confirm Walkthrough & Access Sandbox</span>
+                  <span>Confirm Walkthrough Request</span>
                 </button>
               </div>
 
               <div className="text-center pt-2">
                 <div className="text-[11px] text-stone-500">
-                  Or launch the working sandbox directly without waiting:
+                  Or launch the working platform directly without waiting:
                 </div>
                 <div className="flex items-center justify-center gap-3 pt-2">
                   <button
@@ -231,7 +231,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ isOpen, onClose })
 
               <div>
                 <h4 className="text-xl font-black text-stone-900">
-                  Demo Request Confirmed!
+                  Walkthrough Request Confirmed!
                 </h4>
                 <p className="text-xs text-stone-600 max-w-sm mx-auto mt-1">
                   Thank you, <span className="font-bold">{formData.name}</span>. An AgTech solutions engineer will reach out at{' '}

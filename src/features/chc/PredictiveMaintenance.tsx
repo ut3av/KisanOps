@@ -59,7 +59,7 @@ export const PredictiveMaintenance: React.FC = () => {
         >
           <AlertTriangle className="w-4 h-4" />
           <span>
-            {simulationState.isFuelAnomalyActive ? 'Fuel Anomaly Triggered (+17%)' : 'Simulate Fuel Anomaly'}
+            {simulationState.isFuelAnomalyActive ? 'Fuel Sensor Alert Active (+17%)' : 'Test Telematics Anomaly'}
           </span>
         </button>
       </div>
