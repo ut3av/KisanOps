@@ -23,6 +23,7 @@ import { LoginPage } from './features/auth/LoginPage';
 
 // Common / 404
 import { NotFoundPage } from './features/common/NotFoundPage';
+import { InteractiveCursor } from './components/common/InteractiveCursor';
 
 // Farmer Experience
 import { FarmerHome } from './features/farmer/FarmerHome';
@@ -57,6 +58,7 @@ export const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+        <InteractiveCursor />
         <Routes>
           {/* Main Website Multi-Pages */}
           <Route path="/" element={<LandingPage />} />

@@ -31,7 +31,7 @@ interface EngineModule {
   badge: string;
   subtitle: string;
   description: string;
-  prdRef: string;
+  logicRef: string;
   bullets: string[];
   image: string;
   imageAlt: string;
@@ -46,11 +46,11 @@ const ENGINES: EngineModule[] = [
     id: 'demand-prediction',
     category: 'prediction',
     title: 'Predictive Machinery Demand Engine',
-    badge: 'PRD §17-19',
+    badge: 'Demand Intelligence',
     subtitle: '14-Day Regional Harvester & Tractor Deficit Alerts',
     description:
       'Eliminate regional machinery shortages before they happen. Yukti correlates upcoming crop maturity stages (+25), historical rental velocity (+20), active bookings (+15), and Doppler weather windows (+10) to forecast machinery demand spikes across districts.',
-    prdRef: 'Demand Score: Harvest season (+30) + Crop stage (+25) = Sehore Harvester Shortage (+34%)',
+    logicRef: 'Demand Score: Harvest season (+30) + Crop stage (+25) = Sehore Harvester Shortage (+34%)',
     bullets: [
       '14-day & 30-day regional deficit horizon forecasting',
       'Explainable weighted scoring factors for hub managers',
@@ -66,11 +66,11 @@ const ENGINES: EngineModule[] = [
     id: 'fleet-allocation',
     category: 'prediction',
     title: 'Deterministic Machine Allocation Engine',
-    badge: 'PRD §20',
+    badge: 'Fleet Rebalancing',
     subtitle: 'Inter-Hub Relocation & Fleet Rebalancing Optimizer',
     description:
       'When Sehore faces a deficit of 2 harvesters, the allocation engine optimizes Hungarian assignment & min-cost routing to relocate surplus equipment from Bhopal CHC, maximizing fleet utilization while minimizing transport overhead.',
-    prdRef: 'Optimization Objective: Maximize fleet utilization (+21%) while minimizing relocation cost',
+    logicRef: 'Optimization Objective: Maximize fleet utilization (+21%) while minimizing relocation cost',
     bullets: [
       'Automated inter-hub equipment dispatch recommendations',
       'Distance, transport transit time, and ETA calculations',
@@ -88,11 +88,11 @@ const ENGINES: EngineModule[] = [
     id: 'smart-matching',
     category: 'matching',
     title: 'Smart 7-Factor Machine Recommendation',
-    badge: 'PRD §11-12',
+    badge: 'Smart Matching',
     subtitle: 'Explainable Machine Matching for Farm Profiles',
     description:
       'Instead of forcing farmers to guess equipment specs, Yukti matches requirements (e.g. Ramesh: 8-acre wheat harvest) against nearby inventory using an explainable 7-factor scoring algorithm.',
-    prdRef: 'Match Score: 25% Task/Crop + 20% Availability + 15% Distance + 15% Health + 10% Price + 10% Reliability + 5% Rating',
+    logicRef: 'Match Score: 25% Task/Crop + 20% Availability + 15% Distance + 15% Health + 10% Price + 10% Reliability + 5% Rating',
     bullets: [
       'John Deere Harvester 94% explainable fit for wheat harvest',
       'Hyperlocal proximity ranking (3.2 km from farm plot)',
@@ -108,11 +108,11 @@ const ENGINES: EngineModule[] = [
     id: 'dynamic-pricing',
     category: 'matching',
     title: 'Explainable Dynamic Pricing with Safeguards',
-    badge: 'PRD §15-16',
+    badge: 'Dynamic Tariffs',
     subtitle: 'Transparent Hourly Breakdown with Price Ceilings',
     description:
       'Every price quote provides a transparent breakdown of base rate, local demand, availability, distance, and machine health adjustments, bounded by strict 80%–130% anti-gouging safeguards.',
-    prdRef: 'Formula: Base (₹850) + High Demand (+₹128) + Low Supply (+₹68) + Distance (+₹35) - Condition (-₹20) = ₹1,061/hr',
+    logicRef: 'Formula: Base (₹850) + High Demand (+₹128) + Low Supply (+₹68) + Distance (+₹35) - Condition (-₹20) = ₹1,061/hr',
     bullets: [
       'Guaranteed transparent price breakdown visible to farmer',
       'Strict production safeguards (80% floor, 130% ceiling)',
@@ -128,11 +128,11 @@ const ENGINES: EngineModule[] = [
     id: 'agricredit',
     category: 'matching',
     title: 'AgriCredit Deferred-Payment Orchestration',
-    badge: 'PRD §30-31',
+    badge: 'AgriCredit Layer',
     subtitle: '0–900 Credit Scoring & 45-Day Post-Harvest Repayment',
     description:
       'Smallholders access pre-approved deferred rental credit (₹8,000–₹15,000) based on historical acreage, repayment consistency, and verified profile data, settling after selling produce at the APMC mandi.',
-    prdRef: 'AgriCredit Score: 742 / 900 (Excellent) • Eligible Deferred Credit: ₹8,000',
+    logicRef: 'AgriCredit Score: 742 / 900 (Excellent) • Eligible Deferred Credit: ₹8,000',
     bullets: [
       'Zero upfront cash bottlenecks during peak harvest window',
       'Non-collateral credit decisioning for rural smallholders',
@@ -150,11 +150,11 @@ const ENGINES: EngineModule[] = [
     id: 'live-telematics',
     category: 'telematics',
     title: 'Live CAN-Bus IoT Telematics & Anomaly Detection',
-    badge: 'PRD §23-24',
+    badge: 'CAN-Bus Stream',
     subtitle: 'Real-Time ECU Stream & +17% Fuel Pilferage Alerts',
     description:
       'Simulate and stream real-time J1939 ECU sensor data including GPS location, speed (18 km/h), engine temperature (86°C), fuel consumption (6.8 L/hr), and automated fuel theft anomaly alarms.',
-    prdRef: 'Telemetry: MH-575 • Speed: 18 km/h • Fuel: 67% • Fuel Anomaly (+17% above baseline) Triggered',
+    logicRef: 'Telemetry: MH-575 • Speed: 18 km/h • Fuel: 67% • Fuel Anomaly (+17% above baseline) Triggered',
     bullets: [
       'Continuous real-time GPS & engine operating status telemetry',
       'Automatic +17% abnormal fuel consumption leakage alert',
@@ -170,11 +170,11 @@ const ENGINES: EngineModule[] = [
     id: 'predictive-maintenance',
     category: 'telematics',
     title: 'Predictive Maintenance & Machine Health Score',
-    badge: 'PRD §25-27',
+    badge: 'Health Diagnostic',
     subtitle: '0–100 Health Index & Thermal / Service Warnings',
     description:
       'Calculate a comprehensive 0–100 Machine Health Index based on 25% maintenance history, 20% engine parameters, 20% fuel efficiency, and 15% usage age to schedule repairs before field breakdowns.',
-    prdRef: 'Machine Health: 82% • Oil service due soon • Inspection recommended within 24 operating hours',
+    logicRef: 'Machine Health: 82% • Oil service due soon • Inspection recommended within 24 operating hours',
     bullets: [
       'Engine hours vs service interval threshold alerts',
       'Engine temperature thermal warning prevention',
@@ -190,11 +190,11 @@ const ENGINES: EngineModule[] = [
     id: 'automated-billing',
     category: 'telematics',
     title: 'Automated Usage Calculation & GST Invoicing',
-    badge: 'PRD §32-33',
+    badge: 'Tax Invoicing',
     subtitle: 'Verified Runtime Invoicing with Instant PDF Generation',
     description:
       'Automatically calculate actual runtime hours, base rental, transport charges, fuel surcharges, platform fee, discounts, and 5% GST with instant verified PDF tax invoice generation.',
-    prdRef: 'Invoice #INV-2026-081 • Total: ₹6,472 • Telematics Verified Runtime: 6.5 hrs',
+    logicRef: 'Invoice #INV-2026-081 • Total: ₹6,472 • Telematics Verified Runtime: 6.5 hrs',
     bullets: [
       'Telematics-backed dispute-free hourly billing',
       'Configurable GST calculation and digital receipts',
@@ -234,7 +234,7 @@ export const ModularProductsSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#7aa32c]/30 text-xs font-bold text-[#2e4013] mb-3 shadow-subtle">
             <Sparkles className="w-3.5 h-3.5 text-[#7aa32c]" />
-            <span>Official PRD Architecture</span>
+            <span>Machinery Operating Architecture</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1c1d1f] tracking-tight">
             AI-Powered Agricultural Machinery & CHC Operating System
@@ -244,7 +244,7 @@ export const ModularProductsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Main PRD Lifecycle Tabs */}
+        {/* 3 Main Lifecycle Tabs */}
         <div className="flex justify-center mb-12">
           <div className="inline-flex p-1.5 rounded-full bg-[#e8efde] border border-stone-300/70 shadow-inner max-w-full overflow-x-auto">
             <button
@@ -284,7 +284,7 @@ export const ModularProductsSection: React.FC = () => {
 
         {/* Two-Column Layout: Left Engine Accordion & Right Live Preview Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: PRD Engine Selector Cards */}
+          {/* Left Column: Engine Selector Cards */}
           <div className="lg:col-span-6 space-y-4">
             {filteredEngines.map((engine) => {
               const isOpen = engine.id === activeEngine.id;
@@ -339,8 +339,8 @@ export const ModularProductsSection: React.FC = () => {
                         </p>
 
                         <div className="p-3 bg-[#F5FAED] rounded-xl border border-[#7aa32c]/20 text-xs font-mono text-[#2e4013]">
-                          <span className="font-bold text-stone-800">Formula / Rule: </span>
-                          {engine.prdRef}
+                          <span className="font-bold text-stone-800">Operating Logic: </span>
+                          {engine.logicRef}
                         </div>
 
                         <ul className="space-y-1.5 pt-1">
@@ -395,7 +395,7 @@ export const ModularProductsSection: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-1 text-[#7aa32c] font-bold text-[11px]">
                   <Activity className="w-3.5 h-3.5 animate-pulse" />
-                  <span>LIVE PRD ENGINE</span>
+                  <span>ACTIVE ENGINE STREAM</span>
                 </div>
               </div>
 

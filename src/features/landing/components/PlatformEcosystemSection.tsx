@@ -147,11 +147,11 @@ export const PlatformEcosystemSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 4 Core Technology Pillars Defined in PRD */}
+        {/* 4 Core Technology Pillars */}
         <div className="pt-8 border-t border-stone-100">
           <div className="text-center mb-8">
             <span className="text-xs font-bold uppercase tracking-widest text-stone-400 font-typewriter">
-              Core Underlying AgTech Infrastructure (PRD §23, §30, §43, §48)
+              Core Underlying AgTech Infrastructure
             </span>
           </div>
 

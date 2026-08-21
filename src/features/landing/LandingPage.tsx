@@ -1,7 +1,6 @@
 import React from 'react';
 import { LandingNavbar } from './components/LandingNavbar';
 import { HeroSection } from './components/HeroSection';
-import { TrustMarquee } from './components/TrustMarquee';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { ModularProductsSection } from './components/ModularProductsSection';
 import { PlatformEcosystemSection } from './components/PlatformEcosystemSection';
@@ -19,23 +18,21 @@ export const LandingPage: React.FC = () => {
       {/* Sticky Navigation */}
       <LandingNavbar />
 
-      {/* Hero Banner (Matching the attached photo) */}
+      {/* Main Content */}
       <main className="flex-1">
+        {/* Hero Banner */}
         <HeroSection />
 
-        {/* Brands and Ecosystem Marquee */}
-        <TrustMarquee />
-
-        {/* How It Works Closed-Loop Pipeline */}
+        {/* Closed-Loop Operating Pipeline */}
         <HowItWorksSection />
 
-        {/* Modular Products (Pre-Harvest, Post-Harvest, Operations) */}
+        {/* Machinery Intelligence Core Engines */}
         <ModularProductsSection />
 
         {/* Multi-Device Platform Ecosystem & Tech Pillars */}
         <PlatformEcosystemSection />
 
-        {/* Industries We Serve */}
+        {/* Interactive Industry Solutions */}
         <IndustriesSection />
 
         {/* Interactive ROI & Fleet Efficiency Calculator */}

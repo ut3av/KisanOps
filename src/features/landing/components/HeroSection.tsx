@@ -40,28 +40,28 @@ const HERO_SLIDES: HeroSlide[] = [
     tabLabel: '1. Demand & Fleet Allocation',
     title: 'Predict machinery demand & optimize inter-hub equipment allocation.',
     subtitle: 'Yukti correlates upcoming crop maturity, historical rentals, and weather windows to alert CHCs 14 days before harvester shortages occur.',
-    highlightTag: 'PRD §17-20: Predictive AI Allocation'
+    highlightTag: 'Autonomous Predictive Allocation'
   },
   {
     id: 'smart-matching',
     tabLabel: '2. Smart Match & Dynamic Price',
     title: 'Explainable 7-factor machine recommendations & transparent pricing.',
     subtitle: 'From an 8-acre wheat farm in Sehore to the optimal John Deere Harvester with explainable pricing bounded by strict 80%-130% price safeguards.',
-    highlightTag: 'PRD §11-16: 94% Explainable Fit'
+    highlightTag: '94% Explainable Machine Fit'
   },
   {
     id: 'live-telematics',
     tabLabel: '3. Live CAN-Bus Telematics',
     title: 'Real-time J1939 telemetry stream with instant fuel anomaly alerts.',
     subtitle: 'Track GPS speed, engine hours, thermal thresholds, and catch abnormal fuel consumption (+17% leakage alarms) directly from the tractor ECU.',
-    highlightTag: 'PRD §23-27: J1939 Sensor Stream'
+    highlightTag: 'Live J1939 Telematics Stream'
   },
   {
     id: 'agricredit-billing',
     tabLabel: '4. AgriCredit & GST Invoicing',
     title: 'Deferred harvest payments & automated verified usage tax invoices.',
     subtitle: 'Empower rural smallholders with non-collateral deferred rental limits (0-900 scoring) settled after selling harvest produce at the APMC mandi.',
-    highlightTag: 'PRD §30-33: Score 742 / ₹8,000 Limit'
+    highlightTag: 'Deferred AgriCredit & Verified Billing'
   }
 ];
 
@@ -144,7 +144,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
                 onClick={scrollToSolutions}
                 className="px-7 py-3.5 rounded-full bg-[#dbe8ca] hover:bg-[#cfdfba] text-[#2e4013] text-sm sm:text-base font-bold transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center gap-2"
               >
-                <span>Explore PRD Modules</span>
+                <span>Explore Core Solutions</span>
                 <ArrowRight className="w-4 h-4 text-[#7aa32c]" />
               </button>
             </div>

@@ -6,10 +6,10 @@
     "semantic_hash": "029f4905006c1fffd96bc863e2d98d3e"
   },
   "package.json": {
-    "mtime": 1787311560.0692332,
-    "seen": 1787312673.7712536,
-    "ast_hash": "6855bdbf5fa92e8361565361f44e02da",
-    "semantic_hash": "6855bdbf5fa92e8361565361f44e02da"
+    "mtime": 1787313369.1266038,
+    "seen": 1787322604.0197473,
+    "ast_hash": "93338e8ec2446b84d47136ed30040dae",
+    "semantic_hash": ""
   },
   "postcss.config.js": {
     "mtime": 1787311563.159461,
@@ -18,10 +18,10 @@
     "semantic_hash": "c1ee9ce6a4fe04105dbf8e619390df5e"
   },
   "src/App.tsx": {
-    "mtime": 1787311339.608345,
-    "seen": 1787312673.7712653,
-    "ast_hash": "050a7e970a210b4bbc7c17cdfd8bc16c",
-    "semantic_hash": "050a7e970a210b4bbc7c17cdfd8bc16c"
+    "mtime": 1787321846.5152788,
+    "seen": 1787322604.0197616,
+    "ast_hash": "8e4fb7fb2ca694e1a34f5033bca81755",
+    "semantic_hash": ""
   },
   "src/components/common/AgriCreditGauge.tsx": {
     "mtime": 1787311104.3443053,
@@ -30,16 +30,16 @@
     "semantic_hash": "3b72896d045c432b4b251ea4d5fde5b6"
   },
   "src/components/common/ExplanationBadge.tsx": {
-    "mtime": 1787311117.3984814,
-    "seen": 1787312673.7712727,
-    "ast_hash": "aa0b16b330ac38795c50c24daf3103f6",
-    "semantic_hash": "aa0b16b330ac38795c50c24daf3103f6"
+    "mtime": 1787316545.9437006,
+    "seen": 1787322604.019775,
+    "ast_hash": "e2a4dc1d509def999c947b42011cac6d",
+    "semantic_hash": ""
   },
   "src/components/common/LeafletFleetMap.tsx": {
-    "mtime": 1787311126.5285084,
-    "seen": 1787312673.7712765,
-    "ast_hash": "b30db4040c64bf12241f31de265a6668",
-    "semantic_hash": "b30db4040c64bf12241f31de265a6668"
+    "mtime": 1787316593.8954873,
+    "seen": 1787322604.0197823,
+    "ast_hash": "81dd8cd271525339b9eb110f932843e7",
+    "semantic_hash": ""
   },
   "src/components/common/StatCard.tsx": {
     "mtime": 1787311096.6072829,
@@ -60,28 +60,28 @@
     "semantic_hash": "f2456079f90545df0b22d5a5050150d1"
   },
   "src/components/layout/AdminLayout.tsx": {
-    "mtime": 1787311167.2914684,
-    "seen": 1787312673.771288,
-    "ast_hash": "8768916382ba6d51b1851a27e5027f90",
-    "semantic_hash": "8768916382ba6d51b1851a27e5027f90"
+    "mtime": 1787321818.6244376,
+    "seen": 1787322604.0197992,
+    "ast_hash": "36e0605e7c3fd4ee3d68bc7b3b8ad3c2",
+    "semantic_hash": ""
   },
   "src/components/layout/CHCLayout.tsx": {
-    "mtime": 1787311163.6096728,
-    "seen": 1787312673.771291,
-    "ast_hash": "3b0de0527a9d757c5deefd8fff59b989",
-    "semantic_hash": "3b0de0527a9d757c5deefd8fff59b989"
+    "mtime": 1787321946.7339315,
+    "seen": 1787322604.0198016,
+    "ast_hash": "b2bf880f52ff2d46e081f4896de9e003",
+    "semantic_hash": ""
   },
   "src/components/layout/FarmerLayout.tsx": {
-    "mtime": 1787311157.0273926,
-    "seen": 1787312673.7712936,
-    "ast_hash": "6509ec57fab62cbce3b791bcd64277ce",
-    "semantic_hash": "6509ec57fab62cbce3b791bcd64277ce"
+    "mtime": 1787321957.0519335,
+    "seen": 1787322604.0198042,
+    "ast_hash": "3e24b630a7cac508903a6ece1b93b2ba",
+    "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787311151.1610284,
-    "seen": 1787312673.7712965,
-    "ast_hash": "2085c62779d39180d97ad97a77a2838c",
-    "semantic_hash": "2085c62779d39180d97ad97a77a2838c"
+    "mtime": 1787321931.8645976,
+    "seen": 1787322604.0198066,
+    "ast_hash": "3fbec26cde9373e82a8b2e8276aac07f",
+    "semantic_hash": ""
   },
   "src/data/seedData.ts": {
     "mtime": 1787311062.151967,
@@ -90,22 +90,22 @@
     "semantic_hash": "cc564be57ee0267b822463a36c9e1c68"
   },
   "src/features/admin/AdminDashboard.tsx": {
-    "mtime": 1787311323.3470993,
-    "seen": 1787312673.771301,
-    "ast_hash": "19b467ab50b62c899e879683c868d6fe",
-    "semantic_hash": "19b467ab50b62c899e879683c868d6fe"
+    "mtime": 1787316421.8693044,
+    "seen": 1787322604.0198123,
+    "ast_hash": "44b1d5472c8db56af9cd4831f140e8d2",
+    "semantic_hash": ""
   },
   "src/features/auth/LandingRoleSelect.tsx": {
-    "mtime": 1787311333.6049948,
-    "seen": 1787312673.7713034,
-    "ast_hash": "a0492834248ccb8c65fe6ba846ba47f4",
-    "semantic_hash": "a0492834248ccb8c65fe6ba846ba47f4"
+    "mtime": 1787321826.7995453,
+    "seen": 1787322604.019815,
+    "ast_hash": "11c2eab572bd1966579fae8ab8eb41b1",
+    "semantic_hash": ""
   },
   "src/features/chc/BookingsManager.tsx": {
-    "mtime": 1787311283.77765,
-    "seen": 1787312673.7713058,
-    "ast_hash": "cf3bc7b50d58b2d05fa3abc12ed0d481",
-    "semantic_hash": "cf3bc7b50d58b2d05fa3abc12ed0d481"
+    "mtime": 1787316612.8059485,
+    "seen": 1787322604.01982,
+    "ast_hash": "7a1116055f6a2156ccfc6f578294e2a6",
+    "semantic_hash": ""
   },
   "src/features/chc/CHCOverview.tsx": {
     "mtime": 1787311248.17258,
@@ -120,10 +120,10 @@
     "semantic_hash": "61995102449cdedb1ff803def27fc39b"
   },
   "src/features/chc/DemandIntelligence.tsx": {
-    "mtime": 1787311258.3633587,
-    "seen": 1787312673.7713137,
-    "ast_hash": "ac10d34c5950d21f8c9aabd92b0bf5e0",
-    "semantic_hash": "ac10d34c5950d21f8c9aabd92b0bf5e0"
+    "mtime": 1787316517.4537568,
+    "seen": 1787322604.019829,
+    "ast_hash": "716aca97c08efd9d5f1b9811e582deb8",
+    "semantic_hash": ""
   },
   "src/features/chc/FleetManagement.tsx": {
     "mtime": 1787311268.8076608,
@@ -132,10 +132,10 @@
     "semantic_hash": "89fb15edee36e674855bdb6eb8f82a8a"
   },
   "src/features/chc/LiveTelematics.tsx": {
-    "mtime": 1787311275.3097422,
-    "seen": 1787312673.77132,
-    "ast_hash": "73e0626641aaa500726f80bcb6caca4b",
-    "semantic_hash": "73e0626641aaa500726f80bcb6caca4b"
+    "mtime": 1787316568.4768238,
+    "seen": 1787322604.019835,
+    "ast_hash": "d93410fb836c5d7b6c526430aad2e17a",
+    "semantic_hash": ""
   },
   "src/features/chc/PredictiveMaintenance.tsx": {
     "mtime": 1787311293.4415271,
@@ -168,28 +168,28 @@
     "semantic_hash": "7cb6cc369981c65b575719b369e7379b"
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787311181.3670847,
-    "seen": 1787312673.7713344,
-    "ast_hash": "41e6c0d6038ad91f812c9e0cf8c0d526",
-    "semantic_hash": "41e6c0d6038ad91f812c9e0cf8c0d526"
+    "mtime": 1787320906.6482856,
+    "seen": 1787322604.0198548,
+    "ast_hash": "c151f5aeb3c198dcd176f650fce1c9ba",
+    "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
-    "mtime": 1787311213.648225,
-    "seen": 1787312673.7713373,
-    "ast_hash": "a346da886766f2a555bcdf630bd8e3d8",
-    "semantic_hash": "a346da886766f2a555bcdf630bd8e3d8"
+    "mtime": 1787316551.7463279,
+    "seen": 1787322604.0198574,
+    "ast_hash": "c323c1642980ef29ce526072a7712f6f",
+    "semantic_hash": ""
   },
   "src/features/farmer/FarmerRentals.tsx": {
-    "mtime": 1787311224.9258623,
-    "seen": 1787312673.7713394,
-    "ast_hash": "8f601b8155dc8afbc7dc14b4388e0a8f",
-    "semantic_hash": "8f601b8155dc8afbc7dc14b4388e0a8f"
+    "mtime": 1787316277.2445917,
+    "seen": 1787322604.0198598,
+    "ast_hash": "8f0485fa52fc690ae3675dbc84fada56",
+    "semantic_hash": ""
   },
   "src/features/farmer/MachineDetailsModal.tsx": {
-    "mtime": 1787311202.8140056,
-    "seen": 1787312673.7713418,
-    "ast_hash": "6e75cb2d62d83292331431e35a8c1843",
-    "semantic_hash": "6e75cb2d62d83292331431e35a8c1843"
+    "mtime": 1787316372.5808952,
+    "seen": 1787322604.0198622,
+    "ast_hash": "45e8d7058ddc24c119476dfa26f69fe8",
+    "semantic_hash": ""
   },
   "src/lib/__tests__/engines.test.ts": {
     "mtime": 1787311397.9804344,
@@ -198,10 +198,10 @@
     "semantic_hash": "3f93d66b5f99a46f6106b7c309bdf4b0"
   },
   "src/lib/billingEngine.ts": {
-    "mtime": 1787311044.3885276,
-    "seen": 1787312673.7713466,
-    "ast_hash": "d3717a0bcb14d66c37d35db35dcb1ba1",
-    "semantic_hash": "d3717a0bcb14d66c37d35db35dcb1ba1"
+    "mtime": 1787320892.5168097,
+    "seen": 1787322604.0199137,
+    "ast_hash": "c8f0df40a128a8793eb7f4479509beac",
+    "semantic_hash": ""
   },
   "src/lib/creditEngine.ts": {
     "mtime": 1787311017.1251657,
@@ -228,10 +228,10 @@
     "semantic_hash": "684f96af1ba358f3297c907ca8d355ef"
   },
   "src/lib/recommendationEngine.ts": {
-    "mtime": 1787311380.0671778,
-    "seen": 1787312673.7713604,
-    "ast_hash": "9acfc12af05e6870b9fff5e02a3d8cc5",
-    "semantic_hash": "9acfc12af05e6870b9fff5e02a3d8cc5"
+    "mtime": 1787316385.3737812,
+    "seen": 1787322604.0199292,
+    "ast_hash": "3d0a9003f7fda3bc8e8e44106550c2d2",
+    "semantic_hash": ""
   },
   "src/lib/telematicsEngine.ts": {
     "mtime": 1787311475.5912566,
@@ -264,10 +264,10 @@
     "semantic_hash": "3d2cf53f0ce0e163b1cd9d96217f9663"
   },
   "tailwind.config.js": {
-    "mtime": 1787310948.953902,
-    "seen": 1787312673.7713766,
-    "ast_hash": "f1b88511380ce6058186b05225afb60f",
-    "semantic_hash": "f1b88511380ce6058186b05225afb60f"
+    "mtime": 1787320552.1946254,
+    "seen": 1787322604.019955,
+    "ast_hash": "f438b2bc89e471c963227678b501a54d",
+    "semantic_hash": ""
   },
   "tsconfig.app.json": {
     "mtime": 1787311470.0600162,
@@ -298,5 +298,359 @@
     "seen": 1787312673.771388,
     "ast_hash": "8703a71ba2638a4b26c52ad0682b9164",
     "semantic_hash": "8703a71ba2638a4b26c52ad0682b9164"
+  },
+  "src/components/common/DopplerRadarPlayer.tsx": {
+    "mtime": 1787315361.1218052,
+    "seen": 1787322604.019771,
+    "ast_hash": "a51f7ce2468c1dca965433487d24ea3d",
+    "semantic_hash": ""
+  },
+  "src/components/common/KisanLoader.tsx": {
+    "mtime": 1787320819.044955,
+    "seen": 1787322604.019779,
+    "ast_hash": "08c4d94a610985a3bef1b32b5158a5b9",
+    "semantic_hash": ""
+  },
+  "src/components/common/WeatherRadarCard.tsx": {
+    "mtime": 1787316302.983535,
+    "seen": 1787322604.0197928,
+    "ast_hash": "1af8df19e9efc6ff953cfa9c00c301c0",
+    "semantic_hash": ""
+  },
+  "src/features/auth/LoginPage.tsx": {
+    "mtime": 1787320918.1964285,
+    "seen": 1787322604.0198176,
+    "ast_hash": "8ab25ca820d63269a4b8aa3bf13b4aad",
+    "semantic_hash": ""
+  },
+  "src/features/common/NotFoundPage.tsx": {
+    "mtime": 1787321585.7981563,
+    "seen": 1787322604.0198433,
+    "ast_hash": "bcd6376ed538257bb023f59899089b01",
+    "semantic_hash": ""
+  },
+  "src/features/landing/LandingPage.tsx": {
+    "mtime": 1787321770.3293445,
+    "seen": 1787322604.0198646,
+    "ast_hash": "2b5faf73a3eb34c720b63bb258d1e614",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/BookDemoModal.tsx": {
+    "mtime": 1787320809.9583466,
+    "seen": 1787322604.019867,
+    "ast_hash": "d3a9a06233f89b84ca0774f771ad152f",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/CtaBanner.tsx": {
+    "mtime": 1787321722.365106,
+    "seen": 1787322604.0198689,
+    "ast_hash": "04e3b20a69cee89cf2539683533405ba",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/FaqSection.tsx": {
+    "mtime": 1787320791.456978,
+    "seen": 1787322604.019871,
+    "ast_hash": "d46016a9b195e8774fc98dc2e8da5616",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/HeroSection.tsx": {
+    "mtime": 1787322467.046558,
+    "seen": 1787322604.0198731,
+    "ast_hash": "fa7cab1f7986c9e02735dc20df9c19e6",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/HowItWorksSection.tsx": {
+    "mtime": 1787320738.4347994,
+    "seen": 1787322604.0198748,
+    "ast_hash": "c6e69591c7b8265aa58ff92c94c719dc",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/IndustriesSection.tsx": {
+    "mtime": 1787318109.2631855,
+    "seen": 1787322604.019877,
+    "ast_hash": "0719ae4c8d0b260b5faaafbede9ec4c4",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/LandingFooter.tsx": {
+    "mtime": 1787321860.9586656,
+    "seen": 1787322604.0198789,
+    "ast_hash": "66c05783b4a788bf4d48c4202069d9fc",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/LandingNavbar.tsx": {
+    "mtime": 1787321684.8537765,
+    "seen": 1787322604.0198808,
+    "ast_hash": "f0e497823af094b0107523b44d5005ac",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/ModularProductsSection.tsx": {
+    "mtime": 1787322426.203364,
+    "seen": 1787322604.0198824,
+    "ast_hash": "5e8bfa33fa8d86575ace9edf76f94bb1",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/PlatformEcosystemSection.tsx": {
+    "mtime": 1787322544.0153072,
+    "seen": 1787322604.0198843,
+    "ast_hash": "1a389841c9743a349795bf0cfe5985be",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/RoiCalculatorSection.tsx": {
+    "mtime": 1787321743.7741826,
+    "seen": 1787322604.019886,
+    "ast_hash": "15296711ba5ea9ba4a4abc6625000425",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/StatsImpactSection.tsx": {
+    "mtime": 1787322505.658511,
+    "seen": 1787322604.019888,
+    "ast_hash": "4c4adbc1de442d8866e110e7f8351a7d",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/TestimonialsSection.tsx": {
+    "mtime": 1787320774.5744402,
+    "seen": 1787322604.0198896,
+    "ast_hash": "f5c3d6ec9956b48800214ccf9ef8a107",
+    "semantic_hash": ""
+  },
+  "src/features/landing/components/TrustMarquee.tsx": {
+    "mtime": 1787318052.265291,
+    "seen": 1787322604.0198917,
+    "ast_hash": "84b3465c3c3fca8528887aa980a6f42a",
+    "semantic_hash": ""
+  },
+  "src/features/landing/pages/AboutPage.tsx": {
+    "mtime": 1787321646.7424147,
+    "seen": 1787322604.0198934,
+    "ast_hash": "28f748458b0372843edf96a7fc2e5561",
+    "semantic_hash": ""
+  },
+  "src/features/landing/pages/ContactPage.tsx": {
+    "mtime": 1787321656.37349,
+    "seen": 1787322604.0198953,
+    "ast_hash": "38d6948f4f4f9eaad5cf43d74d4da5b1",
+    "semantic_hash": ""
+  },
+  "src/features/landing/pages/PricingRoiPage.tsx": {
+    "mtime": 1787321638.7474613,
+    "seen": 1787322604.0198975,
+    "ast_hash": "0c7fefb2c1ae190ef53ef5a9e1d280c2",
+    "semantic_hash": ""
+  },
+  "src/features/landing/pages/ProductsOperationsPage.tsx": {
+    "mtime": 1787321617.819992,
+    "seen": 1787322604.0198994,
+    "ast_hash": "7d6bd376f7492d5b6ae1d21fb9e8129f",
+    "semantic_hash": ""
+  },
+  "src/features/landing/pages/ProductsPostHarvestPage.tsx": {
+    "mtime": 1787321608.6498542,
+    "seen": 1787322604.0199013,
+    "ast_hash": "f54bfabb138f28ee679ff7575fa39579",
+    "semantic_hash": ""
+  },
+  "src/features/landing/pages/ProductsPreHarvestPage.tsx": {
+    "mtime": 1787321597.0255857,
+    "seen": 1787322604.0199034,
+    "ast_hash": "7c96f91c9afb4c380901ff24ac8f42c9",
+    "semantic_hash": ""
+  },
+  "src/features/landing/pages/SolutionsPage.tsx": {
+    "mtime": 1787321627.8125713,
+    "seen": 1787322604.0199053,
+    "ast_hash": "4c781750965450535242ea32b537247a",
+    "semantic_hash": ""
+  },
+  "src/lib/__tests__/weatherEngine.test.ts": {
+    "mtime": 1787315329.7297323,
+    "seen": 1787322604.0199108,
+    "ast_hash": "050899628a2de11db696ec375392c638",
+    "semantic_hash": ""
+  },
+  "src/lib/supabaseClient.ts": {
+    "mtime": 1787313378.5041244,
+    "seen": 1787322604.0199313,
+    "ast_hash": "08016f1e58ad14c92ec5fac241fe5a53",
+    "semantic_hash": ""
+  },
+  "src/lib/weatherEngine.ts": {
+    "mtime": 1787316470.981771,
+    "seen": 1787322604.0199366,
+    "ast_hash": "c21fe391d5682f2b547499403067cbf1",
+    "semantic_hash": ""
+  },
+  "supabase/schema.sql": {
+    "mtime": 1787313443.736278,
+    "seen": 1787322604.0199502,
+    "ast_hash": "ff5c1412c03899196fdea3efa46b7286",
+    "semantic_hash": ""
+  },
+  "supabase/seed.sql": {
+    "mtime": 1787314262.0352316,
+    "seen": 1787322604.019952,
+    "ast_hash": "7f8c23e356327ebab41f450a1750576c",
+    "semantic_hash": ""
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1787311117.7000835,
+    "seen": 1787322604.0199692,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1787311117.7000835,
+    "seen": 1787322604.0199716,
+    "ast_hash": "a831cf3669f1e6ab85d8a80ebe655f99",
+    "semantic_hash": ""
+  },
+  "API.md": {
+    "mtime": 1787311422.55385,
+    "seen": 1787322604.0199747,
+    "ast_hash": "76268e07cf7bcb254a9df590fabf36ee",
+    "semantic_hash": ""
+  },
+  "ARCHITECTURE.md": {
+    "mtime": 1787311414.0764484,
+    "seen": 1787322604.0199769,
+    "ast_hash": "a4c403c54960ee1da417f89e3adb9c84",
+    "semantic_hash": ""
+  },
+  "DATABASE.md": {
+    "mtime": 1787311429.2092004,
+    "seen": 1787322604.0199835,
+    "ast_hash": "a660a12d37a967bef4021c5cdda36cce",
+    "semantic_hash": ""
+  },
+  "DEMO.md": {
+    "mtime": 1787311445.3866606,
+    "seen": 1787322604.0199862,
+    "ast_hash": "d5594de99c9ed1630f67424a724100ed",
+    "semantic_hash": ""
+  },
+  "DEPLOYMENT.md": {
+    "mtime": 1787311435.978618,
+    "seen": 1787322604.0199883,
+    "ast_hash": "a804cb0e0d5fc65140c4387e25403ca1",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1787320534.8099022,
+    "seen": 1787322604.0199935,
+    "ast_hash": "a7cde61980f6d37c36bfd2242d3e4944",
+    "semantic_hash": ""
+  },
+  "public/favicon.png": {
+    "mtime": 1787320475.287147,
+    "seen": 1787322604.0199957,
+    "ast_hash": "91225edacd6b219f2896a8dea99da0b2",
+    "semantic_hash": ""
+  },
+  "public/favicon.svg": {
+    "mtime": 1787310928.4437277,
+    "seen": 1787322604.0199976,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": ""
+  },
+  "public/icons.svg": {
+    "mtime": 1787310928.4775152,
+    "seen": 1787322604.0199995,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": ""
+  },
+  "public/images/hero-agronomist.jpg": {
+    "mtime": 1787317907.5496814,
+    "seen": 1787322604.0200016,
+    "ast_hash": "50f795afa6d0f116f1dd19f5ff8850ba",
+    "semantic_hash": ""
+  },
+  "public/images/hero-tractor.jpg": {
+    "mtime": 1787317926.7173162,
+    "seen": 1787322604.0200036,
+    "ast_hash": "077554a3274b516deda12a097d1013f5",
+    "semantic_hash": ""
+  },
+  "public/images/real-chc-yard.jpg": {
+    "mtime": 1787322400.6948109,
+    "seen": 1787322604.020006,
+    "ast_hash": "70d6051a1ac77d2f1090b362b7ba7878",
+    "semantic_hash": ""
+  },
+  "public/images/real-farmer-field.jpg": {
+    "mtime": 1787322400.6948109,
+    "seen": 1787322604.0200076,
+    "ast_hash": "c5c366dc79dae7b98c7d274883849097",
+    "semantic_hash": ""
+  },
+  "public/images/real-harvester-field.jpg": {
+    "mtime": 1787322400.6925464,
+    "seen": 1787322604.0200095,
+    "ast_hash": "c839c0ec1ea2f7df10cb65c56ae16666",
+    "semantic_hash": ""
+  },
+  "public/images/real-tractor-field.jpg": {
+    "mtime": 1787322400.6904745,
+    "seen": 1787322604.0200117,
+    "ast_hash": "f37b5f53a5b262dac7e568d260bc5af2",
+    "semantic_hash": ""
+  },
+  "public/images/remote-sensing.jpg": {
+    "mtime": 1787317957.3173127,
+    "seen": 1787322604.0200138,
+    "ast_hash": "7a113e65c0c0d7cf5180dd4b74f4fdfd",
+    "semantic_hash": ""
+  },
+  "public/images/yukti-logo-transparent.png": {
+    "mtime": 1787320475.287147,
+    "seen": 1787322604.0200162,
+    "ast_hash": "91225edacd6b219f2896a8dea99da0b2",
+    "semantic_hash": ""
+  },
+  "public/images/yukti-logo.png": {
+    "mtime": 1787320475.270714,
+    "seen": 1787322604.0200179,
+    "ast_hash": "91225edacd6b219f2896a8dea99da0b2",
+    "semantic_hash": ""
+  },
+  "public/images/yukti-wordmark-dark.png": {
+    "mtime": 1787320509.7750268,
+    "seen": 1787322604.0200202,
+    "ast_hash": "4a9c28dc7c9d5a7a9b7a03f3d9304436",
+    "semantic_hash": ""
+  },
+  "public/images/yukti-wordmark-green.png": {
+    "mtime": 1787320509.7857654,
+    "seen": 1787322604.0200226,
+    "ast_hash": "1c60162a055beb5283d37ee0cbe64b2e",
+    "semantic_hash": ""
+  },
+  "public/images/yukti-wordmark-white.png": {
+    "mtime": 1787320509.7836325,
+    "seen": 1787322604.0200245,
+    "ast_hash": "05c90f037da231e3e310a50ce2330792",
+    "semantic_hash": ""
+  },
+  "public/images/yukti-wordmark.png": {
+    "mtime": 1787320495.219936,
+    "seen": 1787322604.0200267,
+    "ast_hash": "dfc19dfaa4ba916c271dcdfe9f135597",
+    "semantic_hash": ""
+  },
+  "src/assets/hero.png": {
+    "mtime": 1787310928.427074,
+    "seen": 1787322604.0200286,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": ""
+  },
+  "src/assets/react.svg": {
+    "mtime": 1787310928.4933908,
+    "seen": 1787322604.020031,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": ""
+  },
+  "src/assets/vite.svg": {
+    "mtime": 1787310928.510033,
+    "seen": 1787322604.0200331,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": ""
   }
 }

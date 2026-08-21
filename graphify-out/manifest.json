@@ -18,9 +18,9 @@
     "semantic_hash": "c1ee9ce6a4fe04105dbf8e619390df5e"
   },
   "src/App.tsx": {
-    "mtime": 1787321846.5152788,
-    "seen": 1787322604.0197616,
-    "ast_hash": "8e4fb7fb2ca694e1a34f5033bca81755",
+    "mtime": 1787323600.7645202,
+    "seen": 1787323721.0337949,
+    "ast_hash": "2824d0605d1d02cbea767d99ebee88a5",
     "semantic_hash": ""
   },
   "src/components/common/AgriCreditGauge.tsx": {
@@ -330,9 +330,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/LandingPage.tsx": {
-    "mtime": 1787321770.3293445,
-    "seen": 1787322604.0198646,
-    "ast_hash": "2b5faf73a3eb34c720b63bb258d1e614",
+    "mtime": 1787323642.1718464,
+    "seen": 1787323721.0338633,
+    "ast_hash": "bf3c56dadab5ecf51af18104dca85510",
     "semantic_hash": ""
   },
   "src/features/landing/components/BookDemoModal.tsx": {
@@ -354,9 +354,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/HeroSection.tsx": {
-    "mtime": 1787322467.046558,
-    "seen": 1787322604.0198731,
-    "ast_hash": "fa7cab1f7986c9e02735dc20df9c19e6",
+    "mtime": 1787323332.839514,
+    "seen": 1787323721.03387,
+    "ast_hash": "dcf0dea87c78bf4a9761906a2a71b6da",
     "semantic_hash": ""
   },
   "src/features/landing/components/HowItWorksSection.tsx": {
@@ -366,9 +366,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/IndustriesSection.tsx": {
-    "mtime": 1787318109.2631855,
-    "seen": 1787322604.019877,
-    "ast_hash": "0719ae4c8d0b260b5faaafbede9ec4c4",
+    "mtime": 1787323503.3310971,
+    "seen": 1787323721.0338733,
+    "ast_hash": "b8c0cdbf94815aa91a8ad6b84928e712",
     "semantic_hash": ""
   },
   "src/features/landing/components/LandingFooter.tsx": {
@@ -384,15 +384,15 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/ModularProductsSection.tsx": {
-    "mtime": 1787322426.203364,
-    "seen": 1787322604.0198824,
-    "ast_hash": "5e8bfa33fa8d86575ace9edf76f94bb1",
+    "mtime": 1787323410.2734473,
+    "seen": 1787323721.0338788,
+    "ast_hash": "72ca7005c399e363b070ce0cc6a7c395",
     "semantic_hash": ""
   },
   "src/features/landing/components/PlatformEcosystemSection.tsx": {
-    "mtime": 1787322544.0153072,
-    "seen": 1787322604.0198843,
-    "ast_hash": "1a389841c9743a349795bf0cfe5985be",
+    "mtime": 1787323434.9799068,
+    "seen": 1787323721.0338805,
+    "ast_hash": "11f0f47d5416c062136c5da5df43964d",
     "semantic_hash": ""
   },
   "src/features/landing/components/RoiCalculatorSection.tsx": {
@@ -651,6 +651,12 @@
     "mtime": 1787310928.510033,
     "seen": 1787322604.0200331,
     "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": ""
+  },
+  "src/components/common/InteractiveCursor.tsx": {
+    "mtime": 1787323261.889048,
+    "seen": 1787323721.0338068,
+    "ast_hash": "520b885c390eb4ec57e2a648bf6d6a2a",
     "semantic_hash": ""
   }
 }

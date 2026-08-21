@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Tractor,
   Building2,
@@ -19,7 +20,8 @@ interface IndustryCard {
   shortDesc: string;
   metric: string;
   metricLabel: string;
-  image: string;
+  targetPath: string;
+  actionText: string;
   icon: React.ReactNode;
   benefits: string[];
 }
@@ -33,7 +35,8 @@ const INDUSTRIES: IndustryCard[] = [
       'Empower machinery hubs with predictive regional demand forecasting, GPS CAN-Bus telematics, dynamic pricing, and deferred harvest billing.',
     metric: '+21% Utilization',
     metricLabel: 'Average Fleet ROI Gain',
-    image: '/images/hero-tractor.jpg',
+    targetPath: '/solutions/chc',
+    actionText: 'Explore CHC Solutions',
     icon: <Building2 className="w-5 h-5 text-[#7aa32c]" />,
     benefits: [
       'Regional equipment shortage alerts',
@@ -49,7 +52,8 @@ const INDUSTRIES: IndustryCard[] = [
       'Transform large-scale farming with end-to-end digital operations covering soil GIS, crop growth models, fleet scheduling, and centralized P&L reporting.',
     metric: '24% Lower Cost',
     metricLabel: 'Input & Fuel Savings',
-    image: '/images/hero-agronomist.jpg',
+    targetPath: '/solutions/chc',
+    actionText: 'Explore Enterprise Farm OS',
     icon: <Tractor className="w-5 h-5 text-[#7aa32c]" />,
     benefits: [
       'Multi-thousand-acre plot digitization',
@@ -65,7 +69,8 @@ const INDUSTRIES: IndustryCard[] = [
       'Elevate plantation and vineyard productivity with specialized multi-tier canopy monitoring, precision irrigation schedules, and harvest labor tracking.',
     metric: '94% Quality Match',
     metricLabel: 'Yield Grade Consistency',
-    image: '/images/remote-sensing.jpg',
+    targetPath: '/solutions/chc',
+    actionText: 'Explore Plantation Solutions',
     icon: <TreePine className="w-5 h-5 text-[#7aa32c]" />,
     benefits: [
       'Micro-climate frost & pest alerts',
@@ -81,7 +86,8 @@ const INDUSTRIES: IndustryCard[] = [
       'Secure contract farming supply chains with raw material traceability, verified farmer practices, pesticide residue compliance, and harvest delivery predictability.',
     metric: '100% Traceability',
     metricLabel: 'Farm-to-Fork Audit Ready',
-    image: '/images/remote-sensing.jpg',
+    targetPath: '/products/post-harvest',
+    actionText: 'Explore Post-Harvest Traceability',
     icon: <Utensils className="w-5 h-5 text-[#7aa32c]" />,
     benefits: [
       'Contract farming execution visibility',
@@ -97,35 +103,41 @@ const INDUSTRIES: IndustryCard[] = [
       'Digitally transform demand generation, run field demonstration trial validation with satellite NDVI, and empower distributor networks.',
     metric: '3.4x Faster',
     metricLabel: 'Trial Efficacy Proof',
-    image: '/images/hero-agronomist.jpg',
+    targetPath: '/products/pre-harvest',
+    actionText: 'Explore Pre-Harvest & Trials',
     icon: <Boxes className="w-5 h-5 text-[#7aa32c]" />,
     benefits: [
-      'Geo-targeted product recommendations',
-      'Field trial vegetative response analytics',
-      'Dealer stocking optimization'
+      'Product trial field efficacy telemetry',
+      'Demonstration plot growth timelines',
+      'Digital agronomist advisory network'
     ]
   },
   {
-    id: 'foundations-ngos',
+    id: 'cooperatives',
     title: 'Foundations & Agri Cooperatives',
     category: 'Impact & Climate',
     shortDesc:
       'Empower smallholder initiatives focused on climate resilience, regenerative farming, affordable machinery access, and transparent impact verification.',
     metric: '8,400+ Farmers',
-    metricLabel: 'Smallholders Onboarded',
-    image: '/images/hero-tractor.jpg',
+    metricLabel: 'Livelihood Uplift',
+    targetPath: '/products/operations',
+    actionText: 'Explore Operations & Credit',
     icon: <HeartHandshake className="w-5 h-5 text-[#7aa32c]" />,
     benefits: [
-      'Deferred AgriCredit micro-limits',
-      'Soil carbon sequestration accounting',
-      'Public-private partnership reporting'
+      'Community machinery sharing pooling',
+      'Deferred harvest credit scoring',
+      'Auditable carbon baseline records'
     ]
   }
 ];
 
 export const IndustriesSection: React.FC = () => {
-  const [selectedIndustry, setSelectedIndustry] = useState<string>('chc');
-  const activeItem = INDUSTRIES.find((i) => i.id === selectedIndustry) || INDUSTRIES[0];
+  const navigate = useNavigate();
+
+  const handleCardClick = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <section id="industries" className="py-20 bg-[#F5FAED] border-b border-stone-200/60">
@@ -147,36 +159,33 @@ export const IndustriesSection: React.FC = () => {
         {/* Industry Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {INDUSTRIES.map((industry) => {
-            const isSelected = industry.id === selectedIndustry;
             return (
               <div
                 key={industry.id}
-                onClick={() => setSelectedIndustry(industry.id)}
-                className={`rounded-3xl border transition-all duration-300 cursor-pointer p-6 flex flex-col justify-between ${
-                  isSelected
-                    ? 'bg-white border-[#7aa32c] shadow-xl scale-[1.02]'
-                    : 'bg-white/80 border-stone-200/80 hover:bg-white hover:border-stone-300'
-                }`}
+                onClick={() => handleCardClick(industry.targetPath)}
+                className="rounded-3xl border border-stone-200/80 bg-white hover:border-[#7aa32c] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer p-6 flex flex-col justify-between group"
               >
                 <div className="space-y-4">
                   {/* Card Header */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
-                      <div className="p-2.5 rounded-2xl bg-[#F5FAED] text-[#7aa32c]">
+                      <div className="p-2.5 rounded-2xl bg-[#F5FAED] text-[#7aa32c] group-hover:bg-[#7aa32c] group-hover:text-white transition-colors">
                         {industry.icon}
                       </div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-stone-400">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-stone-400 font-typewriter">
                         {industry.category}
                       </span>
                     </div>
-                    <span className="text-xs font-extrabold px-2.5 py-1 rounded-full bg-[#7aa32c]/15 text-[#2e4013]">
+                    <span className="text-xs font-extrabold px-2.5 py-1 rounded-full bg-[#7aa32c]/15 text-[#2e4013] font-typewriter">
                       {industry.metric}
                     </span>
                   </div>
 
                   {/* Title & Description */}
                   <div>
-                    <h3 className="text-lg font-bold text-stone-900 mb-2">{industry.title}</h3>
+                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-[#1b4d3e] transition-colors">
+                      {industry.title}
+                    </h3>
                     <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                       {industry.shortDesc}
                     </p>
@@ -193,10 +202,19 @@ export const IndustriesSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Card Footer */}
-                <div className="mt-6 pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-[#7aa32c]">
-                  <span>{industry.metricLabel}</span>
-                  <ArrowRight className="w-4 h-4" />
+                {/* Card Footer: Functional Explore Button */}
+                <div className="mt-6 pt-3 border-t border-stone-100 flex items-center justify-between">
+                  <span className="text-xs text-stone-400 font-semibold">{industry.metricLabel}</span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleCardClick(industry.targetPath);
+                    }}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#7aa32c] group-hover:text-[#1b4d3e] group-hover:translate-x-1 transition-all cursor-pointer"
+                  >
+                    <span>{industry.actionText}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             );
@@ -206,3 +224,5 @@ export const IndustriesSection: React.FC = () => {
     </section>
   );
 };
+
+export default IndustriesSection;
