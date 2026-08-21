@@ -131,6 +131,7 @@ export interface Machine {
   longitude: number;
   distanceKm?: number;
   operatorName?: string;
+  operatorPhone?: string;
   operatorRating?: number;
   specs: {
     engine: string;

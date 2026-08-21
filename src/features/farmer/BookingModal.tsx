@@ -84,8 +84,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         estimatedTotal,
         paymentMethod,
         paymentStatus: paymentMethod === 'AGRICREDIT_DEFERRED' ? 'AUTHORIZED' : 'CAPTURED',
-        operatorName: machine.operatorName || 'Raju Verma',
-        operatorPhone: '+91 97550 12399',
+        operatorName: machine.operatorName || 'Assigned CHC Operator',
+        operatorPhone: machine.operatorPhone || state.currentUser.phoneNumber || 'N/A',
       });
 
       setIsSubmitting(false);

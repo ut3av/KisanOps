@@ -195,6 +195,27 @@ export const FarmerMarketplace: React.FC = () => {
             height="560px"
           />
         </div>
+      ) : processedMachines.length === 0 ? (
+        <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/90 shadow-subtle space-y-4">
+          <div className="w-14 h-14 rounded-2xl bg-surface-100 flex items-center justify-center mx-auto text-slate-400">
+            <Filter className="w-7 h-7" />
+          </div>
+          <h3 className="text-lg font-bold text-slate-800">No Machinery Available Matching Filters</h3>
+          <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+            No equipment found matching your selected category, radius, or health score criteria. Try resetting category filters or extending your search radius.
+          </p>
+          <button
+            onClick={() => {
+              setSelectedCategory('ALL');
+              setSearchQuery('');
+              setMaxDistance(50);
+              setMinHealth(0);
+            }}
+            className="px-4 py-2 rounded-xl bg-agri-800 text-white text-xs font-bold shadow-sm hover:bg-agri-900 transition-colors cursor-pointer"
+          >
+            Reset All Filters
+          </button>
+        </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {processedMachines.map(({ machine, matchScore, matchReasons, priceQuote }) => (

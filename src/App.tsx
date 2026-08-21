@@ -69,7 +69,7 @@ export const App: React.FC = () => {
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/pricing" element={<PricingRoiPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />}
+          <Route path="/contact" element={<ContactPage />} />
 
           {/* Authentication & Role Selection */}
           <Route path="/role-select" element={<LandingRoleSelect />} />

@@ -22,7 +22,21 @@ export const LiveTelematics: React.FC = () => {
   const { machines, chcs, farm, currentTelemetry, simulationState, isSimulating } = state;
 
   const targetMachine = machines.find(m => m.id === 'mach-jd-harv-07') || machines[0];
-  const telemetry = currentTelemetry[targetMachine.id];
+  const telemetry = targetMachine ? currentTelemetry[targetMachine.id] : undefined;
+
+  if (!targetMachine) {
+    return (
+      <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 shadow-subtle space-y-4">
+        <div className="w-14 h-14 rounded-2xl bg-surface-100 flex items-center justify-center mx-auto text-slate-400">
+          <Tractor className="w-7 h-7" />
+        </div>
+        <h3 className="text-lg font-bold text-slate-800">No Machinery Fleet Registered</h3>
+        <p className="text-xs text-slate-500 max-w-md mx-auto">
+          Add tractors or harvesters in your CHC Hub Fleet to view real-time ECU J1939 CAN-Bus telematics and GPS tracking.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -48,7 +62,7 @@ export const LiveTelematics: React.FC = () => {
           <button
             onClick={() => toggleFuelAnomaly()}
             className={clsx(
-              'px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all border',
+              'px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all border cursor-pointer',
               simulationState.isFuelAnomalyActive
                 ? 'bg-rose-600 text-white border-rose-700 shadow-md animate-pulse'
                 : 'bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100'
@@ -62,7 +76,7 @@ export const LiveTelematics: React.FC = () => {
 
           <button
             onClick={() => toggleSimulation()}
-            className="btn-secondary text-xs py-2 px-3 flex items-center gap-1.5"
+            className="btn-secondary text-xs py-2 px-3 flex items-center gap-1.5 cursor-pointer"
           >
             <Activity className="w-3.5 h-3.5" />
             <span>{isSimulating ? 'Pause Stream' : 'Resume Stream'}</span>

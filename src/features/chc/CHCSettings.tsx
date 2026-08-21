@@ -83,7 +83,7 @@ export const CHCSettings: React.FC = () => {
               <label className="font-bold text-slate-700">Direct Dispatch Hotline</label>
               <input
                 type="text"
-                defaultValue="+91 94250 88912"
+                defaultValue={state.chcs[0]?.contactPhone || state.currentUser.phoneNumber}
                 className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2 font-mono text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
               />
             </div>

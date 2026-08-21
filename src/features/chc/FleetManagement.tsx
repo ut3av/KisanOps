@@ -128,7 +128,18 @@ export const FleetManagement: React.FC = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {filteredMachines.map(machine => {
+              {filteredMachines.length === 0 ? (
+                <tr>
+                  <td colSpan={8} className="py-12 text-center text-slate-400">
+                    <div className="flex flex-col items-center justify-center gap-2">
+                      <Tractor className="w-8 h-8 text-slate-300" />
+                      <span className="font-semibold text-xs text-slate-600">No machinery assets found</span>
+                      <span className="text-[11px] text-slate-400">Try adjusting your search query or status filter.</span>
+                    </div>
+                  </td>
+                </tr>
+              ) : (
+                filteredMachines.map(machine => {
                 const telemetry = currentTelemetry[machine.id];
                 const hoursToService = Math.round(machine.serviceIntervalHours - machine.hoursSinceLastService);
 
@@ -202,7 +213,7 @@ export const FleetManagement: React.FC = () => {
                     </td>
                   </tr>
                 );
-              })}
+              }))}
             </tbody>
           </table>
         </div>

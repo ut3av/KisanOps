@@ -214,6 +214,11 @@ export const LandingFooter: React.FC = () => {
                   ROI & Fleet Calculator
                 </Link>
               </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition-colors">
+                  Contact Specialist
+                </Link>
+              </li>
             </ul>
 
             <div className="pt-2">

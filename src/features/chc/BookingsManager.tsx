@@ -41,13 +41,24 @@ export const BookingsManager: React.FC = () => {
       </div>
 
       {/* Bookings List */}
-      <div className="space-y-4">
-        {bookings.map(booking => {
-          return (
-            <div
-              key={booking.id}
-              className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-subtle space-y-4 hover:shadow-card transition-all"
-            >
+      {bookings.length === 0 ? (
+        <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/90 shadow-subtle space-y-4">
+          <div className="w-14 h-14 rounded-2xl bg-surface-100 flex items-center justify-center mx-auto text-slate-400">
+            <CalendarCheck className="w-7 h-7" />
+          </div>
+          <h3 className="text-lg font-bold text-slate-800">No Rental Bookings Received</h3>
+          <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+            There are currently no active, dispatched, or pending farmer bookings for this CHC Hub. New machinery bookings will appear here automatically in real time.
+          </p>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {bookings.map(booking => {
+            return (
+              <div
+                key={booking.id}
+                className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-subtle space-y-4 hover:shadow-card transition-all"
+              >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-slate-100 pb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-agri-100 text-agri-900 flex items-center justify-center font-bold">
@@ -150,9 +161,10 @@ export const BookingsManager: React.FC = () => {
                 </div>
               </div>
             </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
