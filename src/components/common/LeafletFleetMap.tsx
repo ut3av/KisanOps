@@ -92,25 +92,54 @@ const activeMachineIcon = createProfessionalIcon('linear-gradient(135deg, #0284C
 const availableMachineIcon = createProfessionalIcon('linear-gradient(135deg, #10B981 0%, #059669 100%)', SVG_ICONS.tractor, 32);
 const maintenanceIcon = createProfessionalIcon('linear-gradient(135deg, #E11D48 0%, #BE123C 100%)', SVG_ICONS.alert, 34, true);
 
-export type MapBaseLayerType = 'STREET' | 'SATELLITE' | 'TERRAIN';
+export type MapBaseLayerType =
+  | 'AGRO_SATELLITE'
+  | 'CARTO_VOYAGER'
+  | 'OPEN_TOPO'
+  | 'OSM_STANDARD'
+  | 'DARK_TELEMATICS';
 
-const MAP_LAYERS: Record<MapBaseLayerType, { name: string; url: string; attribution: string; maxZoom: number }> = {
-  STREET: {
-    name: 'Carto Voyager (Clean Vector)',
-    url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a>, &copy; OSM',
-    maxZoom: 19,
-  },
-  SATELLITE: {
-    name: 'Esri World Imagery (High-Res Agro Satellite)',
+interface MapLayerConfig {
+  name: string;
+  url: string;
+  attribution: string;
+  maxZoom: number;
+  subdomains?: string[];
+}
+
+const MAP_LAYERS: Record<MapBaseLayerType, MapLayerConfig> = {
+  AGRO_SATELLITE: {
+    name: 'High-Res Agricultural Satellite',
     url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS',
+    attribution: 'Tiles &copy; Esri &mdash; USDA, USGS, AeroGRID',
     maxZoom: 18,
   },
-  TERRAIN: {
+  CARTO_VOYAGER: {
+    name: 'Carto Clean Vector (OSM)',
+    url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a>, &copy; <a href="https://openstreetmap.org">OSM</a>',
+    subdomains: ['a', 'b', 'c', 'd'],
+    maxZoom: 19,
+  },
+  OPEN_TOPO: {
+    name: 'OpenTopoMap (Terrain & Contours)',
+    url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+    attribution: 'Map data: &copy; <a href="https://openstreetmap.org">OSM</a>, SRTM | Map style: &copy; OpenTopoMap',
+    subdomains: ['a', 'b', 'c'],
+    maxZoom: 17,
+  },
+  OSM_STANDARD: {
     name: 'OpenStreetMap Standard',
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    attribution: '&copy; OpenStreetMap contributors',
+    attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+    subdomains: ['a', 'b', 'c'],
+    maxZoom: 19,
+  },
+  DARK_TELEMATICS: {
+    name: 'Dark Matter (Night Fleet Telematics)',
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; CARTO, &copy; OSM',
+    subdomains: ['a', 'b', 'c', 'd'],
     maxZoom: 19,
   },
 };
@@ -139,7 +168,7 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
   zoom = 12,
 }) => {
   const [isMounted, setIsMounted] = useState(false);
-  const [baseLayer, setBaseLayer] = useState<MapBaseLayerType>('STREET');
+  const [baseLayer, setBaseLayer] = useState<MapBaseLayerType>('AGRO_SATELLITE');
   const [radarTileUrl, setRadarTileUrl] = useState<string | null>(null);
   const [radarVisible, setRadarVisible] = useState<boolean>(false);
   const [showLayerMenu, setShowLayerMenu] = useState<boolean>(false);
@@ -151,13 +180,30 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
   if (!isMounted) {
     return (
       <div style={{ height }} className="w-full bg-slate-100 rounded-2xl flex items-center justify-center text-slate-400 font-medium text-xs">
-        Initializing High-Resolution GIS Map Engine...
+        Initializing Open-Source GIS Fleet Engine...
       </div>
     );
   }
 
   const routePositions: [number, number][] = SEHORE_DEMO_ROUTE.map(w => [w.latitude, w.longitude]);
   const activeLayerConfig = MAP_LAYERS[baseLayer];
+
+  const getLayerButtonLabel = () => {
+    switch (baseLayer) {
+      case 'AGRO_SATELLITE':
+        return 'Agro Satellite';
+      case 'CARTO_VOYAGER':
+        return 'Clean Vector';
+      case 'OPEN_TOPO':
+        return 'Topo Terrain';
+      case 'OSM_STANDARD':
+        return 'OpenStreetMap';
+      case 'DARK_TELEMATICS':
+        return 'Night Telematics';
+      default:
+        return 'GIS Layer';
+    }
+  };
 
   return (
     <div style={{ height }} className="w-full rounded-2xl overflow-hidden border border-slate-200 shadow-elevated relative z-0">
@@ -167,45 +213,71 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
         <div className="relative">
           <button
             onClick={() => setShowLayerMenu(!showLayerMenu)}
-            className="bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl shadow-elevated px-3 py-2 flex items-center gap-2 text-xs font-bold text-slate-800 hover:bg-slate-50 transition-all"
+            className="bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl shadow-elevated px-3 py-2 flex items-center gap-2 text-xs font-bold text-slate-800 hover:bg-slate-50 transition-all cursor-pointer"
           >
-            <Layers className="w-3.5 h-3.5 text-agri-800" />
-            <span>{baseLayer === 'SATELLITE' ? 'Satellite View' : baseLayer === 'STREET' ? 'Clean Vector' : 'OSM Map'}</span>
+            <Layers className="w-3.5 h-3.5 text-emerald-700" />
+            <span>{getLayerButtonLabel()}</span>
           </button>
 
           {showLayerMenu && (
-            <div className="absolute right-0 mt-1.5 w-52 bg-white rounded-2xl border border-slate-200 shadow-2xl p-1.5 z-[1010] space-y-1">
+            <div className="absolute right-0 mt-1.5 w-64 bg-white rounded-2xl border border-slate-200 shadow-2xl p-2 z-[1010] space-y-1">
+              <div className="text-[10px] font-bold uppercase text-slate-400 px-2 py-1 tracking-wider">
+                Open-Source GIS Imagery
+              </div>
+
               <button
-                onClick={() => { setBaseLayer('STREET'); setShowLayerMenu(false); }}
+                onClick={() => { setBaseLayer('AGRO_SATELLITE'); setShowLayerMenu(false); }}
                 className={clsx(
-                  'w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all',
-                  baseLayer === 'STREET' ? 'bg-agri-50 text-agri-950' : 'text-slate-600 hover:bg-slate-100'
+                  'w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer',
+                  baseLayer === 'AGRO_SATELLITE' ? 'bg-emerald-50 text-emerald-950 border border-emerald-200' : 'text-slate-700 hover:bg-slate-100'
                 )}
               >
-                <MapIcon className="w-3.5 h-3.5 text-agri-700" />
-                <span>Clean Vector Map</span>
+                <Globe className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Agro Satellite (Field Plots)</span>
               </button>
 
               <button
-                onClick={() => { setBaseLayer('SATELLITE'); setShowLayerMenu(false); }}
+                onClick={() => { setBaseLayer('CARTO_VOYAGER'); setShowLayerMenu(false); }}
                 className={clsx(
-                  'w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all',
-                  baseLayer === 'SATELLITE' ? 'bg-agri-50 text-agri-950' : 'text-slate-600 hover:bg-slate-100'
+                  'w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer',
+                  baseLayer === 'CARTO_VOYAGER' ? 'bg-emerald-50 text-emerald-950 border border-emerald-200' : 'text-slate-700 hover:bg-slate-100'
                 )}
               >
-                <Globe className="w-3.5 h-3.5 text-sky-600" />
-                <span>Agro Satellite Imagery</span>
+                <MapIcon className="w-3.5 h-3.5 text-sky-600" />
+                <span>Carto Clean Vector (Roads & SH-18)</span>
               </button>
 
               <button
-                onClick={() => { setBaseLayer('TERRAIN'); setShowLayerMenu(false); }}
+                onClick={() => { setBaseLayer('OPEN_TOPO'); setShowLayerMenu(false); }}
                 className={clsx(
-                  'w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all',
-                  baseLayer === 'TERRAIN' ? 'bg-agri-50 text-agri-950' : 'text-slate-600 hover:bg-slate-100'
+                  'w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer',
+                  baseLayer === 'OPEN_TOPO' ? 'bg-emerald-50 text-emerald-950 border border-emerald-200' : 'text-slate-700 hover:bg-slate-100'
                 )}
               >
-                <Layers className="w-3.5 h-3.5 text-emerald-600" />
+                <Layers className="w-3.5 h-3.5 text-amber-600" />
+                <span>OpenTopoMap (Elevation Contours)</span>
+              </button>
+
+              <button
+                onClick={() => { setBaseLayer('OSM_STANDARD'); setShowLayerMenu(false); }}
+                className={clsx(
+                  'w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer',
+                  baseLayer === 'OSM_STANDARD' ? 'bg-emerald-50 text-emerald-950 border border-emerald-200' : 'text-slate-700 hover:bg-slate-100'
+                )}
+              >
+                <MapIcon className="w-3.5 h-3.5 text-slate-600" />
                 <span>OpenStreetMap Standard</span>
+              </button>
+
+              <button
+                onClick={() => { setBaseLayer('DARK_TELEMATICS'); setShowLayerMenu(false); }}
+                className={clsx(
+                  'w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer',
+                  baseLayer === 'DARK_TELEMATICS' ? 'bg-emerald-50 text-emerald-950 border border-emerald-200' : 'text-slate-700 hover:bg-slate-100'
+                )}
+              >
+                <Sparkles className="w-3.5 h-3.5 text-purple-600" />
+                <span>Dark Matter (Night Telematics)</span>
               </button>
             </div>
           )}
@@ -222,7 +294,7 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
       <MapContainer
         center={center}
         zoom={zoom}
-        maxZoom={18}
+        maxZoom={19}
         minZoom={6}
         scrollWheelZoom={false}
         className="w-full h-full"
@@ -232,6 +304,7 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
           key={baseLayer}
           url={activeLayerConfig.url}
           attribution={activeLayerConfig.attribution}
+          subdomains={activeLayerConfig.subdomains || ['a', 'b', 'c']}
           maxZoom={activeLayerConfig.maxZoom}
         />
 
