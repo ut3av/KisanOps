@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline, Polygon } from 'react
 import L from 'leaflet';
 import { CHC, Farm, Machine, TelemetryPoint } from '../../types';
 import { SEHORE_DEMO_ROUTE } from '../../lib/telematicsEngine';
+import { DopplerRadarPlayer } from './DopplerRadarPlayer';
 
 // Custom icons using HTML strings for crisp SVG rendering in Leaflet
 const createCustomIcon = (color: string, iconSymbol: string, size = 32) => {
@@ -62,6 +63,8 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
   zoom = 12,
 }) => {
   const [isMounted, setIsMounted] = useState(false);
+  const [radarTileUrl, setRadarTileUrl] = useState<string | null>(null);
+  const [radarVisible, setRadarVisible] = useState<boolean>(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -79,6 +82,15 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
 
   return (
     <div style={{ height }} className="w-full rounded-2xl overflow-hidden border border-slate-200 shadow-subtle relative z-0">
+      {/* Top Floating Radar Controller */}
+      <div className="absolute top-3 right-3 z-[1000] pointer-events-auto">
+        <DopplerRadarPlayer
+          radarVisible={radarVisible}
+          onToggleRadar={setRadarVisible}
+          onFrameChange={setRadarTileUrl}
+        />
+      </div>
+
       <MapContainer
         center={center}
         zoom={zoom}
@@ -89,6 +101,15 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        {/* Live RainViewer Doppler Radar Layer */}
+        {radarTileUrl && (
+          <TileLayer
+            url={radarTileUrl}
+            opacity={0.65}
+            zIndex={300}
+          />
+        )}
 
         {/* Dispatch Route Polyline */}
         {showRoute && (

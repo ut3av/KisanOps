@@ -14,6 +14,7 @@ import {
   Truck
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
+import { WeatherRadarCard } from '../../components/common/WeatherRadarCard';
 import clsx from 'clsx';
 
 export const DemandIntelligence: React.FC = () => {
@@ -107,8 +108,11 @@ export const DemandIntelligence: React.FC = () => {
         ))}
       </div>
 
-      {/* 7-Day Regional Demand Forecast Matrix */}
-      <div className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-subtle space-y-4">
+      {/* Meteorological Weather Risk & Rainfall Radar */}
+      <WeatherRadarCard district="Sehore" />
+
+      {/* Regional Demand Forecast Matrix */}
+      <div className="bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-subtle space-y-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
           <div>
             <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wide">

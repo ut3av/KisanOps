@@ -18,6 +18,7 @@ import {
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { ActivityType } from '../../types';
 import { AgriCreditGauge } from '../../components/common/AgriCreditGauge';
+import { WeatherRadarCard } from '../../components/common/WeatherRadarCard';
 import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
 
@@ -130,6 +131,12 @@ export const FarmerHome: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Live Agro-Weather Risk Radar & Harvest Window Countdown */}
+      <WeatherRadarCard
+        district={farm.district}
+        onEmergencyPreBook={() => navigate('/farmer/marketplace?activity=HARVESTING&priority=weather')}
+      />
 
       {/* Hero CTA: What do you need to do? */}
       <div className="bg-gradient-to-br from-agri-900 to-agri-950 text-white rounded-3xl p-6 sm:p-8 shadow-elevated relative overflow-hidden">
