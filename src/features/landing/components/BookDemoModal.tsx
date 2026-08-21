@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../../store/kisanOpsStore';
 import { UserRole } from '../../../types';
+import { KisanLoader } from '../../../components/common/KisanLoader';
 
 interface BookDemoModalProps {
   isOpen: boolean;
@@ -25,6 +26,7 @@ interface BookDemoModalProps {
 export const BookDemoModal: React.FC<BookDemoModalProps> = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const { switchRole } = useKisanOpsStore();
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -40,7 +42,11 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ isOpen, onClose })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 1200);
   };
 
   const handleLaunchRole = (role: UserRole) => {
@@ -77,7 +83,15 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ isOpen, onClose })
 
         {/* Content */}
         <div className="p-6">
-          {!submitted ? (
+          {loading ? (
+            <div className="py-12 flex flex-col items-center justify-center space-y-4 text-center animate-in fade-in duration-200">
+              <KisanLoader
+                size="lg"
+                text="Provisioning Dedicated AgTech Sandbox..."
+                subtext="Configuring regional machinery telemetry & demand simulation models"
+              />
+            </div>
+          ) : !submitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-xs font-bold text-stone-700 mb-1">
