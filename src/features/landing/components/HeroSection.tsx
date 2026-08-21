@@ -32,7 +32,7 @@ const HERO_SLIDES: HeroSlide[] = [
     id: 'farm-management',
     tabLabel: 'Farm Management',
     title: 'Cloud based SaaS platform to manage and monitor farming operations.',
-    subtitle: 'Supporting farms and contract farming ops with structured data, compliance, and execution visibility with KisanOps.',
+    subtitle: 'Supporting farms and contract farming ops with structured data, compliance, and execution visibility with Yukti.',
     highlightTag: 'End-to-End Digitization'
   },
   {

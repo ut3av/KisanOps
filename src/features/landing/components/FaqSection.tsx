@@ -10,19 +10,19 @@ interface FaqItem {
 const FAQS: FaqItem[] = [
   {
     category: 'Hardware & IoT',
-    question: 'How does KisanOps integrate with existing tractors, harvesters, and GPS hardware?',
+    question: 'How does Yukti integrate with existing tractors, harvesters, and GPS hardware?',
     answer:
-      'KisanOps connects directly via standard J1939 CAN-Bus protocol dongles or OBD-II telematics units, as well as standalone solar GPS trackers. We support major manufacturers including Mahindra, John Deere, Sonalika, New Holland, and Escorts with zero proprietary hardware lock-in.'
+      'Yukti connects directly via standard J1939 CAN-Bus protocol dongles or OBD-II telematics units, as well as standalone solar GPS trackers. We support major manufacturers including Mahindra, John Deere, Sonalika, New Holland, and Escorts with zero proprietary hardware lock-in.'
   },
   {
     category: 'AgriCredit & Finance',
     question: 'How does the AgriCredit Deferred-Payment model work?',
     answer:
-      'KisanOps computes a non-regulated 0–900 agricultural credit score based on verified historical acreage, crop health NDVI track record, and previous rental settlement history. Smallholders receive a pre-approved deferred credit limit (typically ₹8,000 to ₹15,000) enabling them to book equipment during harvest and repay within 45 days after selling at the APMC mandi.'
+      'Yukti computes a non-regulated 0–900 agricultural credit score based on verified historical acreage, crop health NDVI track record, and previous rental settlement history. Smallholders receive a pre-approved deferred credit limit (typically ₹8,000 to ₹15,000) enabling them to book equipment during harvest and repay within 45 days after selling at the APMC mandi.'
   },
   {
     category: 'Connectivity & Offline Sync',
-    question: 'Can field executives and farmers use KisanOps in low-connectivity rural zones?',
+    question: 'Can field executives and farmers use Yukti in low-connectivity rural zones?',
     answer:
       'Yes. Both the Executive App and Farmer Mobile App feature robust offline-first PWA architecture. Field observations, machine booking intents, and inspection checklists are stored locally in IndexedDB and automatically synchronize via delta-updates as soon as 2G/3G/4G connectivity is restored.'
   },
@@ -66,7 +66,7 @@ export const FaqSection: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="mt-3 text-base text-stone-600">
-            Everything you need to know about KisanOps AgTech SaaS platform, deployment, and integrations.
+            Everything you need to know about Yukti AgTech SaaS platform, deployment, and integrations.
           </p>
         </div>
 

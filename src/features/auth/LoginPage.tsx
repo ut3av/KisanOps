@@ -127,21 +127,25 @@ export const LoginPage: React.FC = () => {
       {/* Brand Header */}
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link to="/" className="inline-flex items-center gap-3 group mb-2">
-          <div className="w-12 h-12 rounded-2xl bg-agri-800 flex items-center justify-center text-white shadow-md group-hover:bg-agri-900 transition-colors">
-            <Tractor className="w-7 h-7" />
+          <div className="w-12 h-12 rounded-2xl bg-white p-1 flex items-center justify-center border border-slate-200 shadow-md group-hover:border-agri-600 transition-colors overflow-hidden">
+            <img
+              src="/images/yukti-logo-transparent.png"
+              alt="Yukti Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <div className="text-left">
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-black text-agri-950 tracking-tight">KisanOps</span>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+              <span className="font-typewriter text-2xl font-bold text-agri-950 tracking-tight">Yukti</span>
+              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-sans">
                 AUTH
               </span>
             </div>
-            <p className="text-xs text-slate-500 font-medium">Predict. Allocate. Operate.</p>
+            <p className="text-xs text-slate-500 font-medium font-sans">Predict. Allocate. Operate.</p>
           </div>
         </Link>
         <h2 className="mt-2 text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-          {isSignUp ? 'Create your KisanOps Account' : 'Sign in to your account'}
+          {isSignUp ? 'Create your Yukti Account' : 'Sign in to your account'}
         </h2>
         <p className="text-xs text-slate-500 mt-1">
           {isSupabaseConfigured
@@ -402,7 +406,7 @@ export const LoginPage: React.FC = () => {
                 disabled={isLoading}
                 className="w-full btn-primary text-xs py-3 shadow-md"
               >
-                {isLoading ? 'Authenticating...' : isSignUp ? 'Create KisanOps Account' : 'Sign In with Email'}
+                {isLoading ? 'Authenticating...' : isSignUp ? 'Create Yukti Account' : 'Sign In with Email'}
               </button>
             </form>
           )}

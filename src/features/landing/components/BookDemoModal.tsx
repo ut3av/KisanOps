@@ -69,7 +69,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ isOpen, onClose })
             <div>
               <h3 className="text-lg font-bold">Schedule an Interactive Demo</h3>
               <p className="text-xs text-emerald-200">
-                Experience KisanOps with real field telematics & demand simulations
+                Experience Yukti with real field telematics & demand simulations
               </p>
             </div>
           </div>

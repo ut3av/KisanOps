@@ -24,24 +24,28 @@ export const LandingFooter: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800/80">
           {/* Col 1: Brand & Contact Info */}
           <div className="space-y-4 lg:col-span-1">
-            <div className="flex items-center gap-2 cursor-pointer" onClick={scrollToTop}>
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#7aa32c] to-[#28564a] flex items-center justify-center text-white">
-                <Sprout className="w-5 h-5" />
+            <div className="flex items-center gap-2.5 cursor-pointer" onClick={scrollToTop}>
+              <div className="w-9 h-9 rounded-xl bg-white/90 p-1 flex items-center justify-center border border-stone-700 shadow-sm overflow-hidden">
+                <img
+                  src="/images/yukti-logo-transparent.png"
+                  alt="Yukti Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <span className="text-2xl font-black tracking-tight text-white">
-                Kisan<span className="text-[#7aa32c]">Ops</span>
+              <span className="font-typewriter text-2xl font-bold tracking-tight text-white">
+                Yukti
               </span>
             </div>
 
-            <p className="text-xs text-stone-400 leading-relaxed">
+            <p className="text-xs text-stone-400 leading-relaxed font-sans">
               Cloud-based SaaS platform for agricultural machinery intelligence, predictive demand allocation, and Custom Hiring Centre operations.
             </p>
 
             <div className="space-y-2 pt-2 text-xs text-stone-300">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#7aa32c] shrink-0" />
-                <a href="mailto:contact@kisanops.ag" className="hover:text-white">
-                  contact@kisanops.ag
+                <a href="mailto:contact@yukti.ag" className="hover:text-white">
+                  contact@yukti.ag
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -197,7 +201,7 @@ export const LandingFooter: React.FC = () => {
             <ul className="space-y-2 text-xs text-stone-400">
               <li>
                 <a href="#how-it-works" className="hover:text-white transition-colors">
-                  About KisanOps
+                  About Yukti
                 </a>
               </li>
               <li>
@@ -232,7 +236,7 @@ export const LandingFooter: React.FC = () => {
         {/* Bottom Copyright Row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <div>
-            © {new Date().getFullYear()} KisanOps AgTech Platform. All Rights Reserved. Inspired by KhetiBuddy Architecture.
+            © {new Date().getFullYear()} Yukti AgTech Platform. All Rights Reserved.
           </div>
 
           <div className="flex items-center gap-6">

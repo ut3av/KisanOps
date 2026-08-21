@@ -97,10 +97,10 @@ export const HowItWorksSection: React.FC = () => {
             <span>Closed-Loop Operations Lifecycle</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1d1f] tracking-tight">
-            How KisanOps Works
+            How Yukti Works
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed">
-            KisanOps unifies farm contexts, machine telematics, and financial workflows in one single system — enabling end-to-end efficiency, operational transparency, predictive planning, and fleet profitability.
+            Yukti unifies farm contexts, machine telematics, and financial workflows in one single system — enabling end-to-end efficiency, operational transparency, predictive planning, and fleet profitability.
           </p>
         </div>
 

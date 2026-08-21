@@ -75,19 +75,23 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onOpenBookDemo }) 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2.5 cursor-pointer group select-none"
           >
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#7aa32c] to-[#28564a] flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-              <Sprout className="w-6 h-6" />
+            <div className="w-10 h-10 rounded-2xl bg-white/90 p-1 flex items-center justify-center shadow-sm border border-stone-200/80 group-hover:scale-105 transition-transform overflow-hidden">
+              <img
+                src="/images/yukti-logo-transparent.png"
+                alt="Yukti Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="text-2xl font-black tracking-tight text-[#1c1d1f]">
-                  Kisan<span className="text-[#7aa32c]">Ops</span>
+                <span className="font-typewriter text-2xl font-bold tracking-tight text-[#1c1d1f]">
+                  Yukti
                 </span>
-                <span className="text-[10px] uppercase font-bold tracking-wider bg-[#7aa32c]/15 text-[#2e4013] px-2 py-0.5 rounded-full">
+                <span className="text-[10px] uppercase font-bold tracking-wider bg-[#7aa32c]/15 text-[#2e4013] px-2 py-0.5 rounded-full font-sans">
                   AgTech SaaS
                 </span>
               </div>
-              <span className="text-[10px] text-stone-500 font-medium tracking-tight -mt-0.5">
+              <span className="text-[10px] text-stone-500 font-medium tracking-tight -mt-0.5 font-sans">
                 Machinery Intelligence & CHC Platform
               </span>
             </div>

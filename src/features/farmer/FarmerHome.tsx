@@ -160,7 +160,7 @@ export const FarmerHome: React.FC = () => {
             What do you need to do on your farm?
           </h2>
           <p className="text-slate-300 text-xs sm:text-sm mt-1.5 leading-relaxed">
-            Select your agricultural requirement. KisanOps predicts demand, matches ideal horsepower, and guarantees fair transparent pricing with deferred AgriCredit.
+            Select your agricultural requirement. Yukti predicts demand, matches ideal horsepower, and guarantees fair transparent pricing with deferred AgriCredit.
           </p>
         </div>
 

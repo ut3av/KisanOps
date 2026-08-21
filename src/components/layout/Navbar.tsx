@@ -37,17 +37,23 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo & Product Tagline */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-agri-800 flex items-center justify-center text-white shadow-sm group-hover:bg-agri-900 transition-colors">
-            <Tractor className="w-6 h-6" />
+          <div className="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center border border-slate-200 shadow-sm group-hover:border-agri-600 transition-colors overflow-hidden">
+            <img
+              src="/images/yukti-logo-transparent.png"
+              alt="Yukti Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xl font-extrabold tracking-tight text-agri-950">KisanOps</span>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md bg-agri-100 text-agri-800">
+              <span className="font-typewriter text-xl font-bold tracking-tight text-agri-950">
+                Yukti
+              </span>
+              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md bg-agri-100 text-agri-800 font-sans">
                 PROD
               </span>
             </div>
-            <p className="text-[11px] text-slate-500 font-medium hidden sm:block">
+            <p className="text-[11px] text-slate-500 font-medium hidden sm:block font-sans">
               Predict. Allocate. Operate.
             </p>
           </div>

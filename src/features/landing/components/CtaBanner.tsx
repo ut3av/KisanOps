@@ -27,7 +27,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenBookDemo }) => {
               </h2>
 
               <p className="text-base sm:text-lg text-emerald-100/90 leading-relaxed max-w-2xl">
-                Reach out today to discover how KisanOps cloud SaaS platform streamlines machinery dispatch, minimizes idle downtime, and empowers smallholder farmers with deferred credit.
+                Reach out today to discover how Yukti cloud SaaS platform streamlines machinery dispatch, minimizes idle downtime, and empowers smallholder farmers with deferred credit.
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">

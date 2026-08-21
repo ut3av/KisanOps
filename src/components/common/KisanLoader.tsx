@@ -67,9 +67,14 @@ export const KisanLoader: React.FC<KisanLoaderProps> = ({
           <div className="relative z-10">{loaderElement}</div>
 
           <div className="relative z-10 space-y-1">
-            <div className="flex items-center justify-center gap-1.5 font-black text-sm text-[#1c1d1f]">
-              <Sprout className="w-4 h-4 text-[#7aa32c]" />
-              <span>Kisan<span className="text-[#7aa32c]">Ops</span> Intelligence</span>
+            <div className="flex items-center justify-center gap-1.5 font-bold text-sm text-[#1c1d1f]">
+              <img
+                src="/images/yukti-logo-transparent.png"
+                alt="Yukti"
+                className="w-4 h-4 object-contain"
+              />
+              <span className="font-typewriter font-bold tracking-tight">Yukti</span>
+              <span className="text-[10px] text-[#7aa32c] font-sans font-extrabold uppercase">Intelligence</span>
             </div>
             {text && (
               <div className="text-xs font-bold text-stone-800 tracking-tight">

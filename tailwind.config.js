@@ -41,6 +41,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        typewriter: ['"Courier Prime"', '"Special Elite"', '"Cutive Mono"', 'Courier New', 'monospace'],
+        brand: ['"Special Elite"', '"Courier Prime"', '"Cutive Mono"', 'Courier New', 'monospace'],
         mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
       boxShadow: {

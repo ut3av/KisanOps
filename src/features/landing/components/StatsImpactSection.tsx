@@ -32,7 +32,7 @@ export const StatsImpactSection: React.FC<StatsImpactSectionProps> = ({
             <div className="lg:col-span-7 space-y-6">
               <div>
                 <p className="text-xs font-bold uppercase tracking-wider text-[#7aa32c] mb-1">
-                  Why KisanOps?
+                  Why Yukti?
                 </p>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c1d1f] tracking-tight">
                   Unified AgTech Platform Built for Ground Reality
@@ -40,7 +40,7 @@ export const StatsImpactSection: React.FC<StatsImpactSectionProps> = ({
               </div>
 
               <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
-                With over 25 years of combined domain agronomical and deep-tech expertise, we’ve developed KisanOps with an agriculture-first philosophy. We collaborate closely with smallholders, hub managers, and corporate agri-businesses to swiftly digitize intricate on-ground operational processes without friction.
+                With over 25 years of combined domain agronomical and deep-tech expertise, we’ve developed Yukti with an agriculture-first philosophy. We collaborate closely with smallholders, hub managers, and corporate agri-businesses to swiftly digitize intricate on-ground operational processes without friction.
               </p>
 
               {/* 3 Metric Counters */}

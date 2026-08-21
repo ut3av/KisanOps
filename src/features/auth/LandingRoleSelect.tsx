@@ -44,7 +44,7 @@ export const LandingRoleSelect: React.FC = () => {
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          KisanOps solves agricultural equipment underutilization and access bottlenecks by predicting demand, dynamically pricing rentals, enabling deferred AgriCredit, and streaming live CAN-Bus telematics.
+          Yukti solves agricultural equipment underutilization and access bottlenecks by predicting demand, dynamically pricing rentals, enabling deferred AgriCredit, and streaming live CAN-Bus telematics.
         </p>
 
         {/* Intelligence Flywheel Strip */}
@@ -190,7 +190,7 @@ export const LandingRoleSelect: React.FC = () => {
 
       {/* Footer */}
       <footer className="max-w-7xl mx-auto px-4 py-6 text-center text-xs text-slate-400 border-t border-slate-200/60 w-full">
-        KisanOps • Production Agricultural Machinery Intelligence Platform • Designed for MP Custom Hiring Centres
+        Yukti • Production Agricultural Machinery Intelligence Platform • Designed for MP Custom Hiring Centres
       </footer>
     </div>
   );

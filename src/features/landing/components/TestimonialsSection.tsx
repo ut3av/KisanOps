@@ -10,7 +10,7 @@ const TESTIMONIALS = [
     avatar: 'RS',
     rating: 5,
     quote:
-      'KisanOps transformed our 28-machine fleet operations. The predictive relocation optimizer identified surplus harvesters in Bhopal and routed them to Sehore during peak wheat maturity, unlocking ₹4.2 Lakhs in extra rental revenue in 10 days.',
+      'Yukti transformed our 28-machine fleet operations. The predictive relocation optimizer identified surplus harvesters in Bhopal and routed them to Sehore during peak wheat maturity, unlocking ₹4.2 Lakhs in extra rental revenue in 10 days.',
     metric: '+28% Fleet Utilization',
     cluster: 'Madhya Pradesh Central Belt'
   },
@@ -34,7 +34,7 @@ const TESTIMONIALS = [
     avatar: 'RK',
     rating: 5,
     quote:
-      'Getting access to high-capacity harvesters during rain threats was our biggest bottleneck. With KisanOps AgriCredit, I booked a certified harvester in 1 minute and paid post-harvest after selling at the mandi.',
+      'Getting access to high-capacity harvesters during rain threats was our biggest bottleneck. With Yukti AgriCredit, I booked a certified harvester in 1 minute and paid post-harvest after selling at the mandi.',
     metric: 'Zero Harvest Spoilage',
     cluster: 'Sehore Farmer Cluster'
   }
@@ -54,7 +54,7 @@ export const TestimonialsSection: React.FC = () => {
             Trusted by Leaders Across the Agri-Value Chain
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed">
-            Discover how Custom Hiring Centres, agribusiness managers, and smallholder farmers rely on KisanOps to maximize equipment efficiency and ensure seamless operations.
+            Discover how Custom Hiring Centres, agribusiness managers, and smallholder farmers rely on Yukti to maximize equipment efficiency and ensure seamless operations.
           </p>
         </div>
 

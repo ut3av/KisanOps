@@ -48,7 +48,7 @@ export function calculateFinalInvoice(input: BillingCalculationInput): Invoice {
       totalPrice: fuelSurcharge
     },
     {
-      description: 'KisanOps Digital Operations & Telematics Platform Fee',
+      description: 'Yukti Digital Operations & Telematics Platform Fee',
       quantity: 1,
       unitPrice: platformFee,
       totalPrice: platformFee
@@ -107,7 +107,7 @@ export function generatePdfInvoice(invoice: Invoice): void {
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(22);
   doc.setFont('helvetica', 'bold');
-  doc.text('KisanOps', 14, 18);
+  doc.text('Yukti', 14, 18);
 
   doc.setFontSize(10);
   doc.setFont('helvetica', 'normal');
@@ -182,13 +182,13 @@ export function generatePdfInvoice(invoice: Invoice): void {
   doc.setFontSize(10);
   doc.setTextColor(27, 77, 62);
   doc.text(`Payment Method: ${invoice.paymentMethod.replace('_', ' ')}`, 20, y + 8);
-  doc.text(`Payment Status: ${invoice.paymentStatus} (Verified by KisanOps Telematics Engine)`, 20, y + 14);
+  doc.text(`Payment Status: ${invoice.paymentStatus} (Verified by Yukti Telematics Engine)`, 20, y + 14);
 
   // Footer
   doc.setTextColor(120, 120, 120);
   doc.setFontSize(8);
   doc.setFont('helvetica', 'normal');
-  doc.text('This is a computer-generated tax invoice verified by telematics data from KisanOps platform.', 14, 285);
+  doc.text('This is a computer-generated tax invoice verified by telematics data from Yukti platform.', 14, 285);
 
   doc.save(`${invoice.invoiceNumber}.pdf`);
 }
