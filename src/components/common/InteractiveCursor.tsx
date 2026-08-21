@@ -56,9 +56,9 @@ export const InteractiveCursor: React.FC = () => {
     document.addEventListener('mouseleave', handleMouseLeave);
     document.addEventListener('mouseenter', handleMouseEnter);
 
-    // Smooth trailing animation for the glowing ring
+    // Snappy, sleek trailing animation
     const render = () => {
-      const ease = 0.18;
+      const ease = 0.28;
       ringPos.current.x += (mousePos.current.x - ringPos.current.x) * ease;
       ringPos.current.y += (mousePos.current.y - ringPos.current.y) * ease;
 
@@ -89,32 +89,32 @@ export const InteractiveCursor: React.FC = () => {
 
   return (
     <div
-      className={`pointer-events-none fixed inset-0 z-50 transition-opacity duration-300 ${
+      className={`pointer-events-none fixed inset-0 z-50 transition-opacity duration-200 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       aria-hidden="true"
     >
-      {/* Trailing Fluid Halo */}
+      {/* Sleek, Non-Bulky Trailing Ring */}
       <div
         ref={ringRef}
-        className={`fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full border transition-all duration-200 ease-out will-change-transform ${
+        className={`fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#7aa32c] transition-all duration-150 ease-out will-change-transform ${
           isHovered
-            ? 'w-12 h-12 bg-[#7aa32c]/20 border-[#7aa32c] shadow-[0_0_20px_rgba(122,163,44,0.4)] scale-110'
+            ? 'w-7 h-7 bg-[#7aa32c]/10 border-[#7aa32c] scale-100'
             : isClicked
-            ? 'w-7 h-7 bg-[#2e4013]/30 border-[#2e4013] scale-90'
-            : 'w-9 h-9 bg-transparent border-[#7aa32c]/60 shadow-sm'
+            ? 'w-4 h-4 bg-[#7aa32c]/20 scale-90'
+            : 'w-5 h-5 bg-transparent border-[#7aa32c]/50 scale-100'
         }`}
       />
 
-      {/* Center Precise Dot */}
+      {/* Center Precise Micro-Dot */}
       <div
         ref={dotRef}
-        className={`fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full will-change-transform transition-all duration-150 ${
+        className={`fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full will-change-transform transition-all duration-100 ${
           isHovered
-            ? 'w-2 h-2 bg-[#2e4013]'
+            ? 'w-1.5 h-1.5 bg-[#1b4d3e]'
             : isClicked
-            ? 'w-3 h-3 bg-[#7aa32c]'
-            : 'w-1.5 h-1.5 bg-[#7aa32c]'
+            ? 'w-2 h-2 bg-[#7aa32c]'
+            : 'w-1 h-1 bg-[#7aa32c]'
         }`}
       />
     </div>

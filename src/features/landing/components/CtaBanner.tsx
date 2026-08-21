@@ -41,14 +41,6 @@ export const CtaBanner: React.FC<CtaBannerProps> = () => {
                   <LogIn className="w-4 h-4 text-[#7aa32c]" />
                   <span>Sign In to Platform</span>
                 </button>
-
-                <button
-                  onClick={() => navigate('/contact')}
-                  className="px-8 py-4 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/30 text-sm sm:text-base font-bold transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-2"
-                >
-                  <PhoneCall className="w-4 h-4" />
-                  <span>Talk with an AgTech Specialist</span>
-                </button>
               </div>
             </div>
 

@@ -235,14 +235,15 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
           maxZoom={activeLayerConfig.maxZoom}
         />
 
-        {/* Live RainViewer Doppler Radar Layer with smooth zoom scaling (Max Native Zoom 11 prevents 'Zoom Level Not Supported' errors) */}
+        {/* Live RainViewer Doppler Radar Layer with smooth local upscaling (Native Zoom 6 prevents RainViewer server error tiles) */}
         {radarTileUrl && (
           <TileLayer
             key={radarTileUrl}
             url={radarTileUrl}
             opacity={0.65}
             zIndex={400}
-            maxNativeZoom={11}
+            minNativeZoom={1}
+            maxNativeZoom={6}
             maxZoom={18}
           />
         )}

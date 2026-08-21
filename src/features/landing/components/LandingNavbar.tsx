@@ -293,14 +293,6 @@ export const LandingNavbar: React.FC = () => {
             >
               About Us
             </button>
-
-            {/* Contact Link */}
-            <button
-              onClick={() => handleNavClick('/contact')}
-              className="px-3 py-2 text-sm font-semibold text-stone-700 hover:text-[#7aa32c] rounded-xl transition-colors cursor-pointer"
-            >
-              Contact
-            </button>
           </nav>
 
           {/* Right Action Area */}
@@ -422,12 +414,6 @@ export const LandingNavbar: React.FC = () => {
               className="w-full text-left py-2 px-3 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-50"
             >
               About Us
-            </button>
-            <button
-              onClick={() => handleNavClick('/contact')}
-              className="w-full text-left py-2 px-3 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-50"
-            >
-              Contact Team
             </button>
           </div>
 

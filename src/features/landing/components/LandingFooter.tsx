@@ -214,11 +214,6 @@ export const LandingFooter: React.FC = () => {
                   ROI & Fleet Calculator
                 </Link>
               </li>
-              <li>
-                <Link to="/contact" className="hover:text-white transition-colors">
-                  Contact Team & Locations
-                </Link>
-              </li>
             </ul>
 
             <div className="pt-2">
@@ -248,9 +243,6 @@ export const LandingFooter: React.FC = () => {
             </button>
             <Link to="/about" className="hover:text-stone-300 transition-colors">
               About
-            </Link>
-            <Link to="/contact" className="hover:text-stone-300 transition-colors">
-              Contact
             </Link>
             <button
               onClick={scrollToTop}

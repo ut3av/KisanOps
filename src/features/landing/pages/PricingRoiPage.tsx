@@ -150,10 +150,10 @@ export const PricingRoiPage: React.FC = () => {
                 </ul>
               </div>
               <button
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/login')}
                 className="w-full py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs transition-colors cursor-pointer"
               >
-                Contact Enterprise Sales
+                Sign In for Enterprise Access
               </button>
             </div>
           </div>

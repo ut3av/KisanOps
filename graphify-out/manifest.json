@@ -18,9 +18,9 @@
     "semantic_hash": "c1ee9ce6a4fe04105dbf8e619390df5e"
   },
   "src/App.tsx": {
-    "mtime": 1787323600.7645202,
-    "seen": 1787323721.0337949,
-    "ast_hash": "2824d0605d1d02cbea767d99ebee88a5",
+    "mtime": 1787325069.6386383,
+    "seen": 1787325115.7568781,
+    "ast_hash": "54f051d37f6bc22a8bd038ef8eb1235e",
     "semantic_hash": ""
   },
   "src/components/common/AgriCreditGauge.tsx": {
@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/components/common/LeafletFleetMap.tsx": {
-    "mtime": 1787316593.8954873,
-    "seen": 1787322604.0197823,
-    "ast_hash": "81dd8cd271525339b9eb110f932843e7",
+    "mtime": 1787324113.2222476,
+    "seen": 1787324198.3201518,
+    "ast_hash": "d54904b5cb0fd4c95a95d418fb0abc5f",
     "semantic_hash": ""
   },
   "src/components/common/StatCard.tsx": {
@@ -318,9 +318,9 @@
     "semantic_hash": ""
   },
   "src/features/auth/LoginPage.tsx": {
-    "mtime": 1787320918.1964285,
-    "seen": 1787322604.0198176,
-    "ast_hash": "8ab25ca820d63269a4b8aa3bf13b4aad",
+    "mtime": 1787324152.15618,
+    "seen": 1787324198.3201866,
+    "ast_hash": "8ed47745e516c0e423a5c7b8aec62c40",
     "semantic_hash": ""
   },
   "src/features/common/NotFoundPage.tsx": {
@@ -342,9 +342,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/CtaBanner.tsx": {
-    "mtime": 1787321722.365106,
-    "seen": 1787322604.0198689,
-    "ast_hash": "04e3b20a69cee89cf2539683533405ba",
+    "mtime": 1787324915.0529983,
+    "seen": 1787325115.7569149,
+    "ast_hash": "134b15f3a1afd08ae354cf740d5d4173",
     "semantic_hash": ""
   },
   "src/features/landing/components/FaqSection.tsx": {
@@ -372,15 +372,15 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/LandingFooter.tsx": {
-    "mtime": 1787321860.9586656,
-    "seen": 1787322604.0198789,
-    "ast_hash": "66c05783b4a788bf4d48c4202069d9fc",
+    "mtime": 1787324997.9416173,
+    "seen": 1787325115.7569199,
+    "ast_hash": "c4e66e1c87b3cef9748484caa04a8ac3",
     "semantic_hash": ""
   },
   "src/features/landing/components/LandingNavbar.tsx": {
-    "mtime": 1787321684.8537765,
-    "seen": 1787322604.0198808,
-    "ast_hash": "f0e497823af094b0107523b44d5005ac",
+    "mtime": 1787324972.145789,
+    "seen": 1787325115.756921,
+    "ast_hash": "5e0c04c8c4c8ba787ecefea1dad7a893",
     "semantic_hash": ""
   },
   "src/features/landing/components/ModularProductsSection.tsx": {
@@ -432,9 +432,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/pages/PricingRoiPage.tsx": {
-    "mtime": 1787321638.7474613,
-    "seen": 1787322604.0198975,
-    "ast_hash": "0c7fefb2c1ae190ef53ef5a9e1d280c2",
+    "mtime": 1787325025.9826608,
+    "seen": 1787325115.7569299,
+    "ast_hash": "13eed66264650d231b6accf7c24bf9ef",
     "semantic_hash": ""
   },
   "src/features/landing/pages/ProductsOperationsPage.tsx": {
@@ -654,9 +654,9 @@
     "semantic_hash": ""
   },
   "src/components/common/InteractiveCursor.tsx": {
-    "mtime": 1787323261.889048,
-    "seen": 1787323721.0338068,
-    "ast_hash": "520b885c390eb4ec57e2a648bf6d6a2a",
+    "mtime": 1787324882.8999245,
+    "seen": 1787325115.7568836,
+    "ast_hash": "ec010a7dd4ef2dc2f67ab68e23d6790e",
     "semantic_hash": ""
   }
 }
