@@ -1,30 +1,30 @@
 # Graph Report - KisanOps  (2026-08-21)
 
 ## Corpus Check
-- 99 files · ~293,523 words
+- 100 files · ~326,595 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 507 nodes · 1050 edges · 33 communities (24 shown, 9 thin omitted)
+- 514 nodes · 1056 edges · 34 communities (25 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `27d78787`
+- Built from commit: `44537294`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- App.tsx
+- useKisanOpsStore
 - kisanOpsStore.ts
 - LazyImage.tsx
 - devDependencies
 - 20260821000000_initial_schema.sql
 - dependencies
-- LeafletFleetMap.tsx
+- weatherEngine.ts
 - compilerOptions
 - compilerOptions
-- LandingPage.tsx
+- App.tsx
 - schema.sql
 - plugins
 - tsconfig.json
@@ -42,6 +42,7 @@
 - TrustMarquee.tsx
 - FarmerMarketplace.tsx
 - telemetry-webhook/index.ts
+- vercel.json
 
 ## God Nodes (most connected - your core abstractions)
 1. `react` - 62 edges
@@ -60,25 +61,25 @@
   src/components/common/TelematicsGauge.tsx → src/types/index.ts
 - `BookDemoModal()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
   src/features/landing/components/BookDemoModal.tsx → src/store/kisanOpsStore.ts
-- `LeafletFleetMapProps` --references--> `Machine`  [EXTRACTED]
-  src/components/common/LeafletFleetMap.tsx → src/types/index.ts
+- `OperatorLayout()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
+  src/components/layout/OperatorLayout.tsx → src/store/kisanOpsStore.ts
 - `LoginPage()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
   src/features/auth/LoginPage.tsx → src/store/kisanOpsStore.ts
-- `BookingModal()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
-  src/features/farmer/BookingModal.tsx → src/store/kisanOpsStore.ts
+- `CHCSettings()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
+  src/features/chc/CHCSettings.tsx → src/store/kisanOpsStore.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (33 total, 9 thin omitted)
+## Communities (34 total, 9 thin omitted)
 
-### Community 0 - "App.tsx"
-Cohesion: 0.07
-Nodes (44): react, App(), queryClient, AgriCreditGauge(), AgriCreditGaugeProps, InteractiveCursor(), LeafletFleetMap(), StatCard() (+36 more)
+### Community 0 - "useKisanOpsStore"
+Cohesion: 0.06
+Nodes (42): activeMachineIcon, availableMachineIcon, chcIcon, farmIcon, LeafletFleetMap(), maintenanceIcon, MAP_LAYERS, MapBaseLayerType (+34 more)
 
 ### Community 1 - "kisanOpsStore.ts"
-Cohesion: 0.09
-Nodes (52): LeafletFleetMapProps, SEEDED_AGRICREDIT_PROFILE, SEEDED_ALLOCATION_RECOMMENDATIONS, SEEDED_BOOKINGS, SEEDED_CHCS, SEEDED_DEMAND_FORECASTS, SEEDED_FARM, SEEDED_MACHINES (+44 more)
+Cohesion: 0.08
+Nodes (55): LeafletFleetMapProps, SEEDED_AGRICREDIT_PROFILE, SEEDED_ALLOCATION_RECOMMENDATIONS, SEEDED_BOOKINGS, SEEDED_CHCS, SEEDED_DEMAND_FORECASTS, SEEDED_FARM, SEEDED_MACHINES (+47 more)
 
 ### Community 3 - "devDependencies"
 Cohesion: 0.06
@@ -92,9 +93,9 @@ Nodes (30): audit_logs, booking_events, bookings, chcs, credit_events, credit_pr
 Cohesion: 0.07
 Nodes (29): clsx, jspdf, leaflet, lucide-react, dependencies, clsx, jspdf, leaflet (+21 more)
 
-### Community 6 - "LeafletFleetMap.tsx"
-Cohesion: 0.09
-Nodes (29): KisanOps Platform, DopplerRadarPlayer(), DopplerRadarPlayerProps, activeMachineIcon, availableMachineIcon, chcIcon, farmIcon, maintenanceIcon (+21 more)
+### Community 6 - "weatherEngine.ts"
+Cohesion: 0.16
+Nodes (19): KisanOps Platform, DopplerRadarPlayer(), DopplerRadarPlayerProps, WeatherRadarCard(), WeatherRadarCardProps, CachedForecast, computeHarvestRiskAssessment(), fetchAgroWeatherForecast() (+11 more)
 
 ### Community 7 - "compilerOptions"
 Cohesion: 0.10
@@ -104,9 +105,9 @@ Nodes (19): DOM, src, vite/client, compilerOptions, jsx, lib, module, moduleDete
 Cohesion: 0.10
 Nodes (19): node, vite.config.ts, compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection (+11 more)
 
-### Community 9 - "LandingPage.tsx"
+### Community 9 - "App.tsx"
 Cohesion: 0.07
-Nodes (37): NotFoundPage(), CtaBanner(), CtaBannerProps, FaqItem, FAQS, FaqSection(), HERO_SLIDES, HeroSection() (+29 more)
+Nodes (45): react, App(), queryClient, InteractiveCursor(), FarmerLayout(), OperatorLayout(), CHCSettings(), DemandIntelligence() (+37 more)
 
 ### Community 10 - "schema.sql"
 Cohesion: 0.43
@@ -141,28 +142,32 @@ Cohesion: 0.40
 Nodes (4): KisanLoader(), KisanLoaderProps, BookDemoModal(), BookDemoModalProps
 
 ### Community 31 - "FarmerMarketplace.tsx"
-Cohesion: 0.10
-Nodes (30): ExplanationBadge(), ExplanationBadgeProps, RazorpayCheckoutModal(), RazorpayCheckoutModalProps, Window, BookingModal(), BookingModalProps, FarmerHome() (+22 more)
+Cohesion: 0.09
+Nodes (31): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), ExplanationBadgeProps, RazorpayCheckoutModal(), RazorpayCheckoutModalProps, Window, BookingModal() (+23 more)
+
+### Community 33 - "vercel.json"
+Cohesion: 0.29
+Nodes (6): buildCommand, cleanUrls, framework, headers, outputDirectory, rewrites
 
 ## Knowledge Gaps
-- **172 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+167 more)
+- **178 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+173 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `App.tsx` to `kisanOpsStore.ts`, `LazyImage.tsx`, `LeafletFleetMap.tsx`, `LandingPage.tsx`, `plugins`, `BookDemoModal.tsx`, `TrustMarquee.tsx`, `FarmerMarketplace.tsx`?**
-  _High betweenness centrality (0.134) - this node is a cross-community bridge._
-- **Why does `useKisanOpsStore()` connect `App.tsx` to `kisanOpsStore.ts`, `LandingPage.tsx`, `BookDemoModal.tsx`, `FarmerMarketplace.tsx`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+- **Why does `react` connect `App.tsx` to `useKisanOpsStore`, `kisanOpsStore.ts`, `LazyImage.tsx`, `weatherEngine.ts`, `plugins`, `BookDemoModal.tsx`, `TrustMarquee.tsx`, `FarmerMarketplace.tsx`?**
+  _High betweenness centrality (0.131) - this node is a cross-community bridge._
+- **Why does `useKisanOpsStore()` connect `useKisanOpsStore` to `App.tsx`, `BookDemoModal.tsx`, `kisanOpsStore.ts`, `FarmerMarketplace.tsx`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Why does `plugins` connect `plugins` to `App.tsx`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
-  _172 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `App.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.07246376811594203 - nodes in this community are weakly interconnected._
+  _178 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `useKisanOpsStore` be split into smaller, more focused modules?**
+  _Cohesion score 0.05593220338983051 - nodes in this community are weakly interconnected._
 - **Should `kisanOpsStore.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.0882936507936508 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0814151747655584 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._

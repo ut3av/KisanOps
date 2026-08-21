@@ -288,10 +288,10 @@
     "semantic_hash": "88439104b3c207f17d33ef3160e3b080"
   },
   "README.md": {
-    "mtime": 1787311371.2501755,
-    "seen": 1787312673.771388,
-    "ast_hash": "8703a71ba2638a4b26c52ad0682b9164",
-    "semantic_hash": "8703a71ba2638a4b26c52ad0682b9164"
+    "mtime": 1787335104.054682,
+    "seen": 1787335133.284744,
+    "ast_hash": "89c29b375445e4f2c942adcb1d9c4da7",
+    "semantic_hash": ""
   },
   "src/components/common/DopplerRadarPlayer.tsx": {
     "mtime": 1787315361.1218052,
@@ -711,6 +711,18 @@
     "mtime": 1787334283.5459187,
     "seen": 1787334561.0194821,
     "ast_hash": "926eb13295ce8b918c0d65e70b582a85",
+    "semantic_hash": ""
+  },
+  "vercel.json": {
+    "mtime": 1787335074.6899457,
+    "seen": 1787335133.2847207,
+    "ast_hash": "bae3e33313bbfd267db5df6f591185d9",
+    "semantic_hash": ""
+  },
+  "public/images/yukti-platform-overview.jpg": {
+    "mtime": 1787335062.9253008,
+    "seen": 1787335133.2847776,
+    "ast_hash": "61f71db140ca4441bbb95a8298b436f8",
     "semantic_hash": ""
   }
 }
