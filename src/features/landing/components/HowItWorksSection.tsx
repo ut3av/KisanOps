@@ -105,17 +105,17 @@ export const HowItWorksSection: React.FC = () => {
         </div>
 
         {/* Step Buttons Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3 mb-10">
           {WORKFLOW_STEPS.map((step) => {
             const isActive = step.id === activeStep;
             return (
               <button
                 key={step.id}
                 onClick={() => setActiveStep(step.id)}
-                className={`p-4 rounded-2xl text-left transition-all cursor-pointer border ${
+                className={`p-3.5 sm:p-4 rounded-2xl text-left transition-all duration-300 cursor-pointer border ${
                   isActive
-                    ? 'bg-white border-[#7aa32c] shadow-md scale-[1.02]'
-                    : 'bg-white/60 border-stone-200/70 hover:bg-white hover:border-stone-300'
+                    ? 'bg-white border-[#7aa32c] shadow-md scale-[1.02] ring-2 ring-[#7aa32c]/20'
+                    : 'bg-white/70 border-stone-200/70 hover:bg-white hover:border-stone-300'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
@@ -139,7 +139,7 @@ export const HowItWorksSection: React.FC = () => {
         </div>
 
         {/* Interactive Active Step Detail Card */}
-        <div className="bg-white rounded-3xl border border-stone-200/80 shadow-xl overflow-hidden p-6 sm:p-10">
+        <div className="bg-white rounded-3xl border border-stone-200/80 shadow-xl overflow-hidden p-6 sm:p-10 card-interactive-spotlight">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-5">
@@ -152,7 +152,7 @@ export const HowItWorksSection: React.FC = () => {
                 {currentStep.title}
               </h3>
 
-              <p className="text-stone-600 text-base leading-relaxed">
+              <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
                 {currentStep.fullDesc}
               </p>
 
@@ -161,7 +161,7 @@ export const HowItWorksSection: React.FC = () => {
                 <div className="text-xs font-bold uppercase tracking-wider text-stone-400">
                   Key Operational Outcomes
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                   {currentStep.highlights.map((h, i) => (
                     <div
                       key={i}

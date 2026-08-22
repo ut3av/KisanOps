@@ -12,7 +12,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = () => {
   return (
     <section className="py-16 bg-[#F5FAED]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl bg-gradient-to-br from-[#1b4d3e] via-[#28564a] to-[#0f291e] overflow-hidden shadow-2xl p-8 sm:p-14 text-white">
+        <div className="relative rounded-3xl bg-gradient-to-br from-[#1b4d3e] via-[#28564a] to-[#0f291e] overflow-hidden shadow-2xl p-8 sm:p-14 text-white card-interactive-spotlight">
           {/* Ambient Decorative Blurs */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-radial from-[#9dc84d]/30 to-transparent blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-10 w-72 h-72 bg-radial from-[#7aa32c]/20 to-transparent blur-2xl pointer-events-none" />

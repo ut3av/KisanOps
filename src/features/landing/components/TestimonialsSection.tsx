@@ -63,7 +63,7 @@ export const TestimonialsSection: React.FC = () => {
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
-              className="p-8 rounded-3xl bg-[#F5FAED]/60 border border-stone-200/80 flex flex-col justify-between space-y-6 hover:bg-[#F5FAED] hover:shadow-lg transition-all"
+              className="p-8 rounded-3xl bg-[#F5FAED]/60 border border-stone-200/80 flex flex-col justify-between space-y-6 hover:bg-[#F5FAED] hover:shadow-lg transition-all card-interactive-spotlight"
             >
               <div className="space-y-4">
                 {/* Rating & Metric */}

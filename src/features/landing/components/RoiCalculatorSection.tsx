@@ -53,7 +53,7 @@ export const RoiCalculatorSection: React.FC<RoiCalculatorSectionProps> = ({
         </div>
 
         {/* Calculator Card Grid */}
-        <div className="bg-[#F5FAED] rounded-3xl border border-stone-200/90 shadow-xl p-6 sm:p-10">
+        <div className="bg-[#F5FAED] rounded-3xl border border-stone-200/90 shadow-xl p-6 sm:p-10 card-interactive-spotlight">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column: Sliders & Controls */}
             <div className="lg:col-span-6 space-y-6">

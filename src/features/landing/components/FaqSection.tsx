@@ -77,7 +77,7 @@ export const FaqSection: React.FC = () => {
             return (
               <div
                 key={index}
-                className="rounded-2xl bg-white border border-stone-200 shadow-sm overflow-hidden transition-all"
+                className="rounded-2xl bg-white border border-stone-200 shadow-sm overflow-hidden transition-all card-interactive-spotlight"
               >
                 <button
                   onClick={() => toggleFaq(index)}

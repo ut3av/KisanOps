@@ -81,12 +81,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Interactive Tabs Header */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-full bg-[#9dc84d]/25 backdrop-blur-md border border-[#9dc84d]/40 shadow-sm max-w-full">
+          <div className="inline-flex items-center gap-1.5 p-1.5 rounded-full bg-[#9dc84d]/20 backdrop-blur-md border border-[#9dc84d]/30 shadow-sm max-w-full overflow-x-auto no-scrollbar">
             {HERO_SLIDES.map((slide, index) => (
               <button
                 key={slide.id}
                 onClick={() => setActiveSlideIndex(index)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                className={`px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                   activeSlideIndex === index
                     ? 'bg-white text-[#2e4013] shadow-sm font-bold'
                     : 'text-[#4d5740] hover:text-[#2e4013] hover:bg-white/40'
@@ -99,7 +99,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
         </div>
 
         {/* Main Grid: Left Copy & Right Organic Visuals */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Column: Heading, Subtitle & CTAs */}
           <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
             {/* Tagline Pill */}
@@ -109,20 +109,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black text-[#1c1d1f] tracking-tight leading-[1.15] animate-in fade-in duration-300">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1c1d1f] tracking-tight leading-[1.15] animate-in fade-in duration-300">
               {currentSlide.title}
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-sm sm:text-base lg:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               {currentSlide.subtitle}
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
               <button
                 onClick={() => navigate('/login')}
-                className="px-7 py-3.5 rounded-full bg-[#7aa32c] hover:bg-[#6b9125] text-white text-sm sm:text-base font-bold shadow-lg shadow-[#7aa32c]/30 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer flex items-center gap-2"
+                className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#7aa32c] hover:bg-[#6b9125] text-white text-xs sm:text-sm font-bold shadow-lg shadow-[#7aa32c]/30 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer flex items-center gap-2"
               >
                 <LogIn className="w-4 h-4" />
                 <span>Sign In to Platform</span>
@@ -130,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
 
               <button
                 onClick={scrollToSolutions}
-                className="px-7 py-3.5 rounded-full bg-[#dbe8ca] hover:bg-[#cfdfba] text-[#2e4013] text-sm sm:text-base font-bold transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center gap-2"
+                className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#dbe8ca] hover:bg-[#cfdfba] text-[#2e4013] text-xs sm:text-sm font-bold transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center gap-2"
               >
                 <span>Explore Core Solutions</span>
                 <ArrowRight className="w-4 h-4 text-[#7aa32c]" />
@@ -157,30 +157,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
           {/* Right Column: Organic Curved Dual-Bubble Frame with Real Agricultural Photography */}
           <div className="lg:col-span-6 relative flex items-center justify-center">
             {/* Ambient Radial Halo */}
-            <div className="absolute inset-0 bg-radial from-[#9dc84d]/40 via-transparent to-transparent blur-xl -z-0" />
+            <div className="absolute inset-0 bg-radial from-[#9dc84d]/30 via-transparent to-transparent blur-xl -z-0" />
 
             {/* Container for Organic Shapes & Badges */}
-            <div className="relative w-full max-w-[580px] aspect-[4/3] sm:aspect-[16/11]">
-              {/* Connected Organic Background Shapes */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <svg
-                  className="w-full h-full text-[#dbe8ca]/90 drop-shadow-md"
-                  viewBox="0 0 600 450"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M 120 70 C 220 30, 320 80, 360 170 C 400 260, 480 340, 520 280 C 560 220, 570 120, 490 80 C 410 40, 330 90, 270 110 C 180 140, 70 160, 120 70 Z"
-                    stroke="#cfe0ba"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    className="opacity-70"
-                  />
-                </svg>
-              </div>
-
-              {/* Left Bubble: Real Tractor Working Field (Authentic Indian photo) */}
-              <div className="absolute left-2 sm:left-4 top-10 sm:top-12 w-[48%] h-[68%] rounded-[45px] sm:rounded-[60px] overflow-hidden border-4 border-white shadow-xl rotate-[-4deg] hover:rotate-0 transition-transform duration-500 z-10 group">
+            <div className="relative w-full max-w-[540px] aspect-[4/3] sm:aspect-[16/11]">
+              {/* Left Bubble: Real Tractor Working Field */}
+              <div className="absolute left-2 sm:left-4 top-8 sm:top-10 w-[50%] h-[70%] rounded-[36px] sm:rounded-[52px] overflow-hidden border-4 border-white shadow-xl rotate-[-3deg] hover:rotate-0 transition-transform duration-500 z-10 group card-interactive-spotlight">
                 <img
                   src="/images/real-tractor-field.jpg"
                   alt="Authentic Indian agricultural tractor in field"
@@ -200,7 +182,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
               </div>
 
               {/* Right Bubble: Real Indian Farmer in Golden Wheat Field */}
-              <div className="absolute right-2 sm:right-4 bottom-6 sm:bottom-8 w-[56%] h-[78%] rounded-[55px] sm:rounded-[75px] overflow-hidden border-4 border-white shadow-2xl rotate-[3deg] hover:rotate-0 transition-transform duration-500 z-20 group">
+              <div className="absolute right-2 sm:right-4 bottom-4 sm:bottom-6 w-[56%] h-[78%] rounded-[42px] sm:rounded-[60px] overflow-hidden border-4 border-white shadow-2xl rotate-[2deg] hover:rotate-0 transition-transform duration-500 z-20 group card-interactive-spotlight">
                 <img
                   src="/images/real-farmer-field.jpg"
                   alt="Real Indian farmer checking harvest schedule in wheat field"
@@ -219,16 +201,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
               </div>
 
               {/* Floating Pill Badge 1: Top-Left (+34% Demand Surge Detected) */}
-              <div className="absolute -top-2 left-0 sm:left-4 z-30 animate-bounce duration-1000">
-                <div className="glass-pill px-4 py-2.5 rounded-full flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#7aa32c] text-white flex items-center justify-center shrink-0 shadow-sm">
-                    <ArrowUpRight className="w-4 h-4" />
+              <div className="absolute -top-2 left-0 sm:left-4 z-30 animate-float-gentle">
+                <div className="glass-pill px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-2.5 sm:gap-3 card-interactive-spotlight">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#7aa32c] text-white flex items-center justify-center shrink-0 shadow-sm">
+                    <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
+                    <div className="text-xs sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
                       +34%
                     </div>
-                    <div className="text-[10px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
+                    <div className="text-[9px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
                       Demand Surge Caught
                     </div>
                   </div>
@@ -236,16 +218,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
               </div>
 
               {/* Floating Pill Badge 2: Bottom-Center (-38% Machine Downtime) */}
-              <div className="absolute -bottom-4 left-1/4 sm:left-1/3 z-30">
-                <div className="glass-pill px-4 py-2.5 rounded-full flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#c2a587] text-white flex items-center justify-center shrink-0 shadow-sm">
-                    <ArrowDownRight className="w-4 h-4" />
+              <div className="absolute -bottom-3 left-1/4 sm:left-1/3 z-30 animate-float-delayed">
+                <div className="glass-pill px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-2.5 sm:gap-3 card-interactive-spotlight">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#c2a587] text-white flex items-center justify-center shrink-0 shadow-sm">
+                    <ArrowDownRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
+                    <div className="text-xs sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
                       -38%
                     </div>
-                    <div className="text-[10px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
+                    <div className="text-[9px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
                       Unplanned Downtime
                     </div>
                   </div>
@@ -253,16 +235,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
               </div>
 
               {/* Floating Pill Badge 3: Right-Middle (+21% Fleet Utilization) */}
-              <div className="absolute top-1/3 -right-2 sm:-right-4 z-30">
-                <div className="glass-pill px-4 py-2.5 rounded-full flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#7aa32c] text-white flex items-center justify-center shrink-0 shadow-sm">
-                    <ArrowUpRight className="w-4 h-4" />
+              <div className="absolute top-1/3 -right-2 sm:-right-4 z-30 animate-float-gentle">
+                <div className="glass-pill px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-2.5 sm:gap-3 card-interactive-spotlight">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#7aa32c] text-white flex items-center justify-center shrink-0 shadow-sm">
+                    <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
+                    <div className="text-xs sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
                       +21%
                     </div>
-                    <div className="text-[10px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
+                    <div className="text-[9px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
                       Fleet Utilization Gain
                     </div>
                   </div>

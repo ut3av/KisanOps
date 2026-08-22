@@ -150,9 +150,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmProfile.tsx": {
-    "mtime": 1787393224.463801,
-    "seen": 1787393396.5373492,
-    "ast_hash": "6fe97ee84f132b81df71e19a2fba880f",
+    "mtime": 1787404241.460646,
+    "seen": 1787404337.48872,
+    "ast_hash": "1fbeb37bad91eaefbf048cad59d1ad59",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerCredit.tsx": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787397313.222795,
-    "seen": 1787397789.1392035,
-    "ast_hash": "120e9862f37e03e8c6658f2311a63147",
+    "mtime": 1787404196.6231308,
+    "seen": 1787404337.488725,
+    "ast_hash": "08a5a1fb757b9262c849224ac5f3b3e4",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "src/components/common/DopplerRadarPlayer.tsx": {
-    "mtime": 1787315361.1218052,
-    "seen": 1787322604.019771,
-    "ast_hash": "a51f7ce2468c1dca965433487d24ea3d",
+    "mtime": 1787404252.4464822,
+    "seen": 1787404337.4886158,
+    "ast_hash": "3ea04d6e4ee8bc4f3e2bcfcc3586a83c",
     "semantic_hash": ""
   },
   "src/components/common/KisanLoader.tsx": {
@@ -306,15 +306,15 @@
     "semantic_hash": ""
   },
   "src/components/common/WeatherRadarCard.tsx": {
-    "mtime": 1787391247.3973825,
-    "seen": 1787391380.8656366,
-    "ast_hash": "7e4cf14938c1f3852fab8a64054b9112",
+    "mtime": 1787404105.7284572,
+    "seen": 1787404337.488655,
+    "ast_hash": "fac001d3abee36d2f5cde899e0952f95",
     "semantic_hash": ""
   },
   "src/features/auth/LoginPage.tsx": {
-    "mtime": 1787397068.77088,
-    "seen": 1787397789.1391888,
-    "ast_hash": "02ba1a7fe5c85c3007a989186f8aa77b",
+    "mtime": 1787404045.9403527,
+    "seen": 1787404337.4886885,
+    "ast_hash": "ff123be587741204439654b99b0d2569",
     "semantic_hash": ""
   },
   "src/features/common/NotFoundPage.tsx": {
@@ -462,15 +462,15 @@
     "semantic_hash": ""
   },
   "src/lib/supabaseClient.ts": {
-    "mtime": 1787332383.9172466,
-    "seen": 1787332468.2202592,
-    "ast_hash": "5a51e5f2673929ddbec40164dba7fd46",
+    "mtime": 1787404004.261187,
+    "seen": 1787404337.488843,
+    "ast_hash": "5c4c367e768210497c8512d346ebed9e",
     "semantic_hash": ""
   },
   "src/lib/weatherEngine.ts": {
-    "mtime": 1787316470.981771,
-    "seen": 1787322604.0199366,
-    "ast_hash": "c21fe391d5682f2b547499403067cbf1",
+    "mtime": 1787404082.8600652,
+    "seen": 1787404337.4888487,
+    "ast_hash": "14225a010ffcb20b57cb7dd122bff1fa",
     "semantic_hash": ""
   },
   "supabase/schema.sql": {
@@ -672,9 +672,9 @@
     "semantic_hash": ""
   },
   "src/components/common/RazorpayCheckoutModal.tsx": {
-    "mtime": 1787385631.3153968,
-    "seen": 1787385872.6337543,
-    "ast_hash": "243e96ac05d2931305a8aec9be4b3229",
+    "mtime": 1787404068.1774905,
+    "seen": 1787404337.488643,
+    "ast_hash": "fba146b7b03290b669dbedc28083ece2",
     "semantic_hash": ""
   },
   "src/components/layout/OperatorLayout.tsx": {
@@ -774,9 +774,9 @@
     "semantic_hash": ""
   },
   "src/lib/razorpayService.ts": {
-    "mtime": 1787385379.341158,
-    "seen": 1787385872.633866,
-    "ast_hash": "c36892232710cbf3f5708a1931590814",
+    "mtime": 1787404059.2357504,
+    "seen": 1787404337.4888377,
+    "ast_hash": "03c039182b2c0370235800e835deb380",
     "semantic_hash": ""
   },
   "src/components/common/MachineThumbnail.tsx": {

@@ -1,5 +1,5 @@
 {
-  "0": "BookDemoModal.tsx",
+  "0": "Navbar.tsx",
   "1": "kisanOpsStore.ts",
   "2": "voice.ts",
   "3": "devDependencies",
@@ -8,7 +8,7 @@
   "6": "LeafletFleetMap.tsx",
   "7": "compilerOptions",
   "8": "compilerOptions",
-  "9": "App.tsx",
+  "9": "react",
   "10": "schema.sql",
   "11": "plugins",
   "12": "tsconfig.json",
@@ -24,14 +24,16 @@
   "22": "2. Core Subsystems",
   "23": "KisanOps Database Specification & Data Dictionary",
   "24": "KisanOps Deployment Guide",
+  "25": "billingEngine.ts",
   "26": "rules/graphify.md",
   "27": "workflows/graphify.md",
   "28": "quick_fix_auth.sql",
+  "29": "TrustMarquee.tsx",
   "30": "clean_demo_data.sql",
-  "31": "Machine",
+  "31": "types/index.ts",
   "32": "telemetry-webhook/index.ts",
   "33": "vercel.json",
   "34": "3. Core Functional Modules & Algorithmic Specifications",
   "36": "RazorpayCheckoutModal.tsx",
-  "37": "react"
+  "37": "LazyImage.tsx"
 }

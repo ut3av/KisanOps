@@ -44,7 +44,7 @@ export const PlatformEcosystemSection: React.FC = () => {
               setActivePlatformTab('web');
               navigate('/chc');
             }}
-            className={`p-6 rounded-3xl border transition-all cursor-pointer ${
+            className={`p-6 rounded-3xl border transition-all cursor-pointer card-interactive-spotlight ${
               activePlatformTab === 'web'
                 ? 'bg-[#F5FAED] border-[#7aa32c] shadow-lg scale-[1.02]'
                 : 'bg-stone-50/70 border-stone-200 hover:bg-stone-50'
@@ -80,7 +80,7 @@ export const PlatformEcosystemSection: React.FC = () => {
               setActivePlatformTab('executive');
               navigate('/admin');
             }}
-            className={`p-6 rounded-3xl border transition-all cursor-pointer ${
+            className={`p-6 rounded-3xl border transition-all cursor-pointer card-interactive-spotlight ${
               activePlatformTab === 'executive'
                 ? 'bg-[#F5FAED] border-[#7aa32c] shadow-lg scale-[1.02]'
                 : 'bg-stone-50/70 border-stone-200 hover:bg-stone-50'
@@ -116,7 +116,7 @@ export const PlatformEcosystemSection: React.FC = () => {
               setActivePlatformTab('farmer');
               navigate('/farmer');
             }}
-            className={`p-6 rounded-3xl border transition-all cursor-pointer ${
+            className={`p-6 rounded-3xl border transition-all cursor-pointer card-interactive-spotlight ${
               activePlatformTab === 'farmer'
                 ? 'bg-[#F5FAED] border-[#7aa32c] shadow-lg scale-[1.02]'
                 : 'bg-stone-50/70 border-stone-200 hover:bg-stone-50'
@@ -130,18 +130,18 @@ export const PlatformEcosystemSection: React.FC = () => {
                 Mobile First
               </span>
             </div>
-            <h3 className="text-xl font-bold text-stone-900 mb-1">Farmer Mobile Experience</h3>
+            <h3 className="text-xl font-bold text-stone-900 mb-1">Farmer Matching Portal</h3>
             <p className="text-xs text-stone-500 font-medium mb-3">
-              Instant Rental Search, 7-Factor Fit & Deferred AgriCredit
+              Explainable Match, Weather Windows & AgriCredit
             </p>
             <ul className="space-y-1.5 text-xs text-stone-600">
               <li className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
-                <span>Explainable 94% machine match for farm plots</span>
+                <span>Natural Hindi/English Voice AI matching</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
-                <span>AgriCredit post-harvest payment limit & invoices</span>
+                <span>Doppler harvest window radar & deferred credit</span>
               </li>
             </ul>
           </div>

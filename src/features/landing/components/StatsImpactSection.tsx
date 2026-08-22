@@ -14,7 +14,7 @@ export const StatsImpactSection: React.FC<StatsImpactSectionProps> = ({
   return (
     <section className="py-20 bg-[#efe7db]/30 border-b border-stone-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl border border-stone-200 shadow-xl overflow-hidden">
+        <div className="bg-white rounded-3xl border border-stone-200 shadow-xl overflow-hidden card-interactive-spotlight">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12">
             {/* Left Image & Badge */}
             <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-stone-200 shadow-md aspect-[4/3] group">

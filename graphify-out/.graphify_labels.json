@@ -24,7 +24,7 @@
   "22": "2. Core Subsystems",
   "23": "KisanOps Database Specification & Data Dictionary",
   "24": "KisanOps Deployment Guide",
-  "25": "billingEngine.ts",
+  "25": "FarmerRentals.tsx",
   "26": "rules/graphify.md",
   "27": "workflows/graphify.md",
   "28": "quick_fix_auth.sql",
@@ -34,6 +34,7 @@
   "32": "telemetry-webhook/index.ts",
   "33": "vercel.json",
   "34": "3. Core Functional Modules & Algorithmic Specifications",
+  "35": "HeroSection.tsx",
   "36": "RazorpayCheckoutModal.tsx",
   "37": "LazyImage.tsx"
 }

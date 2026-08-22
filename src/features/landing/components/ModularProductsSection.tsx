@@ -292,7 +292,7 @@ export const ModularProductsSection: React.FC = () => {
                 <div
                   key={engine.id}
                   onClick={() => setActiveEngineId(engine.id)}
-                  className={`rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden ${
+                  className={`rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden card-interactive-spotlight ${
                     isOpen
                       ? 'bg-white border-[#1b4d3e] shadow-lg border-l-4 border-l-[#7aa32c]'
                       : 'bg-white/80 border-stone-200/80 hover:bg-white hover:border-stone-300'
@@ -382,7 +382,7 @@ export const ModularProductsSection: React.FC = () => {
 
           {/* Right Column: Real-Tone Agricultural Photography & Live Telemetry HUD */}
           <div className="lg:col-span-6 sticky top-28 space-y-4">
-            <div className="bg-white rounded-3xl border border-stone-200/90 shadow-2xl p-4 sm:p-6 space-y-4 overflow-hidden relative group">
+            <div className="bg-white rounded-3xl border border-stone-200/90 shadow-2xl p-4 sm:p-6 space-y-4 overflow-hidden relative group card-interactive-spotlight">
               {/* Browser/Window Header */}
               <div className="flex items-center justify-between pb-3 border-b border-stone-100 text-xs text-stone-400 font-mono">
                 <div className="flex items-center gap-1.5">

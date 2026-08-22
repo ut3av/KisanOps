@@ -56,7 +56,7 @@ describe('Razorpay Standard Web Checkout Integration', () => {
         // If network connectivity to api.razorpay.com is restricted, error is formatted
         expect(result.error).toBeDefined();
       }
-    });
+    }, 15000);
 
     it('should handle authentication errors when credentials are missing', async () => {
       process.env.RAZORPAY_KEY_ID = '';
