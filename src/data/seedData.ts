@@ -20,7 +20,6 @@ export const SEEDED_PROFILES: UserProfile[] = [
     role: 'FARMER',
     district: 'Sehore',
     village: 'Bilkisganj',
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 'user-chc-rajesh',
@@ -30,7 +29,6 @@ export const SEEDED_PROFILES: UserProfile[] = [
     role: 'CHC_MANAGER',
     district: 'Sehore',
     village: 'Sehore Central',
-    avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 'user-operator-raju',
@@ -40,7 +38,6 @@ export const SEEDED_PROFILES: UserProfile[] = [
     role: 'OPERATOR',
     district: 'Sehore',
     village: 'Bilkisganj',
-    avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 'user-admin',

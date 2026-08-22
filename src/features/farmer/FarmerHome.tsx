@@ -22,7 +22,8 @@ import {
   PlusCircle,
   X,
   Save,
-  Zap
+  Zap,
+  User
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { ActivityType, Machine, PriceQuote } from '../../types';
@@ -176,11 +177,9 @@ export const FarmerHome: React.FC = () => {
       {/* Welcome & Farm Context Banner */}
       <div className="bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-subtle flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="flex items-center gap-3.5">
-          <img
-            src={state.currentUser.avatarUrl || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80'}
-            alt={state.currentUser.fullName}
-            className="w-14 h-14 rounded-2xl object-cover border-2 border-agri-200 shadow-sm"
-          />
+          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-emerald-100 border-2 border-emerald-200 text-emerald-800 flex items-center justify-center font-extrabold shadow-sm shrink-0">
+            <User className="w-7 h-7 text-emerald-700" />
+          </div>
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">

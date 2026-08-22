@@ -1163,7 +1163,7 @@
       "file_type": "code",
       "norm_label": "loginpage()",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L30"
+      "source_location": "L28"
     },
     {
       "id": "src_lib_billingengine_calculatefinalinvoice",
@@ -1691,7 +1691,7 @@
       "file_type": "code",
       "norm_label": "farmerhome()",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L39"
+      "source_location": "L40"
     },
     {
       "id": "src_features_farmer_farmermarketplace_farmermarketplace",
@@ -2534,7 +2534,7 @@
       "file_type": "code",
       "norm_label": "seeded_agricredit_profile",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L470"
+      "source_location": "L467"
     },
     {
       "id": "src_data_seeddata_seeded_allocation_recommendations",
@@ -2545,7 +2545,7 @@
       "file_type": "code",
       "norm_label": "seeded_allocation_recommendations",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L449"
+      "source_location": "L446"
     },
     {
       "id": "src_data_seeddata_seeded_bookings",
@@ -2556,7 +2556,7 @@
       "file_type": "code",
       "norm_label": "seeded_bookings",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L516"
+      "source_location": "L513"
     },
     {
       "id": "src_data_seeddata_seeded_chcs",
@@ -2567,7 +2567,7 @@
       "file_type": "code",
       "norm_label": "seeded_chcs",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L56"
+      "source_location": "L53"
     },
     {
       "id": "src_data_seeddata_seeded_demand_forecasts",
@@ -2578,7 +2578,7 @@
       "file_type": "code",
       "norm_label": "seeded_demand_forecasts",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L362"
+      "source_location": "L359"
     },
     {
       "id": "src_data_seeddata_seeded_farm",
@@ -2589,7 +2589,7 @@
       "file_type": "code",
       "norm_label": "seeded_farm",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L104"
+      "source_location": "L101"
     },
     {
       "id": "src_data_seeddata_seeded_machines",
@@ -2600,7 +2600,7 @@
       "file_type": "code",
       "norm_label": "seeded_machines",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L132"
+      "source_location": "L129"
     },
     {
       "id": "src_data_seeddata_seeded_maintenance_alerts",
@@ -2611,7 +2611,7 @@
       "file_type": "code",
       "norm_label": "seeded_maintenance_alerts",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L549"
+      "source_location": "L546"
     },
     {
       "id": "src_data_seeddata_seeded_notifications",
@@ -2622,7 +2622,7 @@
       "file_type": "code",
       "norm_label": "seeded_notifications",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L580"
+      "source_location": "L577"
     },
     {
       "id": "src_data_seeddata_seeded_profiles",
@@ -7022,30 +7022,6 @@
     },
     {
       "source": "src_features_auth_loginpage_loginpage",
-      "target": "src_hooks_usepagetitle_usepagetitle",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L31",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_auth_loginpage_loginpage",
-      "target": "src_store_kisanopsstore_usekisanopsstore",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_auth_loginpage_loginpage",
       "target": "src_lib_supabaseclient_signupwithemail",
       "relation": "calls",
       "_origin": "ast",
@@ -7053,7 +7029,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L70",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -7065,7 +7041,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L87",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_auth_loginpage_loginpage",
+      "target": "src_hooks_usepagetitle_usepagetitle",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/auth/LoginPage.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_auth_loginpage_loginpage",
+      "target": "src_store_kisanopsstore_usekisanopsstore",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/auth/LoginPage.tsx",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -7341,7 +7341,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L155",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -7353,7 +7353,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L159",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -7365,7 +7365,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -7377,7 +7377,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L44",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -9861,7 +9861,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -9873,7 +9873,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -9885,19 +9885,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_auth_loginpage",
-      "target": "src_lib_supabaseclient_issupabaseconfigured",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -9909,7 +9897,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -9921,7 +9909,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -9933,7 +9921,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L26",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -9945,7 +9933,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L27",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -10449,7 +10437,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -10461,7 +10449,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -10473,7 +10461,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -10485,7 +10473,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -10497,7 +10485,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -10509,7 +10497,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -10521,7 +10509,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -10533,7 +10521,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -10545,7 +10533,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -10557,7 +10545,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -10569,7 +10557,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -10581,7 +10569,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -13869,7 +13857,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -13881,7 +13869,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -13893,7 +13881,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -13905,7 +13893,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L26",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -13917,7 +13905,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L27",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -14493,7 +14481,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -14505,7 +14493,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -14517,7 +14505,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -14529,7 +14517,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -14541,7 +14529,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -14553,7 +14541,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -14565,7 +14553,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -14577,7 +14565,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -14589,7 +14577,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -14601,7 +14589,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -18183,7 +18171,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L104",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -18194,7 +18182,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L132",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -18216,7 +18204,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L362",
+      "source_location": "L359",
       "weight": 1.0
     },
     {
@@ -18227,7 +18215,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L449",
+      "source_location": "L446",
       "weight": 1.0
     },
     {
@@ -18238,7 +18226,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L470",
+      "source_location": "L467",
       "weight": 1.0
     },
     {
@@ -18249,18 +18237,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L516",
-      "weight": 1.0
-    },
-    {
-      "source": "src_data_seeddata",
-      "target": "src_data_seeddata_seeded_maintenance_alerts",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/data/seedData.ts",
-      "source_location": "L549",
+      "source_location": "L513",
       "weight": 1.0
     },
     {
@@ -18271,7 +18248,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L56",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_seeddata",
+      "target": "src_data_seeddata_seeded_maintenance_alerts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/seedData.ts",
+      "source_location": "L546",
       "weight": 1.0
     },
     {
@@ -18282,7 +18270,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L580",
+      "source_location": "L577",
       "weight": 1.0
     },
     {
@@ -18370,7 +18358,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L30",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -18546,7 +18534,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -21506,5 +21494,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "864b80b03c348536ac511f9c1c59ee161b5b9f9a"
+  "built_at_commit": "6758c6dc199554d941541c8999038c2424a44555"
 }
