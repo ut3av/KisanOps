@@ -1,7 +1,10 @@
 fastapi>=0.111.0
 uvicorn>=0.30.1
 pydantic>=2.8.0
-python-multipart
+python-multipart>=0.0.9
 openai>=1.40.0
-supabase
-gTTS
+supabase>=2.5.0
+gTTS>=2.5.1
+python-dotenv>=1.0.1
+httpx>=0.27.0
+pytest>=8.2.0
