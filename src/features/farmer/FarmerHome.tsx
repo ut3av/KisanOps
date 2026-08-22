@@ -7,13 +7,8 @@ import {
   ArrowRight,
   ShieldCheck,
   Calendar,
-  Clock,
   MapPin,
   CheckCircle2,
-  AlertCircle,
-  HelpCircle,
-  Activity,
-  Layers,
   Sprout,
   Droplets,
   Pickaxe,
@@ -29,7 +24,7 @@ import {
   RotateCw
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
-import { ActivityType, Machine, PriceQuote } from '../../types';
+import { ActivityType, Machine } from '../../types';
 import { AgriCreditGauge } from '../../components/common/AgriCreditGauge';
 import { WeatherRadarCard } from '../../components/common/WeatherRadarCard';
 import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
@@ -111,7 +106,7 @@ export const FarmerHome: React.FC = () => {
             setFormData(prev => ({ ...prev, latitude: lat, longitude: lon }));
             setGpsMessage(`📍 GPS Coordinates attached (${lat.toFixed(4)}, ${lon.toFixed(4)})`);
           }
-        } catch (err) {
+        } catch {
           setFormData(prev => ({ ...prev, latitude: lat, longitude: lon }));
           setGpsMessage(`📍 GPS Coordinates attached (${lat.toFixed(4)}, ${lon.toFixed(4)})`);
         }
@@ -792,6 +787,10 @@ export const FarmerHome: React.FC = () => {
             demandIndex: 94,
             shortageUnits: 2,
             distanceKm: selectedMachineForModal.distanceKm || 3.2,
+            config: {
+              minSurgeMultiplier: state.chcs.find(c => c.id === selectedMachineForModal.chcId)?.minSurgeMultiplier ?? 0.80,
+              maxSurgeMultiplier: state.chcs.find(c => c.id === selectedMachineForModal.chcId)?.maxSurgeMultiplier ?? 1.30,
+            },
           })}
           matchScore={
             scoreMachineForFarmer(selectedMachineForModal, { farm, activity: 'HARVESTING' }).matchScore

@@ -79,6 +79,8 @@ export interface CHC {
   operatingRadiusKm: number;
   totalMachines: number;
   activeMachines: number;
+  minSurgeMultiplier?: number;
+  maxSurgeMultiplier?: number;
 }
 
 export interface FarmCrop {

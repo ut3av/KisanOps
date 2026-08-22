@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import {
   Wheat,
-  MapPin,
   Layers,
   Droplets,
   Calendar,
   ShieldCheck,
   CheckCircle2,
-  FileCheck,
   Edit,
   PlusCircle,
   X,
@@ -21,8 +19,6 @@ import {
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { usePageTitle } from '../../hooks/usePageTitle';
-import { Farm, FarmCrop } from '../../types';
-import clsx from 'clsx';
 
 export const FarmProfile: React.FC = () => {
   usePageTitle(
@@ -87,7 +83,7 @@ export const FarmProfile: React.FC = () => {
             setFormData(prev => ({ ...prev, latitude: lat, longitude: lon }));
             setGpsMessage(`📍 GPS Coordinates attached (${lat.toFixed(4)}, ${lon.toFixed(4)})`);
           }
-        } catch (err) {
+        } catch {
           setFormData(prev => ({ ...prev, latitude: lat, longitude: lon }));
           setGpsMessage(`📍 GPS Coordinates attached (${lat.toFixed(4)}, ${lon.toFixed(4)})`);
         }

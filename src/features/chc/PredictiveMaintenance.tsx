@@ -1,16 +1,8 @@
 import React from 'react';
 import {
-  Wrench,
   AlertTriangle,
-  ShieldCheck,
   CheckCircle2,
-  Clock,
-  Fuel,
-  Thermometer,
-  Zap,
-  RotateCcw,
   Sparkles,
-  ArrowRight
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { calculateMachineHealth } from '../../lib/maintenanceEngine';
@@ -146,56 +138,75 @@ export const PredictiveMaintenance: React.FC = () => {
           Multi-Dimensional Component Health Matrix
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {machines.slice(0, 6).map(machine => {
-            const telemetry = currentTelemetry[machine.id];
-            const healthBreakdown = calculateMachineHealth(machine, telemetry);
-            const hoursToService = Math.max(0, Math.round(machine.serviceIntervalHours - machine.hoursSinceLastService));
+        {machines.length === 0 ? (
+          <div className="bg-white rounded-3xl p-10 text-center border border-slate-200/90 shadow-subtle space-y-4 max-w-lg mx-auto my-4">
+            <div className="w-14 h-14 rounded-2xl bg-surface-100 flex items-center justify-center mx-auto text-amber-500">
+              <Sparkles className="w-7 h-7" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-800">No Fleet Telematics Feeds Active</h3>
+            <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+              No agricultural machinery assets are currently registered in this hub workspace. You can load sample demo telemetry or register equipment in Fleet Management.
+            </p>
+            <button
+              onClick={() => loadDemoData()}
+              className="btn-primary text-xs py-2.5 px-5 bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center gap-1.5 shadow-sm cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>⚡ Load Sample Demo Telematics</span>
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {machines.slice(0, 6).map(machine => {
+              const telemetry = currentTelemetry[machine.id];
+              const healthBreakdown = calculateMachineHealth(machine, telemetry);
+              const hoursToService = Math.max(0, Math.round(machine.serviceIntervalHours - machine.hoursSinceLastService));
 
-            return (
-              <div key={machine.id} className="bg-surface-50 p-4 rounded-2xl border border-slate-200/80 space-y-3">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h4 className="font-extrabold text-slate-900 text-sm">{machine.brand} {machine.model}</h4>
-                    <p className="text-[11px] text-slate-500 font-mono">{machine.identifier} • {machine.category}</p>
+              return (
+                <div key={machine.id} className="bg-surface-50 p-4 rounded-2xl border border-slate-200/80 space-y-3">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h4 className="font-extrabold text-slate-900 text-sm">{machine.brand} {machine.model}</h4>
+                      <p className="text-[11px] text-slate-500 font-mono">{machine.identifier} • {machine.category}</p>
+                    </div>
+
+                    <div className="text-right">
+                      <div className="text-lg font-black text-emerald-700 font-mono">
+                        {healthBreakdown.overallHealthScore}%
+                      </div>
+                      <span className="text-[10px] text-emerald-800 font-semibold bg-emerald-100 px-1.5 py-0.5 rounded">
+                        {healthBreakdown.statusCategory}
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="text-right">
-                    <div className="text-lg font-black text-emerald-700 font-mono">
-                      {healthBreakdown.overallHealthScore}%
+                  {/* Progress breakdown */}
+                  <div className="space-y-1.5 text-[11px]">
+                    <div className="flex justify-between text-slate-600">
+                      <span>Engine & Emissions</span>
+                      <span className="font-bold text-slate-800">{healthBreakdown.engineParametersScore}/20 pts</span>
                     </div>
-                    <span className="text-[10px] text-emerald-800 font-semibold bg-emerald-100 px-1.5 py-0.5 rounded">
-                      {healthBreakdown.statusCategory}
+                    <div className="flex justify-between text-slate-600">
+                      <span>Fuel Burn Efficiency</span>
+                      <span className="font-bold text-slate-800">{healthBreakdown.fuelEfficiencyScore}/20 pts</span>
+                    </div>
+                    <div className="flex justify-between text-slate-600">
+                      <span>Service Compliance</span>
+                      <span className="font-bold text-slate-800">{healthBreakdown.serviceComplianceScore}/10 pts</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px]">
+                    <span className="text-slate-500">Service Due in:</span>
+                    <span className={clsx('font-bold font-mono', hoursToService <= 30 ? 'text-rose-600' : 'text-slate-800')}>
+                      {hoursToService} Operating Hours
                     </span>
                   </div>
                 </div>
-
-                {/* Progress breakdown */}
-                <div className="space-y-1.5 text-[11px]">
-                  <div className="flex justify-between text-slate-600">
-                    <span>Engine & Emissions</span>
-                    <span className="font-bold text-slate-800">{healthBreakdown.engineParametersScore}/20 pts</span>
-                  </div>
-                  <div className="flex justify-between text-slate-600">
-                    <span>Fuel Burn Efficiency</span>
-                    <span className="font-bold text-slate-800">{healthBreakdown.fuelEfficiencyScore}/20 pts</span>
-                  </div>
-                  <div className="flex justify-between text-slate-600">
-                    <span>Service Compliance</span>
-                    <span className="font-bold text-slate-800">{healthBreakdown.serviceComplianceScore}/10 pts</span>
-                  </div>
-                </div>
-
-                <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px]">
-                  <span className="text-slate-500">Service Due in:</span>
-                  <span className={clsx('font-bold font-mono', hoursToService <= 30 ? 'text-rose-600' : 'text-slate-800')}>
-                    {hoursToService} Operating Hours
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

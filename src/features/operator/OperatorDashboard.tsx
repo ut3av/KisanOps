@@ -5,24 +5,16 @@ import {
   Pause,
   CheckCircle2,
   Phone,
-  Navigation,
   Fuel,
   Wrench,
   DollarSign,
   AlertTriangle,
-  Clock,
   MapPin,
   Sparkles,
-  ShieldCheck,
   Radio,
-  FileCheck,
-  Check,
   PlusCircle,
-  Thermometer,
-  Gauge
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
-import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { TelematicsGaugeCluster } from '../../components/common/TelematicsGauge';
 import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
@@ -33,7 +25,7 @@ export const OperatorDashboard: React.FC = () => {
     'Active machine mission, engine telemetry stopwatch, diesel logs, and incident reporting.'
   );
   const { state, updateBookingStatus, toggleFuelAnomaly, loadDemoData } = useKisanOpsStore();
-  const { bookings, machines, currentTelemetry, farm, chcs, simulationState } = state;
+  const { bookings, machines, currentTelemetry, simulationState } = state;
 
   const [activeTab, setActiveTab] = useState<'MISSION' | 'DIESEL' | 'SAFETY' | 'EARNINGS'>('MISSION');
   

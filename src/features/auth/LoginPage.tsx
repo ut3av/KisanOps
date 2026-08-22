@@ -7,7 +7,6 @@ import {
   User,
   ShieldCheck,
   Building2,
-  Sparkles,
   ArrowRight,
   CheckCircle2,
   AlertCircle,
@@ -15,7 +14,6 @@ import {
   EyeOff,
   Wheat,
   Zap,
-  Radio,
   Check
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';

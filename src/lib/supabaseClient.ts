@@ -207,18 +207,20 @@ export async function signUpWithEmail(
         village: '',
       };
 
-      // Try inserting into user_profiles table in Supabase
+      // Try inserting or updating profiles table in Supabase
       try {
-        await supabase.from('user_profiles').upsert({
-          id: userProfile.id,
-          full_name: fullName,
-          email: cleanEmail,
-          phone_number: finalPhone,
-          role,
-          created_at: new Date().toISOString(),
-        });
+        if (data.user?.id) {
+          await supabase.from('profiles').upsert({
+            auth_user_id: data.user.id,
+            full_name: fullName,
+            email: cleanEmail,
+            phone_number: finalPhone,
+            role,
+            updated_at: new Date().toISOString(),
+          }, { onConflict: 'auth_user_id' });
+        }
       } catch (err) {
-        // User profile logged
+        // Handled gracefully via handle_new_user database trigger
       }
 
       return { success: true, user: userProfile, sessionToken: data.session?.access_token };

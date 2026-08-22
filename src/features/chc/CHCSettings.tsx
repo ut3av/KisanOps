@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-  Settings,
   Building2,
-  Sliders,
-  ShieldCheck,
   Save,
   CheckCircle2,
   Zap,
-  MapPin,
-  Clock,
-  Phone,
-  Sparkles
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { usePageTitle } from '../../hooks/usePageTitle';
@@ -29,9 +22,22 @@ export const CHCSettings: React.FC = () => {
   const [stateName, setStateName] = useState(currentChc?.state || 'Madhya Pradesh');
   const [radiusKm, setRadiusKm] = useState(String(currentChc?.operatingRadiusKm || 35));
   const [contactPhone, setContactPhone] = useState(currentChc?.contactPhone || state.currentUser.phoneNumber || '+91 98261 00000');
-  const [minSurge, setMinSurge] = useState('0.80');
-  const [maxSurge, setMaxSurge] = useState('1.30');
+  const [minSurge, setMinSurge] = useState(String(currentChc?.minSurgeMultiplier ?? 0.80));
+  const [maxSurge, setMaxSurge] = useState(String(currentChc?.maxSurgeMultiplier ?? 1.30));
   const [isSaved, setIsSaved] = useState(false);
+
+  useEffect(() => {
+    if (currentChc) {
+      setHubName(currentChc.name);
+      setDistrict(currentChc.district);
+      setVillage(currentChc.village);
+      setStateName(currentChc.state);
+      setRadiusKm(String(currentChc.operatingRadiusKm));
+      setContactPhone(currentChc.contactPhone);
+      setMinSurge(String(currentChc.minSurgeMultiplier ?? 0.80));
+      setMaxSurge(String(currentChc.maxSurgeMultiplier ?? 1.30));
+    }
+  }, [currentChc]);
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +52,8 @@ export const CHCSettings: React.FC = () => {
       contactPhone: contactPhone,
       totalMachines: state.machines.length,
       activeMachines: state.machines.filter(m => m.status === 'ACTIVE').length,
+      minSurgeMultiplier: Number(minSurge) || 0.80,
+      maxSurgeMultiplier: Number(maxSurge) || 1.30,
     });
     setIsSaved(true);
     setTimeout(() => setIsSaved(false), 3000);

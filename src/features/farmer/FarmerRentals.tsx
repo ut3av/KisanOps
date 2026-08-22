@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import {
-  CalendarCheck,
-  MapPin,
   Phone,
-  Clock,
   Download,
   CheckCircle2,
   Radio,
   FileText,
-  ShieldCheck,
   Tractor,
-  AlertTriangle,
-  Play,
-  ArrowRight
+  ArrowRight,
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
@@ -60,7 +54,6 @@ export const FarmerRentals: React.FC = () => {
   };
 
   const currentStepIndex = activeBooking ? getStepIndex(activeBooking.status) : 0;
-  const isOperatingOrDispatched = activeBooking?.status === 'DISPATCHED' || activeBooking?.status === 'IN_PROGRESS';
 
   return (
     <div className="space-y-6">

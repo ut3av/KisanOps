@@ -1,16 +1,16 @@
-# Graph Report - KisanOps  (2026-08-23)
+# Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 128 files · ~347,255 words
+- 128 files · ~346,749 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 655 nodes · 1462 edges · 37 communities (28 shown, 9 thin omitted)
+- 655 nodes · 1475 edges · 37 communities (28 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `399d567f`
+- Built from commit: `0dee7039`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -50,7 +50,7 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `react` - 71 edges
-2. `useKisanOpsStore()` - 59 edges
+2. `useKisanOpsStore()` - 61 edges
 3. `usePageTitle()` - 53 edges
 4. `Machine` - 27 edges
 5. `AppState` - 15 edges
@@ -115,7 +115,7 @@ Nodes (21): api/**/*.ts, server/**/*.ts, vite.config.ts, compilerOptions, allowI
 
 ### Community 9 - "react"
 Cohesion: 0.05
-Nodes (71): react, App(), queryClient, LeafletFleetMap(), MouseInteractiveGlow(), ScrollToTop(), StatCard(), StatCardProps (+63 more)
+Nodes (72): react, App(), queryClient, InteractiveCursor(), LeafletFleetMap(), MouseInteractiveGlow(), ScrollToTop(), StatCard() (+64 more)
 
 ### Community 10 - "schema.sql"
 Cohesion: 0.43
@@ -170,7 +170,7 @@ Cohesion: 0.33
 Nodes (8): RazorpayCheckoutModal(), RazorpayCheckoutModalProps, createRazorpayOrder(), initiateRazorpayStandardCheckout(), loadRazorpayScript(), RazorpayCheckoutOptions, RazorpayCustomerDetails, Window
 
 ## Knowledge Gaps
-- **211 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+206 more)
+- **210 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+205 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -178,13 +178,13 @@ Nodes (8): RazorpayCheckoutModal(), RazorpayCheckoutModalProps, createRazorpayOr
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `RazorpayCheckoutModal.tsx`, `LazyImage.tsx`, `LeafletFleetMap.tsx`, `plugins`, `FarmerRentals.tsx`, `TrustMarquee.tsx`, `types/index.ts`?**
-  _High betweenness centrality (0.131) - this node is a cross-community bridge._
+  _High betweenness centrality (0.126) - this node is a cross-community bridge._
 - **Why does `useKisanOpsStore()` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `FarmerRentals.tsx`, `types/index.ts`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Why does `Machine` connect `types/index.ts` to `kisanOpsStore.ts`, `voice.ts`, `LeafletFleetMap.tsx`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
-  _211 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _210 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Navbar.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.12857142857142856 - nodes in this community are weakly interconnected._
 - **Should `kisanOpsStore.ts` be split into smaller, more focused modules?**

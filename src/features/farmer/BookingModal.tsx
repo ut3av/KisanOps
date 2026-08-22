@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import {
   X,
-  Calendar,
-  Clock,
   MapPin,
   ShieldCheck,
   CreditCard,
-  CheckCircle2,
-  AlertCircle,
-  HelpCircle,
   Sparkles,
-  Info
 } from 'lucide-react';
 import { Machine, PriceQuote, ActivityType, PaymentMethod } from '../../types';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
@@ -308,7 +302,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           customerPhone={state.currentUser.phoneNumber}
           customerEmail={state.currentUser.email}
           bookingDescription={`${machine.brand} ${machine.model} (${bookedHours} Hours Rental)`}
-          onSuccess={(paymentId) => {
+          onSuccess={() => {
             executeFinalBooking('CAPTURED');
           }}
           onClose={() => setShowRazorpayModal(false)}

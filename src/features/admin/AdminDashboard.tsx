@@ -2,35 +2,22 @@ import React, { useState } from 'react';
 import {
   ShieldCheck,
   Cpu,
-  Database,
   Sliders,
-  Activity,
   FileCheck,
   Layers,
   Zap,
-  Building2,
-  Users,
   CheckCircle2,
   TrendingUp,
   AlertTriangle,
-  ArrowRight,
   Download,
-  Filter,
-  DollarSign,
-  Fuel,
-  MapPin,
   RefreshCw,
   Search,
   Check,
   Scale,
   Leaf,
-  Clock,
+  MapPin,
   Sparkles,
-  Lock,
-  ArrowUpRight,
-  BarChart3
 } from 'lucide-react';
-import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { StatCard } from '../../components/common/StatCard';
 import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
@@ -169,18 +156,14 @@ export const AdminDashboard: React.FC = () => {
     'Statewide Governance & Subsidies Hub',
     'Statewide agricultural mechanization oversight, SMAM scheme subsidies, and price protection policies.'
   );
-  const { state } = useKisanOpsStore();
-  const { chcs, machines, bookings } = state;
-
   const [selectedDistrict, setSelectedDistrict] = useState<string>('ALL');
   const [auditSearch, setAuditSearch] = useState<string>('');
   const [selectedAuditCategory, setSelectedAuditCategory] = useState<string>('ALL');
-  
+
   // Interactive Governance Policies State
   const [minFloorMultiplier, setMinFloorMultiplier] = useState<number>(0.80);
   const [peakSurgeCap, setPeakSurgeCap] = useState<number>(1.30);
   const [interHubRebateKm, setInterHubRebateKm] = useState<number>(18);
-  const [agriCreditLossReserve, setAgriCreditLossReserve] = useState<number>(500000);
   const [policySaved, setPolicySaved] = useState<boolean>(false);
   const [rebalanceAuthorized, setRebalanceAuthorized] = useState<boolean>(false);
 

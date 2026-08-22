@@ -3,19 +3,16 @@ import { useSearchParams } from 'react-router-dom';
 import {
   Search,
   Filter,
-  SlidersHorizontal,
   MapPin,
   Star,
   Sparkles,
-  ShieldCheck,
   Zap,
   Map,
   List,
   CheckCircle2,
-  Calendar
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
-import { MachineCategory, ActivityType, Machine } from '../../types';
+import { ActivityType, Machine } from '../../types';
 import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
 import { MachineDetailsModal } from './MachineDetailsModal';
@@ -30,11 +27,11 @@ export const FarmerMarketplace: React.FC = () => {
     'Browse harvesters, tractors, and implements with explainable matching and transparent rates.'
   );
   const { state, loadDemoData } = useKisanOpsStore();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const initialActivity = (searchParams.get('activity') as ActivityType) || 'HARVESTING';
 
-  const [selectedActivity, setSelectedActivity] = useState<ActivityType>(initialActivity);
+  const selectedActivity: ActivityType = initialActivity;
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [maxDistance, setMaxDistance] = useState<number>(35);
@@ -66,10 +63,15 @@ export const FarmerMarketplace: React.FC = () => {
           activity: selectedActivity,
         });
 
+        const machineChc = chcs.find(c => c.id === machine.chcId);
         const priceQuote = calculateDynamicPrice(machine, {
           demandIndex: 94,
           shortageUnits: 2,
           distanceKm: machine.distanceKm || 3.2,
+          config: {
+            minSurgeMultiplier: machineChc?.minSurgeMultiplier ?? 0.80,
+            maxSurgeMultiplier: machineChc?.maxSurgeMultiplier ?? 1.30,
+          },
         });
 
         return {
@@ -86,7 +88,7 @@ export const FarmerMarketplace: React.FC = () => {
         if (sortBy === 'HEALTH_DESC') return b.machine.healthScore - a.machine.healthScore;
         return 0;
       });
-  }, [machines, farm, selectedActivity, selectedCategory, searchQuery, maxDistance, minHealth, sortBy]);
+  }, [machines, farm, chcs, selectedActivity, selectedCategory, searchQuery, maxDistance, minHealth, sortBy]);
 
   const categories: { label: string; value: string }[] = [
     { label: 'All Equipment', value: 'ALL' },
@@ -340,6 +342,10 @@ export const FarmerMarketplace: React.FC = () => {
             demandIndex: 94,
             shortageUnits: 2,
             distanceKm: selectedMachineForModal.distanceKm || 3.2,
+            config: {
+              minSurgeMultiplier: chcs.find(c => c.id === selectedMachineForModal.chcId)?.minSurgeMultiplier ?? 0.80,
+              maxSurgeMultiplier: chcs.find(c => c.id === selectedMachineForModal.chcId)?.maxSurgeMultiplier ?? 1.30,
+            },
           })}
           matchScore={
             scoreMachineForFarmer(selectedMachineForModal, { farm, activity: selectedActivity }).matchScore

@@ -5,14 +5,6 @@ import {
   Printer,
   CheckCircle2,
   ShieldCheck,
-  Building2,
-  User,
-  Calendar,
-  Clock,
-  Tractor,
-  QrCode,
-  FileText,
-  CreditCard
 } from 'lucide-react';
 import { Invoice } from '../../types';
 import { generatePdfInvoice } from '../../lib/billingEngine';

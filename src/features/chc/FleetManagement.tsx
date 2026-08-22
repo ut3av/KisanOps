@@ -8,16 +8,11 @@ import {
   Fuel,
   Clock,
   Wrench,
-  ShieldCheck,
-  CheckCircle2,
-  AlertTriangle,
-  MapPin,
   ChevronRight,
   X,
   PlusCircle,
   Sparkles,
   Save,
-  CarFront
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { Machine, MachineStatus, MachineCategory } from '../../types';
