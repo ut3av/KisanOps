@@ -11,9 +11,13 @@ import {
   Sparkles
 } from 'lucide-react';
 import { Navbar } from './Navbar';
+import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import clsx from 'clsx';
 
 export const FarmerLayout: React.FC = () => {
+  const { state } = useKisanOpsStore();
+  const { farm } = state;
+
   const navItems = [
     { to: '/farmer', icon: Home, label: 'Home', end: true },
     { to: '/farmer/marketplace', icon: Search, label: 'Find Equipment' },
@@ -52,7 +56,7 @@ export const FarmerLayout: React.FC = () => {
 
           <div className="flex items-center gap-2 text-xs text-slate-500">
             <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Farm ID: BIL-SEH-08 • 8.0 Acres Wheat</span>
+            <span>{farm.farmName} • {farm.sizeAcres} Acres ({farm.crop?.cropName || 'Wheat'})</span>
           </div>
         </div>
       </div>

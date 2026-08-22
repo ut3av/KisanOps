@@ -19,15 +19,24 @@ import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { TelematicsGaugeCluster } from '../../components/common/TelematicsGauge';
 import { generatePdfInvoice } from '../../lib/billingEngine';
 import { BookingStatus } from '../../types';
+import { usePageTitle } from '../../hooks/usePageTitle';
+import { SEEDED_PROFILES } from '../../data/seedData';
 import clsx from 'clsx';
 
 export const FarmerRentals: React.FC = () => {
+  usePageTitle(
+    'My Machinery Rentals & Live Tracking',
+    'Track live machinery dispatch, CAN-Bus operating actuals, and automated tax invoices.'
+  );
   const { state, updateBookingStatus } = useKisanOpsStore();
-  const { bookings, farm, machines, chcs, currentTelemetry, invoices, simulationState } = state;
+  const { bookings, farm, machines, chcs, currentTelemetry, invoices, simulationState, currentUser } = state;
 
-  const [selectedBookingId, setSelectedBookingId] = useState<string>(bookings[0]?.id || '');
+  const isDemo = SEEDED_PROFILES.some(p => p.id === currentUser.id);
+  const userBookings = isDemo ? bookings : bookings.filter(b => b.farmerId === currentUser.id);
 
-  const activeBooking = bookings.find(b => b.id === selectedBookingId) || bookings[0];
+  const [selectedBookingId, setSelectedBookingId] = useState<string>(userBookings[0]?.id || '');
+
+  const activeBooking = userBookings.find(b => b.id === selectedBookingId) || userBookings[0];
   const bookingInvoice = invoices.find(inv => inv.bookingId === activeBooking?.id);
 
   const steps: { status: BookingStatus; label: string; desc: string }[] = [
@@ -64,13 +73,13 @@ export const FarmerRentals: React.FC = () => {
           </p>
         </div>
 
-        {bookings.length > 1 && (
+        {userBookings.length > 1 && (
           <select
             value={selectedBookingId}
             onChange={e => setSelectedBookingId(e.target.value)}
             className="bg-surface-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800"
           >
-            {bookings.map(b => (
+            {userBookings.map(b => (
               <option key={b.id} value={b.id}>
                 {b.bookingNumber} - {b.machineModel} ({b.status})
               </option>

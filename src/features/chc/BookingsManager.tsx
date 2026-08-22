@@ -15,9 +15,14 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { Booking, BookingStatus } from '../../types';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 export const BookingsManager: React.FC = () => {
+  usePageTitle(
+    'Bookings & Dispatch Operations',
+    'Manage agricultural machinery rental reservations, assignments, and dispatch statuses.'
+  );
   const { state, updateBookingStatus } = useKisanOpsStore();
   const { bookings } = state;
 

@@ -16,8 +16,13 @@ import {
 import { LandingNavbar } from '../components/LandingNavbar';
 import { LandingFooter } from '../components/LandingFooter';
 import { CtaBanner } from '../components/CtaBanner';
+import { usePageTitle } from '../../../hooks/usePageTitle';
 
 export const ProductsPreHarvestPage: React.FC = () => {
+  usePageTitle(
+    'Pre-Harvest Suite: Farm GIS & Management',
+    'Digitize sowing, satellite crop NDVI, and on-ground farm activities with Yukti.'
+  );
   const navigate = useNavigate();
 
   return (

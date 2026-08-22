@@ -12,8 +12,13 @@ import {
 } from 'lucide-react';
 import { LandingNavbar } from '../landing/components/LandingNavbar';
 import { LandingFooter } from '../landing/components/LandingFooter';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 export const NotFoundPage: React.FC = () => {
+  usePageTitle(
+    'Page Not Found (404)',
+    'The requested agricultural resource could not be found.'
+  );
   const navigate = useNavigate();
 
   return (

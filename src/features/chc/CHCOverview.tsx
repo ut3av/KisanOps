@@ -17,8 +17,13 @@ import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { StatCard } from '../../components/common/StatCard';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { TelematicsGaugeCluster } from '../../components/common/TelematicsGauge';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 export const CHCOverview: React.FC = () => {
+  usePageTitle(
+    'CHC Operations Hub | Fleet & Telematics',
+    'Real-time Custom Hiring Centre operations, shortage alerts, and machine health.'
+  );
   const { state, approveAllocation } = useKisanOpsStore();
   const navigate = useNavigate();
 

@@ -20,9 +20,14 @@ import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
 import { MachineDetailsModal } from './MachineDetailsModal';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 export const FarmerMarketplace: React.FC = () => {
+  usePageTitle(
+    'Find & Rent Machinery | Marketplace',
+    'Browse harvesters, tractors, and implements with explainable matching and transparent rates.'
+  );
   const { state } = useKisanOpsStore();
   const [searchParams, setSearchParams] = useSearchParams();
 

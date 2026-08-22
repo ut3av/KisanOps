@@ -15,9 +15,14 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { WeatherRadarCard } from '../../components/common/WeatherRadarCard';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 export const DemandIntelligence: React.FC = () => {
+  usePageTitle(
+    'Predictive Demand & Fleet Allocation',
+    'Forecast district machinery demand and optimize inter-hub relocation.'
+  );
   const { state, approveAllocation } = useKisanOpsStore();
   const { demandForecasts, allocations } = state;
 

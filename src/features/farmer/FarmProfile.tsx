@@ -12,8 +12,13 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 export const FarmProfile: React.FC = () => {
+  usePageTitle(
+    'My Farm & Plot Polygon',
+    'View geo-fenced farm boundary, crop stage, and soil composition.'
+  );
   const { state } = useKisanOpsStore();
   const { farm, chcs } = state;
 

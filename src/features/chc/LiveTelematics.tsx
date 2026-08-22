@@ -21,9 +21,14 @@ import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { TelematicsGaugeCluster } from '../../components/common/TelematicsGauge';
 import { getSampleHardwareConfig } from '../../lib/iotIngestionEngine';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 export const LiveTelematics: React.FC = () => {
+  usePageTitle(
+    'Live CAN-Bus J1939 Telematics Stream',
+    'Real-time GPS coordinates, engine RPM, coolant temperature, and fuel burn rates.'
+  );
   const { state, toggleFuelAnomaly, toggleSimulation } = useKisanOpsStore();
   const { machines, chcs, farm, currentTelemetry, simulationState, isSimulating } = state;
   const [showIotModal, setShowIotModal] = useState(false);

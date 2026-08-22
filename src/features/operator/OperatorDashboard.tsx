@@ -24,9 +24,14 @@ import {
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { TelematicsGaugeCluster } from '../../components/common/TelematicsGauge';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 export const OperatorDashboard: React.FC = () => {
+  usePageTitle(
+    'Machine Operator & Driver Console',
+    'Active machine mission, engine telemetry stopwatch, diesel logs, and incident reporting.'
+  );
   const { state, updateBookingStatus, toggleFuelAnomaly } = useKisanOpsStore();
   const { bookings, machines, currentTelemetry, farm, chcs, simulationState } = state;
 

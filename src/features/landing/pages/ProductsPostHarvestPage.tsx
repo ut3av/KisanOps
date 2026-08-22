@@ -15,8 +15,13 @@ import {
 import { LandingNavbar } from '../components/LandingNavbar';
 import { LandingFooter } from '../components/LandingFooter';
 import { CtaBanner } from '../components/CtaBanner';
+import { usePageTitle } from '../../../hooks/usePageTitle';
 
 export const ProductsPostHarvestPage: React.FC = () => {
+  usePageTitle(
+    'Post-Harvest & Telematics Suite',
+    'Live CAN-Bus machinery telematics, batch traceability, and equipment rentals.'
+  );
   const navigate = useNavigate();
 
   return (

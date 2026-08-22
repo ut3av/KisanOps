@@ -5,8 +5,13 @@ import { LandingNavbar } from '../components/LandingNavbar';
 import { LandingFooter } from '../components/LandingFooter';
 import { RoiCalculatorSection } from '../components/RoiCalculatorSection';
 import { CtaBanner } from '../components/CtaBanner';
+import { usePageTitle } from '../../../hooks/usePageTitle';
 
 export const PricingRoiPage: React.FC = () => {
+  usePageTitle(
+    'ROI Modeling & Transparent Pricing',
+    'Calculate your Custom Hiring Centre fleet ROI, fuel savings, and subscription plans.'
+  );
   const navigate = useNavigate();
 
   return (

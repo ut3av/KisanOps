@@ -11,8 +11,13 @@ import {
   Clock
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 export const CHCSettings: React.FC = () => {
+  usePageTitle(
+    'Hub Settings & Safety Bounds',
+    'Configure dynamic pricing multipliers, operating radius, and telematic alert thresholds.'
+  );
   const { state } = useKisanOpsStore();
   const [minSurge, setMinSurge] = useState('0.80');
   const [maxSurge, setMaxSurge] = useState('1.30');

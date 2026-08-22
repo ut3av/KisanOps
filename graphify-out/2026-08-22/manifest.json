@@ -6,9 +6,9 @@
     "semantic_hash": "029f4905006c1fffd96bc863e2d98d3e"
   },
   "package.json": {
-    "mtime": 1787381216.9916382,
-    "seen": 1787384804.4978166,
-    "ast_hash": "951f905d877dd2ab3fd3dc8cc964da49",
+    "mtime": 1787313369.1266038,
+    "seen": 1787322604.0197473,
+    "ast_hash": "93338e8ec2446b84d47136ed30040dae",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -18,9 +18,9 @@
     "semantic_hash": "c1ee9ce6a4fe04105dbf8e619390df5e"
   },
   "src/App.tsx": {
-    "mtime": 1787384496.0566604,
-    "seen": 1787384804.4978235,
-    "ast_hash": "3804d86fd32bcdde7c75aa92fa900417",
+    "mtime": 1787334392.620522,
+    "seen": 1787334561.019408,
+    "ast_hash": "f76c6f627b4f2e7357523dc2de74b88a",
     "semantic_hash": ""
   },
   "src/components/common/AgriCreditGauge.tsx": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/FarmerLayout.tsx": {
-    "mtime": 1787382617.717607,
-    "seen": 1787384804.4978507,
-    "ast_hash": "7ed2e41c4d81f46af15872d6d5a4a69b",
+    "mtime": 1787321957.0519335,
+    "seen": 1787322604.0198042,
+    "ast_hash": "3e24b630a7cac508903a6ece1b93b2ba",
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
@@ -84,64 +84,64 @@
     "semantic_hash": "cc564be57ee0267b822463a36c9e1c68"
   },
   "src/features/admin/AdminDashboard.tsx": {
-    "mtime": 1787384752.8148434,
-    "seen": 1787384804.497857,
-    "ast_hash": "b4bef435c84e7b0cbd38ebfd025a534d",
+    "mtime": 1787332960.353303,
+    "seen": 1787333008.1183453,
+    "ast_hash": "7243036e00d43bd2c57445c3b822189a",
     "semantic_hash": ""
   },
   "src/features/auth/LandingRoleSelect.tsx": {
-    "mtime": 1787384762.6393394,
-    "seen": 1787384804.4978583,
-    "ast_hash": "9866d34f592b63444c0835be5f73a2a9",
+    "mtime": 1787334429.2992556,
+    "seen": 1787334561.0194292,
+    "ast_hash": "10c247595db6f94975923682f6db34be",
     "semantic_hash": ""
   },
   "src/features/chc/BookingsManager.tsx": {
-    "mtime": 1787384668.651176,
-    "seen": 1787384804.4978607,
-    "ast_hash": "b0ed6ec31f516c65ff38eb0d7539f373",
+    "mtime": 1787333991.5143008,
+    "seen": 1787334032.5130303,
+    "ast_hash": "48cd57577d7a49b34ebcd59182a43ac2",
     "semantic_hash": ""
   },
   "src/features/chc/CHCOverview.tsx": {
-    "mtime": 1787384632.0840557,
-    "seen": 1787384804.497862,
-    "ast_hash": "61d60df88029be5ac9b285ebc2e6fef0",
-    "semantic_hash": ""
+    "mtime": 1787311248.17258,
+    "seen": 1787312673.771309,
+    "ast_hash": "3989217e6889f9c891f2bba00f8017d5",
+    "semantic_hash": "3989217e6889f9c891f2bba00f8017d5"
   },
   "src/features/chc/CHCSettings.tsx": {
-    "mtime": 1787384709.0867493,
-    "seen": 1787384804.497863,
-    "ast_hash": "db5023392ca0f89ea1c10d8189d63d1f",
+    "mtime": 1787333919.0956757,
+    "seen": 1787334032.513035,
+    "ast_hash": "3d95af6ec8ca614deb06e4f8613a3ee6",
     "semantic_hash": ""
   },
   "src/features/chc/DemandIntelligence.tsx": {
-    "mtime": 1787384643.6641076,
-    "seen": 1787384804.4978645,
-    "ast_hash": "abf487bf179e55c824c2a8ee4f1367d5",
+    "mtime": 1787316517.4537568,
+    "seen": 1787322604.019829,
+    "ast_hash": "716aca97c08efd9d5f1b9811e582deb8",
     "semantic_hash": ""
   },
   "src/features/chc/FleetManagement.tsx": {
-    "mtime": 1787384650.7388725,
-    "seen": 1787384804.4978657,
-    "ast_hash": "2ac2ed65cbd22b32473f1e0e6ef54e69",
+    "mtime": 1787333999.4927962,
+    "seen": 1787334032.51304,
+    "ast_hash": "d8d07f6a735dbf4f98ce5b1f56cd98e6",
     "semantic_hash": ""
   },
   "src/features/chc/LiveTelematics.tsx": {
-    "mtime": 1787384661.381596,
-    "seen": 1787384804.4978669,
-    "ast_hash": "cc9b59125608f7619bad2d3a1ab6e11b",
+    "mtime": 1787334485.304233,
+    "seen": 1787334561.0194352,
+    "ast_hash": "44a8bddf8e607cc5af0f316e49f4e0c8",
     "semantic_hash": ""
   },
   "src/features/chc/PredictiveMaintenance.tsx": {
-    "mtime": 1787384680.2659378,
-    "seen": 1787384804.497868,
-    "ast_hash": "cae7db94b8f0a466ff615dfae31b79a6",
+    "mtime": 1787329991.3776953,
+    "seen": 1787330215.3836336,
+    "ast_hash": "bcbf00c79f7e3afa6e974cc0881fc96a",
     "semantic_hash": ""
   },
   "src/features/chc/RevenueAnalytics.tsx": {
-    "mtime": 1787384697.939605,
-    "seen": 1787384804.4978693,
-    "ast_hash": "4fe6c79b6ecad7a8d8411bf75af393d8",
-    "semantic_hash": ""
+    "mtime": 1787311305.7408412,
+    "seen": 1787312673.7713246,
+    "ast_hash": "0195a02c4ee2cd7bac034ec08913d7b2",
+    "semantic_hash": "0195a02c4ee2cd7bac034ec08913d7b2"
   },
   "src/features/farmer/BookingModal.tsx": {
     "mtime": 1787336055.5548317,
@@ -150,33 +150,33 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmProfile.tsx": {
-    "mtime": 1787384612.2496505,
-    "seen": 1787384804.497873,
-    "ast_hash": "e57fe820796fdf815b17ea1d883859e2",
-    "semantic_hash": ""
+    "mtime": 1787311232.0851636,
+    "seen": 1787312673.7713292,
+    "ast_hash": "dbd8cb258f24f682c4ad8b6fecb55155",
+    "semantic_hash": "dbd8cb258f24f682c4ad8b6fecb55155"
   },
   "src/features/farmer/FarmerCredit.tsx": {
-    "mtime": 1787384623.5938928,
-    "seen": 1787384804.4978747,
-    "ast_hash": "db9e6dfda13f9f2702fae36a24918b90",
-    "semantic_hash": ""
+    "mtime": 1787311239.193863,
+    "seen": 1787312673.771332,
+    "ast_hash": "7cb6cc369981c65b575719b369e7379b",
+    "semantic_hash": "7cb6cc369981c65b575719b369e7379b"
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787384575.467544,
-    "seen": 1787384804.497876,
-    "ast_hash": "74e800e687a8500329538004521b2586",
+    "mtime": 1787332003.4289877,
+    "seen": 1787332130.5778184,
+    "ast_hash": "4cdaa78a018cfb4fe93e8aae29bd5cf7",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
-    "mtime": 1787384583.85964,
-    "seen": 1787384804.497877,
-    "ast_hash": "c0ec6a64a6776017903ab7e6bcbc5e56",
+    "mtime": 1787336031.6257188,
+    "seen": 1787336121.3151057,
+    "ast_hash": "9952f9ef2939ef45543d6f98347e879e",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerRentals.tsx": {
-    "mtime": 1787384600.9613008,
-    "seen": 1787384804.4978786,
-    "ast_hash": "8ed7aba151f18311052ba8749222a728",
+    "mtime": 1787329981.298315,
+    "seen": 1787330215.383641,
+    "ast_hash": "8a74637dffbae8a9384e2c3a73215357",
     "semantic_hash": ""
   },
   "src/features/farmer/MachineDetailsModal.tsx": {
@@ -240,9 +240,9 @@
     "semantic_hash": "a3150907ddf2842367caa98e12a33298"
   },
   "src/store/kisanOpsStore.ts": {
-    "mtime": 1787383538.2638757,
-    "seen": 1787384804.4979386,
-    "ast_hash": "be025222437cfbc89777aa0768b5dfa6",
+    "mtime": 1787334262.6652956,
+    "seen": 1787334561.0194793,
+    "ast_hash": "465f207a60c4b3a739c801c58ad8c82d",
     "semantic_hash": ""
   },
   "src/types/index.ts": {
@@ -288,9 +288,9 @@
     "semantic_hash": "88439104b3c207f17d33ef3160e3b080"
   },
   "README.md": {
-    "mtime": 1787336180.3711615,
-    "seen": 1787384804.4979725,
-    "ast_hash": "fc2eea024f0a57bcd984838931f7e0b0",
+    "mtime": 1787335104.054682,
+    "seen": 1787335133.284744,
+    "ast_hash": "89c29b375445e4f2c942adcb1d9c4da7",
     "semantic_hash": ""
   },
   "src/components/common/DopplerRadarPlayer.tsx": {
@@ -312,21 +312,21 @@
     "semantic_hash": ""
   },
   "src/features/auth/LoginPage.tsx": {
-    "mtime": 1787384565.9489748,
-    "seen": 1787384804.4978595,
-    "ast_hash": "1884bfcd013e8f661635a65474b49d3d",
+    "mtime": 1787334410.7390282,
+    "seen": 1787334561.01943,
+    "ast_hash": "370907dbbe372bdc01061ad0f513bd81",
     "semantic_hash": ""
   },
   "src/features/common/NotFoundPage.tsx": {
-    "mtime": 1787384770.9439907,
-    "seen": 1787384804.4978707,
-    "ast_hash": "17082b5417b06401d1be8009f80726de",
+    "mtime": 1787321585.7981563,
+    "seen": 1787322604.0198433,
+    "ast_hash": "bcd6376ed538257bb023f59899089b01",
     "semantic_hash": ""
   },
   "src/features/landing/LandingPage.tsx": {
-    "mtime": 1787384506.7529557,
-    "seen": 1787384804.4978812,
-    "ast_hash": "63847733ab879bde9b74dda67825779e",
+    "mtime": 1787323642.1718464,
+    "seen": 1787323721.0338633,
+    "ast_hash": "bf3c56dadab5ecf51af18104dca85510",
     "semantic_hash": ""
   },
   "src/features/landing/components/BookDemoModal.tsx": {
@@ -414,45 +414,45 @@
     "semantic_hash": ""
   },
   "src/features/landing/pages/AboutPage.tsx": {
-    "mtime": 1787384550.486703,
-    "seen": 1787384804.4979029,
-    "ast_hash": "1b6e46ee86ac2b36535d28aab07a8103",
+    "mtime": 1787321646.7424147,
+    "seen": 1787322604.0198934,
+    "ast_hash": "28f748458b0372843edf96a7fc2e5561",
     "semantic_hash": ""
   },
   "src/features/landing/pages/ContactPage.tsx": {
-    "mtime": 1787384556.9274435,
-    "seen": 1787384804.4979043,
-    "ast_hash": "fedd6c8c67ce377774edde16a14ed955",
+    "mtime": 1787321656.37349,
+    "seen": 1787322604.0198953,
+    "ast_hash": "38d6948f4f4f9eaad5cf43d74d4da5b1",
     "semantic_hash": ""
   },
   "src/features/landing/pages/PricingRoiPage.tsx": {
-    "mtime": 1787384543.154047,
-    "seen": 1787384804.497906,
-    "ast_hash": "5915722d8a17fad8b0e43041290e7042",
+    "mtime": 1787325025.9826608,
+    "seen": 1787325115.7569299,
+    "ast_hash": "13eed66264650d231b6accf7c24bf9ef",
     "semantic_hash": ""
   },
   "src/features/landing/pages/ProductsOperationsPage.tsx": {
-    "mtime": 1787384524.0619948,
-    "seen": 1787384804.4979074,
-    "ast_hash": "f6f41e56bfbf8e06f7c8bbf6d69b45c3",
+    "mtime": 1787332066.7239254,
+    "seen": 1787332130.5778687,
+    "ast_hash": "6abe7801fbe17294b71a89fa759e85c6",
     "semantic_hash": ""
   },
   "src/features/landing/pages/ProductsPostHarvestPage.tsx": {
-    "mtime": 1787384518.5788562,
-    "seen": 1787384804.4979093,
-    "ast_hash": "bd093266f8ca4aa9efa6942dcd5b05f1",
+    "mtime": 1787332054.3346188,
+    "seen": 1787332130.5778713,
+    "ast_hash": "aeccf153e6e5c5f23ea8a0a04c0806c7",
     "semantic_hash": ""
   },
   "src/features/landing/pages/ProductsPreHarvestPage.tsx": {
-    "mtime": 1787384513.4739585,
-    "seen": 1787384804.4979103,
-    "ast_hash": "602e8f52b18ecf1d4614e659d4a21047",
+    "mtime": 1787332027.470111,
+    "seen": 1787332130.5778735,
+    "ast_hash": "786b17da014dd8ab0443bb7e6d84b21e",
     "semantic_hash": ""
   },
   "src/features/landing/pages/SolutionsPage.tsx": {
-    "mtime": 1787384537.4820383,
-    "seen": 1787384804.4979117,
-    "ast_hash": "b5aa062e5f2aa3e52f46636929ce701b",
+    "mtime": 1787321627.8125713,
+    "seen": 1787322604.0199053,
+    "ast_hash": "4c781750965450535242ea32b537247a",
     "semantic_hash": ""
   },
   "src/lib/__tests__/weatherEngine.test.ts": {
@@ -648,9 +648,9 @@
     "semantic_hash": ""
   },
   "src/components/common/InteractiveCursor.tsx": {
-    "mtime": 1787382581.5774343,
-    "seen": 1787384804.4978316,
-    "ast_hash": "08adf1673f2a625e2d419e0c629bf24c",
+    "mtime": 1787324882.8999245,
+    "seen": 1787325115.7568836,
+    "ast_hash": "ec010a7dd4ef2dc2f67ab68e23d6790e",
     "semantic_hash": ""
   },
   "src/components/common/LazyImage.tsx": {
@@ -684,9 +684,9 @@
     "semantic_hash": ""
   },
   "src/features/operator/OperatorDashboard.tsx": {
-    "mtime": 1787384717.9096155,
-    "seen": 1787384804.4979131,
-    "ast_hash": "3ac8406d6af9711562c812918bd6d094",
+    "mtime": 1787334380.815983,
+    "seen": 1787334561.0194652,
+    "ast_hash": "9baa5775d6972b0b32dbf5ca45bf9b6c",
     "semantic_hash": ""
   },
   "src/lib/__tests__/iotAndDb.test.ts": {
@@ -696,9 +696,9 @@
     "semantic_hash": ""
   },
   "src/lib/dbService.ts": {
-    "mtime": 1787382810.0933435,
-    "seen": 1787384804.4979236,
-    "ast_hash": "f52f0be31ca3a1325423d44b5db56fbe",
+    "mtime": 1787334533.8597753,
+    "seen": 1787334561.0194707,
+    "ast_hash": "24b962ea748b3a069a3b8e65d8d15a45",
     "semantic_hash": ""
   },
   "src/lib/iotIngestionEngine.ts": {
@@ -723,24 +723,6 @@
     "mtime": 1787335062.9253008,
     "seen": 1787335133.2847776,
     "ast_hash": "61f71db140ca4441bbb95a8298b436f8",
-    "semantic_hash": ""
-  },
-  "src/components/common/ScrollToTop.tsx": {
-    "mtime": 1787384471.6589172,
-    "seen": 1787384804.497841,
-    "ast_hash": "9ec3ad54815f39bed993e0eb5567d09d",
-    "semantic_hash": ""
-  },
-  "src/hooks/usePageTitle.ts": {
-    "mtime": 1787384479.131817,
-    "seen": 1787384804.4979146,
-    "ast_hash": "22d7c779a8d5227c13fa8764e1ff30de",
-    "semantic_hash": ""
-  },
-  "PRD.md": {
-    "mtime": 1787341414.258686,
-    "seen": 1787384804.497971,
-    "ast_hash": "c7b7e71f354b5966bf98cf24d6fdc975",
     "semantic_hash": ""
   }
 }

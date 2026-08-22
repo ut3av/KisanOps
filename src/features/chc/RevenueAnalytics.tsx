@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { StatCard } from '../../components/common/StatCard';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 const REVENUE_DATA = [
   { day: 'Mon', revenue: 28400, utilization: 68 },
@@ -84,6 +85,10 @@ const PROFITABILITY_DATA = [
 ];
 
 export const RevenueAnalytics: React.FC = () => {
+  usePageTitle(
+    'CHC Revenue & Fleet Utilization Analytics',
+    'Unit economics, gross GMV, and machine contribution margins.'
+  );
   const [timeRange, setTimeRange] = useState<'7D' | '30D' | '90D'>('7D');
 
   return (

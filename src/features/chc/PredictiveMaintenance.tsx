@@ -14,9 +14,14 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { calculateMachineHealth } from '../../lib/maintenanceEngine';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 export const PredictiveMaintenance: React.FC = () => {
+  usePageTitle(
+    'Predictive Maintenance & Fuel Anomaly Sentinels',
+    'Early equipment failure warnings, fuel burn anomaly detection, and component health monitoring.'
+  );
   const { state, resolveAlert, toggleFuelAnomaly } = useKisanOpsStore();
   const { maintenanceAlerts, machines, currentTelemetry, simulationState } = state;
 

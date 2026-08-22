@@ -17,9 +17,14 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { Machine, MachineStatus, MachineCategory } from '../../types';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 export const FleetManagement: React.FC = () => {
+  usePageTitle(
+    'Fleet Registry & Machinery Status',
+    'Track machinery availability, health scores, and technical specifications.'
+  );
   const { state } = useKisanOpsStore();
   const { machines, currentTelemetry } = state;
 

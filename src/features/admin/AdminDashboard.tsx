@@ -32,6 +32,7 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { StatCard } from '../../components/common/StatCard';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 // District Presets for MP Multi-District Governance
@@ -164,6 +165,10 @@ const TELEMATICS_ALERTS: TelematicsAlert[] = [
 ];
 
 export const AdminDashboard: React.FC = () => {
+  usePageTitle(
+    'Statewide Governance & Subsidies Hub',
+    'Statewide agricultural mechanization oversight, SMAM scheme subsidies, and price protection policies.'
+  );
   const { state } = useKisanOpsStore();
   const { chcs, machines, bookings } = state;
 

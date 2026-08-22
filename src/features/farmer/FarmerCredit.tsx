@@ -12,9 +12,14 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { AgriCreditGauge } from '../../components/common/AgriCreditGauge';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 export const FarmerCredit: React.FC = () => {
+  usePageTitle(
+    'AgriCredit Deferred Rental Scoring',
+    'Preliminary deferred-payment eligibility score calculated from machine rental history and farm activity.'
+  );
   const { state } = useKisanOpsStore();
   const { agriCredit } = state;
 

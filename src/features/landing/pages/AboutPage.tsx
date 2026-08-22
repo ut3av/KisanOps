@@ -18,8 +18,13 @@ import { StatsImpactSection } from '../components/StatsImpactSection';
 import { PlatformEcosystemSection } from '../components/PlatformEcosystemSection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { CtaBanner } from '../components/CtaBanner';
+import { usePageTitle } from '../../../hooks/usePageTitle';
 
 export const AboutPage: React.FC = () => {
+  usePageTitle(
+    'About Us & Platform Mission',
+    'Yukti combines 25+ years of agronomy expertise with IoT edge telematics and predictive intelligence.'
+  );
   const navigate = useNavigate();
 
   return (

@@ -15,8 +15,13 @@ import {
 import { LandingNavbar } from '../components/LandingNavbar';
 import { LandingFooter } from '../components/LandingFooter';
 import { CtaBanner } from '../components/CtaBanner';
+import { usePageTitle } from '../../../hooks/usePageTitle';
 
 export const ProductsOperationsPage: React.FC = () => {
+  usePageTitle(
+    'Operations, AgriCredit & ERP Suite',
+    'Deferred harvest payments, custom hiring centre ERP, and sustainability tracking.'
+  );
   const navigate = useNavigate();
 
   return (

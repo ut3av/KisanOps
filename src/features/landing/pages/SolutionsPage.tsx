@@ -16,6 +16,7 @@ import {
 import { LandingNavbar } from '../components/LandingNavbar';
 import { LandingFooter } from '../components/LandingFooter';
 import { CtaBanner } from '../components/CtaBanner';
+import { usePageTitle } from '../../../hooks/usePageTitle';
 
 const VERTICALS = [
   {
@@ -57,6 +58,10 @@ const VERTICALS = [
 ];
 
 export const SolutionsPage: React.FC = () => {
+  usePageTitle(
+    'Tailored AgTech Solutions for CHCs & Enterprises',
+    'Purpose-built digital machinery solutions for Custom Hiring Centres, corporate farms, and cooperatives.'
+  );
   const navigate = useNavigate();
 
   return (

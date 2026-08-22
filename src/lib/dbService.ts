@@ -58,35 +58,26 @@ export async function fetchInitialPlatformData(): Promise<{
   }
 
   try {
-    // 1. Fetch CHCs
-    const { data: chcRows } = await supabase
-      .from('chcs')
-      .select('*')
-      .order('created_at', { ascending: false });
+    // Timeout promise to guarantee fast fallback if network/Supabase is unreachable
+    const timeoutPromise = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error('Supabase request timed out')), 1500)
+    );
 
-    // 2. Fetch Machines
-    const { data: machineRows } = await supabase
-      .from('machines')
-      .select('*')
-      .order('created_at', { ascending: false });
+    const fetchPromise = Promise.all([
+      supabase.from('chcs').select('*').order('created_at', { ascending: false }),
+      supabase.from('machines').select('*').order('created_at', { ascending: false }),
+      supabase.from('bookings').select('*').order('created_at', { ascending: false }),
+      supabase.from('invoices').select('*').order('issued_at', { ascending: false }),
+      supabase.from('maintenance_predictions').select('*').order('created_at', { ascending: false }),
+    ]);
 
-    // 3. Fetch Bookings
-    const { data: bookingRows } = await supabase
-      .from('bookings')
-      .select('*')
-      .order('created_at', { ascending: false });
-
-    // 4. Fetch Invoices
-    const { data: invoiceRows } = await supabase
-      .from('invoices')
-      .select('*')
-      .order('issued_at', { ascending: false });
-
-    // 5. Fetch Maintenance Alerts
-    const { data: alertRows } = await supabase
-      .from('maintenance_predictions')
-      .select('*')
-      .order('created_at', { ascending: false });
+    const [
+      { data: chcRows },
+      { data: machineRows },
+      { data: bookingRows },
+      { data: invoiceRows },
+      { data: alertRows },
+    ] = await Promise.race([fetchPromise, timeoutPromise]);
 
     // Map Supabase rows to typed domain objects or fallback to seed data if table is empty
     const chcs: CHC[] = chcRows && chcRows.length > 0

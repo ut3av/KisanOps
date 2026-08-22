@@ -24,10 +24,15 @@ import {
   isSupabaseConfigured,
 } from '../../lib/supabaseClient';
 import { SEEDED_PROFILES } from '../../data/seedData';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
 export const LoginPage: React.FC = () => {
-  const { switchRole } = useKisanOpsStore();
+  usePageTitle(
+    'Sign In / Register',
+    'Sign in to your Yukti agricultural workspace or create a new account.'
+  );
+  const { loginUser } = useKisanOpsStore();
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState<'SIGN_IN' | 'SIGN_UP'>('SIGN_IN');
@@ -98,7 +103,7 @@ export const LoginPage: React.FC = () => {
   };
 
   const completeAuth = (profile: UserProfile) => {
-    switchRole(profile.role);
+    loginUser(profile);
     if (profile.role === 'FARMER') {
       navigate('/farmer');
     } else if (profile.role === 'OPERATOR') {

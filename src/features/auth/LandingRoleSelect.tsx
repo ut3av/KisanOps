@@ -15,8 +15,13 @@ import {
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { UserRole } from '../../types';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 export const LandingRoleSelect: React.FC = () => {
+  usePageTitle(
+    'Select Role to Enter Platform',
+    'Choose your operational persona: Farmer, CHC Manager, Machine Operator, or Administrator.'
+  );
   const { state, switchRole } = useKisanOpsStore();
   const navigate = useNavigate();
 

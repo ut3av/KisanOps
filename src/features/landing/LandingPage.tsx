@@ -11,8 +11,14 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { FaqSection } from './components/FaqSection';
 import { CtaBanner } from './components/CtaBanner';
 import { LandingFooter } from './components/LandingFooter';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 export const LandingPage: React.FC = () => {
+  usePageTitle(
+    'Yukti — Agricultural Machinery Intelligence & CHC Platform',
+    'Yukti predicts agricultural machinery demand, allocates fleet, dynamically prices rentals, enables deferred AgriCredit, and streams live CAN-Bus telematics.'
+  );
+
   return (
     <div className="min-h-screen bg-[#F5FAED] text-[#0f172a] flex flex-col font-sans selection:bg-[#7aa32c]/20 selection:text-[#2e4013]">
       {/* Sticky Navigation */}

@@ -26,13 +26,21 @@ import { AgriCreditGauge } from '../../components/common/AgriCreditGauge';
 import { WeatherRadarCard } from '../../components/common/WeatherRadarCard';
 import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
+import { usePageTitle } from '../../hooks/usePageTitle';
+import { SEEDED_PROFILES } from '../../data/seedData';
 
 export const FarmerHome: React.FC = () => {
+  usePageTitle(
+    'Farmer Home & Farm Hub',
+    'AI equipment matching, agro-weather risk radar, and deferred AgriCredit.'
+  );
   const { state } = useKisanOpsStore();
   const navigate = useNavigate();
 
-  const { farm, machines, bookings, agriCredit } = state;
-  const activeBooking = bookings.find(b => b.status !== 'COMPLETED' && b.status !== 'CANCELLED');
+  const { farm, machines, bookings, agriCredit, currentUser } = state;
+  const isDemo = SEEDED_PROFILES.some(p => p.id === currentUser.id);
+  const userBookings = isDemo ? bookings : bookings.filter(b => b.farmerId === currentUser.id);
+  const activeBooking = userBookings.find(b => b.status !== 'COMPLETED' && b.status !== 'CANCELLED');
 
   const activities: Array<{
     type: ActivityType;
@@ -260,14 +268,16 @@ export const FarmerHome: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-lg font-bold text-slate-900">Recommended for Your 8-Acre Wheat Farm</h3>
+                <h3 className="text-lg font-bold text-slate-900">
+                  Recommended for Your {farm.sizeAcres}-Acre {farm.crop?.cropName || 'Crop'} Farm
+                </h3>
                 <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
                   <Sparkles className="w-3 h-3 text-emerald-600" />
                   {topMatch.score}% Smart Match
                 </span>
               </div>
               <p className="text-xs text-slate-500 mt-0.5">
-                Explainable fit based on farm size, wheat variety, soil condition, and operator reliability.
+                Explainable fit based on farm size, crop variety, soil condition, and operator reliability.
               </p>
             </div>
 

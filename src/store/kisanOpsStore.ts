@@ -14,7 +14,6 @@ import {
   InAppNotification,
   Invoice,
   TelemetryPoint,
-  ActivityType,
 } from '../types';
 import {
   SEEDED_PROFILES,
@@ -61,6 +60,78 @@ export interface AppState {
 
 const STORAGE_KEY = 'kisanops_app_state_v1';
 
+function createFreshFarmForUser(user: UserProfile): Farm {
+  return {
+    id: `farm-${user.id}`,
+    farmerId: user.id,
+    farmName: `${user.fullName}'s Farm`,
+    district: user.district || 'Sehore',
+    village: user.village || 'Bilkisganj',
+    state: 'Madhya Pradesh',
+    sizeAcres: 6.0,
+    latitude: 23.1872,
+    longitude: 77.1008,
+    soilType: 'Medium Black Clayey Loam',
+    irrigationType: 'Canal',
+    crop: {
+      id: `crop-${user.id}`,
+      cropName: 'Wheat (Sharbati)',
+      season: 'Rabi',
+      sowingDate: '2025-11-15',
+      expectedHarvestDate: '2026-08-28',
+      cropStage: 'Pre-harvest',
+    },
+  };
+}
+
+function createFreshAgriCreditForUser(user: UserProfile): AgriCreditProfile {
+  return {
+    farmerId: user.id,
+    creditScore: 725,
+    ratingCategory: 'Good',
+    creditLimit: 8000,
+    availableCredit: 8000,
+    utilizedCredit: 0,
+    factors: [
+      {
+        name: 'Historical Rental Settlements',
+        weight: 0.35,
+        score: 75,
+        status: 'Good',
+        description: 'New account verified with regional Custom Hiring Centre',
+      },
+      {
+        name: 'CHC Network Frequency',
+        weight: 0.25,
+        score: 70,
+        status: 'Good',
+        description: 'Initial onboarding with Sehore / Bhopal agri-cluster',
+      },
+      {
+        name: 'Zero-Dispute Reliability',
+        weight: 0.20,
+        score: 85,
+        status: 'Excellent',
+        description: 'Clean digital KYC & phone verification',
+      },
+      {
+        name: 'Farm Acreage Verification',
+        weight: 0.10,
+        score: 80,
+        status: 'Good',
+        description: '6.0 Acres cultivated plot documented and geo-fenced',
+      },
+      {
+        name: 'Profile Stability & KYC',
+        weight: 0.10,
+        score: 90,
+        status: 'Excellent',
+        description: 'Identity authenticated for deferred operations',
+      },
+    ],
+  };
+}
+
 function getInitialState(): AppState {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -69,7 +140,7 @@ function getInitialState(): AppState {
       if (parsed && parsed.currentUser) {
         return {
           ...parsed,
-          isInitialLoading: true,
+          isInitialLoading: false,
         };
       }
     }
@@ -78,7 +149,7 @@ function getInitialState(): AppState {
   }
 
   return {
-    currentUser: SEEDED_PROFILES[0], // Farmer Ramesh Kumar
+    currentUser: SEEDED_PROFILES[0], // Farmer Ramesh Kumar (default before login)
     selectedRole: 'FARMER',
     chcs: SEEDED_CHCS,
     farm: SEEDED_FARM,
@@ -102,6 +173,7 @@ function getInitialState(): AppState {
 let globalState: AppState = getInitialState();
 const listeners = new Set<() => void>();
 let isInitialized = false;
+let simulationTimer: ReturnType<typeof setInterval> | null = null;
 
 function notify() {
   try {
@@ -111,6 +183,84 @@ function notify() {
   }
   listeners.forEach(listener => listener());
 }
+
+// Singleton background telematics simulation loop
+function startGlobalSimulationLoop() {
+  if (simulationTimer) return;
+
+  simulationTimer = setInterval(() => {
+    if (!globalState.isSimulating) return;
+
+    const activeBooking = globalState.bookings.find(
+      b => b.status === 'DISPATCHED' || b.status === 'IN_PROGRESS'
+    );
+    const targetMachineId = activeBooking ? activeBooking.machineId : (globalState.machines[0]?.id || 'mach-jd-harv-07');
+    const targetStatus: MachineStatus = activeBooking
+      ? (activeBooking.status === 'IN_PROGRESS' ? 'ACTIVE' : activeBooking.status === 'DISPATCHED' ? 'DISPATCHED' : 'RESERVED')
+      : 'ACTIVE';
+
+    const { nextState, telemetryPoint } = advanceSimulationStep(
+      globalState.simulationState,
+      targetMachineId,
+      targetStatus
+    );
+
+    globalState = {
+      ...globalState,
+      simulationState: nextState,
+      currentTelemetry: {
+        ...globalState.currentTelemetry,
+        [targetMachineId]: telemetryPoint,
+      },
+    };
+
+    // Background sync of telemetry point to Supabase
+    insertLiveTelemetryToDatabase(telemetryPoint);
+
+    // Check if fuel anomaly should inject high-priority alert
+    if (nextState.isFuelAnomalyActive) {
+      const existingAlert = globalState.maintenanceAlerts.find(
+        a => a.machineId === targetMachineId && a.alertType === 'FUEL_ANOMALY' && !a.isResolved
+      );
+      if (!existingAlert) {
+        const targetMachine = globalState.machines.find(m => m.id === targetMachineId);
+        const newAlert: PredictiveMaintenanceAlert = {
+          id: `alert-fuel-auto-${Date.now()}`,
+          machineId: targetMachineId,
+          machineIdentifier: targetMachine?.identifier || 'JD-HARV-07',
+          machineModel: targetMachine ? `${targetMachine.brand} ${targetMachine.model}` : 'John Deere W70 Harvester',
+          alertType: 'FUEL_ANOMALY',
+          severity: 'HIGH',
+          description: 'Live sensor telemetry indicates fuel burn rate is +17% above nominal baseline (8.4 L/h).',
+          recommendedAction: 'Inspect fuel injection pressure nozzle and particulate filter within 24 hours.',
+          fuelAnomalyDeltaPercent: 17,
+          urgencyHours: 24,
+          isResolved: false,
+          createdAt: new Date().toISOString(),
+        };
+
+        globalState.maintenanceAlerts = [newAlert, ...globalState.maintenanceAlerts];
+        globalState.notifications = [
+          {
+            id: `notif-alert-${Date.now()}`,
+            title: 'Predictive Alert: Fuel Anomaly',
+            message: `${newAlert.machineIdentifier} fuel burn rate +17% above baseline. Inspection advised.`,
+            type: 'MAINTENANCE',
+            linkUrl: '/chc/maintenance',
+            isRead: false,
+            createdAt: new Date().toISOString(),
+          },
+          ...globalState.notifications,
+        ];
+      }
+    }
+
+    notify();
+  }, 2000);
+}
+
+// Start simulation loop once at module initialization
+startGlobalSimulationLoop();
 
 export function useKisanOpsStore() {
   const [state, setState] = useState<AppState>(globalState);
@@ -123,7 +273,7 @@ export function useKisanOpsStore() {
     };
   }, []);
 
-  // Initialize from Supabase if configured and setup Realtime channel
+  // Initialize from Supabase if configured and setup Realtime channel once
   useEffect(() => {
     if (!isInitialized) {
       isInitialized = true;
@@ -132,7 +282,7 @@ export function useKisanOpsStore() {
           ...globalState,
           chcs: cloudData.chcs,
           machines: cloudData.machines,
-          bookings: cloudData.bookings,
+          bookings: cloudData.bookings.length > 0 ? cloudData.bookings : globalState.bookings,
           maintenanceAlerts: cloudData.maintenanceAlerts,
           invoices: cloudData.invoices.length > 0 ? cloudData.invoices : globalState.invoices,
           isCloudSynced: cloudData.isCloudSynced,
@@ -162,90 +312,97 @@ export function useKisanOpsStore() {
     }
   }, []);
 
-  // Telematics Simulation Interval & Live Cloud Ingestion
-  useEffect(() => {
-    if (!state.isSimulating) return;
+  return {
+    state,
 
-    const interval = setInterval(() => {
-      const activeBooking = globalState.bookings.find(
-        b => b.status === 'DISPATCHED' || b.status === 'IN_PROGRESS'
-      );
-      const targetMachineId = activeBooking ? activeBooking.machineId : (globalState.machines[0]?.id || 'mach-jd-harv-07');
-      const targetStatus: MachineStatus = activeBooking
-        ? (activeBooking.status === 'IN_PROGRESS' ? 'ACTIVE' : activeBooking.status === 'DISPATCHED' ? 'DISPATCHED' : 'RESERVED')
-        : 'ACTIVE';
+    /**
+     * Authenticates and logs in a specific user profile without falling back to demo data.
+     * If user is not one of the pre-seeded demo accounts, initializes fresh user-specific state.
+     */
+    loginUser: (profile: UserProfile) => {
+      const isDemoUser = SEEDED_PROFILES.some(p => p.id === profile.id || p.email === profile.email);
 
-      const { nextState, telemetryPoint } = advanceSimulationStep(
-        globalState.simulationState,
-        targetMachineId,
-        targetStatus
-      );
+      if (isDemoUser) {
+        const seededMatch = SEEDED_PROFILES.find(p => p.id === profile.id || p.email === profile.email) || profile;
+        globalState = {
+          ...globalState,
+          currentUser: seededMatch,
+          selectedRole: seededMatch.role,
+          farm: SEEDED_FARM,
+          agriCredit: SEEDED_AGRICREDIT_PROFILE,
+          bookings: SEEDED_BOOKINGS,
+          maintenanceAlerts: SEEDED_MAINTENANCE_ALERTS,
+          notifications: SEEDED_NOTIFICATIONS,
+        };
+      } else {
+        // Newly created account / custom user: create fresh personalized profile
+        const freshFarm = createFreshFarmForUser(profile);
+        const freshCredit = createFreshAgriCreditForUser(profile);
+        const welcomeNotification: InAppNotification = {
+          id: `notif-welcome-${Date.now()}`,
+          title: `Welcome to Yukti, ${profile.fullName}!`,
+          message: `Your ${
+            profile.role === 'FARMER'
+              ? 'Farmer account'
+              : profile.role === 'CHC_MANAGER'
+              ? 'CHC Hub account'
+              : profile.role === 'OPERATOR'
+              ? 'Operator console'
+              : 'Admin account'
+          } is active. Explore your dashboard now.`,
+          type: 'BOOKING',
+          linkUrl:
+            profile.role === 'FARMER'
+              ? '/farmer/marketplace'
+              : profile.role === 'CHC_MANAGER'
+              ? '/chc/demand'
+              : profile.role === 'OPERATOR'
+              ? '/operator'
+              : '/admin',
+          isRead: false,
+          createdAt: new Date().toISOString(),
+        };
 
-      globalState = {
-        ...globalState,
-        simulationState: nextState,
-        currentTelemetry: {
-          ...globalState.currentTelemetry,
-          [targetMachineId]: telemetryPoint,
-        },
-      };
-
-      // Non-blocking background sync of telemetry point to Supabase
-      insertLiveTelemetryToDatabase(telemetryPoint);
-
-      // Check if fuel anomaly should inject high-priority alert
-      if (nextState.isFuelAnomalyActive) {
-        const existingAlert = globalState.maintenanceAlerts.find(
-          a => a.machineId === targetMachineId && a.alertType === 'FUEL_ANOMALY' && !a.isResolved
-        );
-        if (!existingAlert) {
-          const targetMachine = globalState.machines.find(m => m.id === targetMachineId);
-          const newAlert: PredictiveMaintenanceAlert = {
-            id: `alert-fuel-auto-${Date.now()}`,
-            machineId: targetMachineId,
-            machineIdentifier: targetMachine?.identifier || 'JD-HARV-07',
-            machineModel: targetMachine ? `${targetMachine.brand} ${targetMachine.model}` : 'John Deere W70 Harvester',
-            alertType: 'FUEL_ANOMALY',
-            severity: 'HIGH',
-            description: 'Live sensor telemetry indicates fuel burn rate is +17% above nominal baseline (8.4 L/h).',
-            recommendedAction: 'Inspect fuel injection pressure nozzle and particulate filter within 24 hours.',
-            fuelAnomalyDeltaPercent: 17,
-            urgencyHours: 24,
-            isResolved: false,
-            createdAt: new Date().toISOString(),
-          };
-
-          globalState.maintenanceAlerts = [newAlert, ...globalState.maintenanceAlerts];
-          globalState.notifications = [
-            {
-              id: `notif-alert-${Date.now()}`,
-              title: 'Predictive Alert: Fuel Anomaly',
-              message: `${newAlert.machineIdentifier} fuel burn rate +17% above baseline. Inspection advised.`,
-              type: 'MAINTENANCE',
-              linkUrl: '/chc/maintenance',
-              isRead: false,
-              createdAt: new Date().toISOString(),
-            },
-            ...globalState.notifications,
-          ];
-        }
+        globalState = {
+          ...globalState,
+          currentUser: profile,
+          selectedRole: profile.role,
+          farm: freshFarm,
+          agriCredit: freshCredit,
+          bookings: [], // Brand new user starts with empty rentals
+          invoices: [],
+          notifications: [welcomeNotification, ...globalState.notifications],
+        };
       }
 
       notify();
-    }, 2000);
+    },
 
-    return () => clearInterval(interval);
-  }, [state.isSimulating]);
-
-  return {
-    state,
+    /**
+     * Switch user role: maintains current user's identity if custom account,
+     * or switches between demo personas if in demo mode.
+     */
     switchRole: (role: UserRole) => {
-      const profile = SEEDED_PROFILES.find(p => p.role === role) || SEEDED_PROFILES[0];
-      globalState = {
-        ...globalState,
-        selectedRole: role,
-        currentUser: profile,
-      };
+      const isDemoUser = SEEDED_PROFILES.some(p => p.id === globalState.currentUser.id);
+
+      if (isDemoUser) {
+        const matchingSeeded = SEEDED_PROFILES.find(p => p.role === role) || SEEDED_PROFILES[0];
+        globalState = {
+          ...globalState,
+          selectedRole: role,
+          currentUser: matchingSeeded,
+        };
+      } else {
+        // Custom user: preserve their name and details, just switch the active role view
+        globalState = {
+          ...globalState,
+          selectedRole: role,
+          currentUser: {
+            ...globalState.currentUser,
+            role,
+          },
+        };
+      }
       notify();
     },
 
@@ -448,3 +605,4 @@ export function useKisanOpsStore() {
     },
   };
 }
+

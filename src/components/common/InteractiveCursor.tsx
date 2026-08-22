@@ -11,6 +11,7 @@ export const InteractiveCursor: React.FC = () => {
   const mousePos = useRef({ x: -100, y: -100 });
   const ringPos = useRef({ x: -100, y: -100 });
   const animFrameId = useRef<number | null>(null);
+  const isVisibleRef = useRef(false);
 
   useEffect(() => {
     // Only enable on fine pointer devices (desktop mouse)
@@ -21,7 +22,10 @@ export const InteractiveCursor: React.FC = () => {
 
     const handleMouseMove = (e: MouseEvent) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
-      if (!isVisible) setIsVisible(true);
+      if (!isVisibleRef.current) {
+        isVisibleRef.current = true;
+        setIsVisible(true);
+      }
 
       if (dotRef.current) {
         dotRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
@@ -31,8 +35,14 @@ export const InteractiveCursor: React.FC = () => {
     const handleMouseDown = () => setIsClicked(true);
     const handleMouseUp = () => setIsClicked(false);
 
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
+    const handleMouseLeave = () => {
+      isVisibleRef.current = false;
+      setIsVisible(false);
+    };
+    const handleMouseEnter = () => {
+      isVisibleRef.current = true;
+      setIsVisible(true);
+    };
 
     const checkHoverTarget = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
@@ -46,7 +56,7 @@ export const InteractiveCursor: React.FC = () => {
           target.closest('.cursor-pointer') ||
           target.classList.contains('cursor-pointer')
       );
-      setIsHovered(isInteractive);
+      setIsHovered((prev) => (prev !== isInteractive ? isInteractive : prev));
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -81,7 +91,7 @@ export const InteractiveCursor: React.FC = () => {
       document.removeEventListener('mouseenter', handleMouseEnter);
       if (animFrameId.current) cancelAnimationFrame(animFrameId.current);
     };
-  }, [isVisible]);
+  }, []);
 
   if (typeof window !== 'undefined' && !window.matchMedia('(pointer: fine)').matches) {
     return null;

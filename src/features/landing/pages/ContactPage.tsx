@@ -13,8 +13,13 @@ import {
 } from 'lucide-react';
 import { LandingNavbar } from '../components/LandingNavbar';
 import { LandingFooter } from '../components/LandingFooter';
+import { usePageTitle } from '../../../hooks/usePageTitle';
 
 export const ContactPage: React.FC = () => {
+  usePageTitle(
+    'Contact AgTech Operations Specialist',
+    'Get in touch with Yukti specialists for telematics hardware integrations and CHC hub onboarding.'
+  );
   const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
