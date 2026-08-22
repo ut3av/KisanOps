@@ -10,8 +10,7 @@ import {
   FileText,
   User,
   ShieldCheck,
-  ArrowRight,
-  Tractor
+  ArrowRight
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { Booking, BookingStatus } from '../../types';
@@ -50,8 +49,8 @@ export const BookingsManager: React.FC = () => {
             >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-slate-100 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-agri-100 text-agri-900 flex items-center justify-center font-bold">
-                    <Tractor className="w-6 h-6 text-agri-900" />
+                  <div className="w-12 h-12 rounded-2xl bg-agri-100 text-agri-900 flex items-center justify-center font-bold text-xl">
+                    🚜
                   </div>
                   <div>
                     <div className="flex items-center gap-2">

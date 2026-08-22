@@ -13,17 +13,12 @@ import {
   AlertCircle,
   HelpCircle,
   Activity,
-  Layers,
-  Sprout,
-  Droplets,
-  Pickaxe,
-  Truck,
-  Star
+  Layers
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { ActivityType } from '../../types';
 import { AgriCreditGauge } from '../../components/common/AgriCreditGauge';
-import { WeatherRadarCard } from '../../components/common/WeatherRadarCard';
+import { VoiceAssistantWidget } from '../../components/common/VoiceAssistantWidget';
 import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
 
@@ -34,48 +29,42 @@ export const FarmerHome: React.FC = () => {
   const { farm, machines, bookings, agriCredit } = state;
   const activeBooking = bookings.find(b => b.status !== 'COMPLETED' && b.status !== 'CANCELLED');
 
-  const activities: Array<{
-    type: ActivityType;
-    label: string;
-    icon: React.ComponentType<{ className?: string }>;
-    desc: string;
-    highlighted?: boolean;
-  }> = [
+  const activities: Array<{ type: ActivityType; label: string; icon: string; desc: string; highlighted?: boolean }> = [
     {
       type: 'HARVESTING',
       label: 'Harvest Crop',
-      icon: Wheat,
+      icon: '🌾',
       desc: 'Combine Harvesters & Threshers',
       highlighted: true, // Urgent for Ramesh's Pre-harvest stage
     },
     {
       type: 'SOIL_PREPARATION',
       label: 'Prepare Soil',
-      icon: Tractor,
+      icon: '🚜',
       desc: 'Heavy Tractors & Rotavators',
     },
     {
       type: 'SOWING',
       label: 'Sow Seeds',
-      icon: Sprout,
+      icon: '🌱',
       desc: 'Zero-Till & Multi-Crop Drills',
     },
     {
       type: 'SPRAYING',
       label: 'Spray Crop',
-      icon: Droplets,
+      icon: '💧',
       desc: 'Boom & HTP Tractor Sprayers',
     },
     {
       type: 'CULTIVATION',
       label: 'Cultivate Land',
-      icon: Pickaxe,
+      icon: '⛏️',
       desc: 'Tine Cultivators & Ploughs',
     },
     {
       type: 'TRANSPORT',
       label: 'Haul & Transport',
-      icon: Truck,
+      icon: '🚛',
       desc: 'Tipping Trailers & Trolleys',
     },
   ];
@@ -129,8 +118,8 @@ export const FarmerHome: React.FC = () => {
 
         {/* Current Crop Stage Pill */}
         <div className="bg-amber-50/80 border border-amber-200/90 rounded-2xl p-3 px-4 flex items-center gap-3 w-full md:w-auto">
-          <div className="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800 shrink-0">
-            <Wheat className="w-5 h-5" />
+          <div className="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center text-lg shrink-0">
+            🌾
           </div>
           <div>
             <div className="text-[11px] font-bold text-amber-800 uppercase tracking-wider">
@@ -142,12 +131,6 @@ export const FarmerHome: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Live Agro-Weather Risk Radar & Harvest Window Countdown */}
-      <WeatherRadarCard
-        district={farm.district}
-        onEmergencyPreBook={() => navigate('/farmer/marketplace?activity=HARVESTING&priority=weather')}
-      />
 
       {/* Hero CTA: What do you need to do? */}
       <div className="bg-gradient-to-br from-agri-900 to-agri-950 text-white rounded-3xl p-6 sm:p-8 shadow-elevated relative overflow-hidden">
@@ -166,33 +149,28 @@ export const FarmerHome: React.FC = () => {
 
         {/* Activity Buttons Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-6 relative z-10">
-          {activities.map(act => {
-            const IconComponent = act.icon;
-            return (
-              <button
-                key={act.type}
-                onClick={() => navigate(`/farmer/marketplace?activity=${act.type}`)}
-                className={`text-left p-3.5 rounded-2xl border transition-all flex flex-col justify-between group ${
-                  act.highlighted
-                    ? 'bg-emerald-500/20 border-emerald-400/60 shadow-sm ring-2 ring-emerald-400/40 hover:bg-emerald-500/30'
-                    : 'bg-white/10 border-white/10 hover:bg-white/15 hover:border-white/20'
-                }`}
-              >
-                <div>
-                  <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center mb-2.5 text-white group-hover:scale-110 transition-transform">
-                    <IconComponent className="w-5 h-5" />
-                  </div>
-                  <div className="font-bold text-xs sm:text-sm text-white">{act.label}</div>
+          {activities.map(act => (
+            <button
+              key={act.type}
+              onClick={() => navigate(`/farmer/marketplace?activity=${act.type}`)}
+              className={`text-left p-3.5 rounded-2xl border transition-all flex flex-col justify-between group ${
+                act.highlighted
+                  ? 'bg-emerald-500/20 border-emerald-400/60 shadow-sm ring-2 ring-emerald-400/40 hover:bg-emerald-500/30'
+                  : 'bg-white/10 border-white/10 hover:bg-white/15 hover:border-white/20'
+              }`}
+            >
+              <div>
+                <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">{act.icon}</div>
+                <div className="font-bold text-xs sm:text-sm text-white">{act.label}</div>
+              </div>
+              <div className="text-[10px] text-slate-300 mt-2 leading-tight">{act.desc}</div>
+              {act.highlighted && (
+                <div className="mt-2 text-[9px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/60 px-1.5 py-0.5 rounded text-center">
+                  Recommended Now
                 </div>
-                <div className="text-[10px] text-slate-300 mt-2 leading-tight">{act.desc}</div>
-                {act.highlighted && (
-                  <div className="mt-2 text-[9px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/60 px-1.5 py-0.5 rounded text-center">
-                    Recommended Now
-                  </div>
-                )}
-              </button>
-            );
-          })}
+              )}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -315,10 +293,7 @@ export const FarmerHome: React.FC = () => {
 
               <div className="pt-2 flex items-center justify-between gap-3">
                 <div className="text-xs text-slate-600 flex items-center gap-2">
-                  <span className="flex items-center gap-1 font-bold text-slate-800">
-                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
-                    {topMatch.machine.rating} ({topMatch.machine.totalRentals} rentals)
-                  </span>
+                  <span>★ {topMatch.machine.rating} ({topMatch.machine.totalRentals} rentals)</span>
                   <span>•</span>
                   <span className="text-emerald-700 font-semibold">Health: {topMatch.machine.healthScore}%</span>
                   <span>•</span>
@@ -336,6 +311,8 @@ export const FarmerHome: React.FC = () => {
           </div>
         </div>
       )}
+      
+      <VoiceAssistantWidget />
     </div>
   );
 };

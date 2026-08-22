@@ -14,7 +14,6 @@ import {
   Truck
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
-import { WeatherRadarCard } from '../../components/common/WeatherRadarCard';
 import clsx from 'clsx';
 
 export const DemandIntelligence: React.FC = () => {
@@ -49,10 +48,8 @@ export const DemandIntelligence: React.FC = () => {
               <Truck className="w-3.5 h-3.5 text-emerald-400" />
               <span>Deterministic Fleet Rebalancing Optimizer</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
-              <span>Recommended Fleet Relocation: Bhopal</span>
-              <ArrowRight className="w-5 h-5 text-emerald-400" />
-              <span>Sehore</span>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-white">
+              Recommended Fleet Relocation: Bhopal ➔ Sehore
             </h2>
             <p className="text-xs text-slate-300 mt-0.5">
               Target hub has a shortage of 2 combine harvesters. Source hub has surplus idle capacity.
@@ -110,11 +107,8 @@ export const DemandIntelligence: React.FC = () => {
         ))}
       </div>
 
-      {/* Meteorological Weather Risk & Rainfall Radar */}
-      <WeatherRadarCard district="Sehore" />
-
-      {/* Regional Demand Forecast Matrix */}
-      <div className="bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-subtle space-y-6">
+      {/* 7-Day Regional Demand Forecast Matrix */}
+      <div className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-subtle space-y-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
           <div>
             <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
@@ -187,7 +181,7 @@ export const DemandIntelligence: React.FC = () => {
                 </div>
                 <div className={clsx('p-1.5 rounded-lg border', df.shortageUnits > 0 ? 'bg-rose-100 border-rose-300 text-rose-900' : 'bg-white border-slate-200/70')}>
                   <div className="text-[9px] font-semibold">{df.shortageUnits > 0 ? 'Shortage' : 'Balance'}</div>
-                  <div className="font-extrabold">{df.shortageUnits > 0 ? `-${df.shortageUnits}` : 'Balanced'}</div>
+                  <div className="font-extrabold">{df.shortageUnits > 0 ? `-${df.shortageUnits}` : '✓ OK'}</div>
                 </div>
               </div>
             </div>

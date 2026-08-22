@@ -98,7 +98,7 @@ export const LiveTelematics: React.FC = () => {
               Live Transit & Field Route Map
             </h3>
             <p className="text-xs text-slate-500">
-              Dispatched from Sehore Agri Centre &rarr; SH-18 &rarr; Bilkisganj Wheat Farm.
+              Dispatched from Sehore Agri Centre ➔ SH-18 ➔ Bilkisganj Wheat Farm.
             </p>
           </div>
           <div className="text-xs font-mono bg-surface-50 px-2.5 py-1 rounded-lg border border-slate-200 text-slate-700">

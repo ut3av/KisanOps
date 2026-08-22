@@ -85,8 +85,8 @@ export const FarmerRentals: React.FC = () => {
           <div className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-subtle space-y-6">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-100 pb-5">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-agri-100 text-agri-900 flex items-center justify-center font-bold">
-                  <Tractor className="w-6 h-6 text-agri-900" />
+                <div className="w-12 h-12 rounded-2xl bg-agri-100 text-agri-900 flex items-center justify-center font-bold text-xl">
+                  🚜
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
@@ -219,10 +219,8 @@ export const FarmerRentals: React.FC = () => {
                   <div className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                     Live GPS Telematics Route Tracker
                   </div>
-                  <span className="text-[11px] text-slate-500 font-mono flex items-center gap-1">
-                    <span>Sehore Agri Centre</span>
-                    <ArrowRight className="w-3 h-3 text-slate-400" />
-                    <span>Bilkisganj Farm</span>
+                  <span className="text-[11px] text-slate-500 font-mono">
+                    Sehore Agri Centre ➔ Bilkisganj Farm
                   </span>
                 </div>
                 <LeafletFleetMap

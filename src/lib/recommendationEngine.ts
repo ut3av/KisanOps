@@ -27,7 +27,7 @@ export function scoreMachineForFarmer(machine: Machine, context: RecommendationC
   let taskSuitabilityScore = 0;
   if (machine.supportedActivities.includes(activity)) {
     taskSuitabilityScore += 18;
-    reasons.push(`Optimally configured for ${activity.replace('_', ' ').toLowerCase()}`);
+    reasons.push(`✓ Optimally configured for ${activity.replace('_', ' ').toLowerCase()}`);
   } else {
     taskSuitabilityScore += 6;
   }
@@ -35,10 +35,10 @@ export function scoreMachineForFarmer(machine: Machine, context: RecommendationC
   // Check farm size & crop fit
   if (machine.category === 'HARVESTER' && farm.crop.cropName.toLowerCase().includes('wheat')) {
     taskSuitabilityScore += 7;
-    reasons.push(`Excellent match for ${farm.crop.cropName} crop`);
+    reasons.push(`✓ Excellent match for ${farm.crop.cropName} crop`);
   } else if (machine.category === 'TRACTOR') {
     taskSuitabilityScore += 7;
-    reasons.push(`Sized for ${farm.sizeAcres} acres farm`);
+    reasons.push(`✓ Sized for ${farm.sizeAcres} acres farm`);
   } else {
     taskSuitabilityScore += 5;
   }
@@ -47,10 +47,10 @@ export function scoreMachineForFarmer(machine: Machine, context: RecommendationC
   let availabilityScore = 0;
   if (machine.status === 'AVAILABLE') {
     availabilityScore = 20;
-    reasons.push(`Immediately available for booking`);
+    reasons.push(`✓ Immediately available for booking`);
   } else if (machine.status === 'RESERVED') {
     availabilityScore = 12;
-    reasons.push(`Available from tomorrow`);
+    reasons.push(`✓ Available from tomorrow`);
   } else {
     availabilityScore = 5;
   }
@@ -63,10 +63,10 @@ export function scoreMachineForFarmer(machine: Machine, context: RecommendationC
   let distanceScore = 0;
   if (distanceKm <= 5) {
     distanceScore = 15;
-    reasons.push(`Nearby (${distanceKm} km from your farm)`);
+    reasons.push(`✓ Nearby (${distanceKm} km from your farm)`);
   } else if (distanceKm <= 15) {
     distanceScore = 12;
-    reasons.push(`Moderate distance (${distanceKm} km away)`);
+    reasons.push(`✓ Moderate distance (${distanceKm} km away)`);
   } else if (distanceKm <= 35) {
     distanceScore = 8;
   } else {
@@ -77,10 +77,10 @@ export function scoreMachineForFarmer(machine: Machine, context: RecommendationC
   let healthScoreComponent = 0;
   if (machine.healthScore >= 90) {
     healthScoreComponent = 15;
-    reasons.push(`Excellent health rating (${machine.healthScore}%)`);
+    reasons.push(`✓ Excellent health rating (${machine.healthScore}%)`);
   } else if (machine.healthScore >= 80) {
     healthScoreComponent = 12;
-    reasons.push(`Good operational health (${machine.healthScore}%)`);
+    reasons.push(`✓ Good operational health (${machine.healthScore}%)`);
   } else {
     healthScoreComponent = 7;
   }
@@ -89,7 +89,7 @@ export function scoreMachineForFarmer(machine: Machine, context: RecommendationC
   let priceScore = 0;
   if (machine.baseRatePerHour <= 850) {
     priceScore = 10;
-    reasons.push(`Highly competitive rate (₹${machine.baseRatePerHour}/hr)`);
+    reasons.push(`✓ Highly competitive rate (₹${machine.baseRatePerHour}/hr)`);
   } else if (machine.baseRatePerHour <= 1000) {
     priceScore = 8;
   } else {
@@ -100,7 +100,7 @@ export function scoreMachineForFarmer(machine: Machine, context: RecommendationC
   let reliabilityScore = 0;
   if (machine.totalRentals >= 20 && machine.rating >= 4.7) {
     reliabilityScore = 10;
-    reasons.push(`High historical reliability (${machine.rating} Rating over ${machine.totalRentals} rentals)`);
+    reasons.push(`✓ High historical reliability (${machine.rating}★ over ${machine.totalRentals} rentals)`);
   } else {
     reliabilityScore = 8;
   }

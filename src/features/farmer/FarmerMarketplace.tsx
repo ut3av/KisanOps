@@ -247,8 +247,8 @@ export const FarmerMarketplace: React.FC = () => {
                   <div className="space-y-1 bg-surface-50 p-2.5 rounded-xl border border-slate-100 text-[11px] text-slate-600">
                     {matchReasons.slice(0, 3).map((r, i) => (
                       <div key={i} className="flex items-center gap-1.5 truncate">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                        <span className="truncate">{r.replace(/^[\u2713\s*]/, '')}</span>
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span className="truncate">{r.replace(/^✓\s*/, '')}</span>
                       </div>
                     ))}
                   </div>

@@ -116,7 +116,7 @@ export const Navbar: React.FC = () => {
                   <Tractor className="w-4 h-4 text-amber-600" />
                   <div>
                     <div className="font-semibold">Machine Operator</div>
-                    <div className="text-[10px] text-slate-500">Raju Verma (4.9 Rating)</div>
+                    <div className="text-[10px] text-slate-500">Raju Verma (4.9★)</div>
                   </div>
                 </button>
 

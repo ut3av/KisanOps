@@ -169,7 +169,7 @@ export const MachineDetailsModal: React.FC<MachineDetailsModalProps> = ({
 
                 <div className="bg-surface-50 p-2.5 rounded-xl">
                   <div className="text-[10px] text-slate-500 font-medium">Assigned Operator</div>
-                  <div className="font-bold text-slate-800 mt-0.5">{machine.operatorName || 'Raju Verma'} ({machine.operatorRating || 4.9} Rating)</div>
+                  <div className="font-bold text-slate-800 mt-0.5">{machine.operatorName || 'Raju Verma'} ({machine.operatorRating || 4.9}★)</div>
                 </div>
 
                 <div className="bg-surface-50 p-2.5 rounded-xl">

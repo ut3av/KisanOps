@@ -67,8 +67,8 @@ export const ExplanationBadge: React.FC<ExplanationBadgeProps> = ({
               <ul className="space-y-1 pl-1 text-slate-600">
                 {reasons.map((reason, idx) => (
                   <li key={idx} className="flex items-start gap-1.5 leading-snug">
-                    <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{reason.replace(/^[\u2713\s*]/, '')}</span>
+                    <span className="text-emerald-600 font-bold">✓</span>
+                    <span>{reason.replace(/^✓\s*/, '')}</span>
                   </li>
                 ))}
               </ul>

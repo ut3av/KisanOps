@@ -20,7 +20,7 @@ const AUDIT_LOGS = [
     timestamp: '2026-08-21 15:42:10',
     actor: 'Rajesh Singh (CHC-MP-SEH-01)',
     action: 'DISPATCH_APPROVED',
-    entity: 'JD-HARV-07 -> Bilkisganj Farm',
+    entity: 'JD-HARV-07 ➔ Bilkisganj Farm',
     ip: '103.24.18.92',
   },
   {
@@ -34,7 +34,7 @@ const AUDIT_LOGS = [
     timestamp: '2026-08-21 15:38:44',
     actor: 'System Demand Engine',
     action: 'REALLOCATION_RECOMMENDED',
-    entity: 'SN-HARV-12: Bhopal -> Sehore',
+    entity: 'SN-HARV-12: Bhopal ➔ Sehore',
     ip: '10.0.4.12 (Internal Edge)',
   },
   {

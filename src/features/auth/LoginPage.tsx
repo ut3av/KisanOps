@@ -230,8 +230,8 @@ export const LoginPage: React.FC = () => {
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-slate-700">Mobile Phone Number</label>
                     <div className="flex items-center gap-2">
-                      <span className="bg-surface-100 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-mono font-bold text-slate-700">
-                        +91 (IN)
+                      <span className="bg-surface-100 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700">
+                        🇮🇳 +91
                       </span>
                       <input
                         type="tel"
