@@ -1,5 +1,48 @@
 @import "tailwindcss";
-@config "../tailwind.config.js";
+
+@theme {
+  --color-agri-50: #f0fdfa;
+  --color-agri-100: #ccfbf1;
+  --color-agri-200: #99f6e4;
+  --color-agri-300: #5eead4;
+  --color-agri-400: #2dd4bf;
+  --color-agri-500: #14b8a6;
+  --color-agri-600: #0d9488;
+  --color-agri-700: #0f766e;
+  --color-agri-800: #115e59;
+  --color-agri-900: #134e4a;
+  --color-agri-950: #042f2e;
+
+  --color-earth-50: #faf8f5;
+  --color-earth-100: #f4efe8;
+  --color-earth-200: #e8dece;
+  --color-earth-300: #d7c4ac;
+  --color-earth-400: #c2a587;
+  --color-earth-500: #ae8c6a;
+  --color-earth-600: #987355;
+  --color-earth-700: #7e5c46;
+  --color-earth-800: #674c3c;
+  --color-earth-900: #543f33;
+
+  --color-surface-50: #f8fafb;
+  --color-surface-100: #f1f5f4;
+  --color-surface-200: #e4eae8;
+  --color-surface-300: #cdd6d2;
+
+  --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', 'DM Sans', system-ui, sans-serif;
+  --font-typewriter: 'Courier Prime', 'Special Elite', 'Cutive Mono', 'Courier New', monospace;
+  --font-brand: 'Special Elite', 'Courier Prime', 'Cutive Mono', 'Courier New', monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+}
 
 @layer base {
   body {
@@ -97,6 +140,26 @@
     height: 100%;
     border-radius: inherit;
     z-index: 10;
+  }
+
+  .custom-leaflet-marker {
+    background: transparent !important;
+    border: none !important;
+  }
+}
+
+@keyframes leaflet-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
   }
 }
 

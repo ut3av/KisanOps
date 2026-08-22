@@ -5,6 +5,22 @@ import { SEEDED_PROFILES } from '../data/seedData';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'placeholder-anon-key';
 
+if (typeof globalThis.WebSocket === 'undefined') {
+  (globalThis as any).WebSocket = class MockWebSocket {
+    static CLOSED = 3;
+    static CLOSING = 2;
+    static CONNECTING = 0;
+    static OPEN = 1;
+    onopen = null;
+    onclose = null;
+    onerror = null;
+    onmessage = null;
+    readyState = 3;
+    close() {}
+    send() {}
+  };
+}
+
 export const isSupabaseConfigured = Boolean(
   import.meta.env.VITE_SUPABASE_URL && 
   import.meta.env.VITE_SUPABASE_ANON_KEY &&
@@ -16,6 +32,9 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     persistSession: true,
     autoRefreshToken: true,
   },
+  ...(typeof WebSocket === 'undefined' && typeof window === 'undefined'
+    ? { realtime: { transport: null as any } }
+    : {}),
 });
 
 export interface AuthResponse {

@@ -237,10 +237,11 @@ export const FarmerRentals: React.FC = () => {
                 <LeafletFleetMap
                   chcs={chcs}
                   farm={farm}
-                  machines={machines}
+                  machines={activeBooking ? machines.filter(m => m.id === activeBooking.machineId) : machines}
                   activeTelemetry={currentTelemetry}
-                  selectedMachineId={activeBooking.machineId}
+                  selectedMachineId={activeBooking?.machineId}
                   height="400px"
+                  showRoute={true}
                 />
               </div>
             </div>

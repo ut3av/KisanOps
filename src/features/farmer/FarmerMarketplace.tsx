@@ -199,6 +199,7 @@ export const FarmerMarketplace: React.FC = () => {
             machines={machines}
             activeTelemetry={currentTelemetry}
             height="560px"
+            showRoute={false}
           />
         </div>
       ) : processedMachines.length === 0 ? (

@@ -249,6 +249,7 @@ export const FarmProfile: React.FC = () => {
               chcs={chcs}
               farm={farm}
               height="360px"
+              showRoute={false}
               center={[farm.latitude || 23.1872, farm.longitude || 77.1008]}
               zoom={13}
             />
