@@ -129,7 +129,7 @@ export const MachineThumbnail: React.FC<MachineThumbnailProps> = ({
             {config.label}
           </span>
           <span className="text-[10px] text-slate-500 font-mono">
-            CHC Certified Telematics Vehicle
+            CHC Certified & GPS Verified Machine
           </span>
         </div>
       )}

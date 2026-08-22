@@ -17,17 +17,17 @@ import clsx from 'clsx';
 
 export const FarmerCredit: React.FC = () => {
   usePageTitle(
-    'AgriCredit Deferred Rental Scoring',
-    'Preliminary deferred-payment eligibility score calculated from machine rental history and farm activity.'
+    'Pay After Harvest Credit (AgriCredit)',
+    'Book machinery now and pay within 45 days after selling your harvest at the Mandi.'
   );
   const { state } = useKisanOpsStore();
   const { agriCredit } = state;
 
   const tiers = [
-    { range: '750+', limit: '₹10,000', label: 'Tier 1 - Platinum', desc: 'Highest deferred limit, zero advance, 45-day cycle' },
-    { range: '650 – 749', limit: '₹8,000', label: 'Tier 2 - Gold (Current)', desc: 'Standard deferred limit, 45-day post-harvest cycle', active: true },
-    { range: '550 – 649', limit: '₹3,000', label: 'Tier 3 - Silver', desc: 'Basic micro-deferred limit, partial advance' },
-    { range: 'Below 550', limit: 'Pay Upfront', label: 'Tier 4 - Standard', desc: 'Upfront digital settlement required' },
+    { range: '750+', limit: '₹10,000', label: 'Tier 1 - Platinum', desc: 'Highest credit limit, zero advance, 45-day pay after harvest cycle' },
+    { range: '650 – 749', limit: '₹8,000', label: 'Tier 2 - Gold (Current)', desc: 'Standard credit limit, 45-day post-harvest payment', active: true },
+    { range: '550 – 649', limit: '₹3,000', label: 'Tier 3 - Silver', desc: 'Basic credit limit, partial advance' },
+    { range: 'Below 550', limit: 'Pay Upfront', label: 'Tier 4 - Standard', desc: 'Pay online before rental' },
   ];
 
   return (
@@ -37,14 +37,14 @@ export const FarmerCredit: React.FC = () => {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-              AgriCredit Deferred Rental Scoring
+              Pay After Harvest Credit (AgriCredit)
             </h1>
             <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-md">
               Score: {agriCredit.creditScore} / 900
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Preliminary deferred-payment eligibility score calculated from machine rental history, farm activity, and repayment reliability.
+            Book machinery now and pay within 45 days after selling your harvest at the Mandi.
           </p>
         </div>
       </div>

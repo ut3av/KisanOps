@@ -201,7 +201,7 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
       case 'OSM_STANDARD':
         return 'OpenStreetMap';
       case 'DARK_TELEMATICS':
-        return 'Night Telematics';
+        return 'Night Mode';
       default:
         return 'GIS Layer';
     }
@@ -450,7 +450,7 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-sky-500 shrink-0 animate-pulse" />
-          <span className="font-medium text-slate-800">Active / Dispatched Telematics</span>
+          <span className="font-medium text-slate-800">Active / Dispatched Tractor GPS</span>
         </div>
       </div>
     </div>

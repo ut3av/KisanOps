@@ -11,7 +11,6 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { FaqSection } from './components/FaqSection';
 import { CtaBanner } from './components/CtaBanner';
 import { LandingFooter } from './components/LandingFooter';
-import { MinimalCursor } from '../../components/common/MinimalCursor';
 import { MouseInteractiveGlow } from '../../components/common/MouseInteractiveGlow';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
@@ -23,9 +22,6 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F5FAED] text-[#0f172a] flex flex-col font-sans selection:bg-[#7aa32c]/20 selection:text-[#2e4013] relative">
-      {/* Minimal Custom Cursor */}
-      <MinimalCursor />
-
       {/* Mouse Follower Interactive Color Glow */}
       <MouseInteractiveGlow />
 

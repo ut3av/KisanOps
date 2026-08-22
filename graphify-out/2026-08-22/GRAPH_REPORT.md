@@ -1,16 +1,16 @@
 # Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 128 files · ~346,495 words
+- 128 files · ~347,071 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 655 nodes · 1475 edges · 38 communities (29 shown, 9 thin omitted)
+- 655 nodes · 1477 edges · 37 communities (28 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c57dc588`
+- Built from commit: `8a7dfb20`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -45,7 +45,6 @@
 - telemetry-webhook/index.ts
 - vercel.json
 - 3. Core Functional Modules & Algorithmic Specifications
-- HeroSection.tsx
 - RazorpayCheckoutModal.tsx
 - LazyImage.tsx
 
@@ -76,7 +75,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (38 total, 9 thin omitted)
+## Communities (37 total, 9 thin omitted)
 
 ### Community 0 - "Navbar.tsx"
 Cohesion: 0.13
@@ -115,8 +114,8 @@ Cohesion: 0.09
 Nodes (21): api/**/*.ts, server/**/*.ts, vite.config.ts, compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module (+13 more)
 
 ### Community 9 - "react"
-Cohesion: 0.06
-Nodes (69): react, App(), queryClient, InteractiveCursor(), LeafletFleetMap(), MinimalCursor(), MouseInteractiveGlow(), ScrollToTop() (+61 more)
+Cohesion: 0.05
+Nodes (73): react, App(), queryClient, InteractiveCursor(), LeafletFleetMap(), MinimalCursor(), MouseInteractiveGlow(), ScrollToTop() (+65 more)
 
 ### Community 10 - "schema.sql"
 Cohesion: 0.43
@@ -166,10 +165,6 @@ Nodes (6): buildCommand, cleanUrls, headers, outputDirectory, rewrites, trailing
 Cohesion: 0.11
 Nodes (18): 1.1 Problem Statement, 1.2 Product Vision, 1. Executive Summary & Product Vision, 2. Target User Personas & Core Journeys, 3.1 Regional Predictive Demand Intelligence Engine (`demandEngine.ts`), 3.2 Inter-Hub Fleet Reallocation Optimizer (`demandEngine.ts`), 3.3 7-Factor Explainable Machinery Matching Engine (`recommendationEngine.ts`), 3.4 Dynamic Pricing Engine with Safety Bounds (`pricingEngine.ts`) (+10 more)
 
-### Community 35 - "HeroSection.tsx"
-Cohesion: 0.40
-Nodes (4): HERO_SLIDES, HeroSection(), HeroSectionProps, HeroSlide
-
 ### Community 36 - "RazorpayCheckoutModal.tsx"
 Cohesion: 0.33
 Nodes (8): RazorpayCheckoutModal(), RazorpayCheckoutModalProps, createRazorpayOrder(), initiateRazorpayStandardCheckout(), loadRazorpayScript(), RazorpayCheckoutOptions, RazorpayCustomerDetails, Window
@@ -182,8 +177,8 @@ Nodes (8): RazorpayCheckoutModal(), RazorpayCheckoutModalProps, createRazorpayOr
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `HeroSection.tsx`, `RazorpayCheckoutModal.tsx`, `LazyImage.tsx`, `LeafletFleetMap.tsx`, `plugins`, `FarmerRentals.tsx`, `TrustMarquee.tsx`, `types/index.ts`?**
-  _High betweenness centrality (0.125) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `RazorpayCheckoutModal.tsx`, `LazyImage.tsx`, `LeafletFleetMap.tsx`, `plugins`, `FarmerRentals.tsx`, `TrustMarquee.tsx`, `types/index.ts`?**
+  _High betweenness centrality (0.124) - this node is a cross-community bridge._
 - **Why does `useKisanOpsStore()` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `FarmerRentals.tsx`, `types/index.ts`?**
   _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Why does `Machine` connect `types/index.ts` to `kisanOpsStore.ts`, `voice.ts`, `LeafletFleetMap.tsx`?**

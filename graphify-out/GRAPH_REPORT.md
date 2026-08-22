@@ -1,16 +1,16 @@
 # Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 128 files · ~347,071 words
+- 128 files · ~346,749 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 655 nodes · 1477 edges · 37 communities (28 shown, 9 thin omitted)
+- 655 nodes · 1475 edges · 37 communities (28 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8a7dfb20`
+- Built from commit: `0dee7039`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -115,7 +115,7 @@ Nodes (21): api/**/*.ts, server/**/*.ts, vite.config.ts, compilerOptions, allowI
 
 ### Community 9 - "react"
 Cohesion: 0.05
-Nodes (73): react, App(), queryClient, InteractiveCursor(), LeafletFleetMap(), MinimalCursor(), MouseInteractiveGlow(), ScrollToTop() (+65 more)
+Nodes (72): react, App(), queryClient, InteractiveCursor(), LeafletFleetMap(), MouseInteractiveGlow(), ScrollToTop(), StatCard() (+64 more)
 
 ### Community 10 - "schema.sql"
 Cohesion: 0.43
@@ -178,7 +178,7 @@ Nodes (8): RazorpayCheckoutModal(), RazorpayCheckoutModalProps, createRazorpayOr
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `RazorpayCheckoutModal.tsx`, `LazyImage.tsx`, `LeafletFleetMap.tsx`, `plugins`, `FarmerRentals.tsx`, `TrustMarquee.tsx`, `types/index.ts`?**
-  _High betweenness centrality (0.124) - this node is a cross-community bridge._
+  _High betweenness centrality (0.126) - this node is a cross-community bridge._
 - **Why does `useKisanOpsStore()` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `FarmerRentals.tsx`, `types/index.ts`?**
   _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Why does `Machine` connect `types/index.ts` to `kisanOpsStore.ts`, `voice.ts`, `LeafletFleetMap.tsx`?**

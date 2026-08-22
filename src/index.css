@@ -323,12 +323,6 @@ html {
   background: linear-gradient(180deg, #628323 0%, #466018 100%);
 }
 
-/* Custom Cursor Hide Default when fine pointer is active on landing */
-@media (pointer: fine) {
-  body.custom-cursor-active {
-    cursor: default;
-  }
-}
 
 /* ==========================================================================
    PRODUCTION UI ANIMATIONS & MICRO-INTERACTIONS

@@ -2948,7 +2948,7 @@
       "file_type": "code",
       "norm_label": "landingpage()",
       "source_file": "src/features/landing/LandingPage.tsx",
-      "source_location": "L18"
+      "source_location": "L17"
     },
     {
       "id": "src_features_landing_pages_aboutpage_aboutpage",
@@ -8398,7 +8398,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/landing/LandingPage.tsx",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -12303,7 +12303,7 @@
     },
     {
       "source": "src_features_landing_landingpage",
-      "target": "src_components_common_minimalcursor_minimalcursor",
+      "target": "src_components_common_mouseinteractiveglow_mouseinteractiveglow",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12315,18 +12315,6 @@
     },
     {
       "source": "src_features_landing_landingpage",
-      "target": "src_components_common_mouseinteractiveglow_mouseinteractiveglow",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/landing/LandingPage.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_landing_landingpage",
       "target": "src_hooks_usepagetitle_usepagetitle",
       "relation": "imports",
       "_origin": "ast",
@@ -12334,7 +12322,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/landing/LandingPage.tsx",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -17283,7 +17271,7 @@
     },
     {
       "source": "src_features_landing_landingpage",
-      "target": "src_components_common_minimalcursor",
+      "target": "src_components_common_mouseinteractiveglow",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17295,18 +17283,6 @@
     },
     {
       "source": "src_features_landing_landingpage",
-      "target": "src_components_common_mouseinteractiveglow",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/landing/LandingPage.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_landing_landingpage",
       "target": "src_hooks_usepagetitle",
       "relation": "imports_from",
       "_origin": "ast",
@@ -17314,7 +17290,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/landing/LandingPage.tsx",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -21733,7 +21709,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/landing/LandingPage.tsx",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -24836,5 +24812,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8a7dfb20a6416ca73ac0ab86e6f7309fede8e9da"
+  "built_at_commit": "0dee7039c55aeb6707ce4877538a72fe46bf898d"
 }

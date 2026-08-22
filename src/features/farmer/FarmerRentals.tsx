@@ -71,7 +71,7 @@ export const FarmerRentals: React.FC = () => {
             My Machinery Rentals & Live Tracking
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Monitor real-time equipment dispatch, field telematics, and automated tax invoices.
+            Track your booked tractor live on the map, see speed and diesel levels, and view your verified bill.
           </p>
         </div>
 
@@ -182,7 +182,7 @@ export const FarmerRentals: React.FC = () => {
               <div className="text-xs text-slate-600 flex items-center gap-2">
                 <Radio className="w-4 h-4 text-emerald-600 animate-pulse" />
                 <span>
-                  Telemetry Link: <strong>Active (2s streaming interval)</strong>
+                  GPS Tracking: <strong>Active & Connected</strong>
                 </span>
               </div>
 
@@ -217,7 +217,7 @@ export const FarmerRentals: React.FC = () => {
             </div>
           </div>
 
-          {/* Telematics Cluster & Interactive Route Map */}
+          {/* Machine Gauges & Interactive Route Map */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="lg:col-span-12 space-y-4">
               <TelematicsGaugeCluster
@@ -228,7 +228,7 @@ export const FarmerRentals: React.FC = () => {
               <div className="bg-white border border-slate-200/90 rounded-3xl p-4 shadow-subtle">
                 <div className="flex items-center justify-between mb-3 px-1">
                   <div className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                    Live GPS Telematics Route Tracker
+                    Live Tractor GPS Location & Route Map
                   </div>
                   <span className="text-[11px] text-slate-500 font-mono flex items-center gap-1">
                     <span>Sehore Agri Centre</span>

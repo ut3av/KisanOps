@@ -261,7 +261,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <span className="font-semibold text-slate-800">₹{transportCharge}</span>
             </div>
             <div className="flex justify-between text-slate-600">
-              <span>Platform & Telematics Fee</span>
+              <span>Platform & Machine Tracking Fee</span>
               <span className="font-semibold text-slate-800">₹{platformFee}</span>
             </div>
             <div className="flex justify-between text-emerald-700 font-medium">

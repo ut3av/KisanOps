@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/components/common/LeafletFleetMap.tsx": {
-    "mtime": 1787331891.3653615,
-    "seen": 1787331911.7306514,
-    "ast_hash": "5bec4729ce1dcffeede62a73c9000fe1",
+    "mtime": 1787416539.6098065,
+    "seen": 1787416566.503111,
+    "ast_hash": "edfde8ab5ab21710364328be959c80ee",
     "semantic_hash": ""
   },
   "src/components/common/StatCard.tsx": {
@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "src/components/common/TelematicsGauge.tsx": {
-    "mtime": 1787391110.9724035,
-    "seen": 1787391380.8656323,
-    "ast_hash": "e36cd5c29e8cceb7c942aef6fa1de770",
+    "mtime": 1787416240.7792978,
+    "seen": 1787416566.5031269,
+    "ast_hash": "a666bde1c6a9fa40c6c8b140d65c7356",
     "semantic_hash": ""
   },
   "src/components/layout/AdminLayout.tsx": {
@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "src/features/chc/CHCOverview.tsx": {
-    "mtime": 1787393360.434718,
-    "seen": 1787393396.5373359,
-    "ast_hash": "5cebdf6b77535fdebcffaa2f105b210a",
+    "mtime": 1787416354.172557,
+    "seen": 1787416566.5031605,
+    "ast_hash": "bea6fc80c020fd120b9cceb034f3a0dd",
     "semantic_hash": ""
   },
   "src/features/chc/CHCSettings.tsx": {
@@ -126,9 +126,9 @@
     "semantic_hash": ""
   },
   "src/features/chc/LiveTelematics.tsx": {
-    "mtime": 1787390407.2404077,
-    "seen": 1787390629.5139315,
-    "ast_hash": "e724887e072eac6136b58e80de8f5145",
+    "mtime": 1787416328.2132826,
+    "seen": 1787416566.503169,
+    "ast_hash": "4a8f718c45d47831d674fc8326582adf",
     "semantic_hash": ""
   },
   "src/features/chc/PredictiveMaintenance.tsx": {
@@ -144,9 +144,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/BookingModal.tsx": {
-    "mtime": 1787336055.5548317,
-    "seen": 1787336121.315102,
-    "ast_hash": "03b48542a4c130e1f143ca3e002dca31",
+    "mtime": 1787416370.5358295,
+    "seen": 1787416566.503178,
+    "ast_hash": "b5f411b35a57d6cbb3cf59bae992643a",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmProfile.tsx": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerCredit.tsx": {
-    "mtime": 1787384623.5938928,
-    "seen": 1787384804.4978747,
-    "ast_hash": "db9e6dfda13f9f2702fae36a24918b90",
+    "mtime": 1787416493.603052,
+    "seen": 1787416566.5031822,
+    "ast_hash": "6e08019f310b46dc526b5fd75e061585",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerHome.tsx": {
@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerRentals.tsx": {
-    "mtime": 1787396411.5561507,
-    "seen": 1787396547.234575,
-    "ast_hash": "de2f96910d74eb2a9f3ba43285a956f5",
+    "mtime": 1787416264.971932,
+    "seen": 1787416566.5031881,
+    "ast_hash": "f0bced9bb546850f1345f98c5a3e50d3",
     "semantic_hash": ""
   },
   "src/features/farmer/MachineDetailsModal.tsx": {
@@ -306,9 +306,9 @@
     "semantic_hash": ""
   },
   "src/components/common/WeatherRadarCard.tsx": {
-    "mtime": 1787414880.66897,
-    "seen": 1787414958.8077147,
-    "ast_hash": "cc14b06d497c2bd2616c5825a9c7dd1d",
+    "mtime": 1787415657.1892214,
+    "seen": 1787415684.629916,
+    "ast_hash": "c74f5cae024ba175fd9f2ab705b6d16c",
     "semantic_hash": ""
   },
   "src/features/auth/LoginPage.tsx": {
@@ -468,9 +468,9 @@
     "semantic_hash": ""
   },
   "src/lib/weatherEngine.ts": {
-    "mtime": 1787414870.2128654,
-    "seen": 1787414958.8078291,
-    "ast_hash": "3fa7d593b8c54cefa9ac1ec37580b5d1",
+    "mtime": 1787415560.0190425,
+    "seen": 1787415684.6300013,
+    "ast_hash": "d021f7934e7fc1b79d623636fc0afef4",
     "semantic_hash": ""
   },
   "supabase/schema.sql": {
@@ -684,9 +684,9 @@
     "semantic_hash": ""
   },
   "src/features/operator/OperatorDashboard.tsx": {
-    "mtime": 1787390447.749349,
-    "seen": 1787390629.5140016,
-    "ast_hash": "c37fd34a81d421e334a5de17ce7b2241",
+    "mtime": 1787416310.4680605,
+    "seen": 1787416566.503242,
+    "ast_hash": "1fd23ab2b069e569713c1c32f6617078",
     "semantic_hash": ""
   },
   "src/lib/__tests__/iotAndDb.test.ts": {
@@ -780,9 +780,9 @@
     "semantic_hash": ""
   },
   "src/components/common/MachineThumbnail.tsx": {
-    "mtime": 1787390150.0992334,
-    "seen": 1787390629.513899,
-    "ast_hash": "e60d5043ac5ab78fed37dbf56c4c3bac",
+    "mtime": 1787416431.0409782,
+    "seen": 1787416566.503113,
+    "ast_hash": "769d686f35abf612346f44f19b01ff77",
     "semantic_hash": ""
   },
   "src/components/layout/SideNav.tsx": {
@@ -798,9 +798,9 @@
     "semantic_hash": ""
   },
   "src/components/common/BrandedReceiptModal.tsx": {
-    "mtime": 1787395983.4215598,
-    "seen": 1787396547.2344732,
-    "ast_hash": "9ae50b00a6d478d151a86ed234c89245",
+    "mtime": 1787416443.0579207,
+    "seen": 1787416566.5030951,
+    "ast_hash": "c6e96571df8b187a033f309be3ad23d2",
     "semantic_hash": ""
   },
   "src/components/voice/FloatingVoiceButton.tsx": {

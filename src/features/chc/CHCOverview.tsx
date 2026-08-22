@@ -173,7 +173,7 @@ export const CHCOverview: React.FC = () => {
         />
       </div>
 
-      {/* Grid: Live Telematics Stream & Fleet Map Preview */}
+      {/* Grid: Live Machine Tracking Stream & Fleet Map Preview */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-12 space-y-4">
           <div className="flex items-center justify-between">
@@ -186,15 +186,15 @@ export const CHCOverview: React.FC = () => {
               />
               <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wide truncate">
                 {firstMachine
-                  ? `Live Operating Asset: ${firstMachine.brand} ${firstMachine.model} (${firstMachine.identifier})`
-                  : 'CAN-Bus Telematics Gateway (Standby / Disconnected)'}
+                  ? `Live Operating Tractor: ${firstMachine.brand} ${firstMachine.model} (${firstMachine.identifier})`
+                  : 'Machine Sensors (Waiting for Machine Signal)'}
               </h3>
             </div>
             <button
               onClick={() => navigate('/chc/telematics')}
               className="text-xs font-bold text-agri-800 hover:text-agri-950 flex items-center gap-1 cursor-pointer shrink-0"
             >
-              <span>Fullscreen Telematics Hub</span>
+              <span>Live Machine Tracking View</span>
               <ArrowRight className="w-3.5 h-3.5 shrink-0" />
             </button>
           </div>
@@ -210,9 +210,9 @@ export const CHCOverview: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
-                Regional Fleet & Hub Geolocation
+                Regional Fleet & Hub Locations
               </h3>
-              <p className="text-xs text-slate-500">Live positions of CHCs, active machinery, and farm boundaries.</p>
+              <p className="text-xs text-slate-500">Live locations of CHC centers, active tractors, and farm plots.</p>
             </div>
             <button
               onClick={() => navigate('/chc/telematics')}

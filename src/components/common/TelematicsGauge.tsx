@@ -45,17 +45,17 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
               isOnline ? 'text-emerald-400' : 'text-slate-400'
             )}
           >
-            {isOnline ? 'Live CAN-Bus J1939 Telemetry Stream' : 'CAN-Bus Telematics Gateway (Standby / Disconnected)'}
+            {isOnline ? 'Live Tractor Speed & Sensor Status' : 'Machine Sensors (Waiting for Machine Signal)'}
           </span>
         </div>
         <div className="flex items-center gap-2">
           {isOnline && isAnomalyActive && (
             <span className="inline-flex items-center gap-1 text-[11px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/40 px-2.5 py-0.5 rounded-full animate-pulse shrink-0">
-              <AlertTriangle className="w-3 h-3 shrink-0" /> Anomaly Detected
+              <AlertTriangle className="w-3 h-3 shrink-0" /> Extra Diesel Usage Alert (+17%)
             </span>
           )}
           <span className="text-[11px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-md border border-slate-700/50">
-            {isOnline ? new Date(currentTelemetry.timestamp).toLocaleTimeString() : 'Offline (0 Feeds)'}
+            {isOnline ? new Date(currentTelemetry.timestamp).toLocaleTimeString() : 'Offline'}
           </span>
         </div>
       </div>
@@ -65,7 +65,7 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
         <div className="bg-slate-800/70 hover:bg-slate-800 border border-slate-700/60 rounded-2xl p-3.5 transition-all duration-200 hover:-translate-y-0.5">
           <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-1.5">
             <Gauge className="w-4 h-4 text-sky-400 shrink-0" />
-            <span className="font-medium">Speed</span>
+            <span className="font-medium">Tractor Speed</span>
           </div>
           <div className="flex items-baseline gap-1">
             <span className="text-2xl font-bold font-mono text-white">
@@ -85,7 +85,7 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
         <div className="bg-slate-800/70 hover:bg-slate-800 border border-slate-700/60 rounded-2xl p-3.5 transition-all duration-200 hover:-translate-y-0.5">
           <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-1.5">
             <Fuel className="w-4 h-4 text-amber-400 shrink-0" />
-            <span className="font-medium">Fuel Level</span>
+            <span className="font-medium">Diesel Remaining</span>
           </div>
           <div className="flex items-baseline gap-1">
             <span className="text-2xl font-bold font-mono text-white">
@@ -115,10 +115,10 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
           <div className="flex items-center justify-between text-slate-400 text-xs mb-1.5">
             <div className="flex items-center gap-1.5">
               <Zap className="w-4 h-4 text-yellow-400 shrink-0" />
-              <span className="font-medium">Burn Rate</span>
+              <span className="font-medium">Diesel Usage</span>
             </div>
             {isOnline && isAnomalyActive && (
-              <span className="text-[9px] text-rose-400 font-bold bg-rose-900/60 px-1 rounded">+17%</span>
+              <span className="text-[9px] text-rose-400 font-bold bg-rose-900/60 px-1 rounded">High</span>
             )}
           </div>
           <div className="flex items-baseline gap-1">
@@ -133,7 +133,7 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
             <span className="text-[10px] text-slate-400 font-mono">L/hr</span>
           </div>
           <div className="text-[10px] text-slate-400 mt-2 font-mono">
-            {isOnline ? 'Nominal: 7.2 L/h' : 'Sensor Idle'}
+            {isOnline ? 'Normal: ~7.2 Litres/hr' : 'Engine Off'}
           </div>
         </div>
 
@@ -141,7 +141,7 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
         <div className="bg-slate-800/70 hover:bg-slate-800 border border-slate-700/60 rounded-2xl p-3.5 transition-all duration-200 hover:-translate-y-0.5">
           <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-1.5">
             <Thermometer className="w-4 h-4 text-rose-400 shrink-0" />
-            <span className="font-medium">Engine Temp</span>
+            <span className="font-medium">Engine Heat</span>
           </div>
           <div className="flex items-baseline gap-1">
             <span className="text-2xl font-bold font-mono text-white">
@@ -150,7 +150,7 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
             <span className="text-[10px] text-slate-400 font-mono">{isOnline ? 'C' : ''}</span>
           </div>
           <div className="text-[10px] text-emerald-400 mt-2 font-mono">
-            {isOnline ? 'Normal < 95°C' : 'Standby'}
+            {isOnline ? 'Normal (Safe < 95°C)' : 'Standby'}
           </div>
         </div>
 
@@ -158,7 +158,7 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
         <div className="bg-slate-800/70 hover:bg-slate-800 border border-slate-700/60 rounded-2xl p-3.5 transition-all duration-200 hover:-translate-y-0.5">
           <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-1.5">
             <Activity className="w-4 h-4 text-purple-400 shrink-0" />
-            <span className="font-medium">Engine RPM</span>
+            <span className="font-medium">Engine Speed</span>
           </div>
           <div className="flex items-baseline gap-1">
             <span className="text-2xl font-bold font-mono text-white">
@@ -167,7 +167,7 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
             <span className="text-[10px] text-slate-400 font-mono">RPM</span>
           </div>
           <div className="text-[10px] text-slate-400 mt-2 font-mono">
-            {isOnline ? 'Load: 72%' : '0% Load'}
+            {isOnline ? 'Working Smoothly' : '0 RPM'}
           </div>
         </div>
 
@@ -175,7 +175,7 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
         <div className="bg-slate-800/70 hover:bg-slate-800 border border-slate-700/60 rounded-2xl p-3.5 transition-all duration-200 hover:-translate-y-0.5">
           <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-1.5">
             <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span className="font-medium">Total Hours</span>
+            <span className="font-medium">Work Hours</span>
           </div>
           <div className="flex items-baseline gap-1">
             <span className="text-2xl font-bold font-mono text-white">
@@ -184,7 +184,7 @@ export const TelematicsGaugeCluster: React.FC<TelematicsGaugeClusterProps> = ({
             <span className="text-[10px] text-slate-400 font-mono">hrs</span>
           </div>
           <div className="text-[10px] text-emerald-400 mt-2 font-mono">
-            {isOnline ? 'Service in 48h' : 'No Active Asset'}
+            {isOnline ? 'Verified Runtime' : 'No Active Job'}
           </div>
         </div>
       </div>

@@ -188,7 +188,7 @@ export const BrandedReceiptModal: React.FC<BrandedReceiptModalProps> = ({
                   Payment Method: {invoice.paymentMethod.replace('_', ' ')}
                 </div>
                 <div className="text-[11px] text-emerald-800">
-                  Status: {invoice.paymentStatus} • Verified via Razorpay Gateway & Telematics Engine
+                  Status: {invoice.paymentStatus} • Verified via Razorpay Gateway & Machine Sensors
                 </div>
               </div>
             </div>
