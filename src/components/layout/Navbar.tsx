@@ -22,23 +22,13 @@ import { SideNav } from './SideNav';
 import clsx from 'clsx';
 
 export const Navbar: React.FC = () => {
-  const { state, switchRole, markNotificationRead, loadDemoData, clearAllData } = useKisanOpsStore();
-  const [showRoleMenu, setShowRoleMenu] = useState(false);
+  const { state, markNotificationRead, loadDemoData, clearAllData } = useKisanOpsStore();
   const [showNotifMenu, setShowNotifMenu] = useState(false);
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const navigate = useNavigate();
 
   const unreadCount = state.notifications.filter(n => !n.isRead).length;
   const isDemoActive = state.isDemoLoaded || state.machines.length > 0;
-
-  const handleRoleChange = (role: UserRole) => {
-    switchRole(role);
-    setShowRoleMenu(false);
-    if (role === 'FARMER') navigate('/farmer');
-    else if (role === 'OPERATOR') navigate('/operator');
-    else if (role === 'ADMIN') navigate('/admin');
-    else navigate('/chc');
-  };
 
   return (
     <>
@@ -84,7 +74,7 @@ export const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Right Section: Demo Controls + Location + Role Switcher + Notifications + User Avatar */}
+          {/* Right Section: Demo Controls + Location + Verified Role Badge + Notifications + User Avatar */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Demo Data Management Controls */}
             {!isDemoActive ? (
@@ -102,7 +92,7 @@ export const Navbar: React.FC = () => {
                 <button
                   onClick={() => clearAllData()}
                   className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-bold border border-rose-200 shadow-2xs transition-all cursor-pointer"
-                  title="Remove all demo data, prices, bookings, and reset to clean baseline"
+                  title="Remove all demo data, telematics feeds, prices, bookings, and reset to clean baseline"
                 >
                   <Trash2 className="w-3.5 h-3.5 shrink-0 text-rose-600" />
                   <span className="hidden md:inline">Remove All Data</span>
@@ -124,81 +114,27 @@ export const Navbar: React.FC = () => {
               <span>Sehore, Madhya Pradesh</span>
             </div>
 
-            {/* Active Role Switcher Dropdown */}
-            <div className="relative shrink-0">
-              <button
-                onClick={() => setShowRoleMenu(!showRoleMenu)}
-                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-surface-100 border border-slate-200 text-xs font-bold text-slate-800 hover:bg-surface-200 transition-colors cursor-pointer"
-              >
-                <span className={clsx(
-                  'w-2 h-2 rounded-full shrink-0',
-                  state.selectedRole === 'ADMIN' ? 'bg-purple-500' :
-                  state.selectedRole === 'CHC_MANAGER' ? 'bg-sky-500' :
-                  state.selectedRole === 'OPERATOR' ? 'bg-amber-500' :
-                  'bg-emerald-500'
-                )} />
-                <span className="hidden md:inline">
-                  {state.selectedRole === 'ADMIN' ? 'Platform Admin' :
-                   state.selectedRole === 'CHC_MANAGER' ? 'CHC Hub Manager' :
-                   state.selectedRole === 'OPERATOR' ? 'Machine Operator' :
-                   'Farmer Portal'}
-                </span>
-                <span className="md:hidden">
-                  {state.selectedRole === 'ADMIN' ? 'Admin' :
-                   state.selectedRole === 'CHC_MANAGER' ? 'CHC' :
-                   state.selectedRole === 'OPERATOR' ? 'Driver' :
-                   'Farmer'}
-                </span>
-                <ChevronDown className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-              </button>
-
-              {showRoleMenu && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-2xl shadow-elevated border border-slate-200 py-1.5 z-50 animate-in fade-in-50">
-                  <button
-                    onClick={() => handleRoleChange('FARMER')}
-                    className={clsx(
-                      'w-full text-left px-3.5 py-2 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 cursor-pointer',
-                      state.selectedRole === 'FARMER' ? 'text-emerald-700 font-bold bg-emerald-50/50' : 'text-slate-700'
-                    )}
-                  >
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                    <span>Farmer Experience</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleRoleChange('CHC_MANAGER')}
-                    className={clsx(
-                      'w-full text-left px-3.5 py-2 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 cursor-pointer',
-                      state.selectedRole === 'CHC_MANAGER' ? 'text-sky-700 font-bold bg-sky-50/50' : 'text-slate-700'
-                    )}
-                  >
-                    <span className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
-                    <span>CHC Hub Manager</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleRoleChange('OPERATOR')}
-                    className={clsx(
-                      'w-full text-left px-3.5 py-2 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 cursor-pointer',
-                      state.selectedRole === 'OPERATOR' ? 'text-amber-700 font-bold bg-amber-50/50' : 'text-slate-700'
-                    )}
-                  >
-                    <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
-                    <span>Machine Operator</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleRoleChange('ADMIN')}
-                    className={clsx(
-                      'w-full text-left px-3.5 py-2 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 cursor-pointer',
-                      state.selectedRole === 'ADMIN' ? 'text-purple-700 font-bold bg-purple-50/50' : 'text-slate-700'
-                    )}
-                  >
-                    <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
-                    <span>Platform Admin</span>
-                  </button>
-                </div>
-              )}
+            {/* Production Verified Role Identity Badge (No demo switcher) */}
+            <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-surface-100 border border-slate-200 text-xs font-bold text-slate-800 shrink-0 select-none">
+              <span className={clsx(
+                'w-2 h-2 rounded-full shrink-0',
+                state.selectedRole === 'ADMIN' ? 'bg-purple-500' :
+                state.selectedRole === 'CHC_MANAGER' ? 'bg-sky-500' :
+                state.selectedRole === 'OPERATOR' ? 'bg-amber-500' :
+                'bg-emerald-500'
+              )} />
+              <span className="hidden md:inline">
+                {state.selectedRole === 'ADMIN' ? 'Platform Administrator' :
+                 state.selectedRole === 'CHC_MANAGER' ? 'CHC Hub Manager' :
+                 state.selectedRole === 'OPERATOR' ? 'Machine Operator' :
+                 'Farmer Portal'}
+              </span>
+              <span className="md:hidden">
+                {state.selectedRole === 'ADMIN' ? 'Admin' :
+                 state.selectedRole === 'CHC_MANAGER' ? 'CHC' :
+                 state.selectedRole === 'OPERATOR' ? 'Driver' :
+                 'Farmer'}
+              </span>
             </div>
 
             {/* Notifications Dropdown */}

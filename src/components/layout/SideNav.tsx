@@ -213,42 +213,29 @@ export const SideNav: React.FC<SideNavProps> = ({
         )}
       </div>
 
-      {/* Role Switcher Pill in Sidenav */}
+      {/* Verified Workspace Card in Sidenav */}
       <div className={clsx('p-3', isCollapsed && !isDrawer ? 'px-2' : 'px-3')}>
         {(!isCollapsed || isDrawer) ? (
-          <div className="bg-surface-50 p-2 rounded-2xl border border-slate-200/80 space-y-1.5">
-            <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-400 px-1">
-              <span>Active Workspace</span>
-              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+          <div className="bg-surface-50 p-2.5 rounded-2xl border border-slate-200/80 flex items-center justify-between">
+            <div className="flex items-center gap-2 min-w-0">
+              <span
+                className={clsx(
+                  'w-2.5 h-2.5 rounded-full shrink-0',
+                  roleColors[currentRole]?.dot || 'bg-emerald-500'
+                )}
+              />
+              <div className="min-w-0">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                  Workspace
+                </div>
+                <div className="text-xs font-extrabold text-slate-800 truncate">
+                  {roleColors[currentRole]?.label || 'Portal'}
+                </div>
+              </div>
             </div>
-
-            <div className="grid grid-cols-2 gap-1 text-[11px]">
-              {(['FARMER', 'CHC_MANAGER', 'OPERATOR', 'ADMIN'] as UserRole[]).map(role => {
-                const isSelected = currentRole === role;
-                return (
-                  <button
-                    key={role}
-                    onClick={() => handleRoleChange(role)}
-                    className={clsx(
-                      'px-2 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all text-left truncate cursor-pointer',
-                      isSelected
-                        ? 'bg-white shadow-xs border border-slate-200 text-slate-900'
-                        : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
-                    )}
-                  >
-                    <span
-                      className={clsx(
-                        'w-1.5 h-1.5 rounded-full shrink-0',
-                        roleColors[role].dot
-                      )}
-                    />
-                    <span className="truncate">
-                      {role === 'FARMER' ? 'Farmer' : role === 'CHC_MANAGER' ? 'CHC Hub' : role === 'OPERATOR' ? 'Operator' : 'Admin'}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+            <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 shrink-0">
+              Active
+            </span>
           </div>
         ) : (
           <div className="flex flex-col items-center gap-1 py-1">

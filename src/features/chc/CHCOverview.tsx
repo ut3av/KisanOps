@@ -19,6 +19,7 @@ import { StatCard } from '../../components/common/StatCard';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { TelematicsGaugeCluster } from '../../components/common/TelematicsGauge';
 import { usePageTitle } from '../../hooks/usePageTitle';
+import clsx from 'clsx';
 
 export const CHCOverview: React.FC = () => {
   usePageTitle(
@@ -167,9 +168,16 @@ export const CHCOverview: React.FC = () => {
         <div className="lg:col-span-12 space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 radar-pulse shrink-0" />
+              <span
+                className={clsx(
+                  'w-2.5 h-2.5 rounded-full shrink-0',
+                  firstMachine ? 'bg-emerald-500 radar-pulse' : 'bg-slate-400'
+                )}
+              />
               <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wide truncate">
-                {firstMachine ? `Live Operating Asset: ${firstMachine.brand} ${firstMachine.model} (${firstMachine.identifier})` : 'CAN-Bus Telematics Gateway'}
+                {firstMachine
+                  ? `Live Operating Asset: ${firstMachine.brand} ${firstMachine.model} (${firstMachine.identifier})`
+                  : 'CAN-Bus Telematics Gateway (Standby / Disconnected)'}
               </h3>
             </div>
             <button

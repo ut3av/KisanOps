@@ -42,16 +42,16 @@
     "semantic_hash": ""
   },
   "src/components/common/StatCard.tsx": {
-    "mtime": 1787389873.1157293,
-    "seen": 1787390088.3070745,
-    "ast_hash": "c65f374431831f3445a9aee332cdd8cb",
+    "mtime": 1787391158.154408,
+    "seen": 1787391380.8656254,
+    "ast_hash": "8113ac0a66d20d26dff41a232c9523db",
     "semantic_hash": ""
   },
   "src/components/common/TelematicsGauge.tsx": {
-    "mtime": 1787311111.5626256,
-    "seen": 1787312673.7712822,
-    "ast_hash": "3aa09fc70c77748f949ebd693e9f4998",
-    "semantic_hash": "3aa09fc70c77748f949ebd693e9f4998"
+    "mtime": 1787391110.9724035,
+    "seen": 1787391380.8656323,
+    "ast_hash": "e36cd5c29e8cceb7c942aef6fa1de770",
+    "semantic_hash": ""
   },
   "src/components/layout/AdminLayout.tsx": {
     "mtime": 1787389746.0173676,
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787390216.822832,
-    "seen": 1787390629.5139146,
-    "ast_hash": "cf86e240598a804f84824e616818eb7b",
+    "mtime": 1787391131.7316592,
+    "seen": 1787391380.8656547,
+    "ast_hash": "689ccb0edd24179e0b8b0929ce27ed8c",
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "src/features/chc/CHCOverview.tsx": {
-    "mtime": 1787390304.992651,
-    "seen": 1787390629.5139265,
-    "ast_hash": "1b96e2a49fa28a0c9b136c90bffd5f4d",
+    "mtime": 1787391299.6742184,
+    "seen": 1787391380.8656926,
+    "ast_hash": "0f532b9ef43abb86e75ab6d36ffb034a",
     "semantic_hash": ""
   },
   "src/features/chc/CHCSettings.tsx": {
@@ -306,9 +306,9 @@
     "semantic_hash": ""
   },
   "src/components/common/WeatherRadarCard.tsx": {
-    "mtime": 1787316302.983535,
-    "seen": 1787322604.0197928,
-    "ast_hash": "1af8df19e9efc6ff953cfa9c00c301c0",
+    "mtime": 1787391247.3973825,
+    "seen": 1787391380.8656366,
+    "ast_hash": "7e4cf14938c1f3852fab8a64054b9112",
     "semantic_hash": ""
   },
   "src/features/auth/LoginPage.tsx": {
@@ -786,9 +786,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/SideNav.tsx": {
-    "mtime": 1787390269.178824,
-    "seen": 1787390629.5139174,
-    "ast_hash": "70ccc45609d29d003eb23681c35b3e59",
+    "mtime": 1787391146.4429429,
+    "seen": 1787391380.8656645,
+    "ast_hash": "de5a98a7f5f55dbc6cd4c59c7888b706",
     "semantic_hash": ""
   }
 }

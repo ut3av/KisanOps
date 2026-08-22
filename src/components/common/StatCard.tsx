@@ -29,8 +29,8 @@ export const StatCard: React.FC<StatCardProps> = ({
     <div
       onClick={onClick}
       className={clsx(
-        'bg-white border border-slate-200/90 rounded-2xl p-5 shadow-subtle transition-all',
-        onClick && 'cursor-pointer hover:border-agri-400 hover:shadow-card',
+        'bg-white border border-slate-200/90 rounded-2xl p-5 shadow-subtle card-interactive',
+        onClick ? 'cursor-pointer hover:border-agri-400' : 'hover:border-slate-300',
         className
       )}
     >
