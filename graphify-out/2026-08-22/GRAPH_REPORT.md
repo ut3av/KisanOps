@@ -1,23 +1,23 @@
 # Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 112 files · ~338,864 words
+- 126 files · ~345,212 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 584 nodes · 1265 edges · 36 communities (27 shown, 9 thin omitted)
+- 652 nodes · 1467 edges · 35 communities (28 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6758c6dc`
+- Built from commit: `d8e604d2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- Navbar.tsx
+- BookDemoModal.tsx
 - kisanOpsStore.ts
-- LazyImage.tsx
+- voice.ts
 - devDependencies
 - 20260821000000_initial_schema.sql
 - dependencies
@@ -39,25 +39,24 @@
 - rules/graphify.md
 - workflows/graphify.md
 - quick_fix_auth.sql
-- TrustMarquee.tsx
-- FarmerHome.tsx
+- Machine
 - telemetry-webhook/index.ts
 - vercel.json
 - 3. Core Functional Modules & Algorithmic Specifications
 - RazorpayCheckoutModal.tsx
-- HeroSection.tsx
+- react
 
 ## God Nodes (most connected - your core abstractions)
-1. `react` - 67 edges
-2. `useKisanOpsStore()` - 59 edges
+1. `react` - 69 edges
+2. `useKisanOpsStore()` - 61 edges
 3. `usePageTitle()` - 53 edges
-4. `Machine` - 18 edges
+4. `Machine` - 27 edges
 5. `AppState` - 15 edges
-6. `compilerOptions` - 15 edges
-7. `compilerOptions` - 14 edges
-8. `machines` - 13 edges
-9. `🎬 Step-by-Step 12-Scene Script` - 13 edges
-10. `TelemetryPoint` - 12 edges
+6. `Booking` - 15 edges
+7. `compilerOptions` - 15 edges
+8. `compilerOptions` - 14 edges
+9. `machines` - 13 edges
+10. `🎬 Step-by-Step 12-Scene Script` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `handler()` --calls--> `createRazorpayOrderBackend()`  [EXTRACTED]
@@ -66,23 +65,27 @@
   api/verify-payment.ts → server/razorpayBackend.ts
 - `BookDemoModal()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
   src/features/landing/components/BookDemoModal.tsx → src/store/kisanOpsStore.ts
+- `BillingCalculationInput` --references--> `Booking`  [EXTRACTED]
+  src/lib/billingEngine.ts → src/types/index.ts
 - `BrandedReceiptModalProps` --references--> `Invoice`  [EXTRACTED]
   src/components/common/BrandedReceiptModal.tsx → src/types/index.ts
-- `MachineThumbnailProps` --references--> `MachineCategory`  [EXTRACTED]
-  src/components/common/MachineThumbnail.tsx → src/types/index.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (36 total, 9 thin omitted)
+## Communities (35 total, 7 thin omitted)
 
-### Community 0 - "Navbar.tsx"
-Cohesion: 0.15
-Nodes (11): KisanLoader(), KisanLoaderProps, AdminLayout(), CHCLayout(), Navbar(), NavItem, SideNav(), SideNavProps (+3 more)
+### Community 0 - "BookDemoModal.tsx"
+Cohesion: 0.40
+Nodes (4): KisanLoader(), KisanLoaderProps, BookDemoModal(), BookDemoModalProps
 
 ### Community 1 - "kisanOpsStore.ts"
 Cohesion: 0.06
-Nodes (72): BrandedReceiptModal(), BrandedReceiptModalProps, LeafletFleetMapProps, TelematicsGaugeClusterProps, SEEDED_AGRICREDIT_PROFILE, SEEDED_ALLOCATION_RECOMMENDATIONS, SEEDED_BOOKINGS, SEEDED_CHCS (+64 more)
+Nodes (65): BrandedReceiptModal(), BrandedReceiptModalProps, LeafletFleetMapProps, TelematicsGaugeClusterProps, SEEDED_AGRICREDIT_PROFILE, SEEDED_ALLOCATION_RECOMMENDATIONS, SEEDED_BOOKINGS, SEEDED_CHCS (+57 more)
+
+### Community 2 - "voice.ts"
+Cohesion: 0.07
+Nodes (30): VoiceAssistantModalProps, VoiceUiState, globalVoiceController, VoiceController, ConversationService, FarmerRequirementIntentDto, FarmerRequirementIntentSchema, TaskCategoryEnum (+22 more)
 
 ### Community 3 - "devDependencies"
 Cohesion: 0.06
@@ -109,8 +112,8 @@ Cohesion: 0.09
 Nodes (21): api/**/*.ts, server/**/*.ts, vite.config.ts, compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module (+13 more)
 
 ### Community 9 - "App.tsx"
-Cohesion: 0.06
-Nodes (69): react, App(), queryClient, InteractiveCursor(), LeafletFleetMap(), ScrollToTop(), StatCard(), StatCardProps (+61 more)
+Cohesion: 0.07
+Nodes (53): App(), queryClient, InteractiveCursor(), LeafletFleetMap(), ScrollToTop(), StatCard(), StatCardProps, TelematicsGaugeCluster() (+45 more)
 
 ### Community 10 - "schema.sql"
 Cohesion: 0.43
@@ -144,9 +147,9 @@ Nodes (5): 1. Schema Overview, 2. Table Catalog, 3. Row Level Security (RLS) Pol
 Cohesion: 0.33
 Nodes (5): 1. Environment Variables, 2. Frontend Deployment (Vercel), 3. Database Deployment (Supabase), 4. Production Health Check, KisanOps Deployment Guide
 
-### Community 31 - "FarmerHome.tsx"
-Cohesion: 0.13
-Nodes (23): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), ExplanationBadgeProps, MachineThumbnail(), MachineThumbnailProps, VEHICLE_CONFIG, BookingModal() (+15 more)
+### Community 31 - "Machine"
+Cohesion: 0.12
+Nodes (29): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), ExplanationBadgeProps, MachineThumbnail(), MachineThumbnailProps, VEHICLE_CONFIG, BookingModal() (+21 more)
 
 ### Community 33 - "vercel.json"
 Cohesion: 0.29
@@ -160,29 +163,29 @@ Nodes (18): 1.1 Problem Statement, 1.2 Product Vision, 1. Executive Summary & Pr
 Cohesion: 0.27
 Nodes (10): RazorpayCheckoutModal(), RazorpayCheckoutModalProps, Window, createRazorpayOrder(), initiateRazorpayStandardCheckout(), loadRazorpayScript(), RazorpayCheckoutOptions, RazorpayCustomerDetails (+2 more)
 
-### Community 37 - "HeroSection.tsx"
-Cohesion: 0.40
-Nodes (4): HERO_SLIDES, HeroSection(), HeroSectionProps, HeroSlide
+### Community 37 - "react"
+Cohesion: 0.08
+Nodes (31): react, LazyImageProps, CtaBanner(), CtaBannerProps, FaqItem, FAQS, FaqSection(), HERO_SLIDES (+23 more)
 
 ## Knowledge Gaps
-- **206 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+201 more)
+- **211 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+206 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `App.tsx` to `Navbar.tsx`, `kisanOpsStore.ts`, `LazyImage.tsx`, `RazorpayCheckoutModal.tsx`, `HeroSection.tsx`, `LeafletFleetMap.tsx`, `plugins`, `TrustMarquee.tsx`, `FarmerHome.tsx`?**
-  _High betweenness centrality (0.120) - this node is a cross-community bridge._
-- **Why does `useKisanOpsStore()` connect `App.tsx` to `Navbar.tsx`, `kisanOpsStore.ts`, `FarmerHome.tsx`?**
+- **Why does `react` connect `react` to `BookDemoModal.tsx`, `kisanOpsStore.ts`, `voice.ts`, `RazorpayCheckoutModal.tsx`, `LeafletFleetMap.tsx`, `App.tsx`, `plugins`, `Machine`?**
+  _High betweenness centrality (0.122) - this node is a cross-community bridge._
+- **Why does `useKisanOpsStore()` connect `App.tsx` to `BookDemoModal.tsx`, `kisanOpsStore.ts`, `voice.ts`, `react`, `Machine`?**
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+- **Why does `Machine` connect `Machine` to `kisanOpsStore.ts`, `voice.ts`, `LeafletFleetMap.tsx`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
-- **Why does `plugins` connect `plugins` to `App.tsx`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
-  _206 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _211 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `kisanOpsStore.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.060073260073260075 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06413730803974707 - nodes in this community are weakly interconnected._
+- **Should `voice.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.07412587412587412 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
-- **Should `dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.06451612903225806 - nodes in this community are weakly interconnected._

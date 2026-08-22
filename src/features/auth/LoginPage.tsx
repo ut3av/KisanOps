@@ -141,15 +141,7 @@ export const LoginPage: React.FC = () => {
           role: selectedRole,
         });
       } else {
-        // Fallback seamless profile creation for smooth test sign-ins
-        const fallbackUser: UserProfile = {
-          id: `usr-${Date.now()}`,
-          fullName: emailOrPhone.split('@')[0] || 'Agricultural User',
-          phoneNumber: emailOrPhone.includes('@') ? '+91 98765 43210' : emailOrPhone,
-          email: email,
-          role: selectedRole,
-        };
-        completeAuth(fallbackUser);
+        setErrorMessage(res.error || 'Invalid email or password. Please verify your credentials or register a new account.');
       }
     }
   };
@@ -434,6 +426,34 @@ export const LoginPage: React.FC = () => {
                 </button>
               </p>
             )}
+          </div>
+
+          {/* Quick Demo Credentials Autofill Row */}
+          <div className="pt-2 border-t border-slate-100/80">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center justify-between">
+              <span>Quick Test Identities</span>
+              <span className="text-emerald-700 font-semibold lowercase">password: password123</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+              {SEEDED_PROFILES.map((prof) => (
+                <button
+                  key={prof.id}
+                  type="button"
+                  onClick={() => {
+                    setEmailOrPhone(prof.email || '');
+                    setPassword('password123');
+                    setSelectedRole(prof.role);
+                    setAuthMode('SIGN_IN');
+                    setErrorMessage(null);
+                  }}
+                  className="px-2 py-1.5 rounded-lg bg-surface-100 hover:bg-slate-200 text-slate-700 text-[10px] font-bold truncate transition-colors text-left border border-slate-200/80 cursor-pointer"
+                  title={`Use ${prof.fullName} (${prof.role})`}
+                >
+                  <div className="truncate font-extrabold text-slate-900">{prof.fullName}</div>
+                  <div className="text-[9px] text-slate-500 capitalize">{prof.role.toLowerCase().replace('_', ' ')}</div>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

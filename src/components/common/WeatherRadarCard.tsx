@@ -15,21 +15,26 @@ import {
 } from 'lucide-react';
 import {
   fetchAgroWeatherForecast,
+  resolveCoordinatesForDistrict,
   WeatherForecastDay,
   HourlyWeatherPoint,
   HarvestRiskAssessment,
-  MP_WEATHER_LOCATIONS
+  LocationCoordinates,
 } from '../../lib/weatherEngine';
 import clsx from 'clsx';
 
 interface WeatherRadarCardProps {
   district?: string;
+  latitude?: number;
+  longitude?: number;
   onEmergencyPreBook?: () => void;
   compact?: boolean;
 }
 
 export const WeatherRadarCard: React.FC<WeatherRadarCardProps> = ({
-  district = 'Sehore',
+  district = 'Indore',
+  latitude,
+  longitude,
   onEmergencyPreBook,
   compact = false,
 }) => {
@@ -39,12 +44,18 @@ export const WeatherRadarCard: React.FC<WeatherRadarCardProps> = ({
   const [currentTemp, setCurrentTemp] = useState<number>(31);
   const [currentHumidity, setCurrentHumidity] = useState<number>(55);
   const [currentWind, setCurrentWind] = useState<number>(14);
+  const [resolvedLocation, setResolvedLocation] = useState<string>('');
   const [assessment, setAssessment] = useState<HarvestRiskAssessment | null>(null);
   const [lastUpdated, setLastUpdated] = useState<string>('');
 
   const loadWeather = async () => {
     setLoading(true);
-    const coords = MP_WEATHER_LOCATIONS[district.toLowerCase()] || MP_WEATHER_LOCATIONS.sehore;
+    const coords: LocationCoordinates = await resolveCoordinatesForDistrict(
+      district,
+      latitude && longitude ? { latitude, longitude } : undefined
+    );
+    setResolvedLocation(coords.locationName);
+
     const res = await fetchAgroWeatherForecast(coords);
     setDaily(res.daily);
     setHourly(res.hourly);
@@ -58,7 +69,7 @@ export const WeatherRadarCard: React.FC<WeatherRadarCardProps> = ({
 
   useEffect(() => {
     loadWeather();
-  }, [district]);
+  }, [district, latitude, longitude]);
 
   if (loading && !assessment) {
     return (
@@ -157,7 +168,7 @@ export const WeatherRadarCard: React.FC<WeatherRadarCardProps> = ({
               </span>
             </div>
             <p className="text-xs text-slate-500">
-              {district} District • Real-time Agro Forecast (Updated {lastUpdated})
+              {resolvedLocation || `${district} Regional Cluster`} • Real-time Open-Meteo Satellite Feed ({lastUpdated})
             </p>
           </div>
         </div>

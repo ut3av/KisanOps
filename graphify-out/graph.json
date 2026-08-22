@@ -10,11 +10,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "BookDemoModal.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
       "norm_label": "kisanloaderprops",
       "source_file": "src/components/common/KisanLoader.tsx",
       "source_location": "L4"
+    },
+    {
+      "id": "src_components_layout_sidenav_navitem",
+      "label": "NavItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "navitem",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_components_layout_sidenav_sidenavprops",
+      "label": "SideNavProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "sidenavprops",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L32"
     },
     {
       "id": "src_features_landing_components_bookdemomodal_bookdemomodalprops",
@@ -23,24 +49,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "BookDemoModal.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
       "norm_label": "bookdemomodalprops",
       "source_file": "src/features/landing/components/BookDemoModal.tsx",
       "source_location": "L21"
     },
     {
-      "id": "src_components_common_brandedreceiptmodal_brandedreceiptmodalprops",
-      "label": "BrandedReceiptModalProps",
+      "id": "src_types_index_userrole",
+      "label": "UserRole",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
+      "community": 0,
+      "community_name": "Navbar.tsx",
       "file_type": "code",
-      "norm_label": "brandedreceiptmodalprops",
-      "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L20"
+      "norm_label": "userrole",
+      "source_file": "src/types/index.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_components_common_leafletfleetmap_leafletfleetmapprops",
@@ -69,32 +95,6 @@
       "source_location": "L6"
     },
     {
-      "id": "src_lib_billingengine_billingcalculationinput",
-      "label": "BillingCalculationInput",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "billingcalculationinput",
-      "source_file": "src/lib/billingEngine.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_lib_creditengine_creditinputfactors",
-      "label": "CreditInputFactors",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "creditinputfactors",
-      "source_file": "src/lib/creditEngine.ts",
-      "source_location": "L3"
-    },
-    {
       "id": "src_lib_iotingestionengine_hardwaretelemetrypayload",
       "label": "HardwareTelemetryPayload",
       "_callable": true,
@@ -119,19 +119,6 @@
       "norm_label": "ingestionresult",
       "source_file": "src/lib/iotIngestionEngine.ts",
       "source_location": "L21"
-    },
-    {
-      "id": "src_lib_maintenanceengine_maintenancehealthbreakdown",
-      "label": "MaintenanceHealthBreakdown",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "maintenancehealthbreakdown",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L3"
     },
     {
       "id": "src_lib_supabaseclient_authresponse",
@@ -212,19 +199,6 @@
       "source_location": "L67"
     },
     {
-      "id": "src_types_index_demandfactorbreakdown",
-      "label": "DemandFactorBreakdown",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "demandfactorbreakdown",
-      "source_file": "src/types/index.ts",
-      "source_location": "L177"
-    },
-    {
       "id": "src_types_index_demandforecast",
       "label": "DemandForecast",
       "_callable": true,
@@ -249,19 +223,6 @@
       "norm_label": "farm",
       "source_file": "src/types/index.ts",
       "source_location": "L93"
-    },
-    {
-      "id": "src_types_index_farmcrop",
-      "label": "FarmCrop",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmcrop",
-      "source_file": "src/types/index.ts",
-      "source_location": "L84"
     },
     {
       "id": "src_types_index_inappnotification",
@@ -290,19 +251,6 @@
       "source_location": "L313"
     },
     {
-      "id": "src_types_index_invoiceitem",
-      "label": "InvoiceItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "invoiceitem",
-      "source_file": "src/types/index.ts",
-      "source_location": "L306"
-    },
-    {
       "id": "src_types_index_machineallocationrecommendation",
       "label": "MachineAllocationRecommendation",
       "_callable": true,
@@ -327,19 +275,6 @@
       "norm_label": "machinestatus",
       "source_file": "src/types/index.ts",
       "source_location": "L3"
-    },
-    {
-      "id": "src_types_index_paymentstatus",
-      "label": "PaymentStatus",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "paymentstatus",
-      "source_file": "src/types/index.ts",
-      "source_location": "L21"
     },
     {
       "id": "src_types_index_predictivemaintenancealert",
@@ -379,19 +314,6 @@
       "norm_label": "userprofile",
       "source_file": "src/types/index.ts",
       "source_location": "L56"
-    },
-    {
-      "id": "src_types_index_userrole",
-      "label": "UserRole",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "userrole",
-      "source_file": "src/types/index.ts",
-      "source_location": "L1"
     },
     {
       "id": "server_razorpaybackend_createorderparams",
@@ -745,13 +667,52 @@
       "source_location": "L84"
     },
     {
+      "id": "src_components_common_brandedreceiptmodal_brandedreceiptmodalprops",
+      "label": "BrandedReceiptModalProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "billingEngine.ts",
+      "file_type": "code",
+      "norm_label": "brandedreceiptmodalprops",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_lib_billingengine_billingcalculationinput",
+      "label": "BillingCalculationInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "billingEngine.ts",
+      "file_type": "code",
+      "norm_label": "billingcalculationinput",
+      "source_file": "src/lib/billingEngine.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_types_index_invoiceitem",
+      "label": "InvoiceItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "billingEngine.ts",
+      "file_type": "code",
+      "norm_label": "invoiceitem",
+      "source_file": "src/types/index.ts",
+      "source_location": "L306"
+    },
+    {
       "id": "src_components_common_agricreditgauge_agricreditgaugeprops",
       "label": "AgriCreditGaugeProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "agricreditgaugeprops",
       "source_file": "src/components/common/AgriCreditGauge.tsx",
@@ -764,7 +725,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "explanationbadgeprops",
       "source_file": "src/components/common/ExplanationBadge.tsx",
@@ -777,7 +738,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "machinethumbnailprops",
       "source_file": "src/components/common/MachineThumbnail.tsx",
@@ -790,7 +751,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "bookingmodalprops",
       "source_file": "src/features/farmer/BookingModal.tsx",
@@ -803,11 +764,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "machinedetailsmodalprops",
       "source_file": "src/features/farmer/MachineDetailsModal.tsx",
       "source_location": "L22"
+    },
+    {
+      "id": "src_lib_creditengine_creditinputfactors",
+      "label": "CreditInputFactors",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "creditinputfactors",
+      "source_file": "src/lib/creditEngine.ts",
+      "source_location": "L3"
     },
     {
       "id": "src_lib_demandengine_rawdemandinput",
@@ -816,10 +790,23 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "rawdemandinput",
       "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_lib_maintenanceengine_maintenancehealthbreakdown",
+      "label": "MaintenanceHealthBreakdown",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "maintenancehealthbreakdown",
+      "source_file": "src/lib/maintenanceEngine.ts",
       "source_location": "L3"
     },
     {
@@ -829,7 +816,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "pricingfactors",
       "source_file": "src/lib/pricingEngine.ts",
@@ -842,7 +829,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "recommendationcontext",
       "source_file": "src/lib/recommendationEngine.ts",
@@ -855,11 +842,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "activitytype",
       "source_file": "src/types/index.ts",
       "source_location": "L37"
+    },
+    {
+      "id": "src_types_index_demandfactorbreakdown",
+      "label": "DemandFactorBreakdown",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "demandfactorbreakdown",
+      "source_file": "src/types/index.ts",
+      "source_location": "L177"
+    },
+    {
+      "id": "src_types_index_farmcrop",
+      "label": "FarmCrop",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "farmcrop",
+      "source_file": "src/types/index.ts",
+      "source_location": "L84"
     },
     {
       "id": "src_types_index_machine",
@@ -868,7 +881,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "machine",
       "source_file": "src/types/index.ts",
@@ -881,7 +894,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "machinecategory",
       "source_file": "src/types/index.ts",
@@ -894,7 +907,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "machinerecommendationscore",
       "source_file": "src/types/index.ts",
@@ -907,11 +920,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "paymentmethod",
       "source_file": "src/types/index.ts",
       "source_location": "L30"
+    },
+    {
+      "id": "src_types_index_paymentstatus",
+      "label": "PaymentStatus",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "paymentstatus",
+      "source_file": "src/types/index.ts",
+      "source_location": "L21"
     },
     {
       "id": "src_types_index_pricequote",
@@ -920,7 +946,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "pricequote",
       "source_file": "src/types/index.ts",
@@ -933,7 +959,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "pricingruleconfig",
       "source_file": "src/types/index.ts",
@@ -950,20 +976,7 @@
       "file_type": "code",
       "norm_label": "razorpaycheckoutmodalprops",
       "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_components_common_razorpaycheckoutmodal_window",
-      "label": "Window",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "RazorpayCheckoutModal.tsx",
-      "file_type": "code",
-      "norm_label": "window",
-      "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "src_lib_razorpayservice_razorpaycheckoutoptions",
@@ -1011,127 +1024,10 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "react",
+      "community_name": "LazyImage.tsx",
       "file_type": "code",
       "norm_label": "lazyimageprops",
       "source_file": "src/components/common/LazyImage.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_features_landing_components_ctabanner_ctabannerprops",
-      "label": "CtaBannerProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "ctabannerprops",
-      "source_file": "src/features/landing/components/CtaBanner.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_features_landing_components_faqsection_faqitem",
-      "label": "FaqItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "faqitem",
-      "source_file": "src/features/landing/components/FaqSection.tsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_features_landing_components_herosection_herosectionprops",
-      "label": "HeroSectionProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "herosectionprops",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_features_landing_components_herosection_heroslide",
-      "label": "HeroSlide",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "heroslide",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L25"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection_workflowstep",
-      "label": "WorkflowStep",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "workflowstep",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_features_landing_components_industriessection_industrycard",
-      "label": "IndustryCard",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "industrycard",
-      "source_file": "src/features/landing/components/IndustriesSection.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection_enginemodule",
-      "label": "EngineModule",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "enginemodule",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L27"
-    },
-    {
-      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsectionprops",
-      "label": "RoiCalculatorSectionProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "roicalculatorsectionprops",
-      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_features_landing_components_statsimpactsection_statsimpactsectionprops",
-      "label": "StatsImpactSectionProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "statsimpactsectionprops",
-      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
       "source_location": "L5"
     },
     {
@@ -1184,7 +1080,7 @@
       "file_type": "code",
       "norm_label": "weatherradarcardprops",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "src_lib_weatherengine_cachedforecast",
@@ -1197,7 +1093,7 @@
       "file_type": "code",
       "norm_label": "cachedforecast",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L101"
+      "source_location": "L163"
     },
     {
       "id": "src_lib_weatherengine_harvestriskassessment",
@@ -1284,37 +1180,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "statcardprops",
       "source_file": "src/components/common/StatCard.tsx",
       "source_location": "L5"
-    },
-    {
-      "id": "src_components_layout_sidenav_navitem",
-      "label": "NavItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "navitem",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_components_layout_sidenav_sidenavprops",
-      "label": "SideNavProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "sidenavprops",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L32"
     },
     {
       "id": "src_features_admin_admindashboard_subsidyrecord",
@@ -1323,7 +1193,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "subsidyrecord",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -1336,11 +1206,128 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "telematicsalert",
       "source_file": "src/features/admin/AdminDashboard.tsx",
       "source_location": "L123"
+    },
+    {
+      "id": "src_features_landing_components_ctabanner_ctabannerprops",
+      "label": "CtaBannerProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "ctabannerprops",
+      "source_file": "src/features/landing/components/CtaBanner.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_features_landing_components_faqsection_faqitem",
+      "label": "FaqItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "faqitem",
+      "source_file": "src/features/landing/components/FaqSection.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_features_landing_components_herosection_herosectionprops",
+      "label": "HeroSectionProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "herosectionprops",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_features_landing_components_herosection_heroslide",
+      "label": "HeroSlide",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "heroslide",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_features_landing_components_howitworkssection_workflowstep",
+      "label": "WorkflowStep",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "workflowstep",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_features_landing_components_industriessection_industrycard",
+      "label": "IndustryCard",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "industrycard",
+      "source_file": "src/features/landing/components/IndustriesSection.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection_enginemodule",
+      "label": "EngineModule",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "enginemodule",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsectionprops",
+      "label": "RoiCalculatorSectionProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "roicalculatorsectionprops",
+      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_features_landing_components_statsimpactsection_statsimpactsectionprops",
+      "label": "StatsImpactSectionProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "statsimpactsectionprops",
+      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
+      "source_location": "L5"
     },
     {
       "id": "src_types_index_bookingstatus",
@@ -1349,7 +1336,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "bookingstatus",
       "source_file": "src/types/index.ts",
@@ -1361,11 +1348,83 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "BookDemoModal.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
       "norm_label": "kisanloader()",
       "source_file": "src/components/common/KisanLoader.tsx",
       "source_location": "L13"
+    },
+    {
+      "id": "src_components_layout_adminlayout_adminlayout",
+      "label": "AdminLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "adminlayout()",
+      "source_file": "src/components/layout/AdminLayout.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_layout_chclayout_chclayout",
+      "label": "CHCLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "chclayout()",
+      "source_file": "src/components/layout/CHCLayout.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_layout_navbar_navbar",
+      "label": "Navbar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "navbar()",
+      "source_file": "src/components/layout/Navbar.tsx",
+      "source_location": "L24"
+    },
+    {
+      "id": "src_components_layout_sidenav_sidenav",
+      "label": "SideNav()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "sidenav()",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_components_voice_floatingvoicebutton_floatingvoicebutton",
+      "label": "FloatingVoiceButton()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "floatingvoicebutton()",
+      "source_file": "src/components/voice/FloatingVoiceButton.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_voice_voiceassistantmodal_voiceassistantmodal",
+      "label": "VoiceAssistantModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "voiceassistantmodal()",
+      "source_file": "src/components/voice/VoiceAssistantModal.tsx",
+      "source_location": "L50"
     },
     {
       "id": "src_features_landing_components_bookdemomodal_bookdemomodal",
@@ -1373,23 +1432,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "BookDemoModal.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
       "norm_label": "bookdemomodal()",
       "source_file": "src/features/landing/components/BookDemoModal.tsx",
       "source_location": "L26"
-    },
-    {
-      "id": "src_components_common_brandedreceiptmodal_brandedreceiptmodal",
-      "label": "BrandedReceiptModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "brandedreceiptmodal()",
-      "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L25"
     },
     {
       "id": "src_features_auth_loginpage_loginpage",
@@ -1402,42 +1449,6 @@
       "norm_label": "loginpage()",
       "source_file": "src/features/auth/LoginPage.tsx",
       "source_location": "L28"
-    },
-    {
-      "id": "src_lib_billingengine_calculatefinalinvoice",
-      "label": "calculateFinalInvoice()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "calculatefinalinvoice()",
-      "source_file": "src/lib/billingEngine.ts",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_lib_billingengine_generatepdfinvoice",
-      "label": "generatePdfInvoice()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "generatepdfinvoice()",
-      "source_file": "src/lib/billingEngine.ts",
-      "source_location": "L100"
-    },
-    {
-      "id": "src_lib_creditengine_evaluateagricredit",
-      "label": "evaluateAgriCredit()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "evaluateagricredit()",
-      "source_file": "src/lib/creditEngine.ts",
-      "source_location": "L17"
     },
     {
       "id": "src_lib_dbservice_fetchinitialplatformdata",
@@ -1524,18 +1535,6 @@
       "source_location": "L32"
     },
     {
-      "id": "src_lib_maintenanceengine_evaluatepredictivealerts",
-      "label": "evaluatePredictiveAlerts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "evaluatepredictivealerts()",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L74"
-    },
-    {
       "id": "src_lib_supabaseclient_sendphoneotp",
       "label": "sendPhoneOtp()",
       "_callable": true,
@@ -1569,7 +1568,7 @@
       "file_type": "code",
       "norm_label": "signupwithemail()",
       "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L168"
+      "source_location": "L170"
     },
     {
       "id": "src_lib_supabaseclient_verifyphoneotp",
@@ -2112,12 +2111,60 @@
       "source_location": "L6"
     },
     {
+      "id": "src_components_common_brandedreceiptmodal_brandedreceiptmodal",
+      "label": "BrandedReceiptModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "billingEngine.ts",
+      "file_type": "code",
+      "norm_label": "brandedreceiptmodal()",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_lib_billingengine_calculatefinalinvoice",
+      "label": "calculateFinalInvoice()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "billingEngine.ts",
+      "file_type": "code",
+      "norm_label": "calculatefinalinvoice()",
+      "source_file": "src/lib/billingEngine.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_lib_billingengine_generatepdfinvoice",
+      "label": "generatePdfInvoice()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "billingEngine.ts",
+      "file_type": "code",
+      "norm_label": "generatepdfinvoice()",
+      "source_file": "src/lib/billingEngine.ts",
+      "source_location": "L100"
+    },
+    {
+      "id": "src_features_landing_components_trustmarquee_trustmarquee",
+      "label": "TrustMarquee()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "TrustMarquee.tsx",
+      "file_type": "code",
+      "norm_label": "trustmarquee()",
+      "source_file": "src/features/landing/components/TrustMarquee.tsx",
+      "source_location": "L18"
+    },
+    {
       "id": "src_components_common_agricreditgauge_agricreditgauge",
       "label": "AgriCreditGauge()",
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "agricreditgauge()",
       "source_file": "src/components/common/AgriCreditGauge.tsx",
@@ -2129,7 +2176,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "explanationbadge()",
       "source_file": "src/components/common/ExplanationBadge.tsx",
@@ -2141,7 +2188,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "machinethumbnail()",
       "source_file": "src/components/common/MachineThumbnail.tsx",
@@ -2153,7 +2200,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "bookingmodal()",
       "source_file": "src/features/farmer/BookingModal.tsx",
@@ -2165,11 +2212,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "farmerhome()",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L40"
+      "source_location": "L43"
     },
     {
       "id": "src_features_farmer_farmermarketplace_farmermarketplace",
@@ -2177,7 +2224,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "farmermarketplace()",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
@@ -2189,11 +2236,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "machinedetailsmodal()",
       "source_file": "src/features/farmer/MachineDetailsModal.tsx",
       "source_location": "L31"
+    },
+    {
+      "id": "src_lib_creditengine_evaluateagricredit",
+      "label": "evaluateAgriCredit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "evaluateagricredit()",
+      "source_file": "src/lib/creditEngine.ts",
+      "source_location": "L17"
     },
     {
       "id": "src_lib_demandengine_calculatedemandforecast",
@@ -2201,7 +2260,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "calculatedemandforecast()",
       "source_file": "src/lib/demandEngine.ts",
@@ -2213,7 +2272,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "calculatehaversinedistance()",
       "source_file": "src/lib/demandEngine.ts",
@@ -2225,11 +2284,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "generateallocationrecommendations()",
       "source_file": "src/lib/demandEngine.ts",
       "source_location": "L64"
+    },
+    {
+      "id": "src_lib_maintenanceengine_calculatemachinehealth",
+      "label": "calculateMachineHealth()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "calculatemachinehealth()",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_lib_maintenanceengine_evaluatepredictivealerts",
+      "label": "evaluatePredictiveAlerts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "evaluatepredictivealerts()",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L74"
     },
     {
       "id": "src_lib_pricingengine_calculatedynamicprice",
@@ -2237,7 +2320,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "calculatedynamicprice()",
       "source_file": "src/lib/pricingEngine.ts",
@@ -2249,7 +2332,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "scoremachineforfarmer()",
       "source_file": "src/lib/recommendationEngine.ts",
@@ -2265,7 +2348,7 @@
       "file_type": "code",
       "norm_label": "razorpaycheckoutmodal()",
       "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L40"
+      "source_location": "L31"
     },
     {
       "id": "src_lib_razorpayservice_createrazorpayorder",
@@ -2289,7 +2372,7 @@
       "file_type": "code",
       "norm_label": "initiaterazorpaystandardcheckout()",
       "source_file": "src/lib/razorpayService.ts",
-      "source_location": "L124"
+      "source_location": "L111"
     },
     {
       "id": "src_lib_razorpayservice_loadrazorpayscript",
@@ -2304,184 +2387,16 @@
       "source_location": "L40"
     },
     {
-      "id": "src_lib_razorpayservice_verifyrazorpaypayment",
-      "label": "verifyRazorpayPayment()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "RazorpayCheckoutModal.tsx",
-      "file_type": "code",
-      "norm_label": "verifyrazorpaypayment()",
-      "source_file": "src/lib/razorpayService.ts",
-      "source_location": "L99"
-    },
-    {
       "id": "src_components_common_lazyimage_lazyimage",
       "label": "LazyImage()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "react",
+      "community_name": "LazyImage.tsx",
       "file_type": "code",
       "norm_label": "lazyimage()",
       "source_file": "src/components/common/LazyImage.tsx",
       "source_location": "L14"
-    },
-    {
-      "id": "src_features_landing_components_ctabanner_ctabanner",
-      "label": "CtaBanner()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "ctabanner()",
-      "source_file": "src/features/landing/components/CtaBanner.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_features_landing_components_faqsection_faqsection",
-      "label": "FaqSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "faqsection()",
-      "source_file": "src/features/landing/components/FaqSection.tsx",
-      "source_location": "L49"
-    },
-    {
-      "id": "src_features_landing_components_herosection_herosection",
-      "label": "HeroSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "herosection()",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L64"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection_howitworkssection",
-      "label": "HowItWorksSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "howitworkssection()",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L86"
-    },
-    {
-      "id": "src_features_landing_components_industriessection_industriessection",
-      "label": "IndustriesSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "industriessection()",
-      "source_file": "src/features/landing/components/IndustriesSection.tsx",
-      "source_location": "L134"
-    },
-    {
-      "id": "src_features_landing_components_landingfooter_landingfooter",
-      "label": "LandingFooter()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingfooter()",
-      "source_file": "src/features/landing/components/LandingFooter.tsx",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_features_landing_components_landingnavbar_landingnavbar",
-      "label": "LandingNavbar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingnavbar()",
-      "source_file": "src/features/landing/components/LandingNavbar.tsx",
-      "source_location": "L32"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection_modularproductssection",
-      "label": "ModularProductsSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "modularproductssection()",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L211"
-    },
-    {
-      "id": "src_features_landing_components_platformecosystemsection_platformecosystemsection",
-      "label": "PlatformEcosystemSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "platformecosystemsection()",
-      "source_file": "src/features/landing/components/PlatformEcosystemSection.tsx",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsection",
-      "label": "RoiCalculatorSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "roicalculatorsection()",
-      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_features_landing_components_statsimpactsection_statsimpactsection",
-      "label": "StatsImpactSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "statsimpactsection()",
-      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_features_landing_components_testimonialssection_testimonialssection",
-      "label": "TestimonialsSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "testimonialssection()",
-      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
-      "source_location": "L43"
-    },
-    {
-      "id": "src_features_landing_components_trustmarquee_trustmarquee",
-      "label": "TrustMarquee()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "trustmarquee()",
-      "source_file": "src/features/landing/components/TrustMarquee.tsx",
-      "source_location": "L18"
     },
     {
       "id": "src_components_common_dopplerradarplayer_dopplerradarplayer",
@@ -2517,7 +2432,7 @@
       "file_type": "code",
       "norm_label": "weatherradarcard()",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L31"
+      "source_location": "L34"
     },
     {
       "id": "src_lib_weatherengine_computeharvestriskassessment",
@@ -2529,7 +2444,7 @@
       "file_type": "code",
       "norm_label": "computeharvestriskassessment()",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L231"
+      "source_location": "L293"
     },
     {
       "id": "src_lib_weatherengine_fetchagroweatherforecast",
@@ -2541,7 +2456,7 @@
       "file_type": "code",
       "norm_label": "fetchagroweatherforecast()",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L115"
+      "source_location": "L177"
     },
     {
       "id": "src_lib_weatherengine_fetchrainviewerradarframes",
@@ -2553,7 +2468,7 @@
       "file_type": "code",
       "norm_label": "fetchrainviewerradarframes()",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L451"
+      "source_location": "L513"
     },
     {
       "id": "src_lib_weatherengine_getfallbackagroweather",
@@ -2565,7 +2480,7 @@
       "file_type": "code",
       "norm_label": "getfallbackagroweather()",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L331"
+      "source_location": "L393"
     },
     {
       "id": "src_lib_weatherengine_getwmodescription",
@@ -2577,7 +2492,19 @@
       "file_type": "code",
       "norm_label": "getwmodescription()",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L88"
+      "source_location": "L150"
+    },
+    {
+      "id": "src_lib_weatherengine_resolvecoordinatesfordistrict",
+      "label": "resolveCoordinatesForDistrict()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "resolvecoordinatesfordistrict()",
+      "source_file": "src/lib/weatherEngine.ts",
+      "source_location": "L106"
     },
     {
       "id": "src_app_app",
@@ -2585,7 +2512,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/App.tsx",
@@ -2597,7 +2524,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "interactivecursor()",
       "source_file": "src/components/common/InteractiveCursor.tsx",
@@ -2609,7 +2536,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "leafletfleetmap()",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
@@ -2621,7 +2548,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "scrolltotop()",
       "source_file": "src/components/common/ScrollToTop.tsx",
@@ -2633,7 +2560,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "statcard()",
       "source_file": "src/components/common/StatCard.tsx",
@@ -2645,35 +2572,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "telematicsgaugecluster()",
       "source_file": "src/components/common/TelematicsGauge.tsx",
       "source_location": "L11"
-    },
-    {
-      "id": "src_components_layout_adminlayout_adminlayout",
-      "label": "AdminLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "adminlayout()",
-      "source_file": "src/components/layout/AdminLayout.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_layout_chclayout_chclayout",
-      "label": "CHCLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "chclayout()",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L5"
     },
     {
       "id": "src_components_layout_farmerlayout_farmerlayout",
@@ -2681,23 +2584,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "farmerlayout()",
       "source_file": "src/components/layout/FarmerLayout.tsx",
       "source_location": "L18"
-    },
-    {
-      "id": "src_components_layout_navbar_navbar",
-      "label": "Navbar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "navbar()",
-      "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L24"
     },
     {
       "id": "src_components_layout_operatorlayout_operatorlayout",
@@ -2705,47 +2596,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "operatorlayout()",
       "source_file": "src/components/layout/OperatorLayout.tsx",
       "source_location": "L18"
-    },
-    {
-      "id": "src_components_layout_sidenav_sidenav",
-      "label": "SideNav()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "sidenav()",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L49"
-    },
-    {
-      "id": "src_components_voice_floatingvoicebutton_floatingvoicebutton",
-      "label": "FloatingVoiceButton()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "floatingvoicebutton()",
-      "source_file": "src/components/voice/FloatingVoiceButton.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_voice_voiceassistantmodal_voiceassistantmodal",
-      "label": "VoiceAssistantModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "voiceassistantmodal()",
-      "source_file": "src/components/voice/VoiceAssistantModal.tsx",
-      "source_location": "L50"
     },
     {
       "id": "src_features_admin_admindashboard_admindashboard",
@@ -2753,7 +2608,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "admindashboard()",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -2765,7 +2620,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "landingroleselect()",
       "source_file": "src/features/auth/LandingRoleSelect.tsx",
@@ -2777,7 +2632,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "bookingsmanager()",
       "source_file": "src/features/chc/BookingsManager.tsx",
@@ -2789,7 +2644,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "chcoverview()",
       "source_file": "src/features/chc/CHCOverview.tsx",
@@ -2801,7 +2656,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "chcsettings()",
       "source_file": "src/features/chc/CHCSettings.tsx",
@@ -2813,7 +2668,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "demandintelligence()",
       "source_file": "src/features/chc/DemandIntelligence.tsx",
@@ -2825,7 +2680,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "fleetmanagement()",
       "source_file": "src/features/chc/FleetManagement.tsx",
@@ -2837,7 +2692,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "livetelematics()",
       "source_file": "src/features/chc/LiveTelematics.tsx",
@@ -2849,7 +2704,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "predictivemaintenance()",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
@@ -2861,7 +2716,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "revenueanalytics()",
       "source_file": "src/features/chc/RevenueAnalytics.tsx",
@@ -2873,7 +2728,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "notfoundpage()",
       "source_file": "src/features/common/NotFoundPage.tsx",
@@ -2885,7 +2740,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "farmercredit()",
       "source_file": "src/features/farmer/FarmerCredit.tsx",
@@ -2897,7 +2752,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "farmerrentals()",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
@@ -2909,11 +2764,155 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "farmprofile()",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L24"
+      "source_location": "L27"
+    },
+    {
+      "id": "src_features_landing_components_ctabanner_ctabanner",
+      "label": "CtaBanner()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "ctabanner()",
+      "source_file": "src/features/landing/components/CtaBanner.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_features_landing_components_faqsection_faqsection",
+      "label": "FaqSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "faqsection()",
+      "source_file": "src/features/landing/components/FaqSection.tsx",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_features_landing_components_herosection_herosection",
+      "label": "HeroSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "herosection()",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L64"
+    },
+    {
+      "id": "src_features_landing_components_howitworkssection_howitworkssection",
+      "label": "HowItWorksSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "howitworkssection()",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L86"
+    },
+    {
+      "id": "src_features_landing_components_industriessection_industriessection",
+      "label": "IndustriesSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "industriessection()",
+      "source_file": "src/features/landing/components/IndustriesSection.tsx",
+      "source_location": "L134"
+    },
+    {
+      "id": "src_features_landing_components_landingfooter_landingfooter",
+      "label": "LandingFooter()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "landingfooter()",
+      "source_file": "src/features/landing/components/LandingFooter.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_features_landing_components_landingnavbar_landingnavbar",
+      "label": "LandingNavbar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "landingnavbar()",
+      "source_file": "src/features/landing/components/LandingNavbar.tsx",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection_modularproductssection",
+      "label": "ModularProductsSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "modularproductssection()",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L211"
+    },
+    {
+      "id": "src_features_landing_components_platformecosystemsection_platformecosystemsection",
+      "label": "PlatformEcosystemSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "platformecosystemsection()",
+      "source_file": "src/features/landing/components/PlatformEcosystemSection.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsection",
+      "label": "RoiCalculatorSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "roicalculatorsection()",
+      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_features_landing_components_statsimpactsection_statsimpactsection",
+      "label": "StatsImpactSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "statsimpactsection()",
+      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_features_landing_components_testimonialssection_testimonialssection",
+      "label": "TestimonialsSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "testimonialssection()",
+      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
+      "source_location": "L43"
     },
     {
       "id": "src_features_landing_landingpage_landingpage",
@@ -2921,7 +2920,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "landingpage()",
       "source_file": "src/features/landing/LandingPage.tsx",
@@ -2933,7 +2932,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "aboutpage()",
       "source_file": "src/features/landing/pages/AboutPage.tsx",
@@ -2945,7 +2944,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "contactpage()",
       "source_file": "src/features/landing/pages/ContactPage.tsx",
@@ -2957,7 +2956,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "pricingroipage()",
       "source_file": "src/features/landing/pages/PricingRoiPage.tsx",
@@ -2969,7 +2968,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "productsoperationspage()",
       "source_file": "src/features/landing/pages/ProductsOperationsPage.tsx",
@@ -2981,7 +2980,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "productspostharvestpage()",
       "source_file": "src/features/landing/pages/ProductsPostHarvestPage.tsx",
@@ -2993,7 +2992,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "productspreharvestpage()",
       "source_file": "src/features/landing/pages/ProductsPreHarvestPage.tsx",
@@ -3005,7 +3004,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "solutionspage()",
       "source_file": "src/features/landing/pages/SolutionsPage.tsx",
@@ -3017,7 +3016,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "operatordashboard()",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
@@ -3029,23 +3028,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "usepagetitle()",
       "source_file": "src/hooks/usePageTitle.ts",
       "source_location": "L6"
-    },
-    {
-      "id": "src_lib_maintenanceengine_calculatemachinehealth",
-      "label": "calculateMachineHealth()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "calculatemachinehealth()",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L17"
     },
     {
       "id": "src_store_kisanopsstore_usekisanopsstore",
@@ -3053,7 +3040,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "usekisanopsstore()",
       "source_file": "src/store/kisanOpsStore.ts",
@@ -3064,10 +3051,76 @@
       "label": "KisanLoader.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "BookDemoModal.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
       "norm_label": "kisanloader.tsx",
       "source_file": "src/components/common/KisanLoader.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_adminlayout",
+      "label": "AdminLayout.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "adminlayout.tsx",
+      "source_file": "src/components/layout/AdminLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_chclayout",
+      "label": "CHCLayout.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "chclayout.tsx",
+      "source_file": "src/components/layout/CHCLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_farmerlayout",
+      "label": "FarmerLayout.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "farmerlayout.tsx",
+      "source_file": "src/components/layout/FarmerLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_navbar",
+      "label": "Navbar.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "navbar.tsx",
+      "source_file": "src/components/layout/Navbar.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_sidenav",
+      "label": "SideNav.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "sidenav.tsx",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_voice_floatingvoicebutton",
+      "label": "FloatingVoiceButton.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "floatingvoicebutton.tsx",
+      "source_file": "src/components/voice/FloatingVoiceButton.tsx",
       "source_location": "L1"
     },
     {
@@ -3075,21 +3128,10 @@
       "label": "BookDemoModal.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "BookDemoModal.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
       "norm_label": "bookdemomodal.tsx",
       "source_file": "src/features/landing/components/BookDemoModal.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_common_brandedreceiptmodal",
-      "label": "BrandedReceiptModal.tsx",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "brandedreceiptmodal.tsx",
-      "source_file": "src/components/common/BrandedReceiptModal.tsx",
       "source_location": "L1"
     },
     {
@@ -3225,28 +3267,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_lib_billingengine",
-      "label": "billingEngine.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "billingengine.ts",
-      "source_file": "src/lib/billingEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_creditengine",
-      "label": "creditEngine.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "creditengine.ts",
-      "source_file": "src/lib/creditEngine.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_lib_dbservice",
       "label": "dbService.ts",
       "_origin": "ast",
@@ -3266,17 +3286,6 @@
       "file_type": "code",
       "norm_label": "iotingestionengine.ts",
       "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_maintenanceengine",
-      "label": "maintenanceEngine.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "maintenanceengine.ts",
-      "source_file": "src/lib/maintenanceEngine.ts",
       "source_location": "L1"
     },
     {
@@ -3324,17 +3333,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_lib_tests_engines_test",
-      "label": "engines.test.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "engines.test.ts",
-      "source_file": "src/lib/__tests__/engines.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_lib_tests_iotanddb_test",
       "label": "iotAndDb.test.ts",
       "_origin": "ast",
@@ -3377,17 +3375,6 @@
       "norm_label": "listeners",
       "source_file": "src/store/kisanOpsStore.ts",
       "source_location": "L206"
-    },
-    {
-      "id": "src_types_index",
-      "label": "types/index.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "types/index.ts",
-      "source_file": "src/types/index.ts",
-      "source_location": "L1"
     },
     {
       "id": "supabase_schema",
@@ -4544,6 +4531,28 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_common_brandedreceiptmodal",
+      "label": "BrandedReceiptModal.tsx",
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "billingEngine.ts",
+      "file_type": "code",
+      "norm_label": "brandedreceiptmodal.tsx",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_billingengine",
+      "label": "billingEngine.ts",
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "billingEngine.ts",
+      "file_type": "code",
+      "norm_label": "billingengine.ts",
+      "source_file": "src/lib/billingEngine.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "agents_rules_graphify",
       "label": "rules/graphify.md",
       "_origin": "ast",
@@ -4642,6 +4651,28 @@
       "norm_label": "auth.users",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "src_features_landing_components_trustmarquee",
+      "label": "TrustMarquee.tsx",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "TrustMarquee.tsx",
+      "file_type": "code",
+      "norm_label": "trustmarquee.tsx",
+      "source_file": "src/features/landing/components/TrustMarquee.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_trustmarquee_partners",
+      "label": "PARTNERS",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "TrustMarquee.tsx",
+      "file_type": "code",
+      "norm_label": "partners",
+      "source_file": "src/features/landing/components/TrustMarquee.tsx",
+      "source_location": "L4"
     },
     {
       "id": "package",
@@ -5044,7 +5075,7 @@
       "label": "AgriCreditGauge.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "agricreditgauge.tsx",
       "source_file": "src/components/common/AgriCreditGauge.tsx",
@@ -5055,7 +5086,7 @@
       "label": "ExplanationBadge.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "explanationbadge.tsx",
       "source_file": "src/components/common/ExplanationBadge.tsx",
@@ -5066,7 +5097,7 @@
       "label": "MachineThumbnail.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "machinethumbnail.tsx",
       "source_file": "src/components/common/MachineThumbnail.tsx",
@@ -5077,7 +5108,7 @@
       "label": "VEHICLE_CONFIG",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "vehicle_config",
       "source_file": "src/components/common/MachineThumbnail.tsx",
@@ -5088,7 +5119,7 @@
       "label": "FleetManagement.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "fleetmanagement.tsx",
       "source_file": "src/features/chc/FleetManagement.tsx",
@@ -5099,7 +5130,7 @@
       "label": "BookingModal.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "bookingmodal.tsx",
       "source_file": "src/features/farmer/BookingModal.tsx",
@@ -5110,7 +5141,7 @@
       "label": "FarmerHome.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "farmerhome.tsx",
       "source_file": "src/features/farmer/FarmerHome.tsx",
@@ -5121,7 +5152,7 @@
       "label": "FarmerMarketplace.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "farmermarketplace.tsx",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
@@ -5132,10 +5163,21 @@
       "label": "MachineDetailsModal.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "machinedetailsmodal.tsx",
       "source_file": "src/features/farmer/MachineDetailsModal.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_creditengine",
+      "label": "creditEngine.ts",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "creditengine.ts",
+      "source_file": "src/lib/creditEngine.ts",
       "source_location": "L1"
     },
     {
@@ -5143,10 +5185,21 @@
       "label": "demandEngine.ts",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "demandengine.ts",
       "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_maintenanceengine",
+      "label": "maintenanceEngine.ts",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "maintenanceengine.ts",
+      "source_file": "src/lib/maintenanceEngine.ts",
       "source_location": "L1"
     },
     {
@@ -5154,7 +5207,7 @@
       "label": "pricingEngine.ts",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "pricingengine.ts",
       "source_file": "src/lib/pricingEngine.ts",
@@ -5165,7 +5218,7 @@
       "label": "DEFAULT_PRICING_CONFIG",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "default_pricing_config",
       "source_file": "src/lib/pricingEngine.ts",
@@ -5176,10 +5229,32 @@
       "label": "recommendationEngine.ts",
       "_origin": "ast",
       "community": 31,
-      "community_name": "Machine",
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "recommendationengine.ts",
       "source_file": "src/lib/recommendationEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_tests_engines_test",
+      "label": "engines.test.ts",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "engines.test.ts",
+      "source_file": "src/lib/__tests__/engines.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_types_index",
+      "label": "types/index.ts",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "types/index.ts",
+      "source_file": "src/types/index.ts",
       "source_location": "L1"
     },
     {
@@ -5536,341 +5611,11 @@
       "label": "LazyImage.tsx",
       "_origin": "ast",
       "community": 37,
-      "community_name": "react",
+      "community_name": "LazyImage.tsx",
       "file_type": "code",
       "norm_label": "lazyimage.tsx",
       "source_file": "src/components/common/LazyImage.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_ctabanner",
-      "label": "CtaBanner.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "ctabanner.tsx",
-      "source_file": "src/features/landing/components/CtaBanner.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_faqsection",
-      "label": "FaqSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "faqsection.tsx",
-      "source_file": "src/features/landing/components/FaqSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_faqsection_faqs",
-      "label": "FAQS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "faqs",
-      "source_file": "src/features/landing/components/FaqSection.tsx",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_features_landing_components_herosection",
-      "label": "HeroSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "herosection.tsx",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_herosection_hero_slides",
-      "label": "HERO_SLIDES",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "hero_slides",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection",
-      "label": "HowItWorksSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "howitworkssection.tsx",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection_workflow_steps",
-      "label": "WORKFLOW_STEPS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "workflow_steps",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_features_landing_components_industriessection",
-      "label": "IndustriesSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "industriessection.tsx",
-      "source_file": "src/features/landing/components/IndustriesSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_industriessection_industries",
-      "label": "INDUSTRIES",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "industries",
-      "source_file": "src/features/landing/components/IndustriesSection.tsx",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_features_landing_components_landingfooter",
-      "label": "LandingFooter.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingfooter.tsx",
-      "source_file": "src/features/landing/components/LandingFooter.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_landingnavbar",
-      "label": "LandingNavbar.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingnavbar.tsx",
-      "source_file": "src/features/landing/components/LandingNavbar.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection",
-      "label": "ModularProductsSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "modularproductssection.tsx",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection_engines",
-      "label": "ENGINES",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "engines",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L43"
-    },
-    {
-      "id": "src_features_landing_components_platformecosystemsection",
-      "label": "PlatformEcosystemSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "platformecosystemsection.tsx",
-      "source_file": "src/features/landing/components/PlatformEcosystemSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_roicalculatorsection",
-      "label": "RoiCalculatorSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "roicalculatorsection.tsx",
-      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_statsimpactsection",
-      "label": "StatsImpactSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "statsimpactsection.tsx",
-      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_testimonialssection",
-      "label": "TestimonialsSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "testimonialssection.tsx",
-      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_testimonialssection_testimonials",
-      "label": "TESTIMONIALS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "testimonials",
-      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_features_landing_components_trustmarquee",
-      "label": "TrustMarquee.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "trustmarquee.tsx",
-      "source_file": "src/features/landing/components/TrustMarquee.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_trustmarquee_partners",
-      "label": "PARTNERS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "partners",
-      "source_file": "src/features/landing/components/TrustMarquee.tsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_features_landing_landingpage",
-      "label": "LandingPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingpage.tsx",
-      "source_file": "src/features/landing/LandingPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_aboutpage",
-      "label": "AboutPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "aboutpage.tsx",
-      "source_file": "src/features/landing/pages/AboutPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_contactpage",
-      "label": "ContactPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "contactpage.tsx",
-      "source_file": "src/features/landing/pages/ContactPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_pricingroipage",
-      "label": "PricingRoiPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "pricingroipage.tsx",
-      "source_file": "src/features/landing/pages/PricingRoiPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_productsoperationspage",
-      "label": "ProductsOperationsPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "productsoperationspage.tsx",
-      "source_file": "src/features/landing/pages/ProductsOperationsPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_productspostharvestpage",
-      "label": "ProductsPostHarvestPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "productspostharvestpage.tsx",
-      "source_file": "src/features/landing/pages/ProductsPostHarvestPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_productspreharvestpage",
-      "label": "ProductsPreHarvestPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "productspreharvestpage.tsx",
-      "source_file": "src/features/landing/pages/ProductsPreHarvestPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_solutionspage",
-      "label": "SolutionsPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "solutionspage.tsx",
-      "source_file": "src/features/landing/pages/SolutionsPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_solutionspage_verticals",
-      "label": "VERTICALS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "verticals",
-      "source_file": "src/features/landing/pages/SolutionsPage.tsx",
-      "source_location": "L21"
-    },
-    {
-      "id": "ref_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "concept",
-      "norm_label": "react",
-      "source_file": ".oxlintrc.json",
-      "source_location": "L3"
     },
     {
       "id": "supabase_migrations_20260821000000_initial_schema",
@@ -6717,7 +6462,7 @@
       "file_type": "code",
       "norm_label": "weathercache",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L109"
+      "source_location": "L171"
     },
     {
       "id": "tsconfig_app",
@@ -7197,7 +6942,7 @@
       "label": "App.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "app.tsx",
       "source_file": "src/App.tsx",
@@ -7208,7 +6953,7 @@
       "label": "queryClient",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "queryclient",
       "source_file": "src/App.tsx",
@@ -7219,7 +6964,7 @@
       "label": "InteractiveCursor.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "interactivecursor.tsx",
       "source_file": "src/components/common/InteractiveCursor.tsx",
@@ -7230,7 +6975,7 @@
       "label": "ScrollToTop.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "scrolltotop.tsx",
       "source_file": "src/components/common/ScrollToTop.tsx",
@@ -7241,7 +6986,7 @@
       "label": "StatCard.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "statcard.tsx",
       "source_file": "src/components/common/StatCard.tsx",
@@ -7252,54 +6997,10 @@
       "label": "TelematicsGauge.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "telematicsgauge.tsx",
       "source_file": "src/components/common/TelematicsGauge.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_adminlayout",
-      "label": "AdminLayout.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "adminlayout.tsx",
-      "source_file": "src/components/layout/AdminLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_chclayout",
-      "label": "CHCLayout.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "chclayout.tsx",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_farmerlayout",
-      "label": "FarmerLayout.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "farmerlayout.tsx",
-      "source_file": "src/components/layout/FarmerLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_navbar",
-      "label": "Navbar.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "navbar.tsx",
-      "source_file": "src/components/layout/Navbar.tsx",
       "source_location": "L1"
     },
     {
@@ -7307,32 +7008,10 @@
       "label": "OperatorLayout.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "operatorlayout.tsx",
       "source_file": "src/components/layout/OperatorLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_sidenav",
-      "label": "SideNav.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "sidenav.tsx",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_voice_floatingvoicebutton",
-      "label": "FloatingVoiceButton.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "floatingvoicebutton.tsx",
-      "source_file": "src/components/voice/FloatingVoiceButton.tsx",
       "source_location": "L1"
     },
     {
@@ -7340,7 +7019,7 @@
       "label": "AdminDashboard.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "admindashboard.tsx",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -7351,7 +7030,7 @@
       "label": "DISTRICTS",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "districts",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -7362,7 +7041,7 @@
       "label": "SMAM_SUBSIDY_LEDGER",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "smam_subsidy_ledger",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -7373,7 +7052,7 @@
       "label": "TELEMATICS_ALERTS",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "telematics_alerts",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -7384,7 +7063,7 @@
       "label": "LandingRoleSelect.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "landingroleselect.tsx",
       "source_file": "src/features/auth/LandingRoleSelect.tsx",
@@ -7395,7 +7074,7 @@
       "label": "BookingsManager.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "bookingsmanager.tsx",
       "source_file": "src/features/chc/BookingsManager.tsx",
@@ -7406,7 +7085,7 @@
       "label": "CHCOverview.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "chcoverview.tsx",
       "source_file": "src/features/chc/CHCOverview.tsx",
@@ -7417,7 +7096,7 @@
       "label": "CHCSettings.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "chcsettings.tsx",
       "source_file": "src/features/chc/CHCSettings.tsx",
@@ -7428,7 +7107,7 @@
       "label": "DemandIntelligence.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "demandintelligence.tsx",
       "source_file": "src/features/chc/DemandIntelligence.tsx",
@@ -7439,7 +7118,7 @@
       "label": "LiveTelematics.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "livetelematics.tsx",
       "source_file": "src/features/chc/LiveTelematics.tsx",
@@ -7450,7 +7129,7 @@
       "label": "PredictiveMaintenance.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "predictivemaintenance.tsx",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
@@ -7461,7 +7140,7 @@
       "label": "RevenueAnalytics.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "revenueanalytics.tsx",
       "source_file": "src/features/chc/RevenueAnalytics.tsx",
@@ -7472,7 +7151,7 @@
       "label": "CATEGORY_SHARE",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "category_share",
       "source_file": "src/features/chc/RevenueAnalytics.tsx",
@@ -7483,7 +7162,7 @@
       "label": "PROFITABILITY_DATA",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "profitability_data",
       "source_file": "src/features/chc/RevenueAnalytics.tsx",
@@ -7494,7 +7173,7 @@
       "label": "REVENUE_DATA",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "revenue_data",
       "source_file": "src/features/chc/RevenueAnalytics.tsx",
@@ -7505,7 +7184,7 @@
       "label": "NotFoundPage.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "notfoundpage.tsx",
       "source_file": "src/features/common/NotFoundPage.tsx",
@@ -7516,7 +7195,7 @@
       "label": "FarmerCredit.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "farmercredit.tsx",
       "source_file": "src/features/farmer/FarmerCredit.tsx",
@@ -7527,7 +7206,7 @@
       "label": "FarmerRentals.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "farmerrentals.tsx",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
@@ -7538,18 +7217,315 @@
       "label": "FarmProfile.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "farmprofile.tsx",
       "source_file": "src/features/farmer/FarmProfile.tsx",
       "source_location": "L1"
     },
     {
+      "id": "src_features_landing_components_ctabanner",
+      "label": "CtaBanner.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "ctabanner.tsx",
+      "source_file": "src/features/landing/components/CtaBanner.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_faqsection",
+      "label": "FaqSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "faqsection.tsx",
+      "source_file": "src/features/landing/components/FaqSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_faqsection_faqs",
+      "label": "FAQS",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "faqs",
+      "source_file": "src/features/landing/components/FaqSection.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_features_landing_components_herosection",
+      "label": "HeroSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "herosection.tsx",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_herosection_hero_slides",
+      "label": "HERO_SLIDES",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "hero_slides",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_features_landing_components_howitworkssection",
+      "label": "HowItWorksSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "howitworkssection.tsx",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_howitworkssection_workflow_steps",
+      "label": "WORKFLOW_STEPS",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "workflow_steps",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_features_landing_components_industriessection",
+      "label": "IndustriesSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "industriessection.tsx",
+      "source_file": "src/features/landing/components/IndustriesSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_industriessection_industries",
+      "label": "INDUSTRIES",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "industries",
+      "source_file": "src/features/landing/components/IndustriesSection.tsx",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_features_landing_components_landingfooter",
+      "label": "LandingFooter.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "landingfooter.tsx",
+      "source_file": "src/features/landing/components/LandingFooter.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_landingnavbar",
+      "label": "LandingNavbar.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "landingnavbar.tsx",
+      "source_file": "src/features/landing/components/LandingNavbar.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection",
+      "label": "ModularProductsSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "modularproductssection.tsx",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection_engines",
+      "label": "ENGINES",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "engines",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L43"
+    },
+    {
+      "id": "src_features_landing_components_platformecosystemsection",
+      "label": "PlatformEcosystemSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "platformecosystemsection.tsx",
+      "source_file": "src/features/landing/components/PlatformEcosystemSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_roicalculatorsection",
+      "label": "RoiCalculatorSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "roicalculatorsection.tsx",
+      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_statsimpactsection",
+      "label": "StatsImpactSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "statsimpactsection.tsx",
+      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_testimonialssection",
+      "label": "TestimonialsSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "testimonialssection.tsx",
+      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_testimonialssection_testimonials",
+      "label": "TESTIMONIALS",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "testimonials",
+      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_features_landing_landingpage",
+      "label": "LandingPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "landingpage.tsx",
+      "source_file": "src/features/landing/LandingPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_aboutpage",
+      "label": "AboutPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "aboutpage.tsx",
+      "source_file": "src/features/landing/pages/AboutPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_contactpage",
+      "label": "ContactPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "contactpage.tsx",
+      "source_file": "src/features/landing/pages/ContactPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_pricingroipage",
+      "label": "PricingRoiPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "pricingroipage.tsx",
+      "source_file": "src/features/landing/pages/PricingRoiPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_productsoperationspage",
+      "label": "ProductsOperationsPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "productsoperationspage.tsx",
+      "source_file": "src/features/landing/pages/ProductsOperationsPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_productspostharvestpage",
+      "label": "ProductsPostHarvestPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "productspostharvestpage.tsx",
+      "source_file": "src/features/landing/pages/ProductsPostHarvestPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_productspreharvestpage",
+      "label": "ProductsPreHarvestPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "productspreharvestpage.tsx",
+      "source_file": "src/features/landing/pages/ProductsPreHarvestPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_solutionspage",
+      "label": "SolutionsPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "solutionspage.tsx",
+      "source_file": "src/features/landing/pages/SolutionsPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_solutionspage_verticals",
+      "label": "VERTICALS",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "verticals",
+      "source_file": "src/features/landing/pages/SolutionsPage.tsx",
+      "source_location": "L21"
+    },
+    {
       "id": "src_features_operator_operatordashboard",
       "label": "OperatorDashboard.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "operatordashboard.tsx",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
@@ -7560,7 +7536,7 @@
       "label": "usePageTitle.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "usepagetitle.ts",
       "source_file": "src/hooks/usePageTitle.ts",
@@ -7571,11 +7547,22 @@
       "label": "main.tsx",
       "_origin": "ast",
       "community": 9,
-      "community_name": "App.tsx",
+      "community_name": "react",
       "file_type": "code",
       "norm_label": "main.tsx",
       "source_file": "src/main.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "concept",
+      "norm_label": "react",
+      "source_file": ".oxlintrc.json",
+      "source_location": "L3"
     },
     {
       "id": "AgriCreditEngine",
@@ -7705,7 +7692,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/common/DopplerRadarPlayer.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -7717,7 +7704,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L59",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -7729,7 +7716,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L67",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_weatherradarcard_weatherradarcard",
+      "target": "src_lib_weatherengine_resolvecoordinatesfordistrict",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/common/WeatherRadarCard.tsx",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -7741,7 +7740,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L48",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -8173,7 +8172,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L156",
+      "source_location": "L218",
       "weight": 1.0
     },
     {
@@ -8185,7 +8184,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L160",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -8197,7 +8196,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L41",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -8209,7 +8208,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L45",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -8305,7 +8304,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L25",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -8317,7 +8316,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L29",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -8485,7 +8484,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/razorpayService.ts",
-      "source_location": "L125",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -8497,19 +8496,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/razorpayService.ts",
-      "source_location": "L133",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_razorpayservice_initiaterazorpaystandardcheckout",
-      "target": "src_lib_razorpayservice_verifyrazorpaypayment",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/razorpayService.ts",
-      "source_location": "L169",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -8533,7 +8520,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L129",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -8545,7 +8532,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L160",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -8557,7 +8544,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L224",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
@@ -8569,7 +8556,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L436",
+      "source_location": "L498",
       "weight": 1.0
     },
     {
@@ -10525,7 +10512,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L25",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -10537,7 +10524,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L25",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -10590,7 +10577,19 @@
     },
     {
       "source": "src_components_common_weatherradarcard",
-      "target": "src_lib_weatherengine_mp_weather_locations",
+      "target": "src_lib_weatherengine_locationcoordinates",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/WeatherRadarCard.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_weatherradarcard",
+      "target": "src_lib_weatherengine_resolvecoordinatesfordistrict",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11653,7 +11652,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L28",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -11665,7 +11664,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L29",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -11677,7 +11676,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L29",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -11689,7 +11688,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L29",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -11701,7 +11700,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L30",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -11713,7 +11712,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L31",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -11725,7 +11724,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L32",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -11737,7 +11736,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L33",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -11749,7 +11748,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L34",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -11761,7 +11760,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L35",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -11773,7 +11772,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L36",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -11785,7 +11784,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L37",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -12013,7 +12012,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -12025,7 +12024,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L19",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -12037,7 +12036,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L20",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -12049,7 +12048,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -12061,7 +12060,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -15277,7 +15276,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L25",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -16429,7 +16428,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L28",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -16441,7 +16440,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L29",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -16453,7 +16452,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L30",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -16465,7 +16464,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L31",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -16477,7 +16476,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L32",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -16489,7 +16488,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L33",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -16501,7 +16500,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L34",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -16513,7 +16512,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L35",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -16525,7 +16524,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L36",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -16537,7 +16536,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L37",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -16777,7 +16776,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -16789,7 +16788,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L19",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -16801,7 +16800,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L20",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -16813,7 +16812,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -20563,24 +20562,13 @@
     },
     {
       "source": "src_components_common_razorpaycheckoutmodal",
-      "target": "src_components_common_razorpaycheckoutmodal_window",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_common_razorpaycheckoutmodal",
       "target": "src_components_common_razorpaycheckoutmodal_razorpaycheckoutmodalprops",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L30",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -20591,7 +20579,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/RazorpayCheckoutModal.tsx",
-      "source_location": "L40",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -20657,7 +20645,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -20668,7 +20656,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L31",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -21174,7 +21162,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L40",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -21207,7 +21195,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L24",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -21977,7 +21965,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/razorpayService.ts",
-      "source_location": "L124",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -22022,17 +22010,6 @@
       "confidence_score": 1.0,
       "source_file": "src/lib/razorpayService.ts",
       "source_location": "L63",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_razorpayservice",
-      "target": "src_lib_razorpayservice_verifyrazorpaypayment",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/razorpayService.ts",
-      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -22087,7 +22064,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L168",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -22191,13 +22168,35 @@
     },
     {
       "source": "src_lib_weatherengine",
+      "target": "src_lib_weatherengine_resolvecoordinatesfordistrict",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/weatherEngine.ts",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_weatherengine",
+      "target": "src_lib_weatherengine_getwmodescription",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/weatherEngine.ts",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_weatherengine",
       "target": "src_lib_weatherengine_cachedforecast",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L101",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -22208,7 +22207,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L109",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -22219,7 +22218,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L115",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -22241,7 +22240,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L231",
+      "source_location": "L293",
       "weight": 1.0
     },
     {
@@ -22257,17 +22256,6 @@
     },
     {
       "source": "src_lib_weatherengine",
-      "target": "src_lib_weatherengine_getfallbackagroweather",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L331",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_weatherengine",
       "target": "src_lib_weatherengine_harvestriskassessment",
       "relation": "contains",
       "_origin": "ast",
@@ -22279,13 +22267,13 @@
     },
     {
       "source": "src_lib_weatherengine",
-      "target": "src_lib_weatherengine_fetchrainviewerradarframes",
+      "target": "src_lib_weatherengine_getfallbackagroweather",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L451",
+      "source_location": "L393",
       "weight": 1.0
     },
     {
@@ -22297,6 +22285,17 @@
       "confidence_score": 1.0,
       "source_file": "src/lib/weatherEngine.ts",
       "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_weatherengine",
+      "target": "src_lib_weatherengine_fetchrainviewerradarframes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/weatherEngine.ts",
+      "source_location": "L513",
       "weight": 1.0
     },
     {
@@ -22330,17 +22329,6 @@
       "confidence_score": 1.0,
       "source_file": "src/lib/weatherEngine.ts",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_weatherengine",
-      "target": "src_lib_weatherengine_getwmodescription",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -24684,5 +24672,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d8e604d2c9aab34a257e20fca0ab3faa247a6f10"
+  "built_at_commit": "56ee67f16bb4b58ed1590102f10f65e437bf5de0"
 }

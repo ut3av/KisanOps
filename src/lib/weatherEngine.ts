@@ -60,7 +60,7 @@ export interface RainViewerRadarFrame {
   host: string;
 }
 
-// Coordinate presets for MP hubs
+// Coordinate presets for Indian agricultural hubs
 export const MP_WEATHER_LOCATIONS: Record<string, LocationCoordinates> = {
   sehore: {
     latitude: 23.1845,
@@ -74,13 +74,75 @@ export const MP_WEATHER_LOCATIONS: Record<string, LocationCoordinates> = {
     district: 'Bhopal',
     locationName: 'Phanda Kalan / GreenFields CHC',
   },
+  indore: {
+    latitude: 22.7196,
+    longitude: 75.8577,
+    district: 'Indore',
+    locationName: 'Sanwer / Indore Agri Hub',
+  },
+  ujjain: {
+    latitude: 23.1765,
+    longitude: 75.7885,
+    district: 'Ujjain',
+    locationName: 'Ujjain Central Hub',
+  },
   raisen: {
     latitude: 23.3315,
     longitude: 77.7812,
     district: 'Raisen',
     locationName: 'Salamadpur / Raisen Hub',
   },
+  hoshangabad: {
+    latitude: 22.7519,
+    longitude: 77.7289,
+    district: 'Hoshangabad',
+    locationName: 'Narmadapuram Hub',
+  },
 };
+
+/**
+ * Resolves precise coordinates for any Indian district or typed location using Open-Meteo Geocoding API
+ */
+export async function resolveCoordinatesForDistrict(
+  districtOrName: string,
+  explicitCoords?: { latitude?: number; longitude?: number }
+): Promise<LocationCoordinates> {
+  if (explicitCoords?.latitude && explicitCoords?.longitude && explicitCoords.latitude !== 0) {
+    return {
+      latitude: explicitCoords.latitude,
+      longitude: explicitCoords.longitude,
+      district: districtOrName || 'Local Farm',
+      locationName: `${districtOrName || 'Farm'} GPS Coordinates`,
+    };
+  }
+
+  const clean = districtOrName.trim().toLowerCase();
+  if (MP_WEATHER_LOCATIONS[clean]) {
+    return MP_WEATHER_LOCATIONS[clean];
+  }
+
+  // Dynamic Open-Meteo Geocoding API lookup
+  try {
+    const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(districtOrName)}&count=1&language=en&format=json`;
+    const res = await fetch(geoUrl);
+    if (res.ok) {
+      const data = await res.json();
+      if (data.results && data.results.length > 0) {
+        const first = data.results[0];
+        return {
+          latitude: first.latitude,
+          longitude: first.longitude,
+          district: first.name,
+          locationName: `${first.name}, ${first.admin1 || first.country || ''}`,
+        };
+      }
+    }
+  } catch (err) {
+    console.warn('Geocoding lookup fallback:', err);
+  }
+
+  return MP_WEATHER_LOCATIONS.indore;
+}
 
 /**
  * Maps WMO weather code to plain English description
@@ -113,7 +175,7 @@ const CACHE_TTL_MS = 15 * 60 * 1000;
  * Fetches real-time weather from Open-Meteo API or realistic agro simulation
  */
 export async function fetchAgroWeatherForecast(
-  coords: LocationCoordinates = MP_WEATHER_LOCATIONS.sehore
+  coords: LocationCoordinates = MP_WEATHER_LOCATIONS.indore
 ): Promise<{
   daily: WeatherForecastDay[];
   hourly: HourlyWeatherPoint[];

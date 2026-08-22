@@ -13,7 +13,10 @@ import {
   X,
   Sparkles,
   Save,
-  Sprout
+  Sprout,
+  LocateFixed,
+  Navigation,
+  RotateCw
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
@@ -36,14 +39,68 @@ export const FarmProfile: React.FC = () => {
     state: farm.state || 'Madhya Pradesh',
     district: farm.district || '',
     village: farm.village || '',
+    latitude: farm.latitude || 0,
+    longitude: farm.longitude || 0,
     cropName: farm.crop?.cropName || 'Wheat (Sharbati)',
     season: farm.crop?.season || 'Rabi',
     cropStage: farm.crop?.cropStage || 'Vegetative',
     soilType: farm.soilType || 'Medium Black Clayey Loam',
     irrigationType: farm.irrigationType || 'Canal',
   });
+  const [isLocatingGps, setIsLocatingGps] = useState<boolean>(false);
+  const [gpsMessage, setGpsMessage] = useState<string | null>(null);
 
   const isConfigured = farm.sizeAcres > 0 && !!farm.district;
+
+  const handleDetectGpsLocation = () => {
+    if (!navigator.geolocation) {
+      setGpsMessage('Geolocation is not supported by your browser.');
+      return;
+    }
+    setIsLocatingGps(true);
+    setGpsMessage(null);
+
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        try {
+          const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&accept-language=en`);
+          if (res.ok) {
+            const data = await res.json();
+            const addr = data.address || {};
+            const detectedDistrict = addr.state_district || addr.county || addr.city || addr.district || 'Indore';
+            const detectedVillage = addr.village || addr.suburb || addr.town || addr.hamlet || '';
+            const detectedState = addr.state || 'Madhya Pradesh';
+
+            setFormData(prev => ({
+              ...prev,
+              district: detectedDistrict,
+              village: detectedVillage,
+              state: detectedState,
+              latitude: lat,
+              longitude: lon,
+            }));
+            setGpsMessage(`📍 GPS Location attached: ${detectedDistrict} (${lat.toFixed(4)}, ${lon.toFixed(4)})`);
+          } else {
+            setFormData(prev => ({ ...prev, latitude: lat, longitude: lon }));
+            setGpsMessage(`📍 GPS Coordinates attached (${lat.toFixed(4)}, ${lon.toFixed(4)})`);
+          }
+        } catch (err) {
+          setFormData(prev => ({ ...prev, latitude: lat, longitude: lon }));
+          setGpsMessage(`📍 GPS Coordinates attached (${lat.toFixed(4)}, ${lon.toFixed(4)})`);
+        }
+        setIsLocatingGps(false);
+      },
+      (err) => {
+        console.warn('GPS location error:', err);
+        setGpsMessage('Could not retrieve GPS coordinates. Please allow location access or type district.');
+        setIsLocatingGps(false);
+      },
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+  };
 
   const handleOpenEdit = () => {
     setFormData({
@@ -52,12 +109,15 @@ export const FarmProfile: React.FC = () => {
       state: farm.state || 'Madhya Pradesh',
       district: farm.district || '',
       village: farm.village || '',
+      latitude: farm.latitude || 0,
+      longitude: farm.longitude || 0,
       cropName: farm.crop?.cropName || 'Wheat (Sharbati)',
       season: farm.crop?.season || 'Rabi',
       cropStage: farm.crop?.cropStage || 'Vegetative',
       soilType: farm.soilType || 'Medium Black Clayey Loam',
       irrigationType: farm.irrigationType || 'Canal',
     });
+    setGpsMessage(null);
     setIsEditModalOpen(true);
   };
 
@@ -69,6 +129,8 @@ export const FarmProfile: React.FC = () => {
       state: formData.state,
       district: formData.district,
       village: formData.village,
+      latitude: formData.latitude || 22.7196,
+      longitude: formData.longitude || 75.8577,
       soilType: formData.soilType,
       irrigationType: formData.irrigationType as any,
       crop: {
@@ -325,6 +387,45 @@ export const FarmProfile: React.FC = () => {
                   />
                 </div>
               </div>
+
+              {/* GPS Location Auto-Detection Action Bar */}
+              <div className="bg-emerald-50/70 border border-emerald-200/80 rounded-2xl p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5">
+                <div>
+                  <div className="text-xs font-extrabold text-emerald-950 flex items-center gap-1.5">
+                    <LocateFixed className="w-4 h-4 text-emerald-700" />
+                    <span>Real-Time GPS Location</span>
+                  </div>
+                  <div className="text-[11px] text-emerald-800">
+                    Auto-detects district, coordinates & live weather satellite feed
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={handleDetectGpsLocation}
+                  disabled={isLocatingGps}
+                  className="px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold text-xs flex items-center gap-1.5 shadow-2xs cursor-pointer disabled:opacity-50 shrink-0"
+                >
+                  {isLocatingGps ? (
+                    <>
+                      <RotateCw className="w-3.5 h-3.5 animate-spin" />
+                      <span>Locating GPS...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Navigation className="w-3.5 h-3.5" />
+                      <span>📍 Attach GPS Location</span>
+                    </>
+                  )}
+                </button>
+              </div>
+
+              {gpsMessage && (
+                <div className="p-2.5 bg-sky-50 border border-sky-200 text-sky-900 rounded-xl text-[11px] font-bold flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-700 shrink-0" />
+                  <span>{gpsMessage}</span>
+                </div>
+              )}
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
