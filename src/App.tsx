@@ -31,6 +31,10 @@ import { CHCSettings } from './features/chc/CHCSettings';
 // Admin Governance
 import { AdminDashboard } from './features/admin/AdminDashboard';
 
+// Operator Mobile App
+import { OperatorDashboard } from './components/operator/OperatorDashboard';
+import { ActiveJobExecution } from './components/operator/ActiveJobExecution';
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -73,6 +77,12 @@ export const App: React.FC = () => {
           {/* Platform Admin Routes */}
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
+          </Route>
+
+          {/* Dedicated Machinery Operator Routes */}
+          <Route path="/operator">
+            <Route index element={<OperatorDashboard />} />
+            <Route path="job/:bookingId" element={<ActiveJobExecution />} />
           </Route>
 
           {/* Catch-all */}
