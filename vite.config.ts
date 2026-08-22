@@ -12,5 +12,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(), viteRazorpayPlugin()],
+    // Ensure SPA fallback works for all routes during dev
+    appType: 'spa',
   };
 });

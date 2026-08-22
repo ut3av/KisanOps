@@ -1,21 +1,23 @@
 # Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 111 files · ~335,239 words
+- 111 files · ~334,447 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 581 nodes · 1255 edges · 34 communities (27 shown, 7 thin omitted)
+- 581 nodes · 1248 edges · 37 communities (28 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `62181bc4`
+- Built from commit: `e3e400aa`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
+- Navbar.tsx
 - kisanOpsStore.ts
+- LazyImage.tsx
 - devDependencies
 - 20260821000000_initial_schema.sql
 - dependencies
@@ -38,16 +40,17 @@
 - rules/graphify.md
 - workflows/graphify.md
 - quick_fix_auth.sql
+- TrustMarquee.tsx
 - types/index.ts
 - telemetry-webhook/index.ts
 - vercel.json
 - 3. Core Functional Modules & Algorithmic Specifications
 - RazorpayCheckoutModal.tsx
-- react
+- HeroSection.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `react` - 66 edges
-2. `useKisanOpsStore()` - 61 edges
+2. `useKisanOpsStore()` - 59 edges
 3. `usePageTitle()` - 53 edges
 4. `Machine` - 17 edges
 5. `AppState` - 15 edges
@@ -72,7 +75,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (34 total, 7 thin omitted)
+## Communities (37 total, 9 thin omitted)
+
+### Community 0 - "Navbar.tsx"
+Cohesion: 0.25
+Nodes (6): AdminLayout(), CHCLayout(), Navbar(), NavItem, SideNav(), SideNavProps
 
 ### Community 1 - "kisanOpsStore.ts"
 Cohesion: 0.06
@@ -103,8 +110,8 @@ Cohesion: 0.09
 Nodes (21): api/**/*.ts, server/**/*.ts, vite.config.ts, compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module (+13 more)
 
 ### Community 9 - "App.tsx"
-Cohesion: 0.07
-Nodes (52): App(), queryClient, InteractiveCursor(), LeafletFleetMap(), ScrollToTop(), StatCard(), StatCardProps, TelematicsGaugeCluster() (+44 more)
+Cohesion: 0.06
+Nodes (70): react, App(), queryClient, InteractiveCursor(), LeafletFleetMap(), ScrollToTop(), StatCard(), StatCardProps (+62 more)
 
 ### Community 10 - "schema.sql"
 Cohesion: 0.43
@@ -143,8 +150,8 @@ Cohesion: 0.40
 Nodes (4): KisanLoader(), KisanLoaderProps, BookDemoModal(), BookDemoModalProps
 
 ### Community 31 - "types/index.ts"
-Cohesion: 0.10
-Nodes (35): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), ExplanationBadgeProps, MachineThumbnail(), MachineThumbnailProps, VEHICLE_CONFIG, BookingModal() (+27 more)
+Cohesion: 0.09
+Nodes (36): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), ExplanationBadgeProps, MachineThumbnail(), MachineThumbnailProps, VEHICLE_CONFIG, BookingModal() (+28 more)
 
 ### Community 33 - "vercel.json"
 Cohesion: 0.29
@@ -158,23 +165,23 @@ Nodes (18): 1.1 Problem Statement, 1.2 Product Vision, 1. Executive Summary & Pr
 Cohesion: 0.27
 Nodes (10): RazorpayCheckoutModal(), RazorpayCheckoutModalProps, Window, createRazorpayOrder(), initiateRazorpayStandardCheckout(), loadRazorpayScript(), RazorpayCheckoutOptions, RazorpayCustomerDetails (+2 more)
 
-### Community 37 - "react"
-Cohesion: 0.09
-Nodes (31): react, LazyImageProps, CtaBanner(), CtaBannerProps, FaqItem, FAQS, FaqSection(), HERO_SLIDES (+23 more)
+### Community 37 - "HeroSection.tsx"
+Cohesion: 0.40
+Nodes (4): HERO_SLIDES, HeroSection(), HeroSectionProps, HeroSlide
 
 ## Knowledge Gaps
 - **207 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+202 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `kisanOpsStore.ts`, `RazorpayCheckoutModal.tsx`, `weatherEngine.ts`, `App.tsx`, `plugins`, `BookDemoModal.tsx`, `types/index.ts`?**
-  _High betweenness centrality (0.119) - this node is a cross-community bridge._
-- **Why does `useKisanOpsStore()` connect `App.tsx` to `kisanOpsStore.ts`, `react`, `BookDemoModal.tsx`, `types/index.ts`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **Why does `plugins` connect `plugins` to `react`?**
+- **Why does `react` connect `App.tsx` to `Navbar.tsx`, `kisanOpsStore.ts`, `LazyImage.tsx`, `RazorpayCheckoutModal.tsx`, `HeroSection.tsx`, `weatherEngine.ts`, `plugins`, `BookDemoModal.tsx`, `TrustMarquee.tsx`, `types/index.ts`?**
+  _High betweenness centrality (0.120) - this node is a cross-community bridge._
+- **Why does `useKisanOpsStore()` connect `App.tsx` to `Navbar.tsx`, `kisanOpsStore.ts`, `BookDemoModal.tsx`, `types/index.ts`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `plugins` connect `plugins` to `App.tsx`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
   _207 weakly-connected nodes found - possible documentation gaps or missing edges._

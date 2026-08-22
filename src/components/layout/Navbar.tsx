@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
               </div>
               <div>
                 <div className="flex items-center gap-1.5 sm:gap-2">
-                  <span className="font-typewriter text-lg sm:text-xl font-bold tracking-tight text-agri-950">
+                  <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-agri-950">
                     Yukti
                   </span>
                   <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-1.5 sm:px-2 py-0.5 rounded-md bg-agri-100 text-agri-800 font-sans shrink-0">

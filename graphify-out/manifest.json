@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/CHCLayout.tsx": {
-    "mtime": 1787389720.0068116,
-    "seen": 1787390088.3070824,
-    "ast_hash": "fd6d57ec2ed9230cca09237c02bbb0bd",
+    "mtime": 1787391987.661036,
+    "seen": 1787392154.895078,
+    "ast_hash": "b2e801ffa783169acc9d7b6f73ba98c6",
     "semantic_hash": ""
   },
   "src/components/layout/FarmerLayout.tsx": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787391131.7316592,
-    "seen": 1787391380.8656547,
-    "ast_hash": "689ccb0edd24179e0b8b0929ce27ed8c",
+    "mtime": 1787392076.5516977,
+    "seen": 1787392154.895082,
+    "ast_hash": "4031dc37b3965048b2a6728b4cb20eda",
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
@@ -258,9 +258,9 @@
     "semantic_hash": "3d2cf53f0ce0e163b1cd9d96217f9663"
   },
   "tailwind.config.js": {
-    "mtime": 1787320552.1946254,
-    "seen": 1787322604.019955,
-    "ast_hash": "f438b2bc89e471c963227678b501a54d",
+    "mtime": 1787391930.919269,
+    "seen": 1787392154.8951876,
+    "ast_hash": "d72fed8f477abfb51d73d81d36ff17b4",
     "semantic_hash": ""
   },
   "tsconfig.app.json": {
@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "vite.config.ts": {
-    "mtime": 1787385582.168221,
-    "seen": 1787385872.6338942,
-    "ast_hash": "682a7a1cc11d209327b2afc4ef30f828",
+    "mtime": 1787391897.7606523,
+    "seen": 1787392154.8951952,
+    "ast_hash": "9281f7b1851aca4a28350951bc3bb7d6",
     "semantic_hash": ""
   },
   "README.md": {
@@ -318,9 +318,9 @@
     "semantic_hash": ""
   },
   "src/features/common/NotFoundPage.tsx": {
-    "mtime": 1787384770.9439907,
-    "seen": 1787384804.4978707,
-    "ast_hash": "17082b5417b06401d1be8009f80726de",
+    "mtime": 1787392104.8027115,
+    "seen": 1787392154.895104,
+    "ast_hash": "3699ad829f4eaa56243a17bda73996a4",
     "semantic_hash": ""
   },
   "src/features/landing/LandingPage.tsx": {
@@ -528,9 +528,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1787385245.4874823,
-    "seen": 1787385872.6339092,
-    "ast_hash": "aee33cc9bfd548c5e15e11ee6a3b88c8",
+    "mtime": 1787391914.2337954,
+    "seen": 1787392154.8952096,
+    "ast_hash": "e60a39a06e153024226b7f7777f31527",
     "semantic_hash": ""
   },
   "public/favicon.png": {
@@ -786,9 +786,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/SideNav.tsx": {
-    "mtime": 1787391146.4429429,
-    "seen": 1787391380.8656645,
-    "ast_hash": "de5a98a7f5f55dbc6cd4c59c7888b706",
+    "mtime": 1787392057.2905476,
+    "seen": 1787392154.895085,
+    "ast_hash": "e9c6a4bb091d9335fda1f183f601ff35",
     "semantic_hash": ""
   }
 }

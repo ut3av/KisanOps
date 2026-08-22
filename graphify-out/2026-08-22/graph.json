@@ -2134,7 +2134,7 @@
       "file_type": "code",
       "norm_label": "chcoverview()",
       "source_file": "src/features/chc/CHCOverview.tsx",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "src_features_chc_chcsettings_chcsettings",
@@ -7065,7 +7065,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/CHCOverview.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -7077,7 +7077,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/CHCOverview.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -18226,7 +18226,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/CHCOverview.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -21340,5 +21340,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9cd9c77175ebc2ce0ea718a3df368f54089ade94"
+  "built_at_commit": "62181bc47ac0736db23de5a3288ad88b651cb7d4"
 }
