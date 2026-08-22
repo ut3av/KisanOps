@@ -73,8 +73,8 @@ export const FarmerLayout: React.FC = () => {
       <FloatingVoiceButton />
 
       {/* Mobile-First Bottom Navigation Bar */}
-      <nav aria-label="Mobile Navigation" className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-30 px-2 py-2 shadow-elevated select-none">
-        <div className="grid grid-cols-5 gap-1 max-w-md mx-auto">
+      <nav aria-label="Mobile Navigation" className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-30 px-1.5 py-1.5 shadow-elevated select-none">
+        <div className="grid grid-cols-6 gap-0.5 max-w-lg mx-auto">
           {navItems.map(item => (
             <NavLink
               key={item.to}
@@ -82,15 +82,15 @@ export const FarmerLayout: React.FC = () => {
               end={item.end}
               className={({ isActive }) =>
                 clsx(
-                  'flex flex-col items-center justify-center py-1.5 rounded-xl text-[10px] font-semibold transition-all',
+                  'flex flex-col items-center justify-center py-1 rounded-xl text-[9px] font-semibold transition-all',
                   isActive
                     ? 'text-agri-800 bg-agri-50 font-bold'
                     : 'text-slate-500 hover:text-slate-800'
                 )
               }
             >
-              <item.icon className="w-5 h-5 mb-0.5 shrink-0" />
-              <span className="truncate">{item.label}</span>
+              <item.icon className="w-4 h-4 mb-0.5 shrink-0" />
+              <span className="truncate max-w-full text-center">{item.label}</span>
             </NavLink>
           ))}
         </div>

@@ -146,7 +146,9 @@ export const LoginPage: React.FC = () => {
 
   const completeAuth = (profile: UserProfile) => {
     loginUser(profile);
-    const dest = roleConfigs[profile.role]?.destination || '/farmer';
+    const searchParams = new URLSearchParams(window.location.search);
+    const redirectUrl = searchParams.get('redirect');
+    const dest = redirectUrl || roleConfigs[profile.role]?.destination || '/farmer';
     navigate(dest);
   };
 

@@ -80,20 +80,32 @@ export const App: React.FC = () => {
           <Route path="/role-select" element={<LandingRoleSelect />} />
           <Route path="/login" element={<LoginPage />} />
 
-          {/* Farmer Routes */}
+          {/* Farmer Routes & Aliases */}
           <Route path="/farmer" element={<FarmerLayout />}>
             <Route index element={<FarmerHome />} />
             <Route path="intelligence" element={<FarmIntelligence />} />
+            <Route path="farm-intelligence" element={<FarmIntelligence />} />
+            <Route path="decision-intelligence" element={<FarmIntelligence />} />
             <Route path="marketplace" element={<FarmerMarketplace />} />
             <Route path="rentals" element={<FarmerRentals />} />
             <Route path="farm" element={<FarmProfile />} />
+            <Route path="profile" element={<FarmProfile />} />
             <Route path="credit" element={<FarmerCredit />} />
+          </Route>
+
+          {/* Direct Top-Level Convenience Aliases */}
+          <Route path="/intelligence" element={<FarmerLayout />}>
+            <Route index element={<FarmIntelligence />} />
+          </Route>
+          <Route path="/farm-intelligence" element={<FarmerLayout />}>
+            <Route index element={<FarmIntelligence />} />
           </Route>
 
           {/* CHC Operations Hub Routes */}
           <Route path="/chc" element={<CHCLayout />}>
             <Route index element={<CHCOverview />} />
             <Route path="demand" element={<DemandIntelligence />} />
+            <Route path="demand-intelligence" element={<DemandIntelligence />} />
             <Route path="fleet" element={<FleetManagement />} />
             <Route path="telematics" element={<LiveTelematics />} />
             <Route path="bookings" element={<BookingsManager />} />

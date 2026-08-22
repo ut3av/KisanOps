@@ -23,7 +23,8 @@ import {
   PhoneCall,
   LucideIcon,
   Trash2,
-  RotateCcw
+  RotateCcw,
+  Brain
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { UserRole } from '../../types';
@@ -98,6 +99,7 @@ export const SideNav: React.FC<SideNavProps> = ({
 
   const farmerNavItems: NavItem[] = [
     { to: '/farmer', icon: Home, label: 'Farmer Home', end: true },
+    { to: '/farmer/intelligence', icon: Brain, label: 'Farm Intelligence', badge: 'AI Outlook' },
     { to: '/farmer/marketplace', icon: Search, label: 'Rent Machinery' },
     { to: '/farmer/rentals', icon: CalendarCheck, label: 'My Bookings', count: pendingBookingsCount },
     { to: '/farmer/farm', icon: Wheat, label: 'My Farmland & Soil' },
