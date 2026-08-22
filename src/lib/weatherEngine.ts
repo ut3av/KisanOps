@@ -201,7 +201,7 @@ export async function fetchAgroWeatherForecast(
   }
 
   try {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,weathercode&hourly=temperature_2m,relativehumidity_2m,precipitation_probability,precipitation,soil_moisture_0_to_1cm,windspeed_10m&timezone=Asia%2FKolkata`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,weathercode&hourly=temperature_2m,relativehumidity_2m,precipitation_probability,precipitation,soil_moisture_0_to_1cm,windspeed_10m&timezone=Asia%2FKolkata`;
     
     const response = await fetch(url);
     if (!response.ok) throw new Error(`Open-Meteo returned status ${response.status}`);
@@ -259,9 +259,9 @@ export async function fetchAgroWeatherForecast(
       });
     }
 
-    const currentTemp = hourly[0]?.temperature || 31;
-    const currentHumidity = hourly[0]?.relativeHumidity || 58;
-    const currentWind = hourly[0]?.windSpeedKmh || 14;
+    const currentTemp = data.current?.temperature_2m !== undefined ? Math.round(data.current.temperature_2m) : (hourly[0]?.temperature || 26);
+    const currentHumidity = data.current?.relative_humidity_2m !== undefined ? Math.round(data.current.relative_humidity_2m) : (hourly[0]?.relativeHumidity || 65);
+    const currentWind = data.current?.wind_speed_10m !== undefined ? Math.round(data.current.wind_speed_10m) : (hourly[0]?.windSpeedKmh || 12);
 
     weatherCache.set(cacheKey, {
       timestamp: Date.now(),
@@ -295,9 +295,11 @@ export function computeHarvestRiskAssessment(
   hourly: HourlyWeatherPoint[],
   locationName?: string
 ): HarvestRiskAssessment {
-  const loc = locationName && locationName.trim().length > 0 ? locationName.trim() : 'your local farm area';
+  const loc = locationName && locationName.trim().length > 0 ? locationName.trim() : 'Local Area';
 
-  // 1. Calculate incoming 7-day rainfall and next rain time
+  // 1. Calculate incoming rainfall distribution
+  const todayRainMm = daily[0]?.precipitationMm || 0;
+  const todayProb = daily[0]?.precipitationProbability || 0;
   let totalIncomingRainfallMm = 0;
   let nextRainExpectedInHours: number | null = null;
   let rainyDaysCount = 0;
@@ -307,13 +309,18 @@ export function computeHarvestRiskAssessment(
     if (daily[i].precipitationMm >= 3.0 || daily[i].precipitationProbability >= 60) {
       rainyDaysCount++;
       if (nextRainExpectedInHours === null) {
-        nextRainExpectedInHours = i * 24 + 14; // Approx afternoon of that day
+        nextRainExpectedInHours = i === 0 ? 6 : i * 24 + 12; // Approx hours
       }
     }
   }
 
-  // Fallback dry window if no rain predicted
-  const dryWindowHoursRemaining = nextRainExpectedInHours !== null ? nextRainExpectedInHours : 168; // 7 days
+  // Dry window calculation
+  let dryWindowHoursRemaining = 168; // Default 7 days
+  if (todayRainMm >= 3.0 || todayProb >= 65) {
+    dryWindowHoursRemaining = 8; // Imminent/today rain
+  } else if (nextRainExpectedInHours !== null) {
+    dryWindowHoursRemaining = nextRainExpectedInHours;
+  }
 
   // 2. Evaluate current soil tractive capabilities (0-100% moisture)
   const currentSoilMoisture = hourly[0]?.soilMoisturePercent || 32;
@@ -338,7 +345,7 @@ export function computeHarvestRiskAssessment(
       moisturePercent: currentSoilMoisture,
       status: 'IMPASSABLE_SINKAGE',
       maxAllowedMachineWeightTons: 4.0,
-      recommendation: 'Soil saturated. High risk of heavy combine sinking. Wait 48 hours for dry out.',
+      recommendation: 'Soil saturated. High risk of heavy combine sinking. Wait for field dry out.',
     };
   }
 
@@ -347,33 +354,37 @@ export function computeHarvestRiskAssessment(
   let overallRiskLevel: 'LOW' | 'MODERATE' | 'HIGH' | 'CRITICAL_EMERGENCY' = 'LOW';
   let weatherDemandSurgeFactor = 1.0;
 
-  if (nextRainExpectedInHours !== null && nextRainExpectedInHours <= 48 && totalIncomingRainfallMm >= 18) {
+  if (todayRainMm >= 15 || (todayProb >= 80 && todayRainMm >= 8)) {
     overallRiskLevel = 'CRITICAL_EMERGENCY';
     viabilityScore = 32;
     weatherDemandSurgeFactor = 1.25; // +25% urgent surge
-  } else if (nextRainExpectedInHours !== null && nextRainExpectedInHours <= 96 && totalIncomingRainfallMm >= 8) {
+  } else if (todayRainMm >= 5 || todayProb >= 60 || totalIncomingRainfallMm >= 30) {
     overallRiskLevel = 'HIGH';
     viabilityScore = 58;
     weatherDemandSurgeFactor = 1.15; // +15% surge
-  } else if (totalIncomingRainfallMm >= 5) {
+  } else if (totalIncomingRainfallMm >= 8) {
     overallRiskLevel = 'MODERATE';
-    viabilityScore = 74;
-    weatherDemandSurgeFactor = 1.08;
+    viabilityScore = 78;
+    weatherDemandSurgeFactor = 1.05;
   }
 
-  // 4. Generate Explainable Alert Content dynamically based on user's actual location
-  let alertTitle = 'Optimal Dry Harvest Window Active';
-  let alertSummary = `Favorable agro-weather for ${loc}. ${dryWindowHoursRemaining}h of clear dry weather ahead.`;
-  let actionRecommendation = 'Safe to operate regular combine harvester rotation.';
+  // 4. Generate Explainable Alert Content
+  let alertTitle = `Optimal Clear Harvest Window (${loc})`;
+  let alertSummary = `Favorable dry operating conditions in ${loc}. 0mm precipitation forecasted for the immediate 48h.`;
+  let actionRecommendation = 'Safe to operate regular machinery and combine harvesting rotations.';
 
   if (overallRiskLevel === 'CRITICAL_EMERGENCY') {
-    alertTitle = `Urgent Rain Alert: ${totalIncomingRainfallMm}mm Rain Expected in ${dryWindowHoursRemaining}h`;
-    alertSummary = `Unseasonal precipitation system approaching ${loc}. Standing crops at potential lodging and moisture risk.`;
-    actionRecommendation = `Pre-book machinery immediately. Complete field work within ${Math.max(1, Math.round(dryWindowHoursRemaining / 24))} days before soil becomes saturated.`;
+    alertTitle = `Rain Alert: ${todayRainMm > 0 ? `${todayRainMm}mm Forecasted Today` : 'Heavy Showers Imminent'} (${totalIncomingRainfallMm.toFixed(1)}mm 7-Day Total)`;
+    alertSummary = `Active precipitation front recorded over ${loc}. Standing crops at lodging risk.`;
+    actionRecommendation = `Pre-book machinery to complete field operations during dry spells before soil saturation.`;
   } else if (overallRiskLevel === 'HIGH') {
-    alertTitle = `Rain Risk in ${Math.max(1, Math.round(dryWindowHoursRemaining / 24))} Days (${totalIncomingRainfallMm}mm forecasted)`;
-    alertSummary = `Weather front developing over ${loc} with ${Math.round(daily[2]?.precipitationProbability || 65)}% rain probability.`;
-    actionRecommendation = 'Schedule harvesting within 72 hours to lock in optimal grain moisture (12-14%).';
+    alertTitle = `Scattered Showers Alert: ${todayRainMm > 0 ? `${todayRainMm}mm Today` : `${totalIncomingRainfallMm.toFixed(1)}mm across 7 Days`}`;
+    alertSummary = `Rain probability ${todayProb}% over ${loc}. Moisture conditions variable.`;
+    actionRecommendation = 'Schedule operations during dry morning and midday operating windows.';
+  } else if (overallRiskLevel === 'MODERATE') {
+    alertTitle = `Light Showers Possible (${totalIncomingRainfallMm.toFixed(1)}mm 7-Day Cumulative)`;
+    alertSummary = `Minor scattered clouds over ${loc}. Dry harvest window remaining: ${dryWindowHoursRemaining}h.`;
+    actionRecommendation = 'Standard machine scheduling suitable with normal monitoring.';
   }
 
   return {

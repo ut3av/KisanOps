@@ -979,32 +979,6 @@
       "source_location": "L350"
     },
     {
-      "id": "src_features_landing_components_herosection_herosectionprops",
-      "label": "HeroSectionProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "HeroSection.tsx",
-      "file_type": "code",
-      "norm_label": "herosectionprops",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_features_landing_components_herosection_heroslide",
-      "label": "HeroSlide",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "HeroSection.tsx",
-      "file_type": "code",
-      "norm_label": "heroslide",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L25"
-    },
-    {
       "id": "src_components_common_razorpaycheckoutmodal_razorpaycheckoutmodalprops",
       "label": "RazorpayCheckoutModalProps",
       "_callable": true,
@@ -1119,7 +1093,7 @@
       "file_type": "code",
       "norm_label": "weatherradarcardprops",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L26"
+      "source_location": "L31"
     },
     {
       "id": "src_lib_weatherengine_cachedforecast",
@@ -1276,6 +1250,32 @@
       "norm_label": "faqitem",
       "source_file": "src/features/landing/components/FaqSection.tsx",
       "source_location": "L4"
+    },
+    {
+      "id": "src_features_landing_components_herosection_herosectionprops",
+      "label": "HeroSectionProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "herosectionprops",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_features_landing_components_herosection_heroslide",
+      "label": "HeroSlide",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "heroslide",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L25"
     },
     {
       "id": "src_features_landing_components_howitworkssection_workflowstep",
@@ -2351,18 +2351,6 @@
       "source_location": "L10"
     },
     {
-      "id": "src_features_landing_components_herosection_herosection",
-      "label": "HeroSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "HeroSection.tsx",
-      "file_type": "code",
-      "norm_label": "herosection()",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L64"
-    },
-    {
       "id": "src_components_common_razorpaycheckoutmodal_razorpaycheckoutmodal",
       "label": "RazorpayCheckoutModal()",
       "_callable": true,
@@ -2456,7 +2444,7 @@
       "file_type": "code",
       "norm_label": "weatherradarcard()",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L34"
+      "source_location": "L39"
     },
     {
       "id": "src_lib_weatherengine_computeharvestriskassessment",
@@ -2492,7 +2480,7 @@
       "file_type": "code",
       "norm_label": "fetchrainviewerradarframes()",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L517"
+      "source_location": "L528"
     },
     {
       "id": "src_lib_weatherengine_getfallbackagroweather",
@@ -2504,7 +2492,7 @@
       "file_type": "code",
       "norm_label": "getfallbackagroweather()",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L396"
+      "source_location": "L407"
     },
     {
       "id": "src_lib_weatherengine_getwmodescription",
@@ -2829,6 +2817,18 @@
       "norm_label": "faqsection()",
       "source_file": "src/features/landing/components/FaqSection.tsx",
       "source_location": "L49"
+    },
+    {
+      "id": "src_features_landing_components_herosection_herosection",
+      "label": "HeroSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "herosection()",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L64"
     },
     {
       "id": "src_features_landing_components_howitworkssection_howitworkssection",
@@ -5620,28 +5620,6 @@
       "source_location": "L2"
     },
     {
-      "id": "src_features_landing_components_herosection",
-      "label": "HeroSection.tsx",
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "HeroSection.tsx",
-      "file_type": "code",
-      "norm_label": "herosection.tsx",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_herosection_hero_slides",
-      "label": "HERO_SLIDES",
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "HeroSection.tsx",
-      "file_type": "code",
-      "norm_label": "hero_slides",
-      "source_file": "src/features/landing/components/HeroSection.tsx",
-      "source_location": "L33"
-    },
-    {
       "id": "src_components_common_razorpaycheckoutmodal",
       "label": "RazorpayCheckoutModal.tsx",
       "_origin": "ast",
@@ -7325,6 +7303,28 @@
       "source_location": "L10"
     },
     {
+      "id": "src_features_landing_components_herosection",
+      "label": "HeroSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "herosection.tsx",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_herosection_hero_slides",
+      "label": "HERO_SLIDES",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "hero_slides",
+      "source_file": "src/features/landing/components/HeroSection.tsx",
+      "source_location": "L33"
+    },
+    {
       "id": "src_features_landing_components_howitworkssection",
       "label": "HowItWorksSection.tsx",
       "_origin": "ast",
@@ -7774,7 +7774,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L53",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -7786,7 +7786,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L59",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -8602,7 +8602,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L502",
+      "source_location": "L513",
       "weight": 1.0
     },
     {
@@ -10594,7 +10594,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L16",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -10606,7 +10606,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L16",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -10618,7 +10618,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L16",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -10630,7 +10630,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L16",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -10642,7 +10642,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L16",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -10654,7 +10654,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L16",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_weatherradarcard",
+      "target": "src_components_common_dopplerradarplayer_dopplerradarplayer",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/WeatherRadarCard.tsx",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -15442,7 +15454,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L16",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_weatherradarcard",
+      "target": "src_components_common_dopplerradarplayer",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/WeatherRadarCard.tsx",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -20785,7 +20809,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L26",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -20796,7 +20820,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/WeatherRadarCard.tsx",
-      "source_location": "L34",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -22413,7 +22437,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L396",
+      "source_location": "L407",
       "weight": 1.0
     },
     {
@@ -22435,7 +22459,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/weatherEngine.ts",
-      "source_location": "L517",
+      "source_location": "L528",
       "weight": 1.0
     },
     {
@@ -24812,5 +24836,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c57dc5885d146735ae86c5a243ea04caef5b1632"
+  "built_at_commit": "8a7dfb20a6416ca73ac0ab86e6f7309fede8e9da"
 }
