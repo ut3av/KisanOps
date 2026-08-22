@@ -35,7 +35,7 @@ export const FarmerHome: React.FC = () => {
     'Farmer Home & Farm Hub',
     'AI equipment matching, agro-weather risk radar, and deferred AgriCredit.'
   );
-  const { state } = useKisanOpsStore();
+  const { state, loadDemoData } = useKisanOpsStore();
   const navigate = useNavigate();
 
   const { farm, machines, bookings, agriCredit, currentUser } = state;
@@ -264,7 +264,7 @@ export const FarmerHome: React.FC = () => {
       </div>
 
       {/* Hero Recommended Machine Section */}
-      {topMatch && (
+      {topMatch ? (
         <div className="bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-subtle space-y-4">
           <div className="flex items-center justify-between">
             <div>
@@ -284,7 +284,7 @@ export const FarmerHome: React.FC = () => {
 
             <button
               onClick={() => navigate('/farmer/marketplace')}
-              className="text-xs font-bold text-agri-800 hover:text-agri-950 hidden sm:flex items-center gap-1"
+              className="text-xs font-bold text-agri-800 hover:text-agri-950 hidden sm:flex items-center gap-1 cursor-pointer"
             >
               <span>View All Machines</span>
               <ArrowRight className="w-4 h-4" />
@@ -294,8 +294,6 @@ export const FarmerHome: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center bg-surface-50 p-4 rounded-2xl border border-slate-200/80">
             <div className="md:col-span-4 h-48 rounded-xl overflow-hidden relative">
               <MachineThumbnail
-                src={topMatch.machine.imageUrl}
-                alt={topMatch.machine.model}
                 category={topMatch.machine.category}
                 size="full"
                 containerClassName="h-48 rounded-xl"
@@ -338,13 +336,36 @@ export const FarmerHome: React.FC = () => {
 
                 <button
                   onClick={() => navigate('/farmer/marketplace')}
-                  className="btn-primary text-xs py-2 px-4 shadow-sm"
+                  className="btn-primary text-xs py-2 px-4 shadow-sm cursor-pointer"
                 >
                   Book with AgriCredit
                 </button>
               </div>
             </div>
           </div>
+        </div>
+      ) : (
+        <div className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-800 flex items-center justify-center shrink-0 border border-amber-200">
+              <Sparkles className="w-6 h-6 text-amber-600" />
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-slate-900">
+                Clean Baseline: No Machinery Assets Registered
+              </h3>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Load the complete demonstration dataset to preview AI harvester & tractor matching for this {farm.sizeAcres}-acre farmland.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => loadDemoData()}
+            className="btn-primary text-xs py-2.5 px-4 bg-amber-500 hover:bg-amber-600 text-white flex items-center gap-1.5 shadow-sm cursor-pointer shrink-0"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Load Demo Data</span>
+          </button>
         </div>
       )}
     </div>

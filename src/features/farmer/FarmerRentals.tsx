@@ -28,7 +28,7 @@ export const FarmerRentals: React.FC = () => {
     'My Machinery Rentals & Live Tracking',
     'Track live machinery dispatch, CAN-Bus operating actuals, and automated tax invoices.'
   );
-  const { state, updateBookingStatus } = useKisanOpsStore();
+  const { state, updateBookingStatus, loadDemoData } = useKisanOpsStore();
   const { bookings, farm, machines, chcs, currentTelemetry, invoices, simulationState, currentUser } = state;
 
   const isDemo = SEEDED_PROFILES.some(p => p.id === currentUser.id);
@@ -321,12 +321,20 @@ export const FarmerRentals: React.FC = () => {
           )}
         </div>
       ) : (
-        <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 shadow-subtle space-y-3">
-          <Tractor className="w-12 h-12 text-slate-300 mx-auto" />
-          <h3 className="text-lg font-bold text-slate-800">No Rentals Scheduled</h3>
-          <p className="text-xs text-slate-500 max-w-md mx-auto">
-            Book machinery in the marketplace to see live telemetry, operator tracking, and invoices here.
+        <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/90 shadow-subtle space-y-4 max-w-lg mx-auto my-6">
+          <div className="w-14 h-14 rounded-2xl bg-surface-100 flex items-center justify-center mx-auto text-slate-400">
+            <Tractor className="w-7 h-7" />
+          </div>
+          <h3 className="text-lg font-bold text-slate-800">No Rentals Scheduled (Clean Slate)</h3>
+          <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+            There are currently no active or historical machine rental reservations. You can book equipment in the marketplace or load the demonstration dataset.
           </p>
+          <button
+            onClick={() => loadDemoData()}
+            className="btn-primary text-xs py-2.5 px-5 bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center gap-1.5 shadow-sm cursor-pointer"
+          >
+            <span>⚡ Load Demo Rentals</span>
+          </button>
         </div>
       )}
     </div>

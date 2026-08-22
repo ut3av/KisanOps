@@ -42,10 +42,10 @@
     "semantic_hash": ""
   },
   "src/components/common/StatCard.tsx": {
-    "mtime": 1787311096.6072829,
-    "seen": 1787312673.7712793,
-    "ast_hash": "710180b194b0a8cb09c685c20ac1b31d",
-    "semantic_hash": "710180b194b0a8cb09c685c20ac1b31d"
+    "mtime": 1787389873.1157293,
+    "seen": 1787390088.3070745,
+    "ast_hash": "c65f374431831f3445a9aee332cdd8cb",
+    "semantic_hash": ""
   },
   "src/components/common/TelematicsGauge.tsx": {
     "mtime": 1787311111.5626256,
@@ -54,39 +54,39 @@
     "semantic_hash": "3aa09fc70c77748f949ebd693e9f4998"
   },
   "src/components/layout/AdminLayout.tsx": {
-    "mtime": 1787321818.6244376,
-    "seen": 1787322604.0197992,
-    "ast_hash": "36e0605e7c3fd4ee3d68bc7b3b8ad3c2",
+    "mtime": 1787389746.0173676,
+    "seen": 1787390088.3070807,
+    "ast_hash": "5e1787de1cb1f8c64d1379605c9025a8",
     "semantic_hash": ""
   },
   "src/components/layout/CHCLayout.tsx": {
-    "mtime": 1787335997.7027369,
-    "seen": 1787336121.3150854,
-    "ast_hash": "243300fd21f7498f9da09599e93feda2",
+    "mtime": 1787389720.0068116,
+    "seen": 1787390088.3070824,
+    "ast_hash": "fd6d57ec2ed9230cca09237c02bbb0bd",
     "semantic_hash": ""
   },
   "src/components/layout/FarmerLayout.tsx": {
-    "mtime": 1787382617.717607,
-    "seen": 1787384804.4978507,
-    "ast_hash": "7ed2e41c4d81f46af15872d6d5a4a69b",
+    "mtime": 1787389734.2661538,
+    "seen": 1787390088.3070846,
+    "ast_hash": "6074eb14d29bd63f9b0c866de3949ecf",
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787336013.4767258,
-    "seen": 1787336121.315087,
-    "ast_hash": "2c87ab72026c49c2a26f31dbf6185626",
+    "mtime": 1787389671.8566754,
+    "seen": 1787390088.307086,
+    "ast_hash": "7c904df24bcb73f3c3a4d0353a743e04",
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
-    "mtime": 1787311062.151967,
-    "seen": 1787312673.771299,
-    "ast_hash": "cc564be57ee0267b822463a36c9e1c68",
-    "semantic_hash": "cc564be57ee0267b822463a36c9e1c68"
+    "mtime": 1787389540.2001379,
+    "seen": 1787390088.307092,
+    "ast_hash": "121abe9c78b6ea51267ec7d89949c0f8",
+    "semantic_hash": ""
   },
   "src/features/admin/AdminDashboard.tsx": {
-    "mtime": 1787384752.8148434,
-    "seen": 1787384804.497857,
-    "ast_hash": "b4bef435c84e7b0cbd38ebfd025a534d",
+    "mtime": 1787389937.0134406,
+    "seen": 1787390088.3070936,
+    "ast_hash": "0f4d8034a3205d6ef4018eb119320866",
     "semantic_hash": ""
   },
   "src/features/auth/LandingRoleSelect.tsx": {
@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "src/features/chc/BookingsManager.tsx": {
-    "mtime": 1787384668.651176,
-    "seen": 1787384804.4978607,
-    "ast_hash": "b0ed6ec31f516c65ff38eb0d7539f373",
+    "mtime": 1787389893.2386186,
+    "seen": 1787390088.307099,
+    "ast_hash": "79a8c4da38799cab442c454e89a1f957",
     "semantic_hash": ""
   },
   "src/features/chc/CHCOverview.tsx": {
@@ -120,21 +120,21 @@
     "semantic_hash": ""
   },
   "src/features/chc/FleetManagement.tsx": {
-    "mtime": 1787384650.7388725,
-    "seen": 1787384804.4978657,
-    "ast_hash": "2ac2ed65cbd22b32473f1e0e6ef54e69",
+    "mtime": 1787389771.6334035,
+    "seen": 1787390088.3071063,
+    "ast_hash": "8d50887e6fb7e8d11c332c991565e56e",
     "semantic_hash": ""
   },
   "src/features/chc/LiveTelematics.tsx": {
-    "mtime": 1787384661.381596,
-    "seen": 1787384804.4978669,
-    "ast_hash": "cc9b59125608f7619bad2d3a1ab6e11b",
+    "mtime": 1787389923.418667,
+    "seen": 1787390088.3071077,
+    "ast_hash": "dec48debcc6bbdbf9f76290b9b97b69e",
     "semantic_hash": ""
   },
   "src/features/chc/PredictiveMaintenance.tsx": {
-    "mtime": 1787384680.2659378,
-    "seen": 1787384804.497868,
-    "ast_hash": "cae7db94b8f0a466ff615dfae31b79a6",
+    "mtime": 1787389904.220647,
+    "seen": 1787390088.307109,
+    "ast_hash": "f68a05facd3e71559314e00ef48be431",
     "semantic_hash": ""
   },
   "src/features/chc/RevenueAnalytics.tsx": {
@@ -162,15 +162,15 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787384575.467544,
-    "seen": 1787384804.497876,
-    "ast_hash": "74e800e687a8500329538004521b2586",
+    "mtime": 1787389860.640099,
+    "seen": 1787390088.3071203,
+    "ast_hash": "2491827210764b8544ff63d648a961aa",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
-    "mtime": 1787384583.85964,
-    "seen": 1787384804.497877,
-    "ast_hash": "c0ec6a64a6776017903ab7e6bcbc5e56",
+    "mtime": 1787389815.4883447,
+    "seen": 1787390088.3071222,
+    "ast_hash": "a29494aaae815211fb71484b1f5be84b",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerRentals.tsx": {
@@ -180,9 +180,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/MachineDetailsModal.tsx": {
-    "mtime": 1787336042.711633,
-    "seen": 1787336121.3151076,
-    "ast_hash": "26373acac9fff3aaed9d62e9855a5361",
+    "mtime": 1787389832.9062512,
+    "seen": 1787390088.3071258,
+    "ast_hash": "db390b9c696fc6bb7cd60821df1704cd",
     "semantic_hash": ""
   },
   "src/lib/__tests__/engines.test.ts": {
@@ -696,9 +696,9 @@
     "semantic_hash": ""
   },
   "src/lib/dbService.ts": {
-    "mtime": 1787382810.0933435,
-    "seen": 1787384804.4979236,
-    "ast_hash": "f52f0be31ca3a1325423d44b5db56fbe",
+    "mtime": 1787389591.061718,
+    "seen": 1787390088.3071847,
+    "ast_hash": "50f6586c0f6721e2c7345700dd586325",
     "semantic_hash": ""
   },
   "src/lib/iotIngestionEngine.ts": {
@@ -777,6 +777,18 @@
     "mtime": 1787385379.341158,
     "seen": 1787385872.633866,
     "ast_hash": "c36892232710cbf3f5708a1931590814",
+    "semantic_hash": ""
+  },
+  "src/components/common/MachineThumbnail.tsx": {
+    "mtime": 1787389437.414027,
+    "seen": 1787390088.3070664,
+    "ast_hash": "95168e381ba4720320d2308657fb6ea9",
+    "semantic_hash": ""
+  },
+  "src/components/layout/SideNav.tsx": {
+    "mtime": 1787389991.334282,
+    "seen": 1787390088.3070903,
+    "ast_hash": "f8f91600e2334c2552f4151498e3b0af",
     "semantic_hash": ""
   }
 }

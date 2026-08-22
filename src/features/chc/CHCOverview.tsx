@@ -11,7 +11,8 @@ import {
   ArrowRight,
   ShieldAlert,
   MapPin,
-  CheckCircle2
+  CheckCircle2,
+  Database
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { StatCard } from '../../components/common/StatCard';
@@ -24,28 +25,58 @@ export const CHCOverview: React.FC = () => {
     'CHC Operations Hub | Fleet & Telematics',
     'Real-time Custom Hiring Centre operations, shortage alerts, and machine health.'
   );
-  const { state, approveAllocation } = useKisanOpsStore();
+  const { state, approveAllocation, loadDemoData } = useKisanOpsStore();
   const navigate = useNavigate();
 
   const { machines, demandForecasts, allocations, maintenanceAlerts, bookings, chcs, farm, currentTelemetry, simulationState } = state;
 
   const activeAlerts = maintenanceAlerts.filter(a => !a.isResolved);
   const activeBookings = bookings.filter(b => b.status === 'CONFIRMED' || b.status === 'DISPATCHED' || b.status === 'IN_PROGRESS');
+  const activeMachines = machines.filter(m => m.status === 'ACTIVE' || m.status === 'DISPATCHED');
   const sehoreShortage = demandForecasts.find(df => df.district === 'Sehore' && df.shortageUnits > 0);
   const recommendedAlloc = allocations.find(a => a.status === 'RECOMMENDED');
 
+  const firstMachine = machines[0];
+
   return (
     <div className="space-y-6">
+      {/* Clean Production Slate Prompt when no data is loaded */}
+      {machines.length === 0 && (
+        <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-300/80 rounded-3xl p-5 shadow-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-2xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
+              <Database className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-sm font-extrabold text-slate-900">
+                Production Clean-Slate Active (0 Fleet Assets)
+              </h3>
+              <p className="text-xs text-slate-600 mt-0.5">
+                No active machinery or telemetry records. You can register equipment or load the full demonstration dataset.
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={() => loadDemoData()}
+            className="btn-primary text-xs py-2 px-4 bg-amber-600 hover:bg-amber-700 text-white flex items-center gap-1.5 shadow-sm cursor-pointer shrink-0"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Load Demo Dataset</span>
+          </button>
+        </div>
+      )}
+
       {/* Top Demand Alert Hero if Shortage is Detected */}
       {sehoreShortage && (
         <div className="bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-transparent border border-amber-300 rounded-3xl p-5 shadow-subtle flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl shrink-0 shadow-sm">
-              <TrendingUp className="w-6 h-6" />
+              <TrendingUp className="w-6 h-6 shrink-0" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-200/80 px-2 py-0.5 rounded-md">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-200/80 px-2 py-0.5 rounded-md shrink-0">
                   DEMAND SURGE ALERT (+34%)
                 </span>
                 <span className="text-xs font-mono font-bold text-amber-800">Sehore Wheat Belt</span>
@@ -63,14 +94,14 @@ export const CHCOverview: React.FC = () => {
             {recommendedAlloc && (
               <button
                 onClick={() => approveAllocation(recommendedAlloc.id)}
-                className="btn-primary text-xs py-2 px-4 shadow-sm bg-amber-800 hover:bg-amber-900"
+                className="btn-primary text-xs py-2 px-4 shadow-sm bg-amber-800 hover:bg-amber-900 cursor-pointer"
               >
                 Approve Reallocation
               </button>
             )}
             <button
               onClick={() => navigate('/chc/demand')}
-              className="btn-secondary text-xs py-2 px-3"
+              className="btn-secondary text-xs py-2 px-3 cursor-pointer"
             >
               View Forecast Matrix
             </button>
@@ -82,37 +113,34 @@ export const CHCOverview: React.FC = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
         <StatCard
           title="Total Fleet"
-          value="24"
-          subtitle="Across 3 hubs"
+          value={machines.length}
+          subtitle={machines.length > 0 ? 'Across 3 hubs' : 'Clean baseline'}
           icon={Tractor}
           iconBg="bg-agri-50 text-agri-800"
           onClick={() => navigate('/chc/fleet')}
         />
         <StatCard
           title="Active in Field"
-          value="18"
-          subtitle="75.0% deployed"
+          value={activeMachines.length}
+          subtitle={machines.length > 0 ? `${((activeMachines.length / Math.max(1, machines.length)) * 100).toFixed(0)}% deployed` : '0 deployed'}
           icon={Activity}
           iconBg="bg-sky-50 text-sky-800"
-          change="+4 machines"
           onClick={() => navigate('/chc/telematics')}
         />
         <StatCard
           title="Utilization"
-          value="78.4%"
-          subtitle="+14% vs prev week"
+          value={machines.length > 0 ? '78.4%' : '0.0%'}
+          subtitle={machines.length > 0 ? '+14% vs prev week' : 'No active rentals'}
           icon={TrendingUp}
           iconBg="bg-emerald-50 text-emerald-800"
-          change="+14.2%"
           onClick={() => navigate('/chc/analytics')}
         />
         <StatCard
           title="Today Revenue"
-          value="₹42,800"
-          subtitle="12 bookings billed"
+          value={bookings.length > 0 ? '₹42,800' : '₹0'}
+          subtitle={bookings.length > 0 ? `${bookings.length} bookings billed` : '0 bookings'}
           icon={IndianRupee}
           iconBg="bg-emerald-50 text-emerald-900"
-          change="+28%"
           onClick={() => navigate('/chc/analytics')}
         />
         <StatCard
@@ -127,7 +155,7 @@ export const CHCOverview: React.FC = () => {
         <StatCard
           title="Pending Bookings"
           value={activeBookings.length}
-          subtitle="Awaiting dispatch"
+          subtitle={activeBookings.length > 0 ? 'Awaiting dispatch' : 'Queue clear'}
           icon={CalendarCheck}
           iconBg="bg-amber-50 text-amber-800"
           onClick={() => navigate('/chc/bookings')}
@@ -139,22 +167,22 @@ export const CHCOverview: React.FC = () => {
         <div className="lg:col-span-12 space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 radar-pulse" />
-              <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wide">
-                Live Operating Asset: John Deere Harvester (JD-HARV-07)
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 radar-pulse shrink-0" />
+              <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wide truncate">
+                {firstMachine ? `Live Operating Asset: ${firstMachine.brand} ${firstMachine.model} (${firstMachine.identifier})` : 'CAN-Bus Telematics Gateway'}
               </h3>
             </div>
             <button
               onClick={() => navigate('/chc/telematics')}
-              className="text-xs font-bold text-agri-800 hover:text-agri-950 flex items-center gap-1"
+              className="text-xs font-bold text-agri-800 hover:text-agri-950 flex items-center gap-1 cursor-pointer shrink-0"
             >
               <span>Fullscreen Telematics Hub</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 shrink-0" />
             </button>
           </div>
 
           <TelematicsGaugeCluster
-            telemetry={currentTelemetry['mach-jd-harv-07']}
+            telemetry={firstMachine ? currentTelemetry[firstMachine.id] : undefined}
             isAnomalyActive={simulationState.isFuelAnomalyActive}
           />
         </div>
@@ -170,7 +198,7 @@ export const CHCOverview: React.FC = () => {
             </div>
             <button
               onClick={() => navigate('/chc/telematics')}
-              className="btn-secondary text-xs py-1.5 px-3"
+              className="btn-secondary text-xs py-1.5 px-3 cursor-pointer"
             >
               Open Fleet Map
             </button>

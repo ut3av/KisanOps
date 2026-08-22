@@ -1,16 +1,16 @@
 # Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 111 files · ~334,097 words
+- 111 files · ~335,273 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 579 nodes · 1247 edges · 35 communities (28 shown, 7 thin omitted)
+- 581 nodes · 1255 edges · 34 communities (27 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `45ef0e00`
+- Built from commit: `9cd9c771`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -42,13 +42,12 @@
 - telemetry-webhook/index.ts
 - vercel.json
 - 3. Core Functional Modules & Algorithmic Specifications
-- LeafletFleetMap.tsx
 - RazorpayCheckoutModal.tsx
 - react
 
 ## God Nodes (most connected - your core abstractions)
 1. `react` - 66 edges
-2. `useKisanOpsStore()` - 59 edges
+2. `useKisanOpsStore()` - 61 edges
 3. `usePageTitle()` - 53 edges
 4. `Machine` - 17 edges
 5. `AppState` - 15 edges
@@ -65,19 +64,19 @@
   api/verify-payment.ts → server/razorpayBackend.ts
 - `BookDemoModal()` --calls--> `useKisanOpsStore()`  [EXTRACTED]
   src/features/landing/components/BookDemoModal.tsx → src/store/kisanOpsStore.ts
-- `LeafletFleetMapProps` --references--> `CHC`  [EXTRACTED]
+- `LeafletFleetMapProps` --references--> `Machine`  [EXTRACTED]
   src/components/common/LeafletFleetMap.tsx → src/types/index.ts
-- `LeafletFleetMapProps` --references--> `TelemetryPoint`  [EXTRACTED]
-  src/components/common/LeafletFleetMap.tsx → src/types/index.ts
+- `MachineThumbnailProps` --references--> `MachineCategory`  [EXTRACTED]
+  src/components/common/MachineThumbnail.tsx → src/types/index.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (35 total, 7 thin omitted)
+## Communities (34 total, 7 thin omitted)
 
 ### Community 1 - "kisanOpsStore.ts"
-Cohesion: 0.09
-Nodes (46): SEEDED_AGRICREDIT_PROFILE, SEEDED_ALLOCATION_RECOMMENDATIONS, SEEDED_BOOKINGS, SEEDED_CHCS, SEEDED_DEMAND_FORECASTS, SEEDED_FARM, SEEDED_MACHINES, SEEDED_MAINTENANCE_ALERTS (+38 more)
+Cohesion: 0.06
+Nodes (67): activeMachineIcon, availableMachineIcon, chcIcon, farmIcon, LeafletFleetMapProps, maintenanceIcon, MAP_LAYERS, MapBaseLayerType (+59 more)
 
 ### Community 3 - "devDependencies"
 Cohesion: 0.06
@@ -145,7 +144,7 @@ Nodes (4): KisanLoader(), KisanLoaderProps, BookDemoModal(), BookDemoModalProps
 
 ### Community 31 - "types/index.ts"
 Cohesion: 0.10
-Nodes (35): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), ExplanationBadgeProps, LeafletFleetMapProps, CATEGORY_CONFIG, MachineThumbnail(), MachineThumbnailProps (+27 more)
+Nodes (35): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), ExplanationBadgeProps, MachineThumbnail(), MachineThumbnailProps, VEHICLE_CONFIG, BookingModal() (+27 more)
 
 ### Community 33 - "vercel.json"
 Cohesion: 0.29
@@ -154,10 +153,6 @@ Nodes (6): buildCommand, cleanUrls, framework, headers, outputDirectory, rewrite
 ### Community 34 - "3. Core Functional Modules & Algorithmic Specifications"
 Cohesion: 0.11
 Nodes (18): 1.1 Problem Statement, 1.2 Product Vision, 1. Executive Summary & Product Vision, 2. Target User Personas & Core Journeys, 3.1 Regional Predictive Demand Intelligence Engine (`demandEngine.ts`), 3.2 Inter-Hub Fleet Reallocation Optimizer (`demandEngine.ts`), 3.3 7-Factor Explainable Machinery Matching Engine (`recommendationEngine.ts`), 3.4 Dynamic Pricing Engine with Safety Bounds (`pricingEngine.ts`) (+10 more)
-
-### Community 35 - "LeafletFleetMap.tsx"
-Cohesion: 0.10
-Nodes (19): activeMachineIcon, availableMachineIcon, chcIcon, farmIcon, maintenanceIcon, MAP_LAYERS, MapBaseLayerType, MapLayerConfig (+11 more)
 
 ### Community 36 - "RazorpayCheckoutModal.tsx"
 Cohesion: 0.27
@@ -175,16 +170,16 @@ Nodes (31): react, LazyImageProps, CtaBanner(), CtaBannerProps, FaqItem, FAQS, F
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `kisanOpsStore.ts`, `LeafletFleetMap.tsx`, `RazorpayCheckoutModal.tsx`, `weatherEngine.ts`, `App.tsx`, `plugins`, `BookDemoModal.tsx`, `types/index.ts`?**
+- **Why does `react` connect `react` to `kisanOpsStore.ts`, `RazorpayCheckoutModal.tsx`, `weatherEngine.ts`, `App.tsx`, `plugins`, `BookDemoModal.tsx`, `types/index.ts`?**
   _High betweenness centrality (0.119) - this node is a cross-community bridge._
 - **Why does `useKisanOpsStore()` connect `App.tsx` to `kisanOpsStore.ts`, `react`, `BookDemoModal.tsx`, `types/index.ts`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **Why does `plugins` connect `plugins` to `react`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
   _207 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `kisanOpsStore.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.09025974025974026 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05886075949367089 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `dependencies` be split into smaller, more focused modules?**

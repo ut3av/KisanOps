@@ -23,7 +23,7 @@ export const BookingsManager: React.FC = () => {
     'Bookings & Dispatch Operations',
     'Manage agricultural machinery rental reservations, assignments, and dispatch statuses.'
   );
-  const { state, updateBookingStatus } = useKisanOpsStore();
+  const { state, updateBookingStatus, loadDemoData } = useKisanOpsStore();
   const { bookings } = state;
 
   return (
@@ -47,14 +47,20 @@ export const BookingsManager: React.FC = () => {
 
       {/* Bookings List */}
       {bookings.length === 0 ? (
-        <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/90 shadow-subtle space-y-4">
+        <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/90 shadow-subtle space-y-4 max-w-lg mx-auto my-6">
           <div className="w-14 h-14 rounded-2xl bg-surface-100 flex items-center justify-center mx-auto text-slate-400">
             <CalendarCheck className="w-7 h-7" />
           </div>
           <h3 className="text-lg font-bold text-slate-800">No Rental Bookings Received</h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
-            There are currently no active, dispatched, or pending farmer bookings for this CHC Hub. New machinery bookings will appear here automatically in real time.
+            There are currently no active, dispatched, or pending farmer bookings. You can load the demonstration dataset to test the full lifecycle dispatch.
           </p>
+          <button
+            onClick={() => loadDemoData()}
+            className="btn-primary text-xs py-2.5 px-5 bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center gap-1.5 shadow-sm cursor-pointer"
+          >
+            <span>⚡ Load Demo Bookings</span>
+          </button>
         </div>
       ) : (
         <div className="space-y-4">

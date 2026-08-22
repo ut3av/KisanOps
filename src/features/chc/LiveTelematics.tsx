@@ -29,7 +29,7 @@ export const LiveTelematics: React.FC = () => {
     'Live CAN-Bus J1939 Telematics Stream',
     'Real-time GPS coordinates, engine RPM, coolant temperature, and fuel burn rates.'
   );
-  const { state, toggleFuelAnomaly, toggleSimulation } = useKisanOpsStore();
+  const { state, toggleFuelAnomaly, toggleSimulation, loadDemoData } = useKisanOpsStore();
   const { machines, chcs, farm, currentTelemetry, simulationState, isSimulating } = state;
   const [showIotModal, setShowIotModal] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -46,14 +46,21 @@ export const LiveTelematics: React.FC = () => {
 
   if (!targetMachine) {
     return (
-      <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 shadow-subtle space-y-4">
-        <div className="w-14 h-14 rounded-2xl bg-surface-100 flex items-center justify-center mx-auto text-slate-400">
-          <Tractor className="w-7 h-7" />
+      <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 shadow-subtle space-y-4 max-w-lg mx-auto my-8">
+        <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mx-auto border border-amber-200">
+          <Radio className="w-7 h-7" />
         </div>
         <h3 className="text-lg font-bold text-slate-800">No Machinery Fleet Registered</h3>
-        <p className="text-xs text-slate-500 max-w-md mx-auto">
-          Add tractors or harvesters in your CHC Hub Fleet to view real-time ECU J1939 CAN-Bus telematics and GPS tracking.
+        <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+          Clean-slate production baseline active. Load the demonstration fleet to view real-time ECU J1939 CAN-Bus telematics, live RPM gauges, GPS tracking, and fuel burn rates.
         </p>
+        <button
+          onClick={() => loadDemoData()}
+          className="btn-primary text-xs py-2.5 px-5 bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center gap-1.5 shadow-sm cursor-pointer"
+        >
+          <Sparkles className="w-4 h-4 text-amber-200" />
+          <span>Load Demo Fleet for Telematics</span>
+        </button>
       </div>
     );
   }

@@ -22,7 +22,7 @@ export const PredictiveMaintenance: React.FC = () => {
     'Predictive Maintenance & Fuel Anomaly Sentinels',
     'Early equipment failure warnings, fuel burn anomaly detection, and component health monitoring.'
   );
-  const { state, resolveAlert, toggleFuelAnomaly } = useKisanOpsStore();
+  const { state, resolveAlert, toggleFuelAnomaly, loadDemoData } = useKisanOpsStore();
   const { maintenanceAlerts, machines, currentTelemetry, simulationState } = state;
 
   const unresolvedAlerts = maintenanceAlerts.filter(a => !a.isResolved);
@@ -39,7 +39,7 @@ export const PredictiveMaintenance: React.FC = () => {
             </h1>
             <span
               className={clsx(
-                'text-xs font-bold px-2 py-0.5 rounded-md border',
+                'text-xs font-bold px-2 py-0.5 rounded-md border shrink-0',
                 unresolvedAlerts.length > 0
                   ? 'bg-rose-50 text-rose-700 border-rose-200'
                   : 'bg-emerald-50 text-emerald-700 border-emerald-200'
@@ -56,13 +56,13 @@ export const PredictiveMaintenance: React.FC = () => {
         <button
           onClick={() => toggleFuelAnomaly()}
           className={clsx(
-            'px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all border',
+            'px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all border shrink-0 cursor-pointer',
             simulationState.isFuelAnomalyActive
               ? 'bg-rose-600 text-white border-rose-700 shadow-md animate-pulse'
               : 'bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100'
           )}
         >
-          <AlertTriangle className="w-4 h-4" />
+          <AlertTriangle className="w-4 h-4 shrink-0" />
           <span>
             {simulationState.isFuelAnomalyActive ? 'Fuel Sensor Alert Active (+17%)' : 'Test Telematics Anomaly'}
           </span>
@@ -119,7 +119,7 @@ export const PredictiveMaintenance: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="shrink-0 w-full md:w-auto text-right">
+                <div className="flex items-center gap-2 w-full md:w-auto shrink-0">
                   <button
                     onClick={() => resolveAlert(alert.id)}
                     className="w-full md:w-auto btn-primary text-xs py-2.5 px-5 bg-rose-800 hover:bg-rose-900 text-white shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
@@ -135,7 +135,7 @@ export const PredictiveMaintenance: React.FC = () => {
           <div className="bg-emerald-50/70 border border-emerald-200 rounded-3xl p-6 text-center space-y-2">
             <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
             <h4 className="text-sm font-bold text-emerald-900">All Fleet Sensor Parameters Nominal</h4>
-            <p className="text-xs text-emerald-700">Zero active critical ECU fault codes across 24 machinery units.</p>
+            <p className="text-xs text-emerald-700">Zero active critical ECU fault codes across {machines.length} registered units.</p>
           </div>
         )}
       </div>

@@ -89,7 +89,10 @@ export const RevenueAnalytics: React.FC = () => {
     'CHC Revenue & Fleet Utilization Analytics',
     'Unit economics, gross GMV, and machine contribution margins.'
   );
+  const { state } = useKisanOpsStore();
   const [timeRange, setTimeRange] = useState<'7D' | '30D' | '90D'>('7D');
+
+  const hasData = state.machines.length > 0;
 
   return (
     <div className="space-y-6">
@@ -101,7 +104,7 @@ export const RevenueAnalytics: React.FC = () => {
               CHC Revenue & Fleet Utilization Analytics
             </h1>
             <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-md">
-              Gross GMV: ₹2,88,400 (This Week)
+              {hasData ? 'Gross GMV: ₹2,88,400 (This Week)' : 'Gross GMV: ₹0 (Clean Slate)'}
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
@@ -130,31 +133,31 @@ export const RevenueAnalytics: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard
           title="Productive Machine Hours"
-          value="412.5 hrs"
+          value={hasData ? '412.5 hrs' : '0.0 hrs'}
           subtitle="North Star Metric"
-          change="+18.4%"
+          change={hasData ? '+18.4%' : undefined}
           icon={Activity}
           iconBg="bg-agri-50 text-agri-800"
         />
         <StatCard
           title="Average Fleet Utilization"
-          value="78.4%"
-          subtitle="Peak harvest surge"
-          change="+14.2%"
+          value={hasData ? '78.4%' : '0.0%'}
+          subtitle={hasData ? 'Peak harvest surge' : 'Clean baseline'}
+          change={hasData ? '+14.2%' : undefined}
           icon={TrendingUp}
           iconBg="bg-emerald-50 text-emerald-800"
         />
         <StatCard
           title="Average Order Value"
-          value="₹6,380"
-          subtitle="6.2 hrs avg duration"
-          change="+8.5%"
+          value={state.bookings.length > 0 ? '₹6,380' : '₹0'}
+          subtitle={state.bookings.length > 0 ? '6.2 hrs avg duration' : '0 orders'}
+          change={state.bookings.length > 0 ? '+8.5%' : undefined}
           icon={IndianRupee}
           iconBg="bg-sky-50 text-sky-800"
         />
         <StatCard
           title="AgriCredit Deferred Rate"
-          value="42%"
+          value={state.bookings.length > 0 ? '42%' : '0%'}
           subtitle="Zero default rate (100% on time)"
           change="0% loss"
           icon={ShieldCheck}

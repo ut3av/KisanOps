@@ -32,7 +32,7 @@ export const OperatorDashboard: React.FC = () => {
     'Machine Operator & Driver Console',
     'Active machine mission, engine telemetry stopwatch, diesel logs, and incident reporting.'
   );
-  const { state, updateBookingStatus, toggleFuelAnomaly } = useKisanOpsStore();
+  const { state, updateBookingStatus, toggleFuelAnomaly, loadDemoData } = useKisanOpsStore();
   const { bookings, machines, currentTelemetry, farm, chcs, simulationState } = state;
 
   const [activeTab, setActiveTab] = useState<'MISSION' | 'DIESEL' | 'SAFETY' | 'EARNINGS'>('MISSION');
@@ -89,8 +89,7 @@ export const OperatorDashboard: React.FC = () => {
 
   const handleCompleteWork = () => {
     if (activeBooking) {
-      const hours = Math.round((elapsedSeconds / 3600) * 10) / 10;
-      updateBookingStatus(activeBooking.id, 'COMPLETED', hours || 6.4);
+      updateBookingStatus(activeBooking.id, 'COMPLETED');
       setIsTimerRunning(false);
     }
   };
@@ -107,6 +106,27 @@ export const OperatorDashboard: React.FC = () => {
     toggleFuelAnomaly(true);
     setTimeout(() => setFaultSubmitted(false), 4000);
   };
+
+  if (!assignedMachine) {
+    return (
+      <div className="bg-[#121f15] text-white rounded-3xl p-12 text-center border border-emerald-900/60 shadow-xl space-y-4 max-w-lg mx-auto my-8">
+        <div className="w-16 h-16 rounded-2xl bg-emerald-950 flex items-center justify-center mx-auto border border-emerald-800 text-emerald-400">
+          <Tractor className="w-8 h-8" />
+        </div>
+        <h3 className="text-xl font-bold text-white">Operator Console: Standby Mode</h3>
+        <p className="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
+          Clean-slate production baseline active. There are currently no assigned machinery missions, active work orders, or telematics telemetry feeds.
+        </p>
+        <button
+          onClick={() => loadDemoData()}
+          className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow-md transition-colors cursor-pointer inline-flex items-center gap-1.5"
+        >
+          <Sparkles className="w-4 h-4 text-amber-200" />
+          <span>⚡ Load Demo Operator Mission</span>
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-5">

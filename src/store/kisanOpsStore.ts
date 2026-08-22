@@ -56,6 +56,7 @@ export interface AppState {
   activeDemoScene: number;
   isCloudSynced: boolean;
   isInitialLoading: boolean;
+  isDemoLoaded: boolean;
 }
 
 const STORAGE_KEY = 'kisanops_app_state_v1';
@@ -98,7 +99,7 @@ function createFreshAgriCreditForUser(user: UserProfile): AgriCreditProfile {
         weight: 0.35,
         score: 75,
         status: 'Good',
-        description: 'New account verified with regional Custom Hiring Centre',
+        description: 'Account verified with regional Custom Hiring Centre',
       },
       {
         name: 'CHC Network Frequency',
@@ -132,24 +133,33 @@ function createFreshAgriCreditForUser(user: UserProfile): AgriCreditProfile {
   };
 }
 
-function getInitialState(): AppState {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      if (parsed && parsed.currentUser) {
-        return {
-          ...parsed,
-          isInitialLoading: false,
-        };
-      }
-    }
-  } catch (e) {
-    console.warn('Failed to parse saved state, reverting to seed', e);
-  }
-
+export function getCleanProductionState(): AppState {
   return {
-    currentUser: SEEDED_PROFILES[0], // Farmer Ramesh Kumar (default before login)
+    currentUser: SEEDED_PROFILES[0], // Farmer Ramesh Kumar default
+    selectedRole: 'FARMER',
+    chcs: [],
+    farm: createFreshFarmForUser(SEEDED_PROFILES[0]),
+    machines: [],
+    demandForecasts: [],
+    allocations: [],
+    agriCredit: createFreshAgriCreditForUser(SEEDED_PROFILES[0]),
+    bookings: [],
+    maintenanceAlerts: [],
+    notifications: [],
+    invoices: [],
+    currentTelemetry: {},
+    simulationState: getInitialSimulationState(),
+    isSimulating: false,
+    activeDemoScene: 1,
+    isCloudSynced: false,
+    isInitialLoading: false,
+    isDemoLoaded: false,
+  };
+}
+
+export function getPopulatedDemoState(): AppState {
+  return {
+    currentUser: SEEDED_PROFILES[0],
     selectedRole: 'FARMER',
     chcs: SEEDED_CHCS,
     farm: SEEDED_FARM,
@@ -166,8 +176,30 @@ function getInitialState(): AppState {
     isSimulating: true,
     activeDemoScene: 1,
     isCloudSynced: false,
-    isInitialLoading: true,
+    isInitialLoading: false,
+    isDemoLoaded: true,
   };
+}
+
+function getInitialState(): AppState {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed && parsed.currentUser) {
+        return {
+          ...parsed,
+          isInitialLoading: false,
+          isDemoLoaded: parsed.isDemoLoaded ?? (parsed.machines?.length > 0),
+        };
+      }
+    }
+  } catch (e) {
+    console.warn('Failed to parse saved state, starting clean', e);
+  }
+
+  // Clean Production Slate by default (0 demo machines, 0 bookings, 0 alerts)
+  return getCleanProductionState();
 }
 
 let globalState: AppState = getInitialState();
@@ -189,7 +221,7 @@ function startGlobalSimulationLoop() {
   if (simulationTimer) return;
 
   simulationTimer = setInterval(() => {
-    if (!globalState.isSimulating) return;
+    if (!globalState.isSimulating || globalState.machines.length === 0) return;
 
     const activeBooking = globalState.bookings.find(
       b => b.status === 'DISPATCHED' || b.status === 'IN_PROGRESS'
@@ -579,28 +611,26 @@ export function useKisanOpsStore() {
       notify();
     },
 
+    loadDemoData: () => {
+      globalState = getPopulatedDemoState();
+      notify();
+    },
+
+    clearAllData: () => {
+      localStorage.removeItem(STORAGE_KEY);
+      globalState = getCleanProductionState();
+      notify();
+    },
+
+    removeAllData: () => {
+      localStorage.removeItem(STORAGE_KEY);
+      globalState = getCleanProductionState();
+      notify();
+    },
+
     resetToDefaults: () => {
       localStorage.removeItem(STORAGE_KEY);
-      globalState = {
-        currentUser: SEEDED_PROFILES[0],
-        selectedRole: 'FARMER',
-        chcs: SEEDED_CHCS,
-        farm: SEEDED_FARM,
-        machines: SEEDED_MACHINES,
-        demandForecasts: SEEDED_DEMAND_FORECASTS,
-        allocations: SEEDED_ALLOCATION_RECOMMENDATIONS,
-        agriCredit: SEEDED_AGRICREDIT_PROFILE,
-        bookings: SEEDED_BOOKINGS,
-        maintenanceAlerts: SEEDED_MAINTENANCE_ALERTS,
-        notifications: SEEDED_NOTIFICATIONS,
-        invoices: [],
-        currentTelemetry: {},
-        simulationState: getInitialSimulationState(),
-        isSimulating: true,
-        activeDemoScene: 1,
-        isCloudSynced: false,
-        isInitialLoading: false,
-      };
+      globalState = getCleanProductionState();
       notify();
     },
   };

@@ -29,7 +29,7 @@ export const FarmerMarketplace: React.FC = () => {
     'Find & Rent Machinery | Marketplace',
     'Browse harvesters, tractors, and implements with explainable matching and transparent rates.'
   );
-  const { state } = useKisanOpsStore();
+  const { state, loadDemoData } = useKisanOpsStore();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const initialActivity = (searchParams.get('activity') as ActivityType) || 'HARVESTING';
@@ -204,23 +204,37 @@ export const FarmerMarketplace: React.FC = () => {
       ) : processedMachines.length === 0 ? (
         <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/90 shadow-subtle space-y-4">
           <div className="w-14 h-14 rounded-2xl bg-surface-100 flex items-center justify-center mx-auto text-slate-400">
-            <Filter className="w-7 h-7" />
+            {machines.length === 0 ? <Sparkles className="w-7 h-7 text-amber-500" /> : <Filter className="w-7 h-7" />}
           </div>
-          <h3 className="text-lg font-bold text-slate-800">No Machinery Available Matching Filters</h3>
+          <h3 className="text-lg font-bold text-slate-800">
+            {machines.length === 0 ? 'No Machinery in Registry (Clean Slate)' : 'No Machinery Available Matching Filters'}
+          </h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
-            No equipment found matching your selected category, radius, or health score criteria. Try resetting category filters or extending your search radius.
+            {machines.length === 0
+              ? 'The system is in clean production baseline mode with 0 machinery assets. You can load the demo dataset to preview equipment matching.'
+              : 'No equipment found matching your selected category, radius, or health score criteria. Try resetting category filters or extending your search radius.'}
           </p>
-          <button
-            onClick={() => {
-              setSelectedCategory('ALL');
-              setSearchQuery('');
-              setMaxDistance(50);
-              setMinHealth(0);
-            }}
-            className="px-4 py-2 rounded-xl bg-agri-800 text-white text-xs font-bold shadow-sm hover:bg-agri-900 transition-colors cursor-pointer"
-          >
-            Reset All Filters
-          </button>
+          {machines.length === 0 ? (
+            <button
+              onClick={() => loadDemoData()}
+              className="px-5 py-2.5 rounded-xl bg-amber-500 text-white text-xs font-bold shadow-sm hover:bg-amber-600 transition-colors cursor-pointer inline-flex items-center gap-1.5"
+            >
+              <Sparkles className="w-4 h-4 text-amber-200" />
+              <span>Load Demo Machinery Dataset</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setSelectedCategory('ALL');
+                setSearchQuery('');
+                setMaxDistance(50);
+                setMinHealth(0);
+              }}
+              className="px-4 py-2 rounded-xl bg-agri-800 text-white text-xs font-bold shadow-sm hover:bg-agri-900 transition-colors cursor-pointer"
+            >
+              Reset All Filters
+            </button>
+          )}
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

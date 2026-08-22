@@ -23,7 +23,7 @@ export const DemandIntelligence: React.FC = () => {
     'Predictive Demand & Fleet Allocation',
     'Forecast district machinery demand and optimize inter-hub relocation.'
   );
-  const { state, approveAllocation } = useKisanOpsStore();
+  const { state, approveAllocation, loadDemoData } = useKisanOpsStore();
   const { demandForecasts, allocations } = state;
 
   return (
@@ -60,12 +60,28 @@ export const DemandIntelligence: React.FC = () => {
               <span>Sehore</span>
             </h2>
             <p className="text-xs text-slate-300 mt-0.5">
-              Target hub has a shortage of 2 combine harvesters. Source hub has surplus idle capacity.
+              {allocations.length > 0
+                ? 'Target hub has a shortage of combine harvesters. Source hub has surplus idle capacity.'
+                : 'All regional custom hiring centres are currently balanced or operating in clean baseline.'}
             </p>
           </div>
         </div>
 
-        {allocations.map(alloc => (
+        {allocations.length === 0 ? (
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15 text-center space-y-3">
+            <p className="text-xs text-slate-300">
+              No active relocation recommendations pending approval in clean production mode.
+            </p>
+            <button
+              onClick={() => loadDemoData()}
+              className="btn-primary text-xs py-2 px-4 bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center gap-1.5 shadow-sm cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Load Demo Forecast & Allocations</span>
+            </button>
+          </div>
+        ) : (
+          allocations.map(alloc => (
           <div
             key={alloc.id}
             className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15 grid grid-cols-1 md:grid-cols-12 gap-5 items-center"
@@ -112,7 +128,8 @@ export const DemandIntelligence: React.FC = () => {
               )}
             </div>
           </div>
-        ))}
+        )))
+        }
       </div>
 
       {/* Meteorological Weather Risk & Rainfall Radar */}
@@ -131,8 +148,15 @@ export const DemandIntelligence: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {demandForecasts.map(df => (
+        {demandForecasts.length === 0 ? (
+          <div className="p-8 text-center bg-surface-50 rounded-2xl border border-slate-200/80 space-y-2">
+            <p className="text-xs text-slate-500 font-medium">
+              No regional demand forecasts registered in clean production baseline.
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {demandForecasts.map(df => (
             <div
               key={df.id}
               className={clsx(
@@ -198,6 +222,7 @@ export const DemandIntelligence: React.FC = () => {
             </div>
           ))}
         </div>
+        )}
       </div>
 
       {/* Explainable Factor Weights Model Table */}

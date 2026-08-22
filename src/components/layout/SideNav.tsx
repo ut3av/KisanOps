@@ -28,7 +28,9 @@ import {
   PhoneCall,
   Flame,
   AlertTriangle,
-  LucideIcon
+  LucideIcon,
+  Trash2,
+  RotateCcw
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { UserRole } from '../../types';
@@ -60,7 +62,7 @@ export const SideNav: React.FC<SideNavProps> = ({
   isCollapsed = false,
   onToggleCollapse,
 }) => {
-  const { state, switchRole } = useKisanOpsStore();
+  const { state, switchRole, loadDemoData, clearAllData } = useKisanOpsStore();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -338,7 +340,47 @@ export const SideNav: React.FC<SideNavProps> = ({
 
       {/* Operating Context / Hub Card */}
       {(!isCollapsed || isDrawer) && (
-        <div className="p-3 mt-auto border-t border-slate-100">
+        <div className="p-3 mt-auto space-y-2 border-t border-slate-100">
+          {/* Data Management Controls Card */}
+          <div className="bg-surface-50 p-2.5 rounded-2xl border border-slate-200/80 space-y-2">
+            <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              <span>Platform Dataset</span>
+              <span className={clsx(
+                'px-1.5 py-0.2 rounded text-[9px] font-black',
+                state.machines.length > 0 ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-200 text-slate-700'
+              )}>
+                {state.machines.length > 0 ? `${state.machines.length} Assets Demo` : 'Clean Slate'}
+              </span>
+            </div>
+
+            {state.machines.length === 0 ? (
+              <button
+                onClick={() => loadDemoData()}
+                className="w-full py-1.5 px-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow-2xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-200 shrink-0" />
+                <span>Load Demo Dataset</span>
+              </button>
+            ) : (
+              <div className="flex items-center gap-1.5">
+                <button
+                  onClick={() => clearAllData()}
+                  className="flex-1 py-1.5 px-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 text-[11px] font-bold border border-rose-200 shadow-2xs transition-all flex items-center justify-center gap-1 cursor-pointer"
+                >
+                  <Trash2 className="w-3 h-3 text-rose-600 shrink-0" />
+                  <span>Remove All</span>
+                </button>
+                <button
+                  onClick={() => loadDemoData()}
+                  className="p-1.5 rounded-xl bg-surface-100 hover:bg-surface-200 text-slate-700 border border-slate-200 text-xs transition-colors cursor-pointer"
+                  title="Reload Demo Dataset"
+                >
+                  <RotateCcw className="w-3.5 h-3.5 shrink-0" />
+                </button>
+              </div>
+            )}
+          </div>
+
           <div className="bg-surface-100 p-3 rounded-2xl border border-slate-200/70 space-y-1 text-xs">
             <div className="flex items-center justify-between text-[10px] text-slate-500 font-bold uppercase">
               <span>{currentRole === 'FARMER' ? 'Active Farmland' : 'Operating Hub'}</span>
@@ -348,14 +390,14 @@ export const SideNav: React.FC<SideNavProps> = ({
               </span>
             </div>
             <div className="font-extrabold text-slate-800 truncate">
-              {currentRole === 'FARMER' ? state.farm.farmName : 'Sehore Agri Centre (CHC #01)'}
+              {currentRole === 'FARMER' ? state.farm.farmName : (state.chcs[0]?.name || 'Sehore Agri Centre (CHC #01)')}
             </div>
             <div className="text-[11px] text-slate-500 font-mono flex items-center gap-1 truncate">
               <MapPin className="w-3 h-3 text-agri-700 shrink-0" />
               <span>
                 {currentRole === 'FARMER'
                   ? `${state.farm.sizeAcres} Acres • ${state.farm.crop?.cropName || 'Wheat'}`
-                  : '11/14 Deployed • Sehore MP'}
+                  : `${state.machines.length} Units • Sehore MP`}
               </span>
             </div>
           </div>

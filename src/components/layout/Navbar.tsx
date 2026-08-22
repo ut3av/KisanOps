@@ -9,7 +9,11 @@ import {
   LogOut,
   MapPin,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Sparkles,
+  Trash2,
+  RotateCcw,
+  Database
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { UserRole } from '../../types';
@@ -18,13 +22,14 @@ import { SideNav } from './SideNav';
 import clsx from 'clsx';
 
 export const Navbar: React.FC = () => {
-  const { state, switchRole, markNotificationRead } = useKisanOpsStore();
+  const { state, switchRole, markNotificationRead, loadDemoData, clearAllData } = useKisanOpsStore();
   const [showRoleMenu, setShowRoleMenu] = useState(false);
   const [showNotifMenu, setShowNotifMenu] = useState(false);
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const navigate = useNavigate();
 
   const unreadCount = state.notifications.filter(n => !n.isRead).length;
+  const isDemoActive = state.isDemoLoaded || state.machines.length > 0;
 
   const handleRoleChange = (role: UserRole) => {
     switchRole(role);
@@ -79,8 +84,40 @@ export const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Right Section: Location + Role Switcher + Notifications + User Avatar */}
-          <div className="flex items-center gap-2 sm:gap-3.5">
+          {/* Right Section: Demo Controls + Location + Role Switcher + Notifications + User Avatar */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Demo Data Management Controls */}
+            {!isDemoActive ? (
+              <button
+                onClick={() => loadDemoData()}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow-sm transition-all cursor-pointer border border-amber-600 shrink-0 animate-pulse hover:animate-none"
+                title="Load full demonstration dataset (7 machines, bookings, telematics, alerts)"
+              >
+                <Sparkles className="w-3.5 h-3.5 shrink-0 text-amber-200" />
+                <span className="hidden sm:inline">Load Demo Data</span>
+                <span className="sm:hidden">Load Demo</span>
+              </button>
+            ) : (
+              <div className="flex items-center gap-1 shrink-0">
+                <button
+                  onClick={() => clearAllData()}
+                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-bold border border-rose-200 shadow-2xs transition-all cursor-pointer"
+                  title="Remove all demo data, prices, bookings, and reset to clean baseline"
+                >
+                  <Trash2 className="w-3.5 h-3.5 shrink-0 text-rose-600" />
+                  <span className="hidden md:inline">Remove All Data</span>
+                  <span className="md:hidden">Clear</span>
+                </button>
+                <button
+                  onClick={() => loadDemoData()}
+                  className="p-1.5 rounded-xl bg-surface-100 hover:bg-surface-200 text-slate-600 border border-slate-200 transition-colors cursor-pointer"
+                  title="Reload complete demo dataset"
+                >
+                  <RotateCcw className="w-3.5 h-3.5 shrink-0" />
+                </button>
+              </div>
+            )}
+
             {/* Location Badge */}
             <div className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-100 border border-slate-200/80 text-xs font-medium text-slate-700 shrink-0">
               <MapPin className="w-3.5 h-3.5 text-agri-700 shrink-0" />
@@ -187,29 +224,35 @@ export const Navbar: React.FC = () => {
                   </div>
 
                   <div className="divide-y divide-slate-100">
-                    {state.notifications.map(notif => (
-                      <div
-                        key={notif.id}
-                        onClick={() => {
-                          markNotificationRead(notif.id);
-                          if (notif.linkUrl) navigate(notif.linkUrl);
-                          setShowNotifMenu(false);
-                        }}
-                        className={clsx(
-                          'p-3 hover:bg-slate-50 cursor-pointer text-xs transition-colors',
-                          !notif.isRead && 'bg-emerald-50/40'
-                        )}
-                      >
-                        <div className="font-semibold text-slate-900 flex items-center justify-between">
-                          <span>{notif.title}</span>
-                          {!notif.isRead && <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />}
-                        </div>
-                        <p className="text-slate-600 mt-1 leading-snug">{notif.message}</p>
-                        <span className="text-[10px] text-slate-400 mt-1.5 block">
-                          {new Date(notif.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                        </span>
+                    {state.notifications.length === 0 ? (
+                      <div className="p-4 text-center text-xs text-slate-400">
+                        No notifications in clean production state.
                       </div>
-                    ))}
+                    ) : (
+                      state.notifications.map(notif => (
+                        <div
+                          key={notif.id}
+                          onClick={() => {
+                            markNotificationRead(notif.id);
+                            if (notif.linkUrl) navigate(notif.linkUrl);
+                            setShowNotifMenu(false);
+                          }}
+                          className={clsx(
+                            'p-3 hover:bg-slate-50 cursor-pointer text-xs transition-colors',
+                            !notif.isRead && 'bg-emerald-50/40'
+                          )}
+                        >
+                          <div className="font-semibold text-slate-900 flex items-center justify-between">
+                            <span>{notif.title}</span>
+                            {!notif.isRead && <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />}
+                          </div>
+                          <p className="text-slate-600 mt-1 leading-snug">{notif.message}</p>
+                          <span className="text-[10px] text-slate-400 mt-1.5 block">
+                            {new Date(notif.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                          </span>
+                        </div>
+                      ))
+                    )}
                   </div>
                 </div>
               )}

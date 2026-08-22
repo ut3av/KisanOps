@@ -26,7 +26,7 @@ export const FleetManagement: React.FC = () => {
     'Fleet Registry & Machinery Status',
     'Track machinery availability, health scores, and technical specifications.'
   );
-  const { state } = useKisanOpsStore();
+  const { state, loadDemoData } = useKisanOpsStore();
   const { machines, currentTelemetry } = state;
 
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
@@ -137,10 +137,24 @@ export const FleetManagement: React.FC = () => {
               {filteredMachines.length === 0 ? (
                 <tr>
                   <td colSpan={8} className="py-12 text-center text-slate-400">
-                    <div className="flex flex-col items-center justify-center gap-2">
+                    <div className="flex flex-col items-center justify-center gap-2.5 max-w-sm mx-auto">
                       <Tractor className="w-8 h-8 text-slate-300 shrink-0" />
-                      <span className="font-semibold text-xs text-slate-600">No machinery assets found</span>
-                      <span className="text-[11px] text-slate-400">Try adjusting your search query or status filter.</span>
+                      <span className="font-semibold text-xs text-slate-700">
+                        {machines.length === 0 ? 'No Machinery Assets Registered (Clean Baseline)' : 'No machinery assets found'}
+                      </span>
+                      <span className="text-[11px] text-slate-400 text-center">
+                        {machines.length === 0
+                          ? 'Operating in clean production mode. You can register new equipment or load the demonstration fleet.'
+                          : 'Try adjusting your search query or status filter.'}
+                      </span>
+                      {machines.length === 0 && (
+                        <button
+                          onClick={() => loadDemoData()}
+                          className="mt-1 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold rounded-xl shadow-2xs transition-colors cursor-pointer"
+                        >
+                          ⚡ Load Demo Fleet Dataset
+                        </button>
+                      )}
                     </div>
                   </td>
                 </tr>
