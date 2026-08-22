@@ -1,89 +1,128 @@
-# Yukti (KisanOps) - An Agricultural Machinery Intelligence Platform..
+# 🌾 Yukti (KisanOps) — Agricultural Machinery Intelligence & CHC Operations Platform
 
 <div align="center">
-  <img src="public/images/yukti-platform-overview.jpg" alt="Yukti Agricultural Machinery Intelligence Platform Overview" width="100%" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);" />
+  <img src="public/images/yukti-platform-overview.jpg" alt="Yukti Agricultural Machinery Intelligence Platform" width="100%" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);" />
   <br />
   <br />
   <p align="center">
-    <strong>Predict. Allocate. Operate.</strong><br />
-    <em>An end-to-end cloud operations & telematics intelligence platform for agricultural machinery, Custom Hiring Centres (CHCs), operators, and smallholder farmers.</em>
+    <strong>Predict. Allocate. Operate. Settle.</strong><br />
+    <em>A production-ready cloud operations platform connecting Indian farmers, Custom Hiring Centres (CHCs), machinery operators, and agronomists into a unified, high-efficiency equipment sharing economy.</em>
   </p>
 
   <p align="center">
-    <a href="#-key-features"><img src="https://img.shields.io/badge/Platform-Production--Ready-1b4d3e?style=for-the-badge" alt="Production Ready" /></a>
-    <a href="#-technology-stack"><img src="https://img.shields.io/badge/Stack-React%2018%20%7C%20TypeScript%20%7C%20Supabase-7aa32c?style=for-the-badge" alt="Stack" /></a>
-    <a href="#-deployment-guide-vercel"><img src="https://img.shields.io/badge/Deploy-Vercel%20Edge%20Ready-000000?style=for-the-badge&logo=vercel" alt="Vercel" /></a>
-    <a href="#-automated-test-suite"><img src="https://img.shields.io/badge/Tests-19%2F19%20Passing-emerald?style=for-the-badge" alt="Tests" /></a>
+    <a href="#-key-features"><img src="https://img.shields.io/badge/Platform-Production--Ready-1b4d3e?style=for-the-badge&logo=react" alt="Production Ready" /></a>
+    <a href="#-automated-test-suite"><img src="https://img.shields.io/badge/Tests-34%2F34%20Passing-7aa32c?style=for-the-badge&logo=vitest" alt="34 Tests Passing" /></a>
+    <a href="#-technology-stack"><img src="https://img.shields.io/badge/Stack-React%2018%20%7C%20TypeScript%20%7C%20Vite-0284c7?style=for-the-badge&logo=typescript" alt="TypeScript Stack" /></a>
+    <a href="#-deployment-guide-vercel"><img src="https://img.shields.io/badge/Deploy-Vercel%20Edge%20Ready-000000?style=for-the-badge&logo=vercel" alt="Vercel Edge Ready" /></a>
+    <a href="#-database--backend-supabase"><img src="https://img.shields.io/badge/Backend-Supabase%20Realtime-3ecf8e?style=for-the-badge&logo=supabase" alt="Supabase Realtime" /></a>
   </p>
 </div>
 
 ---
 
-## 🌾 The Problem & The Solution
+## 📸 Platform Showcase Gallery
 
-In emerging agricultural economies like India, over **85% of smallholder farmers** lack access to high-capacity mechanization (modern harvesters, laser levelers, precision seed drills) during tight seasonal windows. At the same time, **Custom Hiring Centres (CHCs)** and equipment owners suffer from **suboptimal fleet utilization (under 32%)**, inaccurate regional demand forecasts, high idle repositioning costs, and cashflow crunches caused by informal credit.
+<div align="center">
+  <table>
+    <tr>
+      <td width="33%" align="center">
+        <img src="public/images/real-tractor-field.jpg" alt="Tractor Live Tracking" width="100%" style="border-radius: 12px;" />
+        <br />
+        <strong>Live Machine Tracking & GPS</strong><br />
+        <sub>Real-time tractor speed, fuel usage, and engine sensor monitoring</sub>
+      </td>
+      <td width="33%" align="center">
+        <img src="public/images/real-farmer-field.jpg" alt="Farmer Mobile Portal" width="100%" style="border-radius: 12px;" />
+        <br />
+        <strong>Farmer Mobile Marketplace</strong><br />
+        <sub>1-tap tractor booking, plot polygon geofencing & Pay After Harvest</sub>
+      </td>
+      <td width="33%" align="center">
+        <img src="public/images/real-harvester-field.jpg" alt="Harvester Fleet Allocation" width="100%" style="border-radius: 12px;" />
+        <br />
+        <strong>CHC Fleet Reallocation</strong><br />
+        <sub>Surplus rebalancing, dynamic pricing & regional shortage prediction</sub>
+      </td>
+    </tr>
+  </table>
+</div>
 
-**Yukti** (formerly KisanOps) provides a unified digital infrastructure connecting farm agricultural context, regional crop maturity timelines, IoT telematics, and fintech micro-financing to turn heavy farm equipment into a high-efficiency shared utility.
+---
 
-```
-Farm Context & Weather Signals
-            ↓
-AI Demand Forecasting (+34% Regional Surge Alert)
-            ↓
-Deterministic Inter-Hub Fleet Rebalancing (Bhopal ➔ Sehore)
-            ↓
-7-Factor Explainable Machinery Matching (94% Fit Score)
-            ↓
-Dynamic Pricing & AgriCredit Deferred Payment (Pay Post-Harvest)
-            ↓
-Operator Mobile Console & Realtime CAN-Bus Telematics (J1939)
-            ↓
-Automated Anomaly Sentinel & Predictive Maintenance (Fuel Surge +15%)
-            ↓
-Instant PDF Tax Invoicing & Real Payment Settlement (Razorpay)
+## 🚜 The Agronomic Challenge & Yukti Solution
+
+In India's agricultural belt, over **85% of smallholder farmers** cannot afford high-capacity machinery (e.g. 75+ HP 4WD Tractors, Tracked Combine Harvesters, Laser Levelers). Concurrently, **Custom Hiring Centres (CHCs)** suffer from **suboptimal fleet utilization (< 32%)**, unpredictable demand surges, heavy fuel leakages, and delayed cashflow due to informal credit.
+
+**Yukti** transforms fragmented machinery ownership into a predictable, high-efficiency shared utility:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                 YUKTI CLOSED-LOOP PIPELINE                             │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+                                           │
+  1. FARM CONTEXT & WEATHER           ───► Real-time Open-Meteo Satellite & Live Rain Radar
+                                           │
+  2. DEMAND FORECASTING               ───► +34% Regional Surge Alerts across District Clusters
+                                           │
+  3. FLEET REBALANCING                ───► Moves Idle Machinery to High-Demand CHC Centers
+                                           │
+  4. SMART MACHINE MATCHING           ───► 7-Factor Compatibility Fit with Explainable Reasons
+                                           │
+  5. MULTILINGUAL VOICE AI            ───► Natural Hindi/Hinglish Voice Booking Assistant
+                                           │
+  6. FLEXIBLE CHECKOUT                ───► Razorpay Standard Checkout & Pay After Harvest Credit
+                                           │
+  7. LIVE OPERATOR COCKPIT            ───► GPS Route Tracking, Diesel Logging & Work Timer
+                                           │
+  8. MACHINE SENSOR MONITORING        ───► Extra Diesel Usage & Engine Temperature Alerts
+                                           │
+  9. AUTOMATED GST INVOICING          ───► Dispute-Free Branded PDF Receipts with Verified Hours
 ```
 
 ---
 
-## ⚡ Core Platform Capabilities
+## 🌟 Core System Modules
 
 ### 1. 🔮 Regional Demand Intelligence Engine
-- Synthesizes regional crop stage progression (Sowing ➔ Vegetative ➔ Flowering ➔ Maturity ➔ Harvest-ready), historical rental velocity, booking density, and real-time precipitation signals.
-- Computes shortage indices across machinery categories (e.g. 5 harvesters required vs 3 available in the Bilkisganj wheat belt).
+- Synthesizes regional crop stage progression (*Sowing ➔ Vegetative ➔ Flowering ➔ Harvest-Ready*), booking density, and live meteorological signals.
+- Computes shortage indices across machinery categories (e.g. *5 Harvesters required vs 2 available in Sehore district*).
 
-### 2. 🚛 Inter-Hub Fleet Reallocation Optimizer
-- Solves idle capacity imbalance by evaluating surplus machinery in neighboring CHCs (e.g. Bhopal Central) and calculating relocation ROI (`+21%` utilization gain, `₹31,500` net revenue upside).
+### 2. 🌦️ Live Open-Meteo Weather Risk Radar & RainViewer Doppler
+- Connects directly to **Open-Meteo API** to fetch real-time satellite telemetry (*current temperature, humidity, wind velocity, precipitation*).
+- Formulates agronomic harvest risk, distinguishes between immediate 24h rain vs 7-day cumulative rainfall, and computes soil tractability limits (*Max 18T machine weight*).
+- Integrates interactive **RainViewer live Doppler satellite radar** loop for tracking incoming precipitation fronts.
 
-### 3. 🎯 7-Factor Explainable Smart Matching
-- Computes transparent compatibility scores factoring Task Suitability (25%), Availability (20%), Travel Distance (15%), Machine Health (15%), Tariff Fit (10%), Reliability (10%), and Operator Rating (5%) with clear *"Why this match?"* explanations.
+### 3. 🎙️ Multilingual Voice AI Assistant (Kisan Voice)
+- Built for Indian farmers with low digital literacy: farmers can speak naturally in **Hindi, Hinglish, or English** (e.g. *"मुझे कल 5 एकड़ गेहूं कटाई के लिए हार्वेस्टर चाहिए"*).
+- Extracts structured intent (`cropType`, `acres`, `activity`, `date`, `urgency`), searches available inventory, recommends the top-rated machine, and synthesizes natural audio responses.
 
-### 4. 💳 AgriCredit Deferred-Payment Micro-Financing
-- Proprietary 300–900 scoring algorithm assessing landholding size, crop variety, historical repayment reliability, and farm productivity.
-- Grants smallholders pre-approved deferred rental limits (up to `₹10,000`) to pay post-harvest within 45 days, eliminating liquidity bottlenecks.
+### 4. 🎯 7-Factor Explainable Smart Matching
+- Ranks candidate machines using a weighted compatibility model:
+  - **Task Suitability (25%)** • **Availability (20%)** • **Distance (15%)** • **Machine Health (15%)** • **Tariff Fit (10%)** • **Reliability (10%)** • **Operator Rating (5%)**
+- Delivers transparent, plain-English reasons explaining why the machine fits the farmer's plot.
 
-### 5. 📡 Real-Time CAN-Bus J1939 Telematics & Anomaly Sentinels
-- Connects OBD-II / Teltonika hardware GPS trackers or streams simulated 2000ms electronic control unit (ECU) data including RPM, speed, engine temperature (°C), fuel consumption rate (L/h), and battery voltage.
-- Automatically flags high-priority maintenance alerts when fuel burn rate spikes `+15%` above baseline or coolant temperature exceeds `105°C`.
+### 5. 💳 Pay After Harvest (AgriCredit) & Razorpay Gateway
+- **AgriCredit Scoring (300–900)**: Evaluates landholding size, crop variety, and repayment reliability, granting pre-approved credit limits (up to `₹10,000`) payable within 45 days after selling produce at the APMC Mandi.
+- **Razorpay Standard Checkout**: Official SDK redirection supporting UPI (Google Pay, PhonePe, Paytm), QR code scanning, RuPay/Visa/MasterCard, and NetBanking.
 
-### 6. 🚜 Dedicated Driver / Operator Mobile Console (`/operator`)
-- Mobile-first driver interface featuring a 1-tap productive runtime meter (Start / Pause / Complete), turn-by-turn navigation to farm boundary polygons, digital diesel slip logger with reimbursement tracking, and J1939 fault reporter.
+### 6. 📡 Live Machine GPS Tracking & Diesel Alerts
+- Tracks real-time machine speed, fuel remaining (%), diesel usage rate (L/hr), engine heat (°C), and working hours.
+- Automated anomaly sentinels flag diesel leaks (`+17% burn rate`) and engine heat warnings before mechanical failure occurs.
 
-### 7. 💳 Razorpay Online Payment Gateway Integration
-- Embedded Razorpay Standard Checkout SDK supporting instant UPI QR code scanning, Google Pay / PhonePe deep links, RuPay / Visa cards, and NetBanking alongside deferred AgriCredit.
-
-### 8. 🧾 Automated GST Billing & Post-Rental Invoicing
-- Dynamically reconciles booked vs actual telemetry engine hours, computes transport charges, fuel surcharges, platform fees, and 5% GST, automatically outputting downloadable PDF tax invoices via `jsPDF`.
+### 7. 🧾 Automated GST Billing & Branded Tax Invoices
+- Dynamically reconciles booked vs verified engine runtime hours, transportation charges, and 5% GST.
+- Generates downloadable, print-ready branded PDF invoices via `jsPDF` and `html2canvas`.
 
 ---
 
-## 👥 4 Role-Based Dedicated Portals
+## 👥 4 Role-Based Operational Portals
 
-| Role | Route | Key Modules & Capabilities |
-|---|---|---|
-| 🌾 **Farmer Portal** | `/farmer` | • Smart Machinery Marketplace<br />• 1-Click Booking Modal<br />• Farm & Crop Polygon Profiles<br />• AgriCredit Limit & Repayment History<br />• Active Rental Live GPS Tracking |
-| 🏢 **CHC Hub Manager** | `/chc` | • 7-Day Regional Demand Forecasting<br />• Fleet Health & Hour Meter Registry<br />• Live Telematics CAN-Bus Stream<br />• Predictive Maintenance & Anomaly Resolution<br />• Booking Dispatch Manager & GST Revenue Analytics |
-| 🚜 **Machine Operator** | `/operator` | • Active Mission Cockpit with 1-Tap Stopwatch Meter<br />• Direct Farmer Phone Dialer & Navigation<br />• Digital Diesel Refill Logger<br />• Pre-Trip Safety & Breakdown Reporter<br />• Operator Wages & Acreage Incentive Tracker |
-| 🛡️ **Platform Governance** | `/admin` | • Multi-Hub Regional Overview<br />• Dynamic Pricing Safety Rules & Cap Bounds (0.80x–1.30x)<br />• Cross-District Fleet Allocation Approvals<br />• SOC2 / ISO 27001 Security Audit Log |
+| Portal | Route | Key Functionalities |
+| :--- | :--- | :--- |
+| 🌾 **Farmer Portal** | `/farmer` | • Machinery search & booking<br />• Farm acreage & GPS polygon setup<br />• Pay After Harvest limit tracker<br />• Live tractor GPS route map<br />• Downloadable payment receipts |
+| 🏢 **CHC Hub Hub** | `/chc` | • 7-day regional demand forecasting<br />• Fleet registry & machine health scoring<br />• Inter-hub relocation approvals<br />• Live tractor sensor stream & diesel leak alerts<br />• GST revenue analytics |
+| 🚜 **Machine Operator** | `/operator` | • Active job cockpit with start/pause/finish stopwatch<br />• Direct farmer call button & turn-by-turn map<br />• Digital diesel refill slip logger<br />• Breakdown & maintenance reporter<br />• Shift earnings & acreage incentive statement |
+| 🛡️ **Platform Admin** | `/admin` | • Multi-district hub oversight<br />• Dynamic pricing bounds (0.80x – 1.30x)<br />• Cross-district fleet relocation approvals<br />• SMAM subsidy compliance & security audit logs |
 
 ---
 
@@ -91,101 +130,66 @@ Instant PDF Tax Invoicing & Real Payment Settlement (Razorpay)
 
 ```text
 ┌────────────────────────────────────────────────────────┐
-│                   CLIENT APPLICATION                   │
-│   React 18  •  TypeScript  •  Vite  •  Tailwind CSS    │
-│   React Router v6  •  TanStack React Query  •  Recharts│
-│   Leaflet GIS Maps  •  jsPDF  •  Lucide Icons          │
+│                   CLIENT ARCHITECTURE                  │
+│   React 18  •  TypeScript (Strict)  •  Vite  •  Tailwind│
+│   React Router v6  •  Lucide Icons  •  Leaflet GIS Maps│
+│   jsPDF  •  html2canvas  •  Web Speech API (Voice AI)  │
 └──────────────────────────┬─────────────────────────────┘
-                           │ REST / Realtime / Webhooks
+                           │ REST / Realtime WebSockets
 ┌──────────────────────────▼─────────────────────────────┐
-│                    SUPABASE CLOUD                      │
-│   PostgreSQL 15 (UUIDs, RLS, PostGIS, JSONB)           │
-│   Supabase Auth (OTP / Password / Profiles)            │
-│   Supabase Realtime (PostgreSQL Changes WebSocket)     │
+│                    BACKEND & CLOUD                     │
+│   Supabase Cloud PostgreSQL 15 (RLS, PostGIS, UUIDs)   │
+│   Supabase Auth & Realtime Channels                    │
 │   Supabase Edge Functions (Deno Telemetry Webhook)     │
 └──────────────────────────┬─────────────────────────────┘
-                           │
+                           │ APIs & Gateways
 ┌──────────────────────────▼─────────────────────────────┐
-│                PAYMENTS & HARDWARE IOT                 │
-│   Razorpay Checkout Gateway (UPI, QR, Cards)           │
-│   OBD-II / Teltonika J1939 CAN-Bus GPS Trackers        │
+│                 EXTERNAL INTEGRATIONS                  │
+│   Open-Meteo Weather API (Real-time Satellite Forecast)│
+│   RainViewer Doppler Satellite Telemetry               │
+│   Razorpay Standard Checkout Payment Gateway           │
+│   OpenStreetMap & CartoDB Tile Services                │
 └────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🌐 Deployment Guide: Vercel
-
-> **Is Vercel fine for Yukti?**  
-> **Yes, Vercel is the optimal deployment platform.** Because Yukti is built on Vite + React SPA architecture with Supabase as the serverless backend, deploying to Vercel provides sub-second global Edge CDN delivery, automatic HTTPS, continuous deployment from GitHub, and instant preview branches.
-
-### 1-Click / CLI Deployment to Vercel
-
-#### Option A: Deploy via Vercel CLI
-```bash
-# Install Vercel CLI globally
-npm install -g vercel
-
-# Login to Vercel
-vercel login
-
-# Deploy project
-vercel
-```
-
-#### Option B: Deploy via Vercel Web Dashboard
-1. Push your repository to GitHub: `git push origin main`.
-2. Open the [Vercel Dashboard](https://vercel.com/new) and click **Add New Project**.
-3. Import your GitHub repository (`KisanOps`).
-4. Set the Framework Preset to **Vite**.
-5. Build & Output settings (configured automatically via `vercel.json`):
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-   - **Install Command**: `npm install`
-6. Add Environment Variables (see below) and click **Deploy**.
-
-### Environment Variables Configuration
-
-In your Vercel Project Settings ➔ **Environment Variables**, add:
-
-```env
-# Supabase Configuration
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_ANON_KEY=your-supabase-anon-key-here
-
-# Razorpay Payment Gateway (Optional / Sandbox Supported)
-VITE_RAZORPAY_KEY_ID=rzp_test_yourKeyHere
-```
-
-*Note: If environment variables are not supplied, the platform will automatically run in local interactive mode with 100% feature coverage.*
-
----
-
-## ⚡ Local Development Setup
+## ⚡ Quickstart & Local Setup
 
 ### Prerequisites
-- Node.js `v18+` or `v20+`
-- npm `v9+`
+- **Node.js**: `v18.0.0+` or `v20.0.0+`
+- **npm**: `v9.0.0+`
 
-### 1. Clone & Install Dependencies
+### 1. Clone & Install
 ```bash
 git clone https://github.com/your-org/KisanOps.git
 cd KisanOps
 npm install
 ```
 
-### 2. Start Development Server
+### 2. Configure Environment Variables
+Create a `.env` file in the root directory:
+
+```env
+# Supabase Configuration
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key-here
+
+# Razorpay Payment Gateway (Test Key for Sandbox)
+VITE_RAZORPAY_KEY_ID=rzp_test_yourKeyIdHere
+```
+
+*(Note: If Supabase credentials are not provided, KisanOps operates with zero downtime using typed seed fallback data).*
+
+### 3. Run Development Server
 ```bash
 npm run dev
 ```
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-### 3. Run Production Build & Validation
+### 4. Build for Production
 ```bash
-# Verify TypeScript & Vite bundle
 npm run build
-
-# Preview production build locally
 npm run preview
 ```
 
@@ -193,50 +197,74 @@ npm run preview
 
 ## 🧪 Automated Test Suite
 
-Yukti includes comprehensive unit tests verifying all core computation engines, dynamic pricing, weather signals, IoT ingestion validators, and database fallbacks:
+Yukti includes comprehensive unit tests verifying all pricing algorithms, weather intelligence, voice intent extraction, Razorpay order validation, and offline database fallback resilience:
 
 ```bash
-# Run Vitest test runner
 npx vitest run
 ```
 
 ```text
+ RUN  v4.1.11 C:/Users/vastu/OneDrive/Desktop/Projects/KisanOps
+
  ✓ src/lib/__tests__/weatherEngine.test.ts (4 tests)
  ✓ src/lib/__tests__/engines.test.ts (10 tests)
+ ✓ src/services/__tests__/voiceIntent.test.ts (9 tests)
+ ✓ src/lib/__tests__/razorpay.test.ts (6 tests)
  ✓ src/lib/__tests__/iotAndDb.test.ts (5 tests)
 
- Test Files  3 passed (3)
-      Tests  19 passed (19)
+ Test Files  5 passed (5)
+      Tests  34 passed (34)
+   Duration  1.43s
 ```
 
 ---
 
-## 🗄️ Database & Edge Functions (Supabase)
+## 🌐 Production Deployment Guide (Vercel)
 
-### 1. Execute SQL Schema
-In your Supabase project dashboard, open the **SQL Editor** and execute the entire content of [`supabase/schema.sql`](file:///c:/Users/vastu/OneDrive/Desktop/Projects/KisanOps/supabase/schema.sql).
+Yukti is optimized for zero-configuration deployment to **Vercel Edge CDN**:
 
-### 2. Deploy IoT Telemetry Edge Function
+### Deploy via Vercel CLI
 ```bash
-supabase functions deploy telemetry-webhook --no-verify-jwt
+npm install -g vercel
+vercel login
+vercel
 ```
 
-### 3. Send Test Hardware Telemetry Payload
+### Deploy via GitHub
+1. Push your repository to GitHub: `git push origin main`.
+2. In the [Vercel Dashboard](https://vercel.com/new), import your repository.
+3. Framework Preset: **Vite**
+4. Build Settings:
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+5. Add `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, and `VITE_RAZORPAY_KEY_ID` under **Environment Variables**.
+6. Click **Deploy**.
+
+---
+
+## 🗄️ Database & IoT Webhook Integration
+
+### 1. Database Schema
+Execute [`supabase/schema.sql`](supabase/schema.sql) in your Supabase SQL Editor to provision all tables (`profiles`, `chcs`, `machines`, `farms`, `bookings`, `invoices`, `telemetry_logs`, `demand_forecasts`, `allocations`).
+
+### 2. Ingest Hardware GPS & Sensor Payload
+Hardware GPS trackers can POST live machine metrics directly to the telemetry endpoint:
+
 ```bash
 curl -X POST "https://your-project.supabase.co/functions/v1/telemetry-webhook" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_ANON_KEY" \
   -d '{
     "machineId": "mach-jd-harv-07",
-    "latitude": 23.1872,
-    "longitude": 77.1008,
-    "speedKmh": 4.8,
-    "fuelLevelPercent": 78.5,
-    "fuelConsumptionRateLph": 8.4,
-    "engineHours": 342.8,
-    "engineTemperatureC": 88,
+    "latitude": 22.7196,
+    "longitude": 75.8577,
+    "speedKmh": 18.2,
+    "fuelLevelPercent": 82.0,
+    "fuelConsumptionRateLph": 7.4,
+    "engineHours": 348.5,
+    "engineTemperatureC": 86,
     "rpm": 1950,
-    "batteryVoltage": 13.8,
+    "batteryVoltage": 13.6,
     "status": "ACTIVE"
   }'
 ```
@@ -245,5 +273,5 @@ curl -X POST "https://your-project.supabase.co/functions/v1/telemetry-webhook" \
 
 ## 📄 License & Compliance
 
-- **Security & Compliance**: Built for SOC2 Type II, ISO 27001, and AES-256 encrypted telematics streams.
-- **License**: MIT License. Developed for Indian Custom Hiring Centres and Agri-Mechanization Hubs.
+- **Compliance**: Designed for Indian Custom Hiring Centres under Sub-Mission on Agricultural Mechanization (SMAM) guidelines.
+- **License**: [MIT License](LICENSE).
