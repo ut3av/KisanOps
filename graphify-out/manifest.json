@@ -150,9 +150,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmProfile.tsx": {
-    "mtime": 1787404241.460646,
-    "seen": 1787404337.48872,
-    "ast_hash": "1fbeb37bad91eaefbf048cad59d1ad59",
+    "mtime": 1787414910.3330545,
+    "seen": 1787414958.8077629,
+    "ast_hash": "986ca76110a938897598597e9824c7f2",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerCredit.tsx": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787404196.6231308,
-    "seen": 1787404337.488725,
-    "ast_hash": "08a5a1fb757b9262c849224ac5f3b3e4",
+    "mtime": 1787414893.6304014,
+    "seen": 1787414958.8077664,
+    "ast_hash": "2fa102ed0406d3700cdbb28b80a3a89f",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
@@ -306,9 +306,9 @@
     "semantic_hash": ""
   },
   "src/components/common/WeatherRadarCard.tsx": {
-    "mtime": 1787404105.7284572,
-    "seen": 1787404337.488655,
-    "ast_hash": "fac001d3abee36d2f5cde899e0952f95",
+    "mtime": 1787414880.66897,
+    "seen": 1787414958.8077147,
+    "ast_hash": "cc14b06d497c2bd2616c5825a9c7dd1d",
     "semantic_hash": ""
   },
   "src/features/auth/LoginPage.tsx": {
@@ -348,9 +348,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/HeroSection.tsx": {
-    "mtime": 1787411365.3645022,
-    "seen": 1787412482.6989315,
-    "ast_hash": "567f6f6be8b9a8eb87094041d3ec1c7d",
+    "mtime": 1787414777.8633115,
+    "seen": 1787414958.8077803,
+    "ast_hash": "a8ac75fbad25a20c88cd68532687ed34",
     "semantic_hash": ""
   },
   "src/features/landing/components/HowItWorksSection.tsx": {
@@ -360,9 +360,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/IndustriesSection.tsx": {
-    "mtime": 1787411465.7572687,
-    "seen": 1787412482.6989357,
-    "ast_hash": "937f76fb6f755fb0197c3544f12b44e1",
+    "mtime": 1787414800.1026185,
+    "seen": 1787414958.807788,
+    "ast_hash": "c120b0d5cd76f799113171ee26cf869c",
     "semantic_hash": ""
   },
   "src/features/landing/components/LandingFooter.tsx": {
@@ -372,21 +372,21 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/LandingNavbar.tsx": {
-    "mtime": 1787333871.4257095,
-    "seen": 1787334032.5130868,
-    "ast_hash": "076c35684c0f1be48839f4ca85641fb7",
+    "mtime": 1787414842.2423456,
+    "seen": 1787414958.80779,
+    "ast_hash": "558b6795f38350e6df5930066bda67dc",
     "semantic_hash": ""
   },
   "src/features/landing/components/ModularProductsSection.tsx": {
-    "mtime": 1787411446.8399453,
-    "seen": 1787412482.6989443,
-    "ast_hash": "5c8be044508d3a150d4984320d06e696",
+    "mtime": 1787414832.4716825,
+    "seen": 1787414958.807791,
+    "ast_hash": "66061c03d2ebe8fbf426d408a6956e9b",
     "semantic_hash": ""
   },
   "src/features/landing/components/PlatformEcosystemSection.tsx": {
-    "mtime": 1787411509.0358715,
-    "seen": 1787412482.6989465,
-    "ast_hash": "400284397d63003390344a982d5ee22c",
+    "mtime": 1787414821.09033,
+    "seen": 1787414958.8077927,
+    "ast_hash": "179628310c1afd6d4a2a2dc740ec9871",
     "semantic_hash": ""
   },
   "src/features/landing/components/RoiCalculatorSection.tsx": {
@@ -468,9 +468,9 @@
     "semantic_hash": ""
   },
   "src/lib/weatherEngine.ts": {
-    "mtime": 1787404082.8600652,
-    "seen": 1787404337.4888487,
-    "ast_hash": "14225a010ffcb20b57cb7dd122bff1fa",
+    "mtime": 1787414870.2128654,
+    "seen": 1787414958.8078291,
+    "ast_hash": "3fa7d593b8c54cefa9ac1ec37580b5d1",
     "semantic_hash": ""
   },
   "supabase/schema.sql": {

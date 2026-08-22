@@ -324,9 +324,9 @@
     "semantic_hash": ""
   },
   "src/features/landing/LandingPage.tsx": {
-    "mtime": 1787384506.7529557,
-    "seen": 1787384804.4978812,
-    "ast_hash": "63847733ab879bde9b74dda67825779e",
+    "mtime": 1787411113.1204453,
+    "seen": 1787412482.698921,
+    "ast_hash": "1942d1b82bdd0e76210a3d0faa2b81c1",
     "semantic_hash": ""
   },
   "src/features/landing/components/BookDemoModal.tsx": {
@@ -336,33 +336,33 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/CtaBanner.tsx": {
-    "mtime": 1787324915.0529983,
-    "seen": 1787325115.7569149,
-    "ast_hash": "134b15f3a1afd08ae354cf740d5d4173",
+    "mtime": 1787411882.465835,
+    "seen": 1787412482.6989264,
+    "ast_hash": "8c7b908c5de3c3263bb135fd590a1516",
     "semantic_hash": ""
   },
   "src/features/landing/components/FaqSection.tsx": {
-    "mtime": 1787320791.456978,
-    "seen": 1787322604.019871,
-    "ast_hash": "d46016a9b195e8774fc98dc2e8da5616",
+    "mtime": 1787411816.7066414,
+    "seen": 1787412482.6989288,
+    "ast_hash": "4c318140895f49e13fa33bb32f0d0da3",
     "semantic_hash": ""
   },
   "src/features/landing/components/HeroSection.tsx": {
-    "mtime": 1787332991.9368863,
-    "seen": 1787333008.1183662,
-    "ast_hash": "455b97c7ee681377d4dfc4282f6aa0b2",
+    "mtime": 1787411365.3645022,
+    "seen": 1787412482.6989315,
+    "ast_hash": "567f6f6be8b9a8eb87094041d3ec1c7d",
     "semantic_hash": ""
   },
   "src/features/landing/components/HowItWorksSection.tsx": {
-    "mtime": 1787320738.4347994,
-    "seen": 1787322604.0198748,
-    "ast_hash": "c6e69591c7b8265aa58ff92c94c719dc",
+    "mtime": 1787411410.0149872,
+    "seen": 1787412482.6989338,
+    "ast_hash": "efd66ea60598292255e753b8bfad6eef",
     "semantic_hash": ""
   },
   "src/features/landing/components/IndustriesSection.tsx": {
-    "mtime": 1787323503.3310971,
-    "seen": 1787323721.0338733,
-    "ast_hash": "b8c0cdbf94815aa91a8ad6b84928e712",
+    "mtime": 1787411465.7572687,
+    "seen": 1787412482.6989357,
+    "ast_hash": "937f76fb6f755fb0197c3544f12b44e1",
     "semantic_hash": ""
   },
   "src/features/landing/components/LandingFooter.tsx": {
@@ -378,33 +378,33 @@
     "semantic_hash": ""
   },
   "src/features/landing/components/ModularProductsSection.tsx": {
-    "mtime": 1787332075.0404823,
-    "seen": 1787332130.5778484,
-    "ast_hash": "6273e046b8931926083080350ec000d7",
+    "mtime": 1787411446.8399453,
+    "seen": 1787412482.6989443,
+    "ast_hash": "5c8be044508d3a150d4984320d06e696",
     "semantic_hash": ""
   },
   "src/features/landing/components/PlatformEcosystemSection.tsx": {
-    "mtime": 1787323434.9799068,
-    "seen": 1787323721.0338805,
-    "ast_hash": "11f0f47d5416c062136c5da5df43964d",
+    "mtime": 1787411509.0358715,
+    "seen": 1787412482.6989465,
+    "ast_hash": "400284397d63003390344a982d5ee22c",
     "semantic_hash": ""
   },
   "src/features/landing/components/RoiCalculatorSection.tsx": {
-    "mtime": 1787321743.7741826,
-    "seen": 1787322604.019886,
-    "ast_hash": "15296711ba5ea9ba4a4abc6625000425",
+    "mtime": 1787411637.085069,
+    "seen": 1787412482.6989486,
+    "ast_hash": "5f57fb1a31f631b74a78670523c117b3",
     "semantic_hash": ""
   },
   "src/features/landing/components/StatsImpactSection.tsx": {
-    "mtime": 1787332083.8097353,
-    "seen": 1787332130.5778556,
-    "ast_hash": "3092be1a3b0b517659dbaf4bcf11aa87",
+    "mtime": 1787411678.606941,
+    "seen": 1787412482.6989508,
+    "ast_hash": "5c319625a3bb900be0ade3c746d303e8",
     "semantic_hash": ""
   },
   "src/features/landing/components/TestimonialsSection.tsx": {
-    "mtime": 1787320774.5744402,
-    "seen": 1787322604.0198896,
-    "ast_hash": "f5c3d6ec9956b48800214ccf9ef8a107",
+    "mtime": 1787411732.8747668,
+    "seen": 1787412482.6989524,
+    "ast_hash": "36d58b067654b285e31f9d7caa181e80",
     "semantic_hash": ""
   },
   "src/features/landing/components/TrustMarquee.tsx": {
@@ -768,9 +768,9 @@
     "semantic_hash": ""
   },
   "src/lib/__tests__/razorpay.test.ts": {
-    "mtime": 1787385481.492131,
-    "seen": 1787385872.6338518,
-    "ast_hash": "4f979395e2f46f4dd1fc41da3e292fd4",
+    "mtime": 1787412049.6720214,
+    "seen": 1787412482.6989846,
+    "ast_hash": "3e6080b3f16ed152300429f42e6189f4",
     "semantic_hash": ""
   },
   "src/lib/razorpayService.ts": {
@@ -885,6 +885,18 @@
     "mtime": 1787398752.3902395,
     "seen": 1787399681.8192756,
     "ast_hash": "b0aee31dcc797e4bef77230b93b0a9d3",
+    "semantic_hash": ""
+  },
+  "src/components/common/MinimalCursor.tsx": {
+    "mtime": 1787411018.9857092,
+    "seen": 1787412482.6988218,
+    "ast_hash": "b225c2c09781c95b048151aaa4427e4f",
+    "semantic_hash": ""
+  },
+  "src/components/common/MouseInteractiveGlow.tsx": {
+    "mtime": 1787411041.1315136,
+    "seen": 1787412482.698827,
+    "ast_hash": "49c642b67ab100ab1edf3468570f4629",
     "semantic_hash": ""
   }
 }

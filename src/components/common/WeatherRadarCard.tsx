@@ -56,7 +56,7 @@ export const WeatherRadarCard: React.FC<WeatherRadarCardProps> = ({
     );
     setResolvedLocation(coords.locationName);
 
-    const res = await fetchAgroWeatherForecast(coords);
+    const res = await fetchAgroWeatherForecast(coords, coords.locationName);
     setDaily(res.daily);
     setHourly(res.hourly);
     setCurrentTemp(res.currentTemp);

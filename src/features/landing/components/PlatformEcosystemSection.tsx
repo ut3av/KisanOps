@@ -40,110 +40,140 @@ export const PlatformEcosystemSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {/* Card 1: Web Platform */}
           <div
-            onClick={() => {
-              setActivePlatformTab('web');
-              navigate('/chc');
-            }}
-            className={`p-6 rounded-3xl border transition-all cursor-pointer card-interactive-spotlight ${
+            onClick={() => setActivePlatformTab('web')}
+            className={`p-6 rounded-3xl border transition-all cursor-pointer card-interactive-spotlight flex flex-col justify-between ${
               activePlatformTab === 'web'
                 ? 'bg-[#F5FAED] border-[#7aa32c] shadow-lg scale-[1.02]'
                 : 'bg-stone-50/70 border-stone-200 hover:bg-stone-50'
             }`}
           >
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-2xl bg-white text-[#7aa32c] flex items-center justify-center shadow-subtle">
-                <Laptop className="w-6 h-6" />
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-12 h-12 rounded-2xl bg-white text-[#2e4013] border border-stone-200 flex items-center justify-center shadow-subtle">
+                  <Laptop className="w-6 h-6" />
+                </div>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-white text-stone-700 border border-stone-200 font-typewriter">
+                  CHC Hub
+                </span>
               </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-white text-stone-700 border border-stone-200 font-typewriter">
-                CHC Hub
-              </span>
+              <h3 className="text-xl font-bold text-stone-900 mb-1">CHC Operations Hub</h3>
+              <p className="text-xs text-stone-500 font-medium mb-3">
+                Demand Forecast, Fleet Allocation & Telematics Stream
+              </p>
+              <ul className="space-y-1.5 text-xs text-stone-600 mb-5">
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
+                  <span>Regional demand surge forecasting (+34%)</span>
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
+                  <span>Inter-hub transit and fleet relocation engine</span>
+                </li>
+              </ul>
             </div>
-            <h3 className="text-xl font-bold text-stone-900 mb-1">CHC Operations Hub</h3>
-            <p className="text-xs text-stone-500 font-medium mb-3">
-              Demand Forecast, Fleet Allocation & Telematics Stream
-            </p>
-            <ul className="space-y-1.5 text-xs text-stone-600">
-              <li className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
-                <span>Regional demand surge forecasting (+34%)</span>
-              </li>
-              <li className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
-                <span>Inter-hub transit and fleet relocation engine</span>
-              </li>
-            </ul>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/login?redirect=/chc');
+              }}
+              className="w-full py-2.5 rounded-xl bg-[#1b4d3e] hover:bg-[#153e32] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+            >
+              <span>Sign In to Access CHC Hub</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
           </div>
 
           {/* Card 2: Executive Tablet Ops */}
           <div
-            onClick={() => {
-              setActivePlatformTab('executive');
-              navigate('/admin');
-            }}
-            className={`p-6 rounded-3xl border transition-all cursor-pointer card-interactive-spotlight ${
+            onClick={() => setActivePlatformTab('executive')}
+            className={`p-6 rounded-3xl border transition-all cursor-pointer card-interactive-spotlight flex flex-col justify-between ${
               activePlatformTab === 'executive'
                 ? 'bg-[#F5FAED] border-[#7aa32c] shadow-lg scale-[1.02]'
                 : 'bg-stone-50/70 border-stone-200 hover:bg-stone-50'
             }`}
           >
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-2xl bg-white text-[#7aa32c] flex items-center justify-center shadow-subtle">
-                <Tablet className="w-6 h-6" />
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-12 h-12 rounded-2xl bg-white text-[#2e4013] border border-stone-200 flex items-center justify-center shadow-subtle">
+                  <Tablet className="w-6 h-6" />
+                </div>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-white text-stone-700 border border-stone-200 font-typewriter">
+                  Governance
+                </span>
               </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-white text-stone-700 border border-stone-200 font-typewriter">
-                Governance
-              </span>
+              <h3 className="text-xl font-bold text-stone-900 mb-1">Platform Admin Console</h3>
+              <p className="text-xs text-stone-500 font-medium mb-3">
+                Multi-District Oversight, Fleet Metrics & Audit Logs
+              </p>
+              <ul className="space-y-1.5 text-xs text-stone-600 mb-5">
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
+                  <span>Multi-district machinery utilization analytics</span>
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
+                  <span>Dynamic pricing rule validation & audit trails</span>
+                </li>
+              </ul>
             </div>
-            <h3 className="text-xl font-bold text-stone-900 mb-1">Platform Admin Console</h3>
-            <p className="text-xs text-stone-500 font-medium mb-3">
-              Multi-District Oversight, Fleet Metrics & Audit Logs
-            </p>
-            <ul className="space-y-1.5 text-xs text-stone-600">
-              <li className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
-                <span>Multi-district machinery utilization analytics</span>
-              </li>
-              <li className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
-                <span>Dynamic pricing rule validation & audit trails</span>
-              </li>
-            </ul>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/login?redirect=/admin');
+              }}
+              className="w-full py-2.5 rounded-xl bg-[#1b4d3e] hover:bg-[#153e32] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+            >
+              <span>Sign In to Admin Console</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
           </div>
 
           {/* Card 3: Farmer Mobile App */}
           <div
-            onClick={() => {
-              setActivePlatformTab('farmer');
-              navigate('/farmer');
-            }}
-            className={`p-6 rounded-3xl border transition-all cursor-pointer card-interactive-spotlight ${
+            onClick={() => setActivePlatformTab('farmer')}
+            className={`p-6 rounded-3xl border transition-all cursor-pointer card-interactive-spotlight flex flex-col justify-between ${
               activePlatformTab === 'farmer'
                 ? 'bg-[#F5FAED] border-[#7aa32c] shadow-lg scale-[1.02]'
                 : 'bg-stone-50/70 border-stone-200 hover:bg-stone-50'
             }`}
           >
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-2xl bg-white text-[#7aa32c] flex items-center justify-center shadow-subtle">
-                <Smartphone className="w-6 h-6" />
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-12 h-12 rounded-2xl bg-white text-[#2e4013] border border-stone-200 flex items-center justify-center shadow-subtle">
+                  <Smartphone className="w-6 h-6" />
+                </div>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-white text-stone-700 border border-stone-200 font-typewriter">
+                  Mobile First
+                </span>
               </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-white text-stone-700 border border-stone-200 font-typewriter">
-                Mobile First
-              </span>
+              <h3 className="text-xl font-bold text-stone-900 mb-1">Farmer Matching Portal</h3>
+              <p className="text-xs text-stone-500 font-medium mb-3">
+                Explainable Match, Weather Windows & AgriCredit
+              </p>
+              <ul className="space-y-1.5 text-xs text-stone-600 mb-5">
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
+                  <span>Natural Hindi/English Voice AI matching</span>
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
+                  <span>Doppler harvest window radar & deferred credit</span>
+                </li>
+              </ul>
             </div>
-            <h3 className="text-xl font-bold text-stone-900 mb-1">Farmer Matching Portal</h3>
-            <p className="text-xs text-stone-500 font-medium mb-3">
-              Explainable Match, Weather Windows & AgriCredit
-            </p>
-            <ul className="space-y-1.5 text-xs text-stone-600">
-              <li className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
-                <span>Natural Hindi/English Voice AI matching</span>
-              </li>
-              <li className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#7aa32c]" />
-                <span>Doppler harvest window radar & deferred credit</span>
-              </li>
-            </ul>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/login?redirect=/farmer');
+              }}
+              className="w-full py-2.5 rounded-xl bg-[#7aa32c] hover:bg-[#6b9125] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+            >
+              <span>Sign In to Farmer Portal</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
           </div>
         </div>
 

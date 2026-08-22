@@ -362,13 +362,17 @@ export const ModularProductsSection: React.FC = () => {
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
-                              if (engine.category === 'prediction') navigate('/chc/demand');
-                              else if (engine.category === 'matching') navigate('/farmer/marketplace');
-                              else navigate('/chc/telematics');
+                              const target =
+                                engine.category === 'prediction'
+                                  ? '/chc/demand'
+                                  : engine.category === 'matching'
+                                  ? '/farmer/marketplace'
+                                  : '/chc/telematics';
+                              navigate(`/login?redirect=${encodeURIComponent(target)}`);
                             }}
                             className="text-xs font-bold text-[#1b4d3e] hover:text-[#7aa32c] flex items-center gap-1 cursor-pointer transition-colors"
                           >
-                            <span>Launch Live in Portal</span>
+                            <span>Sign In to Launch Portal</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         </div>
@@ -444,14 +448,18 @@ export const ModularProductsSection: React.FC = () => {
               {/* Portal Launch Button */}
               <button
                 onClick={() => {
-                  if (activeEngine.category === 'prediction') navigate('/chc/demand');
-                  else if (activeEngine.category === 'matching') navigate('/farmer/marketplace');
-                  else navigate('/chc/telematics');
+                  const target =
+                    activeEngine.category === 'prediction'
+                      ? '/chc/demand'
+                      : activeEngine.category === 'matching'
+                      ? '/farmer/marketplace'
+                      : '/chc/telematics';
+                  navigate(`/login?redirect=${encodeURIComponent(target)}`);
                 }}
                 className="w-full py-3 rounded-xl bg-[#1b4d3e] hover:bg-[#153e32] text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Play className="w-3.5 h-3.5 fill-[#9dc84d] text-[#9dc84d]" />
-                <span>Test Drive {activeEngine.title}</span>
+                <span>Sign In to Launch {activeEngine.title}</span>
               </button>
             </div>
           </div>

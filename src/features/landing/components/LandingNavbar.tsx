@@ -49,9 +49,7 @@ export const LandingNavbar: React.FC = () => {
     switchRole(role);
     setPortalDropdownOpen(false);
     setMobileMenuOpen(false);
-    if (role === 'FARMER') navigate('/farmer');
-    else if (role === 'ADMIN') navigate('/admin');
-    else navigate('/chc');
+    navigate(`/login?role=${role}`);
   };
 
   const handleNavClick = (path: string) => {

@@ -175,7 +175,8 @@ const CACHE_TTL_MS = 15 * 60 * 1000;
  * Fetches real-time weather from Open-Meteo API or realistic agro simulation
  */
 export async function fetchAgroWeatherForecast(
-  coords: LocationCoordinates = MP_WEATHER_LOCATIONS.indore
+  coords: { latitude: number; longitude: number } = { latitude: 23.1872, longitude: 77.1008 },
+  locationName?: string
 ): Promise<{
   daily: WeatherForecastDay[];
   hourly: HourlyWeatherPoint[];
@@ -188,7 +189,7 @@ export async function fetchAgroWeatherForecast(
   const cached = weatherCache.get(cacheKey);
 
   if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
-    const assessment = computeHarvestRiskAssessment(cached.daily, cached.hourly);
+    const assessment = computeHarvestRiskAssessment(cached.daily, cached.hourly, locationName);
     return {
       daily: cached.daily,
       hourly: cached.hourly,
@@ -271,7 +272,7 @@ export async function fetchAgroWeatherForecast(
       currentWind,
     });
 
-    const assessment = computeHarvestRiskAssessment(daily, hourly);
+    const assessment = computeHarvestRiskAssessment(daily, hourly, locationName);
 
     return {
       daily,
@@ -282,8 +283,7 @@ export async function fetchAgroWeatherForecast(
       assessment,
     };
   } catch (error) {
-    // Return high-fidelity seeded agro weather forecast for MP
-    return getFallbackAgroWeather();
+    return getFallbackAgroWeather(locationName);
   }
 }
 
@@ -292,8 +292,11 @@ export async function fetchAgroWeatherForecast(
  */
 export function computeHarvestRiskAssessment(
   daily: WeatherForecastDay[],
-  hourly: HourlyWeatherPoint[]
+  hourly: HourlyWeatherPoint[],
+  locationName?: string
 ): HarvestRiskAssessment {
+  const loc = locationName && locationName.trim().length > 0 ? locationName.trim() : 'your local farm area';
+
   // 1. Calculate incoming 7-day rainfall and next rain time
   let totalIncomingRainfallMm = 0;
   let nextRainExpectedInHours: number | null = null;
@@ -358,18 +361,18 @@ export function computeHarvestRiskAssessment(
     weatherDemandSurgeFactor = 1.08;
   }
 
-  // 4. Generate Explainable Alert Content
+  // 4. Generate Explainable Alert Content dynamically based on user's actual location
   let alertTitle = 'Optimal Dry Harvest Window Active';
-  let alertSummary = `Favorable agro-weather for Sehore district. ${dryWindowHoursRemaining}h of clear dry weather ahead.`;
+  let alertSummary = `Favorable agro-weather for ${loc}. ${dryWindowHoursRemaining}h of clear dry weather ahead.`;
   let actionRecommendation = 'Safe to operate regular combine harvester rotation.';
 
   if (overallRiskLevel === 'CRITICAL_EMERGENCY') {
     alertTitle = `Urgent Rain Alert: ${totalIncomingRainfallMm}mm Rain Expected in ${dryWindowHoursRemaining}h`;
-    alertSummary = `Unseasonal precipitation system approaching Sehore / Bilkisganj. Standing wheat crops at high lodging and moisture risk.`;
-    actionRecommendation = `Pre-book combine harvester immediately. Complete harvesting within ${Math.round(dryWindowHoursRemaining / 24)} days before soil becomes impassable.`;
+    alertSummary = `Unseasonal precipitation system approaching ${loc}. Standing crops at potential lodging and moisture risk.`;
+    actionRecommendation = `Pre-book machinery immediately. Complete field work within ${Math.max(1, Math.round(dryWindowHoursRemaining / 24))} days before soil becomes saturated.`;
   } else if (overallRiskLevel === 'HIGH') {
-    alertTitle = `Rain Risk in ${Math.round(dryWindowHoursRemaining / 24)} Days (${totalIncomingRainfallMm}mm forecasted)`;
-    alertSummary = `Weather front developing over Western Madhya Pradesh with ${Math.round(daily[2]?.precipitationProbability || 65)}% rain probability.`;
+    alertTitle = `Rain Risk in ${Math.max(1, Math.round(dryWindowHoursRemaining / 24))} Days (${totalIncomingRainfallMm}mm forecasted)`;
+    alertSummary = `Weather front developing over ${loc} with ${Math.round(daily[2]?.precipitationProbability || 65)}% rain probability.`;
     actionRecommendation = 'Schedule harvesting within 72 hours to lock in optimal grain moisture (12-14%).';
   }
 
@@ -388,9 +391,9 @@ export function computeHarvestRiskAssessment(
 }
 
 /**
- * High-fidelity fallback dataset for offline/resilient demo execution
+ * High-fidelity fallback dataset for offline/resilient execution
  */
-export function getFallbackAgroWeather(): {
+export function getFallbackAgroWeather(locationName?: string): {
   daily: WeatherForecastDay[];
   hourly: HourlyWeatherPoint[];
   currentTemp: number;
@@ -398,6 +401,7 @@ export function getFallbackAgroWeather(): {
   currentWind: number;
   assessment: HarvestRiskAssessment;
 } {
+  const loc = locationName || 'your local area';
   const today = new Date();
   const daily: WeatherForecastDay[] = [
     {
@@ -417,8 +421,8 @@ export function getFallbackAgroWeather(): {
       dayName: 'Tomorrow',
       maxTemp: 34,
       minTemp: 23,
-      precipitationMm: 0.2,
-      precipitationProbability: 20,
+      precipitationMm: 0.0,
+      precipitationProbability: 15,
       weatherCode: 2,
       weatherDescription: 'Partly Cloudy',
       isRainy: false,
@@ -427,14 +431,14 @@ export function getFallbackAgroWeather(): {
     {
       date: new Date(today.getTime() + 86400000 * 2).toISOString().split('T')[0],
       dayName: 'Day +2',
-      maxTemp: 31,
+      maxTemp: 32,
       minTemp: 21,
-      precipitationMm: 4.8,
-      precipitationProbability: 55,
-      weatherCode: 61,
-      weatherDescription: 'Light Afternoon Showers',
-      isRainy: true,
-      harvestViability: 'MODERATE',
+      precipitationMm: 0.0,
+      precipitationProbability: 20,
+      weatherCode: 1,
+      weatherDescription: 'Clear Skies',
+      isRainy: false,
+      harvestViability: 'OPTIMAL',
     },
     {
       date: new Date(today.getTime() + 86400000 * 3).toISOString().split('T')[0],

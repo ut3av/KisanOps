@@ -154,98 +154,92 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBookDemo }) => {
             </div>
           </div>
 
-          {/* Right Column: Organic Curved Dual-Bubble Frame with Real Agricultural Photography */}
+          {/* Right Column: Clean Premium Showcase with Authentic Agricultural Photography */}
           <div className="lg:col-span-6 relative flex items-center justify-center">
             {/* Ambient Radial Halo */}
-            <div className="absolute inset-0 bg-radial from-[#9dc84d]/30 via-transparent to-transparent blur-xl -z-0" />
+            <div className="absolute inset-0 bg-radial from-[#9dc84d]/25 via-transparent to-transparent blur-2xl -z-0 pointer-events-none" />
 
-            {/* Container for Organic Shapes & Badges */}
-            <div className="relative w-full max-w-[540px] aspect-[4/3] sm:aspect-[16/11]">
-              {/* Left Bubble: Real Tractor Working Field */}
-              <div className="absolute left-2 sm:left-4 top-8 sm:top-10 w-[50%] h-[70%] rounded-[36px] sm:rounded-[52px] overflow-hidden border-4 border-white shadow-xl rotate-[-3deg] hover:rotate-0 transition-transform duration-500 z-10 group card-interactive-spotlight">
+            {/* Premium Showcase Card */}
+            <div className="relative w-full max-w-[540px] bg-white rounded-3xl border border-stone-200/90 shadow-2xl p-3.5 sm:p-4 space-y-3 card-interactive-spotlight">
+              {/* Main Visual: Tractor in Field */}
+              <div className="relative rounded-2xl overflow-hidden aspect-[16/10] border border-stone-200 shadow-md group">
                 <img
                   src="/images/real-tractor-field.jpg"
-                  alt="Authentic Indian agricultural tractor in field"
-                  loading="lazy"
+                  alt="Authentic Indian agricultural tractor working in field"
+                  loading="eager"
                   decoding="async"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex flex-col justify-end p-3 text-white">
-                  <div className="text-[10px] font-mono font-bold text-emerald-300 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    <span>CAN-BUS J1939 LIVE</span>
+
+                {/* Live Telematics Overlay */}
+                <div className="absolute top-3 left-3 px-3 py-1.5 rounded-xl bg-black/75 backdrop-blur-md text-white text-[11px] font-bold font-mono border border-white/20 shadow-lg flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span>CAN-BUS J1939 LIVE</span>
+                </div>
+
+                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-black/80 backdrop-blur-md text-white border border-white/15 flex items-center justify-between">
+                  <div>
+                    <div className="text-xs font-bold font-typewriter text-emerald-300">
+                      Mahindra 575 DI • Heavy Harvester Fleet
+                    </div>
+                    <div className="text-[10px] text-stone-300 font-mono">
+                      Speed: 18 km/h • Fuel: 6.8 L/h • GPS Active
+                    </div>
                   </div>
-                  <div className="text-xs font-bold leading-tight font-typewriter">
-                    Mahindra 575 DI • 18 km/h • 6.8 L/h
-                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded-lg border border-emerald-500/30">
+                    Live Telemetry
+                  </span>
                 </div>
               </div>
 
-              {/* Right Bubble: Real Indian Farmer in Golden Wheat Field */}
-              <div className="absolute right-2 sm:right-4 bottom-4 sm:bottom-6 w-[56%] h-[78%] rounded-[42px] sm:rounded-[60px] overflow-hidden border-4 border-white shadow-2xl rotate-[2deg] hover:rotate-0 transition-transform duration-500 z-20 group card-interactive-spotlight">
-                <img
-                  src="/images/real-farmer-field.jpg"
-                  alt="Real Indian farmer checking harvest schedule in wheat field"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1b4d3e]/85 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
-                  <div className="text-[11px] font-mono text-emerald-200 font-bold">
-                    Ramesh Kumar • Sehore MP
-                  </div>
-                  <div className="text-xs font-bold leading-tight font-typewriter">
-                    8-Acre Wheat • 94% Harvester Fit
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Pill Badge 1: Top-Left (+34% Demand Surge Detected) */}
-              <div className="absolute -top-2 left-0 sm:left-4 z-30 animate-float-gentle">
-                <div className="glass-pill px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-2.5 sm:gap-3 card-interactive-spotlight">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#7aa32c] text-white flex items-center justify-center shrink-0 shadow-sm">
-                    <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  </div>
-                  <div className="text-left">
-                    <div className="text-xs sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
-                      +34%
+              {/* Bottom Split Row: Farmer Profile & Floating Metric Badges */}
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+                {/* Farmer Image Card */}
+                <div className="sm:col-span-6 relative rounded-2xl overflow-hidden aspect-[16/11] border border-stone-200 shadow-sm group">
+                  <img
+                    src="/images/real-farmer-field.jpg"
+                    alt="Indian smallholder farmer in wheat field"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-2.5 text-white">
+                    <div className="text-[10px] font-mono text-emerald-300 font-bold">
+                      Verified Field Rental
                     </div>
-                    <div className="text-[9px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
-                      Demand Surge Caught
+                    <div className="text-xs font-bold leading-tight font-typewriter">
+                      8-Acre Wheat • 94% Machine Fit
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Floating Pill Badge 2: Bottom-Center (-38% Machine Downtime) */}
-              <div className="absolute -bottom-3 left-1/4 sm:left-1/3 z-30 animate-float-delayed">
-                <div className="glass-pill px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-2.5 sm:gap-3 card-interactive-spotlight">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#c2a587] text-white flex items-center justify-center shrink-0 shadow-sm">
-                    <ArrowDownRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  </div>
-                  <div className="text-left">
-                    <div className="text-xs sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
-                      -38%
+                {/* Right KPI Stat Chips */}
+                <div className="sm:col-span-6 flex flex-col gap-2.5 justify-center">
+                  <div className="p-3 rounded-2xl bg-[#F5FAED] border border-stone-200/80 flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-xl bg-[#7aa32c] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <ArrowUpRight className="w-4 h-4" />
                     </div>
-                    <div className="text-[9px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
-                      Unplanned Downtime
+                    <div>
+                      <div className="text-sm font-black text-[#1c1d1f] font-typewriter">
+                        +34% Demand Surge
+                      </div>
+                      <div className="text-[10px] font-semibold text-stone-500">
+                        14-Day Advance Shortage Alert
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Floating Pill Badge 3: Right-Middle (+21% Fleet Utilization) */}
-              <div className="absolute top-1/3 -right-2 sm:-right-4 z-30 animate-float-gentle">
-                <div className="glass-pill px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-2.5 sm:gap-3 card-interactive-spotlight">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#7aa32c] text-white flex items-center justify-center shrink-0 shadow-sm">
-                    <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  </div>
-                  <div className="text-left">
-                    <div className="text-xs sm:text-base font-black text-[#1c1d1f] leading-none font-typewriter">
-                      +21%
+                  <div className="p-3 rounded-2xl bg-white border border-stone-200/80 flex items-center gap-3 shadow-2xs">
+                    <div className="w-8 h-8 rounded-xl bg-[#c2a587] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <ArrowDownRight className="w-4 h-4" />
                     </div>
-                    <div className="text-[9px] sm:text-[11px] font-semibold text-stone-500 leading-tight">
-                      Fleet Utilization Gain
+                    <div>
+                      <div className="text-sm font-black text-[#1c1d1f] font-typewriter">
+                        -38% Machine Downtime
+                      </div>
+                      <div className="text-[10px] font-semibold text-stone-500">
+                        Predictive Maintenance Diagnostic
+                      </div>
                     </div>
                   </div>
                 </div>

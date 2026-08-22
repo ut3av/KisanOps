@@ -58,18 +58,18 @@ export const FarmerHome: React.FC = () => {
 
   // Form state for configuring farm
   const [formData, setFormData] = useState({
-    farmName: farm.farmName || `${currentUser.fullName}'s Farm`,
-    sizeAcres: farm.sizeAcres || 5.0,
-    state: farm.state || 'Madhya Pradesh',
+    farmName: farm.farmName || (currentUser.fullName ? `${currentUser.fullName}'s Farm` : ''),
+    sizeAcres: farm.sizeAcres > 0 ? farm.sizeAcres : 0,
+    state: farm.state || '',
     district: farm.district || '',
     village: farm.village || '',
     latitude: farm.latitude || 0,
     longitude: farm.longitude || 0,
-    cropName: farm.crop?.cropName || 'Wheat (Sharbati)',
+    cropName: farm.crop?.cropName || '',
     season: farm.crop?.season || 'Rabi',
-    cropStage: farm.crop?.cropStage || 'Vegetative',
-    soilType: farm.soilType || 'Medium Black Clayey Loam',
-    irrigationType: farm.irrigationType || 'Canal',
+    cropStage: farm.crop?.cropStage || 'Sowing',
+    soilType: farm.soilType || '',
+    irrigationType: farm.irrigationType || 'Borewell',
   });
   const [isLocatingGps, setIsLocatingGps] = useState<boolean>(false);
   const [gpsMessage, setGpsMessage] = useState<string | null>(null);

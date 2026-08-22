@@ -34,8 +34,8 @@ const INDUSTRIES: IndustryCard[] = [
     metric: '+21% Fleet Gain',
     metricLabel: 'Average Fleet ROI Uplift',
     targetPath: '/chc',
-    actionText: 'Explore CHC Operations',
-    icon: <Building2 className="w-5 h-5 text-[#7aa32c]" />,
+    actionText: 'Sign In for CHC Operations',
+    icon: <Building2 className="w-5 h-5" />,
     benefits: [
       '14-Day regional equipment shortage alerts',
       'Deterministic inter-hub fleet relocation',
@@ -51,8 +51,8 @@ const INDUSTRIES: IndustryCard[] = [
     metric: '94% Match Fit',
     metricLabel: 'Explainable Machine Fit',
     targetPath: '/farmer',
-    actionText: 'Explore Farmer Portal',
-    icon: <Tractor className="w-5 h-5 text-[#7aa32c]" />,
+    actionText: 'Sign In for Farmer Portal',
+    icon: <Tractor className="w-5 h-5" />,
     benefits: [
       '7-Factor explainable machine recommendations',
       'AgriCredit non-collateral deferred limits',
@@ -68,8 +68,8 @@ const INDUSTRIES: IndustryCard[] = [
     metric: '24% Cost Cut',
     metricLabel: 'Input & Idle Fuel Savings',
     targetPath: '/admin',
-    actionText: 'Explore Enterprise OS',
-    icon: <TreePine className="w-5 h-5 text-[#7aa32c]" />,
+    actionText: 'Sign In for Enterprise OS',
+    icon: <TreePine className="w-5 h-5" />,
     benefits: [
       'Multi-thousand-acre plot digitization',
       'Fleet fuel anomaly (+17%) alerts',
@@ -85,8 +85,8 @@ const INDUSTRIES: IndustryCard[] = [
     metric: '8,400+ Farmers',
     metricLabel: 'Collective Network Impact',
     targetPath: '/farmer/marketplace',
-    actionText: 'Explore Cooperative Hub',
-    icon: <Users className="w-5 h-5 text-[#7aa32c]" />,
+    actionText: 'Sign In for Cooperative Hub',
+    icon: <Users className="w-5 h-5" />,
     benefits: [
       'Community machinery sharing pooling',
       'Deferred harvest credit scoring (0-900)',
@@ -99,7 +99,7 @@ export const IndustriesSection: React.FC = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (path: string) => {
-    navigate(path);
+    navigate(`/login?redirect=${encodeURIComponent(path)}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -133,10 +133,10 @@ export const IndustriesSection: React.FC = () => {
                   {/* Card Header */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
-                      <div className="p-2.5 rounded-2xl bg-[#F5FAED] text-[#7aa32c] group-hover:bg-[#7aa32c] group-hover:text-white transition-colors">
+                      <div className="p-2.5 rounded-2xl bg-[#F5FAED] text-[#2e4013] border border-[#7aa32c]/20 group-hover:bg-[#1b4d3e] group-hover:text-white group-hover:border-[#1b4d3e] transition-all duration-300 shadow-xs">
                         {industry.icon}
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 font-typewriter">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-500 font-typewriter">
                         {industry.category}
                       </span>
                     </div>

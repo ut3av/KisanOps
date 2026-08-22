@@ -1,16 +1,16 @@
 # Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 126 files · ~345,984 words
+- 128 files · ~346,419 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 651 nodes · 1467 edges · 37 communities (28 shown, 9 thin omitted)
+- 655 nodes · 1475 edges · 38 communities (29 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `56ee67f1`
+- Built from commit: `e955e972`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,7 +36,7 @@
 - 2. Core Subsystems
 - KisanOps Database Specification & Data Dictionary
 - KisanOps Deployment Guide
-- billingEngine.ts
+- FarmerRentals.tsx
 - rules/graphify.md
 - workflows/graphify.md
 - quick_fix_auth.sql
@@ -45,11 +45,12 @@
 - telemetry-webhook/index.ts
 - vercel.json
 - 3. Core Functional Modules & Algorithmic Specifications
+- HeroSection.tsx
 - RazorpayCheckoutModal.tsx
 - LazyImage.tsx
 
 ## God Nodes (most connected - your core abstractions)
-1. `react` - 69 edges
+1. `react` - 71 edges
 2. `useKisanOpsStore()` - 61 edges
 3. `usePageTitle()` - 53 edges
 4. `Machine` - 27 edges
@@ -75,7 +76,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (37 total, 9 thin omitted)
+## Communities (38 total, 9 thin omitted)
 
 ### Community 0 - "Navbar.tsx"
 Cohesion: 0.13
@@ -87,7 +88,7 @@ Nodes (52): LeafletFleetMapProps, TelematicsGaugeClusterProps, SEEDED_AGRICREDIT
 
 ### Community 2 - "voice.ts"
 Cohesion: 0.07
-Nodes (30): VoiceAssistantModalProps, VoiceUiState, globalVoiceController, VoiceController, ConversationService, FarmerRequirementIntentDto, FarmerRequirementIntentSchema, TaskCategoryEnum (+22 more)
+Nodes (29): VoiceAssistantModalProps, VoiceUiState, globalVoiceController, VoiceController, ConversationService, FarmerRequirementIntentDto, FarmerRequirementIntentSchema, TaskCategoryEnum (+21 more)
 
 ### Community 3 - "devDependencies"
 Cohesion: 0.06
@@ -114,8 +115,8 @@ Cohesion: 0.09
 Nodes (21): api/**/*.ts, server/**/*.ts, vite.config.ts, compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module (+13 more)
 
 ### Community 9 - "react"
-Cohesion: 0.05
-Nodes (73): react, App(), queryClient, InteractiveCursor(), LeafletFleetMap(), ScrollToTop(), StatCard(), StatCardProps (+65 more)
+Cohesion: 0.06
+Nodes (69): react, App(), queryClient, InteractiveCursor(), LeafletFleetMap(), MinimalCursor(), MouseInteractiveGlow(), ScrollToTop() (+61 more)
 
 ### Community 10 - "schema.sql"
 Cohesion: 0.43
@@ -149,13 +150,13 @@ Nodes (5): 1. Schema Overview, 2. Table Catalog, 3. Row Level Security (RLS) Pol
 Cohesion: 0.33
 Nodes (5): 1. Environment Variables, 2. Frontend Deployment (Vercel), 3. Database Deployment (Supabase), 4. Production Health Check, KisanOps Deployment Guide
 
-### Community 25 - "billingEngine.ts"
-Cohesion: 0.32
-Nodes (6): BrandedReceiptModal(), BrandedReceiptModalProps, BillingCalculationInput, calculateFinalInvoice(), generatePdfInvoice(), InvoiceItem
+### Community 25 - "FarmerRentals.tsx"
+Cohesion: 0.29
+Nodes (8): BrandedReceiptModal(), BrandedReceiptModalProps, FarmerRentals(), BillingCalculationInput, calculateFinalInvoice(), generatePdfInvoice(), BookingStatus, InvoiceItem
 
 ### Community 31 - "types/index.ts"
-Cohesion: 0.10
-Nodes (36): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), ExplanationBadgeProps, MachineThumbnail(), MachineThumbnailProps, VEHICLE_CONFIG, BookingModal() (+28 more)
+Cohesion: 0.09
+Nodes (37): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), ExplanationBadgeProps, MachineThumbnail(), MachineThumbnailProps, VEHICLE_CONFIG, BookingModal() (+29 more)
 
 ### Community 33 - "vercel.json"
 Cohesion: 0.29
@@ -164,6 +165,10 @@ Nodes (6): buildCommand, cleanUrls, headers, outputDirectory, rewrites, trailing
 ### Community 34 - "3. Core Functional Modules & Algorithmic Specifications"
 Cohesion: 0.11
 Nodes (18): 1.1 Problem Statement, 1.2 Product Vision, 1. Executive Summary & Product Vision, 2. Target User Personas & Core Journeys, 3.1 Regional Predictive Demand Intelligence Engine (`demandEngine.ts`), 3.2 Inter-Hub Fleet Reallocation Optimizer (`demandEngine.ts`), 3.3 7-Factor Explainable Machinery Matching Engine (`recommendationEngine.ts`), 3.4 Dynamic Pricing Engine with Safety Bounds (`pricingEngine.ts`) (+10 more)
+
+### Community 35 - "HeroSection.tsx"
+Cohesion: 0.40
+Nodes (4): HERO_SLIDES, HeroSection(), HeroSectionProps, HeroSlide
 
 ### Community 36 - "RazorpayCheckoutModal.tsx"
 Cohesion: 0.33
@@ -177,12 +182,12 @@ Nodes (8): RazorpayCheckoutModal(), RazorpayCheckoutModalProps, createRazorpayOr
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `RazorpayCheckoutModal.tsx`, `LazyImage.tsx`, `LeafletFleetMap.tsx`, `plugins`, `billingEngine.ts`, `TrustMarquee.tsx`, `types/index.ts`?**
-  _High betweenness centrality (0.121) - this node is a cross-community bridge._
-- **Why does `useKisanOpsStore()` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `billingEngine.ts`, `types/index.ts`?**
-  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `HeroSection.tsx`, `RazorpayCheckoutModal.tsx`, `LazyImage.tsx`, `LeafletFleetMap.tsx`, `plugins`, `FarmerRentals.tsx`, `TrustMarquee.tsx`, `types/index.ts`?**
+  _High betweenness centrality (0.125) - this node is a cross-community bridge._
+- **Why does `useKisanOpsStore()` connect `react` to `Navbar.tsx`, `kisanOpsStore.ts`, `voice.ts`, `FarmerRentals.tsx`, `types/index.ts`?**
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Why does `Machine` connect `types/index.ts` to `kisanOpsStore.ts`, `voice.ts`, `LeafletFleetMap.tsx`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
   _210 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Navbar.tsx` be split into smaller, more focused modules?**
@@ -190,4 +195,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `kisanOpsStore.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.08038075092543628 - nodes in this community are weakly interconnected._
 - **Should `voice.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.07412587412587412 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0742447516641065 - nodes in this community are weakly interconnected._
