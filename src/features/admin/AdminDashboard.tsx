@@ -268,8 +268,8 @@ export const AdminDashboard: React.FC = () => {
             <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight font-typewriter">
               State Agricultural Command & Platform Governance
             </h1>
-            <span className="text-xs bg-purple-100 text-purple-900 font-bold px-3 py-1 rounded-full flex items-center gap-1.5 border border-purple-200">
-              <ShieldCheck className="w-4 h-4 text-purple-700" />
+            <span className="text-xs bg-purple-100 text-purple-900 font-bold px-3 py-1 rounded-full flex items-center gap-1.5 border border-purple-200 shrink-0">
+              <ShieldCheck className="w-4 h-4 text-purple-700 shrink-0" />
               State Administrator Tier
             </span>
           </div>
@@ -281,7 +281,7 @@ export const AdminDashboard: React.FC = () => {
         {/* District Filter Selector */}
         <div className="flex flex-wrap items-center gap-2.5 w-full lg:w-auto">
           <div className="relative flex-1 sm:flex-none">
-            <MapPin className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <MapPin className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2 shrink-0" />
             <select
               value={selectedDistrict}
               onChange={(e) => setSelectedDistrict(e.target.value)}
@@ -300,7 +300,7 @@ export const AdminDashboard: React.FC = () => {
             className="p-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 transition-colors cursor-pointer"
             title="Refresh Real-Time Feeds"
           >
-            <RefreshCw className="w-4 h-4" />
+            <RefreshCw className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>

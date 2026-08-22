@@ -83,7 +83,7 @@ export const LiveTelematics: React.FC = () => {
             onClick={() => setShowIotModal(true)}
             className="px-3.5 py-2 rounded-xl text-xs font-bold bg-[#1b4d3e] text-white hover:bg-[#153e32] transition-colors shadow-sm flex items-center gap-1.5 cursor-pointer"
           >
-            <Cpu className="w-4 h-4 text-[#9dc84d]" />
+            <Cpu className="w-4 h-4 text-[#9dc84d] shrink-0" />
             <span>IoT Device Webhook API</span>
           </button>
 
@@ -96,7 +96,7 @@ export const LiveTelematics: React.FC = () => {
                 : 'bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100'
             )}
           >
-            <AlertTriangle className="w-4 h-4" />
+            <AlertTriangle className="w-4 h-4 shrink-0" />
             <span>
               {simulationState.isFuelAnomalyActive ? 'Fuel Anomaly Active (+17%)' : 'Inject Anomaly'}
             </span>
@@ -106,7 +106,7 @@ export const LiveTelematics: React.FC = () => {
             onClick={() => toggleSimulation()}
             className="btn-secondary text-xs py-2 px-3 flex items-center gap-1.5 cursor-pointer"
           >
-            <Activity className="w-3.5 h-3.5" />
+            <Activity className="w-3.5 h-3.5 shrink-0" />
             <span>{isSimulating ? 'Pause Stream' : 'Resume Stream'}</span>
           </button>
         </div>
@@ -116,7 +116,7 @@ export const LiveTelematics: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Tractor className="w-4 h-4 text-agri-800" />
+            <Tractor className="w-4 h-4 text-agri-800 shrink-0" />
             <span className="text-xs font-bold text-slate-800 uppercase tracking-wide">
               Selected Asset: {targetMachine.brand} {targetMachine.model} ({targetMachine.identifier})
             </span>

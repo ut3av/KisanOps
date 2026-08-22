@@ -40,8 +40,8 @@ export const StatCard: React.FC<StatCardProps> = ({
           <h3 className="text-2xl font-bold text-slate-900 mt-1 tracking-tight">{value}</h3>
           {subtitle && <p className="text-xs text-slate-600 mt-1">{subtitle}</p>}
         </div>
-        <div className={clsx('p-3 rounded-xl flex items-center justify-center', iconBg)}>
-          <Icon className="w-5 h-5" />
+        <div className={clsx('p-3 rounded-xl flex items-center justify-center shrink-0 ml-2 shadow-2xs', iconBg)}>
+          <Icon className="w-5 h-5 shrink-0" />
         </div>
       </div>
 

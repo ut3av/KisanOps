@@ -19,6 +19,7 @@ import { MachineCategory, ActivityType, Machine } from '../../types';
 import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
 import { MachineDetailsModal } from './MachineDetailsModal';
+import { MachineThumbnail } from '../../components/common/MachineThumbnail';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
@@ -231,12 +232,12 @@ export const FarmerMarketplace: React.FC = () => {
               <div>
                 {/* Image & Match Badge */}
                 <div className="relative h-48 bg-slate-900 overflow-hidden">
-                  <img
+                  <MachineThumbnail
                     src={machine.imageUrl}
                     alt={machine.model}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    category={machine.category}
+                    size="full"
+                    containerClassName="h-48"
                   />
                   <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-lg">
                     {machine.category}
@@ -244,13 +245,13 @@ export const FarmerMarketplace: React.FC = () => {
 
                   {matchScore >= 88 && (
                     <div className="absolute top-3 right-3 bg-emerald-500 text-white text-[11px] font-black px-2.5 py-1 rounded-lg shadow-md flex items-center gap-1">
-                      <Sparkles className="w-3 h-3" />
+                      <Sparkles className="w-3 h-3 shrink-0" />
                       {matchScore}% Match
                     </div>
                   )}
 
                   <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-agri-700" />
+                    <MapPin className="w-3 h-3 text-agri-700 shrink-0" />
                     <span>{machine.distanceKm} km away</span>
                   </div>
                 </div>

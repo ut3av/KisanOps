@@ -115,7 +115,7 @@ export async function fetchInitialPlatformData(): Promise<{
           totalEngineHours: parseFloat(r.total_engine_hours || 0),
           serviceIntervalHours: parseFloat(r.service_interval_hours || 250),
           hoursSinceLastService: parseFloat(r.hours_since_last_service || 0),
-          imageUrl: r.image_url || 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80',
+          imageUrl: r.image_url || '/images/real-tractor-field.jpg',
           rating: parseFloat(r.rating || 4.8),
           totalRentals: r.total_rentals || 0,
           supportedActivities: r.supported_activities || ['HARVESTING', 'THRESHING'],

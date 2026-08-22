@@ -96,7 +96,7 @@ export const PredictiveMaintenance: React.FC = () => {
                         : 'bg-amber-500 text-white'
                     )}
                   >
-                    <AlertTriangle className="w-6 h-6" />
+                    <AlertTriangle className="w-6 h-6 shrink-0" />
                   </div>
 
                   <div className="space-y-1">
@@ -104,7 +104,7 @@ export const PredictiveMaintenance: React.FC = () => {
                       <span className="font-extrabold text-slate-900 text-base">
                         {alert.machineModel} ({alert.machineIdentifier})
                       </span>
-                      <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-rose-200 text-rose-900">
+                      <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-rose-200 text-rose-900 shrink-0">
                         {alert.alertType} • {alert.severity}
                       </span>
                     </div>
@@ -122,9 +122,9 @@ export const PredictiveMaintenance: React.FC = () => {
                 <div className="shrink-0 w-full md:w-auto text-right">
                   <button
                     onClick={() => resolveAlert(alert.id)}
-                    className="w-full md:w-auto btn-primary text-xs py-2.5 px-5 bg-rose-800 hover:bg-rose-900 text-white shadow-md flex items-center justify-center gap-1.5"
+                    className="w-full md:w-auto btn-primary text-xs py-2.5 px-5 bg-rose-800 hover:bg-rose-900 text-white shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
                   >
-                    <CheckCircle2 className="w-4 h-4" />
+                    <CheckCircle2 className="w-4 h-4 shrink-0" />
                     <span>Complete Inspection & Clear</span>
                   </button>
                 </div>

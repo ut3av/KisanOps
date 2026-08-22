@@ -28,6 +28,7 @@ import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
 import { usePageTitle } from '../../hooks/usePageTitle';
 import { SEEDED_PROFILES } from '../../data/seedData';
+import { MachineThumbnail } from '../../components/common/MachineThumbnail';
 
 export const FarmerHome: React.FC = () => {
   usePageTitle(
@@ -292,16 +293,14 @@ export const FarmerHome: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center bg-surface-50 p-4 rounded-2xl border border-slate-200/80">
             <div className="md:col-span-4 h-48 rounded-xl overflow-hidden relative">
-              <img
+              <MachineThumbnail
                 src={topMatch.machine.imageUrl}
                 alt={topMatch.machine.model}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
+                category={topMatch.machine.category}
+                size="full"
+                containerClassName="h-48 rounded-xl"
+                showCategoryBadge={true}
               />
-              <span className="absolute top-2 left-2 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md">
-                {topMatch.machine.category}
-              </span>
             </div>
 
             <div className="md:col-span-8 space-y-3">

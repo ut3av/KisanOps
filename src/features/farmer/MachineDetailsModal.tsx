@@ -16,6 +16,7 @@ import {
 import { Machine, PriceQuote, ActivityType } from '../../types';
 import { BookingModal } from './BookingModal';
 import { ExplanationBadge } from '../../components/common/ExplanationBadge';
+import { MachineThumbnail } from '../../components/common/MachineThumbnail';
 import clsx from 'clsx';
 
 interface MachineDetailsModalProps {
@@ -40,7 +41,7 @@ export const MachineDetailsModal: React.FC<MachineDetailsModalProps> = ({
   return (
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
-        <div className="bg-white rounded-3xl max-w-2xl w-full p-5 sm:p-6 shadow-2xl border border-slate-100 my-auto max-h-[90vh] overflow-y-auto">
+        <div className="bg-white rounded-3xl max-w-2xl w-full p-5 sm:p-6 shadow-2xl border border-slate-100 my-auto max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95">
           {/* Header */}
           <div className="flex items-start justify-between border-b border-slate-100 pb-4 mb-4">
             <div>
@@ -49,7 +50,7 @@ export const MachineDetailsModal: React.FC<MachineDetailsModalProps> = ({
                   {machine.category}
                 </span>
                 <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5" />
+                  <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
                   {matchScore}% Smart Match
                 </span>
               </div>
@@ -62,21 +63,21 @@ export const MachineDetailsModal: React.FC<MachineDetailsModalProps> = ({
             </div>
             <button
               onClick={onClose}
-              className="p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 transition-colors"
+              className="p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 transition-colors cursor-pointer"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 shrink-0" />
             </button>
           </div>
 
           <div className="space-y-5 max-h-[70vh] overflow-y-auto pr-1">
             {/* Image & Quick Metrics */}
             <div className="relative h-60 rounded-2xl overflow-hidden shadow-inner bg-slate-900">
-              <img
+              <MachineThumbnail
                 src={machine.imageUrl}
                 alt={machine.model}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
+                category={machine.category}
+                size="full"
+                containerClassName="h-60 rounded-2xl"
               />
               <div className="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md rounded-xl p-3 text-white flex justify-between items-center text-xs">
                 <div>

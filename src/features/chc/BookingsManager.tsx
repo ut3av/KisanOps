@@ -66,8 +66,8 @@ export const BookingsManager: React.FC = () => {
               >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-slate-100 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-agri-100 text-agri-900 flex items-center justify-center font-bold">
-                    <Tractor className="w-6 h-6 text-agri-900" />
+                  <div className="w-12 h-12 rounded-2xl bg-agri-100 text-agri-900 flex items-center justify-center font-bold shrink-0">
+                    <Tractor className="w-6 h-6 text-agri-900 shrink-0" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
@@ -92,7 +92,7 @@ export const BookingsManager: React.FC = () => {
                 <div className="text-right">
                   <div className="text-lg font-black text-agri-950">₹{booking.estimatedTotal.toLocaleString('en-IN')}</div>
                   <div className="text-[11px] text-emerald-700 font-semibold flex items-center gap-1 justify-end">
-                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
                     <span>{booking.paymentMethod.replace('_', ' ')}</span>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export const BookingsManager: React.FC = () => {
               {/* Operator Dispatch Controls */}
               <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
                 <div className="text-xs text-slate-500 flex items-center gap-1.5">
-                  <User className="w-3.5 h-3.5 text-slate-600" />
+                  <User className="w-3.5 h-3.5 text-slate-600 shrink-0" />
                   <span>Operator: <strong>{booking.operatorName}</strong> ({booking.operatorPhone})</span>
                 </div>
 
@@ -130,9 +130,9 @@ export const BookingsManager: React.FC = () => {
                   {booking.status === 'CONFIRMED' && (
                     <button
                       onClick={() => updateBookingStatus(booking.id, 'DISPATCHED')}
-                      className="btn-primary text-xs py-2 px-4 flex items-center gap-1.5"
+                      className="btn-primary text-xs py-2 px-4 flex items-center gap-1.5 cursor-pointer"
                     >
-                      <Truck className="w-3.5 h-3.5" />
+                      <Truck className="w-3.5 h-3.5 shrink-0" />
                       <span>Dispatch Operator & Machine</span>
                     </button>
                   )}
@@ -140,9 +140,9 @@ export const BookingsManager: React.FC = () => {
                   {booking.status === 'DISPATCHED' && (
                     <button
                       onClick={() => updateBookingStatus(booking.id, 'IN_PROGRESS')}
-                      className="btn-primary text-xs py-2 px-4 bg-sky-700 hover:bg-sky-800 flex items-center gap-1.5"
+                      className="btn-primary text-xs py-2 px-4 bg-sky-700 hover:bg-sky-800 flex items-center gap-1.5 cursor-pointer"
                     >
-                      <Clock className="w-3.5 h-3.5" />
+                      <Clock className="w-3.5 h-3.5 shrink-0" />
                       <span>Mark Work Started In Field</span>
                     </button>
                   )}
@@ -150,16 +150,16 @@ export const BookingsManager: React.FC = () => {
                   {booking.status === 'IN_PROGRESS' && (
                     <button
                       onClick={() => updateBookingStatus(booking.id, 'COMPLETED', 6.4)}
-                      className="btn-primary text-xs py-2 px-4 bg-emerald-700 hover:bg-emerald-800 flex items-center gap-1.5"
+                      className="btn-primary text-xs py-2 px-4 bg-emerald-700 hover:bg-emerald-800 flex items-center gap-1.5 cursor-pointer"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
                       <span>Complete Work (6.4 Actual Hrs) & Issue Invoice</span>
                     </button>
                   )}
 
                   {booking.status === 'COMPLETED' && (
                     <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200">
-                      <FileText className="w-3.5 h-3.5" />
+                      <FileText className="w-3.5 h-3.5 shrink-0" />
                       <span>Tax Invoice Generated & Billed</span>
                     </span>
                   )}
