@@ -122,6 +122,8 @@ export interface Farm {
   locationUpdatedAt?: string;
 }
 
+export type TelemetryModeType = 'MANUAL' | 'OPERATOR_GPS' | 'HARDWARE_IOT';
+
 export interface Machine {
   id: string;
   chcId: string;
@@ -150,6 +152,8 @@ export interface Machine {
   locationAccuracy?: number;
   locationUpdatedAt?: string;
   locationStatus?: LocationFreshnessStatus;
+  telemetryMode?: TelemetryModeType;
+  headingDeg?: number;
   operatorName?: string;
   operatorPhone?: string;
   operatorRating?: number;
@@ -213,14 +217,29 @@ export interface TelemetryPoint {
   rpm: number;
   batteryVoltage: number;
   status: MachineStatus;
+  headingDeg?: number;
+  hydraulicPressureBar?: number;
+  ignitionState?: 'ON' | 'OFF' | 'IDLE';
+  odometerKm?: number;
+  locationSource?: LocationSourceType;
+  locationAccuracy?: number;
 }
+
+export type MaintenanceAlertType =
+  | 'FUEL_ANOMALY'
+  | 'SERVICE_OVERDUE'
+  | 'TEMP_SURGE'
+  | 'VIBRATION_SPIKE'
+  | 'BATTERY_LOW'
+  | 'GEOFENCE_BREACH'
+  | 'HYDRAULIC_DROP';
 
 export interface PredictiveMaintenanceAlert {
   id: string;
   machineId: string;
   machineIdentifier: string;
   machineModel: string;
-  alertType: 'FUEL_ANOMALY' | 'SERVICE_OVERDUE' | 'TEMP_SURGE' | 'VIBRATION_SPIKE';
+  alertType: MaintenanceAlertType;
   severity: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
   description: string;
   recommendedAction: string;

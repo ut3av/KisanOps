@@ -1,11 +1,11 @@
 {
   "0": "react",
   "1": "kisanOpsStore.ts",
-  "2": "Machine",
+  "2": "voice.ts",
   "3": "devDependencies",
   "4": "20260821000000_initial_schema.sql",
   "5": "dependencies",
-  "6": "LeafletFleetMap.tsx",
+  "6": "weatherEngine.ts",
   "7": "compilerOptions",
   "8": "compilerOptions",
   "9": "App.tsx",
@@ -38,7 +38,7 @@
   "36": "RazorpayCheckoutModal.tsx",
   "37": "LazyImage.tsx",
   "38": "usePageTitle.ts",
-  "39": "AdminDashboard.tsx",
+  "39": "CHCOverview.tsx",
   "40": "20260823000000_realtime_geospatial_availability.sql",
   "41": "BookDemoModal.tsx",
   "42": "public.farms"

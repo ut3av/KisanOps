@@ -49,6 +49,10 @@ export const FleetManagement: React.FC = () => {
     operatorName: 'Assigned Driver',
     operatorPhone: '+91 98261 00000',
     chcName: chcs[0]?.name || 'Central Hub',
+    telemetryMode: 'HARDWARE_IOT' as 'HARDWARE_IOT' | 'OPERATOR_GPS' | 'MANUAL',
+    latitude: 23.2030,
+    longitude: 77.0844,
+    serviceIntervalHours: 250,
   });
 
   const filteredMachines = machines.filter(m => {
@@ -87,6 +91,10 @@ export const FleetManagement: React.FC = () => {
       operatorName: 'Assigned Operator',
       operatorPhone: '+91 98261 00000',
       chcName: chcs[0]?.name || 'Central Hub',
+      telemetryMode: 'HARDWARE_IOT',
+      latitude: chcs[0]?.latitude || 23.2030,
+      longitude: chcs[0]?.longitude || 77.0844,
+      serviceIntervalHours: 250,
     });
     setIsAddModalOpen(true);
   };
@@ -107,6 +115,12 @@ export const FleetManagement: React.FC = () => {
       operatorPhone: formData.operatorPhone,
       chcName: formData.chcName,
       status: 'AVAILABLE',
+      latitude: Number(formData.latitude) || 23.2030,
+      longitude: Number(formData.longitude) || 77.0844,
+      telemetryMode: formData.telemetryMode,
+      serviceIntervalHours: Number(formData.serviceIntervalHours) || 250,
+      hoursSinceLastService: 0,
+      totalEngineHours: 0,
     });
     setIsAddModalOpen(false);
   };
@@ -192,6 +206,7 @@ export const FleetManagement: React.FC = () => {
                 <th className="py-3 px-4">Equipment / Model</th>
                 <th className="py-3 px-4">Category</th>
                 <th className="py-3 px-4">Status</th>
+                <th className="py-3 px-4">Telemetry Mode & GPS</th>
                 <th className="py-3 px-4">Hourly Tariff</th>
                 <th className="py-3 px-4">Health Index</th>
                 <th className="py-3 px-4">Engine Hours</th>
@@ -202,7 +217,7 @@ export const FleetManagement: React.FC = () => {
             <tbody className="divide-y divide-slate-100 font-medium">
               {filteredMachines.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="py-12 px-4 text-center">
+                  <td colSpan={9} className="py-12 px-4 text-center">
                     <div className="max-w-sm mx-auto space-y-3">
                       <div className="w-12 h-12 rounded-2xl bg-surface-100 text-slate-400 flex items-center justify-center mx-auto">
                         <Tractor className="w-6 h-6" />
@@ -235,6 +250,11 @@ export const FleetManagement: React.FC = () => {
               ) : (
                 filteredMachines.map(machine => {
                   const telemetry = currentTelemetry[machine.id];
+                  const freshness = getLocationFreshness(
+                    machine.locationUpdatedAt || telemetry?.timestamp,
+                    machine.locationSource
+                  );
+
                   return (
                     <tr
                       key={machine.id}
@@ -269,6 +289,28 @@ export const FleetManagement: React.FC = () => {
                         <span className={clsx('px-2.5 py-1 rounded-full text-[11px] font-bold border', getStatusBadgeClass(machine.status))}>
                           {machine.status}
                         </span>
+                      </td>
+
+                      <td className="py-3 px-4">
+                        <div className="space-y-0.5">
+                          <span className={clsx(
+                            'text-[10px] font-extrabold px-2 py-0.5 rounded-md inline-block uppercase',
+                            machine.telemetryMode === 'MANUAL'
+                              ? 'bg-blue-100 text-blue-800'
+                              : machine.telemetryMode === 'OPERATOR_GPS'
+                              ? 'bg-emerald-100 text-emerald-800'
+                              : 'bg-purple-100 text-purple-800'
+                          )}>
+                            {machine.telemetryMode === 'MANUAL' ? 'Mode 1: Manual' : machine.telemetryMode === 'OPERATOR_GPS' ? 'Mode 2: Mobile GPS' : 'Mode 3: IoT Tracker'}
+                          </span>
+                          <div className="text-[10px] text-slate-500 font-mono flex items-center gap-1">
+                            <span className={clsx(
+                              'w-1.5 h-1.5 rounded-full',
+                              freshness.status === 'LIVE' ? 'bg-emerald-500 animate-pulse' : freshness.status === 'RECENT' ? 'bg-amber-500' : 'bg-slate-400'
+                            )} />
+                            <span>{freshness.text}</span>
+                          </div>
+                        </div>
                       </td>
 
                       <td className="py-3 px-4 font-mono font-bold text-slate-900">
@@ -471,6 +513,45 @@ export const FleetManagement: React.FC = () => {
               </div>
 
               <div className="space-y-1">
+                <label className="font-bold text-slate-700">Telemetry Tracking Architecture Mode</label>
+                <select
+                  value={formData.telemetryMode}
+                  onChange={e => setFormData({ ...formData, telemetryMode: e.target.value as any })}
+                  className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-bold text-slate-800 focus:ring-2 focus:ring-agri-500 focus:outline-none cursor-pointer"
+                >
+                  <option value="HARDWARE_IOT">Mode 3: Hardware IoT / CAN-Bus GPS Tracker</option>
+                  <option value="OPERATOR_GPS">Mode 2: Driver Mobile App GPS Stream</option>
+                  <option value="MANUAL">Mode 1: Manual CHC Location Setting</option>
+                </select>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Initial Latitude (°N)</label>
+                  <input
+                    type="number"
+                    step="0.0001"
+                    required
+                    value={formData.latitude}
+                    onChange={e => setFormData({ ...formData, latitude: Number(e.target.value) })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-mono text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Initial Longitude (°E)</label>
+                  <input
+                    type="number"
+                    step="0.0001"
+                    required
+                    value={formData.longitude}
+                    onChange={e => setFormData({ ...formData, longitude: Number(e.target.value) })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-mono text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
                 <label className="font-bold text-slate-700">Hub / Branch Location</label>
                 <input
                   type="text"
@@ -603,6 +684,35 @@ export const FleetManagement: React.FC = () => {
                         </span>
                       </div>
                     </div>
+
+                    {/* Service Interval & Engine Hours Gauge */}
+                    <div className="bg-surface-50 p-3 rounded-2xl border border-slate-200 space-y-1.5">
+                      <div className="flex items-center justify-between text-[11px]">
+                        <span className="font-bold text-slate-700">Maintenance Service Interval:</span>
+                        <span className="font-mono font-bold text-slate-800">
+                          {selectedMachine.hoursSinceLastService || 140} / {selectedMachine.serviceIntervalHours || 250} hrs
+                        </span>
+                      </div>
+                      <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                        <div
+                          className={clsx(
+                            'h-full rounded-full',
+                            (selectedMachine.hoursSinceLastService || 140) >= (selectedMachine.serviceIntervalHours || 250)
+                              ? 'bg-rose-600'
+                              : (selectedMachine.hoursSinceLastService || 140) >= (selectedMachine.serviceIntervalHours || 250) * 0.8
+                              ? 'bg-amber-500'
+                              : 'bg-emerald-500'
+                          )}
+                          style={{
+                            width: `${Math.min(100, Math.round(((selectedMachine.hoursSinceLastService || 140) / (selectedMachine.serviceIntervalHours || 250)) * 100))}%`,
+                          }}
+                        />
+                      </div>
+                      <div className="text-[10px] text-slate-500 flex items-center justify-between">
+                        <span>Last Serviced at: 120 hrs</span>
+                        <span className="font-bold">Next Service in {Math.max(0, (selectedMachine.serviceIntervalHours || 250) - (selectedMachine.hoursSinceLastService || 140))} hrs</span>
+                      </div>
+                    </div>
                   </div>
                 );
               })()}
@@ -627,7 +737,14 @@ export const FleetManagement: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-2 border-t border-slate-100 text-right">
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <a
+                href="/chc/telematics"
+                className="btn-primary text-xs py-2 px-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold inline-flex items-center gap-1.5 shadow-sm"
+              >
+                <Activity className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Open Live Telematics</span>
+              </a>
               <button
                 onClick={() => setSelectedMachine(null)}
                 className="btn-secondary text-xs py-2 px-4 cursor-pointer"

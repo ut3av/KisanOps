@@ -1,14 +1,14 @@
 {
-  "0": "Navbar.tsx",
+  "0": "react",
   "1": "kisanOpsStore.ts",
-  "2": "voice.ts",
+  "2": "Machine",
   "3": "devDependencies",
   "4": "20260821000000_initial_schema.sql",
   "5": "dependencies",
   "6": "LeafletFleetMap.tsx",
   "7": "compilerOptions",
   "8": "compilerOptions",
-  "9": "react",
+  "9": "App.tsx",
   "10": "schema.sql",
   "11": "plugins",
   "12": "tsconfig.json",
@@ -34,6 +34,12 @@
   "32": "telemetry-webhook/index.ts",
   "33": "vercel.json",
   "34": "3. Core Functional Modules & Algorithmic Specifications",
+  "35": "LandingPage.tsx",
   "36": "RazorpayCheckoutModal.tsx",
-  "37": "LazyImage.tsx"
+  "37": "LazyImage.tsx",
+  "38": "usePageTitle.ts",
+  "39": "AdminDashboard.tsx",
+  "40": "20260823000000_realtime_geospatial_availability.sql",
+  "41": "BookDemoModal.tsx",
+  "42": "public.farms"
 }

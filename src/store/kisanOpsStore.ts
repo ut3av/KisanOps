@@ -36,6 +36,15 @@ import {
   insertLiveTelemetryToDatabase,
   subscribeToSupabaseRealtime,
 } from '../lib/dbService';
+import {
+  ingestHardwareTelemetry,
+  ingestOperatorGpsTelemetry,
+  ingestManualGpsLocation,
+  HardwareTelemetryPayload,
+  OperatorGpsPayload,
+  ManualLocationPayload,
+} from '../lib/iotIngestionEngine';
+import { TelemetryModeType } from '../types';
 
 export interface AppState {
   currentUser: UserProfile;
@@ -597,10 +606,22 @@ export function useKisanOpsStore() {
       notify();
     },
 
-    resolveAlert: (alertId: string) => {
+    resolveAlert: (alertId: string, returnToServiceStatus: MachineStatus = 'AVAILABLE') => {
+      const targetAlert = globalState.maintenanceAlerts.find(a => a.id === alertId);
       globalState.maintenanceAlerts = globalState.maintenanceAlerts.map(a =>
         a.id === alertId ? { ...a, isResolved: true, resolvedAt: new Date().toISOString() } : a
       );
+      if (targetAlert) {
+        // If no more unresolved critical alerts for this machine, restore status
+        const otherUnresolved = globalState.maintenanceAlerts.some(
+          a => a.machineId === targetAlert.machineId && !a.isResolved && a.id !== alertId && (a.severity === 'CRITICAL' || a.severity === 'HIGH')
+        );
+        if (!otherUnresolved) {
+          globalState.machines = globalState.machines.map(m =>
+            m.id === targetAlert.machineId ? { ...m, status: returnToServiceStatus, locationUpdatedAt: new Date().toISOString() } : m
+          );
+        }
+      }
       globalState.simulationState = {
         ...globalState.simulationState,
         isFuelAnomalyActive: false,
@@ -751,6 +772,153 @@ export function useKisanOpsStore() {
               }
             : m
         ),
+      };
+      notify();
+    },
+
+    setMachineTelemetryMode: (machineId: string, mode: TelemetryModeType) => {
+      globalState = {
+        ...globalState,
+        machines: globalState.machines.map(m =>
+          m.id === machineId ? { ...m, telemetryMode: mode } : m
+        ),
+      };
+      notify();
+    },
+
+    ingestTelemetryPayload: (payload: HardwareTelemetryPayload) => {
+      const result = ingestHardwareTelemetry(payload);
+      if (result.success && result.telemetryPoint) {
+        const tp = result.telemetryPoint;
+        const targetStatus: MachineStatus =
+          result.anomalyDetected && result.alerts.some(a => a.severity === 'CRITICAL')
+            ? 'MAINTENANCE'
+            : tp.status || 'ACTIVE';
+
+        globalState = {
+          ...globalState,
+          currentTelemetry: {
+            ...globalState.currentTelemetry,
+            [payload.machineId]: tp,
+          },
+          machines: globalState.machines.map(m =>
+            m.id === payload.machineId
+              ? {
+                  ...m,
+                  latitude: tp.latitude,
+                  longitude: tp.longitude,
+                  headingDeg: tp.headingDeg,
+                  totalEngineHours: tp.engineHours,
+                  status: targetStatus,
+                  locationSource: tp.locationSource || 'gps_tracker',
+                  locationAccuracy: tp.locationAccuracy || 3.5,
+                  locationUpdatedAt: tp.timestamp,
+                  telemetryMode: 'HARDWARE_IOT',
+                }
+              : m
+          ),
+          maintenanceAlerts: [
+            ...result.alerts,
+            ...globalState.maintenanceAlerts.filter(
+              a => !result.alerts.some(ra => ra.alertType === a.alertType && ra.machineId === a.machineId)
+            ),
+          ],
+        };
+
+        // Sync to Supabase in background
+        insertLiveTelemetryToDatabase(tp);
+        notify();
+      }
+      return result;
+    },
+
+    ingestOperatorGps: (payload: OperatorGpsPayload) => {
+      const existing = globalState.currentTelemetry[payload.machineId];
+      const result = ingestOperatorGpsTelemetry(payload, existing);
+      if (result.success && result.telemetryPoint) {
+        const tp = result.telemetryPoint;
+        globalState = {
+          ...globalState,
+          currentTelemetry: {
+            ...globalState.currentTelemetry,
+            [payload.machineId]: tp,
+          },
+          machines: globalState.machines.map(m =>
+            m.id === payload.machineId
+              ? {
+                  ...m,
+                  latitude: tp.latitude,
+                  longitude: tp.longitude,
+                  headingDeg: tp.headingDeg,
+                  status: tp.status,
+                  locationSource: 'operator_app',
+                  locationAccuracy: tp.locationAccuracy || 5.0,
+                  locationUpdatedAt: tp.timestamp,
+                  telemetryMode: 'OPERATOR_GPS',
+                }
+              : m
+          ),
+        };
+        insertLiveTelemetryToDatabase(tp);
+        notify();
+      }
+      return result;
+    },
+
+    ingestManualLocation: (payload: ManualLocationPayload) => {
+      const existing = globalState.currentTelemetry[payload.machineId];
+      const result = ingestManualGpsLocation(payload, existing);
+      if (result.success && result.telemetryPoint) {
+        const tp = result.telemetryPoint;
+        globalState = {
+          ...globalState,
+          currentTelemetry: {
+            ...globalState.currentTelemetry,
+            [payload.machineId]: tp,
+          },
+          machines: globalState.machines.map(m =>
+            m.id === payload.machineId
+              ? {
+                  ...m,
+                  latitude: tp.latitude,
+                  longitude: tp.longitude,
+                  status: tp.status,
+                  locationSource: 'chc_manual',
+                  locationAccuracy: 10.0,
+                  locationUpdatedAt: tp.timestamp,
+                  telemetryMode: 'MANUAL',
+                }
+              : m
+          ),
+        };
+        insertLiveTelemetryToDatabase(tp);
+        notify();
+      }
+      return result;
+    },
+
+    createMaintenanceAlert: (alertData: Partial<PredictiveMaintenanceAlert>) => {
+      const targetMachine = globalState.machines.find(m => m.id === alertData.machineId);
+      const newAlert: PredictiveMaintenanceAlert = {
+        id: `alert-manual-${Date.now()}`,
+        machineId: alertData.machineId || (globalState.machines[0]?.id || 'mach-jd-harv-07'),
+        machineIdentifier: alertData.machineIdentifier || targetMachine?.identifier || 'MACH-01',
+        machineModel: alertData.machineModel || `${targetMachine?.brand} ${targetMachine?.model}` || 'Agricultural Asset',
+        alertType: alertData.alertType || 'SERVICE_OVERDUE',
+        severity: alertData.severity || 'HIGH',
+        description: alertData.description || 'Manual maintenance inspection ticket created.',
+        recommendedAction: alertData.recommendedAction || 'Perform multi-point mechanical inspection.',
+        urgencyHours: alertData.urgencyHours || 24,
+        isResolved: false,
+        createdAt: new Date().toISOString(),
+      };
+
+      globalState = {
+        ...globalState,
+        maintenanceAlerts: [newAlert, ...globalState.maintenanceAlerts],
+        machines: alertData.severity === 'CRITICAL'
+          ? globalState.machines.map(m => m.id === newAlert.machineId ? { ...m, status: 'MAINTENANCE' } : m)
+          : globalState.machines,
       };
       notify();
     },

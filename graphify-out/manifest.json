@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "src/features/chc/CHCOverview.tsx": {
-    "mtime": 1787416354.172557,
-    "seen": 1787416566.5031605,
-    "ast_hash": "bea6fc80c020fd120b9cceb034f3a0dd",
+    "mtime": 1787437515.7279181,
+    "seen": 1787437701.1550791,
+    "ast_hash": "dc1a02dcd22d90a1b39302c451734714",
     "semantic_hash": ""
   },
   "src/features/chc/CHCSettings.tsx": {
@@ -120,21 +120,21 @@
     "semantic_hash": ""
   },
   "src/features/chc/FleetManagement.tsx": {
-    "mtime": 1787436834.3308692,
-    "seen": 1787437012.7329552,
-    "ast_hash": "3f2a38de9d696781b99d170aaac874e8",
+    "mtime": 1787437467.4406824,
+    "seen": 1787437701.1550865,
+    "ast_hash": "d7f8d1220ed1e634fdb93274c60f98e4",
     "semantic_hash": ""
   },
   "src/features/chc/LiveTelematics.tsx": {
-    "mtime": 1787416328.2132826,
-    "seen": 1787416566.503169,
-    "ast_hash": "4a8f718c45d47831d674fc8326582adf",
+    "mtime": 1787437604.9083083,
+    "seen": 1787437701.1550884,
+    "ast_hash": "a7253301eb09118a305fed0998826a0c",
     "semantic_hash": ""
   },
   "src/features/chc/PredictiveMaintenance.tsx": {
-    "mtime": 1787435135.046167,
-    "seen": 1787435728.2481425,
-    "ast_hash": "568758e439dfe079bc8ce55c505fef0a",
+    "mtime": 1787437497.1120088,
+    "seen": 1787437701.15509,
+    "ast_hash": "6506797b8bfd27df05a1f9191518ec1c",
     "semantic_hash": ""
   },
   "src/features/chc/RevenueAnalytics.tsx": {
@@ -240,15 +240,15 @@
     "semantic_hash": "a3150907ddf2842367caa98e12a33298"
   },
   "src/store/kisanOpsStore.ts": {
-    "mtime": 1787436378.9824882,
-    "seen": 1787437012.7333727,
-    "ast_hash": "33b83a4d2276bef8777a50b3a1bd1d31",
+    "mtime": 1787437588.5632517,
+    "seen": 1787437701.1552193,
+    "ast_hash": "408020ce6996484241534f23ff18397f",
     "semantic_hash": ""
   },
   "src/types/index.ts": {
-    "mtime": 1787436261.2039733,
-    "seen": 1787437012.7333784,
-    "ast_hash": "9eb8c9092465c9cde07f64fc2dba2362",
+    "mtime": 1787437238.772192,
+    "seen": 1787437701.155221,
+    "ast_hash": "6d541a3d189688c9b8b4377f2e63e208",
     "semantic_hash": ""
   },
   "supabase/migrations/20260821000000_initial_schema.sql": {
@@ -288,9 +288,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1787418248.1685567,
-    "seen": 1787418264.8546894,
-    "ast_hash": "c52d73694d27b9ff28646ec446086d2d",
+    "mtime": 1787437177.2881656,
+    "seen": 1787437701.1552663,
+    "ast_hash": "d8795fbf97a6a3e14fc30521a90b4991",
     "semantic_hash": ""
   },
   "src/components/common/DopplerRadarPlayer.tsx": {
@@ -684,9 +684,9 @@
     "semantic_hash": ""
   },
   "src/features/operator/OperatorDashboard.tsx": {
-    "mtime": 1787435424.951454,
-    "seen": 1787435728.2483125,
-    "ast_hash": "92a04529b4c795f67484d21216f4bb7a",
+    "mtime": 1787437389.6638184,
+    "seen": 1787437701.1551547,
+    "ast_hash": "91250011dd48dfaca8c88d304d9a8696",
     "semantic_hash": ""
   },
   "src/lib/__tests__/iotAndDb.test.ts": {
@@ -702,9 +702,9 @@
     "semantic_hash": ""
   },
   "src/lib/iotIngestionEngine.ts": {
-    "mtime": 1787334523.1534102,
-    "seen": 1787334561.0194721,
-    "ast_hash": "15e7034683e628de4391b6691c3c3625",
+    "mtime": 1787437549.508141,
+    "seen": 1787437701.1551821,
+    "ast_hash": "0fb2f6d25beaf88ab96ee89eeb1b4b49",
     "semantic_hash": ""
   },
   "supabase/functions/telemetry-webhook/index.ts": {
@@ -915,6 +915,12 @@
     "mtime": 1787436239.4380205,
     "seen": 1787437012.7334087,
     "ast_hash": "03506ae706ba46d444dab9c6ae763c78",
+    "semantic_hash": ""
+  },
+  "src/lib/__tests__/fleetTelematicsControl.test.ts": {
+    "mtime": 1787437650.9270244,
+    "seen": 1787437701.1551616,
+    "ast_hash": "119e8ba87c6f6485e3285cfb6c1140bb",
     "semantic_hash": ""
   }
 }

@@ -120,6 +120,43 @@ export const CHCOverview: React.FC = () => {
         </div>
       )}
 
+      {/* Live Fleet Telematics Health Strip */}
+      <div className="bg-slate-900 text-white rounded-3xl p-4 sm:p-5 border border-slate-800 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="flex items-center gap-3.5">
+          <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0">
+            <Activity className="w-5 h-5 animate-pulse" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-black uppercase tracking-wider text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">
+                Live Telematics Engine
+              </span>
+              <span className="text-xs text-slate-400 font-mono">
+                PostGIS ↔ Farmer Geospatial Synced
+              </span>
+            </div>
+            <h3 className="text-sm sm:text-base font-extrabold text-white mt-0.5">
+              {machines.filter(m => m.status === 'AVAILABLE').length} Units Ready for Instant Farmer Booking ({machines.length} Total Fleet)
+            </h3>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 w-full md:w-auto">
+          <button
+            onClick={() => navigate('/chc/telematics')}
+            className="flex-1 md:flex-none btn-primary text-xs py-2 px-3.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold shadow-sm flex items-center justify-center gap-1.5 cursor-pointer"
+          >
+            <span>🛰️ Open Telematics Control Center</span>
+          </button>
+          <button
+            onClick={() => navigate('/chc/fleet')}
+            className="flex-1 md:flex-none btn-secondary text-xs py-2 px-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700 flex items-center justify-center gap-1 cursor-pointer"
+          >
+            <span>+ Add Machine</span>
+          </button>
+        </div>
+      </div>
+
       {/* Top 6 KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
         <StatCard

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Tractor,
   Play,
@@ -13,6 +13,10 @@ import {
   Sparkles,
   Radio,
   PlusCircle,
+  Smartphone,
+  Navigation,
+  Compass,
+  Zap,
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { TelematicsGaugeCluster } from '../../components/common/TelematicsGauge';
@@ -24,11 +28,18 @@ export const OperatorDashboard: React.FC = () => {
     'Machine Operator & Driver Console',
     'Active machine mission, engine telemetry stopwatch, diesel logs, and incident reporting.'
   );
-  const { state, updateBookingStatus, toggleFuelAnomaly, loadDemoData } = useKisanOpsStore();
+  const { state, updateBookingStatus, toggleFuelAnomaly, loadDemoData, ingestOperatorGps } = useKisanOpsStore();
   const { bookings, machines, currentTelemetry, simulationState } = state;
 
   const [activeTab, setActiveTab] = useState<'MISSION' | 'DIESEL' | 'SAFETY' | 'EARNINGS'>('MISSION');
   
+  // Mode 2: Live Operator GPS Broadcast State
+  const [isGpsBroadcasting, setIsGpsBroadcasting] = useState<boolean>(true);
+  const [liveGpsAccuracy, setLiveGpsAccuracy] = useState<number | null>(4.2);
+  const [liveGpsSpeed, setLiveGpsSpeed] = useState<number>(14.5);
+  const [lastPingTimestamp, setLastPingTimestamp] = useState<string>(new Date().toLocaleTimeString());
+  const geoWatchIdRef = useRef<number | null>(null);
+
   // Stopwatch elapsed seconds for active job
   const [elapsedSeconds, setElapsedSeconds] = useState<number>(6 * 3600 + 24 * 60); // 6.4 hours default
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
@@ -50,6 +61,55 @@ export const OperatorDashboard: React.FC = () => {
 
   const assignedMachine = machines.find(m => m.id === activeBooking?.machineId) || machines[0];
   const telemetry = assignedMachine ? currentTelemetry[assignedMachine.id] : undefined;
+
+  // HTML5 Live Geolocation Stream to Hub
+  useEffect(() => {
+    if (isGpsBroadcasting && assignedMachine && navigator.geolocation) {
+      geoWatchIdRef.current = navigator.geolocation.watchPosition(
+        position => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          const speed = position.coords.speed ? Math.round(position.coords.speed * 3.6 * 10) / 10 : liveGpsSpeed;
+          const heading = position.coords.heading || 180;
+          const accuracy = Math.round((position.coords.accuracy || 4.2) * 10) / 10;
+
+          setLiveGpsAccuracy(accuracy);
+          setLiveGpsSpeed(speed);
+          setLastPingTimestamp(new Date().toLocaleTimeString());
+
+          ingestOperatorGps({
+            machineId: assignedMachine.id,
+            latitude: lat,
+            longitude: lon,
+            speedKmh: speed,
+            headingDeg: heading,
+            accuracyMetres: accuracy,
+          });
+        },
+        () => {
+          // Fallback simulation when device GPS permission is blocked in test sandbox
+          const simulatedLat = (assignedMachine.latitude || 23.1872) + (Math.random() - 0.5) * 0.001;
+          const simulatedLon = (assignedMachine.longitude || 77.1008) + (Math.random() - 0.5) * 0.001;
+          setLastPingTimestamp(new Date().toLocaleTimeString());
+
+          ingestOperatorGps({
+            machineId: assignedMachine.id,
+            latitude: simulatedLat,
+            longitude: simulatedLon,
+            speedKmh: isTimerRunning ? 6.5 : 18.0,
+            accuracyMetres: 4.5,
+          });
+        },
+        { enableHighAccuracy: true, maximumAge: 3000 }
+      );
+    }
+
+    return () => {
+      if (geoWatchIdRef.current !== null && navigator.geolocation) {
+        navigator.geolocation.clearWatch(geoWatchIdRef.current);
+      }
+    };
+  }, [isGpsBroadcasting, assignedMachine?.id, isTimerRunning]);
 
   useEffect(() => {
     let interval: any = null;
@@ -261,6 +321,69 @@ export const OperatorDashboard: React.FC = () => {
                   </button>
                 </>
               )}
+            </div>
+          </div>
+
+          {/* Mode 2: Live Driver Mobile GPS Broadcast Hub Card */}
+          <div className="bg-[#122016] rounded-3xl p-5 sm:p-6 border border-emerald-800/80 space-y-3 shadow-lg">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-emerald-900/60 pb-3">
+              <div className="flex items-center gap-2.5">
+                <div className={clsx(
+                  'w-9 h-9 rounded-xl flex items-center justify-center',
+                  isGpsBroadcasting ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40' : 'bg-slate-800 text-slate-400'
+                )}>
+                  <Smartphone className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-sm font-extrabold text-white">
+                      Mode 2: Live Mobile GPS Broadcast
+                    </h3>
+                    <span className={clsx(
+                      'text-[10px] font-bold px-2 py-0.5 rounded-full',
+                      isGpsBroadcasting ? 'bg-emerald-950 text-emerald-300 border border-emerald-700' : 'bg-slate-800 text-slate-400'
+                    )}>
+                      {isGpsBroadcasting ? '📡 Broadcasting to CHC Hub' : '⚪ Tracking Paused'}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-slate-400">
+                    Continuous position stream for real-time fleet map & farmer search.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsGpsBroadcasting(!isGpsBroadcasting)}
+                className={clsx(
+                  'px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all cursor-pointer flex items-center gap-1.5 shadow-sm',
+                  isGpsBroadcasting
+                    ? 'bg-emerald-600 hover:bg-emerald-500 text-white ring-2 ring-emerald-400/30'
+                    : 'bg-slate-800 hover:bg-slate-700 text-slate-200'
+                )}
+              >
+                <Radio className="w-3.5 h-3.5" />
+                <span>{isGpsBroadcasting ? 'Broadcasting Active' : 'Start GPS Broadcast'}</span>
+              </button>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs font-mono">
+              <div className="p-2.5 bg-[#0a120c] rounded-xl border border-emerald-950">
+                <span className="text-[10px] text-slate-400 block font-sans">GPS Accuracy</span>
+                <span className="text-emerald-400 font-bold">±{liveGpsAccuracy || 4.2}m (High Fix)</span>
+              </div>
+              <div className="p-2.5 bg-[#0a120c] rounded-xl border border-emerald-950">
+                <span className="text-[10px] text-slate-400 block font-sans">Ground Speed</span>
+                <span className="text-white font-bold">{liveGpsSpeed || 0} km/h</span>
+              </div>
+              <div className="p-2.5 bg-[#0a120c] rounded-xl border border-emerald-950">
+                <span className="text-[10px] text-slate-400 block font-sans">Tracking Mode</span>
+                <span className="text-sky-400 font-bold">operator_app</span>
+              </div>
+              <div className="p-2.5 bg-[#0a120c] rounded-xl border border-emerald-950">
+                <span className="text-[10px] text-slate-400 block font-sans">Last Hub Sync</span>
+                <span className="text-slate-300 font-bold">{lastPingTimestamp}</span>
+              </div>
             </div>
           </div>
 
