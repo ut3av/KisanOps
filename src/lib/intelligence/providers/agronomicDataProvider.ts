@@ -82,8 +82,9 @@ export class ICARAgronomicDataProvider implements AgronomicDataProvider {
     },
   };
 
-  getCropProfile(cropName: string, season = 'Rabi'): CropAgronomicProfile {
-    const key = Object.keys(this.cropProfiles).find(k => k.toLowerCase() === cropName.toLowerCase()) || 'Wheat';
+  getCropProfile(cropName?: string, season = 'Rabi'): CropAgronomicProfile {
+    const safeName = (cropName || 'Wheat').trim().toLowerCase();
+    const key = Object.keys(this.cropProfiles).find(k => k.toLowerCase() === safeName) || 'Wheat';
     return this.cropProfiles[key];
   }
 

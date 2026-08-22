@@ -1115,19 +1115,23 @@ export function useKisanOpsStore() {
       customPrice?: number,
       customExpenses?: any
     ) => {
-      const farm = globalState.farm;
+      const actualFarm = globalState.farm;
+      const farm = actualFarm.sizeAcres > 0 ? actualFarm : SEEDED_FARM;
+      const cropName = farm.crop?.cropName || 'Wheat';
+      const district = farm.district || 'Sehore';
+
       const weatherObs = await defaultWeatherProvider.getObservation(
-        farm.latitude || 23.1872,
-        farm.longitude || 77.1008,
-        farm.district || 'Sehore'
+        farm.latitude || 23.1642,
+        farm.longitude || 77.1215,
+        district
       );
       const marketObs = await defaultMarketDataProvider.getMarketData(
-        farm.district || 'Sehore',
-        farm.crop.cropName || 'Wheat'
+        district,
+        cropName
       );
       const eventsObs = await defaultExternalEventProvider.getRelevantEvents(
-        farm.district || 'Sehore',
-        [farm.crop.cropName || 'Wheat']
+        district,
+        [cropName]
       );
 
       const profitModel = calculateFarmProfitModel(farm, customPrice || 2540, {
