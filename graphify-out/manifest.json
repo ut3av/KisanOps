@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/FarmerLayout.tsx": {
-    "mtime": 1787389734.2661538,
-    "seen": 1787390088.3070846,
-    "ast_hash": "6074eb14d29bd63f9b0c866de3949ecf",
+    "mtime": 1787399171.6820507,
+    "seen": 1787399681.8191514,
+    "ast_hash": "a63b15284a3fbe932d8682de2a25565b",
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
@@ -801,6 +801,90 @@
     "mtime": 1787395983.4215598,
     "seen": 1787396547.2344732,
     "ast_hash": "9ae50b00a6d478d151a86ed234c89245",
+    "semantic_hash": ""
+  },
+  "src/components/voice/FloatingVoiceButton.tsx": {
+    "mtime": 1787399030.373948,
+    "seen": 1787399681.8191597,
+    "ast_hash": "3fe07a4d5ff9a14eb0a8db290f7d43a4",
+    "semantic_hash": ""
+  },
+  "src/components/voice/VoiceAssistantModal.tsx": {
+    "mtime": 1787399004.2706773,
+    "seen": 1787399681.8191617,
+    "ast_hash": "c4ce16bc5a019e05570c4a239de42e61",
+    "semantic_hash": ""
+  },
+  "src/routes/voice.routes.ts": {
+    "mtime": 1787398969.5746903,
+    "seen": 1787399681.8192565,
+    "ast_hash": "97db3f8ba5b1fc04a614cc0f98f8af95",
+    "semantic_hash": ""
+  },
+  "src/services/__tests__/voiceIntent.test.ts": {
+    "mtime": 1787399219.4415543,
+    "seen": 1787399681.8192585,
+    "ast_hash": "148699b6c2e4bf220d947a81f97e323a",
+    "semantic_hash": ""
+  },
+  "src/services/conversation/conversation.service.ts": {
+    "mtime": 1787398934.4138224,
+    "seen": 1787399681.81926,
+    "ast_hash": "952e70581991f430f3d1f32dcf708388",
+    "semantic_hash": ""
+  },
+  "src/services/intent/intent.schema.ts": {
+    "mtime": 1787398670.1345117,
+    "seen": 1787399681.8192616,
+    "ast_hash": "4859ad06a0053c20d37dbb1fa8ee00e2",
+    "semantic_hash": ""
+  },
+  "src/services/intent/intent.service.ts": {
+    "mtime": 1787398859.3855677,
+    "seen": 1787399681.8192627,
+    "ast_hash": "550c5b061db5dbaa945a3aaa26b178d7",
+    "semantic_hash": ""
+  },
+  "src/services/machinery/machinery-matcher.service.ts": {
+    "mtime": 1787399434.597163,
+    "seen": 1787399681.8192642,
+    "ast_hash": "68f7ff25e18d7960099c6e75e713f235",
+    "semantic_hash": ""
+  },
+  "src/services/response/response.service.ts": {
+    "mtime": 1787398917.275079,
+    "seen": 1787399681.8192656,
+    "ast_hash": "10ef36b600b030f09b875340910efbfc",
+    "semantic_hash": ""
+  },
+  "src/services/stt/groq-whisper.service.ts": {
+    "mtime": 1787398827.0784087,
+    "seen": 1787399681.8192668,
+    "ast_hash": "d55a2217b74d887f44925fc72288bec7",
+    "semantic_hash": ""
+  },
+  "src/services/stt/stt.service.ts": {
+    "mtime": 1787398789.8989196,
+    "seen": 1787399681.819268,
+    "ast_hash": "470f09368ba39fa0fefa70c597816d4d",
+    "semantic_hash": ""
+  },
+  "src/services/tts/tts.service.ts": {
+    "mtime": 1787398867.8231082,
+    "seen": 1787399681.8192692,
+    "ast_hash": "9d6681dd6616b84b5412794a3fbe02e4",
+    "semantic_hash": ""
+  },
+  "src/types/voice.ts": {
+    "mtime": 1787398476.5330493,
+    "seen": 1787399681.819274,
+    "ast_hash": "fdb6f186e311806337dcf7ac6e423e04",
+    "semantic_hash": ""
+  },
+  "src/utils/date-parser.ts": {
+    "mtime": 1787398752.3902395,
+    "seen": 1787399681.8192756,
+    "ast_hash": "b0aee31dcc797e4bef77230b93b0a9d3",
     "semantic_hash": ""
   }
 }

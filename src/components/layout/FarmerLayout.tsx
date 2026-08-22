@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { Navbar } from './Navbar';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
+import { FloatingVoiceButton } from '../voice/FloatingVoiceButton';
 import clsx from 'clsx';
 
 export const FarmerLayout: React.FC = () => {
@@ -65,6 +66,9 @@ export const FarmerLayout: React.FC = () => {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-24 md:pb-8">
         <Outlet />
       </main>
+
+      {/* Floating Multilingual Voice AI Assistant Button */}
+      <FloatingVoiceButton />
 
       {/* Mobile-First Bottom Navigation Bar */}
       <nav aria-label="Mobile Navigation" className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-30 px-2 py-2 shadow-elevated select-none">

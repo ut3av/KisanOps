@@ -1,16 +1,16 @@
 # Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 112 files · ~338,837 words
+- 112 files · ~338,864 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 584 nodes · 1266 edges · 36 communities (27 shown, 9 thin omitted)
+- 584 nodes · 1265 edges · 36 communities (27 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `864b80b0`
+- Built from commit: `6758c6dc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -173,7 +173,7 @@ Nodes (4): HERO_SLIDES, HeroSection(), HeroSectionProps, HeroSlide
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `App.tsx` to `Navbar.tsx`, `kisanOpsStore.ts`, `LazyImage.tsx`, `RazorpayCheckoutModal.tsx`, `HeroSection.tsx`, `LeafletFleetMap.tsx`, `plugins`, `TrustMarquee.tsx`, `FarmerHome.tsx`?**
-  _High betweenness centrality (0.121) - this node is a cross-community bridge._
+  _High betweenness centrality (0.120) - this node is a cross-community bridge._
 - **Why does `useKisanOpsStore()` connect `App.tsx` to `Navbar.tsx`, `kisanOpsStore.ts`, `FarmerHome.tsx`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **Why does `plugins` connect `plugins` to `App.tsx`?**
@@ -181,7 +181,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
   _206 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `kisanOpsStore.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.06031746031746032 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.060073260073260075 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `dependencies` be split into smaller, more focused modules?**
