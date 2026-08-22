@@ -1,4 +1,4 @@
-# Yukti (KisanOps) - An Agricultural Machinery Intelligence Platform
+# Yukti (KisanOps) - An Agricultural Machinery Intelligence Platform.
 
 <div align="center">
   <img src="public/images/yukti-platform-overview.jpg" alt="Yukti Agricultural Machinery Intelligence Platform Overview" width="100%" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);" />
