@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard,
@@ -52,8 +52,15 @@ export const SideNav: React.FC<SideNavProps> = ({
   isDrawer = true,
 }) => {
   const { state, loadDemoData, clearAllData } = useKisanOpsStore();
+  const [isReloading, setIsReloading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const handleReload = () => {
+    setIsReloading(true);
+    loadDemoData();
+    setTimeout(() => setIsReloading(false), 600);
+  };
 
   const activeAlertsCount = state.maintenanceAlerts.filter(a => !a.isResolved).length;
   const pendingBookingsCount = state.bookings.filter(
@@ -282,10 +289,10 @@ export const SideNav: React.FC<SideNavProps> = ({
 
               {state.machines.length === 0 ? (
                 <button
-                  onClick={() => loadDemoData()}
+                  onClick={handleReload}
                   className="w-full py-1.5 px-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow-2xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-amber-200 shrink-0" />
+                  <Sparkles className={clsx('w-3.5 h-3.5 text-amber-200 shrink-0', isReloading && 'animate-spin')} />
                   <span>Load Demo Dataset</span>
                 </button>
               ) : (
@@ -298,11 +305,11 @@ export const SideNav: React.FC<SideNavProps> = ({
                     <span>Remove All</span>
                   </button>
                   <button
-                    onClick={() => loadDemoData()}
+                    onClick={handleReload}
                     className="p-1.5 rounded-xl bg-surface-100 hover:bg-surface-200 text-slate-700 border border-slate-200 text-xs transition-colors cursor-pointer"
                     title="Reload Demo Dataset"
                   >
-                    <RotateCcw className="w-3.5 h-3.5 shrink-0" />
+                    <RotateCcw className={clsx('w-3.5 h-3.5 shrink-0 transition-transform duration-500', isReloading && 'animate-spin text-agri-600')} />
                   </button>
                 </div>
               )}

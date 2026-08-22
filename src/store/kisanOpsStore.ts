@@ -612,7 +612,14 @@ export function useKisanOpsStore() {
     },
 
     loadDemoData: () => {
-      globalState = getPopulatedDemoState();
+      const activeRole = globalState.selectedRole;
+      const activeUser = globalState.currentUser;
+      const demoState = getPopulatedDemoState();
+      globalState = {
+        ...demoState,
+        selectedRole: activeRole || 'FARMER',
+        currentUser: activeUser || demoState.currentUser,
+      };
       notify();
     },
 

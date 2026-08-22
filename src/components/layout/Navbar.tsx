@@ -25,7 +25,14 @@ export const Navbar: React.FC = () => {
   const { state, markNotificationRead, loadDemoData, clearAllData } = useKisanOpsStore();
   const [showNotifMenu, setShowNotifMenu] = useState(false);
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+  const [isReloading, setIsReloading] = useState(false);
   const navigate = useNavigate();
+
+  const handleReload = () => {
+    setIsReloading(true);
+    loadDemoData();
+    setTimeout(() => setIsReloading(false), 600);
+  };
 
   const unreadCount = state.notifications.filter(n => !n.isRead).length;
   const isDemoActive = state.isDemoLoaded || state.machines.length > 0;
@@ -79,11 +86,11 @@ export const Navbar: React.FC = () => {
             {/* Demo Data Management Controls */}
             {!isDemoActive ? (
               <button
-                onClick={() => loadDemoData()}
+                onClick={handleReload}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow-sm transition-all cursor-pointer border border-amber-600 shrink-0 animate-pulse hover:animate-none"
                 title="Load full demonstration dataset (7 machines, bookings, telematics, alerts)"
               >
-                <Sparkles className="w-3.5 h-3.5 shrink-0 text-amber-200" />
+                <Sparkles className={clsx('w-3.5 h-3.5 shrink-0 text-amber-200', isReloading && 'animate-spin')} />
                 <span className="hidden sm:inline">Load Demo Data</span>
                 <span className="sm:hidden">Load Demo</span>
               </button>
@@ -99,11 +106,11 @@ export const Navbar: React.FC = () => {
                   <span className="md:hidden">Clear</span>
                 </button>
                 <button
-                  onClick={() => loadDemoData()}
+                  onClick={handleReload}
                   className="p-1.5 rounded-xl bg-surface-100 hover:bg-surface-200 text-slate-600 border border-slate-200 transition-colors cursor-pointer"
                   title="Reload complete demo dataset"
                 >
-                  <RotateCcw className="w-3.5 h-3.5 shrink-0" />
+                  <RotateCcw className={clsx('w-3.5 h-3.5 shrink-0 transition-transform duration-500', isReloading && 'animate-spin text-agri-600')} />
                 </button>
               </div>
             )}

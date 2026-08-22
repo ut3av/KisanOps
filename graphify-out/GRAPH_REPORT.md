@@ -1,7 +1,7 @@
 # Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 111 files · ~334,447 words
+- 111 files · ~334,571 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e3e400aa`
+- Built from commit: `5f6f8828`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -155,7 +155,7 @@ Nodes (36): AgriCreditGauge(), AgriCreditGaugeProps, ExplanationBadge(), Explana
 
 ### Community 33 - "vercel.json"
 Cohesion: 0.29
-Nodes (6): buildCommand, cleanUrls, framework, headers, outputDirectory, rewrites
+Nodes (6): buildCommand, cleanUrls, headers, outputDirectory, rewrites, trailingSlash
 
 ### Community 34 - "3. Core Functional Modules & Algorithmic Specifications"
 Cohesion: 0.11

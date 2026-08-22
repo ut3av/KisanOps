@@ -4,6 +4,32 @@
   "graph": {},
   "nodes": [
     {
+      "id": "src_components_layout_sidenav_navitem",
+      "label": "NavItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "navitem",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_components_layout_sidenav_sidenavprops",
+      "label": "SideNavProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "sidenavprops",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L32"
+    },
+    {
       "id": "src_components_common_leafletfleetmap_leafletfleetmapprops",
       "label": "LeafletFleetMapProps",
       "_callable": true,
@@ -381,6 +407,19 @@
       "source_location": "L26"
     },
     {
+      "id": "src_components_common_lazyimage_lazyimageprops",
+      "label": "LazyImageProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "LazyImage.tsx",
+      "file_type": "code",
+      "norm_label": "lazyimageprops",
+      "source_file": "src/components/common/LazyImage.tsx",
+      "source_location": "L5"
+    },
+    {
       "id": "src_components_common_kisanloader_kisanloaderprops",
       "label": "KisanLoaderProps",
       "_callable": true,
@@ -732,52 +771,13 @@
       "source_location": "L11"
     },
     {
-      "id": "src_components_common_lazyimage_lazyimageprops",
-      "label": "LazyImageProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "lazyimageprops",
-      "source_file": "src/components/common/LazyImage.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_features_landing_components_ctabanner_ctabannerprops",
-      "label": "CtaBannerProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "ctabannerprops",
-      "source_file": "src/features/landing/components/CtaBanner.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_features_landing_components_faqsection_faqitem",
-      "label": "FaqItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "faqitem",
-      "source_file": "src/features/landing/components/FaqSection.tsx",
-      "source_location": "L4"
-    },
-    {
       "id": "src_features_landing_components_herosection_herosectionprops",
       "label": "HeroSectionProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "react",
+      "community_name": "HeroSection.tsx",
       "file_type": "code",
       "norm_label": "herosectionprops",
       "source_file": "src/features/landing/components/HeroSection.tsx",
@@ -790,76 +790,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "react",
+      "community_name": "HeroSection.tsx",
       "file_type": "code",
       "norm_label": "heroslide",
       "source_file": "src/features/landing/components/HeroSection.tsx",
       "source_location": "L25"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection_workflowstep",
-      "label": "WorkflowStep",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "workflowstep",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_features_landing_components_industriessection_industrycard",
-      "label": "IndustryCard",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "industrycard",
-      "source_file": "src/features/landing/components/IndustriesSection.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection_enginemodule",
-      "label": "EngineModule",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "enginemodule",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L27"
-    },
-    {
-      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsectionprops",
-      "label": "RoiCalculatorSectionProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "roicalculatorsectionprops",
-      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_features_landing_components_statsimpactsection_statsimpactsectionprops",
-      "label": "StatsImpactSectionProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "statsimpactsectionprops",
-      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
-      "source_location": "L5"
     },
     {
       "id": "src_components_common_dopplerradarplayer_dopplerradarplayerprops",
@@ -992,32 +927,6 @@
       "source_location": "L5"
     },
     {
-      "id": "src_components_layout_sidenav_navitem",
-      "label": "NavItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "navitem",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L47"
-    },
-    {
-      "id": "src_components_layout_sidenav_sidenavprops",
-      "label": "SideNavProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "sidenavprops",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L39"
-    },
-    {
       "id": "src_features_admin_admindashboard_subsidyrecord",
       "label": "SubsidyRecord",
       "_callable": true,
@@ -1044,6 +953,97 @@
       "source_location": "L123"
     },
     {
+      "id": "src_features_landing_components_ctabanner_ctabannerprops",
+      "label": "CtaBannerProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "ctabannerprops",
+      "source_file": "src/features/landing/components/CtaBanner.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_features_landing_components_faqsection_faqitem",
+      "label": "FaqItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "faqitem",
+      "source_file": "src/features/landing/components/FaqSection.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_features_landing_components_howitworkssection_workflowstep",
+      "label": "WorkflowStep",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "workflowstep",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_features_landing_components_industriessection_industrycard",
+      "label": "IndustryCard",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "industrycard",
+      "source_file": "src/features/landing/components/IndustriesSection.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection_enginemodule",
+      "label": "EngineModule",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "enginemodule",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsectionprops",
+      "label": "RoiCalculatorSectionProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "roicalculatorsectionprops",
+      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_features_landing_components_statsimpactsection_statsimpactsectionprops",
+      "label": "StatsImpactSectionProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "statsimpactsectionprops",
+      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
+      "source_location": "L5"
+    },
+    {
       "id": "src_types_index_bookingstatus",
       "label": "BookingStatus",
       "_callable": true,
@@ -1055,6 +1055,54 @@
       "norm_label": "bookingstatus",
       "source_file": "src/types/index.ts",
       "source_location": "L12"
+    },
+    {
+      "id": "src_components_layout_adminlayout_adminlayout",
+      "label": "AdminLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "adminlayout()",
+      "source_file": "src/components/layout/AdminLayout.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_layout_chclayout_chclayout",
+      "label": "CHCLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "chclayout()",
+      "source_file": "src/components/layout/CHCLayout.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_layout_navbar_navbar",
+      "label": "Navbar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "navbar()",
+      "source_file": "src/components/layout/Navbar.tsx",
+      "source_location": "L24"
+    },
+    {
+      "id": "src_components_layout_sidenav_sidenav",
+      "label": "SideNav()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "sidenav()",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L49"
     },
     {
       "id": "src_components_common_leafletfleetmap_createprofessionalicon",
@@ -1441,6 +1489,18 @@
       "source_location": "L43"
     },
     {
+      "id": "src_components_common_lazyimage_lazyimage",
+      "label": "LazyImage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "LazyImage.tsx",
+      "file_type": "code",
+      "norm_label": "lazyimage()",
+      "source_file": "src/components/common/LazyImage.tsx",
+      "source_location": "L14"
+    },
+    {
       "id": "src_components_common_kisanloader_kisanloader",
       "label": "KisanLoader()",
       "_callable": true,
@@ -1463,6 +1523,18 @@
       "norm_label": "bookdemomodal()",
       "source_file": "src/features/landing/components/BookDemoModal.tsx",
       "source_location": "L26"
+    },
+    {
+      "id": "src_features_landing_components_trustmarquee_trustmarquee",
+      "label": "TrustMarquee()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "TrustMarquee.tsx",
+      "file_type": "code",
+      "norm_label": "trustmarquee()",
+      "source_file": "src/features/landing/components/TrustMarquee.tsx",
+      "source_location": "L18"
     },
     {
       "id": "src_components_common_agricreditgauge_agricreditgauge",
@@ -1597,6 +1669,18 @@
       "source_location": "L64"
     },
     {
+      "id": "src_lib_maintenanceengine_calculatemachinehealth",
+      "label": "calculateMachineHealth()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "calculatemachinehealth()",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L17"
+    },
+    {
       "id": "src_lib_maintenanceengine_evaluatepredictivealerts",
       "label": "evaluatePredictiveAlerts()",
       "_callable": true,
@@ -1693,172 +1777,16 @@
       "source_location": "L99"
     },
     {
-      "id": "src_components_common_lazyimage_lazyimage",
-      "label": "LazyImage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "lazyimage()",
-      "source_file": "src/components/common/LazyImage.tsx",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_features_landing_components_ctabanner_ctabanner",
-      "label": "CtaBanner()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "ctabanner()",
-      "source_file": "src/features/landing/components/CtaBanner.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_features_landing_components_faqsection_faqsection",
-      "label": "FaqSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "faqsection()",
-      "source_file": "src/features/landing/components/FaqSection.tsx",
-      "source_location": "L49"
-    },
-    {
       "id": "src_features_landing_components_herosection_herosection",
       "label": "HeroSection()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "react",
+      "community_name": "HeroSection.tsx",
       "file_type": "code",
       "norm_label": "herosection()",
       "source_file": "src/features/landing/components/HeroSection.tsx",
       "source_location": "L64"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection_howitworkssection",
-      "label": "HowItWorksSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "howitworkssection()",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L86"
-    },
-    {
-      "id": "src_features_landing_components_industriessection_industriessection",
-      "label": "IndustriesSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "industriessection()",
-      "source_file": "src/features/landing/components/IndustriesSection.tsx",
-      "source_location": "L134"
-    },
-    {
-      "id": "src_features_landing_components_landingfooter_landingfooter",
-      "label": "LandingFooter()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingfooter()",
-      "source_file": "src/features/landing/components/LandingFooter.tsx",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_features_landing_components_landingnavbar_landingnavbar",
-      "label": "LandingNavbar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingnavbar()",
-      "source_file": "src/features/landing/components/LandingNavbar.tsx",
-      "source_location": "L32"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection_modularproductssection",
-      "label": "ModularProductsSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "modularproductssection()",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L211"
-    },
-    {
-      "id": "src_features_landing_components_platformecosystemsection_platformecosystemsection",
-      "label": "PlatformEcosystemSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "platformecosystemsection()",
-      "source_file": "src/features/landing/components/PlatformEcosystemSection.tsx",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsection",
-      "label": "RoiCalculatorSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "roicalculatorsection()",
-      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_features_landing_components_statsimpactsection_statsimpactsection",
-      "label": "StatsImpactSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "statsimpactsection()",
-      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_features_landing_components_testimonialssection_testimonialssection",
-      "label": "TestimonialsSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "testimonialssection()",
-      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
-      "source_location": "L43"
-    },
-    {
-      "id": "src_features_landing_components_trustmarquee_trustmarquee",
-      "label": "TrustMarquee()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "trustmarquee()",
-      "source_file": "src/features/landing/components/TrustMarquee.tsx",
-      "source_location": "L18"
     },
     {
       "id": "src_components_common_dopplerradarplayer_dopplerradarplayer",
@@ -2017,30 +1945,6 @@
       "source_location": "L11"
     },
     {
-      "id": "src_components_layout_adminlayout_adminlayout",
-      "label": "AdminLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "adminlayout()",
-      "source_file": "src/components/layout/AdminLayout.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_layout_chclayout_chclayout",
-      "label": "CHCLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "chclayout()",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L22"
-    },
-    {
       "id": "src_components_layout_farmerlayout_farmerlayout",
       "label": "FarmerLayout()",
       "_callable": true,
@@ -2053,18 +1957,6 @@
       "source_location": "L17"
     },
     {
-      "id": "src_components_layout_navbar_navbar",
-      "label": "Navbar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "navbar()",
-      "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L24"
-    },
-    {
       "id": "src_components_layout_operatorlayout_operatorlayout",
       "label": "OperatorLayout()",
       "_callable": true,
@@ -2075,18 +1967,6 @@
       "norm_label": "operatorlayout()",
       "source_file": "src/components/layout/OperatorLayout.tsx",
       "source_location": "L18"
-    },
-    {
-      "id": "src_components_layout_sidenav_sidenav",
-      "label": "SideNav()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "sidenav()",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L58"
     },
     {
       "id": "src_features_admin_admindashboard_admindashboard",
@@ -2218,7 +2098,7 @@
       "file_type": "code",
       "norm_label": "notfoundpage()",
       "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L17"
+      "source_location": "L15"
     },
     {
       "id": "src_features_farmer_farmercredit_farmercredit",
@@ -2255,6 +2135,138 @@
       "norm_label": "farmprofile()",
       "source_file": "src/features/farmer/FarmProfile.tsx",
       "source_location": "L17"
+    },
+    {
+      "id": "src_features_landing_components_ctabanner_ctabanner",
+      "label": "CtaBanner()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "ctabanner()",
+      "source_file": "src/features/landing/components/CtaBanner.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_features_landing_components_faqsection_faqsection",
+      "label": "FaqSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "faqsection()",
+      "source_file": "src/features/landing/components/FaqSection.tsx",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_features_landing_components_howitworkssection_howitworkssection",
+      "label": "HowItWorksSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "howitworkssection()",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L86"
+    },
+    {
+      "id": "src_features_landing_components_industriessection_industriessection",
+      "label": "IndustriesSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "industriessection()",
+      "source_file": "src/features/landing/components/IndustriesSection.tsx",
+      "source_location": "L134"
+    },
+    {
+      "id": "src_features_landing_components_landingfooter_landingfooter",
+      "label": "LandingFooter()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "landingfooter()",
+      "source_file": "src/features/landing/components/LandingFooter.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_features_landing_components_landingnavbar_landingnavbar",
+      "label": "LandingNavbar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "landingnavbar()",
+      "source_file": "src/features/landing/components/LandingNavbar.tsx",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection_modularproductssection",
+      "label": "ModularProductsSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "modularproductssection()",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L211"
+    },
+    {
+      "id": "src_features_landing_components_platformecosystemsection_platformecosystemsection",
+      "label": "PlatformEcosystemSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "platformecosystemsection()",
+      "source_file": "src/features/landing/components/PlatformEcosystemSection.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsection",
+      "label": "RoiCalculatorSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "roicalculatorsection()",
+      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_features_landing_components_statsimpactsection_statsimpactsection",
+      "label": "StatsImpactSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "statsimpactsection()",
+      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_features_landing_components_testimonialssection_testimonialssection",
+      "label": "TestimonialsSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "testimonialssection()",
+      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
+      "source_location": "L43"
     },
     {
       "id": "src_features_landing_landingpage_landingpage",
@@ -2389,18 +2401,6 @@
       "source_location": "L100"
     },
     {
-      "id": "src_lib_maintenanceengine_calculatemachinehealth",
-      "label": "calculateMachineHealth()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "calculatemachinehealth()",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L17"
-    },
-    {
       "id": "src_store_kisanopsstore_usekisanopsstore",
       "label": "useKisanOpsStore()",
       "_callable": true,
@@ -2411,6 +2411,61 @@
       "norm_label": "usekisanopsstore()",
       "source_file": "src/store/kisanOpsStore.ts",
       "source_location": "L297"
+    },
+    {
+      "id": "src_components_layout_adminlayout",
+      "label": "AdminLayout.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "adminlayout.tsx",
+      "source_file": "src/components/layout/AdminLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_chclayout",
+      "label": "CHCLayout.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "chclayout.tsx",
+      "source_file": "src/components/layout/CHCLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_farmerlayout",
+      "label": "FarmerLayout.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "farmerlayout.tsx",
+      "source_file": "src/components/layout/FarmerLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_navbar",
+      "label": "Navbar.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "navbar.tsx",
+      "source_file": "src/components/layout/Navbar.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_sidenav",
+      "label": "SideNav.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "sidenav.tsx",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L1"
     },
     {
       "id": "src_components_common_leafletfleetmap",
@@ -3081,6 +3136,17 @@
       "file_type": "code",
       "norm_label": "vite.config.ts",
       "source_file": "vite.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_common_lazyimage",
+      "label": "LazyImage.tsx",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "LazyImage.tsx",
+      "file_type": "code",
+      "norm_label": "lazyimage.tsx",
+      "source_file": "src/components/common/LazyImage.tsx",
       "source_location": "L1"
     },
     {
@@ -3852,6 +3918,28 @@
       "norm_label": "auth.users",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "src_features_landing_components_trustmarquee",
+      "label": "TrustMarquee.tsx",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "TrustMarquee.tsx",
+      "file_type": "code",
+      "norm_label": "trustmarquee.tsx",
+      "source_file": "src/features/landing/components/TrustMarquee.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_trustmarquee_partners",
+      "label": "PARTNERS",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "TrustMarquee.tsx",
+      "file_type": "code",
+      "norm_label": "partners",
+      "source_file": "src/features/landing/components/TrustMarquee.tsx",
+      "source_location": "L4"
     },
     {
       "id": "package",
@@ -4786,66 +4874,11 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_common_lazyimage",
-      "label": "LazyImage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "lazyimage.tsx",
-      "source_file": "src/components/common/LazyImage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_common_notfoundpage",
-      "label": "NotFoundPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "notfoundpage.tsx",
-      "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_ctabanner",
-      "label": "CtaBanner.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "ctabanner.tsx",
-      "source_file": "src/features/landing/components/CtaBanner.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_faqsection",
-      "label": "FaqSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "faqsection.tsx",
-      "source_file": "src/features/landing/components/FaqSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_faqsection_faqs",
-      "label": "FAQS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "faqs",
-      "source_file": "src/features/landing/components/FaqSection.tsx",
-      "source_location": "L10"
-    },
-    {
       "id": "src_features_landing_components_herosection",
       "label": "HeroSection.tsx",
       "_origin": "ast",
       "community": 37,
-      "community_name": "react",
+      "community_name": "HeroSection.tsx",
       "file_type": "code",
       "norm_label": "herosection.tsx",
       "source_file": "src/features/landing/components/HeroSection.tsx",
@@ -4856,286 +4889,11 @@
       "label": "HERO_SLIDES",
       "_origin": "ast",
       "community": 37,
-      "community_name": "react",
+      "community_name": "HeroSection.tsx",
       "file_type": "code",
       "norm_label": "hero_slides",
       "source_file": "src/features/landing/components/HeroSection.tsx",
       "source_location": "L33"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection",
-      "label": "HowItWorksSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "howitworkssection.tsx",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection_workflow_steps",
-      "label": "WORKFLOW_STEPS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "workflow_steps",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_features_landing_components_industriessection",
-      "label": "IndustriesSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "industriessection.tsx",
-      "source_file": "src/features/landing/components/IndustriesSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_industriessection_industries",
-      "label": "INDUSTRIES",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "industries",
-      "source_file": "src/features/landing/components/IndustriesSection.tsx",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_features_landing_components_landingfooter",
-      "label": "LandingFooter.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingfooter.tsx",
-      "source_file": "src/features/landing/components/LandingFooter.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_landingnavbar",
-      "label": "LandingNavbar.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingnavbar.tsx",
-      "source_file": "src/features/landing/components/LandingNavbar.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection",
-      "label": "ModularProductsSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "modularproductssection.tsx",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection_engines",
-      "label": "ENGINES",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "engines",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L43"
-    },
-    {
-      "id": "src_features_landing_components_platformecosystemsection",
-      "label": "PlatformEcosystemSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "platformecosystemsection.tsx",
-      "source_file": "src/features/landing/components/PlatformEcosystemSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_roicalculatorsection",
-      "label": "RoiCalculatorSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "roicalculatorsection.tsx",
-      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_statsimpactsection",
-      "label": "StatsImpactSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "statsimpactsection.tsx",
-      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_testimonialssection",
-      "label": "TestimonialsSection.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "testimonialssection.tsx",
-      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_testimonialssection_testimonials",
-      "label": "TESTIMONIALS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "testimonials",
-      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_features_landing_components_trustmarquee",
-      "label": "TrustMarquee.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "trustmarquee.tsx",
-      "source_file": "src/features/landing/components/TrustMarquee.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_trustmarquee_partners",
-      "label": "PARTNERS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "partners",
-      "source_file": "src/features/landing/components/TrustMarquee.tsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_features_landing_landingpage",
-      "label": "LandingPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "landingpage.tsx",
-      "source_file": "src/features/landing/LandingPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_aboutpage",
-      "label": "AboutPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "aboutpage.tsx",
-      "source_file": "src/features/landing/pages/AboutPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_contactpage",
-      "label": "ContactPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "contactpage.tsx",
-      "source_file": "src/features/landing/pages/ContactPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_pricingroipage",
-      "label": "PricingRoiPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "pricingroipage.tsx",
-      "source_file": "src/features/landing/pages/PricingRoiPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_productsoperationspage",
-      "label": "ProductsOperationsPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "productsoperationspage.tsx",
-      "source_file": "src/features/landing/pages/ProductsOperationsPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_productspostharvestpage",
-      "label": "ProductsPostHarvestPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "productspostharvestpage.tsx",
-      "source_file": "src/features/landing/pages/ProductsPostHarvestPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_productspreharvestpage",
-      "label": "ProductsPreHarvestPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "productspreharvestpage.tsx",
-      "source_file": "src/features/landing/pages/ProductsPreHarvestPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_solutionspage",
-      "label": "SolutionsPage.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "solutionspage.tsx",
-      "source_file": "src/features/landing/pages/SolutionsPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_pages_solutionspage_verticals",
-      "label": "VERTICALS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "verticals",
-      "source_file": "src/features/landing/pages/SolutionsPage.tsx",
-      "source_location": "L21"
-    },
-    {
-      "id": "ref_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "react",
-      "file_type": "concept",
-      "norm_label": "react",
-      "source_file": ".oxlintrc.json",
-      "source_location": "L3"
     },
     {
       "id": "supabase_migrations_20260821000000_initial_schema",
@@ -6425,50 +6183,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_layout_adminlayout",
-      "label": "AdminLayout.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "adminlayout.tsx",
-      "source_file": "src/components/layout/AdminLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_chclayout",
-      "label": "CHCLayout.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "chclayout.tsx",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_farmerlayout",
-      "label": "FarmerLayout.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "farmerlayout.tsx",
-      "source_file": "src/components/layout/FarmerLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_navbar",
-      "label": "Navbar.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "navbar.tsx",
-      "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_layout_operatorlayout",
       "label": "OperatorLayout.tsx",
       "_origin": "ast",
@@ -6477,17 +6191,6 @@
       "file_type": "code",
       "norm_label": "operatorlayout.tsx",
       "source_file": "src/components/layout/OperatorLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_sidenav",
-      "label": "SideNav.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "sidenav.tsx",
-      "source_file": "src/components/layout/SideNav.tsx",
       "source_location": "L1"
     },
     {
@@ -6656,6 +6359,17 @@
       "source_location": "L30"
     },
     {
+      "id": "src_features_common_notfoundpage",
+      "label": "NotFoundPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "notfoundpage.tsx",
+      "source_file": "src/features/common/NotFoundPage.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_features_farmer_farmercredit",
       "label": "FarmerCredit.tsx",
       "_origin": "ast",
@@ -6689,6 +6403,281 @@
       "source_location": "L1"
     },
     {
+      "id": "src_features_landing_components_ctabanner",
+      "label": "CtaBanner.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "ctabanner.tsx",
+      "source_file": "src/features/landing/components/CtaBanner.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_faqsection",
+      "label": "FaqSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "faqsection.tsx",
+      "source_file": "src/features/landing/components/FaqSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_faqsection_faqs",
+      "label": "FAQS",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "faqs",
+      "source_file": "src/features/landing/components/FaqSection.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_features_landing_components_howitworkssection",
+      "label": "HowItWorksSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "howitworkssection.tsx",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_howitworkssection_workflow_steps",
+      "label": "WORKFLOW_STEPS",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "workflow_steps",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_features_landing_components_industriessection",
+      "label": "IndustriesSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "industriessection.tsx",
+      "source_file": "src/features/landing/components/IndustriesSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_industriessection_industries",
+      "label": "INDUSTRIES",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "industries",
+      "source_file": "src/features/landing/components/IndustriesSection.tsx",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_features_landing_components_landingfooter",
+      "label": "LandingFooter.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "landingfooter.tsx",
+      "source_file": "src/features/landing/components/LandingFooter.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_landingnavbar",
+      "label": "LandingNavbar.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "landingnavbar.tsx",
+      "source_file": "src/features/landing/components/LandingNavbar.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection",
+      "label": "ModularProductsSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "modularproductssection.tsx",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection_engines",
+      "label": "ENGINES",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "engines",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L43"
+    },
+    {
+      "id": "src_features_landing_components_platformecosystemsection",
+      "label": "PlatformEcosystemSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "platformecosystemsection.tsx",
+      "source_file": "src/features/landing/components/PlatformEcosystemSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_roicalculatorsection",
+      "label": "RoiCalculatorSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "roicalculatorsection.tsx",
+      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_statsimpactsection",
+      "label": "StatsImpactSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "statsimpactsection.tsx",
+      "source_file": "src/features/landing/components/StatsImpactSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_testimonialssection",
+      "label": "TestimonialsSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "testimonialssection.tsx",
+      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_testimonialssection_testimonials",
+      "label": "TESTIMONIALS",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "testimonials",
+      "source_file": "src/features/landing/components/TestimonialsSection.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_features_landing_landingpage",
+      "label": "LandingPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "landingpage.tsx",
+      "source_file": "src/features/landing/LandingPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_aboutpage",
+      "label": "AboutPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "aboutpage.tsx",
+      "source_file": "src/features/landing/pages/AboutPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_contactpage",
+      "label": "ContactPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "contactpage.tsx",
+      "source_file": "src/features/landing/pages/ContactPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_pricingroipage",
+      "label": "PricingRoiPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "pricingroipage.tsx",
+      "source_file": "src/features/landing/pages/PricingRoiPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_productsoperationspage",
+      "label": "ProductsOperationsPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "productsoperationspage.tsx",
+      "source_file": "src/features/landing/pages/ProductsOperationsPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_productspostharvestpage",
+      "label": "ProductsPostHarvestPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "productspostharvestpage.tsx",
+      "source_file": "src/features/landing/pages/ProductsPostHarvestPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_productspreharvestpage",
+      "label": "ProductsPreHarvestPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "productspreharvestpage.tsx",
+      "source_file": "src/features/landing/pages/ProductsPreHarvestPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_solutionspage",
+      "label": "SolutionsPage.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "solutionspage.tsx",
+      "source_file": "src/features/landing/pages/SolutionsPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_pages_solutionspage_verticals",
+      "label": "VERTICALS",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "verticals",
+      "source_file": "src/features/landing/pages/SolutionsPage.tsx",
+      "source_location": "L21"
+    },
+    {
       "id": "src_features_operator_operatordashboard",
       "label": "OperatorDashboard.tsx",
       "_origin": "ast",
@@ -6720,6 +6709,17 @@
       "norm_label": "main.tsx",
       "source_file": "src/main.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "concept",
+      "norm_label": "react",
+      "source_file": ".oxlintrc.json",
+      "source_location": "L3"
     },
     {
       "id": "AgriCreditEngine",
@@ -6877,18 +6877,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_layout_chclayout_chclayout",
-      "target": "src_store_kisanopsstore_usekisanopsstore",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_layout_farmerlayout_farmerlayout",
       "target": "src_store_kisanopsstore_usekisanopsstore",
       "relation": "calls",
@@ -6933,7 +6921,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L65",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -7257,7 +7245,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L18",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -9489,19 +9477,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layout_chclayout",
-      "target": "src_store_kisanopsstore_usekisanopsstore",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L19",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -9585,7 +9561,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L35",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -9597,7 +9573,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L36",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -10262,30 +10238,6 @@
     },
     {
       "source": "src_features_common_notfoundpage",
-      "target": "src_features_landing_components_landingnavbar_landingnavbar",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_common_notfoundpage",
-      "target": "src_features_landing_components_landingfooter_landingfooter",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_common_notfoundpage",
       "target": "src_hooks_usepagetitle_usepagetitle",
       "relation": "imports",
       "_origin": "ast",
@@ -10293,7 +10245,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -13449,19 +13401,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layout_chclayout",
-      "target": "src_store_kisanopsstore",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L19",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -13593,7 +13533,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L35",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -13605,7 +13545,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L36",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -14234,30 +14174,6 @@
     },
     {
       "source": "src_features_common_notfoundpage",
-      "target": "src_features_landing_components_landingnavbar",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_common_notfoundpage",
-      "target": "src_features_landing_components_landingfooter",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_common_notfoundpage",
       "target": "src_hooks_usepagetitle",
       "relation": "imports_from",
       "_origin": "ast",
@@ -14265,7 +14181,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -17940,7 +17856,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L22",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -17984,7 +17900,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L39",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -17995,7 +17911,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L47",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -18006,7 +17922,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L58",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -18336,7 +18252,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/common/NotFoundPage.tsx",
-      "source_location": "L17",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -21340,5 +21256,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "62181bc47ac0736db23de5a3288ad88b651cb7d4"
+  "built_at_commit": "e3e400aa404f3e8ff827d743b2373b6812e861c5"
 }
