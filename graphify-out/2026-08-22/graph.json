@@ -4566,7 +4566,7 @@
       "file_type": "code",
       "norm_label": "buildcommand",
       "source_file": "vercel.json",
-      "source_location": "L3"
+      "source_location": "L2"
     },
     {
       "id": "vercel_cleanurls",
@@ -4577,18 +4577,7 @@
       "file_type": "code",
       "norm_label": "cleanurls",
       "source_file": "vercel.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "vercel_framework",
-      "label": "framework",
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "vercel.json",
-      "file_type": "code",
-      "norm_label": "framework",
-      "source_file": "vercel.json",
-      "source_location": "L2"
+      "source_location": "L4"
     },
     {
       "id": "vercel_headers",
@@ -4599,7 +4588,7 @@
       "file_type": "code",
       "norm_label": "headers",
       "source_file": "vercel.json",
-      "source_location": "L12"
+      "source_location": "L16"
     },
     {
       "id": "vercel_outputdirectory",
@@ -4610,7 +4599,7 @@
       "file_type": "code",
       "norm_label": "outputdirectory",
       "source_file": "vercel.json",
-      "source_location": "L4"
+      "source_location": "L3"
     },
     {
       "id": "vercel_rewrites",
@@ -4622,6 +4611,17 @@
       "norm_label": "rewrites",
       "source_file": "vercel.json",
       "source_location": "L6"
+    },
+    {
+      "id": "vercel_trailingslash",
+      "label": "trailingSlash",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "vercel.json",
+      "file_type": "code",
+      "norm_label": "trailingslash",
+      "source_file": "vercel.json",
+      "source_location": "L5"
     },
     {
       "id": "prd",
@@ -7893,7 +7893,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L615",
+      "source_location": "L617",
       "weight": 1.0
     },
     {
@@ -7905,7 +7905,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L621",
+      "source_location": "L628",
       "weight": 1.0
     },
     {
@@ -20650,18 +20650,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "vercel.json",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "vercel",
-      "target": "vercel_framework",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "vercel.json",
-      "source_location": "L2",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -20672,7 +20661,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "vercel.json",
-      "source_location": "L3",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -20683,12 +20672,23 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "vercel.json",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
       "source": "vercel",
       "target": "vercel_cleanurls",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "vercel.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "vercel",
+      "target": "vercel_trailingslash",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -21256,5 +21256,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e3e400aa404f3e8ff827d743b2373b6812e861c5"
+  "built_at_commit": "5f6f8828530413e41fd5b28e11bac11a497f0ccf"
 }

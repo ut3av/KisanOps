@@ -13,7 +13,11 @@ import {
   AlertTriangle,
   MapPin,
   ChevronRight,
-  X
+  X,
+  PlusCircle,
+  Sparkles,
+  Save,
+  CarFront
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { Machine, MachineStatus, MachineCategory } from '../../types';
@@ -26,13 +30,30 @@ export const FleetManagement: React.FC = () => {
     'Fleet Registry & Machinery Status',
     'Track machinery availability, health scores, and technical specifications.'
   );
-  const { state, loadDemoData } = useKisanOpsStore();
-  const { machines, currentTelemetry } = state;
+  const { state, addMachine, loadDemoData } = useKisanOpsStore();
+  const { machines, currentTelemetry, chcs } = state;
 
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
   const [categoryFilter, setCategoryFilter] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedMachine, setSelectedMachine] = useState<Machine | null>(null);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+  // Form state for adding new machinery
+  const [formData, setFormData] = useState({
+    brand: 'Mahindra',
+    model: '575 DI',
+    category: 'TRACTOR' as MachineCategory,
+    identifier: 'MP-09-AB-1234',
+    powerHp: 50,
+    baseRatePerHour: 850,
+    baseRatePerAcre: 650,
+    yearOfManufacture: 2024,
+    healthScore: 98,
+    operatorName: 'Assigned Driver',
+    operatorPhone: '+91 98261 00000',
+    chcName: chcs[0]?.name || 'Central Hub',
+  });
 
   const filteredMachines = machines.filter(m => {
     if (statusFilter !== 'ALL' && m.status !== statusFilter) return false;
@@ -56,6 +77,44 @@ export const FleetManagement: React.FC = () => {
     }
   };
 
+  const handleOpenAddModal = () => {
+    setFormData({
+      brand: 'Mahindra',
+      model: '575 DI',
+      category: 'TRACTOR',
+      identifier: `AGRI-${Math.floor(1000 + Math.random() * 9000)}`,
+      powerHp: 50,
+      baseRatePerHour: 850,
+      baseRatePerAcre: 650,
+      yearOfManufacture: 2024,
+      healthScore: 98,
+      operatorName: 'Assigned Operator',
+      operatorPhone: '+91 98261 00000',
+      chcName: chcs[0]?.name || 'Central Hub',
+    });
+    setIsAddModalOpen(true);
+  };
+
+  const handleSaveMachine = (e: React.FormEvent) => {
+    e.preventDefault();
+    addMachine({
+      brand: formData.brand,
+      model: formData.model,
+      category: formData.category,
+      identifier: formData.identifier,
+      powerHp: Number(formData.powerHp) || 50,
+      baseRatePerHour: Number(formData.baseRatePerHour) || 800,
+      baseRatePerAcre: Number(formData.baseRatePerAcre) || 600,
+      yearOfManufacture: Number(formData.yearOfManufacture) || 2024,
+      healthScore: Number(formData.healthScore) || 95,
+      operatorName: formData.operatorName,
+      operatorPhone: formData.operatorPhone,
+      chcName: formData.chcName,
+      status: 'AVAILABLE',
+    });
+    setIsAddModalOpen(false);
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -72,6 +131,16 @@ export const FleetManagement: React.FC = () => {
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
             Real-time status, health indicators, engine hours, and preventative service cycles.
           </p>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleOpenAddModal}
+            className="btn-primary text-xs py-2 px-3.5 bg-agri-700 hover:bg-agri-800 text-white rounded-xl font-bold shadow-sm transition-all flex items-center gap-1.5 cursor-pointer"
+          >
+            <PlusCircle className="w-4 h-4 shrink-0" />
+            <span>+ Add Machinery Asset</span>
+          </button>
         </div>
       </div>
 
@@ -113,58 +182,69 @@ export const FleetManagement: React.FC = () => {
             <option value="ROTAVATOR">Rotavators</option>
             <option value="SEEDER">Seeders</option>
             <option value="SPRAYER">Sprayers</option>
+            <option value="THRESHER">Threshers</option>
           </select>
         </div>
       </div>
 
       {/* Fleet Table */}
-      <div className="bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-subtle">
+      <div className="bg-white border border-slate-200/90 rounded-3xl shadow-subtle overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-xs text-left">
-            <thead className="bg-surface-50 text-slate-600 font-bold uppercase tracking-wider text-[10px] border-b border-slate-200 select-none">
-              <tr>
-                <th className="py-3.5 px-4 min-w-[240px]">Identifier / Asset</th>
-                <th className="py-3.5 px-4 min-w-[150px]">Operating Hub</th>
-                <th className="py-3.5 px-4 text-center min-w-[110px]">Status</th>
-                <th className="py-3.5 px-4 text-center min-w-[100px]">Health Score</th>
-                <th className="py-3.5 px-4 text-center min-w-[100px]">Engine Hours</th>
-                <th className="py-3.5 px-4 text-center min-w-[120px]">Next Service</th>
-                <th className="py-3.5 px-4 text-right min-w-[100px]">Tariff (₹/hr)</th>
-                <th className="py-3.5 px-4 text-center min-w-[90px]">Action</th>
+          <table className="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr className="bg-surface-50 border-b border-slate-200/80 text-slate-500 font-bold uppercase tracking-wider">
+                <th className="py-3 px-4">Equipment / Model</th>
+                <th className="py-3 px-4">Category</th>
+                <th className="py-3 px-4">Status</th>
+                <th className="py-3 px-4">Hourly Tariff</th>
+                <th className="py-3 px-4">Health Index</th>
+                <th className="py-3 px-4">Engine Hours</th>
+                <th className="py-3 px-4">Operating Hub</th>
+                <th className="py-3 px-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-slate-100 font-medium">
               {filteredMachines.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="py-12 text-center text-slate-400">
-                    <div className="flex flex-col items-center justify-center gap-2.5 max-w-sm mx-auto">
-                      <Tractor className="w-8 h-8 text-slate-300 shrink-0" />
-                      <span className="font-semibold text-xs text-slate-700">
-                        {machines.length === 0 ? 'No Machinery Assets Registered (Clean Baseline)' : 'No machinery assets found'}
-                      </span>
-                      <span className="text-[11px] text-slate-400 text-center">
-                        {machines.length === 0
-                          ? 'Operating in clean production mode. You can register new equipment or load the demonstration fleet.'
-                          : 'Try adjusting your search query or status filter.'}
-                      </span>
-                      {machines.length === 0 && (
+                  <td colSpan={8} className="py-12 px-4 text-center">
+                    <div className="max-w-sm mx-auto space-y-3">
+                      <div className="w-12 h-12 rounded-2xl bg-surface-100 text-slate-400 flex items-center justify-center mx-auto">
+                        <Tractor className="w-6 h-6" />
+                      </div>
+                      <div className="font-extrabold text-slate-800 text-sm">
+                        No registered fleet assets found
+                      </div>
+                      <p className="text-xs text-slate-500">
+                        Add your first tractor, harvester, or implement to start dispatching and tracking live CAN-Bus telemetry.
+                      </p>
+                      <div className="flex items-center justify-center gap-2 pt-2">
+                        <button
+                          onClick={handleOpenAddModal}
+                          className="btn-primary text-xs py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white inline-flex items-center gap-1.5 shadow-sm cursor-pointer"
+                        >
+                          <PlusCircle className="w-3.5 h-3.5" />
+                          <span>+ Add First Machine</span>
+                        </button>
                         <button
                           onClick={() => loadDemoData()}
-                          className="mt-1 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold rounded-xl shadow-2xs transition-colors cursor-pointer"
+                          className="btn-secondary text-xs py-2 px-3.5 inline-flex items-center gap-1.5 shadow-sm cursor-pointer"
                         >
-                          ⚡ Load Demo Fleet Dataset
+                          <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                          <span>Load 7 Demo Assets</span>
                         </button>
-                      )}
+                      </div>
                     </div>
                   </td>
                 </tr>
               ) : (
                 filteredMachines.map(machine => {
                   const telemetry = currentTelemetry[machine.id];
-                  const hoursToService = Math.round(machine.serviceIntervalHours - machine.hoursSinceLastService);
-
                   return (
-                    <tr key={machine.id} className="hover:bg-slate-50 transition-colors">
+                    <tr
+                      key={machine.id}
+                      onClick={() => setSelectedMachine(machine)}
+                      className="hover:bg-slate-50/80 transition-colors cursor-pointer group"
+                    >
                       <td className="py-3 px-4">
                         <div className="flex items-center gap-3">
                           <MachineThumbnail
@@ -172,69 +252,65 @@ export const FleetManagement: React.FC = () => {
                             alt={machine.model}
                             category={machine.category}
                             size="md"
+                            containerClassName="rounded-xl shadow-xs shrink-0"
                           />
-                          <div className="min-w-0">
-                            <div className="font-extrabold text-slate-900 truncate">
+                          <div>
+                            <div className="font-extrabold text-slate-900 group-hover:text-agri-800 transition-colors">
                               {machine.brand} {machine.model}
                             </div>
-                            <div className="text-[11px] text-slate-500 font-mono flex items-center gap-1.5 mt-0.5">
-                              <span className="font-semibold text-slate-700">{machine.identifier}</span>
-                              <span>•</span>
-                              <span>{machine.powerHp} HP</span>
-                              <span className="text-[9px] bg-slate-100 px-1.5 py-0.2 rounded text-slate-600 uppercase font-bold">
-                                {machine.category}
-                              </span>
+                            <div className="text-[11px] text-slate-500 font-mono">
+                              {machine.identifier} • {machine.powerHp} HP
                             </div>
                           </div>
                         </div>
                       </td>
 
-                      <td className="py-3 px-4">
-                        <div className="font-semibold text-slate-800">{machine.chcName}</div>
-                        <div className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
-                          <MapPin className="w-3 h-3 text-agri-700 shrink-0" />
-                          <span>Sehore Hub Area</span>
-                        </div>
+                      <td className="py-3 px-4 font-bold text-slate-700">
+                        {machine.category}
                       </td>
 
-                      <td className="py-3 px-4 text-center">
-                        <span className={clsx('badge-status border text-[10px] inline-block font-bold', getStatusBadgeClass(machine.status))}>
+                      <td className="py-3 px-4">
+                        <span className={clsx('px-2.5 py-1 rounded-full text-[11px] font-bold border', getStatusBadgeClass(machine.status))}>
                           {machine.status}
                         </span>
                       </td>
 
-                      <td className="py-3 px-4 text-center">
-                        <div className="inline-flex items-center gap-1 font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 font-mono">
-                          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                          <span>{machine.healthScore}%</span>
-                        </div>
-                      </td>
-
-                      <td className="py-3 px-4 text-center font-mono font-bold text-slate-800">
-                        {telemetry ? telemetry.engineHours : machine.totalEngineHours} hrs
-                      </td>
-
-                      <td className="py-3 px-4 text-center">
-                        <span
-                          className={clsx(
-                            'font-mono font-semibold text-xs',
-                            hoursToService <= 30 ? 'text-rose-600 font-bold' : 'text-slate-600'
-                          )}
-                        >
-                          {hoursToService} hrs remaining
-                        </span>
-                      </td>
-
-                      <td className="py-3 px-4 text-right font-bold text-slate-900 font-mono">
+                      <td className="py-3 px-4 font-mono font-bold text-slate-900">
                         ₹{machine.baseRatePerHour}/hr
                       </td>
 
-                      <td className="py-3 px-4 text-center">
+                      <td className="py-3 px-4">
+                        <div className="flex items-center gap-2">
+                          <div className="w-12 bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                            <div
+                              className={clsx(
+                                'h-full rounded-full',
+                                machine.healthScore >= 90 ? 'bg-emerald-500' : machine.healthScore >= 75 ? 'bg-amber-500' : 'bg-rose-500'
+                              )}
+                              style={{ width: `${machine.healthScore}%` }}
+                            />
+                          </div>
+                          <span className="font-bold font-mono text-slate-700">{machine.healthScore}%</span>
+                        </div>
+                      </td>
+
+                      <td className="py-3 px-4 font-mono text-slate-700">
+                        {telemetry ? `${telemetry.engineHours} hrs` : `${machine.totalEngineHours} hrs`}
+                      </td>
+
+                      <td className="py-3 px-4 text-slate-600 truncate max-w-[140px]">
+                        {machine.chcName}
+                      </td>
+
+                      <td className="py-3 px-4 text-right">
                         <button
-                          onClick={() => setSelectedMachine(machine)}
-                          className="btn-secondary text-[11px] py-1 px-2.5 cursor-pointer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedMachine(machine);
+                          }}
+                          className="p-1.5 rounded-lg hover:bg-slate-200 text-slate-500 hover:text-slate-900 transition-colors"
                         >
-                          Inspect
+                          <ChevronRight className="w-4 h-4" />
                         </button>
                       </td>
                     </tr>
@@ -246,7 +322,191 @@ export const FleetManagement: React.FC = () => {
         </div>
       </div>
 
-      {/* Machine Inspector Drawer / Modal */}
+      {/* Add New Machinery Asset Modal */}
+      {isAddModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div
+            className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs animate-in fade-in"
+            onClick={() => setIsAddModalOpen(false)}
+          />
+
+          <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-200 p-6 z-10 space-y-5 animate-in scale-in max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-xl bg-agri-100 text-agri-800 flex items-center justify-center font-bold shrink-0">
+                  <Tractor className="w-4 h-4" />
+                </div>
+                <div>
+                  <h3 className="text-base font-extrabold text-slate-900">
+                    Register New Machinery Asset
+                  </h3>
+                  <p className="text-xs text-slate-500">Add tractor, harvester, or implement to fleet</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsAddModalOpen(false)}
+                className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <form onSubmit={handleSaveMachine} className="space-y-4 text-xs">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Machine Category</label>
+                  <select
+                    value={formData.category}
+                    onChange={e => setFormData({ ...formData, category: e.target.value as any })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-bold text-slate-800 focus:ring-2 focus:ring-agri-500 focus:outline-none cursor-pointer"
+                  >
+                    <option value="TRACTOR">Tractor</option>
+                    <option value="HARVESTER">Combine Harvester</option>
+                    <option value="ROTAVATOR">Rotavator</option>
+                    <option value="SEEDER">Seeder / Seed Drill</option>
+                    <option value="SPRAYER">Boom Sprayer</option>
+                    <option value="THRESHER">Thresher</option>
+                  </select>
+                </div>
+
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Registration Plate / ID</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. MP-09-AB-1234"
+                    value={formData.identifier}
+                    onChange={e => setFormData({ ...formData, identifier: e.target.value })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-mono font-bold text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Manufacturer / Brand</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Mahindra, John Deere, Sonalika, New Holland"
+                    value={formData.brand}
+                    onChange={e => setFormData({ ...formData, brand: e.target.value })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-medium text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Model Name / Number</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. 575 DI, 5310, Tiger 55"
+                    value={formData.model}
+                    onChange={e => setFormData({ ...formData, model: e.target.value })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-medium text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Power (HP)</label>
+                  <input
+                    type="number"
+                    min="15"
+                    max="200"
+                    required
+                    value={formData.powerHp}
+                    onChange={e => setFormData({ ...formData, powerHp: Number(e.target.value) })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-mono text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Rate (₹/hr)</label>
+                  <input
+                    type="number"
+                    min="100"
+                    max="10000"
+                    step="50"
+                    required
+                    value={formData.baseRatePerHour}
+                    onChange={e => setFormData({ ...formData, baseRatePerHour: Number(e.target.value) })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-mono font-bold text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Year</label>
+                  <input
+                    type="number"
+                    min="2015"
+                    max="2026"
+                    required
+                    value={formData.yearOfManufacture}
+                    onChange={e => setFormData({ ...formData, yearOfManufacture: Number(e.target.value) })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-mono text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Assigned Driver Name</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Raju Verma"
+                    value={formData.operatorName}
+                    onChange={e => setFormData({ ...formData, operatorName: e.target.value })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-medium text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="font-bold text-slate-700">Driver Phone</label>
+                  <input
+                    type="text"
+                    placeholder="+91 98261 00000"
+                    value={formData.operatorPhone}
+                    onChange={e => setFormData({ ...formData, operatorPhone: e.target.value })}
+                    className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-mono text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="font-bold text-slate-700">Hub / Branch Location</label>
+                <input
+                  type="text"
+                  placeholder="e.g. Indore Hub #01, Bhopal Depot"
+                  value={formData.chcName}
+                  onChange={e => setFormData({ ...formData, chcName: e.target.value })}
+                  className="w-full bg-surface-50 border border-slate-200 rounded-xl px-3 py-2.5 font-medium text-slate-900 focus:ring-2 focus:ring-agri-500 focus:outline-none"
+                />
+              </div>
+
+              <div className="pt-3 flex items-center justify-end gap-2 border-t border-slate-100">
+                <button
+                  type="button"
+                  onClick={() => setIsAddModalOpen(false)}
+                  className="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 font-bold transition-all"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-5 py-2.5 rounded-xl bg-agri-700 hover:bg-agri-800 text-white font-extrabold shadow-sm transition-all flex items-center gap-1.5 cursor-pointer"
+                >
+                  <Save className="w-4 h-4" />
+                  <span>Register Machine Asset</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Machine Details Inspector Modal */}
       {selectedMachine && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
           <div className="bg-white rounded-3xl max-w-xl w-full p-6 shadow-2xl border border-slate-100 my-8 space-y-4 animate-in fade-in zoom-in-95">

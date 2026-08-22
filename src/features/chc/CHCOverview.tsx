@@ -34,7 +34,7 @@ export const CHCOverview: React.FC = () => {
   const activeAlerts = maintenanceAlerts.filter(a => !a.isResolved);
   const activeBookings = bookings.filter(b => b.status === 'CONFIRMED' || b.status === 'DISPATCHED' || b.status === 'IN_PROGRESS');
   const activeMachines = machines.filter(m => m.status === 'ACTIVE' || m.status === 'DISPATCHED');
-  const sehoreShortage = demandForecasts.find(df => df.district === 'Sehore' && df.shortageUnits > 0);
+  const regionalShortage = demandForecasts.find(df => df.shortageUnits > 0);
   const recommendedAlloc = allocations.find(a => a.status === 'RECOMMENDED');
 
   const firstMachine = machines[0];
@@ -53,23 +53,31 @@ export const CHCOverview: React.FC = () => {
                 Production Clean-Slate Active (0 Fleet Assets)
               </h3>
               <p className="text-xs text-slate-600 mt-0.5">
-                No active machinery or telemetry records. You can register equipment or load the full demonstration dataset.
+                No active machinery or telemetry records. Register your first equipment or load the demonstration dataset.
               </p>
             </div>
           </div>
 
-          <button
-            onClick={() => loadDemoData()}
-            className="btn-primary text-xs py-2 px-4 bg-amber-600 hover:bg-amber-700 text-white flex items-center gap-1.5 shadow-sm cursor-pointer shrink-0"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Load Demo Dataset</span>
-          </button>
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => navigate('/chc/fleet')}
+              className="btn-primary text-xs py-2 px-3.5 bg-emerald-600 hover:bg-emerald-700 text-white flex items-center gap-1.5 shadow-sm cursor-pointer"
+            >
+              <span>+ Add Machinery</span>
+            </button>
+            <button
+              onClick={() => loadDemoData()}
+              className="btn-secondary text-xs py-2 px-3.5 flex items-center gap-1.5 shadow-sm cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+              <span>Load Demo Data</span>
+            </button>
+          </div>
         </div>
       )}
 
       {/* Top Demand Alert Hero if Shortage is Detected */}
-      {sehoreShortage && (
+      {regionalShortage && (
         <div className="bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-transparent border border-amber-300 rounded-3xl p-5 shadow-subtle flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl shrink-0 shadow-sm">
@@ -78,12 +86,14 @@ export const CHCOverview: React.FC = () => {
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-200/80 px-2 py-0.5 rounded-md shrink-0">
-                  DEMAND SURGE ALERT (+34%)
+                  DEMAND SURGE ALERT ({regionalShortage.demandLevel} • {regionalShortage.demandIndex}/100)
                 </span>
-                <span className="text-xs font-mono font-bold text-amber-800">Sehore Wheat Belt</span>
+                <span className="text-xs font-mono font-bold text-amber-800">
+                  {regionalShortage.district} Regional Zone
+                </span>
               </div>
               <h3 className="text-base font-extrabold text-slate-900 mt-0.5">
-                Harvester Shortage Detected: 2 Additional Units Needed Tomorrow
+                {regionalShortage.machineCategory} Shortage Detected: {regionalShortage.shortageUnits} Additional Units Needed
               </h3>
               <p className="text-xs text-slate-600">
                 Predicted Demand: 5 Units • Locally Available: 3 Units. Reallocation from GreenFields Bhopal ready.

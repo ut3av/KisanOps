@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787392486.60928,
-    "seen": 1787392614.6153772,
-    "ast_hash": "6656ae3f8cddf8b9910a2deda636be05",
+    "mtime": 1787393264.4981616,
+    "seen": 1787393396.537322,
+    "ast_hash": "62f13c3e3a2471105f150b549e5ad067",
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
@@ -102,15 +102,15 @@
     "semantic_hash": ""
   },
   "src/features/chc/CHCOverview.tsx": {
-    "mtime": 1787391299.6742184,
-    "seen": 1787391380.8656926,
-    "ast_hash": "0f532b9ef43abb86e75ab6d36ffb034a",
+    "mtime": 1787393360.434718,
+    "seen": 1787393396.5373359,
+    "ast_hash": "5cebdf6b77535fdebcffaa2f105b210a",
     "semantic_hash": ""
   },
   "src/features/chc/CHCSettings.tsx": {
-    "mtime": 1787384709.0867493,
-    "seen": 1787384804.497863,
-    "ast_hash": "db5023392ca0f89ea1c10d8189d63d1f",
+    "mtime": 1787393285.4900572,
+    "seen": 1787393396.537337,
+    "ast_hash": "3e0ef8bfecf49920d7dea48120356587",
     "semantic_hash": ""
   },
   "src/features/chc/DemandIntelligence.tsx": {
@@ -120,9 +120,9 @@
     "semantic_hash": ""
   },
   "src/features/chc/FleetManagement.tsx": {
-    "mtime": 1787390360.7960408,
-    "seen": 1787390629.5139306,
-    "ast_hash": "6bd923ff18f2384a2ce5057b8cb73d7f",
+    "mtime": 1787393251.5085437,
+    "seen": 1787393396.5373404,
+    "ast_hash": "2ccf29b744f4e4ee50e0e17ffd6b05f4",
     "semantic_hash": ""
   },
   "src/features/chc/LiveTelematics.tsx": {
@@ -150,9 +150,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmProfile.tsx": {
-    "mtime": 1787384612.2496505,
-    "seen": 1787384804.497873,
-    "ast_hash": "e57fe820796fdf815b17ea1d883859e2",
+    "mtime": 1787393224.463801,
+    "seen": 1787393396.5373492,
+    "ast_hash": "6fe97ee84f132b81df71e19a2fba880f",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerCredit.tsx": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787390389.137295,
-    "seen": 1787390629.5139418,
-    "ast_hash": "4cd4c80e00932157fd4dac4e2d4d8310",
+    "mtime": 1787393300.725539,
+    "seen": 1787393396.5373516,
+    "ast_hash": "864e0471a343581dc52f9e1492e657e3",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
@@ -240,9 +240,9 @@
     "semantic_hash": "a3150907ddf2842367caa98e12a33298"
   },
   "src/store/kisanOpsStore.ts": {
-    "mtime": 1787392472.6282852,
-    "seen": 1787392614.6156852,
-    "ast_hash": "32edd4d4624878d1f79f294ea601004a",
+    "mtime": 1787393200.08745,
+    "seen": 1787393396.5374448,
+    "ast_hash": "b57c6f88c2e3cb899995447f2e3c6a87",
     "semantic_hash": ""
   },
   "src/types/index.ts": {
@@ -786,9 +786,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/SideNav.tsx": {
-    "mtime": 1787392539.4607873,
-    "seen": 1787392614.6153908,
-    "ast_hash": "46acda8e9442fe9d143c2c2c297c7fcb",
+    "mtime": 1787393271.393858,
+    "seen": 1787393396.5373263,
+    "ast_hash": "1f3474369ea9f0175e3fd7d4898b7fe7",
     "semantic_hash": ""
   },
   "public/404.html": {

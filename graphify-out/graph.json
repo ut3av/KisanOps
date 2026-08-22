@@ -4,30 +4,30 @@
   "graph": {},
   "nodes": [
     {
-      "id": "src_components_layout_sidenav_navitem",
-      "label": "NavItem",
+      "id": "src_features_landing_components_howitworkssection_workflowstep",
+      "label": "WorkflowStep",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Navbar.tsx",
+      "community_name": "HowItWorksSection.tsx",
       "file_type": "code",
-      "norm_label": "navitem",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L38"
+      "norm_label": "workflowstep",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L16"
     },
     {
-      "id": "src_components_layout_sidenav_sidenavprops",
-      "label": "SideNavProps",
+      "id": "src_features_landing_components_modularproductssection_enginemodule",
+      "label": "EngineModule",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Navbar.tsx",
+      "community_name": "HowItWorksSection.tsx",
       "file_type": "code",
-      "norm_label": "sidenavprops",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L32"
+      "norm_label": "enginemodule",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L27"
     },
     {
       "id": "src_components_common_leafletfleetmap_leafletfleetmapprops",
@@ -43,32 +43,6 @@
       "source_location": "L147"
     },
     {
-      "id": "src_components_common_leafletfleetmap_mapbaselayertype",
-      "label": "MapBaseLayerType",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "mapbaselayertype",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L95"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap_maplayerconfig",
-      "label": "MapLayerConfig",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "maplayerconfig",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L102"
-    },
-    {
       "id": "src_components_common_telematicsgauge_telematicsgaugeclusterprops",
       "label": "TelematicsGaugeClusterProps",
       "_callable": true,
@@ -80,6 +54,32 @@
       "norm_label": "telematicsgaugeclusterprops",
       "source_file": "src/components/common/TelematicsGauge.tsx",
       "source_location": "L6"
+    },
+    {
+      "id": "src_components_layout_sidenav_navitem",
+      "label": "NavItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "navitem",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_components_layout_sidenav_sidenavprops",
+      "label": "SideNavProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "sidenavprops",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L32"
     },
     {
       "id": "src_lib_billingengine_billingcalculationinput",
@@ -212,6 +212,19 @@
       "source_location": "L67"
     },
     {
+      "id": "src_types_index_demandfactorbreakdown",
+      "label": "DemandFactorBreakdown",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "demandfactorbreakdown",
+      "source_file": "src/types/index.ts",
+      "source_location": "L177"
+    },
+    {
       "id": "src_types_index_demandforecast",
       "label": "DemandForecast",
       "_callable": true,
@@ -236,6 +249,19 @@
       "norm_label": "farm",
       "source_file": "src/types/index.ts",
       "source_location": "L93"
+    },
+    {
+      "id": "src_types_index_farmcrop",
+      "label": "FarmCrop",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "farmcrop",
+      "source_file": "src/types/index.ts",
+      "source_location": "L84"
     },
     {
       "id": "src_types_index_inappnotification",
@@ -301,6 +327,19 @@
       "norm_label": "machinestatus",
       "source_file": "src/types/index.ts",
       "source_location": "L3"
+    },
+    {
+      "id": "src_types_index_paymentstatus",
+      "label": "PaymentStatus",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "paymentstatus",
+      "source_file": "src/types/index.ts",
+      "source_location": "L21"
     },
     {
       "id": "src_types_index_predictivemaintenancealert",
@@ -452,7 +491,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "agricreditgaugeprops",
       "source_file": "src/components/common/AgriCreditGauge.tsx",
@@ -465,7 +504,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "explanationbadgeprops",
       "source_file": "src/components/common/ExplanationBadge.tsx",
@@ -478,7 +517,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "machinethumbnailprops",
       "source_file": "src/components/common/MachineThumbnail.tsx",
@@ -491,7 +530,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "bookingmodalprops",
       "source_file": "src/features/farmer/BookingModal.tsx",
@@ -504,7 +543,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "machinedetailsmodalprops",
       "source_file": "src/features/farmer/MachineDetailsModal.tsx",
@@ -517,7 +556,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "creditinputfactors",
       "source_file": "src/lib/creditEngine.ts",
@@ -530,7 +569,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "rawdemandinput",
       "source_file": "src/lib/demandEngine.ts",
@@ -543,7 +582,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "maintenancehealthbreakdown",
       "source_file": "src/lib/maintenanceEngine.ts",
@@ -556,7 +595,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "pricingfactors",
       "source_file": "src/lib/pricingEngine.ts",
@@ -569,7 +608,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "recommendationcontext",
       "source_file": "src/lib/recommendationEngine.ts",
@@ -582,37 +621,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "activitytype",
       "source_file": "src/types/index.ts",
       "source_location": "L37"
-    },
-    {
-      "id": "src_types_index_demandfactorbreakdown",
-      "label": "DemandFactorBreakdown",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "types/index.ts",
-      "file_type": "code",
-      "norm_label": "demandfactorbreakdown",
-      "source_file": "src/types/index.ts",
-      "source_location": "L177"
-    },
-    {
-      "id": "src_types_index_farmcrop",
-      "label": "FarmCrop",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "types/index.ts",
-      "file_type": "code",
-      "norm_label": "farmcrop",
-      "source_file": "src/types/index.ts",
-      "source_location": "L84"
     },
     {
       "id": "src_types_index_machine",
@@ -621,7 +634,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "machine",
       "source_file": "src/types/index.ts",
@@ -634,7 +647,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "machinecategory",
       "source_file": "src/types/index.ts",
@@ -647,7 +660,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "machinerecommendationscore",
       "source_file": "src/types/index.ts",
@@ -660,24 +673,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "paymentmethod",
       "source_file": "src/types/index.ts",
       "source_location": "L30"
-    },
-    {
-      "id": "src_types_index_paymentstatus",
-      "label": "PaymentStatus",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "types/index.ts",
-      "file_type": "code",
-      "norm_label": "paymentstatus",
-      "source_file": "src/types/index.ts",
-      "source_location": "L21"
     },
     {
       "id": "src_types_index_pricequote",
@@ -686,7 +686,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "pricequote",
       "source_file": "src/types/index.ts",
@@ -699,7 +699,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "pricingruleconfig",
       "source_file": "src/types/index.ts",
@@ -803,11 +803,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "dopplerradarplayerprops",
       "source_file": "src/components/common/DopplerRadarPlayer.tsx",
       "source_location": "L6"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_mapbaselayertype",
+      "label": "MapBaseLayerType",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "mapbaselayertype",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L95"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_maplayerconfig",
+      "label": "MapLayerConfig",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "maplayerconfig",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L102"
     },
     {
       "id": "src_components_common_weatherradarcard_weatherradarcardprops",
@@ -816,7 +842,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "weatherradarcardprops",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
@@ -829,7 +855,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "cachedforecast",
       "source_file": "src/lib/weatherEngine.ts",
@@ -842,7 +868,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "harvestriskassessment",
       "source_file": "src/lib/weatherEngine.ts",
@@ -855,7 +881,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "hourlyweatherpoint",
       "source_file": "src/lib/weatherEngine.ts",
@@ -868,7 +894,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "locationcoordinates",
       "source_file": "src/lib/weatherEngine.ts",
@@ -881,7 +907,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "rainviewerradarframe",
       "source_file": "src/lib/weatherEngine.ts",
@@ -894,7 +920,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "soiltractivecondition",
       "source_file": "src/lib/weatherEngine.ts",
@@ -907,7 +933,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "weatherforecastday",
       "source_file": "src/lib/weatherEngine.ts",
@@ -979,19 +1005,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_features_landing_components_howitworkssection_workflowstep",
-      "label": "WorkflowStep",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "workflowstep",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L16"
-    },
-    {
       "id": "src_features_landing_components_industriessection_industrycard",
       "label": "IndustryCard",
       "_callable": true,
@@ -1003,19 +1016,6 @@
       "norm_label": "industrycard",
       "source_file": "src/features/landing/components/IndustriesSection.tsx",
       "source_location": "L16"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection_enginemodule",
-      "label": "EngineModule",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "enginemodule",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L27"
     },
     {
       "id": "src_features_landing_components_roicalculatorsection_roicalculatorsectionprops",
@@ -1057,64 +1057,40 @@
       "source_location": "L12"
     },
     {
-      "id": "src_components_layout_adminlayout_adminlayout",
-      "label": "AdminLayout()",
+      "id": "src_features_landing_components_howitworkssection_howitworkssection",
+      "label": "HowItWorksSection()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Navbar.tsx",
+      "community_name": "HowItWorksSection.tsx",
       "file_type": "code",
-      "norm_label": "adminlayout()",
-      "source_file": "src/components/layout/AdminLayout.tsx",
-      "source_location": "L6"
+      "norm_label": "howitworkssection()",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L86"
     },
     {
-      "id": "src_components_layout_chclayout_chclayout",
-      "label": "CHCLayout()",
+      "id": "src_features_landing_components_modularproductssection_modularproductssection",
+      "label": "ModularProductsSection()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Navbar.tsx",
+      "community_name": "HowItWorksSection.tsx",
       "file_type": "code",
-      "norm_label": "chclayout()",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_layout_navbar_navbar",
-      "label": "Navbar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Navbar.tsx",
-      "file_type": "code",
-      "norm_label": "navbar()",
-      "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L24"
+      "norm_label": "modularproductssection()",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L211"
     },
     {
       "id": "src_components_layout_sidenav_sidenav",
       "label": "SideNav()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Navbar.tsx",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
       "file_type": "code",
       "norm_label": "sidenav()",
       "source_file": "src/components/layout/SideNav.tsx",
       "source_location": "L49"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap_createprofessionalicon",
-      "label": "createProfessionalIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "createprofessionalicon()",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L52"
     },
     {
       "id": "src_features_auth_loginpage_loginpage",
@@ -1297,6 +1273,18 @@
       "source_location": "L29"
     },
     {
+      "id": "src_store_kisanopsstore_createcleanunconfiguredfarm",
+      "label": "createCleanUnconfiguredFarm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "createcleanunconfiguredfarm()",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L88"
+    },
+    {
       "id": "src_store_kisanopsstore_createfreshagricreditforuser",
       "label": "createFreshAgriCreditForUser()",
       "_callable": true,
@@ -1306,7 +1294,7 @@
       "file_type": "code",
       "norm_label": "createfreshagricreditforuser()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L88"
+      "source_location": "L110"
     },
     {
       "id": "src_store_kisanopsstore_createfreshfarmforuser",
@@ -1330,7 +1318,7 @@
       "file_type": "code",
       "norm_label": "getcleanproductionstate()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L136"
+      "source_location": "L151"
     },
     {
       "id": "src_store_kisanopsstore_getinitialstate",
@@ -1342,7 +1330,7 @@
       "file_type": "code",
       "norm_label": "getinitialstate()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L184"
+      "source_location": "L208"
     },
     {
       "id": "src_store_kisanopsstore_getpopulateddemostate",
@@ -1354,7 +1342,7 @@
       "file_type": "code",
       "norm_label": "getpopulateddemostate()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L160"
+      "source_location": "L184"
     },
     {
       "id": "src_store_kisanopsstore_notify",
@@ -1366,7 +1354,7 @@
       "file_type": "code",
       "norm_label": "notify()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L210"
+      "source_location": "L234"
     },
     {
       "id": "src_store_kisanopsstore_startglobalsimulationloop",
@@ -1378,7 +1366,7 @@
       "file_type": "code",
       "norm_label": "startglobalsimulationloop()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L220"
+      "source_location": "L244"
     },
     {
       "id": "api_create_order_handler",
@@ -1542,7 +1530,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "agricreditgauge()",
       "source_file": "src/components/common/AgriCreditGauge.tsx",
@@ -1554,7 +1542,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "explanationbadge()",
       "source_file": "src/components/common/ExplanationBadge.tsx",
@@ -1566,7 +1554,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "machinethumbnail()",
       "source_file": "src/components/common/MachineThumbnail.tsx",
@@ -1578,7 +1566,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "bookingmodal()",
       "source_file": "src/features/farmer/BookingModal.tsx",
@@ -1590,7 +1578,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "farmerhome()",
       "source_file": "src/features/farmer/FarmerHome.tsx",
@@ -1602,7 +1590,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "farmermarketplace()",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
@@ -1614,7 +1602,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "machinedetailsmodal()",
       "source_file": "src/features/farmer/MachineDetailsModal.tsx",
@@ -1626,7 +1614,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "evaluateagricredit()",
       "source_file": "src/lib/creditEngine.ts",
@@ -1638,7 +1626,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "calculatedemandforecast()",
       "source_file": "src/lib/demandEngine.ts",
@@ -1650,7 +1638,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "calculatehaversinedistance()",
       "source_file": "src/lib/demandEngine.ts",
@@ -1662,7 +1650,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "generateallocationrecommendations()",
       "source_file": "src/lib/demandEngine.ts",
@@ -1674,7 +1662,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "calculatemachinehealth()",
       "source_file": "src/lib/maintenanceEngine.ts",
@@ -1686,7 +1674,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "evaluatepredictivealerts()",
       "source_file": "src/lib/maintenanceEngine.ts",
@@ -1698,7 +1686,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "calculatedynamicprice()",
       "source_file": "src/lib/pricingEngine.ts",
@@ -1710,7 +1698,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "scoremachineforfarmer()",
       "source_file": "src/lib/recommendationEngine.ts",
@@ -1794,11 +1782,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "dopplerradarplayer()",
       "source_file": "src/components/common/DopplerRadarPlayer.tsx",
       "source_location": "L12"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_createprofessionalicon",
+      "label": "createProfessionalIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "createprofessionalicon()",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L52"
     },
     {
       "id": "src_components_common_weatherradarcard_weatherradarcard",
@@ -1806,7 +1806,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "weatherradarcard()",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
@@ -1818,7 +1818,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "computeharvestriskassessment()",
       "source_file": "src/lib/weatherEngine.ts",
@@ -1830,7 +1830,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "fetchagroweatherforecast()",
       "source_file": "src/lib/weatherEngine.ts",
@@ -1842,7 +1842,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "fetchrainviewerradarframes()",
       "source_file": "src/lib/weatherEngine.ts",
@@ -1854,7 +1854,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "getfallbackagroweather()",
       "source_file": "src/lib/weatherEngine.ts",
@@ -1866,7 +1866,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "getwmodescription()",
       "source_file": "src/lib/weatherEngine.ts",
@@ -1945,6 +1945,30 @@
       "source_location": "L11"
     },
     {
+      "id": "src_components_layout_adminlayout_adminlayout",
+      "label": "AdminLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "adminlayout()",
+      "source_file": "src/components/layout/AdminLayout.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_layout_chclayout_chclayout",
+      "label": "CHCLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "chclayout()",
+      "source_file": "src/components/layout/CHCLayout.tsx",
+      "source_location": "L5"
+    },
+    {
       "id": "src_components_layout_farmerlayout_farmerlayout",
       "label": "FarmerLayout()",
       "_callable": true,
@@ -1955,6 +1979,18 @@
       "norm_label": "farmerlayout()",
       "source_file": "src/components/layout/FarmerLayout.tsx",
       "source_location": "L17"
+    },
+    {
+      "id": "src_components_layout_navbar_navbar",
+      "label": "Navbar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "navbar()",
+      "source_file": "src/components/layout/Navbar.tsx",
+      "source_location": "L24"
     },
     {
       "id": "src_components_layout_operatorlayout_operatorlayout",
@@ -2026,7 +2062,7 @@
       "file_type": "code",
       "norm_label": "chcsettings()",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L16"
+      "source_location": "L18"
     },
     {
       "id": "src_features_chc_demandintelligence_demandintelligence",
@@ -2050,7 +2086,7 @@
       "file_type": "code",
       "norm_label": "fleetmanagement()",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L24"
+      "source_location": "L28"
     },
     {
       "id": "src_features_chc_livetelematics_livetelematics",
@@ -2134,7 +2170,7 @@
       "file_type": "code",
       "norm_label": "farmprofile()",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L17"
+      "source_location": "L24"
     },
     {
       "id": "src_features_landing_components_ctabanner_ctabanner",
@@ -2159,18 +2195,6 @@
       "norm_label": "faqsection()",
       "source_file": "src/features/landing/components/FaqSection.tsx",
       "source_location": "L49"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection_howitworkssection",
-      "label": "HowItWorksSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "howitworkssection()",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L86"
     },
     {
       "id": "src_features_landing_components_industriessection_industriessection",
@@ -2207,18 +2231,6 @@
       "norm_label": "landingnavbar()",
       "source_file": "src/features/landing/components/LandingNavbar.tsx",
       "source_location": "L32"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection_modularproductssection",
-      "label": "ModularProductsSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "modularproductssection()",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L211"
     },
     {
       "id": "src_features_landing_components_platformecosystemsection_platformecosystemsection",
@@ -2410,47 +2422,58 @@
       "file_type": "code",
       "norm_label": "usekisanopsstore()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L297"
+      "source_location": "L321"
     },
     {
-      "id": "src_components_layout_adminlayout",
-      "label": "AdminLayout.tsx",
+      "id": "src_features_landing_components_howitworkssection",
+      "label": "HowItWorksSection.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Navbar.tsx",
+      "community_name": "HowItWorksSection.tsx",
       "file_type": "code",
-      "norm_label": "adminlayout.tsx",
-      "source_file": "src/components/layout/AdminLayout.tsx",
+      "norm_label": "howitworkssection.tsx",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_layout_chclayout",
-      "label": "CHCLayout.tsx",
+      "id": "src_features_landing_components_howitworkssection_workflow_steps",
+      "label": "WORKFLOW_STEPS",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Navbar.tsx",
+      "community_name": "HowItWorksSection.tsx",
       "file_type": "code",
-      "norm_label": "chclayout.tsx",
-      "source_file": "src/components/layout/CHCLayout.tsx",
+      "norm_label": "workflow_steps",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection",
+      "label": "ModularProductsSection.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "HowItWorksSection.tsx",
+      "file_type": "code",
+      "norm_label": "modularproductssection.tsx",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_layout_farmerlayout",
-      "label": "FarmerLayout.tsx",
+      "id": "src_features_landing_components_modularproductssection_engines",
+      "label": "ENGINES",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Navbar.tsx",
+      "community_name": "HowItWorksSection.tsx",
       "file_type": "code",
-      "norm_label": "farmerlayout.tsx",
-      "source_file": "src/components/layout/FarmerLayout.tsx",
-      "source_location": "L1"
+      "norm_label": "engines",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L43"
     },
     {
       "id": "src_components_layout_navbar",
       "label": "Navbar.tsx",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Navbar.tsx",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
       "file_type": "code",
       "norm_label": "navbar.tsx",
       "source_file": "src/components/layout/Navbar.tsx",
@@ -2460,100 +2483,12 @@
       "id": "src_components_layout_sidenav",
       "label": "SideNav.tsx",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Navbar.tsx",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
       "file_type": "code",
       "norm_label": "sidenav.tsx",
       "source_file": "src/components/layout/SideNav.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap",
-      "label": "LeafletFleetMap.tsx",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "leafletfleetmap.tsx",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap_activemachineicon",
-      "label": "activeMachineIcon",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "activemachineicon",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L91"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap_availablemachineicon",
-      "label": "availableMachineIcon",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "availablemachineicon",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L92"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap_chcicon",
-      "label": "chcIcon",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "chcicon",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L89"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap_farmicon",
-      "label": "farmIcon",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmicon",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L90"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap_maintenanceicon",
-      "label": "maintenanceIcon",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "maintenanceicon",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L93"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap_map_layers",
-      "label": "MAP_LAYERS",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "map_layers",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L110"
-    },
-    {
-      "id": "src_components_common_leafletfleetmap_svg_icons",
-      "label": "SVG_ICONS",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "svg_icons",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L11"
     },
     {
       "id": "src_data_seeddata",
@@ -2765,17 +2700,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_lib_telematicsengine_sehore_demo_route",
-      "label": "SEHORE_DEMO_ROUTE",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "sehore_demo_route",
-      "source_file": "src/lib/telematicsEngine.ts",
-      "source_location": "L10"
-    },
-    {
       "id": "src_lib_tests_iotanddb_test",
       "label": "iotAndDb.test.ts",
       "_origin": "ast",
@@ -2806,7 +2730,7 @@
       "file_type": "code",
       "norm_label": "globalstate",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L205"
+      "source_location": "L229"
     },
     {
       "id": "src_store_kisanopsstore_listeners",
@@ -2817,7 +2741,18 @@
       "file_type": "code",
       "norm_label": "listeners",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L206"
+      "source_location": "L230"
+    },
+    {
+      "id": "src_types_index",
+      "label": "types/index.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "types/index.ts",
+      "source_file": "src/types/index.ts",
+      "source_location": "L1"
     },
     {
       "id": "supabase_schema",
@@ -4342,7 +4277,7 @@
       "label": "AgriCreditGauge.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "agricreditgauge.tsx",
       "source_file": "src/components/common/AgriCreditGauge.tsx",
@@ -4353,7 +4288,7 @@
       "label": "ExplanationBadge.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "explanationbadge.tsx",
       "source_file": "src/components/common/ExplanationBadge.tsx",
@@ -4364,7 +4299,7 @@
       "label": "MachineThumbnail.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "machinethumbnail.tsx",
       "source_file": "src/components/common/MachineThumbnail.tsx",
@@ -4375,29 +4310,18 @@
       "label": "VEHICLE_CONFIG",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "vehicle_config",
       "source_file": "src/components/common/MachineThumbnail.tsx",
       "source_location": "L22"
     },
     {
-      "id": "src_features_chc_fleetmanagement",
-      "label": "FleetManagement.tsx",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "types/index.ts",
-      "file_type": "code",
-      "norm_label": "fleetmanagement.tsx",
-      "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_features_farmer_bookingmodal",
       "label": "BookingModal.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "bookingmodal.tsx",
       "source_file": "src/features/farmer/BookingModal.tsx",
@@ -4408,7 +4332,7 @@
       "label": "FarmerHome.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "farmerhome.tsx",
       "source_file": "src/features/farmer/FarmerHome.tsx",
@@ -4419,7 +4343,7 @@
       "label": "FarmerMarketplace.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "farmermarketplace.tsx",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
@@ -4430,7 +4354,7 @@
       "label": "MachineDetailsModal.tsx",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "machinedetailsmodal.tsx",
       "source_file": "src/features/farmer/MachineDetailsModal.tsx",
@@ -4441,7 +4365,7 @@
       "label": "creditEngine.ts",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "creditengine.ts",
       "source_file": "src/lib/creditEngine.ts",
@@ -4452,7 +4376,7 @@
       "label": "demandEngine.ts",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "demandengine.ts",
       "source_file": "src/lib/demandEngine.ts",
@@ -4463,7 +4387,7 @@
       "label": "maintenanceEngine.ts",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "maintenanceengine.ts",
       "source_file": "src/lib/maintenanceEngine.ts",
@@ -4474,7 +4398,7 @@
       "label": "pricingEngine.ts",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "pricingengine.ts",
       "source_file": "src/lib/pricingEngine.ts",
@@ -4485,7 +4409,7 @@
       "label": "DEFAULT_PRICING_CONFIG",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "default_pricing_config",
       "source_file": "src/lib/pricingEngine.ts",
@@ -4496,7 +4420,7 @@
       "label": "recommendationEngine.ts",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "recommendationengine.ts",
       "source_file": "src/lib/recommendationEngine.ts",
@@ -4507,21 +4431,10 @@
       "label": "engines.test.ts",
       "_origin": "ast",
       "community": 31,
-      "community_name": "types/index.ts",
+      "community_name": "FarmerHome.tsx",
       "file_type": "code",
       "norm_label": "engines.test.ts",
       "source_file": "src/lib/__tests__/engines.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_types_index",
-      "label": "types/index.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "types/index.ts",
-      "file_type": "code",
-      "norm_label": "types/index.ts",
-      "source_file": "src/types/index.ts",
       "source_location": "L1"
     },
     {
@@ -5582,29 +5495,128 @@
       "label": "DopplerRadarPlayer.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "dopplerradarplayer.tsx",
       "source_file": "src/components/common/DopplerRadarPlayer.tsx",
       "source_location": "L1"
     },
     {
+      "id": "src_components_common_leafletfleetmap",
+      "label": "LeafletFleetMap.tsx",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "leafletfleetmap.tsx",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_activemachineicon",
+      "label": "activeMachineIcon",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "activemachineicon",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L91"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_availablemachineicon",
+      "label": "availableMachineIcon",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "availablemachineicon",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L92"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_chcicon",
+      "label": "chcIcon",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "chcicon",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L89"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_farmicon",
+      "label": "farmIcon",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "farmicon",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L90"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_maintenanceicon",
+      "label": "maintenanceIcon",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "maintenanceicon",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L93"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_map_layers",
+      "label": "MAP_LAYERS",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "map_layers",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L110"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_svg_icons",
+      "label": "SVG_ICONS",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "svg_icons",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L11"
+    },
+    {
       "id": "src_components_common_weatherradarcard",
       "label": "WeatherRadarCard.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "weatherradarcard.tsx",
       "source_file": "src/components/common/WeatherRadarCard.tsx",
       "source_location": "L1"
     },
     {
+      "id": "src_lib_telematicsengine_sehore_demo_route",
+      "label": "SEHORE_DEMO_ROUTE",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "sehore_demo_route",
+      "source_file": "src/lib/telematicsEngine.ts",
+      "source_location": "L10"
+    },
+    {
       "id": "src_lib_tests_weatherengine_test",
       "label": "weatherEngine.test.ts",
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "weatherengine.test.ts",
       "source_file": "src/lib/__tests__/weatherEngine.test.ts",
@@ -5615,7 +5627,7 @@
       "label": "weatherEngine.ts",
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "weatherengine.ts",
       "source_file": "src/lib/weatherEngine.ts",
@@ -5626,7 +5638,7 @@
       "label": "MP_WEATHER_LOCATIONS",
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "mp_weather_locations",
       "source_file": "src/lib/weatherEngine.ts",
@@ -5637,7 +5649,7 @@
       "label": "weatherCache",
       "_origin": "ast",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
       "norm_label": "weathercache",
       "source_file": "src/lib/weatherEngine.ts",
@@ -6183,6 +6195,39 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_layout_adminlayout",
+      "label": "AdminLayout.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "adminlayout.tsx",
+      "source_file": "src/components/layout/AdminLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_chclayout",
+      "label": "CHCLayout.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "chclayout.tsx",
+      "source_file": "src/components/layout/CHCLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_farmerlayout",
+      "label": "FarmerLayout.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "farmerlayout.tsx",
+      "source_file": "src/components/layout/FarmerLayout.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_layout_operatorlayout",
       "label": "OperatorLayout.tsx",
       "_origin": "ast",
@@ -6290,6 +6335,17 @@
       "file_type": "code",
       "norm_label": "demandintelligence.tsx",
       "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_chc_fleetmanagement",
+      "label": "FleetManagement.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "fleetmanagement.tsx",
+      "source_file": "src/features/chc/FleetManagement.tsx",
       "source_location": "L1"
     },
     {
@@ -6436,28 +6492,6 @@
       "source_location": "L10"
     },
     {
-      "id": "src_features_landing_components_howitworkssection",
-      "label": "HowItWorksSection.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "howitworkssection.tsx",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_howitworkssection_workflow_steps",
-      "label": "WORKFLOW_STEPS",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "workflow_steps",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L28"
-    },
-    {
       "id": "src_features_landing_components_industriessection",
       "label": "IndustriesSection.tsx",
       "_origin": "ast",
@@ -6500,28 +6534,6 @@
       "norm_label": "landingnavbar.tsx",
       "source_file": "src/features/landing/components/LandingNavbar.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection",
-      "label": "ModularProductsSection.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "modularproductssection.tsx",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection_engines",
-      "label": "ENGINES",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "engines",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L43"
     },
     {
       "id": "src_features_landing_components_platformecosystemsection",
@@ -6748,7 +6760,7 @@
       "label": "KisanOps Platform",
       "_origin": "semantic",
       "community": 6,
-      "community_name": "weatherEngine.ts",
+      "community_name": "LeafletFleetMap.tsx",
       "file_type": "concept",
       "norm_label": "kisanops platform",
       "source_file": "README.md",
@@ -7077,7 +7089,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -7089,7 +7101,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -7125,7 +7137,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L25",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -7137,7 +7149,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -7425,7 +7437,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L18",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -7437,7 +7449,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L22",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -7694,14 +7706,14 @@
     },
     {
       "source": "src_store_kisanopsstore_getcleanproductionstate",
-      "target": "src_store_kisanopsstore_createfreshfarmforuser",
+      "target": "src_store_kisanopsstore_createcleanunconfiguredfarm",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L141",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -7713,35 +7725,11 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L145",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
       "source": "src_store_kisanopsstore_getcleanproductionstate",
-      "target": "src_lib_telematicsengine_getinitialsimulationstate",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L151",
-      "weight": 1.0
-    },
-    {
-      "source": "src_store_kisanopsstore_getinitialstate",
-      "target": "src_store_kisanopsstore_getcleanproductionstate",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L202",
-      "weight": 1.0
-    },
-    {
-      "source": "src_store_kisanopsstore_getpopulateddemostate",
       "target": "src_lib_telematicsengine_getinitialsimulationstate",
       "relation": "calls",
       "_origin": "ast",
@@ -7753,6 +7741,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_store_kisanopsstore_getinitialstate",
+      "target": "src_store_kisanopsstore_getcleanproductionstate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "src_store_kisanopsstore_getpopulateddemostate",
+      "target": "src_lib_telematicsengine_getinitialsimulationstate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
       "source": "src_store_kisanopsstore_startglobalsimulationloop",
       "target": "src_lib_telematicsengine_advancesimulationstep",
       "relation": "calls",
@@ -7761,7 +7773,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L234",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -7773,7 +7785,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L250",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -7785,7 +7797,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L290",
+      "source_location": "L314",
       "weight": 1.0
     },
     {
@@ -7797,7 +7809,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L312",
+      "source_location": "L336",
       "weight": 1.0
     },
     {
@@ -7809,7 +7821,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L323",
+      "source_location": "L347",
       "weight": 1.0
     },
     {
@@ -7821,7 +7833,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L327",
+      "source_location": "L351",
       "weight": 1.0
     },
     {
@@ -7833,7 +7845,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L371",
+      "source_location": "L395",
       "weight": 1.0
     },
     {
@@ -7845,7 +7857,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L372",
+      "source_location": "L396",
       "weight": 1.0
     },
     {
@@ -7857,7 +7869,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L483",
+      "source_location": "L507",
       "weight": 1.0
     },
     {
@@ -7869,7 +7881,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L509",
+      "source_location": "L533",
       "weight": 1.0
     },
     {
@@ -7881,7 +7893,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L555",
+      "source_location": "L579",
       "weight": 1.0
     },
     {
@@ -7893,7 +7905,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L617",
+      "source_location": "L746",
       "weight": 1.0
     },
     {
@@ -7905,7 +7917,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L628",
+      "source_location": "L757",
       "weight": 1.0
     },
     {
@@ -9981,7 +9993,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -9993,7 +10005,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -10041,7 +10053,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -10053,7 +10065,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10065,7 +10077,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10077,7 +10089,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10089,7 +10101,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L20",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -10101,7 +10113,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L21",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -10677,7 +10689,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L13",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -10689,7 +10701,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L14",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -10701,7 +10713,31 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L15",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmprofile",
+      "target": "src_types_index_farm",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmprofile",
+      "target": "src_types_index_farmcrop",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -13869,7 +13905,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -13881,7 +13917,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -13953,7 +13989,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -13965,7 +14001,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -13977,7 +14013,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L20",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -13989,7 +14025,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L21",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -14625,7 +14661,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L13",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -14637,7 +14673,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L14",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -14649,7 +14685,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L15",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmprofile",
+      "target": "src_types_index",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -18153,7 +18201,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -18175,7 +18223,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L24",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -18329,7 +18377,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L17",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -19467,13 +19515,24 @@
     },
     {
       "source": "src_store_kisanopsstore",
+      "target": "src_store_kisanopsstore_createfreshagricreditforuser",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "src_store_kisanopsstore",
       "target": "src_store_kisanopsstore_getcleanproductionstate",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L136",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -19484,7 +19543,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L160",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -19495,7 +19554,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L184",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
@@ -19506,7 +19565,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L205",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -19517,7 +19576,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L206",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -19528,7 +19587,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L210",
+      "source_location": "L234",
       "weight": 1.0
     },
     {
@@ -19539,7 +19598,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L220",
+      "source_location": "L244",
       "weight": 1.0
     },
     {
@@ -19550,7 +19609,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L297",
+      "source_location": "L321",
       "weight": 1.0
     },
     {
@@ -19577,7 +19636,7 @@
     },
     {
       "source": "src_store_kisanopsstore",
-      "target": "src_store_kisanopsstore_createfreshagricreditforuser",
+      "target": "src_store_kisanopsstore_createcleanunconfiguredfarm",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -21256,5 +21315,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5f6f8828530413e41fd5b28e11bac11a497f0ccf"
+  "built_at_commit": "5e75bdab537ad5ded8f32263739370211cf9be26"
 }

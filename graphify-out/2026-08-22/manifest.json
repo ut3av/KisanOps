@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1787392076.5516977,
-    "seen": 1787392154.895082,
-    "ast_hash": "4031dc37b3965048b2a6728b4cb20eda",
+    "mtime": 1787392486.60928,
+    "seen": 1787392614.6153772,
+    "ast_hash": "6656ae3f8cddf8b9910a2deda636be05",
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
@@ -240,9 +240,9 @@
     "semantic_hash": "a3150907ddf2842367caa98e12a33298"
   },
   "src/store/kisanOpsStore.ts": {
-    "mtime": 1787390198.2804317,
-    "seen": 1787390629.5140321,
-    "ast_hash": "b8275b49629812f82e47f746ba3706ea",
+    "mtime": 1787392472.6282852,
+    "seen": 1787392614.6156852,
+    "ast_hash": "32edd4d4624878d1f79f294ea601004a",
     "semantic_hash": ""
   },
   "src/types/index.ts": {
@@ -714,9 +714,9 @@
     "semantic_hash": ""
   },
   "vercel.json": {
-    "mtime": 1787335074.6899457,
-    "seen": 1787335133.2847207,
-    "ast_hash": "bae3e33313bbfd267db5df6f591185d9",
+    "mtime": 1787392388.4946065,
+    "seen": 1787392614.6157432,
+    "ast_hash": "05589724531f239e19f197ab9556c3d5",
     "semantic_hash": ""
   },
   "public/images/yukti-platform-overview.jpg": {
@@ -786,9 +786,15 @@
     "semantic_hash": ""
   },
   "src/components/layout/SideNav.tsx": {
-    "mtime": 1787392057.2905476,
-    "seen": 1787392154.895085,
-    "ast_hash": "e9c6a4bb091d9335fda1f183f601ff35",
+    "mtime": 1787392539.4607873,
+    "seen": 1787392614.6153908,
+    "ast_hash": "46acda8e9442fe9d143c2c2c297c7fcb",
+    "semantic_hash": ""
+  },
+  "public/404.html": {
+    "mtime": 1787392408.9276564,
+    "seen": 1787392614.6158009,
+    "ast_hash": "5f649c21404f2676a90484709f34d6b1",
     "semantic_hash": ""
   }
 }

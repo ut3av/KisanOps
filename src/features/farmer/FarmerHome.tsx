@@ -130,31 +130,48 @@ export const FarmerHome: React.FC = () => {
               </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 flex items-center gap-1.5 mt-0.5">
-              <MapPin className="w-3.5 h-3.5 text-agri-700" />
-              <span>{farm.farmName} • {farm.village}, {farm.district} ({farm.sizeAcres} Acres)</span>
+              <MapPin className="w-3.5 h-3.5 text-agri-700 shrink-0" />
+              <span>
+                {farm.sizeAcres > 0
+                  ? `${farm.farmName} • ${farm.village ? farm.village + ', ' : ''}${farm.district} (${farm.sizeAcres} Acres)`
+                  : 'No Farmland Configured • Tap to Add Land & Acres'}
+              </span>
             </p>
           </div>
         </div>
 
         {/* Current Crop Stage Pill */}
-        <div className="bg-amber-50/80 border border-amber-200/90 rounded-2xl p-3 px-4 flex items-center gap-3 w-full md:w-auto">
-          <div className="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800 shrink-0">
-            <Wheat className="w-5 h-5" />
-          </div>
-          <div>
-            <div className="text-[11px] font-bold text-amber-800 uppercase tracking-wider">
-              {farm.crop.cropName} • {farm.crop.cropStage}
+        {farm.sizeAcres > 0 && farm.crop?.cropName ? (
+          <div className="bg-amber-50/80 border border-amber-200/90 rounded-2xl p-3 px-4 flex items-center gap-3 w-full md:w-auto">
+            <div className="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800 shrink-0">
+              <Wheat className="w-5 h-5" />
             </div>
-            <div className="text-xs text-amber-900 font-medium">
-              Harvesting window starts in <strong>2 days</strong>
+            <div>
+              <div className="text-[11px] font-bold text-amber-800 uppercase tracking-wider">
+                {farm.crop.cropName} • {farm.crop.cropStage}
+              </div>
+              <div className="text-xs text-amber-900 font-medium">
+                {farm.crop.season} Season Lifecycle Active
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <button
+            onClick={() => navigate('/farmer/farm')}
+            className="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 rounded-2xl p-3 px-4 flex items-center gap-2.5 w-full md:w-auto cursor-pointer transition-all"
+          >
+            <Sprout className="w-5 h-5 text-emerald-600 shrink-0" />
+            <div className="text-left">
+              <div className="text-xs font-bold">+ Register Farm Plot</div>
+              <div className="text-[10px] text-emerald-700">Add acres & crop profile</div>
+            </div>
+          </button>
+        )}
       </div>
 
       {/* Live Agro-Weather Risk Radar & Harvest Window Countdown */}
       <WeatherRadarCard
-        district={farm.district}
+        district={farm.district || 'Indore'}
         onEmergencyPreBook={() => navigate('/farmer/marketplace?activity=HARVESTING&priority=weather')}
       />
 

@@ -115,10 +115,14 @@ export const Navbar: React.FC = () => {
               </div>
             )}
 
-            {/* Location Badge */}
+            {/* Dynamic Location Badge */}
             <div className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-100 border border-slate-200/80 text-xs font-medium text-slate-700 shrink-0">
               <MapPin className="w-3.5 h-3.5 text-agri-700 shrink-0" />
-              <span>Sehore, Madhya Pradesh</span>
+              <span>
+                {state.selectedRole === 'FARMER'
+                  ? (state.farm.district ? `${state.farm.village ? state.farm.village + ', ' : ''}${state.farm.district}` : 'Location Not Set')
+                  : (state.chcs[0]?.district ? `${state.chcs[0].district}, ${state.chcs[0].state || 'MP'}` : 'Hub Location Not Set')}
+              </span>
             </div>
 
             {/* Production Verified Role Identity Badge (No demo switcher) */}

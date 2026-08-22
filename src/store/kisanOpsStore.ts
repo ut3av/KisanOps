@@ -85,13 +85,35 @@ function createFreshFarmForUser(user: UserProfile): Farm {
   };
 }
 
+function createCleanUnconfiguredFarm(user: UserProfile): Farm {
+  return {
+    id: `farm-${user.id}`,
+    farmerId: user.id,
+    farmName: '',
+    district: '',
+    village: '',
+    state: '',
+    sizeAcres: 0,
+    latitude: 23.1872,
+    longitude: 77.1008,
+    soilType: '',
+    irrigationType: 'Canal',
+    crop: {
+      id: `crop-${user.id}`,
+      cropName: '',
+      season: 'Rabi',
+      cropStage: 'Sowing',
+    },
+  };
+}
+
 function createFreshAgriCreditForUser(user: UserProfile): AgriCreditProfile {
   return {
     farmerId: user.id,
-    creditScore: 725,
+    creditScore: 720,
     ratingCategory: 'Good',
-    creditLimit: 8000,
-    availableCredit: 8000,
+    creditLimit: 10000,
+    availableCredit: 10000,
     utilizedCredit: 0,
     factors: [
       {
@@ -99,50 +121,52 @@ function createFreshAgriCreditForUser(user: UserProfile): AgriCreditProfile {
         weight: 0.35,
         score: 75,
         status: 'Good',
-        description: 'Account verified with regional Custom Hiring Centre',
-      },
-      {
-        name: 'CHC Network Frequency',
-        weight: 0.25,
-        score: 70,
-        status: 'Good',
-        description: 'Initial onboarding with Sehore / Bhopal agri-cluster',
+        description: 'Account verified for deferred settlements',
       },
       {
         name: 'Zero-Dispute Reliability',
-        weight: 0.20,
+        weight: 0.25,
         score: 85,
         status: 'Excellent',
-        description: 'Clean digital KYC & phone verification',
+        description: 'Clean digital phone authentication',
       },
       {
         name: 'Farm Acreage Verification',
-        weight: 0.10,
-        score: 80,
+        weight: 0.20,
+        score: 70,
         status: 'Good',
-        description: '6.0 Acres cultivated plot documented and geo-fenced',
+        description: 'Land record documented with geo-fencing',
       },
       {
         name: 'Profile Stability & KYC',
-        weight: 0.10,
+        weight: 0.20,
         score: 90,
         status: 'Excellent',
-        description: 'Identity authenticated for deferred operations',
+        description: 'Identity authenticated for operations',
       },
     ],
   };
 }
 
 export function getCleanProductionState(): AppState {
+  const defaultUser: UserProfile = {
+    id: 'usr-fresh-01',
+    fullName: 'Agricultural Producer',
+    phoneNumber: '+91 98765 43210',
+    role: 'FARMER',
+    district: '',
+    village: '',
+  };
+
   return {
-    currentUser: SEEDED_PROFILES[0], // Farmer Ramesh Kumar default
+    currentUser: defaultUser,
     selectedRole: 'FARMER',
     chcs: [],
-    farm: createFreshFarmForUser(SEEDED_PROFILES[0]),
+    farm: createCleanUnconfiguredFarm(defaultUser),
     machines: [],
     demandForecasts: [],
     allocations: [],
-    agriCredit: createFreshAgriCreditForUser(SEEDED_PROFILES[0]),
+    agriCredit: createFreshAgriCreditForUser(defaultUser),
     bookings: [],
     maintenanceAlerts: [],
     notifications: [],
@@ -601,6 +625,111 @@ export function useKisanOpsStore() {
 
     toggleSimulation: () => {
       globalState.isSimulating = !globalState.isSimulating;
+      notify();
+    },
+
+    updateFarm: (farmData: Partial<Farm>) => {
+      const updatedFarm: Farm = {
+        ...globalState.farm,
+        ...farmData,
+        crop: {
+          ...globalState.farm.crop,
+          ...(farmData.crop || {}),
+        },
+      };
+      globalState = {
+        ...globalState,
+        farm: updatedFarm,
+      };
+      // If user district/village were empty, sync from farm
+      if (farmData.district && !globalState.currentUser.district) {
+        globalState.currentUser = {
+          ...globalState.currentUser,
+          district: farmData.district,
+          village: farmData.village || globalState.currentUser.village,
+        };
+      }
+      notify();
+    },
+
+    registerCHC: (chcData: Partial<CHC>) => {
+      const newChc: CHC = {
+        id: chcData.id || `chc-${Date.now()}`,
+        name: chcData.name || 'Agri Operations Hub',
+        code: chcData.code || `CHC-${(chcData.district || 'HUB').slice(0, 3).toUpperCase()}-01`,
+        managerId: globalState.currentUser.id,
+        village: chcData.village || '',
+        district: chcData.district || 'Local Hub',
+        state: chcData.state || 'Madhya Pradesh',
+        latitude: chcData.latitude || 23.1872,
+        longitude: chcData.longitude || 77.1008,
+        contactPhone: chcData.contactPhone || globalState.currentUser.phoneNumber,
+        contactEmail: chcData.contactEmail || globalState.currentUser.email,
+        operatingRadiusKm: chcData.operatingRadiusKm || 35,
+        totalMachines: globalState.machines.length,
+        activeMachines: globalState.machines.filter(m => m.status === 'ACTIVE').length,
+        ...chcData,
+      };
+      globalState = {
+        ...globalState,
+        chcs: [newChc, ...globalState.chcs.filter(c => c.id !== newChc.id)],
+      };
+      notify();
+    },
+
+    addMachine: (machineData: Partial<Machine>) => {
+      const targetChc = globalState.chcs[0] || {
+        id: 'chc-default',
+        name: machineData.chcName || 'Central Hub',
+      };
+
+      const newMachine: Machine = {
+        id: machineData.id || `mach-${Date.now()}`,
+        chcId: machineData.chcId || targetChc.id,
+        chcName: machineData.chcName || targetChc.name,
+        identifier: machineData.identifier || `AGRI-${Math.floor(1000 + Math.random() * 9000)}`,
+        category: machineData.category || 'TRACTOR',
+        brand: machineData.brand || 'Mahindra',
+        model: machineData.model || '575 DI',
+        yearOfManufacture: machineData.yearOfManufacture || 2024,
+        powerHp: machineData.powerHp || 50,
+        status: machineData.status || 'AVAILABLE',
+        baseRatePerHour: machineData.baseRatePerHour || 850,
+        baseRatePerAcre: machineData.baseRatePerAcre,
+        healthScore: machineData.healthScore || 98,
+        totalEngineHours: machineData.totalEngineHours || 12.0,
+        hoursSinceLastService: machineData.hoursSinceLastService || 12.0,
+        serviceIntervalHours: 250,
+        imageUrl: '',
+        rating: 4.9,
+        totalRentals: 0,
+        supportedActivities: machineData.supportedActivities || ['SOIL_PREPARATION', 'TRANSPORT'],
+        latitude: machineData.latitude || 23.1872,
+        longitude: machineData.longitude || 77.1008,
+        operatorName: machineData.operatorName || 'Assigned Driver',
+        operatorPhone: machineData.operatorPhone || '+91 98765 00000',
+        specs: machineData.specs || {
+          engine: `${machineData.powerHp || 50} HP Diesel 4-Cylinder`,
+          fuelTankLitres: 60,
+        },
+        ...machineData,
+      };
+
+      globalState = {
+        ...globalState,
+        machines: [newMachine, ...globalState.machines],
+      };
+      notify();
+    },
+
+    updateUserProfile: (profileData: Partial<UserProfile>) => {
+      globalState = {
+        ...globalState,
+        currentUser: {
+          ...globalState.currentUser,
+          ...profileData,
+        },
+      };
       notify();
     },
 

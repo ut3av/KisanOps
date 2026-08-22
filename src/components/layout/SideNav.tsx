@@ -325,14 +325,20 @@ export const SideNav: React.FC<SideNavProps> = ({
                 </span>
               </div>
               <div className="font-extrabold text-slate-800 truncate">
-                {currentRole === 'FARMER' ? state.farm.farmName : (state.chcs[0]?.name || 'Sehore Agri Centre (CHC #01)')}
+                {currentRole === 'FARMER'
+                  ? (state.farm.farmName || 'No Farmland Configured')
+                  : (state.chcs[0]?.name || 'No Operating Hub Registered')}
               </div>
               <div className="text-[11px] text-slate-500 font-mono flex items-center gap-1 truncate">
                 <MapPin className="w-3 h-3 text-agri-600 shrink-0" />
                 <span>
                   {currentRole === 'FARMER'
-                    ? `${state.farm.sizeAcres} Acres • ${state.farm.crop?.cropName || 'Wheat'}`
-                    : `${state.machines.length} Units • Sehore MP`}
+                    ? (state.farm.sizeAcres > 0
+                        ? `${state.farm.sizeAcres} Acres • ${state.farm.crop?.cropName || 'Crop'} • ${state.farm.district || 'Unset'}`
+                        : 'Tap Farm to Add Acres')
+                    : (state.chcs[0]
+                        ? `${state.machines.length} Units • ${state.chcs[0].district}`
+                        : `${state.machines.length} Units • Setup Hub`)}
                 </span>
               </div>
             </div>
