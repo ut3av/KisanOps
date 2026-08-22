@@ -240,9 +240,9 @@
     "semantic_hash": "a3150907ddf2842367caa98e12a33298"
   },
   "src/store/kisanOpsStore.ts": {
-    "mtime": 1787438215.1119277,
-    "seen": 1787438363.7122054,
-    "ast_hash": "22f3ce6a77cdebad53e66476c660f4a1",
+    "mtime": 1787439978.471766,
+    "seen": 1787440081.352021,
+    "ast_hash": "6a6e5deb526da479f5d35ddd389e0b51",
     "semantic_hash": ""
   },
   "src/types/index.ts": {
@@ -930,9 +930,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmIntelligence.tsx": {
-    "mtime": 1787437986.6211262,
-    "seen": 1787438363.7121155,
-    "ast_hash": "7006d56450e18ae57822e826d17df176",
+    "mtime": 1787440052.3075716,
+    "seen": 1787440081.3519294,
+    "ast_hash": "f2f72107f113314cec7b1de60ddd1067",
     "semantic_hash": ""
   },
   "src/lib/__tests__/decisionIntelligence.test.ts": {
@@ -960,9 +960,9 @@
     "semantic_hash": ""
   },
   "src/lib/intelligence/providers/agronomicDataProvider.ts": {
-    "mtime": 1787437844.1429348,
-    "seen": 1787438363.7121763,
-    "ast_hash": "1a27f66a751704abc30249f69c44db44",
+    "mtime": 1787439968.056371,
+    "seen": 1787440081.35199,
+    "ast_hash": "0c7ba07092412886922b3050197f3a5a",
     "semantic_hash": ""
   },
   "src/lib/intelligence/providers/externalEventProvider.ts": {

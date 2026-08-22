@@ -4,13 +4,26 @@
   "graph": {},
   "nodes": [
     {
+      "id": "src_components_common_intelligencereportmodal_intelligencereportmodalprops",
+      "label": "IntelligenceReportModalProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "intelligencereportmodalprops",
+      "source_file": "src/components/common/IntelligenceReportModal.tsx",
+      "source_location": "L21"
+    },
+    {
       "id": "src_components_layout_sidenav_navitem",
       "label": "NavItem",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
+      "community": 1,
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "navitem",
       "source_file": "src/components/layout/SideNav.tsx",
@@ -22,12 +35,298 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
+      "community": 1,
+      "community_name": "types/index.ts",
       "file_type": "code",
       "norm_label": "sidenavprops",
       "source_file": "src/components/layout/SideNav.tsx",
       "source_location": "L32"
+    },
+    {
+      "id": "src_lib_intelligence_fleetintelligenceengine_dailyfleetbrief",
+      "label": "DailyFleetBrief",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "dailyfleetbrief",
+      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_lib_intelligence_fleetintelligenceengine_weeklyfleetreport",
+      "label": "WeeklyFleetReport",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "weeklyfleetreport",
+      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_store_kisanopsstore_appstate",
+      "label": "AppState",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "appstate",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L83"
+    },
+    {
+      "id": "src_types_index_bookingstatus",
+      "label": "BookingStatus",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "bookingstatus",
+      "source_file": "src/types/index.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_types_index_dailyfarmbrief",
+      "label": "DailyFarmBrief",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "dailyfarmbrief",
+      "source_file": "src/types/index.ts",
+      "source_location": "L522"
+    },
+    {
+      "id": "src_types_index_demandfactorbreakdown",
+      "label": "DemandFactorBreakdown",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "demandfactorbreakdown",
+      "source_file": "src/types/index.ts",
+      "source_location": "L254"
+    },
+    {
+      "id": "src_types_index_farmcrop",
+      "label": "FarmCrop",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "farmcrop",
+      "source_file": "src/types/index.ts",
+      "source_location": "L97"
+    },
+    {
+      "id": "src_types_index_farmeconomicsexpensebreakdown",
+      "label": "FarmEconomicsExpenseBreakdown",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "farmeconomicsexpensebreakdown",
+      "source_file": "src/types/index.ts",
+      "source_location": "L440"
+    },
+    {
+      "id": "src_types_index_farmprofitmodel",
+      "label": "FarmProfitModel",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "farmprofitmodel",
+      "source_file": "src/types/index.ts",
+      "source_location": "L461"
+    },
+    {
+      "id": "src_types_index_farmprofitrange",
+      "label": "FarmProfitRange",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "farmprofitrange",
+      "source_file": "src/types/index.ts",
+      "source_location": "L453"
+    },
+    {
+      "id": "src_types_index_farmriskassessment",
+      "label": "FarmRiskAssessment",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "farmriskassessment",
+      "source_file": "src/types/index.ts",
+      "source_location": "L494"
+    },
+    {
+      "id": "src_types_index_fleetdemandforecastitem",
+      "label": "FleetDemandForecastItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "fleetdemandforecastitem",
+      "source_file": "src/types/index.ts",
+      "source_location": "L560"
+    },
+    {
+      "id": "src_types_index_inappnotification",
+      "label": "InAppNotification",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "inappnotification",
+      "source_file": "src/types/index.ts",
+      "source_location": "L417"
+    },
+    {
+      "id": "src_types_index_machineprofitabilityrecord",
+      "label": "MachineProfitabilityRecord",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "machineprofitabilityrecord",
+      "source_file": "src/types/index.ts",
+      "source_location": "L578"
+    },
+    {
+      "id": "src_types_index_machinerecommendationscore",
+      "label": "MachineRecommendationScore",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "machinerecommendationscore",
+      "source_file": "src/types/index.ts",
+      "source_location": "L316"
+    },
+    {
+      "id": "src_types_index_maintenancealerttype",
+      "label": "MaintenanceAlertType",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "maintenancealerttype",
+      "source_file": "src/types/index.ts",
+      "source_location": "L228"
+    },
+    {
+      "id": "src_types_index_paymentmethod",
+      "label": "PaymentMethod",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "paymentmethod",
+      "source_file": "src/types/index.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_types_index_paymentstatus",
+      "label": "PaymentStatus",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "paymentstatus",
+      "source_file": "src/types/index.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_types_index_recommendationoutcome",
+      "label": "RecommendationOutcome",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "recommendationoutcome",
+      "source_file": "src/types/index.ts",
+      "source_location": "L598"
+    },
+    {
+      "id": "src_types_index_risklevel",
+      "label": "RiskLevel",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "risklevel",
+      "source_file": "src/types/index.ts",
+      "source_location": "L479"
+    },
+    {
+      "id": "src_types_index_userrole",
+      "label": "UserRole",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "userrole",
+      "source_file": "src/types/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_types_index_weeklyfarmreport",
+      "label": "WeeklyFarmReport",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "weeklyfarmreport",
+      "source_file": "src/types/index.ts",
+      "source_location": "L543"
     },
     {
       "id": "server_razorpaybackend_createorderparams",
@@ -420,6 +719,19 @@
       "source_location": "L4"
     },
     {
+      "id": "src_types_index_invoice",
+      "label": "Invoice",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "billingEngine.ts",
+      "file_type": "code",
+      "norm_label": "invoice",
+      "source_file": "src/types/index.ts",
+      "source_location": "L390"
+    },
+    {
       "id": "src_types_index_invoiceitem",
       "label": "InvoiceItem",
       "_callable": true,
@@ -459,19 +771,6 @@
       "source_location": "L5"
     },
     {
-      "id": "src_components_common_machinethumbnail_machinethumbnailprops",
-      "label": "MachineThumbnailProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "machinethumbnailprops",
-      "source_file": "src/components/common/MachineThumbnail.tsx",
-      "source_location": "L12"
-    },
-    {
       "id": "src_features_farmer_bookingmodal_bookingmodalprops",
       "label": "BookingModalProps",
       "_callable": true,
@@ -496,32 +795,6 @@
       "norm_label": "machinedetailsmodalprops",
       "source_file": "src/features/farmer/MachineDetailsModal.tsx",
       "source_location": "L22"
-    },
-    {
-      "id": "src_lib_creditengine_creditinputfactors",
-      "label": "CreditInputFactors",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "creditinputfactors",
-      "source_file": "src/lib/creditEngine.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_lib_demandengine_rawdemandinput",
-      "label": "RawDemandInput",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "rawdemandinput",
-      "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L3"
     },
     {
       "id": "src_lib_pricingengine_pricingfactors",
@@ -615,32 +888,6 @@
       "source_location": "L95"
     },
     {
-      "id": "src_types_index_machinecategory",
-      "label": "MachineCategory",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "machinecategory",
-      "source_file": "src/types/index.ts",
-      "source_location": "L47"
-    },
-    {
-      "id": "src_types_index_machinerecommendationscore",
-      "label": "MachineRecommendationScore",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "machinerecommendationscore",
-      "source_file": "src/types/index.ts",
-      "source_location": "L316"
-    },
-    {
       "id": "src_types_index_nearbyavailabilityparams",
       "label": "NearbyAvailabilityParams",
       "_callable": true,
@@ -652,19 +899,6 @@
       "norm_label": "nearbyavailabilityparams",
       "source_file": "src/types/index.ts",
       "source_location": "L169"
-    },
-    {
-      "id": "src_types_index_paymentmethod",
-      "label": "PaymentMethod",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "paymentmethod",
-      "source_file": "src/types/index.ts",
-      "source_location": "L30"
     },
     {
       "id": "src_types_index_pricequote",
@@ -771,6 +1005,19 @@
       "source_location": "L27"
     },
     {
+      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsectionprops",
+      "label": "RoiCalculatorSectionProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "LandingPage.tsx",
+      "file_type": "code",
+      "norm_label": "roicalculatorsectionprops",
+      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
+      "source_location": "L16"
+    },
+    {
       "id": "src_features_landing_components_statsimpactsection_statsimpactsectionprops",
       "label": "StatsImpactSectionProps",
       "_callable": true,
@@ -862,43 +1109,17 @@
       "source_location": "L5"
     },
     {
-      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsectionprops",
-      "label": "RoiCalculatorSectionProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "LandingNavbar.tsx",
-      "file_type": "code",
-      "norm_label": "roicalculatorsectionprops",
-      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
-      "source_location": "L16"
-    },
-    {
       "id": "src_components_common_statcard_statcardprops",
       "label": "StatCardProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "statcardprops",
       "source_file": "src/components/common/StatCard.tsx",
       "source_location": "L5"
-    },
-    {
-      "id": "src_components_common_telematicsgauge_telematicsgaugeclusterprops",
-      "label": "TelematicsGaugeClusterProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "telematicsgaugeclusterprops",
-      "source_file": "src/components/common/TelematicsGauge.tsx",
-      "source_location": "L6"
     },
     {
       "id": "src_features_admin_admindashboard_subsidyrecord",
@@ -907,7 +1128,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "subsidyrecord",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -920,24 +1141,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "telematicsalert",
       "source_file": "src/features/admin/AdminDashboard.tsx",
       "source_location": "L110"
-    },
-    {
-      "id": "src_types_index_bookingstatus",
-      "label": "BookingStatus",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "bookingstatus",
-      "source_file": "src/types/index.ts",
-      "source_location": "L12"
     },
     {
       "id": "src_components_common_kisanloader_kisanloaderprops",
@@ -966,13 +1174,26 @@
       "source_location": "L21"
     },
     {
+      "id": "src_lib_intelligence_outcometracker_modelaccuracyevaluation",
+      "label": "ModelAccuracyEvaluation",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "modelaccuracyevaluation",
+      "source_file": "src/lib/intelligence/outcomeTracker.ts",
+      "source_location": "L3"
+    },
+    {
       "id": "src_lib_intelligence_providers_agronomicdataprovider_agronomicdataprovider",
       "label": "AgronomicDataProvider",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "agronomicdataprovider",
       "source_file": "src/lib/intelligence/providers/agronomicDataProvider.ts",
@@ -985,7 +1206,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "icaragronomicdataprovider",
       "source_file": "src/lib/intelligence/providers/agronomicDataProvider.ts",
@@ -998,7 +1219,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "externaleventprovider",
       "source_file": "src/lib/intelligence/providers/externalEventProvider.ts",
@@ -1011,7 +1232,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "verifiedagriculturaleventprovider",
       "source_file": "src/lib/intelligence/providers/externalEventProvider.ts",
@@ -1024,7 +1245,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "agmarknetmandimarketdataprovider",
       "source_file": "src/lib/intelligence/providers/marketDataProvider.ts",
@@ -1037,7 +1258,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "marketdataprovider",
       "source_file": "src/lib/intelligence/providers/marketDataProvider.ts",
@@ -1050,7 +1271,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "satelliteprovider",
       "source_file": "src/lib/intelligence/providers/satelliteProvider.ts",
@@ -1063,7 +1284,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "sentinel2satelliteprovider",
       "source_file": "src/lib/intelligence/providers/satelliteProvider.ts",
@@ -1076,7 +1297,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "commoditypricepoint",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -1089,7 +1310,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "cropagronomicprofile",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -1102,7 +1323,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "dataprovidermetadata",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -1115,7 +1336,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "dataqualitystatus",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -1128,7 +1349,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "eventdirection",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -1141,7 +1362,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "eventimpactlevel",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -1154,11 +1375,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "externaleventsproviderresult",
       "source_file": "src/lib/intelligence/providers/types.ts",
       "source_location": "L89"
+    },
+    {
+      "id": "src_lib_intelligence_providers_types_externalriskevent",
+      "label": "ExternalRiskEvent",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "externalriskevent",
+      "source_file": "src/lib/intelligence/providers/types.ts",
+      "source_location": "L72"
     },
     {
       "id": "src_lib_intelligence_providers_types_marketdataproviderresult",
@@ -1167,7 +1401,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "marketdataproviderresult",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -1180,7 +1414,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "satellitevegetationdata",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -1193,7 +1427,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "weatherobservationdata",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -1206,7 +1440,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "openmeteoagroweatherprovider",
       "source_file": "src/lib/intelligence/providers/weatherProvider.ts",
@@ -1219,24 +1453,50 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "weatherprovider",
       "source_file": "src/lib/intelligence/providers/weatherProvider.ts",
       "source_location": "L4"
     },
     {
-      "id": "src_components_common_intelligencereportmodal_intelligencereportmodalprops",
-      "label": "IntelligenceReportModalProps",
+      "id": "src_types_index_explainableriskitem",
+      "label": "ExplainableRiskItem",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
-      "norm_label": "intelligencereportmodalprops",
-      "source_file": "src/components/common/IntelligenceReportModal.tsx",
-      "source_location": "L21"
+      "norm_label": "explainableriskitem",
+      "source_file": "src/types/index.ts",
+      "source_location": "L481"
+    },
+    {
+      "id": "src_types_index_scenariosimulationinput",
+      "label": "ScenarioSimulationInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "scenariosimulationinput",
+      "source_file": "src/types/index.ts",
+      "source_location": "L501"
+    },
+    {
+      "id": "src_types_index_scenariosimulationresult",
+      "label": "ScenarioSimulationResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "scenariosimulationresult",
+      "source_file": "src/types/index.ts",
+      "source_location": "L508"
     },
     {
       "id": "src_components_common_leafletfleetmap_leafletfleetmapprops",
@@ -1249,176 +1509,7 @@
       "file_type": "code",
       "norm_label": "leafletfleetmapprops",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L147"
-    },
-    {
-      "id": "src_lib_intelligence_fleetintelligenceengine_dailyfleetbrief",
-      "label": "DailyFleetBrief",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "dailyfleetbrief",
-      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_lib_intelligence_fleetintelligenceengine_weeklyfleetreport",
-      "label": "WeeklyFleetReport",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "weeklyfleetreport",
-      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_lib_intelligence_outcometracker_modelaccuracyevaluation",
-      "label": "ModelAccuracyEvaluation",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "modelaccuracyevaluation",
-      "source_file": "src/lib/intelligence/outcomeTracker.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_lib_intelligence_providers_types_externalriskevent",
-      "label": "ExternalRiskEvent",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "externalriskevent",
-      "source_file": "src/lib/intelligence/providers/types.ts",
-      "source_location": "L72"
-    },
-    {
-      "id": "src_lib_iotingestionengine_hardwaretelemetrypayload",
-      "label": "HardwareTelemetryPayload",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "hardwaretelemetrypayload",
-      "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_lib_iotingestionengine_ingestionresult",
-      "label": "IngestionResult",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "ingestionresult",
-      "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L53"
-    },
-    {
-      "id": "src_lib_iotingestionengine_manuallocationpayload",
-      "label": "ManualLocationPayload",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "manuallocationpayload",
-      "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L45"
-    },
-    {
-      "id": "src_lib_iotingestionengine_operatorgpspayload",
-      "label": "OperatorGpsPayload",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "operatorgpspayload",
-      "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L34"
-    },
-    {
-      "id": "src_lib_maintenanceengine_maintenancehealthbreakdown",
-      "label": "MaintenanceHealthBreakdown",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "maintenancehealthbreakdown",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_lib_supabaseclient_authresponse",
-      "label": "AuthResponse",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "authresponse",
-      "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_lib_telematicsengine_routewaypoint",
-      "label": "RouteWaypoint",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "routewaypoint",
-      "source_file": "src/lib/telematicsEngine.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_lib_telematicsengine_simulationstate",
-      "label": "SimulationState",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "simulationstate",
-      "source_file": "src/lib/telematicsEngine.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_store_kisanopsstore_appstate",
-      "label": "AppState",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "appstate",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L83"
+      "source_location": "L176"
     },
     {
       "id": "src_types_index_agricreditprofile",
@@ -1447,32 +1538,6 @@
       "source_location": "L67"
     },
     {
-      "id": "src_types_index_dailyfarmbrief",
-      "label": "DailyFarmBrief",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "dailyfarmbrief",
-      "source_file": "src/types/index.ts",
-      "source_location": "L522"
-    },
-    {
-      "id": "src_types_index_demandfactorbreakdown",
-      "label": "DemandFactorBreakdown",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "demandfactorbreakdown",
-      "source_file": "src/types/index.ts",
-      "source_location": "L254"
-    },
-    {
       "id": "src_types_index_demandforecast",
       "label": "DemandForecast",
       "_callable": true,
@@ -1484,19 +1549,6 @@
       "norm_label": "demandforecast",
       "source_file": "src/types/index.ts",
       "source_location": "L262"
-    },
-    {
-      "id": "src_types_index_explainableriskitem",
-      "label": "ExplainableRiskItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "explainableriskitem",
-      "source_file": "src/types/index.ts",
-      "source_location": "L481"
     },
     {
       "id": "src_types_index_farm",
@@ -1512,123 +1564,6 @@
       "source_location": "L106"
     },
     {
-      "id": "src_types_index_farmcrop",
-      "label": "FarmCrop",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmcrop",
-      "source_file": "src/types/index.ts",
-      "source_location": "L97"
-    },
-    {
-      "id": "src_types_index_farmeconomicsexpensebreakdown",
-      "label": "FarmEconomicsExpenseBreakdown",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmeconomicsexpensebreakdown",
-      "source_file": "src/types/index.ts",
-      "source_location": "L440"
-    },
-    {
-      "id": "src_types_index_farmprofitmodel",
-      "label": "FarmProfitModel",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmprofitmodel",
-      "source_file": "src/types/index.ts",
-      "source_location": "L461"
-    },
-    {
-      "id": "src_types_index_farmprofitrange",
-      "label": "FarmProfitRange",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmprofitrange",
-      "source_file": "src/types/index.ts",
-      "source_location": "L453"
-    },
-    {
-      "id": "src_types_index_farmriskassessment",
-      "label": "FarmRiskAssessment",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmriskassessment",
-      "source_file": "src/types/index.ts",
-      "source_location": "L494"
-    },
-    {
-      "id": "src_types_index_fleetdemandforecastitem",
-      "label": "FleetDemandForecastItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "fleetdemandforecastitem",
-      "source_file": "src/types/index.ts",
-      "source_location": "L560"
-    },
-    {
-      "id": "src_types_index_inappnotification",
-      "label": "InAppNotification",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "inappnotification",
-      "source_file": "src/types/index.ts",
-      "source_location": "L417"
-    },
-    {
-      "id": "src_types_index_invoice",
-      "label": "Invoice",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "invoice",
-      "source_file": "src/types/index.ts",
-      "source_location": "L390"
-    },
-    {
-      "id": "src_types_index_locationsourcetype",
-      "label": "LocationSourceType",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "locationsourcetype",
-      "source_file": "src/types/index.ts",
-      "source_location": "L86"
-    },
-    {
       "id": "src_types_index_machineallocationrecommendation",
       "label": "MachineAllocationRecommendation",
       "_callable": true,
@@ -1642,17 +1577,95 @@
       "source_location": "L278"
     },
     {
-      "id": "src_types_index_machineprofitabilityrecord",
-      "label": "MachineProfitabilityRecord",
+      "id": "src_components_common_telematicsgauge_telematicsgaugeclusterprops",
+      "label": "TelematicsGaugeClusterProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
       "file_type": "code",
-      "norm_label": "machineprofitabilityrecord",
+      "norm_label": "telematicsgaugeclusterprops",
+      "source_file": "src/components/common/TelematicsGauge.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_lib_iotingestionengine_hardwaretelemetrypayload",
+      "label": "HardwareTelemetryPayload",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "hardwaretelemetrypayload",
+      "source_file": "src/lib/iotIngestionEngine.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_lib_iotingestionengine_ingestionresult",
+      "label": "IngestionResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "ingestionresult",
+      "source_file": "src/lib/iotIngestionEngine.ts",
+      "source_location": "L53"
+    },
+    {
+      "id": "src_lib_iotingestionengine_manuallocationpayload",
+      "label": "ManualLocationPayload",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "manuallocationpayload",
+      "source_file": "src/lib/iotIngestionEngine.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "src_lib_iotingestionengine_operatorgpspayload",
+      "label": "OperatorGpsPayload",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "operatorgpspayload",
+      "source_file": "src/lib/iotIngestionEngine.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "src_lib_maintenanceengine_maintenancehealthbreakdown",
+      "label": "MaintenanceHealthBreakdown",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "maintenancehealthbreakdown",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_types_index_locationsourcetype",
+      "label": "LocationSourceType",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "locationsourcetype",
       "source_file": "src/types/index.ts",
-      "source_location": "L578"
+      "source_location": "L86"
     },
     {
       "id": "src_types_index_machinestatus",
@@ -1660,38 +1673,12 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
       "file_type": "code",
       "norm_label": "machinestatus",
       "source_file": "src/types/index.ts",
       "source_location": "L3"
-    },
-    {
-      "id": "src_types_index_maintenancealerttype",
-      "label": "MaintenanceAlertType",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "maintenancealerttype",
-      "source_file": "src/types/index.ts",
-      "source_location": "L228"
-    },
-    {
-      "id": "src_types_index_paymentstatus",
-      "label": "PaymentStatus",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "paymentstatus",
-      "source_file": "src/types/index.ts",
-      "source_location": "L21"
     },
     {
       "id": "src_types_index_predictivemaintenancealert",
@@ -1699,64 +1686,12 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
       "file_type": "code",
       "norm_label": "predictivemaintenancealert",
       "source_file": "src/types/index.ts",
       "source_location": "L237"
-    },
-    {
-      "id": "src_types_index_recommendationoutcome",
-      "label": "RecommendationOutcome",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "recommendationoutcome",
-      "source_file": "src/types/index.ts",
-      "source_location": "L598"
-    },
-    {
-      "id": "src_types_index_risklevel",
-      "label": "RiskLevel",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "risklevel",
-      "source_file": "src/types/index.ts",
-      "source_location": "L479"
-    },
-    {
-      "id": "src_types_index_scenariosimulationinput",
-      "label": "ScenarioSimulationInput",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "scenariosimulationinput",
-      "source_file": "src/types/index.ts",
-      "source_location": "L501"
-    },
-    {
-      "id": "src_types_index_scenariosimulationresult",
-      "label": "ScenarioSimulationResult",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "scenariosimulationresult",
-      "source_file": "src/types/index.ts",
-      "source_location": "L508"
     },
     {
       "id": "src_types_index_telemetrymodetype",
@@ -1764,8 +1699,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
       "file_type": "code",
       "norm_label": "telemetrymodetype",
       "source_file": "src/types/index.ts",
@@ -1777,12 +1712,77 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
       "file_type": "code",
       "norm_label": "telemetrypoint",
       "source_file": "src/types/index.ts",
       "source_location": "L207"
+    },
+    {
+      "id": "src_components_common_machinethumbnail_machinethumbnailprops",
+      "label": "MachineThumbnailProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "machinethumbnailprops",
+      "source_file": "src/components/common/MachineThumbnail.tsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_lib_creditengine_creditinputfactors",
+      "label": "CreditInputFactors",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "creditinputfactors",
+      "source_file": "src/lib/creditEngine.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_lib_demandengine_rawdemandinput",
+      "label": "RawDemandInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "rawdemandinput",
+      "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_types_index_machinecategory",
+      "label": "MachineCategory",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "machinecategory",
+      "source_file": "src/types/index.ts",
+      "source_location": "L47"
+    },
+    {
+      "id": "src_lib_supabaseclient_authresponse",
+      "label": "AuthResponse",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "authresponse",
+      "source_file": "src/lib/supabaseClient.ts",
+      "source_location": "L21"
     },
     {
       "id": "src_types_index_userprofile",
@@ -1790,38 +1790,38 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
       "file_type": "code",
       "norm_label": "userprofile",
       "source_file": "src/types/index.ts",
       "source_location": "L56"
     },
     {
-      "id": "src_types_index_userrole",
-      "label": "UserRole",
+      "id": "src_lib_telematicsengine_routewaypoint",
+      "label": "RouteWaypoint",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 48,
+      "community_name": "telematicsEngine.ts",
       "file_type": "code",
-      "norm_label": "userrole",
-      "source_file": "src/types/index.ts",
-      "source_location": "L1"
+      "norm_label": "routewaypoint",
+      "source_file": "src/lib/telematicsEngine.ts",
+      "source_location": "L3"
     },
     {
-      "id": "src_types_index_weeklyfarmreport",
-      "label": "WeeklyFarmReport",
+      "id": "src_lib_telematicsengine_simulationstate",
+      "label": "SimulationState",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 48,
+      "community_name": "telematicsEngine.ts",
       "file_type": "code",
-      "norm_label": "weeklyfarmreport",
-      "source_file": "src/types/index.ts",
-      "source_location": "L543"
+      "norm_label": "simulationstate",
+      "source_file": "src/lib/telematicsEngine.ts",
+      "source_location": "L19"
     },
     {
       "id": "src_components_common_dopplerradarplayer_dopplerradarplayerprops",
@@ -1847,7 +1847,7 @@
       "file_type": "code",
       "norm_label": "mapbaselayertype",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L95"
+      "source_location": "L124"
     },
     {
       "id": "src_components_common_leafletfleetmap_maplayerconfig",
@@ -1860,7 +1860,7 @@
       "file_type": "code",
       "norm_label": "maplayerconfig",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L102"
+      "source_location": "L131"
     },
     {
       "id": "src_components_common_weatherradarcard_weatherradarcardprops",
@@ -1979,6 +1979,18 @@
       "source_location": "L3"
     },
     {
+      "id": "src_components_common_leafletfleetmap_leafletfleetmap",
+      "label": "LeafletFleetMap()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "leafletfleetmap()",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L190"
+    },
+    {
       "id": "src_components_common_minimalcursor_minimalcursor",
       "label": "MinimalCursor()",
       "_callable": true,
@@ -1991,88 +2003,16 @@
       "source_location": "L3"
     },
     {
-      "id": "src_components_common_scrolltotop_scrolltotop",
-      "label": "ScrollToTop()",
+      "id": "src_components_common_telematicsgauge_telematicsgaugecluster",
+      "label": "TelematicsGaugeCluster()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "scrolltotop()",
-      "source_file": "src/components/common/ScrollToTop.tsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_components_layout_adminlayout_adminlayout",
-      "label": "AdminLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "adminlayout()",
-      "source_file": "src/components/layout/AdminLayout.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_layout_farmerlayout_farmerlayout",
-      "label": "FarmerLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "farmerlayout()",
-      "source_file": "src/components/layout/FarmerLayout.tsx",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_components_layout_navbar_navbar",
-      "label": "Navbar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "navbar()",
-      "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L24"
-    },
-    {
-      "id": "src_components_layout_sidenav_sidenav",
-      "label": "SideNav()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "sidenav()",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L49"
-    },
-    {
-      "id": "src_components_voice_floatingvoicebutton_floatingvoicebutton",
-      "label": "FloatingVoiceButton()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "floatingvoicebutton()",
-      "source_file": "src/components/voice/FloatingVoiceButton.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_voice_voiceassistantmodal_voiceassistantmodal",
-      "label": "VoiceAssistantModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "voiceassistantmodal()",
-      "source_file": "src/components/voice/VoiceAssistantModal.tsx",
-      "source_location": "L50"
+      "norm_label": "telematicsgaugecluster()",
+      "source_file": "src/components/common/TelematicsGauge.tsx",
+      "source_location": "L11"
     },
     {
       "id": "api_create_order_handler",
@@ -2591,6 +2531,18 @@
       "source_location": "L24"
     },
     {
+      "id": "src_features_farmer_farmerhome_farmerhome",
+      "label": "FarmerHome()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "availabilityService.ts",
+      "file_type": "code",
+      "norm_label": "farmerhome()",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L40"
+    },
+    {
       "id": "src_features_farmer_farmermarketplace_farmermarketplace",
       "label": "FarmerMarketplace()",
       "_callable": true,
@@ -2600,7 +2552,7 @@
       "file_type": "code",
       "norm_label": "farmermarketplace()",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "src_features_farmer_machinedetailsmodal_machinedetailsmodal",
@@ -2697,54 +2649,6 @@
       "norm_label": "validatemachineavailabilitybeforebooking()",
       "source_file": "src/lib/availabilityService.ts",
       "source_location": "L341"
-    },
-    {
-      "id": "src_lib_creditengine_evaluateagricredit",
-      "label": "evaluateAgriCredit()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "evaluateagricredit()",
-      "source_file": "src/lib/creditEngine.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_lib_demandengine_calculatedemandforecast",
-      "label": "calculateDemandForecast()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "calculatedemandforecast()",
-      "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_lib_demandengine_calculatehaversinedistance",
-      "label": "calculateHaversineDistance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "calculatehaversinedistance()",
-      "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L123"
-    },
-    {
-      "id": "src_lib_demandengine_generateallocationrecommendations",
-      "label": "generateAllocationRecommendations()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "generateallocationrecommendations()",
-      "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L64"
     },
     {
       "id": "src_lib_pricingengine_calculatedynamicprice",
@@ -2853,6 +2757,18 @@
       "norm_label": "platformecosystemsection()",
       "source_file": "src/features/landing/components/PlatformEcosystemSection.tsx",
       "source_location": "L18"
+    },
+    {
+      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsection",
+      "label": "RoiCalculatorSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "LandingPage.tsx",
+      "file_type": "code",
+      "norm_label": "roicalculatorsection()",
+      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
+      "source_location": "L20"
     },
     {
       "id": "src_features_landing_components_statsimpactsection_statsimpactsection",
@@ -2999,18 +2915,6 @@
       "source_location": "L32"
     },
     {
-      "id": "src_features_landing_components_roicalculatorsection_roicalculatorsection",
-      "label": "RoiCalculatorSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "LandingNavbar.tsx",
-      "file_type": "code",
-      "norm_label": "roicalculatorsection()",
-      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
-      "source_location": "L20"
-    },
-    {
       "id": "src_features_landing_pages_contactpage_contactpage",
       "label": "ContactPage()",
       "_callable": true,
@@ -3083,40 +2987,16 @@
       "source_location": "L60"
     },
     {
-      "id": "src_components_common_leafletfleetmap_leafletfleetmap",
-      "label": "LeafletFleetMap()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "leafletfleetmap()",
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L161"
-    },
-    {
       "id": "src_components_common_statcard_statcard",
       "label": "StatCard()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "statcard()",
       "source_file": "src/components/common/StatCard.tsx",
       "source_location": "L17"
-    },
-    {
-      "id": "src_components_common_telematicsgauge_telematicsgaugecluster",
-      "label": "TelematicsGaugeCluster()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "telematicsgaugecluster()",
-      "source_file": "src/components/common/TelematicsGauge.tsx",
-      "source_location": "L11"
     },
     {
       "id": "src_features_admin_admindashboard_admindashboard",
@@ -3124,11 +3004,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "admindashboard()",
       "source_file": "src/features/admin/AdminDashboard.tsx",
       "source_location": "L154"
+    },
+    {
+      "id": "src_features_chc_revenueanalytics_revenueanalytics",
+      "label": "RevenueAnalytics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "AdminDashboard.tsx",
+      "file_type": "code",
+      "norm_label": "revenueanalytics()",
+      "source_file": "src/features/chc/RevenueAnalytics.tsx",
+      "source_location": "L87"
     },
     {
       "id": "src_components_common_kisanloader_kisanloader",
@@ -3155,12 +3047,192 @@
       "source_location": "L26"
     },
     {
+      "id": "src_components_common_intelligencereportmodal_intelligencereportmodal",
+      "label": "IntelligenceReportModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "intelligencereportmodal()",
+      "source_file": "src/components/common/IntelligenceReportModal.tsx",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_features_chc_demandintelligence_demandintelligence",
+      "label": "DemandIntelligence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "demandintelligence()",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L31"
+    },
+    {
+      "id": "src_features_farmer_farmintelligence_farmintelligence",
+      "label": "FarmIntelligence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "farmintelligence()",
+      "source_file": "src/features/farmer/FarmIntelligence.tsx",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_lib_intelligence_farmintelligenceengine_assessfarmrisks",
+      "label": "assessFarmRisks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "assessfarmrisks()",
+      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
+      "source_location": "L139"
+    },
+    {
+      "id": "src_lib_intelligence_farmintelligenceengine_calculatefarmprofitmodel",
+      "label": "calculateFarmProfitModel()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "calculatefarmprofitmodel()",
+      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "src_lib_intelligence_farmintelligenceengine_generatedailyfarmbrief",
+      "label": "generateDailyFarmBrief()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "generatedailyfarmbrief()",
+      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
+      "source_location": "L457"
+    },
+    {
+      "id": "src_lib_intelligence_farmintelligenceengine_generateweeklyfarmreport",
+      "label": "generateWeeklyFarmReport()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "generateweeklyfarmreport()",
+      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
+      "source_location": "L516"
+    },
+    {
+      "id": "src_lib_intelligence_farmintelligenceengine_simulatefarmscenarios",
+      "label": "simulateFarmScenarios()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "simulatefarmscenarios()",
+      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
+      "source_location": "L346"
+    },
+    {
+      "id": "src_lib_intelligence_fleetintelligenceengine_calculatemachineprofitability",
+      "label": "calculateMachineProfitability()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "calculatemachineprofitability()",
+      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
+      "source_location": "L135"
+    },
+    {
+      "id": "src_lib_intelligence_fleetintelligenceengine_forecastfleetdemand",
+      "label": "forecastFleetDemand()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "forecastfleetdemand()",
+      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_lib_intelligence_fleetintelligenceengine_generatedailyfleetbrief",
+      "label": "generateDailyFleetBrief()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "generatedailyfleetbrief()",
+      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
+      "source_location": "L198"
+    },
+    {
+      "id": "src_lib_intelligence_fleetintelligenceengine_generateweeklyfleetreport",
+      "label": "generateWeeklyFleetReport()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "generateweeklyfleetreport()",
+      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
+      "source_location": "L238"
+    },
+    {
+      "id": "src_lib_intelligence_outcometracker_evaluateintelligenceaccuracy",
+      "label": "evaluateIntelligenceAccuracy()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "evaluateintelligenceaccuracy()",
+      "source_file": "src/lib/intelligence/outcomeTracker.ts",
+      "source_location": "L99"
+    },
+    {
+      "id": "src_lib_intelligence_outcometracker_getloggedoutcomes",
+      "label": "getLoggedOutcomes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "getloggedoutcomes()",
+      "source_file": "src/lib/intelligence/outcomeTracker.ts",
+      "source_location": "L66"
+    },
+    {
+      "id": "src_lib_intelligence_outcometracker_logrecommendationoutcome",
+      "label": "logRecommendationOutcome()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "logrecommendationoutcome()",
+      "source_file": "src/lib/intelligence/outcomeTracker.ts",
+      "source_location": "L85"
+    },
+    {
       "id": "src_lib_intelligence_providers_agronomicdataprovider_agronomicdataprovider_estimatecropstage",
       "label": ".estimateCropStage()",
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".estimatecropstage()",
       "source_file": "src/lib/intelligence/providers/agronomicDataProvider.ts",
@@ -3172,7 +3244,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getcropprofile()",
       "source_file": "src/lib/intelligence/providers/agronomicDataProvider.ts",
@@ -3184,7 +3256,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".estimatecropstage()",
       "source_file": "src/lib/intelligence/providers/agronomicDataProvider.ts",
@@ -3196,7 +3268,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getcropprofile()",
       "source_file": "src/lib/intelligence/providers/agronomicDataProvider.ts",
@@ -3208,7 +3280,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getrelevantevents()",
       "source_file": "src/lib/intelligence/providers/externalEventProvider.ts",
@@ -3220,7 +3292,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getrelevantevents()",
       "source_file": "src/lib/intelligence/providers/externalEventProvider.ts",
@@ -3232,7 +3304,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getmarketdata()",
       "source_file": "src/lib/intelligence/providers/marketDataProvider.ts",
@@ -3244,7 +3316,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getmarketdata()",
       "source_file": "src/lib/intelligence/providers/marketDataProvider.ts",
@@ -3256,7 +3328,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getvegetationindices()",
       "source_file": "src/lib/intelligence/providers/satelliteProvider.ts",
@@ -3268,7 +3340,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getvegetationindices()",
       "source_file": "src/lib/intelligence/providers/satelliteProvider.ts",
@@ -3280,7 +3352,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getfallbackobservation()",
       "source_file": "src/lib/intelligence/providers/weatherProvider.ts",
@@ -3292,7 +3364,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getobservation()",
       "source_file": "src/lib/intelligence/providers/weatherProvider.ts",
@@ -3304,47 +3376,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": ".getobservation()",
       "source_file": "src/lib/intelligence/providers/weatherProvider.ts",
       "source_location": "L5"
     },
     {
-      "id": "src_components_common_intelligencereportmodal_intelligencereportmodal",
-      "label": "IntelligenceReportModal()",
+      "id": "src_store_kisanopsstore_getpopulateddemostate",
+      "label": "getPopulatedDemoState()",
       "_callable": true,
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
-      "norm_label": "intelligencereportmodal()",
-      "source_file": "src/components/common/IntelligenceReportModal.tsx",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_features_farmer_farmintelligence_farmintelligence",
-      "label": "FarmIntelligence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmintelligence()",
-      "source_file": "src/features/farmer/FarmIntelligence.tsx",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_lib_dbservice_fetchinitialplatformdata",
-      "label": "fetchInitialPlatformData()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "fetchinitialplatformdata()",
-      "source_file": "src/lib/dbService.ts",
-      "source_location": "L31"
+      "norm_label": "getpopulateddemostate()",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L219"
     },
     {
       "id": "src_lib_dbservice_insertlivetelemetrytodatabase",
@@ -3395,258 +3443,6 @@
       "source_location": "L297"
     },
     {
-      "id": "src_lib_intelligence_farmintelligenceengine_assessfarmrisks",
-      "label": "assessFarmRisks()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "assessfarmrisks()",
-      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
-      "source_location": "L139"
-    },
-    {
-      "id": "src_lib_intelligence_farmintelligenceengine_calculatefarmprofitmodel",
-      "label": "calculateFarmProfitModel()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "calculatefarmprofitmodel()",
-      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "src_lib_intelligence_farmintelligenceengine_generatedailyfarmbrief",
-      "label": "generateDailyFarmBrief()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "generatedailyfarmbrief()",
-      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
-      "source_location": "L457"
-    },
-    {
-      "id": "src_lib_intelligence_farmintelligenceengine_generateweeklyfarmreport",
-      "label": "generateWeeklyFarmReport()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "generateweeklyfarmreport()",
-      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
-      "source_location": "L516"
-    },
-    {
-      "id": "src_lib_intelligence_farmintelligenceengine_simulatefarmscenarios",
-      "label": "simulateFarmScenarios()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "simulatefarmscenarios()",
-      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
-      "source_location": "L346"
-    },
-    {
-      "id": "src_lib_intelligence_fleetintelligenceengine_calculatemachineprofitability",
-      "label": "calculateMachineProfitability()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "calculatemachineprofitability()",
-      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
-      "source_location": "L135"
-    },
-    {
-      "id": "src_lib_intelligence_fleetintelligenceengine_forecastfleetdemand",
-      "label": "forecastFleetDemand()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "forecastfleetdemand()",
-      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
-      "source_location": "L49"
-    },
-    {
-      "id": "src_lib_intelligence_fleetintelligenceengine_generatedailyfleetbrief",
-      "label": "generateDailyFleetBrief()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "generatedailyfleetbrief()",
-      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
-      "source_location": "L198"
-    },
-    {
-      "id": "src_lib_intelligence_fleetintelligenceengine_generateweeklyfleetreport",
-      "label": "generateWeeklyFleetReport()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "generateweeklyfleetreport()",
-      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
-      "source_location": "L238"
-    },
-    {
-      "id": "src_lib_intelligence_outcometracker_evaluateintelligenceaccuracy",
-      "label": "evaluateIntelligenceAccuracy()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "evaluateintelligenceaccuracy()",
-      "source_file": "src/lib/intelligence/outcomeTracker.ts",
-      "source_location": "L99"
-    },
-    {
-      "id": "src_lib_intelligence_outcometracker_getloggedoutcomes",
-      "label": "getLoggedOutcomes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "getloggedoutcomes()",
-      "source_file": "src/lib/intelligence/outcomeTracker.ts",
-      "source_location": "L66"
-    },
-    {
-      "id": "src_lib_intelligence_outcometracker_logrecommendationoutcome",
-      "label": "logRecommendationOutcome()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "logrecommendationoutcome()",
-      "source_file": "src/lib/intelligence/outcomeTracker.ts",
-      "source_location": "L85"
-    },
-    {
-      "id": "src_lib_iotingestionengine_getsamplehardwareconfig",
-      "label": "getSampleHardwareConfig()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "getsamplehardwareconfig()",
-      "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L302"
-    },
-    {
-      "id": "src_lib_iotingestionengine_ingesthardwaretelemetry",
-      "label": "ingestHardwareTelemetry()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "ingesthardwaretelemetry()",
-      "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L66"
-    },
-    {
-      "id": "src_lib_iotingestionengine_ingestmanualgpslocation",
-      "label": "ingestManualGpsLocation()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "ingestmanualgpslocation()",
-      "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L264"
-    },
-    {
-      "id": "src_lib_iotingestionengine_ingestoperatorgpstelemetry",
-      "label": "ingestOperatorGpsTelemetry()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "ingestoperatorgpstelemetry()",
-      "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L225"
-    },
-    {
-      "id": "src_lib_maintenanceengine_evaluatepredictivealerts",
-      "label": "evaluatePredictiveAlerts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "evaluatepredictivealerts()",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L74"
-    },
-    {
-      "id": "src_lib_supabaseclient_sendphoneotp",
-      "label": "sendPhoneOtp()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "sendphoneotp()",
-      "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L32"
-    },
-    {
-      "id": "src_lib_supabaseclient_signinwithemail",
-      "label": "signInWithEmail()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "signinwithemail()",
-      "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L115"
-    },
-    {
-      "id": "src_lib_supabaseclient_signupwithemail",
-      "label": "signUpWithEmail()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "signupwithemail()",
-      "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L170"
-    },
-    {
-      "id": "src_lib_supabaseclient_verifyphoneotp",
-      "label": "verifyPhoneOtp()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "verifyphoneotp()",
-      "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L58"
-    },
-    {
       "id": "src_lib_telematicsengine_advancesimulationstep",
       "label": "advanceSimulationStep()",
       "_callable": true,
@@ -3657,78 +3453,6 @@
       "norm_label": "advancesimulationstep()",
       "source_file": "src/lib/telematicsEngine.ts",
       "source_location": "L44"
-    },
-    {
-      "id": "src_lib_telematicsengine_getinitialsimulationstate",
-      "label": "getInitialSimulationState()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "getinitialsimulationstate()",
-      "source_file": "src/lib/telematicsEngine.ts",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_store_kisanopsstore_createcleanunconfiguredfarm",
-      "label": "createCleanUnconfiguredFarm()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "createcleanunconfiguredfarm()",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L115"
-    },
-    {
-      "id": "src_store_kisanopsstore_createfreshagricreditforuser",
-      "label": "createFreshAgriCreditForUser()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "createfreshagricreditforuser()",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L137"
-    },
-    {
-      "id": "src_store_kisanopsstore_getcleanproductionstate",
-      "label": "getCleanProductionState()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "getcleanproductionstate()",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L178"
-    },
-    {
-      "id": "src_store_kisanopsstore_getinitialstate",
-      "label": "getInitialState()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "getinitialstate()",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L320"
-    },
-    {
-      "id": "src_store_kisanopsstore_getpopulateddemostate",
-      "label": "getPopulatedDemoState()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "getpopulateddemostate()",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L219"
     },
     {
       "id": "src_store_kisanopsstore_notify",
@@ -3755,6 +3479,246 @@
       "source_location": "L356"
     },
     {
+      "id": "src_lib_dbservice_fetchinitialplatformdata",
+      "label": "fetchInitialPlatformData()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "fetchinitialplatformdata()",
+      "source_file": "src/lib/dbService.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "src_lib_iotingestionengine_getsamplehardwareconfig",
+      "label": "getSampleHardwareConfig()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "getsamplehardwareconfig()",
+      "source_file": "src/lib/iotIngestionEngine.ts",
+      "source_location": "L302"
+    },
+    {
+      "id": "src_lib_iotingestionengine_ingesthardwaretelemetry",
+      "label": "ingestHardwareTelemetry()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "ingesthardwaretelemetry()",
+      "source_file": "src/lib/iotIngestionEngine.ts",
+      "source_location": "L66"
+    },
+    {
+      "id": "src_lib_iotingestionengine_ingestmanualgpslocation",
+      "label": "ingestManualGpsLocation()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "ingestmanualgpslocation()",
+      "source_file": "src/lib/iotIngestionEngine.ts",
+      "source_location": "L264"
+    },
+    {
+      "id": "src_lib_iotingestionengine_ingestoperatorgpstelemetry",
+      "label": "ingestOperatorGpsTelemetry()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "ingestoperatorgpstelemetry()",
+      "source_file": "src/lib/iotIngestionEngine.ts",
+      "source_location": "L225"
+    },
+    {
+      "id": "src_lib_maintenanceengine_evaluatepredictivealerts",
+      "label": "evaluatePredictiveAlerts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "evaluatepredictivealerts()",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L74"
+    },
+    {
+      "id": "src_lib_creditengine_evaluateagricredit",
+      "label": "evaluateAgriCredit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "evaluateagricredit()",
+      "source_file": "src/lib/creditEngine.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_lib_demandengine_calculatedemandforecast",
+      "label": "calculateDemandForecast()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "calculatedemandforecast()",
+      "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_lib_demandengine_calculatehaversinedistance",
+      "label": "calculateHaversineDistance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "calculatehaversinedistance()",
+      "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L123"
+    },
+    {
+      "id": "src_lib_demandengine_generateallocationrecommendations",
+      "label": "generateAllocationRecommendations()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "generateallocationrecommendations()",
+      "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L64"
+    },
+    {
+      "id": "src_features_auth_loginpage_loginpage",
+      "label": "LoginPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "loginpage()",
+      "source_file": "src/features/auth/LoginPage.tsx",
+      "source_location": "L26"
+    },
+    {
+      "id": "src_lib_supabaseclient_sendphoneotp",
+      "label": "sendPhoneOtp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "sendphoneotp()",
+      "source_file": "src/lib/supabaseClient.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_lib_supabaseclient_signinwithemail",
+      "label": "signInWithEmail()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "signinwithemail()",
+      "source_file": "src/lib/supabaseClient.ts",
+      "source_location": "L115"
+    },
+    {
+      "id": "src_lib_supabaseclient_signupwithemail",
+      "label": "signUpWithEmail()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "signupwithemail()",
+      "source_file": "src/lib/supabaseClient.ts",
+      "source_location": "L170"
+    },
+    {
+      "id": "src_lib_supabaseclient_verifyphoneotp",
+      "label": "verifyPhoneOtp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "verifyphoneotp()",
+      "source_file": "src/lib/supabaseClient.ts",
+      "source_location": "L58"
+    },
+    {
+      "id": "src_lib_telematicsengine_getinitialsimulationstate",
+      "label": "getInitialSimulationState()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "telematicsEngine.ts",
+      "file_type": "code",
+      "norm_label": "getinitialsimulationstate()",
+      "source_file": "src/lib/telematicsEngine.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_store_kisanopsstore_createcleanunconfiguredfarm",
+      "label": "createCleanUnconfiguredFarm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "telematicsEngine.ts",
+      "file_type": "code",
+      "norm_label": "createcleanunconfiguredfarm()",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L115"
+    },
+    {
+      "id": "src_store_kisanopsstore_createfreshagricreditforuser",
+      "label": "createFreshAgriCreditForUser()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "telematicsEngine.ts",
+      "file_type": "code",
+      "norm_label": "createfreshagricreditforuser()",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L137"
+    },
+    {
+      "id": "src_store_kisanopsstore_getcleanproductionstate",
+      "label": "getCleanProductionState()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "telematicsEngine.ts",
+      "file_type": "code",
+      "norm_label": "getcleanproductionstate()",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L178"
+    },
+    {
+      "id": "src_store_kisanopsstore_getinitialstate",
+      "label": "getInitialState()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "telematicsEngine.ts",
+      "file_type": "code",
+      "norm_label": "getinitialstate()",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L320"
+    },
+    {
       "id": "src_components_common_dopplerradarplayer_dopplerradarplayer",
       "label": "DopplerRadarPlayer()",
       "_callable": true,
@@ -3776,7 +3740,7 @@
       "file_type": "code",
       "norm_label": "createprofessionalicon()",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L52"
+      "source_location": "L77"
     },
     {
       "id": "src_components_common_weatherradarcard_weatherradarcard",
@@ -3875,6 +3839,30 @@
       "source_location": "L62"
     },
     {
+      "id": "src_components_common_scrolltotop_scrolltotop",
+      "label": "ScrollToTop()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "scrolltotop()",
+      "source_file": "src/components/common/ScrollToTop.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_components_layout_adminlayout_adminlayout",
+      "label": "AdminLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "adminlayout()",
+      "source_file": "src/components/layout/AdminLayout.tsx",
+      "source_location": "L6"
+    },
+    {
       "id": "src_components_layout_chclayout_chclayout",
       "label": "CHCLayout()",
       "_callable": true,
@@ -3885,6 +3873,30 @@
       "norm_label": "chclayout()",
       "source_file": "src/components/layout/CHCLayout.tsx",
       "source_location": "L5"
+    },
+    {
+      "id": "src_components_layout_farmerlayout_farmerlayout",
+      "label": "FarmerLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "farmerlayout()",
+      "source_file": "src/components/layout/FarmerLayout.tsx",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_components_layout_navbar_navbar",
+      "label": "Navbar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "navbar()",
+      "source_file": "src/components/layout/Navbar.tsx",
+      "source_location": "L24"
     },
     {
       "id": "src_components_layout_operatorlayout_operatorlayout",
@@ -3899,6 +3911,42 @@
       "source_location": "L18"
     },
     {
+      "id": "src_components_layout_sidenav_sidenav",
+      "label": "SideNav()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "sidenav()",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_components_voice_floatingvoicebutton_floatingvoicebutton",
+      "label": "FloatingVoiceButton()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "floatingvoicebutton()",
+      "source_file": "src/components/voice/FloatingVoiceButton.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_voice_voiceassistantmodal_voiceassistantmodal",
+      "label": "VoiceAssistantModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "voiceassistantmodal()",
+      "source_file": "src/components/voice/VoiceAssistantModal.tsx",
+      "source_location": "L50"
+    },
+    {
       "id": "src_features_auth_landingroleselect_landingroleselect",
       "label": "LandingRoleSelect()",
       "_callable": true,
@@ -3909,18 +3957,6 @@
       "norm_label": "landingroleselect()",
       "source_file": "src/features/auth/LandingRoleSelect.tsx",
       "source_location": "L20"
-    },
-    {
-      "id": "src_features_auth_loginpage_loginpage",
-      "label": "LoginPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "useKisanOpsStore",
-      "file_type": "code",
-      "norm_label": "loginpage()",
-      "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L26"
     },
     {
       "id": "src_features_chc_bookingsmanager_bookingsmanager",
@@ -3959,18 +3995,6 @@
       "source_location": "L11"
     },
     {
-      "id": "src_features_chc_demandintelligence_demandintelligence",
-      "label": "DemandIntelligence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "useKisanOpsStore",
-      "file_type": "code",
-      "norm_label": "demandintelligence()",
-      "source_file": "src/features/chc/DemandIntelligence.tsx",
-      "source_location": "L29"
-    },
-    {
       "id": "src_features_chc_fleetmanagement_fleetmanagement",
       "label": "FleetManagement()",
       "_callable": true,
@@ -4007,18 +4031,6 @@
       "source_location": "L23"
     },
     {
-      "id": "src_features_chc_revenueanalytics_revenueanalytics",
-      "label": "RevenueAnalytics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "useKisanOpsStore",
-      "file_type": "code",
-      "norm_label": "revenueanalytics()",
-      "source_file": "src/features/chc/RevenueAnalytics.tsx",
-      "source_location": "L87"
-    },
-    {
       "id": "src_features_common_notfoundpage_notfoundpage",
       "label": "NotFoundPage()",
       "_callable": true,
@@ -4043,18 +4055,6 @@
       "source_location": "L18"
     },
     {
-      "id": "src_features_farmer_farmerhome_farmerhome",
-      "label": "FarmerHome()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "useKisanOpsStore",
-      "file_type": "code",
-      "norm_label": "farmerhome()",
-      "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L40"
-    },
-    {
       "id": "src_features_farmer_farmerrentals_farmerrentals",
       "label": "FarmerRentals()",
       "_callable": true,
@@ -4076,7 +4076,7 @@
       "file_type": "code",
       "norm_label": "farmprofile()",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L23"
+      "source_location": "L28"
     },
     {
       "id": "src_features_operator_operatordashboard_operatordashboard",
@@ -4149,80 +4149,80 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_common_scrolltotop",
-      "label": "ScrollToTop.tsx",
+      "id": "src_components_common_telematicsgauge",
+      "label": "TelematicsGauge.tsx",
       "_origin": "ast",
       "community": 0,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "scrolltotop.tsx",
-      "source_file": "src/components/common/ScrollToTop.tsx",
+      "norm_label": "telematicsgauge.tsx",
+      "source_file": "src/components/common/TelematicsGauge.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_layout_adminlayout",
-      "label": "AdminLayout.tsx",
+      "id": "src_features_chc_chcoverview",
+      "label": "CHCOverview.tsx",
       "_origin": "ast",
       "community": 0,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "adminlayout.tsx",
-      "source_file": "src/components/layout/AdminLayout.tsx",
+      "norm_label": "chcoverview.tsx",
+      "source_file": "src/features/chc/CHCOverview.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_layout_chclayout",
-      "label": "CHCLayout.tsx",
+      "id": "src_features_chc_livetelematics",
+      "label": "LiveTelematics.tsx",
       "_origin": "ast",
       "community": 0,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "chclayout.tsx",
-      "source_file": "src/components/layout/CHCLayout.tsx",
+      "norm_label": "livetelematics.tsx",
+      "source_file": "src/features/chc/LiveTelematics.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_layout_farmerlayout",
-      "label": "FarmerLayout.tsx",
+      "id": "src_features_farmer_farmerrentals",
+      "label": "FarmerRentals.tsx",
       "_origin": "ast",
       "community": 0,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "farmerlayout.tsx",
-      "source_file": "src/components/layout/FarmerLayout.tsx",
+      "norm_label": "farmerrentals.tsx",
+      "source_file": "src/features/farmer/FarmerRentals.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_layout_navbar",
-      "label": "Navbar.tsx",
+      "id": "src_features_farmer_farmprofile",
+      "label": "FarmProfile.tsx",
       "_origin": "ast",
       "community": 0,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "navbar.tsx",
-      "source_file": "src/components/layout/Navbar.tsx",
+      "norm_label": "farmprofile.tsx",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_layout_sidenav",
-      "label": "SideNav.tsx",
+      "id": "src_features_operator_operatordashboard",
+      "label": "OperatorDashboard.tsx",
       "_origin": "ast",
       "community": 0,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "sidenav.tsx",
-      "source_file": "src/components/layout/SideNav.tsx",
+      "norm_label": "operatordashboard.tsx",
+      "source_file": "src/features/operator/OperatorDashboard.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_voice_floatingvoicebutton",
-      "label": "FloatingVoiceButton.tsx",
+      "id": "src_hooks_usepagetitle",
+      "label": "usePageTitle.ts",
       "_origin": "ast",
       "community": 0,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "floatingvoicebutton.tsx",
-      "source_file": "src/components/voice/FloatingVoiceButton.tsx",
+      "norm_label": "usepagetitle.ts",
+      "source_file": "src/hooks/usePageTitle.ts",
       "source_location": "L1"
     },
     {
@@ -4235,6 +4235,50 @@
       "norm_label": "react",
       "source_file": ".oxlintrc.json",
       "source_location": "L3"
+    },
+    {
+      "id": "src_components_common_intelligencereportmodal",
+      "label": "IntelligenceReportModal.tsx",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "intelligencereportmodal.tsx",
+      "source_file": "src/components/common/IntelligenceReportModal.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_sidenav",
+      "label": "SideNav.tsx",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "sidenav.tsx",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_intelligence_fleetintelligenceengine",
+      "label": "fleetIntelligenceEngine.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "fleetintelligenceengine.ts",
+      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_types_index",
+      "label": "types/index.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "types/index.ts",
+      "file_type": "code",
+      "norm_label": "types/index.ts",
+      "source_file": "src/types/index.ts",
+      "source_location": "L1"
     },
     {
       "id": "supabase_schema",
@@ -6030,28 +6074,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_lib_creditengine",
-      "label": "creditEngine.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "creditengine.ts",
-      "source_file": "src/lib/creditEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_demandengine",
-      "label": "demandEngine.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "demandengine.ts",
-      "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_lib_pricingengine",
       "label": "pricingEngine.ts",
       "_origin": "ast",
@@ -6082,17 +6104,6 @@
       "file_type": "code",
       "norm_label": "recommendationengine.ts",
       "source_file": "src/lib/recommendationEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_tests_engines_test",
-      "label": "engines.test.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "availabilityService.ts",
-      "file_type": "code",
-      "norm_label": "engines.test.ts",
-      "source_file": "src/lib/__tests__/engines.test.ts",
       "source_location": "L1"
     },
     {
@@ -6566,6 +6577,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_features_landing_components_roicalculatorsection",
+      "label": "RoiCalculatorSection.tsx",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "LandingPage.tsx",
+      "file_type": "code",
+      "norm_label": "roicalculatorsection.tsx",
+      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_features_landing_components_statsimpactsection",
       "label": "StatsImpactSection.tsx",
       "_origin": "ast",
@@ -6687,17 +6709,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_features_landing_components_roicalculatorsection",
-      "label": "RoiCalculatorSection.tsx",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "LandingNavbar.tsx",
-      "file_type": "code",
-      "norm_label": "roicalculatorsection.tsx",
-      "source_file": "src/features/landing/components/RoiCalculatorSection.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_features_landing_pages_contactpage",
       "label": "ContactPage.tsx",
       "_origin": "ast",
@@ -6779,21 +6790,10 @@
       "label": "StatCard.tsx",
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "statcard.tsx",
       "source_file": "src/components/common/StatCard.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_common_telematicsgauge",
-      "label": "TelematicsGauge.tsx",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "telematicsgauge.tsx",
-      "source_file": "src/components/common/TelematicsGauge.tsx",
       "source_location": "L1"
     },
     {
@@ -6801,7 +6801,7 @@
       "label": "AdminDashboard.tsx",
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "admindashboard.tsx",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -6812,7 +6812,7 @@
       "label": "DISTRICTS",
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "districts",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -6823,7 +6823,7 @@
       "label": "SMAM_SUBSIDY_LEDGER",
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "smam_subsidy_ledger",
       "source_file": "src/features/admin/AdminDashboard.tsx",
@@ -6834,40 +6834,18 @@
       "label": "TELEMATICS_ALERTS",
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "telematics_alerts",
       "source_file": "src/features/admin/AdminDashboard.tsx",
       "source_location": "L121"
     },
     {
-      "id": "src_features_chc_chcoverview",
-      "label": "CHCOverview.tsx",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "chcoverview.tsx",
-      "source_file": "src/features/chc/CHCOverview.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_chc_livetelematics",
-      "label": "LiveTelematics.tsx",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "livetelematics.tsx",
-      "source_file": "src/features/chc/LiveTelematics.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_features_chc_revenueanalytics",
       "label": "RevenueAnalytics.tsx",
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "revenueanalytics.tsx",
       "source_file": "src/features/chc/RevenueAnalytics.tsx",
@@ -6878,7 +6856,7 @@
       "label": "CATEGORY_SHARE",
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "category_share",
       "source_file": "src/features/chc/RevenueAnalytics.tsx",
@@ -6889,7 +6867,7 @@
       "label": "PROFITABILITY_DATA",
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "profitability_data",
       "source_file": "src/features/chc/RevenueAnalytics.tsx",
@@ -6900,44 +6878,11 @@
       "label": "REVENUE_DATA",
       "_origin": "ast",
       "community": 39,
-      "community_name": "usePageTitle.ts",
+      "community_name": "AdminDashboard.tsx",
       "file_type": "code",
       "norm_label": "revenue_data",
       "source_file": "src/features/chc/RevenueAnalytics.tsx",
       "source_location": "L30"
-    },
-    {
-      "id": "src_features_farmer_farmerrentals",
-      "label": "FarmerRentals.tsx",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "farmerrentals.tsx",
-      "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_operator_operatordashboard",
-      "label": "OperatorDashboard.tsx",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "operatordashboard.tsx",
-      "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_hooks_usepagetitle",
-      "label": "usePageTitle.ts",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "usePageTitle.ts",
-      "file_type": "code",
-      "norm_label": "usepagetitle.ts",
-      "source_file": "src/hooks/usePageTitle.ts",
-      "source_location": "L1"
     },
     {
       "id": "supabase_migrations_20260821000000_initial_schema",
@@ -7446,11 +7391,66 @@
       "source_location": ""
     },
     {
+      "id": "src_features_chc_demandintelligence",
+      "label": "DemandIntelligence.tsx",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "demandintelligence.tsx",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_farmer_farmintelligence",
+      "label": "FarmIntelligence.tsx",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "farmintelligence.tsx",
+      "source_file": "src/features/farmer/FarmIntelligence.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_intelligence_farmintelligenceengine",
+      "label": "farmIntelligenceEngine.ts",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "farmintelligenceengine.ts",
+      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_intelligence_outcometracker",
+      "label": "outcomeTracker.ts",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "outcometracker.ts",
+      "source_file": "src/lib/intelligence/outcomeTracker.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_intelligence_outcometracker_default_seeded_outcomes",
+      "label": "DEFAULT_SEEDED_OUTCOMES",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
+      "file_type": "code",
+      "norm_label": "default_seeded_outcomes",
+      "source_file": "src/lib/intelligence/outcomeTracker.ts",
+      "source_location": "L18"
+    },
+    {
       "id": "src_lib_intelligence_providers_agronomicdataprovider",
       "label": "agronomicDataProvider.ts",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "agronomicdataprovider.ts",
       "source_file": "src/lib/intelligence/providers/agronomicDataProvider.ts",
@@ -7461,7 +7461,7 @@
       "label": "defaultAgronomicProvider",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "defaultagronomicprovider",
       "source_file": "src/lib/intelligence/providers/agronomicDataProvider.ts",
@@ -7472,7 +7472,7 @@
       "label": "externalEventProvider.ts",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "externaleventprovider.ts",
       "source_file": "src/lib/intelligence/providers/externalEventProvider.ts",
@@ -7483,7 +7483,7 @@
       "label": "defaultExternalEventProvider",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "defaultexternaleventprovider",
       "source_file": "src/lib/intelligence/providers/externalEventProvider.ts",
@@ -7494,7 +7494,7 @@
       "label": "marketDataProvider.ts",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "marketdataprovider.ts",
       "source_file": "src/lib/intelligence/providers/marketDataProvider.ts",
@@ -7505,7 +7505,7 @@
       "label": "defaultMarketDataProvider",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "defaultmarketdataprovider",
       "source_file": "src/lib/intelligence/providers/marketDataProvider.ts",
@@ -7516,7 +7516,7 @@
       "label": "satelliteProvider.ts",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "satelliteprovider.ts",
       "source_file": "src/lib/intelligence/providers/satelliteProvider.ts",
@@ -7527,7 +7527,7 @@
       "label": "defaultSatelliteProvider",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "defaultsatelliteprovider",
       "source_file": "src/lib/intelligence/providers/satelliteProvider.ts",
@@ -7538,7 +7538,7 @@
       "label": "types.ts",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "types.ts",
       "source_file": "src/lib/intelligence/providers/types.ts",
@@ -7549,7 +7549,7 @@
       "label": "weatherProvider.ts",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "weatherprovider.ts",
       "source_file": "src/lib/intelligence/providers/weatherProvider.ts",
@@ -7560,21 +7560,21 @@
       "label": "defaultWeatherProvider",
       "_origin": "ast",
       "community": 43,
-      "community_name": "types.ts",
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
       "norm_label": "defaultweatherprovider",
       "source_file": "src/lib/intelligence/providers/weatherProvider.ts",
       "source_location": "L134"
     },
     {
-      "id": "src_components_common_intelligencereportmodal",
-      "label": "IntelligenceReportModal.tsx",
+      "id": "src_lib_tests_decisionintelligence_test",
+      "label": "decisionIntelligence.test.ts",
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 43,
+      "community_name": "FarmIntelligence.tsx",
       "file_type": "code",
-      "norm_label": "intelligencereportmodal.tsx",
-      "source_file": "src/components/common/IntelligenceReportModal.tsx",
+      "norm_label": "decisionintelligence.test.ts",
+      "source_file": "src/lib/__tests__/decisionIntelligence.test.ts",
       "source_location": "L1"
     },
     {
@@ -7597,7 +7597,7 @@
       "file_type": "code",
       "norm_label": "seeded_agricredit_profile",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1126"
+      "source_location": "L1200"
     },
     {
       "id": "src_data_seeddata_seeded_allocation_recommendations",
@@ -7608,7 +7608,7 @@
       "file_type": "code",
       "norm_label": "seeded_allocation_recommendations",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1105"
+      "source_location": "L1179"
     },
     {
       "id": "src_data_seeddata_seeded_bookings",
@@ -7619,7 +7619,7 @@
       "file_type": "code",
       "norm_label": "seeded_bookings",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1172"
+      "source_location": "L1246"
     },
     {
       "id": "src_data_seeddata_seeded_chcs",
@@ -7641,7 +7641,7 @@
       "file_type": "code",
       "norm_label": "seeded_demand_forecasts",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1018"
+      "source_location": "L1092"
     },
     {
       "id": "src_data_seeddata_seeded_farm",
@@ -7674,7 +7674,7 @@
       "file_type": "code",
       "norm_label": "seeded_maintenance_alerts",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1205"
+      "source_location": "L1279"
     },
     {
       "id": "src_data_seeddata_seeded_notifications",
@@ -7685,7 +7685,7 @@
       "file_type": "code",
       "norm_label": "seeded_notifications",
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1236"
+      "source_location": "L1310"
     },
     {
       "id": "src_data_seeddata_seeded_profiles",
@@ -7699,28 +7699,6 @@
       "source_location": "L14"
     },
     {
-      "id": "src_features_auth_loginpage",
-      "label": "LoginPage.tsx",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "loginpage.tsx",
-      "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_farmer_farmintelligence",
-      "label": "FarmIntelligence.tsx",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmintelligence.tsx",
-      "source_file": "src/features/farmer/FarmIntelligence.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_lib_dbservice",
       "label": "dbService.ts",
       "_origin": "ast",
@@ -7729,160 +7707,6 @@
       "file_type": "code",
       "norm_label": "dbservice.ts",
       "source_file": "src/lib/dbService.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_intelligence_farmintelligenceengine",
-      "label": "farmIntelligenceEngine.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "farmintelligenceengine.ts",
-      "source_file": "src/lib/intelligence/farmIntelligenceEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_intelligence_fleetintelligenceengine",
-      "label": "fleetIntelligenceEngine.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "fleetintelligenceengine.ts",
-      "source_file": "src/lib/intelligence/fleetIntelligenceEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_intelligence_outcometracker",
-      "label": "outcomeTracker.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "outcometracker.ts",
-      "source_file": "src/lib/intelligence/outcomeTracker.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_intelligence_outcometracker_default_seeded_outcomes",
-      "label": "DEFAULT_SEEDED_OUTCOMES",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "default_seeded_outcomes",
-      "source_file": "src/lib/intelligence/outcomeTracker.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_lib_iotingestionengine",
-      "label": "iotIngestionEngine.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "iotingestionengine.ts",
-      "source_file": "src/lib/iotIngestionEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_maintenanceengine",
-      "label": "maintenanceEngine.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "maintenanceengine.ts",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_supabaseclient",
-      "label": "supabaseClient.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "supabaseclient.ts",
-      "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_supabaseclient_issupabaseconfigured",
-      "label": "isSupabaseConfigured",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "issupabaseconfigured",
-      "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_lib_supabaseclient_supabase",
-      "label": "supabase",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "supabase",
-      "source_file": "src/lib/supabaseClient.ts",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_lib_telematicsengine",
-      "label": "telematicsEngine.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "telematicsengine.ts",
-      "source_file": "src/lib/telematicsEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_telematicsengine_sehore_demo_route",
-      "label": "SEHORE_DEMO_ROUTE",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "sehore_demo_route",
-      "source_file": "src/lib/telematicsEngine.ts",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_lib_tests_decisionintelligence_test",
-      "label": "decisionIntelligence.test.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "decisionintelligence.test.ts",
-      "source_file": "src/lib/__tests__/decisionIntelligence.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_tests_fleettelematicscontrol_test",
-      "label": "fleetTelematicsControl.test.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "fleettelematicscontrol.test.ts",
-      "source_file": "src/lib/__tests__/fleetTelematicsControl.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_tests_iotanddb_test",
-      "label": "iotAndDb.test.ts",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "iotanddb.test.ts",
-      "source_file": "src/lib/__tests__/iotAndDb.test.ts",
       "source_location": "L1"
     },
     {
@@ -7919,15 +7743,147 @@
       "source_location": "L342"
     },
     {
-      "id": "src_types_index",
-      "label": "types/index.ts",
+      "id": "src_lib_iotingestionengine",
+      "label": "iotIngestionEngine.ts",
       "_origin": "ast",
-      "community": 44,
-      "community_name": "kisanOpsStore.ts",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
       "file_type": "code",
-      "norm_label": "types/index.ts",
-      "source_file": "src/types/index.ts",
+      "norm_label": "iotingestionengine.ts",
+      "source_file": "src/lib/iotIngestionEngine.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "src_lib_maintenanceengine",
+      "label": "maintenanceEngine.ts",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "maintenanceengine.ts",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_tests_fleettelematicscontrol_test",
+      "label": "fleetTelematicsControl.test.ts",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "fleettelematicscontrol.test.ts",
+      "source_file": "src/lib/__tests__/fleetTelematicsControl.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_tests_iotanddb_test",
+      "label": "iotAndDb.test.ts",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "iotIngestionEngine.ts",
+      "file_type": "code",
+      "norm_label": "iotanddb.test.ts",
+      "source_file": "src/lib/__tests__/iotAndDb.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_creditengine",
+      "label": "creditEngine.ts",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "creditengine.ts",
+      "source_file": "src/lib/creditEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_demandengine",
+      "label": "demandEngine.ts",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "demandengine.ts",
+      "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_tests_engines_test",
+      "label": "engines.test.ts",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "engines.test.ts",
+      "file_type": "code",
+      "norm_label": "engines.test.ts",
+      "source_file": "src/lib/__tests__/engines.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_auth_loginpage",
+      "label": "LoginPage.tsx",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "loginpage.tsx",
+      "source_file": "src/features/auth/LoginPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_supabaseclient",
+      "label": "supabaseClient.ts",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "supabaseclient.ts",
+      "source_file": "src/lib/supabaseClient.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_supabaseclient_issupabaseconfigured",
+      "label": "isSupabaseConfigured",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "issupabaseconfigured",
+      "source_file": "src/lib/supabaseClient.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_lib_supabaseclient_supabase",
+      "label": "supabase",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "LoginPage.tsx",
+      "file_type": "code",
+      "norm_label": "supabase",
+      "source_file": "src/lib/supabaseClient.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_lib_telematicsengine",
+      "label": "telematicsEngine.ts",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "telematicsEngine.ts",
+      "file_type": "code",
+      "norm_label": "telematicsengine.ts",
+      "source_file": "src/lib/telematicsEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_telematicsengine_sehore_demo_route",
+      "label": "SEHORE_DEMO_ROUTE",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "telematicsEngine.ts",
+      "file_type": "code",
+      "norm_label": "sehore_demo_route",
+      "source_file": "src/lib/telematicsEngine.ts",
+      "source_location": "L10"
     },
     {
       "id": "package_dependencies",
@@ -8301,18 +8257,51 @@
       "file_type": "code",
       "norm_label": "activemachineicon",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L91"
+      "source_location": "L116"
     },
     {
-      "id": "src_components_common_leafletfleetmap_availablemachineicon",
-      "label": "availableMachineIcon",
+      "id": "src_components_common_leafletfleetmap_availableharvestericon",
+      "label": "availableHarvesterIcon",
       "_origin": "ast",
       "community": 6,
       "community_name": "LeafletFleetMap.tsx",
       "file_type": "code",
-      "norm_label": "availablemachineicon",
+      "norm_label": "availableharvestericon",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L92"
+      "source_location": "L119"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_availableimplementicon",
+      "label": "availableImplementIcon",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "availableimplementicon",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L121"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_availabletractoricon",
+      "label": "availableTractorIcon",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "availabletractoricon",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L118"
+    },
+    {
+      "id": "src_components_common_leafletfleetmap_availabletruckicon",
+      "label": "availableTruckIcon",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "LeafletFleetMap.tsx",
+      "file_type": "code",
+      "norm_label": "availabletruckicon",
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L120"
     },
     {
       "id": "src_components_common_leafletfleetmap_chcicon",
@@ -8323,7 +8312,7 @@
       "file_type": "code",
       "norm_label": "chcicon",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L89"
+      "source_location": "L114"
     },
     {
       "id": "src_components_common_leafletfleetmap_farmicon",
@@ -8334,7 +8323,7 @@
       "file_type": "code",
       "norm_label": "farmicon",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L90"
+      "source_location": "L115"
     },
     {
       "id": "src_components_common_leafletfleetmap_maintenanceicon",
@@ -8345,7 +8334,7 @@
       "file_type": "code",
       "norm_label": "maintenanceicon",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L93"
+      "source_location": "L122"
     },
     {
       "id": "src_components_common_leafletfleetmap_map_layers",
@@ -8356,7 +8345,7 @@
       "file_type": "code",
       "norm_label": "map_layers",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L110"
+      "source_location": "L139"
     },
     {
       "id": "src_components_common_leafletfleetmap_svg_icons",
@@ -8920,6 +8909,61 @@
       "source_location": "L53"
     },
     {
+      "id": "src_components_common_scrolltotop",
+      "label": "ScrollToTop.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "scrolltotop.tsx",
+      "source_file": "src/components/common/ScrollToTop.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_adminlayout",
+      "label": "AdminLayout.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "adminlayout.tsx",
+      "source_file": "src/components/layout/AdminLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_chclayout",
+      "label": "CHCLayout.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "chclayout.tsx",
+      "source_file": "src/components/layout/CHCLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_farmerlayout",
+      "label": "FarmerLayout.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "farmerlayout.tsx",
+      "source_file": "src/components/layout/FarmerLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_navbar",
+      "label": "Navbar.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "navbar.tsx",
+      "source_file": "src/components/layout/Navbar.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_layout_operatorlayout",
       "label": "OperatorLayout.tsx",
       "_origin": "ast",
@@ -8928,6 +8972,17 @@
       "file_type": "code",
       "norm_label": "operatorlayout.tsx",
       "source_file": "src/components/layout/OperatorLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_voice_floatingvoicebutton",
+      "label": "FloatingVoiceButton.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "useKisanOpsStore",
+      "file_type": "code",
+      "norm_label": "floatingvoicebutton.tsx",
+      "source_file": "src/components/voice/FloatingVoiceButton.tsx",
       "source_location": "L1"
     },
     {
@@ -8961,17 +9016,6 @@
       "file_type": "code",
       "norm_label": "chcsettings.tsx",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_chc_demandintelligence",
-      "label": "DemandIntelligence.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "useKisanOpsStore",
-      "file_type": "code",
-      "norm_label": "demandintelligence.tsx",
-      "source_file": "src/features/chc/DemandIntelligence.tsx",
       "source_location": "L1"
     },
     {
@@ -9016,17 +9060,6 @@
       "file_type": "code",
       "norm_label": "farmercredit.tsx",
       "source_file": "src/features/farmer/FarmerCredit.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_farmer_farmprofile",
-      "label": "FarmProfile.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "useKisanOpsStore",
-      "file_type": "code",
-      "norm_label": "farmprofile.tsx",
-      "source_file": "src/features/farmer/FarmProfile.tsx",
       "source_location": "L1"
     },
     {
@@ -9444,7 +9477,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/DemandIntelligence.tsx",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -9456,7 +9489,55 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/DemandIntelligence.tsx",
-      "source_location": "L35",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence_demandintelligence",
+      "target": "src_lib_intelligence_fleetintelligenceengine_generatedailyfleetbrief",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence_demandintelligence",
+      "target": "src_lib_intelligence_fleetintelligenceengine_forecastfleetdemand",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence_demandintelligence",
+      "target": "src_lib_intelligence_fleetintelligenceengine_generateweeklyfleetreport",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence_demandintelligence",
+      "target": "src_lib_intelligence_fleetintelligenceengine_calculatemachineprofitability",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -9732,7 +9813,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -9744,7 +9825,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -9756,7 +9837,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L58",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -9768,7 +9849,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L59",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -9780,7 +9861,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L60",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -9792,7 +9873,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L62",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -9804,7 +9885,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L68",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -9912,7 +9993,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L24",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -9924,7 +10005,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L28",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -10896,7 +10977,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L148",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -10908,7 +10989,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L149",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -10920,7 +11001,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L150",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -11556,7 +11637,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L151",
+      "source_location": "L180",
       "weight": 1.0
     },
     {
@@ -13648,6 +13729,126 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_data_seeddata_seeded_allocation_recommendations",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_data_seeddata_seeded_bookings",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_data_seeddata_seeded_chcs",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_data_seeddata_seeded_demand_forecasts",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_data_seeddata_seeded_machines",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_data_seeddata_seeded_maintenance_alerts",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_lib_intelligence_fleetintelligenceengine_calculatemachineprofitability",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_lib_intelligence_fleetintelligenceengine_forecastfleetdemand",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_lib_intelligence_fleetintelligenceengine_generatedailyfleetbrief",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_lib_intelligence_fleetintelligenceengine_generateweeklyfleetreport",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_chc_fleetmanagement",
       "target": "src_store_kisanopsstore_usekisanopsstore",
       "relation": "imports",
@@ -14356,6 +14557,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_farmer_farmermarketplace",
+      "target": "src_data_seeddata_seeded_chcs",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerMarketplace.tsx",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmermarketplace",
+      "target": "src_data_seeddata_seeded_machines",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerMarketplace.tsx",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_farmer_farmerrentals",
       "target": "src_store_kisanopsstore_usekisanopsstore",
       "relation": "imports",
@@ -14616,7 +14841,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -14628,7 +14853,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L20",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -14640,7 +14865,31 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L21",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmprofile",
+      "target": "src_data_seeddata_seeded_chcs",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmprofile",
+      "target": "src_data_seeddata_seeded_machines",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -20248,6 +20497,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_data_seeddata",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_demandintelligence",
+      "target": "src_lib_intelligence_fleetintelligenceengine",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/chc/DemandIntelligence.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_chc_fleetmanagement",
       "target": "ref_react",
       "relation": "imports_from",
@@ -20920,6 +21193,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_farmer_farmermarketplace",
+      "target": "src_data_seeddata",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerMarketplace.tsx",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_farmer_farmerrentals",
       "target": "ref_react",
       "relation": "imports_from",
@@ -21168,7 +21453,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -21180,7 +21465,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L20",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -21192,7 +21477,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L21",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmprofile",
+      "target": "src_data_seeddata",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -25315,17 +25612,6 @@
     },
     {
       "source": "src_components_common_leafletfleetmap",
-      "target": "src_components_common_leafletfleetmap_maplayerconfig",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L102",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_common_leafletfleetmap",
       "target": "src_components_common_leafletfleetmap_svg_icons",
       "relation": "contains",
       "_origin": "ast",
@@ -25337,57 +25623,13 @@
     },
     {
       "source": "src_components_common_leafletfleetmap",
-      "target": "src_components_common_leafletfleetmap_map_layers",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L110",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_common_leafletfleetmap",
-      "target": "src_components_common_leafletfleetmap_leafletfleetmapprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L147",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_common_leafletfleetmap",
-      "target": "src_components_common_leafletfleetmap_leafletfleetmap",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L161",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_common_leafletfleetmap",
-      "target": "src_components_common_leafletfleetmap_createprofessionalicon",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L52",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_common_leafletfleetmap",
       "target": "src_components_common_leafletfleetmap_chcicon",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L89",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -25398,7 +25640,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L90",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -25409,18 +25651,51 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L91",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
       "source": "src_components_common_leafletfleetmap",
-      "target": "src_components_common_leafletfleetmap_availablemachineicon",
+      "target": "src_components_common_leafletfleetmap_availabletractoricon",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L92",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_leafletfleetmap",
+      "target": "src_components_common_leafletfleetmap_availableharvestericon",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_leafletfleetmap",
+      "target": "src_components_common_leafletfleetmap_availabletruckicon",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_leafletfleetmap",
+      "target": "src_components_common_leafletfleetmap_availableimplementicon",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -25431,7 +25706,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L93",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
@@ -25442,7 +25717,62 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/LeafletFleetMap.tsx",
-      "source_location": "L95",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_leafletfleetmap",
+      "target": "src_components_common_leafletfleetmap_maplayerconfig",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_leafletfleetmap",
+      "target": "src_components_common_leafletfleetmap_map_layers",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_leafletfleetmap",
+      "target": "src_components_common_leafletfleetmap_leafletfleetmapprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_leafletfleetmap",
+      "target": "src_components_common_leafletfleetmap_leafletfleetmap",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_leafletfleetmap",
+      "target": "src_components_common_leafletfleetmap_createprofessionalicon",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/LeafletFleetMap.tsx",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -25750,7 +26080,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1018",
+      "source_location": "L1092",
       "weight": 1.0
     },
     {
@@ -25761,7 +26091,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1105",
+      "source_location": "L1179",
       "weight": 1.0
     },
     {
@@ -25772,7 +26102,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1126",
+      "source_location": "L1200",
       "weight": 1.0
     },
     {
@@ -25783,7 +26113,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1172",
+      "source_location": "L1246",
       "weight": 1.0
     },
     {
@@ -25794,7 +26124,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1205",
+      "source_location": "L1279",
       "weight": 1.0
     },
     {
@@ -25805,7 +26135,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/seedData.ts",
-      "source_location": "L1236",
+      "source_location": "L1310",
       "weight": 1.0
     },
     {
@@ -25970,7 +26300,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/DemandIntelligence.tsx",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -26113,7 +26443,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -26146,7 +26476,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L23",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -30734,5 +31064,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7be59d715c194367e23f4c17b860fe5b6e991f97"
+  "built_at_commit": "768b61562b06fd67e5675adb516aab766420b58c"
 }

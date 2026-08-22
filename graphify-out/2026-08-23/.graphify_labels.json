@@ -1,6 +1,5 @@
 {
-  "0": "Navbar.tsx",
-  "1": "kisanOpsStore.ts",
+  "0": "react",
   "2": "Machine",
   "3": "devDependencies",
   "4": "20260821000000_initial_schema.sql",
@@ -37,15 +36,11 @@
   "35": "LandingPage.tsx",
   "36": "RazorpayCheckoutModal.tsx",
   "37": "LazyImage.tsx",
-  "38": "usePageTitle.ts",
-  "39": "react",
+  "38": "LandingNavbar.tsx",
+  "39": "usePageTitle.ts",
   "40": "20260823000000_realtime_geospatial_availability.sql",
   "41": "BookDemoModal.tsx",
   "42": "public.farms",
-  "43": "farmIntelligenceEngine.ts",
-  "44": "types/index.ts",
-  "45": "iotIngestionEngine.ts",
-  "46": "dbService.ts",
-  "47": "LoginPage.tsx",
-  "48": "AdminDashboard.tsx"
+  "43": "types.ts",
+  "44": "kisanOpsStore.ts"
 }
