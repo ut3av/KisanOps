@@ -32,6 +32,7 @@ import { FarmerMarketplace } from './features/farmer/FarmerMarketplace';
 import { FarmerRentals } from './features/farmer/FarmerRentals';
 import { FarmProfile } from './features/farmer/FarmProfile';
 import { FarmerCredit } from './features/farmer/FarmerCredit';
+import { FarmIntelligence } from './features/farmer/FarmIntelligence';
 
 // CHC Operations
 import { CHCOverview } from './features/chc/CHCOverview';
@@ -82,6 +83,7 @@ export const App: React.FC = () => {
           {/* Farmer Routes */}
           <Route path="/farmer" element={<FarmerLayout />}>
             <Route index element={<FarmerHome />} />
+            <Route path="intelligence" element={<FarmIntelligence />} />
             <Route path="marketplace" element={<FarmerMarketplace />} />
             <Route path="rentals" element={<FarmerRentals />} />
             <Route path="farm" element={<FarmProfile />} />

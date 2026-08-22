@@ -432,3 +432,184 @@ export interface PricingRuleConfig {
   platformFee: number;        // 100.0
   gstRate: number;            // 0.05 (5%)
 }
+
+// ==========================================
+// REAL-TIME AGRICULTURAL DECISION INTELLIGENCE
+// ==========================================
+
+export interface FarmEconomicsExpenseBreakdown {
+  seedsCost: number;
+  fertilizersCost: number;
+  cropProtectionCost: number;
+  irrigationCost: number;
+  laborCost: number;
+  machineryRentalCost: number;
+  fuelCost: number;
+  otherOperatingExpenses: number;
+  totalCost: number;
+  costPerAcre: number;
+}
+
+export interface FarmProfitRange {
+  conservative: number; // Pessimistic (lower price, higher losses)
+  expected: number;     // Baseline expected
+  favorable: number;    // Optimistic (higher price, peak yield)
+  confidencePercent: number;
+  keyUncertaintyDrivers: string[];
+}
+
+export interface FarmProfitModel {
+  farmId: string;
+  sizeAcres: number;
+  cropName: string;
+  expectedYieldQuintalPerAcre: number;
+  totalExpectedYieldQuintal: number;
+  expectedSellingPricePerQuintal: number;
+  expectedGrossRevenue: number;
+  expenses: FarmEconomicsExpenseBreakdown;
+  expectedNetProfit: number;
+  profitPerAcre: number;
+  expectedRoiPercent: number;
+  breakEvenYieldQuintalPerAcre: number;
+  breakEvenPricePerQuintal: number;
+  profitRange: FarmProfitRange;
+  lastCalculatedAt: string;
+}
+
+export type RiskLevel = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
+
+export interface ExplainableRiskItem {
+  category: 'WEATHER' | 'CROP' | 'MACHINERY' | 'MARKET' | 'OPERATIONAL_SOIL' | 'EXTERNAL_EVENT' | 'FINANCIAL';
+  riskLevel: RiskLevel;
+  scoreOutOf100: number;
+  what: string;
+  why: string;
+  when: string;
+  impact: string;
+  recommendedAction: string;
+  signalsUsed: string[];
+  confidence: number;
+}
+
+export interface FarmRiskAssessment {
+  overallRiskLevel: RiskLevel;
+  overallScoreOutOf100: number;
+  riskDrivers: ExplainableRiskItem[];
+  assessedAt: string;
+}
+
+export interface ScenarioSimulationInput {
+  rainfallDeltaPercent: number; // e.g. +20% or -30%
+  harvestDelayDays: number;     // e.g. +3 days
+  sellingPriceDeltaPercent: number; // e.g. -10%
+  machineryRateDeltaPercent: number; // e.g. +15%
+}
+
+export interface ScenarioSimulationResult {
+  scenarioName: string;
+  input: ScenarioSimulationInput;
+  projectedRevenue: number;
+  projectedExpenses: number;
+  projectedProfit: number;
+  profitDeltaFromExpected: number;
+  projectedYieldQuintal: number;
+  lodgingRiskScore: number; // 0 - 100
+  machineryAvailabilityRisk: RiskLevel;
+  recommendedMitigation: string;
+  keyTradeoffSummary: string;
+}
+
+export interface DailyFarmBrief {
+  id: string;
+  farmId: string;
+  date: string;
+  greetingGreeting: string; // e.g. "Good morning Ramesh"
+  headline: string; // "Today is an Optimal Harvesting Window"
+  headlineHindi: string;
+  topRecommendation: string;
+  topRecommendationHindi: string;
+  weatherSummary: string;
+  machinerySummary: string;
+  marketSummary: string;
+  riskSummary: string;
+  mostImportantAction: string;
+  confidencePercent: number;
+  audioVoiceScript: string;
+  audioVoiceScriptHindi: string;
+  dataSourcesCount: number;
+  generatedAt: string;
+}
+
+export interface WeeklyFarmReport {
+  id: string;
+  farmId: string;
+  weekRange: string;
+  executiveSummary: string;
+  cropLifecycleStatus: string;
+  weatherOutlook7d: string;
+  machineryAvailabilityStatus: string;
+  economicsSummary: FarmProfitModel;
+  riskBreakdown: FarmRiskAssessment;
+  scenarioAnalysis: ScenarioSimulationResult[];
+  actionPlan: { priority: 'IMMEDIATE' | 'THIS_WEEK' | 'PLANNED'; action: string; impact: string }[];
+  dataFreshnessPanel: { source: string; ageMinutes: number; quality: string }[];
+  disclaimer: string;
+  generatedAt: string;
+}
+
+export interface FleetDemandForecastItem {
+  district: string;
+  machineCategory: MachineCategory;
+  forecastWindow: '24_HOURS' | '3_DAYS' | '7_DAYS';
+  expectedDemandUnits: number;
+  availableCapacityUnits: number;
+  capacityGapUnits: number; // expectedDemand - availableCapacity (>0 is shortage)
+  shortageRiskLevel: RiskLevel;
+  weatherSurgeCorrelationFactor: number; // e.g. 1.35x due to pre-rain harvest acceleration
+  recommendedCrossChcAllocation?: {
+    sourceChcName: string;
+    unitsToMove: number;
+    estimatedRelocationCost: number;
+    estimatedRevenueGain: number;
+    netGain: number;
+  };
+}
+
+export interface MachineProfitabilityRecord {
+  machineId: string;
+  machineIdentifier: string;
+  machineModel: string;
+  category: MachineCategory;
+  chcName: string;
+  totalGrossRevenue: number;
+  fuelExpenses: number;
+  maintenanceExpenses: number;
+  transportRelocationExpenses: number;
+  idleCostOpportunity: number;
+  netContributionProfit: number;
+  productiveEngineHours: number;
+  idleHoursLast7d: number;
+  utilizationRatePercent: number;
+  profitabilityRank: number; // 1 = highest contributor
+  recommendation: 'KEEP_DEPLOYED' | 'REPOSITION' | 'SCHEDULE_MAINTENANCE' | 'OPTIMIZE_PRICING';
+  recommendationReason: string;
+}
+
+export interface RecommendationOutcome {
+  id: string;
+  recommendationId: string;
+  entityType: 'FARMER' | 'CHC';
+  entityId: string;
+  recommendationType: string;
+  recommendedAction: string;
+  recommendedAt: string;
+  adoptedByFarmer: boolean;
+  actualRainfallMm?: number;
+  actualHarvestYieldQuintal?: number;
+  actualSellingPricePerQuintal?: number;
+  actualMachineryCost?: number;
+  predictionAccuracyPercent: number;
+  verifiedAt?: string;
+  notes?: string;
+}
+

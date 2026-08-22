@@ -71,7 +71,6 @@ export const LiveTelematics: React.FC = () => {
   const [operatorLinkCopied, setOperatorLinkCopied] = useState<boolean>(false);
 
   // Mode 3: Hardware Payload State
-  const [customPayloadJson, setCustomPayloadJson] = useState<string>('');
   const hardwareConfig = getSampleHardwareConfig(targetMachine?.id || 'mach-jd-harv-07');
 
   const handleCopyCurl = () => {

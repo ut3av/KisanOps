@@ -8,7 +8,8 @@ import {
   CreditCard,
   User,
   ShieldCheck,
-  Sparkles
+  Sparkles,
+  Brain,
 } from 'lucide-react';
 import { Navbar } from './Navbar';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
@@ -21,6 +22,7 @@ export const FarmerLayout: React.FC = () => {
 
   const navItems = [
     { to: '/farmer', icon: Home, label: 'Home', end: true },
+    { to: '/farmer/intelligence', icon: Brain, label: 'Farm Intelligence' },
     { to: '/farmer/marketplace', icon: Search, label: 'Find Equipment' },
     { to: '/farmer/rentals', icon: CalendarCheck, label: 'My Rentals' },
     { to: '/farmer/farm', icon: Wheat, label: 'My Farm' },

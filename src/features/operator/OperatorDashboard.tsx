@@ -14,9 +14,6 @@ import {
   Radio,
   PlusCircle,
   Smartphone,
-  Navigation,
-  Compass,
-  Zap,
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { TelematicsGaugeCluster } from '../../components/common/TelematicsGauge';

@@ -44,7 +44,41 @@ import {
   OperatorGpsPayload,
   ManualLocationPayload,
 } from '../lib/iotIngestionEngine';
-import { TelemetryModeType } from '../types';
+import {
+  TelemetryModeType,
+  FarmProfitModel,
+  FarmRiskAssessment,
+  DailyFarmBrief,
+  WeeklyFarmReport,
+  FleetDemandForecastItem,
+  MachineProfitabilityRecord,
+  ScenarioSimulationInput,
+  ScenarioSimulationResult,
+  RecommendationOutcome,
+} from '../types';
+import {
+  calculateFarmProfitModel,
+  assessFarmRisks,
+  generateDailyFarmBrief,
+  generateWeeklyFarmReport,
+  simulateFarmScenarios,
+} from '../lib/intelligence/farmIntelligenceEngine';
+import {
+  forecastFleetDemand,
+  calculateMachineProfitability,
+  generateDailyFleetBrief,
+  generateWeeklyFleetReport,
+  DailyFleetBrief,
+  WeeklyFleetReport,
+} from '../lib/intelligence/fleetIntelligenceEngine';
+import {
+  getLoggedOutcomes,
+  logRecommendationOutcome,
+} from '../lib/intelligence/outcomeTracker';
+import { defaultWeatherProvider } from '../lib/intelligence/providers/weatherProvider';
+import { defaultMarketDataProvider } from '../lib/intelligence/providers/marketDataProvider';
+import { defaultExternalEventProvider } from '../lib/intelligence/providers/externalEventProvider';
+import { ExternalRiskEvent } from '../lib/intelligence/providers/types';
 
 export interface AppState {
   currentUser: UserProfile;
@@ -66,6 +100,14 @@ export interface AppState {
   isCloudSynced: boolean;
   isInitialLoading: boolean;
   isDemoLoaded: boolean;
+  farmProfitModel: FarmProfitModel | null;
+  farmRiskAssessment: FarmRiskAssessment | null;
+  dailyFarmBrief: DailyFarmBrief | null;
+  weeklyFarmReport: WeeklyFarmReport | null;
+  dailyFleetBrief: DailyFleetBrief | null;
+  weeklyFleetReport: WeeklyFleetReport | null;
+  externalRiskEvents: ExternalRiskEvent[];
+  recommendationOutcomes: RecommendationOutcome[];
 }
 
 const STORAGE_KEY = 'kisanops_app_state_v2';
@@ -163,10 +205,87 @@ export function getCleanProductionState(): AppState {
     isCloudSynced: false,
     isInitialLoading: false,
     isDemoLoaded: false,
+    farmProfitModel: null,
+    farmRiskAssessment: null,
+    dailyFarmBrief: null,
+    weeklyFarmReport: null,
+    dailyFleetBrief: null,
+    weeklyFleetReport: null,
+    externalRiskEvents: [],
+    recommendationOutcomes: [],
   };
 }
 
 export function getPopulatedDemoState(): AppState {
+  const farmProfit = calculateFarmProfitModel(SEEDED_FARM);
+  const weatherMock = {
+    metadata: {
+      source: 'Open-Meteo High-Resolution Agro API',
+      retrievedAt: new Date().toISOString(),
+      validFrom: new Date().toISOString(),
+      validUntil: new Date(Date.now() + 1000 * 60 * 60 * 6).toISOString(),
+      confidence: 0.94,
+      coverage: 'Sehore Agricultural Basin',
+      qualityStatus: 'HIGH' as const,
+      refreshIntervalMinutes: 15,
+    },
+    temperatureC: 28.5,
+    minTempC: 19.5,
+    maxTempC: 32.0,
+    relativeHumidityPercent: 58,
+    precipitationProbabilityPercent: 65,
+    precipitationMm: 14.5,
+    precipitationForecast72hMm: 16.5,
+    soilMoisture0to10cmPercent: 31,
+    windSpeedKmh: 14.2,
+    dewPointC: 19.2,
+    weatherCode: 61,
+    weatherDescription: 'Scattered Rain Approaching / Narrow Dry Window',
+    isRainImminent24h: true,
+    consecutiveDryHours: 24,
+    consecutiveWetHours: 0,
+  };
+
+  const marketMock = {
+    metadata: {
+      source: 'Agmarknet Mandi Feeds',
+      retrievedAt: new Date().toISOString(),
+      validFrom: new Date().toISOString(),
+      validUntil: new Date(Date.now() + 1000 * 60 * 60 * 2).toISOString(),
+      confidence: 0.96,
+      coverage: 'Sehore Mandi Cluster',
+      qualityStatus: 'HIGH' as const,
+      refreshIntervalMinutes: 120,
+    },
+    commodities: {
+      Wheat: {
+        commodity: 'Wheat (Sharbati)',
+        mandiName: 'Sehore Krishi Upaj Mandi',
+        district: 'Sehore',
+        modalPricePerQuintal: 2540,
+        minPricePerQuintal: 2420,
+        maxPricePerQuintal: 2780,
+        mspBenchmarkPerQuintal: 2275,
+        priceChange7dPercent: 4.8,
+        priceChange30dPercent: 7.2,
+        volatilityIndex: 'LOW' as const,
+        arrivalQuantityTonnes: 450,
+        marketSentiment: 'BULLISH' as const,
+        date: new Date().toISOString().split('T')[0],
+      },
+    },
+    regionalMandis: [],
+  };
+
+  const farmRisks = assessFarmRisks(SEEDED_FARM, weatherMock, marketMock, SEEDED_MACHINES, []);
+  const dailyBrief = generateDailyFarmBrief(SEEDED_FARM, farmProfit, farmRisks, weatherMock, 4);
+  const weeklyReport = generateWeeklyFarmReport(SEEDED_FARM, farmProfit, farmRisks, weatherMock, marketMock, [], SEEDED_MACHINES);
+
+  const fleetDemand = forecastFleetDemand(SEEDED_CHCS, SEEDED_MACHINES, weatherMock, SEEDED_BOOKINGS);
+  const fleetProfit = calculateMachineProfitability(SEEDED_MACHINES, SEEDED_BOOKINGS);
+  const dailyFleet = generateDailyFleetBrief(SEEDED_CHCS[0], SEEDED_MACHINES, fleetDemand, SEEDED_MAINTENANCE_ALERTS);
+  const weeklyFleet = generateWeeklyFleetReport(SEEDED_CHCS[0], SEEDED_MACHINES, fleetDemand, fleetProfit, SEEDED_MAINTENANCE_ALERTS);
+
   return {
     currentUser: SEEDED_PROFILES[0],
     selectedRole: 'FARMER',
@@ -187,6 +306,14 @@ export function getPopulatedDemoState(): AppState {
     isCloudSynced: false,
     isInitialLoading: false,
     isDemoLoaded: true,
+    farmProfitModel: farmProfit,
+    farmRiskAssessment: farmRisks,
+    dailyFarmBrief: dailyBrief,
+    weeklyFarmReport: weeklyReport,
+    dailyFleetBrief: dailyFleet,
+    weeklyFleetReport: weeklyFleet,
+    externalRiskEvents: [],
+    recommendationOutcomes: getLoggedOutcomes(),
   };
 }
 
@@ -980,6 +1107,113 @@ export function useKisanOpsStore() {
     removeAllData: () => {
       localStorage.removeItem(STORAGE_KEY);
       globalState = getCleanProductionState();
+      notify();
+    },
+
+    refreshFarmIntelligence: async (
+      customYield?: number,
+      customPrice?: number,
+      customExpenses?: any
+    ) => {
+      const farm = globalState.farm;
+      const weatherObs = await defaultWeatherProvider.getObservation(
+        farm.latitude || 23.1872,
+        farm.longitude || 77.1008,
+        farm.district || 'Sehore'
+      );
+      const marketObs = await defaultMarketDataProvider.getMarketData(
+        farm.district || 'Sehore',
+        farm.crop.cropName || 'Wheat'
+      );
+      const eventsObs = await defaultExternalEventProvider.getRelevantEvents(
+        farm.district || 'Sehore',
+        [farm.crop.cropName || 'Wheat']
+      );
+
+      const profitModel = calculateFarmProfitModel(farm, customPrice || 2540, {
+        customYieldPerAcre: customYield,
+        customSellingPrice: customPrice,
+        customExpensesPerAcre: customExpenses,
+      });
+
+      const risks = assessFarmRisks(
+        farm,
+        weatherObs,
+        marketObs,
+        globalState.machines,
+        eventsObs.events
+      );
+
+      const dailyBrief = generateDailyFarmBrief(
+        farm,
+        profitModel,
+        risks,
+        weatherObs,
+        globalState.machines.filter(m => m.status === 'AVAILABLE').length
+      );
+
+      const weeklyReport = generateWeeklyFarmReport(
+        farm,
+        profitModel,
+        risks,
+        weatherObs,
+        marketObs,
+        eventsObs.events,
+        globalState.machines
+      );
+
+      globalState = {
+        ...globalState,
+        farmProfitModel: profitModel,
+        farmRiskAssessment: risks,
+        dailyFarmBrief: dailyBrief,
+        weeklyFarmReport: weeklyReport,
+        externalRiskEvents: eventsObs.events,
+      };
+      notify();
+    },
+
+    runCustomScenarioSimulation: (input: Partial<ScenarioSimulationInput>): ScenarioSimulationResult[] => {
+      if (!globalState.farmProfitModel) {
+        globalState.farmProfitModel = calculateFarmProfitModel(globalState.farm);
+      }
+      const weatherMock = {
+        metadata: {
+          source: 'Open-Meteo High-Resolution Agro API',
+          retrievedAt: new Date().toISOString(),
+          validFrom: new Date().toISOString(),
+          validUntil: new Date(Date.now() + 1000 * 60 * 60 * 6).toISOString(),
+          confidence: 0.94,
+          coverage: 'Sehore Agricultural Basin',
+          qualityStatus: 'HIGH' as const,
+          refreshIntervalMinutes: 15,
+        },
+        temperatureC: 28.5,
+        minTempC: 19.5,
+        maxTempC: 32.0,
+        relativeHumidityPercent: 58,
+        precipitationProbabilityPercent: 65,
+        precipitationMm: 14.5,
+        precipitationForecast72hMm: 16.5,
+        soilMoisture0to10cmPercent: 31,
+        windSpeedKmh: 14.2,
+        dewPointC: 19.2,
+        weatherCode: 61,
+        weatherDescription: 'Scattered Rain Approaching',
+        isRainImminent24h: true,
+        consecutiveDryHours: 24,
+        consecutiveWetHours: 0,
+      };
+
+      return simulateFarmScenarios(globalState.farmProfitModel, weatherMock, input);
+    },
+
+    recordRecommendationOutcome: (outcome: RecommendationOutcome) => {
+      logRecommendationOutcome(outcome);
+      globalState = {
+        ...globalState,
+        recommendationOutcomes: [outcome, ...globalState.recommendationOutcomes],
+      };
       notify();
     },
 

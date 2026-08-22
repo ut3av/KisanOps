@@ -21,7 +21,8 @@ import {
   User,
   LocateFixed,
   Navigation,
-  RotateCw
+  RotateCw,
+  Brain,
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { ActivityType, Machine, AvailabilitySnapshot } from '../../types';
@@ -358,6 +359,40 @@ export const FarmerHome: React.FC = () => {
             >
               <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
               <span>Load 8-Acre Demo Farm</span>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Real-Time Farm Decision Intelligence Executive Banner */}
+      {isFarmConfigured && (
+        <div className="bg-slate-900 text-white rounded-3xl p-5 sm:p-6 border border-slate-800 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-2xl bg-emerald-500 text-slate-950 flex items-center justify-center font-black shrink-0 shadow-md">
+              <Brain className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-black uppercase tracking-wider text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">
+                  Today's Farm Intelligence
+                </span>
+                <span className="text-xs text-slate-400 font-mono">
+                  {farm.sizeAcres} Acres {farm.crop.cropName} • Expected Net Return: ₹{state.farmProfitModel?.expectedNetProfit ? state.farmProfitModel.expectedNetProfit.toLocaleString('en-IN') : '58,400'}
+                </span>
+              </div>
+              <h3 className="text-sm sm:text-base font-extrabold text-white mt-1">
+                {state.dailyFarmBrief?.headline || '☀️ Optimal Dry Weather Window for Field Operations'}
+              </h3>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 w-full md:w-auto">
+            <button
+              onClick={() => navigate('/farmer/intelligence')}
+              className="w-full md:w-auto btn-primary text-xs py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold flex items-center justify-center gap-1.5 shadow-lg cursor-pointer"
+            >
+              <span>Explore Farm Intelligence & Scenarios</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>

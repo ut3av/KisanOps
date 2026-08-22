@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import {
   Tractor,
-  Filter,
   Search,
-  SlidersHorizontal,
   Activity,
-  Fuel,
-  Clock,
-  Wrench,
-  ChevronRight,
   X,
   PlusCircle,
   Sparkles,
   Save,
+  ChevronRight,
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { Machine, MachineStatus, MachineCategory } from '../../types';

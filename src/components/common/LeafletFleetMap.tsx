@@ -4,7 +4,7 @@ import L from 'leaflet';
 import { CHC, Farm, Machine, TelemetryPoint } from '../../types';
 import { SEHORE_DEMO_ROUTE } from '../../lib/telematicsEngine';
 import { DopplerRadarPlayer } from './DopplerRadarPlayer';
-import { Layers, Map as MapIcon, Globe, Sparkles, Navigation } from 'lucide-react';
+import { Layers, Map as MapIcon, Globe, Sparkles } from 'lucide-react';
 import clsx from 'clsx';
 
 // Crisp inline SVGs for professional map rendering (No emojis)

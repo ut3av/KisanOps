@@ -18,9 +18,9 @@
     "semantic_hash": "c1ee9ce6a4fe04105dbf8e619390df5e"
   },
   "src/App.tsx": {
-    "mtime": 1787435104.2919135,
-    "seen": 1787435728.2479506,
-    "ast_hash": "1a0c3dd1ef2faa676268138936523b1f",
+    "mtime": 1787438065.064154,
+    "seen": 1787438363.712058,
+    "ast_hash": "f241a64b179d0f8af3793bfad66f30e0",
     "semantic_hash": ""
   },
   "src/components/common/AgriCreditGauge.tsx": {
@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/components/common/LeafletFleetMap.tsx": {
-    "mtime": 1787436550.6163082,
-    "seen": 1787437012.7328348,
-    "ast_hash": "c0003124b76b921bf66f786318087a8e",
+    "mtime": 1787438174.621996,
+    "seen": 1787438363.712074,
+    "ast_hash": "ced2c2ba581676dfabfa0fca3ac2275b",
     "semantic_hash": ""
   },
   "src/components/common/StatCard.tsx": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/FarmerLayout.tsx": {
-    "mtime": 1787399171.6820507,
-    "seen": 1787399681.8191514,
-    "ast_hash": "a63b15284a3fbe932d8682de2a25565b",
+    "mtime": 1787438074.9366455,
+    "seen": 1787438363.71209,
+    "ast_hash": "cb6ff7c55ff9cc8ca3d5f5f448ed65af",
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
@@ -114,21 +114,21 @@
     "semantic_hash": ""
   },
   "src/features/chc/DemandIntelligence.tsx": {
-    "mtime": 1787395393.157822,
-    "seen": 1787395615.4549687,
-    "ast_hash": "14b88a978fc833edd86811487e650f8e",
+    "mtime": 1787438008.9585395,
+    "seen": 1787438363.7121072,
+    "ast_hash": "975dfdbaa98b0ea899046e345d296452",
     "semantic_hash": ""
   },
   "src/features/chc/FleetManagement.tsx": {
-    "mtime": 1787437467.4406824,
-    "seen": 1787437701.1550865,
-    "ast_hash": "d7f8d1220ed1e634fdb93274c60f98e4",
+    "mtime": 1787438260.6169603,
+    "seen": 1787438363.7121084,
+    "ast_hash": "5db2eb0ce9293ba4a679ed0a6ea6144a",
     "semantic_hash": ""
   },
   "src/features/chc/LiveTelematics.tsx": {
-    "mtime": 1787437604.9083083,
-    "seen": 1787437701.1550884,
-    "ast_hash": "a7253301eb09118a305fed0998826a0c",
+    "mtime": 1787438146.7788472,
+    "seen": 1787438363.7121096,
+    "ast_hash": "07b5931f556fd5981ad5fafbc32ae3a8",
     "semantic_hash": ""
   },
   "src/features/chc/PredictiveMaintenance.tsx": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787436431.7072265,
-    "seen": 1787437012.7329915,
-    "ast_hash": "873cba025ad20d18d1ba9817328a4187",
+    "mtime": 1787438139.4965713,
+    "seen": 1787438363.712119,
+    "ast_hash": "c2d617b4474762994a8188e717c4c2cf",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
@@ -240,15 +240,15 @@
     "semantic_hash": "a3150907ddf2842367caa98e12a33298"
   },
   "src/store/kisanOpsStore.ts": {
-    "mtime": 1787437588.5632517,
-    "seen": 1787437701.1552193,
-    "ast_hash": "408020ce6996484241534f23ff18397f",
+    "mtime": 1787438215.1119277,
+    "seen": 1787438363.7122054,
+    "ast_hash": "22f3ce6a77cdebad53e66476c660f4a1",
     "semantic_hash": ""
   },
   "src/types/index.ts": {
-    "mtime": 1787437238.772192,
-    "seen": 1787437701.155221,
-    "ast_hash": "6d541a3d189688c9b8b4377f2e63e208",
+    "mtime": 1787437858.402635,
+    "seen": 1787438363.7122064,
+    "ast_hash": "a40bb57e670a6b243a5cc564a06a09bc",
     "semantic_hash": ""
   },
   "supabase/migrations/20260821000000_initial_schema.sql": {
@@ -684,9 +684,9 @@
     "semantic_hash": ""
   },
   "src/features/operator/OperatorDashboard.tsx": {
-    "mtime": 1787437389.6638184,
-    "seen": 1787437701.1551547,
-    "ast_hash": "91250011dd48dfaca8c88d304d9a8696",
+    "mtime": 1787438164.5070407,
+    "seen": 1787438363.7121556,
+    "ast_hash": "fb7a6d5c48cafa16a92a54567c3b7553",
     "semantic_hash": ""
   },
   "src/lib/__tests__/iotAndDb.test.ts": {
@@ -921,6 +921,78 @@
     "mtime": 1787437650.9270244,
     "seen": 1787437701.1551616,
     "ast_hash": "119e8ba87c6f6485e3285cfb6c1140bb",
+    "semantic_hash": ""
+  },
+  "src/components/common/IntelligenceReportModal.tsx": {
+    "mtime": 1787437966.9719875,
+    "seen": 1787438363.7120678,
+    "ast_hash": "c3b021a5a1e2f6c71dafffc022698bb3",
+    "semantic_hash": ""
+  },
+  "src/features/farmer/FarmIntelligence.tsx": {
+    "mtime": 1787437986.6211262,
+    "seen": 1787438363.7121155,
+    "ast_hash": "7006d56450e18ae57822e826d17df176",
+    "semantic_hash": ""
+  },
+  "src/lib/__tests__/decisionIntelligence.test.ts": {
+    "mtime": 1787438331.3285568,
+    "seen": 1787438363.7121582,
+    "ast_hash": "2f639b5695cdb13ac03c5c5ab7ed7149",
+    "semantic_hash": ""
+  },
+  "src/lib/intelligence/farmIntelligenceEngine.ts": {
+    "mtime": 1787437880.4992492,
+    "seen": 1787438363.7121732,
+    "ast_hash": "67a75c6873fc00e538e6a235d533571b",
+    "semantic_hash": ""
+  },
+  "src/lib/intelligence/fleetIntelligenceEngine.ts": {
+    "mtime": 1787437893.9469247,
+    "seen": 1787438363.7121744,
+    "ast_hash": "2a2b9f423e56d19b6db498ebafb07db3",
+    "semantic_hash": ""
+  },
+  "src/lib/intelligence/outcomeTracker.ts": {
+    "mtime": 1787438111.6086907,
+    "seen": 1787438363.7121754,
+    "ast_hash": "d6caeb49c2c5a4c1f833d636e9c7a9bf",
+    "semantic_hash": ""
+  },
+  "src/lib/intelligence/providers/agronomicDataProvider.ts": {
+    "mtime": 1787437844.1429348,
+    "seen": 1787438363.7121763,
+    "ast_hash": "1a27f66a751704abc30249f69c44db44",
+    "semantic_hash": ""
+  },
+  "src/lib/intelligence/providers/externalEventProvider.ts": {
+    "mtime": 1787437833.8336494,
+    "seen": 1787438363.7121775,
+    "ast_hash": "d5fcab4cdd56d4172827fff799452a6d",
+    "semantic_hash": ""
+  },
+  "src/lib/intelligence/providers/marketDataProvider.ts": {
+    "mtime": 1787437813.438477,
+    "seen": 1787438363.7121785,
+    "ast_hash": "c5fa4e59d614cbca446ce5b54a6e102a",
+    "semantic_hash": ""
+  },
+  "src/lib/intelligence/providers/satelliteProvider.ts": {
+    "mtime": 1787437822.4593441,
+    "seen": 1787438363.7121794,
+    "ast_hash": "3c1a214830a14f4e7ab1364d16c5de5a",
+    "semantic_hash": ""
+  },
+  "src/lib/intelligence/providers/types.ts": {
+    "mtime": 1787437795.276583,
+    "seen": 1787438363.7121801,
+    "ast_hash": "b6eb193a607a7ca7651840ce6101d0cf",
+    "semantic_hash": ""
+  },
+  "src/lib/intelligence/providers/weatherProvider.ts": {
+    "mtime": 1787438252.8938658,
+    "seen": 1787438363.7121813,
+    "ast_hash": "9f54158691a09b3b42ab2de8d9a5933b",
     "semantic_hash": ""
   }
 }
