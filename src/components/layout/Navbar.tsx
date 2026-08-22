@@ -9,7 +9,9 @@ import {
   LogOut,
   MapPin,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Sparkles,
+  Lock
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { UserRole } from '../../types';
@@ -29,7 +31,12 @@ export const Navbar: React.FC = () => {
     setShowRoleMenu(false);
     if (role === 'FARMER') navigate('/farmer');
     else if (role === 'ADMIN') navigate('/admin');
+    else if (role === 'OPERATOR') navigate('/operator');
     else navigate('/chc');
+  };
+
+  const handleOpenYuktiAi = () => {
+    window.dispatchEvent(new CustomEvent('open-yukti-ai'));
   };
 
   return (
@@ -37,14 +44,14 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo & Product Tagline */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-agri-800 flex items-center justify-center text-white shadow-sm group-hover:bg-agri-900 transition-colors">
+          <div className="w-10 h-10 rounded-xl bg-indigo-900 flex items-center justify-center text-amber-400 shadow-sm group-hover:bg-indigo-950 transition-colors">
             <Tractor className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xl font-extrabold tracking-tight text-agri-950">KisanOps</span>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md bg-agri-100 text-agri-800">
-                PROD
+              <span className="text-xl font-extrabold tracking-tight text-slate-950">KisanOps</span>
+              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md bg-amber-100 text-amber-800">
+                Yukti AI
               </span>
             </div>
             <p className="text-[11px] text-slate-500 font-medium hidden sm:block">
@@ -53,12 +60,22 @@ export const Navbar: React.FC = () => {
           </div>
         </Link>
 
-        {/* Right Section: Location + Role Switcher + Notifications + User Avatar */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        {/* Right Section: Location + Yukti AI Trigger + Role Switcher + Notifications + User Avatar */}
+        <div className="flex items-center gap-2.5 sm:gap-4">
+          {/* Yukti AI Quick Action Button */}
+          <button
+            onClick={handleOpenYuktiAi}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-indigo-700 hover:from-emerald-700 hover:to-indigo-800 text-white text-xs font-bold shadow-sm transition-all transform hover:scale-105 active:scale-95 border border-white/20"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+            <span className="hidden sm:inline">Ask Yukti AI</span>
+            <span className="sm:hidden">Yukti</span>
+          </button>
+
           {/* Location Badge */}
           <div className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-100 border border-slate-200/80 text-xs font-medium text-slate-700">
-            <MapPin className="w-3.5 h-3.5 text-agri-700" />
-            <span>Sehore, Madhya Pradesh</span>
+            <MapPin className="w-3.5 h-3.5 text-indigo-700" />
+            <span>Sehore, MP</span>
           </div>
 
           {/* Role Switcher Pill */}
@@ -82,7 +99,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleRoleChange('FARMER')}
                   className={clsx(
                     'w-full text-left px-3 py-2 text-xs flex items-center gap-2 hover:bg-slate-50',
-                    state.selectedRole === 'FARMER' ? 'text-agri-800 font-bold bg-agri-50/60' : 'text-slate-700'
+                    state.selectedRole === 'FARMER' ? 'text-indigo-900 font-bold bg-indigo-50/60' : 'text-slate-700'
                   )}
                 >
                   <User className="w-4 h-4 text-emerald-600" />
@@ -96,7 +113,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleRoleChange('CHC_MANAGER')}
                   className={clsx(
                     'w-full text-left px-3 py-2 text-xs flex items-center gap-2 hover:bg-slate-50',
-                    state.selectedRole === 'CHC_MANAGER' ? 'text-agri-800 font-bold bg-agri-50/60' : 'text-slate-700'
+                    state.selectedRole === 'CHC_MANAGER' ? 'text-indigo-900 font-bold bg-indigo-50/60' : 'text-slate-700'
                   )}
                 >
                   <Building2 className="w-4 h-4 text-sky-600" />
@@ -110,7 +127,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleRoleChange('OPERATOR')}
                   className={clsx(
                     'w-full text-left px-3 py-2 text-xs flex items-center gap-2 hover:bg-slate-50',
-                    state.selectedRole === 'OPERATOR' ? 'text-agri-800 font-bold bg-agri-50/60' : 'text-slate-700'
+                    state.selectedRole === 'OPERATOR' ? 'text-indigo-900 font-bold bg-indigo-50/60' : 'text-slate-700'
                   )}
                 >
                   <Tractor className="w-4 h-4 text-amber-600" />
@@ -124,7 +141,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleRoleChange('ADMIN')}
                   className={clsx(
                     'w-full text-left px-3 py-2 text-xs flex items-center gap-2 hover:bg-slate-50',
-                    state.selectedRole === 'ADMIN' ? 'text-agri-800 font-bold bg-agri-50/60' : 'text-slate-700'
+                    state.selectedRole === 'ADMIN' ? 'text-indigo-900 font-bold bg-indigo-50/60' : 'text-slate-700'
                   )}
                 >
                   <ShieldCheck className="w-4 h-4 text-purple-600" />
@@ -133,6 +150,19 @@ export const Navbar: React.FC = () => {
                     <div className="text-[10px] text-slate-500">System Governance</div>
                   </div>
                 </button>
+
+                <div className="border-t border-slate-100 my-1 pt-1">
+                  <button
+                    onClick={() => {
+                      setShowRoleMenu(false);
+                      navigate('/login');
+                    }}
+                    className="w-full text-left px-3 py-1.5 text-xs flex items-center gap-2 text-slate-500 hover:text-slate-800 hover:bg-slate-50"
+                  >
+                    <Lock className="w-3.5 h-3.5 text-slate-400" />
+                    <span>Open Auth Portal</span>
+                  </button>
+                </div>
               </div>
             )}
           </div>
@@ -197,7 +227,7 @@ export const Navbar: React.FC = () => {
                 className="w-8 h-8 rounded-full object-cover border border-slate-200"
               />
             ) : (
-              <div className="w-8 h-8 rounded-full bg-agri-100 text-agri-900 font-bold text-xs flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-900 font-bold text-xs flex items-center justify-center">
                 {state.currentUser.fullName.charAt(0)}
               </div>
             )}

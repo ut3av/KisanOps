@@ -1,24 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Wheat,
-  Tractor,
   Sparkles,
   ArrowRight,
   ShieldCheck,
-  Calendar,
   Clock,
   MapPin,
-  CheckCircle2,
-  AlertCircle,
-  HelpCircle,
   Activity,
-  Layers
+  Mic
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { ActivityType } from '../../types';
 import { AgriCreditGauge } from '../../components/common/AgriCreditGauge';
-import { VoiceAssistantWidget } from '../../components/common/VoiceAssistantWidget';
 import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
 
@@ -90,6 +83,10 @@ export const FarmerHome: React.FC = () => {
 
   const topMatch = recommendedMachines[0];
 
+  const triggerYuktiQuery = (query: string) => {
+    window.dispatchEvent(new CustomEvent('open-yukti-ai', { detail: { query } }));
+  };
+
   return (
     <div className="space-y-6">
       {/* Welcome & Farm Context Banner */}
@@ -98,7 +95,7 @@ export const FarmerHome: React.FC = () => {
           <img
             src={state.currentUser.avatarUrl}
             alt={state.currentUser.fullName}
-            className="w-14 h-14 rounded-2xl object-cover border-2 border-agri-200 shadow-sm"
+            className="w-14 h-14 rounded-2xl object-cover border-2 border-indigo-200 shadow-sm"
           />
           <div>
             <div className="flex items-center gap-2">
@@ -110,7 +107,7 @@ export const FarmerHome: React.FC = () => {
               </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 flex items-center gap-1.5 mt-0.5">
-              <MapPin className="w-3.5 h-3.5 text-agri-700" />
+              <MapPin className="w-3.5 h-3.5 text-indigo-700" />
               <span>{farm.farmName} • {farm.village}, {farm.district} ({farm.sizeAcres} Acres)</span>
             </p>
           </div>
@@ -132,160 +129,327 @@ export const FarmerHome: React.FC = () => {
         </div>
       </div>
 
+      {/* YUKTI AI HERO BAR */}
+      <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-emerald-900 rounded-3xl p-5 sm:p-6 text-white shadow-elevated border border-white/10 relative overflow-hidden">
+        <div className="absolute right-0 top-0 -mr-10 -mt-10 w-48 h-48 rounded-full bg-emerald-500/10 blur-2xl pointer-events-none" />
+        
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-amber-400 text-xl shrink-0 shadow-inner">
+              <Sparkles className="w-6 h-6 animate-pulse" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                  Yukti AI • Kisan Mitra
+                </span>
+                <span className="text-xs font-mono text-amber-300">Vernacular Voice Co-Pilot</span>
+              </div>
+              <h2 className="text-base sm:text-lg font-black text-white mt-0.5">
+                बोलकर या लिखकर कृषि यंत्र बुक करें और सलाह प्राप्त करें
+              </h2>
+              <p className="text-xs text-indigo-200">
+                Ask in Hindi or English: equipment bookings, AgriCredit limits, and stage-specific agronomy advice.
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={() => triggerYuktiQuery('मुझे 8 एकड़ गेहूं कटाई के लिए हार्वेस्टर चाहिए')}
+            className="px-5 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs shadow-lg transition-all flex items-center gap-2 shrink-0 active:scale-95 border border-white/20"
+          >
+            <Mic className="w-4 h-4" />
+            <span>Ask Yukti AI Now</span>
+          </button>
+        </div>
+
+        {/* Quick Suggestion Chips */}
+        <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-2 text-xs">
+          <span className="text-indigo-200 text-[11px] font-semibold self-center">Quick Ask:</span>
+          <button
+            onClick={() => triggerYuktiQuery('8 एकड़ गेहूं के लिए हार्वेस्टर बुक करो')}
+            className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 text-xs font-medium backdrop-blur-sm transition-colors border border-white/10"
+          >
+            🌾 Book Harvester for 8 Acres
+          </button>
+          <button
+            onClick={() => triggerYuktiQuery('मेरी AgriCredit लिमिट और क्रेडिट स्कोर क्या है?')}
+            className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 text-xs font-medium backdrop-blur-sm transition-colors border border-white/10"
+          >
+            💳 Check AgriCredit Limit
+          </button>
+          <button
+            onClick={() => triggerYuktiQuery('मेरी बुक की गई मशीन कहाँ है?')}
+            className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 text-xs font-medium backdrop-blur-sm transition-colors border border-white/10"
+          >
+            📍 Track My Active Machine
+          </button>
+        </div>
+      </div>
+
       {/* Hero CTA: What do you need to do? */}
-      <div className="bg-gradient-to-br from-agri-900 to-agri-950 text-white rounded-3xl p-6 sm:p-8 shadow-elevated relative overflow-hidden">
+      <div className="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-elevated relative overflow-hidden">
         <div className="relative z-10 max-w-2xl">
           <div className="inline-flex items-center gap-1.5 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full mb-3">
             <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
             <span>AI Activity Engine</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-            What do you need to do on your farm?
+
+          <h2 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight">
+            What farm activity do you need machinery for today?
           </h2>
-          <p className="text-slate-300 text-xs sm:text-sm mt-1.5 leading-relaxed">
-            Select your agricultural requirement. KisanOps predicts demand, matches ideal horsepower, and guarantees fair transparent pricing with deferred AgriCredit.
+
+          <p className="text-xs sm:text-sm text-slate-300 mt-2">
+            Select an activity to find smart-matched machinery from verified Sehore CHCs with instant dynamic pricing.
           </p>
         </div>
 
         {/* Activity Buttons Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-6 relative z-10">
+        <div className="relative z-10 mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {activities.map(act => (
             <button
               key={act.type}
               onClick={() => navigate(`/farmer/marketplace?activity=${act.type}`)}
-              className={`text-left p-3.5 rounded-2xl border transition-all flex flex-col justify-between group ${
+              className={`text-left p-3.5 rounded-2xl transition-all flex flex-col justify-between group ${
                 act.highlighted
-                  ? 'bg-emerald-500/20 border-emerald-400/60 shadow-sm ring-2 ring-emerald-400/40 hover:bg-emerald-500/30'
-                  : 'bg-white/10 border-white/10 hover:bg-white/15 hover:border-white/20'
+                  ? 'bg-white text-slate-900 shadow-md ring-2 ring-emerald-500'
+                  : 'bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm'
               }`}
             >
               <div>
-                <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">{act.icon}</div>
-                <div className="font-bold text-xs sm:text-sm text-white">{act.label}</div>
+                <span className="text-2xl block mb-2">{act.icon}</span>
+                <span className="font-bold text-xs block leading-tight">{act.label}</span>
+                <span
+                  className={`text-[10px] line-clamp-2 mt-1 ${
+                    act.highlighted ? 'text-slate-500' : 'text-slate-300'
+                  }`}
+                >
+                  {act.desc}
+                </span>
               </div>
-              <div className="text-[10px] text-slate-300 mt-2 leading-tight">{act.desc}</div>
-              {act.highlighted && (
-                <div className="mt-2 text-[9px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/60 px-1.5 py-0.5 rounded text-center">
-                  Recommended Now
-                </div>
-              )}
+
+              <div className="mt-3 flex items-center justify-between text-[11px] font-bold">
+                <span className={act.highlighted ? 'text-emerald-700' : 'text-emerald-300'}>
+                  {act.highlighted ? 'Optimal Match' : 'Browse'}
+                </span>
+                <ArrowRight
+                  className={`w-3.5 h-3.5 group-hover:translate-x-1 transition-transform ${
+                    act.highlighted ? 'text-emerald-700' : 'text-emerald-300'
+                  }`}
+                />
+              </div>
             </button>
           ))}
         </div>
       </div>
 
-      {/* Grid: AgriCredit Widget & Active Booking */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* AgriCredit Card */}
-        <div className="lg:col-span-7">
-          <AgriCreditGauge
-            score={agriCredit.creditScore}
-            limit={agriCredit.creditLimit}
-            available={agriCredit.availableCredit}
-            ratingCategory={agriCredit.ratingCategory}
-          />
-        </div>
-
-        {/* Active Booking Banner */}
-        <div className="lg:col-span-5 bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-subtle flex flex-col justify-between">
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Upcoming Booking</span>
-              {activeBooking ? (
-                <span className="text-xs font-bold bg-sky-50 text-sky-700 border border-sky-200 px-2.5 py-0.5 rounded-full">
-                  {activeBooking.status}
-                </span>
-              ) : (
-                <span className="text-xs text-slate-400">No active rental</span>
-              )}
-            </div>
-
-            {activeBooking ? (
-              <div className="space-y-2">
-                <div className="font-bold text-base text-slate-900">{activeBooking.machineModel}</div>
-                <div className="text-xs text-slate-600 flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-agri-700" />
-                  <span>22 Aug 2026 • 08:00 AM – 02:00 PM ({activeBooking.bookedHours} hrs)</span>
-                </div>
-                <div className="text-xs text-slate-600 flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>AgriCredit Deferred: ₹{activeBooking.estimatedTotal.toLocaleString('en-IN')}</span>
-                </div>
-              </div>
-            ) : (
-              <p className="text-xs text-slate-500 mt-2">
-                You currently have no scheduled rentals. Book harvesting equipment ahead of the regional surge.
-              </p>
-            )}
+      {/* Two Column Layout: Active Booking Tracker & AgriCredit Gauge */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Left 2 Cols: Active Rental Job Tracker */}
+        <div className="lg:col-span-2 space-y-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
+              <Clock className="w-5 h-5 text-indigo-700" />
+              <span>Current Machinery Rental Status</span>
+            </h2>
+            <button
+              onClick={() => navigate('/farmer/rentals')}
+              className="text-xs font-bold text-indigo-700 hover:text-indigo-900"
+            >
+              View All Rentals ➔
+            </button>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-            <span className="text-xs text-slate-500">Sehore Agri Centre (3.2 km)</span>
+          {activeBooking ? (
+            <div className="bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-subtle space-y-4">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pb-4 border-b border-slate-100">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold text-slate-500">
+                      {activeBooking.bookingNumber}
+                    </span>
+                    <span
+                      className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${
+                        activeBooking.status === 'IN_PROGRESS'
+                          ? 'bg-emerald-100 text-emerald-800 animate-pulse'
+                          : activeBooking.status === 'DISPATCHED'
+                          ? 'bg-sky-100 text-sky-800'
+                          : 'bg-amber-100 text-amber-800'
+                      }`}
+                    >
+                      {activeBooking.status.replace('_', ' ')}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-extrabold text-slate-900 mt-1">
+                    {activeBooking.machineModel} ({activeBooking.machineIdentifier})
+                  </h3>
+                </div>
+
+                <div className="text-right">
+                  <div className="text-xs text-slate-500">Authorized Total</div>
+                  <div className="text-lg font-black text-slate-900">
+                    ₹{activeBooking.estimatedTotal.toLocaleString('en-IN')}
+                  </div>
+                </div>
+              </div>
+
+              {/* Progress Milestones */}
+              <div className="grid grid-cols-4 gap-2 py-2 text-center text-xs">
+                <div className="space-y-1">
+                  <div className="w-6 h-6 mx-auto rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">
+                    ✓
+                  </div>
+                  <div className="text-[11px] font-bold text-slate-800">Confirmed</div>
+                </div>
+                <div className="space-y-1">
+                  <div
+                    className={`w-6 h-6 mx-auto rounded-full flex items-center justify-center text-xs font-bold ${
+                      activeBooking.status === 'DISPATCHED' || activeBooking.status === 'IN_PROGRESS'
+                        ? 'bg-emerald-500 text-white'
+                        : 'bg-slate-200 text-slate-500'
+                    }`}
+                  >
+                    {activeBooking.status === 'DISPATCHED' || activeBooking.status === 'IN_PROGRESS' ? '✓' : '2'}
+                  </div>
+                  <div className="text-[11px] font-bold text-slate-800">Dispatched</div>
+                </div>
+                <div className="space-y-1">
+                  <div
+                    className={`w-6 h-6 mx-auto rounded-full flex items-center justify-center text-xs font-bold ${
+                      activeBooking.status === 'IN_PROGRESS'
+                        ? 'bg-emerald-500 text-white animate-pulse'
+                        : 'bg-slate-200 text-slate-500'
+                    }`}
+                  >
+                    3
+                  </div>
+                  <div className="text-[11px] font-bold text-slate-800">In Field</div>
+                </div>
+                <div className="space-y-1">
+                  <div className="w-6 h-6 mx-auto rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold">
+                    4
+                  </div>
+                  <div className="text-[11px] font-bold text-slate-500">Invoice</div>
+                </div>
+              </div>
+
+              {/* Driver & Telematics Snapshot */}
+              <div className="bg-surface-50 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-indigo-100 text-indigo-900 font-bold flex items-center justify-center text-sm">
+                    RV
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">Operator: Raju Verma</div>
+                    <div className="text-[11px] text-slate-500">Rating: 4.9★ • Contact: +91 97550 12399</div>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => navigate('/farmer/rentals')}
+                  className="btn-secondary text-xs py-2 px-3 flex items-center gap-1.5 w-full sm:w-auto justify-center"
+                >
+                  <Activity className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Live GPS Tracking</span>
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="bg-white border border-slate-200/90 rounded-3xl p-8 text-center shadow-subtle space-y-3">
+              <div className="w-12 h-12 mx-auto rounded-2xl bg-indigo-50 text-indigo-800 flex items-center justify-center text-xl">
+                🚜
+              </div>
+              <h3 className="text-base font-bold text-slate-800">No Active Rental Right Now</h3>
+              <p className="text-xs text-slate-500 max-w-sm mx-auto">
+                Your wheat crop is entering harvest stage in 2 days. Book a combine harvester in advance to avoid surge pricing!
+              </p>
+              <button
+                onClick={() => navigate('/farmer/marketplace?activity=HARVESTING')}
+                className="btn-primary text-xs py-2.5 px-5 shadow-sm"
+              >
+                Browse Combine Harvesters
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Right 1 Col: AgriCredit Trust Gauge */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-emerald-600" />
+              <span>AgriCredit Trust Score</span>
+            </h2>
             <button
-              onClick={() => navigate(activeBooking ? '/farmer/rentals' : '/farmer/marketplace')}
-              className="text-xs font-bold text-agri-800 hover:text-agri-950 flex items-center gap-1"
+              onClick={() => navigate('/farmer/credit')}
+              className="text-xs font-bold text-indigo-700 hover:text-indigo-900"
             >
-              <span>{activeBooking ? 'Track Telematics' : 'Browse Machinery'}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              Details ➔
             </button>
+          </div>
+
+          <div className="bg-white border border-slate-200/90 rounded-3xl p-5 shadow-subtle space-y-4 flex flex-col justify-between">
+            <AgriCreditGauge
+              score={agriCredit.creditScore}
+              limit={agriCredit.creditLimit}
+              available={agriCredit.availableCredit}
+              ratingCategory={agriCredit.ratingCategory}
+            />
+
+            <div className="pt-2 border-t border-slate-100 text-xs text-slate-600 space-y-2">
+              <div className="flex justify-between">
+                <span>Available Deferred Limit:</span>
+                <span className="font-bold text-slate-900">₹{agriCredit.availableCredit.toLocaleString('en-IN')}</span>
+              </div>
+              <p className="text-[11px] text-slate-500 leading-snug">
+                You can rent any machine immediately and pay after crop selling at the Mandi.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Hero Recommended Machine Section */}
+      {/* Top AI Recommended Machine for Ramesh's Current Crop Stage */}
       {topMatch && (
-        <div className="bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-subtle space-y-4">
+        <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <div>
-              <div className="flex items-center gap-2">
-                <h3 className="text-lg font-bold text-slate-900">Recommended for Your 8-Acre Wheat Farm</h3>
-                <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-emerald-600" />
-                  {topMatch.score}% Smart Match
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Explainable fit based on farm size, wheat variety, soil condition, and operator reliability.
-              </p>
-            </div>
-
-            <button
-              onClick={() => navigate('/farmer/marketplace')}
-              className="text-xs font-bold text-agri-800 hover:text-agri-950 hidden sm:flex items-center gap-1"
-            >
-              <span>View All Machines</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+            <h2 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-amber-500" />
+              <span>Top AI Recommended Equipment for Your Wheat Harvest</span>
+            </h2>
+            <span className="text-xs font-mono font-bold text-slate-500">
+              Match Score: {topMatch.score}/100
+            </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center bg-surface-50 p-4 rounded-2xl border border-slate-200/80">
-            <div className="md:col-span-4 h-48 rounded-xl overflow-hidden relative">
+          <div className="bg-white border-2 border-indigo-200 rounded-3xl p-5 sm:p-6 shadow-subtle flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
               <img
                 src={topMatch.machine.imageUrl}
                 alt={topMatch.machine.model}
-                className="w-full h-full object-cover"
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border border-slate-200 shrink-0"
               />
-              <span className="absolute top-2 left-2 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md">
-                {topMatch.machine.category}
-              </span>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-md">
+                    {topMatch.score}% Match
+                  </span>
+                  <span className="text-xs text-slate-500">{topMatch.machine.chcName}</span>
+                </div>
+                <h3 className="text-base sm:text-lg font-black text-slate-900">
+                  {topMatch.machine.brand} {topMatch.machine.model} ({topMatch.machine.powerHp} HP)
+                </h3>
+                <p className="text-xs text-slate-600">
+                  Optimal for 8.0 Acres • Rate: <strong>₹{topMatch.machine.baseRatePerHour}/hr</strong>
+                </p>
+              </div>
             </div>
 
-            <div className="md:col-span-8 space-y-3">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <div>
-                  <h4 className="text-base font-extrabold text-slate-900">{topMatch.machine.brand} {topMatch.machine.model}</h4>
-                  <p className="text-xs text-slate-500 font-mono">{topMatch.machine.identifier} • {topMatch.machine.specs.engine}</p>
-                </div>
-                <div className="text-right">
-                  <div className="text-xl font-black text-agri-900">₹{topMatch.priceQuote.quotedRatePerHour}/hr</div>
-                  <div className="text-[11px] text-slate-500 font-medium">Dynamic transparent rate</div>
-                </div>
-              </div>
-
-              {/* Match reasons tags */}
-              <div className="flex flex-wrap gap-1.5">
-                {topMatch.reasons.slice(0, 4).map((r, i) => (
-                  <span key={i} className="text-[11px] bg-white border border-slate-200 px-2 py-0.5 rounded-lg text-slate-700 font-medium">
+            <div className="w-full md:w-auto md:min-w-[280px] space-y-2 border-t md:border-t-0 md:border-l border-slate-100 pt-3 md:pt-0 md:pl-6">
+              <div className="text-xs font-bold text-slate-700">AI Scoring Explanations:</div>
+              <div className="space-y-1">
+                {topMatch.reasons.slice(0, 3).map((r, i) => (
+                  <span key={i} className="text-xs text-emerald-700 block">
                     {r}
                   </span>
                 ))}
@@ -293,11 +457,9 @@ export const FarmerHome: React.FC = () => {
 
               <div className="pt-2 flex items-center justify-between gap-3">
                 <div className="text-xs text-slate-600 flex items-center gap-2">
-                  <span>★ {topMatch.machine.rating} ({topMatch.machine.totalRentals} rentals)</span>
+                  <span>★ {topMatch.machine.rating}</span>
                   <span>•</span>
                   <span className="text-emerald-700 font-semibold">Health: {topMatch.machine.healthScore}%</span>
-                  <span>•</span>
-                  <span>{topMatch.machine.distanceKm} km away</span>
                 </div>
 
                 <button
@@ -311,8 +473,6 @@ export const FarmerHome: React.FC = () => {
           </div>
         </div>
       )}
-      
-      <VoiceAssistantWidget />
     </div>
   );
 };

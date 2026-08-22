@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Tractor, Clock, MapPin, ChevronRight, CheckCircle2, Droplet, UserCircle2 } from 'lucide-react';
+import { Tractor, Clock, MapPin, ChevronRight, CheckCircle2, Droplet, UserCircle2, ArrowLeft } from 'lucide-react';
+import { YuktiAiWidget } from '../ai/YuktiAiWidget';
 
 export const OperatorDashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -9,6 +10,19 @@ export const OperatorDashboard: React.FC = () => {
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       {/* Header Profile */}
       <div className="bg-slate-900 text-white p-6 rounded-b-3xl shadow-xl">
+        <div className="flex items-center justify-between mb-4">
+          <button
+            onClick={() => navigate('/')}
+            className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Switch Role</span>
+          </button>
+          <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+            Field App
+          </span>
+        </div>
+
         <div className="flex items-center gap-4 mb-6">
           <div className="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center border-2 border-emerald-500">
             <UserCircle2 className="w-8 h-8 text-slate-300" />
@@ -94,6 +108,9 @@ export const OperatorDashboard: React.FC = () => {
           </div>
         </div>
       </main>
+
+      {/* Global Yukti AI Assistant */}
+      <YuktiAiWidget />
     </div>
   );
 };

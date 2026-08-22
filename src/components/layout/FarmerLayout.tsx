@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { DemoScenarioBar } from '../demo/DemoScenarioBar';
 import { Navbar } from './Navbar';
+import { YuktiAiWidget } from '../ai/YuktiAiWidget';
 import clsx from 'clsx';
 
 export const FarmerLayout: React.FC = () => {
@@ -43,7 +44,7 @@ export const FarmerLayout: React.FC = () => {
                   clsx(
                     'px-4 py-2 text-xs font-semibold rounded-xl flex items-center gap-2 transition-all',
                     isActive
-                      ? 'bg-agri-800 text-white shadow-sm'
+                      ? 'bg-indigo-900 text-white shadow-sm'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                   )
                 }
@@ -67,7 +68,7 @@ export const FarmerLayout: React.FC = () => {
       </main>
 
       {/* Mobile-First Bottom Navigation Bar */}
-      <nav aria-label="Mobile Navigation" className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-50 px-2 py-2 shadow-elevated overflow-x-auto">
+      <nav aria-label="Mobile Navigation" className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-40 px-2 py-2 shadow-elevated overflow-x-auto">
         <div className="flex gap-2 min-w-max mx-auto px-2">
           {navItems.map(item => (
             <NavLink
@@ -78,7 +79,7 @@ export const FarmerLayout: React.FC = () => {
                 clsx(
                   'flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-[10px] font-semibold transition-all min-w-[72px]',
                   isActive
-                    ? 'text-agri-800 bg-agri-50'
+                    ? 'text-indigo-900 bg-indigo-50 font-bold'
                     : 'text-slate-500 hover:text-slate-800'
                 )
               }
@@ -89,6 +90,9 @@ export const FarmerLayout: React.FC = () => {
           ))}
         </div>
       </nav>
+
+      {/* Omnipresent Yukti AI Assistant */}
+      <YuktiAiWidget />
     </div>
   );
 };

@@ -11,10 +11,12 @@ import {
   Settings,
   AlertTriangle,
   Zap,
-  Activity
+  Activity,
+  Sparkles
 } from 'lucide-react';
 import { DemoScenarioBar } from '../demo/DemoScenarioBar';
 import { Navbar } from './Navbar';
+import { YuktiAiWidget } from '../ai/YuktiAiWidget';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import clsx from 'clsx';
 
@@ -49,7 +51,7 @@ export const CHCLayout: React.FC = () => {
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Operating Hub</span>
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
             </div>
-            <h3 className="text-sm font-extrabold text-agri-950">Sehore Agri Centre</h3>
+            <h3 className="text-sm font-extrabold text-slate-900">Sehore Agri Centre</h3>
             <p className="text-xs text-slate-500 font-mono mt-0.5">Code: CHC-MP-SEH-01</p>
 
             <div className="mt-3 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs">
@@ -75,7 +77,7 @@ export const CHCLayout: React.FC = () => {
                   clsx(
                     'flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all',
                     isActive
-                      ? 'bg-agri-800 text-white shadow-sm'
+                      ? 'bg-indigo-900 text-white shadow-sm font-bold'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   )
                 }
@@ -115,6 +117,9 @@ export const CHCLayout: React.FC = () => {
           <Outlet />
         </main>
       </div>
+
+      {/* Global Yukti AI Assistant */}
+      <YuktiAiWidget />
     </div>
   );
 };

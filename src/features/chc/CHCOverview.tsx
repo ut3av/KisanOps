@@ -11,7 +11,8 @@ import {
   ArrowRight,
   ShieldAlert,
   MapPin,
-  CheckCircle2
+  CheckCircle2,
+  Mic
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { StatCard } from '../../components/common/StatCard';
@@ -28,6 +29,10 @@ export const CHCOverview: React.FC = () => {
   const activeBookings = bookings.filter(b => b.status === 'CONFIRMED' || b.status === 'DISPATCHED' || b.status === 'IN_PROGRESS');
   const sehoreShortage = demandForecasts.find(df => df.district === 'Sehore' && df.shortageUnits > 0);
   const recommendedAlloc = allocations.find(a => a.status === 'RECOMMENDED');
+
+  const triggerYuktiQuery = (query: string) => {
+    window.dispatchEvent(new CustomEvent('open-yukti-ai', { detail: { query } }));
+  };
 
   return (
     <div className="space-y-6">
@@ -73,6 +78,62 @@ export const CHCOverview: React.FC = () => {
         </div>
       )}
 
+      {/* YUKTI AI FLEET CO-PILOT BANNER */}
+      <div className="bg-gradient-to-r from-indigo-950 via-slate-900 to-indigo-900 rounded-3xl p-5 sm:p-6 text-white shadow-elevated border border-indigo-800/40 relative overflow-hidden">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-amber-400 text-xl shrink-0 shadow-inner">
+              <Sparkles className="w-6 h-6 animate-pulse" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                  Yukti AI • Hub Co-Pilot
+                </span>
+                <span className="text-xs font-mono text-indigo-300">Fleet & Telematics Intelligence</span>
+              </div>
+              <h2 className="text-base sm:text-lg font-black text-white mt-0.5">
+                AI-Driven Demand Forecasting, Telematics Anomaly Triage & Smart Dispatch
+              </h2>
+              <p className="text-xs text-indigo-200">
+                Ask about harvester shortages, fuel burn anomalies on JD-HARV-07, or operator routing efficiency.
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={() => triggerYuktiQuery('सीहोर में हार्वेस्टर की कमी और भोपाल से री-एलोकेशन की स्थिति बताओ')}
+            className="px-5 py-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-emerald-600 hover:from-indigo-700 hover:to-emerald-700 text-white font-bold text-xs shadow-lg transition-all flex items-center gap-2 shrink-0 active:scale-95 border border-white/20"
+          >
+            <Mic className="w-4 h-4 text-amber-300" />
+            <span>Launch Yukti AI Assistant</span>
+          </button>
+        </div>
+
+        {/* Quick Suggestion Chips */}
+        <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-2 text-xs">
+          <span className="text-indigo-200 text-[11px] font-semibold self-center">Quick Queries:</span>
+          <button
+            onClick={() => triggerYuktiQuery('सीहोर जिले में मांग और हार्वेस्टर की कमी का विश्लेषण करो')}
+            className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 text-xs font-medium backdrop-blur-sm transition-colors border border-white/10"
+          >
+            📊 Sehore Demand Surge & Shortage
+          </button>
+          <button
+            onClick={() => triggerYuktiQuery('फ्लीट में क्या कोई डीजल खपत या इंजन तापमान की असामान्यता है?')}
+            className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 text-xs font-medium backdrop-blur-sm transition-colors border border-white/10"
+          >
+            ⚠️ Fleet Fuel Anomaly Triage
+          </button>
+          <button
+            onClick={() => triggerYuktiQuery('आज का फ्लीट यूटिलाइजेशन और रेवेन्यू मैट्रिक्स बताओ')}
+            className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-indigo-100 text-xs font-medium backdrop-blur-sm transition-colors border border-white/10"
+          >
+            📈 Fleet Utilization & Billed Revenue
+          </button>
+        </div>
+      </div>
+
       {/* Top 6 KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
         <StatCard
@@ -80,7 +141,7 @@ export const CHCOverview: React.FC = () => {
           value="24"
           subtitle="Across 3 hubs"
           icon={Tractor}
-          iconBg="bg-agri-50 text-agri-800"
+          iconBg="bg-indigo-50 text-indigo-900"
           onClick={() => navigate('/chc/fleet')}
         />
         <StatCard
@@ -141,7 +202,7 @@ export const CHCOverview: React.FC = () => {
             </div>
             <button
               onClick={() => navigate('/chc/telematics')}
-              className="text-xs font-bold text-agri-800 hover:text-agri-950 flex items-center gap-1"
+              className="text-xs font-bold text-indigo-800 hover:text-indigo-950 flex items-center gap-1"
             >
               <span>Fullscreen Telematics Hub</span>
               <ArrowRight className="w-3.5 h-3.5" />
