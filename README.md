@@ -1,4 +1,4 @@
-# 🌾 Yukti (KisanOps) — Agricultural Machinery Intelligence & CHC Operations Platform
+# 🌾 Yukti - An Agricultural Machinery Intelligence & CHC Operations Platform
 
 <div align="center">
   <img src="public/images/yukti-platform-overview.jpg" alt="Yukti Agricultural Machinery Intelligence Platform" width="100%" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);" />
