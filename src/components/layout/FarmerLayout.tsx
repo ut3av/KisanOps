@@ -8,7 +8,8 @@ import {
   CreditCard,
   User,
   ShieldCheck,
-  Sparkles
+  Sparkles,
+  Tractor
 } from 'lucide-react';
 import { DemoScenarioBar } from '../demo/DemoScenarioBar';
 import { Navbar } from './Navbar';
@@ -21,6 +22,7 @@ export const FarmerLayout: React.FC = () => {
     { to: '/farmer/rentals', icon: CalendarCheck, label: 'My Rentals' },
     { to: '/farmer/farm', icon: Wheat, label: 'My Farm' },
     { to: '/farmer/credit', icon: CreditCard, label: 'AgriCredit' },
+    { to: '/operator', icon: Tractor, label: 'Operator App' },
   ];
 
   return (
@@ -65,8 +67,8 @@ export const FarmerLayout: React.FC = () => {
       </main>
 
       {/* Mobile-First Bottom Navigation Bar */}
-      <nav aria-label="Mobile Navigation" className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-50 px-2 py-2 shadow-elevated">
-        <div className="grid grid-cols-5 gap-1 max-w-md mx-auto">
+      <nav aria-label="Mobile Navigation" className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-50 px-2 py-2 shadow-elevated overflow-x-auto">
+        <div className="flex gap-2 min-w-max mx-auto px-2">
           {navItems.map(item => (
             <NavLink
               key={item.to}
@@ -74,7 +76,7 @@ export const FarmerLayout: React.FC = () => {
               end={item.end}
               className={({ isActive }) =>
                 clsx(
-                  'flex flex-col items-center justify-center py-1.5 rounded-xl text-[10px] font-semibold transition-all',
+                  'flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-[10px] font-semibold transition-all min-w-[72px]',
                   isActive
                     ? 'text-agri-800 bg-agri-50'
                     : 'text-slate-500 hover:text-slate-800'
