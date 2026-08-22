@@ -1,11 +1,11 @@
 {
-  "0": "FarmerRentals.tsx",
+  "0": "AdminDashboard.tsx",
   "1": "kisanOpsStore.ts",
   "2": "LazyImage.tsx",
   "3": "devDependencies",
   "4": "20260821000000_initial_schema.sql",
   "5": "dependencies",
-  "6": "LeafletFleetMap.tsx",
+  "6": "weatherEngine.ts",
   "7": "compilerOptions",
   "8": "compilerOptions",
   "9": "App.tsx",
@@ -18,7 +18,7 @@
   "16": "seed.sql",
   "17": "tailwind.config.js",
   "18": "tailwindcss",
-  "19": "vite.config.ts",
+  "19": "razorpayBackend.ts",
   "20": "🎬 Step-by-Step 12-Scene Script",
   "21": "KisanOps API Specification",
   "22": "2. Core Subsystems",
@@ -33,5 +33,8 @@
   "31": "FarmerHome.tsx",
   "32": "telemetry-webhook/index.ts",
   "33": "vercel.json",
-  "34": "3. Core Functional Modules & Algorithmic Specifications"
+  "34": "3. Core Functional Modules & Algorithmic Specifications",
+  "35": "LeafletFleetMap.tsx",
+  "36": "RazorpayCheckoutModal.tsx",
+  "37": "HeroSection.tsx"
 }

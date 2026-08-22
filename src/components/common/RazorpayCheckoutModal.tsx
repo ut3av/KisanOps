@@ -22,6 +22,11 @@ declare global {
   }
 }
 
+import {
+  initiateRazorpayStandardCheckout,
+  loadRazorpayScript,
+} from '../../lib/razorpayService';
+
 interface RazorpayCheckoutModalProps {
   amountRupees: number;
   customerName: string;
@@ -36,66 +41,66 @@ export const RazorpayCheckoutModal: React.FC<RazorpayCheckoutModalProps> = ({
   amountRupees,
   customerName,
   customerPhone,
-  customerEmail = 'ramesh.farmer@kisanops.in',
+  customerEmail = 'farmer@kisanops.in',
   bookingDescription,
   onSuccess,
   onClose,
 }) => {
-  const [selectedMethod, setSelectedMethod] = useState<'UPI_QR' | 'UPI_INTENT' | 'CARD' | 'NET_BANKING'>('UPI_QR');
+  const [selectedMethod, setSelectedMethod] = useState<'STANDARD' | 'UPI_QR' | 'UPI_INTENT' | 'CARD'>('STANDARD');
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
-  const [upiId, setUpiId] = useState<string>('ramesh@okaxis');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [upiId, setUpiId] = useState<string>('farmer@okaxis');
   const [cardNumber, setCardNumber] = useState<string>('4532 •••• •••• 8812');
   const [expiry, setExpiry] = useState<string>('09/28');
   const [cvv, setCvv] = useState<string>('742');
 
-  const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY_ID;
-
-  // Load Razorpay Standard Checkout script if live key is available
+  // Load Razorpay Standard Checkout script on mount
   useEffect(() => {
-    if (razorpayKey && !window.Razorpay) {
-      const script = document.createElement('script');
-      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, [razorpayKey]);
+    loadRazorpayScript();
+  }, []);
 
-  const handleLaunchLiveRazorpay = () => {
-    if (razorpayKey && window.Razorpay) {
-      const options = {
-        key: razorpayKey,
-        amount: amountRupees * 100, // in paise
-        currency: 'INR',
-        name: 'Yukti (KisanOps)',
+  const handleLaunchRazorpayStandardCheckout = async () => {
+    setIsProcessing(true);
+    setErrorMessage(null);
+
+    try {
+      await initiateRazorpayStandardCheckout({
+        amountRupees,
         description: bookingDescription,
-        image: '/images/yukti-logo-transparent.png',
-        handler: (response: any) => {
-          onSuccess(response.razorpay_payment_id || `pay_${Date.now()}`);
-        },
-        prefill: {
+        customer: {
           name: customerName,
           email: customerEmail,
-          contact: customerPhone,
+          phone: customerPhone,
         },
-        theme: {
-          color: '#1B4D3E',
+        onSuccess: (result) => {
+          setIsProcessing(false);
+          onSuccess(result.paymentId);
         },
-      };
-      const rzp = new window.Razorpay(options);
-      rzp.open();
-    } else {
-      // Execute built-in interactive simulator
-      handleSimulatePayment();
+        onFailure: (error) => {
+          setIsProcessing(false);
+          setErrorMessage(error.description || error.reason || 'Payment failed on Razorpay gateway.');
+        },
+        onDismiss: () => {
+          setIsProcessing(false);
+          setErrorMessage('Payment window closed before completion.');
+        },
+      });
+    } catch (err: any) {
+      console.warn('Standard Razorpay launch encountered an issue, offering direct simulator fallback:', err);
+      // If backend order API is unavailable in static test mode, provide clear message and fallback
+      setErrorMessage(err.message || 'Unable to create order. You can retry or simulate test payment.');
+      setIsProcessing(false);
     }
   };
 
   const handleSimulatePayment = () => {
     setIsProcessing(true);
+    setErrorMessage(null);
     setTimeout(() => {
       setIsProcessing(false);
-      const generatedPayId = `pay_rzp_${Date.now().toString(36).toUpperCase()}`;
+      const generatedPayId = `pay_sim_${Date.now().toString(36).toUpperCase()}`;
       onSuccess(generatedPayId);
-    }, 1200);
+    }, 1000);
   };
 
   return (
@@ -265,23 +270,41 @@ export const RazorpayCheckoutModal: React.FC<RazorpayCheckoutModalProps> = ({
           )}
         </div>
 
-        {/* Action Button */}
+        {/* Error Alert Message if any */}
+        {errorMessage && (
+          <div className="p-3 bg-red-50 border border-red-200 rounded-2xl flex items-start gap-2.5 text-xs text-red-700 animate-in fade-in">
+            <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <p className="font-bold">Payment Notice</p>
+              <p className="text-[11px] text-red-600 mt-0.5">{errorMessage}</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setErrorMessage(null)}
+              className="text-red-400 hover:text-red-600 cursor-pointer font-bold text-xs"
+            >
+              ×
+            </button>
+          </div>
+        )}
+
+        {/* Action Buttons */}
         <div className="space-y-2 pt-1">
           <button
             type="button"
             disabled={isProcessing}
-            onClick={handleLaunchLiveRazorpay}
+            onClick={handleLaunchRazorpayStandardCheckout}
             className="w-full py-3.5 rounded-xl bg-[#1b4d3e] hover:bg-[#153e32] text-white font-extrabold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
           >
             {isProcessing ? (
               <>
                 <RotateCw className="w-4 h-4 animate-spin text-[#9dc84d]" />
-                <span>Verifying UPI / Bank Authorization...</span>
+                <span>Initializing Razorpay Checkout...</span>
               </>
             ) : (
               <>
                 <Lock className="w-4 h-4 text-[#9dc84d]" />
-                <span>Pay ₹{amountRupees.toLocaleString('en-IN')} Securely</span>
+                <span>Pay ₹{amountRupees.toLocaleString('en-IN')} with Razorpay</span>
                 <ArrowRight className="w-4 h-4 text-[#9dc84d]" />
               </>
             )}
@@ -289,7 +312,7 @@ export const RazorpayCheckoutModal: React.FC<RazorpayCheckoutModalProps> = ({
 
           <p className="text-[11px] text-center text-stone-500 flex items-center justify-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Instant tax invoice PDF generated upon payment capture.</span>
+            <span>256-Bit SSL Encrypted • HMAC-SHA256 Signature Verified</span>
           </p>
         </div>
       </div>

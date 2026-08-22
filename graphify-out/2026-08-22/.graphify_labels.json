@@ -1,11 +1,11 @@
 {
-  "0": "useKisanOpsStore",
+  "0": "FarmerRentals.tsx",
   "1": "kisanOpsStore.ts",
   "2": "LazyImage.tsx",
   "3": "devDependencies",
   "4": "20260821000000_initial_schema.sql",
   "5": "dependencies",
-  "6": "weatherEngine.ts",
+  "6": "LeafletFleetMap.tsx",
   "7": "compilerOptions",
   "8": "compilerOptions",
   "9": "App.tsx",
@@ -30,7 +30,8 @@
   "28": "quick_fix_auth.sql",
   "29": "TrustMarquee.tsx",
   "30": "clean_demo_data.sql",
-  "31": "FarmerMarketplace.tsx",
+  "31": "FarmerHome.tsx",
   "32": "telemetry-webhook/index.ts",
-  "33": "vercel.json"
+  "33": "vercel.json",
+  "34": "3. Core Functional Modules & Algorithmic Specifications"
 }
