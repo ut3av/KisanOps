@@ -14,11 +14,16 @@ import {
   Sprout,
   LocateFixed,
   Navigation,
-  RotateCw
+  RotateCw,
+  Tractor,
+  Truck,
+  ArrowRight,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { usePageTitle } from '../../hooks/usePageTitle';
+import { SEEDED_CHCS, SEEDED_MACHINES } from '../../data/seedData';
 
 export const FarmProfile: React.FC = () => {
   usePageTitle(
@@ -26,7 +31,18 @@ export const FarmProfile: React.FC = () => {
     'Configure farmland acreage, crop lifecycle, soil composition, and geo-fenced boundaries.'
   );
   const { state, updateFarm, loadDemoData } = useKisanOpsStore();
-  const { farm, chcs } = state;
+  const { farm, chcs, machines } = state;
+
+  const effectiveMachines = machines && machines.length > 0 ? machines : SEEDED_MACHINES;
+  const effectiveChcs = chcs && chcs.length > 0 ? chcs : SEEDED_CHCS;
+
+  const availableMachines = effectiveMachines.filter(m => m.status === 'AVAILABLE');
+  const availableTractors = availableMachines.filter(m => m.category === 'TRACTOR');
+  const availableHarvesters = availableMachines.filter(m => m.category === 'HARVESTER');
+  const availableTrucks = availableMachines.filter(m => m.category === 'TRAILER' || (m.category as string) === 'TRANSPORT');
+  const availableImplements = availableMachines.filter(
+    m => m.category !== 'TRACTOR' && m.category !== 'HARVESTER' && m.category !== 'TRAILER' && (m.category as string) !== 'TRANSPORT'
+  );
 
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -292,21 +308,60 @@ export const FarmProfile: React.FC = () => {
           </div>
         </div>
 
-        {/* Boundary Map */}
+        {/* Boundary Map & Live Machinery Inventory */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-4 shadow-subtle">
-            <div className="flex items-center justify-between mb-3 px-1">
-              <div className="text-xs font-bold text-slate-800 uppercase tracking-wide">
-                Geo-Fenced Farm Polygon Boundary
+          <div className="bg-white border border-slate-200/90 rounded-3xl p-4 sm:p-5 shadow-subtle space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1">
+              <div>
+                <div className="text-xs font-bold text-slate-800 uppercase tracking-wide">
+                  Geo-Fenced Farm Polygon & Available Fleet
+                </div>
+                <div className="text-[11px] text-slate-500 mt-0.5">
+                  Live machinery, combine harvesters, and transport trucks within 25 km service geofence.
+                </div>
               </div>
-              <span className="text-[11px] text-emerald-700 font-mono font-bold">
+              <span className="text-[11px] text-emerald-700 font-mono font-bold self-start sm:self-auto bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                 {farm.sizeAcres > 0 ? `${farm.sizeAcres} ACRES CONFIGURED` : 'LOCATION STANDBY'}
               </span>
             </div>
+
+            {/* Quick Fleet Availability Summary Strip */}
+            <div className="bg-slate-900 text-white rounded-2xl p-3 px-4 border border-slate-800 flex flex-wrap items-center justify-between gap-2.5">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                <span className="text-xs font-black text-white">
+                  {availableMachines.length} Machinery Units Available in Service Radius
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-semibold">
+                <span className="bg-slate-800 text-emerald-300 border border-slate-700 px-2 py-0.5 rounded-md">
+                  🚜 {availableTractors.length} Tractors
+                </span>
+                <span className="bg-slate-800 text-amber-300 border border-slate-700 px-2 py-0.5 rounded-md">
+                  🌾 {availableHarvesters.length} Harvesters
+                </span>
+                <span className="bg-slate-800 text-sky-300 border border-slate-700 px-2 py-0.5 rounded-md">
+                  🚚 {availableTrucks.length} Trucks/Trailers
+                </span>
+                <span className="bg-slate-800 text-teal-300 border border-slate-700 px-2 py-0.5 rounded-md">
+                  🛠️ {availableImplements.length} Implements
+                </span>
+              </div>
+              <Link
+                to="/farmer/marketplace"
+                className="text-xs font-bold text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1 ml-auto"
+              >
+                <span>Book from Map</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
             <LeafletFleetMap
-              chcs={chcs}
+              chcs={effectiveChcs}
               farm={farm}
-              height="360px"
+              machines={effectiveMachines}
+              serviceRadiusKm={25}
+              height="380px"
               center={[farm.latitude || 23.1872, farm.longitude || 77.1008]}
               zoom={13}
             />

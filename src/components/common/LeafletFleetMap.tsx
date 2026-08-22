@@ -40,6 +40,31 @@ const SVG_ICONS = {
       <path d="M6 12V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6"/>
     </svg>
   `,
+  harvester: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 17h20"/>
+      <path d="M6 17v-6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6"/>
+      <circle cx="6" cy="17" r="3"/>
+      <circle cx="18" cy="17" r="3"/>
+      <path d="M9 6h6"/>
+      <path d="M12 3v3"/>
+    </svg>
+  `,
+  truck: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+      <path d="M15 18H9"/>
+      <path d="M19 18h2a1 1 0 0 0 1-1v-5l-3-4h-5v10h1"/>
+      <circle cx="7" cy="18" r="2"/>
+      <circle cx="17" cy="18" r="2"/>
+    </svg>
+  `,
+  sprayer: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+      <path d="m9 15 2 2 4-4"/>
+    </svg>
+  `,
   alert: `
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
       <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
@@ -89,7 +114,11 @@ const createProfessionalIcon = (bgColor: string, svgContent: string, size = 36, 
 const chcIcon = createProfessionalIcon('linear-gradient(135deg, #1B4D3E 0%, #0F291E 100%)', SVG_ICONS.chc, 36);
 const farmIcon = createProfessionalIcon('linear-gradient(135deg, #059669 0%, #047857 100%)', SVG_ICONS.farm, 34);
 const activeMachineIcon = createProfessionalIcon('linear-gradient(135deg, #0284C7 0%, #0369A1 100%)', SVG_ICONS.tractor, 38, true);
-const availableMachineIcon = createProfessionalIcon('linear-gradient(135deg, #10B981 0%, #059669 100%)', SVG_ICONS.tractor, 32);
+
+const availableTractorIcon = createProfessionalIcon('linear-gradient(135deg, #10B981 0%, #059669 100%)', SVG_ICONS.tractor, 32);
+const availableHarvesterIcon = createProfessionalIcon('linear-gradient(135deg, #D97706 0%, #B45309 100%)', SVG_ICONS.harvester, 34);
+const availableTruckIcon = createProfessionalIcon('linear-gradient(135deg, #0284C7 0%, #0369A1 100%)', SVG_ICONS.truck, 32);
+const availableImplementIcon = createProfessionalIcon('linear-gradient(135deg, #0D9488 0%, #0F766E 100%)', SVG_ICONS.sprayer, 30);
 const maintenanceIcon = createProfessionalIcon('linear-gradient(135deg, #E11D48 0%, #BE123C 100%)', SVG_ICONS.alert, 34, true);
 
 export type MapBaseLayerType =
@@ -192,6 +221,14 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
   const routePositions: [number, number][] = SEHORE_DEMO_ROUTE.map(w => [w.latitude, w.longitude]);
   const activeLayerConfig = MAP_LAYERS[baseLayer];
 
+  const availableMachines = machines.filter(m => m.status === 'AVAILABLE');
+  const availableTractors = availableMachines.filter(m => m.category === 'TRACTOR');
+  const availableHarvesters = availableMachines.filter(m => m.category === 'HARVESTER');
+  const availableTrucks = availableMachines.filter(m => m.category === 'TRAILER' || (m.category as string) === 'TRANSPORT');
+  const availableImplements = availableMachines.filter(
+    m => m.category !== 'TRACTOR' && m.category !== 'HARVESTER' && m.category !== 'TRAILER' && (m.category as string) !== 'TRANSPORT'
+  );
+
   const getLayerButtonLabel = () => {
     switch (baseLayer) {
       case 'AGRO_SATELLITE':
@@ -211,6 +248,30 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
 
   return (
     <div style={{ height }} className="w-full rounded-2xl overflow-hidden border border-slate-200 shadow-elevated relative z-0">
+      {/* Real-Time Available Machinery & Trucks Inventory Floating Bar */}
+      <div className="absolute top-3 left-14 z-[1000] bg-slate-950/90 backdrop-blur-md text-white rounded-2xl p-2 px-3 shadow-2xl border border-slate-700/80 flex flex-wrap items-center gap-2 max-w-[calc(100%-140px)] sm:max-w-max pointer-events-auto">
+        <div className="flex items-center gap-2 pr-2 border-r border-slate-700/80">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+          <span className="text-xs font-black text-white whitespace-nowrap">
+            {availableMachines.length} Live Fleet Available
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5 text-[11px] text-slate-300 font-semibold overflow-x-auto">
+          <span className="inline-flex items-center gap-1 bg-emerald-950/80 text-emerald-300 border border-emerald-800 px-2 py-0.5 rounded-md whitespace-nowrap">
+            🚜 {availableTractors.length} Tractors
+          </span>
+          <span className="inline-flex items-center gap-1 bg-amber-950/80 text-amber-300 border border-amber-800 px-2 py-0.5 rounded-md whitespace-nowrap">
+            🌾 {availableHarvesters.length} Harvesters
+          </span>
+          <span className="inline-flex items-center gap-1 bg-sky-950/80 text-sky-300 border border-sky-800 px-2 py-0.5 rounded-md whitespace-nowrap">
+            🚚 {availableTrucks.length} Trucks/Trailers
+          </span>
+          <span className="inline-flex items-center gap-1 bg-teal-950/80 text-teal-300 border border-teal-800 px-2 py-0.5 rounded-md whitespace-nowrap">
+            🛠️ {availableImplements.length} Implements
+          </span>
+        </div>
+      </div>
+
       {/* Top Floating Controls Bar */}
       <div className="absolute top-3 right-3 z-[1000] flex items-center gap-2 pointer-events-auto">
         {/* Layer Switcher Dropdown */}
@@ -316,7 +377,7 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
           maxZoom={activeLayerConfig.maxZoom}
         />
 
-        {/* Live RainViewer Doppler Radar Layer with smooth local upscaling (Native Zoom 6 prevents RainViewer server error tiles) */}
+        {/* Live RainViewer Doppler Radar Layer with smooth local upscaling */}
         {radarTileUrl && (
           <TileLayer
             key={radarTileUrl}
@@ -412,23 +473,38 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
           </Marker>
         ))}
 
-        {/* Fleet Machinery Markers */}
+        {/* Fleet Machinery Markers with Category Specific Professional Icons */}
         {machines.map(machine => {
           const telemetry = activeTelemetry[machine.id];
           const lat = telemetry ? telemetry.latitude : machine.latitude;
           const lng = telemetry ? telemetry.longitude : machine.longitude;
 
-          let icon = availableMachineIcon;
-          if (machine.status === 'MAINTENANCE') icon = maintenanceIcon;
-          else if (machine.status === 'ACTIVE' || machine.status === 'DISPATCHED' || machine.id === selectedMachineId) {
+          let icon = availableTractorIcon;
+          if (machine.status === 'MAINTENANCE') {
+            icon = maintenanceIcon;
+          } else if (machine.status === 'ACTIVE' || machine.status === 'DISPATCHED' || machine.id === selectedMachineId) {
             icon = activeMachineIcon;
+          } else if (machine.category === 'HARVESTER') {
+            icon = availableHarvesterIcon;
+          } else if (machine.category === 'TRAILER' || (machine.category as string) === 'TRANSPORT') {
+            icon = availableTruckIcon;
+          } else if (machine.category !== 'TRACTOR') {
+            icon = availableImplementIcon;
           }
 
           return (
             <Marker key={machine.id} position={[lat, lng]} icon={icon}>
               <Popup>
                 <div className="text-xs p-1 max-w-[220px]">
-                  <div className="font-bold text-slate-900">{machine.brand} {machine.model}</div>
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="font-bold text-slate-900">{machine.brand} {machine.model}</span>
+                    <span className={clsx(
+                      'text-[9px] font-bold px-1.5 py-0.5 rounded',
+                      machine.status === 'AVAILABLE' ? 'bg-emerald-100 text-emerald-800' : 'bg-sky-100 text-sky-800'
+                    )}>
+                      {machine.status}
+                    </span>
+                  </div>
                   <div className="text-slate-500 font-mono text-[10px]">{machine.identifier} ({machine.category})</div>
                   <div className="mt-1 flex items-center justify-between text-slate-700">
                     <span>Hourly Rate:</span>
@@ -452,10 +528,15 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
         })}
       </MapContainer>
 
-      {/* Map Legend Overlay with Clean SVGs */}
-      <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-elevated border border-slate-200/90 text-xs text-slate-700 space-y-1.5 z-[1000] pointer-events-auto">
-        <div className="font-extrabold text-slate-900 text-xs tracking-tight border-b border-slate-100 pb-1">
-          Map Fleet Layers
+      {/* Map Legend Overlay with Real-Time Inventory Counts */}
+      <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-elevated border border-slate-200/90 text-xs text-slate-700 space-y-1.5 z-[1000] pointer-events-auto max-w-[270px]">
+        <div className="flex items-center justify-between border-b border-slate-100 pb-1">
+          <span className="font-extrabold text-slate-900 text-xs tracking-tight">
+            Map Fleet Layers
+          </span>
+          <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">
+            {availableMachines.length} Live Available
+          </span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-agri-800 shrink-0" />
@@ -463,15 +544,47 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-emerald-500 shrink-0" />
-          <span className="font-medium text-slate-800">Farm Boundary (8-Acre Wheat)</span>
+          <span className="font-medium text-slate-800">Farm Boundary ({farm?.sizeAcres || 8}-Acre {farm?.crop?.cropName || 'Wheat'})</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full border-2 border-emerald-600 border-dashed shrink-0" />
-          <span className="font-medium text-slate-800">Geofence Service Boundary ({serviceRadiusKm || 25} km)</span>
+          <span className="font-medium text-slate-800">Geofence Service Radius ({serviceRadiusKm || 25} km)</span>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-sky-500 shrink-0 animate-pulse" />
-          <span className="font-medium text-slate-800">Active / Dispatched Tractor GPS</span>
+
+        <div className="pt-1 border-t border-slate-100/80 space-y-1 text-[11px]">
+          <div className="flex items-center justify-between text-slate-800">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded bg-emerald-600 inline-block" />
+              <span>Available Tractors</span>
+            </span>
+            <strong className="font-mono text-emerald-800">{availableTractors.length} Units</strong>
+          </div>
+          <div className="flex items-center justify-between text-slate-800">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded bg-amber-600 inline-block" />
+              <span>Combine Harvesters</span>
+            </span>
+            <strong className="font-mono text-amber-800">{availableHarvesters.length} Units</strong>
+          </div>
+          <div className="flex items-center justify-between text-slate-800">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded bg-sky-600 inline-block" />
+              <span>Trucks & Transport Trailers</span>
+            </span>
+            <strong className="font-mono text-sky-800">{availableTrucks.length} Units</strong>
+          </div>
+          <div className="flex items-center justify-between text-slate-800">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded bg-teal-600 inline-block" />
+              <span>Sprayers & Implements</span>
+            </span>
+            <strong className="font-mono text-teal-800">{availableImplements.length} Units</strong>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 pt-1 border-t border-slate-100">
+          <div className="w-2.5 h-2.5 rounded-full bg-sky-500 shrink-0 animate-pulse" />
+          <span className="font-medium text-slate-800 text-[11px]">Active / Dispatched GPS</span>
         </div>
       </div>
     </div>

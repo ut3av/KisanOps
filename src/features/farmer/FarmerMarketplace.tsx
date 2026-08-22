@@ -20,6 +20,7 @@ import { MachineDetailsModal } from './MachineDetailsModal';
 import { MachineThumbnail } from '../../components/common/MachineThumbnail';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
 import { usePageTitle } from '../../hooks/usePageTitle';
+import { SEEDED_CHCS, SEEDED_MACHINES } from '../../data/seedData';
 import clsx from 'clsx';
 
 export const FarmerMarketplace: React.FC = () => {
@@ -29,6 +30,10 @@ export const FarmerMarketplace: React.FC = () => {
   );
   const { state, loadDemoData } = useKisanOpsStore();
   const [searchParams] = useSearchParams();
+  const { farm, machines, chcs, currentTelemetry, bookings, maintenanceAlerts } = state;
+
+  const effectiveMachines = machines && machines.length > 0 ? machines : SEEDED_MACHINES;
+  const effectiveChcs = chcs && chcs.length > 0 ? chcs : SEEDED_CHCS;
 
   const initialActivity = (searchParams.get('activity') as ActivityType) || 'HARVESTING';
   const initialRadius = parseInt(searchParams.get('radius') || '25', 10);
@@ -43,11 +48,9 @@ export const FarmerMarketplace: React.FC = () => {
 
   const [selectedMachineForModal, setSelectedMachineForModal] = useState<Machine | null>(null);
 
-  const { farm, machines, chcs, currentTelemetry, bookings, maintenanceAlerts } = state;
-
   // Process scored and priced machines
   const processedMachines = useMemo(() => {
-    return machines
+    return effectiveMachines
       .map(machine => {
         const chc = chcs.find(c => c.id === machine.chcId);
         const mLat = machine.latitude || chc?.latitude || 23.2030;
@@ -217,10 +220,11 @@ export const FarmerMarketplace: React.FC = () => {
       {viewMode === 'MAP' ? (
         <div className="bg-white border border-slate-200/90 rounded-3xl p-4 shadow-subtle">
           <LeafletFleetMap
-            chcs={chcs}
+            chcs={effectiveChcs}
             farm={farm}
-            machines={machines}
+            machines={effectiveMachines}
             activeTelemetry={currentTelemetry}
+            serviceRadiusKm={maxDistance}
             height="560px"
           />
         </div>
