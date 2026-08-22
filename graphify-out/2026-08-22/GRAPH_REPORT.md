@@ -1,16 +1,16 @@
 # Graph Report - KisanOps  (2026-08-22)
 
 ## Corpus Check
-- 111 files · ~334,571 words
+- 111 files · ~337,064 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 581 nodes · 1248 edges · 37 communities (28 shown, 9 thin omitted)
+- 581 nodes · 1251 edges · 37 communities (28 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5f6f8828`
+- Built from commit: `864b80b0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -170,7 +170,7 @@ Cohesion: 0.40
 Nodes (4): HERO_SLIDES, HeroSection(), HeroSectionProps, HeroSlide
 
 ## Knowledge Gaps
-- **207 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+202 more)
+- **206 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+201 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -184,7 +184,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `plugins` connect `plugins` to `App.tsx`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
-  _207 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _206 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `kisanOpsStore.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.05886075949367089 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**

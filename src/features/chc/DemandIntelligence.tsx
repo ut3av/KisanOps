@@ -55,9 +55,15 @@ export const DemandIntelligence: React.FC = () => {
               <span>Deterministic Fleet Rebalancing Optimizer</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
-              <span>Recommended Fleet Relocation: Bhopal</span>
-              <ArrowRight className="w-5 h-5 text-emerald-400" />
-              <span>Sehore</span>
+              {allocations.length > 0 ? (
+                <>
+                  <span>Recommended Fleet Relocation: {allocations[0]?.sourceDistrict || 'Surplus Hub'}</span>
+                  <ArrowRight className="w-5 h-5 text-emerald-400" />
+                  <span>{allocations[0]?.targetDistrict || 'Deficit Hub'}</span>
+                </>
+              ) : (
+                <span>Fleet Distribution & Demand Intelligence Radar</span>
+              )}
             </h2>
             <p className="text-xs text-slate-300 mt-0.5">
               {allocations.length > 0
@@ -133,7 +139,7 @@ export const DemandIntelligence: React.FC = () => {
       </div>
 
       {/* Meteorological Weather Risk & Rainfall Radar */}
-      <WeatherRadarCard district="Sehore" />
+      <WeatherRadarCard district={state.chcs[0]?.district || state.farm.district || 'Central District'} />
 
       {/* Regional Demand Forecast Matrix */}
       <div className="bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-subtle space-y-6">
@@ -234,7 +240,7 @@ export const DemandIntelligence: React.FC = () => {
           <div className="bg-surface-50 p-3.5 rounded-2xl border border-slate-200/70 space-y-1">
             <div className="font-bold text-slate-800">Harvest Season Window</div>
             <div className="text-emerald-700 font-extrabold text-base">+30 Pts</div>
-            <p className="text-[11px] text-slate-500">Rabi wheat harvest peak season signal active across Sehore.</p>
+            <p className="text-[11px] text-slate-500">Rabi wheat harvest peak season signal active in regional cluster.</p>
           </div>
 
           <div className="bg-surface-50 p-3.5 rounded-2xl border border-slate-200/70 space-y-1">

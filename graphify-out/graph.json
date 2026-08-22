@@ -4,30 +4,82 @@
   "graph": {},
   "nodes": [
     {
-      "id": "src_features_landing_components_howitworkssection_workflowstep",
-      "label": "WorkflowStep",
+      "id": "src_components_common_kisanloader_kisanloaderprops",
+      "label": "KisanLoaderProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "HowItWorksSection.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
-      "norm_label": "workflowstep",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L16"
+      "norm_label": "kisanloaderprops",
+      "source_file": "src/components/common/KisanLoader.tsx",
+      "source_location": "L4"
     },
     {
-      "id": "src_features_landing_components_modularproductssection_enginemodule",
-      "label": "EngineModule",
+      "id": "src_components_layout_sidenav_navitem",
+      "label": "NavItem",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "HowItWorksSection.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
-      "norm_label": "enginemodule",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L27"
+      "norm_label": "navitem",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_components_layout_sidenav_sidenavprops",
+      "label": "SideNavProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "sidenavprops",
+      "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_features_landing_components_bookdemomodal_bookdemomodalprops",
+      "label": "BookDemoModalProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "bookdemomodalprops",
+      "source_file": "src/features/landing/components/BookDemoModal.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_types_index_userrole",
+      "label": "UserRole",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "userrole",
+      "source_file": "src/types/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_common_brandedreceiptmodal_brandedreceiptmodalprops",
+      "label": "BrandedReceiptModalProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "brandedreceiptmodalprops",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L20"
     },
     {
       "id": "src_components_common_leafletfleetmap_leafletfleetmapprops",
@@ -56,32 +108,6 @@
       "source_location": "L6"
     },
     {
-      "id": "src_components_layout_sidenav_navitem",
-      "label": "NavItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "navitem",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_components_layout_sidenav_sidenavprops",
-      "label": "SideNavProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "sidenavprops",
-      "source_file": "src/components/layout/SideNav.tsx",
-      "source_location": "L32"
-    },
-    {
       "id": "src_lib_billingengine_billingcalculationinput",
       "label": "BillingCalculationInput",
       "_callable": true,
@@ -93,6 +119,19 @@
       "norm_label": "billingcalculationinput",
       "source_file": "src/lib/billingEngine.ts",
       "source_location": "L4"
+    },
+    {
+      "id": "src_lib_creditengine_creditinputfactors",
+      "label": "CreditInputFactors",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "creditinputfactors",
+      "source_file": "src/lib/creditEngine.ts",
+      "source_location": "L3"
     },
     {
       "id": "src_lib_iotingestionengine_hardwaretelemetrypayload",
@@ -119,6 +158,32 @@
       "norm_label": "ingestionresult",
       "source_file": "src/lib/iotIngestionEngine.ts",
       "source_location": "L21"
+    },
+    {
+      "id": "src_lib_maintenanceengine_maintenancehealthbreakdown",
+      "label": "MaintenanceHealthBreakdown",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "maintenancehealthbreakdown",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_lib_recommendationengine_recommendationcontext",
+      "label": "RecommendationContext",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "recommendationcontext",
+      "source_file": "src/lib/recommendationEngine.ts",
+      "source_location": "L4"
     },
     {
       "id": "src_lib_supabaseclient_authresponse",
@@ -303,6 +368,19 @@
       "source_location": "L306"
     },
     {
+      "id": "src_types_index_machine",
+      "label": "Machine",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "machine",
+      "source_file": "src/types/index.ts",
+      "source_location": "L109"
+    },
+    {
       "id": "src_types_index_machineallocationrecommendation",
       "label": "MachineAllocationRecommendation",
       "_callable": true,
@@ -314,6 +392,19 @@
       "norm_label": "machineallocationrecommendation",
       "source_file": "src/types/index.ts",
       "source_location": "L201"
+    },
+    {
+      "id": "src_types_index_machinerecommendationscore",
+      "label": "MachineRecommendationScore",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "machinerecommendationscore",
+      "source_file": "src/types/index.ts",
+      "source_location": "L239"
     },
     {
       "id": "src_types_index_machinestatus",
@@ -381,19 +472,6 @@
       "source_location": "L56"
     },
     {
-      "id": "src_types_index_userrole",
-      "label": "UserRole",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "userrole",
-      "source_file": "src/types/index.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "server_razorpaybackend_createorderparams",
       "label": "CreateOrderParams",
       "_callable": true,
@@ -457,32 +535,6 @@
       "norm_label": "lazyimageprops",
       "source_file": "src/components/common/LazyImage.tsx",
       "source_location": "L5"
-    },
-    {
-      "id": "src_components_common_kisanloader_kisanloaderprops",
-      "label": "KisanLoaderProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "BookDemoModal.tsx",
-      "file_type": "code",
-      "norm_label": "kisanloaderprops",
-      "source_file": "src/components/common/KisanLoader.tsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_features_landing_components_bookdemomodal_bookdemomodalprops",
-      "label": "BookDemoModalProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "BookDemoModal.tsx",
-      "file_type": "code",
-      "norm_label": "bookdemomodalprops",
-      "source_file": "src/features/landing/components/BookDemoModal.tsx",
-      "source_location": "L21"
     },
     {
       "id": "src_components_common_agricreditgauge_agricreditgaugeprops",
@@ -550,19 +602,6 @@
       "source_location": "L22"
     },
     {
-      "id": "src_lib_creditengine_creditinputfactors",
-      "label": "CreditInputFactors",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "creditinputfactors",
-      "source_file": "src/lib/creditEngine.ts",
-      "source_location": "L3"
-    },
-    {
       "id": "src_lib_demandengine_rawdemandinput",
       "label": "RawDemandInput",
       "_callable": true,
@@ -573,19 +612,6 @@
       "file_type": "code",
       "norm_label": "rawdemandinput",
       "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_lib_maintenanceengine_maintenancehealthbreakdown",
-      "label": "MaintenanceHealthBreakdown",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "maintenancehealthbreakdown",
-      "source_file": "src/lib/maintenanceEngine.ts",
       "source_location": "L3"
     },
     {
@@ -602,19 +628,6 @@
       "source_location": "L12"
     },
     {
-      "id": "src_lib_recommendationengine_recommendationcontext",
-      "label": "RecommendationContext",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "recommendationcontext",
-      "source_file": "src/lib/recommendationEngine.ts",
-      "source_location": "L4"
-    },
-    {
       "id": "src_types_index_activitytype",
       "label": "ActivityType",
       "_callable": true,
@@ -628,19 +641,6 @@
       "source_location": "L37"
     },
     {
-      "id": "src_types_index_machine",
-      "label": "Machine",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "machine",
-      "source_file": "src/types/index.ts",
-      "source_location": "L109"
-    },
-    {
       "id": "src_types_index_machinecategory",
       "label": "MachineCategory",
       "_callable": true,
@@ -652,19 +652,6 @@
       "norm_label": "machinecategory",
       "source_file": "src/types/index.ts",
       "source_location": "L47"
-    },
-    {
-      "id": "src_types_index_machinerecommendationscore",
-      "label": "MachineRecommendationScore",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "machinerecommendationscore",
-      "source_file": "src/types/index.ts",
-      "source_location": "L239"
     },
     {
       "id": "src_types_index_paymentmethod",
@@ -1005,6 +992,19 @@
       "source_location": "L4"
     },
     {
+      "id": "src_features_landing_components_howitworkssection_workflowstep",
+      "label": "WorkflowStep",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "workflowstep",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L16"
+    },
+    {
       "id": "src_features_landing_components_industriessection_industrycard",
       "label": "IndustryCard",
       "_callable": true,
@@ -1016,6 +1016,19 @@
       "norm_label": "industrycard",
       "source_file": "src/features/landing/components/IndustriesSection.tsx",
       "source_location": "L16"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection_enginemodule",
+      "label": "EngineModule",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "enginemodule",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L27"
     },
     {
       "id": "src_features_landing_components_roicalculatorsection_roicalculatorsectionprops",
@@ -1057,40 +1070,88 @@
       "source_location": "L12"
     },
     {
-      "id": "src_features_landing_components_howitworkssection_howitworkssection",
-      "label": "HowItWorksSection()",
+      "id": "src_components_common_kisanloader_kisanloader",
+      "label": "KisanLoader()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "HowItWorksSection.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
-      "norm_label": "howitworkssection()",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L86"
+      "norm_label": "kisanloader()",
+      "source_file": "src/components/common/KisanLoader.tsx",
+      "source_location": "L13"
     },
     {
-      "id": "src_features_landing_components_modularproductssection_modularproductssection",
-      "label": "ModularProductsSection()",
+      "id": "src_components_layout_adminlayout_adminlayout",
+      "label": "AdminLayout()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "HowItWorksSection.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
-      "norm_label": "modularproductssection()",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L211"
+      "norm_label": "adminlayout()",
+      "source_file": "src/components/layout/AdminLayout.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_layout_chclayout_chclayout",
+      "label": "CHCLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "chclayout()",
+      "source_file": "src/components/layout/CHCLayout.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_layout_navbar_navbar",
+      "label": "Navbar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "navbar()",
+      "source_file": "src/components/layout/Navbar.tsx",
+      "source_location": "L24"
     },
     {
       "id": "src_components_layout_sidenav_sidenav",
       "label": "SideNav()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
+      "community": 0,
+      "community_name": "Navbar.tsx",
       "file_type": "code",
       "norm_label": "sidenav()",
       "source_file": "src/components/layout/SideNav.tsx",
       "source_location": "L49"
+    },
+    {
+      "id": "src_features_landing_components_bookdemomodal_bookdemomodal",
+      "label": "BookDemoModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "bookdemomodal()",
+      "source_file": "src/features/landing/components/BookDemoModal.tsx",
+      "source_location": "L26"
+    },
+    {
+      "id": "src_components_common_brandedreceiptmodal_brandedreceiptmodal",
+      "label": "BrandedReceiptModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "brandedreceiptmodal()",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L25"
     },
     {
       "id": "src_features_auth_loginpage_loginpage",
@@ -1115,6 +1176,30 @@
       "norm_label": "calculatefinalinvoice()",
       "source_file": "src/lib/billingEngine.ts",
       "source_location": "L16"
+    },
+    {
+      "id": "src_lib_billingengine_generatepdfinvoice",
+      "label": "generatePdfInvoice()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "generatepdfinvoice()",
+      "source_file": "src/lib/billingEngine.ts",
+      "source_location": "L100"
+    },
+    {
+      "id": "src_lib_creditengine_evaluateagricredit",
+      "label": "evaluateAgriCredit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "evaluateagricredit()",
+      "source_file": "src/lib/creditEngine.ts",
+      "source_location": "L17"
     },
     {
       "id": "src_lib_dbservice_fetchinitialplatformdata",
@@ -1177,6 +1262,42 @@
       "source_location": "L294"
     },
     {
+      "id": "src_lib_demandengine_calculatedemandforecast",
+      "label": "calculateDemandForecast()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "calculatedemandforecast()",
+      "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_lib_demandengine_calculatehaversinedistance",
+      "label": "calculateHaversineDistance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "calculatehaversinedistance()",
+      "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L123"
+    },
+    {
+      "id": "src_lib_demandengine_generateallocationrecommendations",
+      "label": "generateAllocationRecommendations()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "generateallocationrecommendations()",
+      "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L64"
+    },
+    {
       "id": "src_lib_iotingestionengine_getsamplehardwareconfig",
       "label": "getSampleHardwareConfig()",
       "_callable": true,
@@ -1199,6 +1320,30 @@
       "norm_label": "ingesthardwaretelemetry()",
       "source_file": "src/lib/iotIngestionEngine.ts",
       "source_location": "L32"
+    },
+    {
+      "id": "src_lib_maintenanceengine_calculatemachinehealth",
+      "label": "calculateMachineHealth()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "calculatemachinehealth()",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_lib_maintenanceengine_evaluatepredictivealerts",
+      "label": "evaluatePredictiveAlerts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "evaluatepredictivealerts()",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L74"
     },
     {
       "id": "src_lib_supabaseclient_sendphoneotp",
@@ -1282,7 +1427,7 @@
       "file_type": "code",
       "norm_label": "createcleanunconfiguredfarm()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L88"
+      "source_location": "L64"
     },
     {
       "id": "src_store_kisanopsstore_createfreshagricreditforuser",
@@ -1294,19 +1439,7 @@
       "file_type": "code",
       "norm_label": "createfreshagricreditforuser()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L110"
-    },
-    {
-      "id": "src_store_kisanopsstore_createfreshfarmforuser",
-      "label": "createFreshFarmForUser()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "createfreshfarmforuser()",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L64"
+      "source_location": "L86"
     },
     {
       "id": "src_store_kisanopsstore_getcleanproductionstate",
@@ -1318,7 +1451,7 @@
       "file_type": "code",
       "norm_label": "getcleanproductionstate()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L151"
+      "source_location": "L127"
     },
     {
       "id": "src_store_kisanopsstore_getinitialstate",
@@ -1330,7 +1463,7 @@
       "file_type": "code",
       "norm_label": "getinitialstate()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L208"
+      "source_location": "L184"
     },
     {
       "id": "src_store_kisanopsstore_getpopulateddemostate",
@@ -1342,7 +1475,7 @@
       "file_type": "code",
       "norm_label": "getpopulateddemostate()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L184"
+      "source_location": "L160"
     },
     {
       "id": "src_store_kisanopsstore_notify",
@@ -1354,7 +1487,7 @@
       "file_type": "code",
       "norm_label": "notify()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L234"
+      "source_location": "L210"
     },
     {
       "id": "src_store_kisanopsstore_startglobalsimulationloop",
@@ -1366,7 +1499,7 @@
       "file_type": "code",
       "norm_label": "startglobalsimulationloop()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L244"
+      "source_location": "L220"
     },
     {
       "id": "api_create_order_handler",
@@ -1489,30 +1622,6 @@
       "source_location": "L14"
     },
     {
-      "id": "src_components_common_kisanloader_kisanloader",
-      "label": "KisanLoader()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "BookDemoModal.tsx",
-      "file_type": "code",
-      "norm_label": "kisanloader()",
-      "source_file": "src/components/common/KisanLoader.tsx",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_features_landing_components_bookdemomodal_bookdemomodal",
-      "label": "BookDemoModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "BookDemoModal.tsx",
-      "file_type": "code",
-      "norm_label": "bookdemomodal()",
-      "source_file": "src/features/landing/components/BookDemoModal.tsx",
-      "source_location": "L26"
-    },
-    {
       "id": "src_features_landing_components_trustmarquee_trustmarquee",
       "label": "TrustMarquee()",
       "_callable": true,
@@ -1582,7 +1691,7 @@
       "file_type": "code",
       "norm_label": "farmerhome()",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L33"
+      "source_location": "L39"
     },
     {
       "id": "src_features_farmer_farmermarketplace_farmermarketplace",
@@ -1607,78 +1716,6 @@
       "norm_label": "machinedetailsmodal()",
       "source_file": "src/features/farmer/MachineDetailsModal.tsx",
       "source_location": "L31"
-    },
-    {
-      "id": "src_lib_creditengine_evaluateagricredit",
-      "label": "evaluateAgriCredit()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "evaluateagricredit()",
-      "source_file": "src/lib/creditEngine.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_lib_demandengine_calculatedemandforecast",
-      "label": "calculateDemandForecast()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "calculatedemandforecast()",
-      "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_lib_demandengine_calculatehaversinedistance",
-      "label": "calculateHaversineDistance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "calculatehaversinedistance()",
-      "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L123"
-    },
-    {
-      "id": "src_lib_demandengine_generateallocationrecommendations",
-      "label": "generateAllocationRecommendations()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "generateallocationrecommendations()",
-      "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L64"
-    },
-    {
-      "id": "src_lib_maintenanceengine_calculatemachinehealth",
-      "label": "calculateMachineHealth()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "calculatemachinehealth()",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_lib_maintenanceengine_evaluatepredictivealerts",
-      "label": "evaluatePredictiveAlerts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "evaluatepredictivealerts()",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L74"
     },
     {
       "id": "src_lib_pricingengine_calculatedynamicprice",
@@ -1945,30 +1982,6 @@
       "source_location": "L11"
     },
     {
-      "id": "src_components_layout_adminlayout_adminlayout",
-      "label": "AdminLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "adminlayout()",
-      "source_file": "src/components/layout/AdminLayout.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_layout_chclayout_chclayout",
-      "label": "CHCLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "chclayout()",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L5"
-    },
-    {
       "id": "src_components_layout_farmerlayout_farmerlayout",
       "label": "FarmerLayout()",
       "_callable": true,
@@ -1979,18 +1992,6 @@
       "norm_label": "farmerlayout()",
       "source_file": "src/components/layout/FarmerLayout.tsx",
       "source_location": "L17"
-    },
-    {
-      "id": "src_components_layout_navbar_navbar",
-      "label": "Navbar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "navbar()",
-      "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L24"
     },
     {
       "id": "src_components_layout_operatorlayout_operatorlayout",
@@ -2158,7 +2159,7 @@
       "file_type": "code",
       "norm_label": "farmerrentals()",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "src_features_farmer_farmprofile_farmprofile",
@@ -2197,6 +2198,18 @@
       "source_location": "L49"
     },
     {
+      "id": "src_features_landing_components_howitworkssection_howitworkssection",
+      "label": "HowItWorksSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "howitworkssection()",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L86"
+    },
+    {
       "id": "src_features_landing_components_industriessection_industriessection",
       "label": "IndustriesSection()",
       "_callable": true,
@@ -2231,6 +2244,18 @@
       "norm_label": "landingnavbar()",
       "source_file": "src/features/landing/components/LandingNavbar.tsx",
       "source_location": "L32"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection_modularproductssection",
+      "label": "ModularProductsSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "modularproductssection()",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L211"
     },
     {
       "id": "src_features_landing_components_platformecosystemsection_platformecosystemsection",
@@ -2401,18 +2426,6 @@
       "source_location": "L6"
     },
     {
-      "id": "src_lib_billingengine_generatepdfinvoice",
-      "label": "generatePdfInvoice()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "generatepdfinvoice()",
-      "source_file": "src/lib/billingEngine.ts",
-      "source_location": "L100"
-    },
-    {
       "id": "src_store_kisanopsstore_usekisanopsstore",
       "label": "useKisanOpsStore()",
       "_callable": true,
@@ -2422,58 +2435,47 @@
       "file_type": "code",
       "norm_label": "usekisanopsstore()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L321"
+      "source_location": "L297"
     },
     {
-      "id": "src_features_landing_components_howitworkssection",
-      "label": "HowItWorksSection.tsx",
+      "id": "src_components_common_kisanloader",
+      "label": "KisanLoader.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "HowItWorksSection.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
-      "norm_label": "howitworkssection.tsx",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "norm_label": "kisanloader.tsx",
+      "source_file": "src/components/common/KisanLoader.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_features_landing_components_howitworkssection_workflow_steps",
-      "label": "WORKFLOW_STEPS",
+      "id": "src_components_layout_adminlayout",
+      "label": "AdminLayout.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "HowItWorksSection.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
-      "norm_label": "workflow_steps",
-      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_features_landing_components_modularproductssection",
-      "label": "ModularProductsSection.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "HowItWorksSection.tsx",
-      "file_type": "code",
-      "norm_label": "modularproductssection.tsx",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "norm_label": "adminlayout.tsx",
+      "source_file": "src/components/layout/AdminLayout.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_features_landing_components_modularproductssection_engines",
-      "label": "ENGINES",
+      "id": "src_components_layout_chclayout",
+      "label": "CHCLayout.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "HowItWorksSection.tsx",
+      "community_name": "Navbar.tsx",
       "file_type": "code",
-      "norm_label": "engines",
-      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
-      "source_location": "L43"
+      "norm_label": "chclayout.tsx",
+      "source_file": "src/components/layout/CHCLayout.tsx",
+      "source_location": "L1"
     },
     {
       "id": "src_components_layout_navbar",
       "label": "Navbar.tsx",
       "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
+      "community": 0,
+      "community_name": "Navbar.tsx",
       "file_type": "code",
       "norm_label": "navbar.tsx",
       "source_file": "src/components/layout/Navbar.tsx",
@@ -2483,11 +2485,33 @@
       "id": "src_components_layout_sidenav",
       "label": "SideNav.tsx",
       "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
+      "community": 0,
+      "community_name": "Navbar.tsx",
       "file_type": "code",
       "norm_label": "sidenav.tsx",
       "source_file": "src/components/layout/SideNav.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_bookdemomodal",
+      "label": "BookDemoModal.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Navbar.tsx",
+      "file_type": "code",
+      "norm_label": "bookdemomodal.tsx",
+      "source_file": "src/features/landing/components/BookDemoModal.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_common_brandedreceiptmodal",
+      "label": "BrandedReceiptModal.tsx",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "brandedreceiptmodal.tsx",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
       "source_location": "L1"
     },
     {
@@ -2634,6 +2658,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_creditengine",
+      "label": "creditEngine.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "creditengine.ts",
+      "source_file": "src/lib/creditEngine.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_lib_dbservice",
       "label": "dbService.ts",
       "_origin": "ast",
@@ -2645,6 +2680,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_demandengine",
+      "label": "demandEngine.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "demandengine.ts",
+      "source_file": "src/lib/demandEngine.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_lib_iotingestionengine",
       "label": "iotIngestionEngine.ts",
       "_origin": "ast",
@@ -2653,6 +2699,28 @@
       "file_type": "code",
       "norm_label": "iotingestionengine.ts",
       "source_file": "src/lib/iotIngestionEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_maintenanceengine",
+      "label": "maintenanceEngine.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "maintenanceengine.ts",
+      "source_file": "src/lib/maintenanceEngine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_recommendationengine",
+      "label": "recommendationEngine.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "recommendationengine.ts",
+      "source_file": "src/lib/recommendationEngine.ts",
       "source_location": "L1"
     },
     {
@@ -2700,6 +2768,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_tests_engines_test",
+      "label": "engines.test.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "engines.test.ts",
+      "source_file": "src/lib/__tests__/engines.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_lib_tests_iotanddb_test",
       "label": "iotAndDb.test.ts",
       "_origin": "ast",
@@ -2730,7 +2809,7 @@
       "file_type": "code",
       "norm_label": "globalstate",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L229"
+      "source_location": "L205"
     },
     {
       "id": "src_store_kisanopsstore_listeners",
@@ -2741,7 +2820,7 @@
       "file_type": "code",
       "norm_label": "listeners",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L230"
+      "source_location": "L206"
     },
     {
       "id": "src_types_index",
@@ -3733,28 +3812,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_common_kisanloader",
-      "label": "KisanLoader.tsx",
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "BookDemoModal.tsx",
-      "file_type": "code",
-      "norm_label": "kisanloader.tsx",
-      "source_file": "src/components/common/KisanLoader.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_landing_components_bookdemomodal",
-      "label": "BookDemoModal.tsx",
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "BookDemoModal.tsx",
-      "file_type": "code",
-      "norm_label": "bookdemomodal.tsx",
-      "source_file": "src/features/landing/components/BookDemoModal.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "agents_rules_graphify",
       "label": "rules/graphify.md",
       "_origin": "ast",
@@ -4361,39 +4418,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_lib_creditengine",
-      "label": "creditEngine.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "creditengine.ts",
-      "source_file": "src/lib/creditEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_demandengine",
-      "label": "demandEngine.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "demandengine.ts",
-      "source_file": "src/lib/demandEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_maintenanceengine",
-      "label": "maintenanceEngine.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "maintenanceengine.ts",
-      "source_file": "src/lib/maintenanceEngine.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_lib_pricingengine",
       "label": "pricingEngine.ts",
       "_origin": "ast",
@@ -4414,28 +4438,6 @@
       "norm_label": "default_pricing_config",
       "source_file": "src/lib/pricingEngine.ts",
       "source_location": "L3"
-    },
-    {
-      "id": "src_lib_recommendationengine",
-      "label": "recommendationEngine.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "recommendationengine.ts",
-      "source_file": "src/lib/recommendationEngine.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_tests_engines_test",
-      "label": "engines.test.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "FarmerHome.tsx",
-      "file_type": "code",
-      "norm_label": "engines.test.ts",
-      "source_file": "src/lib/__tests__/engines.test.ts",
-      "source_location": "L1"
     },
     {
       "id": "supabase_functions_telemetry_webhook_index",
@@ -6195,28 +6197,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_layout_adminlayout",
-      "label": "AdminLayout.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "adminlayout.tsx",
-      "source_file": "src/components/layout/AdminLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_chclayout",
-      "label": "CHCLayout.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "chclayout.tsx",
-      "source_file": "src/components/layout/CHCLayout.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_layout_farmerlayout",
       "label": "FarmerLayout.tsx",
       "_origin": "ast",
@@ -6492,6 +6472,28 @@
       "source_location": "L10"
     },
     {
+      "id": "src_features_landing_components_howitworkssection",
+      "label": "HowItWorksSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "howitworkssection.tsx",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_howitworkssection_workflow_steps",
+      "label": "WORKFLOW_STEPS",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "workflow_steps",
+      "source_file": "src/features/landing/components/HowItWorksSection.tsx",
+      "source_location": "L28"
+    },
+    {
       "id": "src_features_landing_components_industriessection",
       "label": "IndustriesSection.tsx",
       "_origin": "ast",
@@ -6534,6 +6536,28 @@
       "norm_label": "landingnavbar.tsx",
       "source_file": "src/features/landing/components/LandingNavbar.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection",
+      "label": "ModularProductsSection.tsx",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "modularproductssection.tsx",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_landing_components_modularproductssection_engines",
+      "label": "ENGINES",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "engines",
+      "source_file": "src/features/landing/components/ModularProductsSection.tsx",
+      "source_location": "L43"
     },
     {
       "id": "src_features_landing_components_platformecosystemsection",
@@ -6838,6 +6862,18 @@
       "context": "call",
       "source_file": "server/razorpayBackend.ts",
       "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_brandedreceiptmodal_brandedreceiptmodal",
+      "target": "src_lib_billingengine_generatepdfinvoice",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -7298,30 +7334,6 @@
     },
     {
       "source": "src_features_farmer_farmerhome_farmerhome",
-      "target": "src_hooks_usepagetitle_usepagetitle",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L34",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmerhome_farmerhome",
-      "target": "src_store_kisanopsstore_usekisanopsstore",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L38",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmerhome_farmerhome",
       "target": "src_lib_recommendationengine_scoremachineforfarmer",
       "relation": "calls",
       "_origin": "ast",
@@ -7329,7 +7341,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L94",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -7341,7 +7353,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L98",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerhome_farmerhome",
+      "target": "src_hooks_usepagetitle_usepagetitle",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerhome_farmerhome",
+      "target": "src_store_kisanopsstore_usekisanopsstore",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -7401,7 +7437,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -7413,7 +7449,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L273",
+      "source_location": "L283",
       "weight": 1.0
     },
     {
@@ -7425,7 +7461,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -7713,7 +7749,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L165",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -7725,7 +7761,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L169",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -7737,7 +7773,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L175",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -7749,7 +7785,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L226",
+      "source_location": "L202",
       "weight": 1.0
     },
     {
@@ -7761,7 +7797,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L199",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -7773,7 +7809,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L258",
+      "source_location": "L234",
       "weight": 1.0
     },
     {
@@ -7785,7 +7821,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L274",
+      "source_location": "L250",
       "weight": 1.0
     },
     {
@@ -7797,7 +7833,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L314",
+      "source_location": "L290",
       "weight": 1.0
     },
     {
@@ -7809,7 +7845,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L336",
+      "source_location": "L312",
       "weight": 1.0
     },
     {
@@ -7821,7 +7857,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L347",
+      "source_location": "L323",
       "weight": 1.0
     },
     {
@@ -7833,19 +7869,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L351",
+      "source_location": "L327",
       "weight": 1.0
     },
     {
       "source": "src_store_kisanopsstore_usekisanopsstore",
-      "target": "src_store_kisanopsstore_createfreshfarmforuser",
+      "target": "src_store_kisanopsstore_createcleanunconfiguredfarm",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L395",
+      "source_location": "L371",
       "weight": 1.0
     },
     {
@@ -7857,19 +7893,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L396",
-      "weight": 1.0
-    },
-    {
-      "source": "src_store_kisanopsstore_usekisanopsstore",
-      "target": "src_lib_dbservice_savebookingtodatabase",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L507",
+      "source_location": "L372",
       "weight": 1.0
     },
     {
@@ -7881,7 +7905,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L533",
+      "source_location": "L469",
+      "weight": 1.0
+    },
+    {
+      "source": "src_store_kisanopsstore_usekisanopsstore",
+      "target": "src_lib_dbservice_savebookingtodatabase",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L490",
       "weight": 1.0
     },
     {
@@ -7893,7 +7929,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L579",
+      "source_location": "L562",
       "weight": 1.0
     },
     {
@@ -7905,7 +7941,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L746",
+      "source_location": "L729",
       "weight": 1.0
     },
     {
@@ -7917,7 +7953,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L757",
+      "source_location": "L740",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_brandedreceiptmodal_brandedreceiptmodalprops",
+      "target": "src_types_index_invoice",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -9265,6 +9313,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_common_brandedreceiptmodal",
+      "target": "src_types_index_invoice",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_brandedreceiptmodal",
+      "target": "src_lib_billingengine_generatepdfinvoice",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_common_dopplerradarplayer",
       "target": "src_lib_weatherengine_fetchrainviewerradarframes",
       "relation": "imports",
@@ -10377,7 +10449,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L23",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -10389,48 +10461,12 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L24",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
       "source": "src_features_farmer_farmerhome",
-      "target": "src_components_common_agricreditgauge_agricreditgauge",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmerhome",
-      "target": "src_components_common_weatherradarcard_weatherradarcard",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmerhome",
-      "target": "src_lib_recommendationengine_scoremachineforfarmer",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmerhome",
-      "target": "src_lib_pricingengine_calculatedynamicprice",
+      "target": "src_types_index_machine",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10442,7 +10478,19 @@
     },
     {
       "source": "src_features_farmer_farmerhome",
-      "target": "src_hooks_usepagetitle_usepagetitle",
+      "target": "src_types_index_pricequote",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerhome",
+      "target": "src_components_common_agricreditgauge_agricreditgauge",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10454,7 +10502,7 @@
     },
     {
       "source": "src_features_farmer_farmerhome",
-      "target": "src_data_seeddata_seeded_profiles",
+      "target": "src_components_common_weatherradarcard_weatherradarcard",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10466,7 +10514,7 @@
     },
     {
       "source": "src_features_farmer_farmerhome",
-      "target": "src_components_common_machinethumbnail_machinethumbnail",
+      "target": "src_lib_recommendationengine_scoremachineforfarmer",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10474,6 +10522,66 @@
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
       "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerhome",
+      "target": "src_lib_pricingengine_calculatedynamicprice",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerhome",
+      "target": "src_hooks_usepagetitle_usepagetitle",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerhome",
+      "target": "src_data_seeddata_seeded_profiles",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerhome",
+      "target": "src_components_common_machinethumbnail_machinethumbnail",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerhome",
+      "target": "src_features_farmer_machinedetailsmodal_machinedetailsmodal",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -10678,6 +10786,18 @@
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
       "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerrentals",
+      "target": "src_components_common_brandedreceiptmodal_brandedreceiptmodal",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerRentals.tsx",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -13153,6 +13273,42 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_common_brandedreceiptmodal",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_brandedreceiptmodal",
+      "target": "src_types_index",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_brandedreceiptmodal",
+      "target": "src_lib_billingengine",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_common_dopplerradarplayer",
       "target": "ref_react",
       "relation": "imports_from",
@@ -14337,7 +14493,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L23",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -14349,7 +14505,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L24",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -14361,7 +14517,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L25",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -14373,7 +14529,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L26",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -14385,7 +14541,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -14397,7 +14553,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -14409,7 +14565,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -14421,7 +14577,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L30",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -14433,7 +14589,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L31",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerhome",
+      "target": "src_features_farmer_machinedetailsmodal",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerHome.tsx",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -14638,6 +14806,18 @@
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
       "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerrentals",
+      "target": "src_components_common_brandedreceiptmodal",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmerRentals.tsx",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -17512,6 +17692,28 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_common_brandedreceiptmodal",
+      "target": "src_components_common_brandedreceiptmodal_brandedreceiptmodalprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_brandedreceiptmodal",
+      "target": "src_components_common_brandedreceiptmodal_brandedreceiptmodal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_common_dopplerradarplayer",
       "target": "src_components_common_dopplerradarplayer_dopplerradarplayer",
       "relation": "contains",
@@ -18344,7 +18546,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -18366,7 +18568,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -19515,24 +19717,13 @@
     },
     {
       "source": "src_store_kisanopsstore",
-      "target": "src_store_kisanopsstore_createfreshagricreditforuser",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L110",
-      "weight": 1.0
-    },
-    {
-      "source": "src_store_kisanopsstore",
       "target": "src_store_kisanopsstore_getcleanproductionstate",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L151",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -19543,7 +19734,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L184",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -19554,7 +19745,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L208",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -19565,7 +19756,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L229",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -19576,7 +19767,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L230",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -19587,7 +19778,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L234",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -19598,7 +19789,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L244",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -19609,7 +19800,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L321",
+      "source_location": "L297",
       "weight": 1.0
     },
     {
@@ -19625,7 +19816,7 @@
     },
     {
       "source": "src_store_kisanopsstore",
-      "target": "src_store_kisanopsstore_createfreshfarmforuser",
+      "target": "src_store_kisanopsstore_createcleanunconfiguredfarm",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19636,13 +19827,13 @@
     },
     {
       "source": "src_store_kisanopsstore",
-      "target": "src_store_kisanopsstore_createcleanunconfiguredfarm",
+      "target": "src_store_kisanopsstore_createfreshagricreditforuser",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L88",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -21315,5 +21506,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5e75bdab537ad5ded8f32263739370211cf9be26"
+  "built_at_commit": "864b80b03c348536ac511f9c1c59ee161b5b9f9a"
 }

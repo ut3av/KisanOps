@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/features/chc/DemandIntelligence.tsx": {
-    "mtime": 1787390594.1986754,
-    "seen": 1787390629.5139291,
-    "ast_hash": "a3b51e932d0972727becd5b1851ba989",
+    "mtime": 1787395393.157822,
+    "seen": 1787395615.4549687,
+    "ast_hash": "14b88a978fc833edd86811487e650f8e",
     "semantic_hash": ""
   },
   "src/features/chc/FleetManagement.tsx": {
@@ -162,21 +162,21 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787393300.725539,
-    "seen": 1787393396.5373516,
-    "ast_hash": "864e0471a343581dc52f9e1492e657e3",
+    "mtime": 1787396485.9536667,
+    "seen": 1787396547.23457,
+    "ast_hash": "436f860ae471d7baf06c88c061cda5f5",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
-    "mtime": 1787390332.0375173,
-    "seen": 1787390629.513943,
-    "ast_hash": "d8f954d5ee410799425de1a191681f75",
+    "mtime": 1787395424.2606688,
+    "seen": 1787395615.4549909,
+    "ast_hash": "e12d2a3df8b74cfe904437b8089d8656",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerRentals.tsx": {
-    "mtime": 1787390469.2648838,
-    "seen": 1787390629.5139444,
-    "ast_hash": "50fd5f69a927807919cc13594056e0f7",
+    "mtime": 1787396411.5561507,
+    "seen": 1787396547.234575,
+    "ast_hash": "de2f96910d74eb2a9f3ba43285a956f5",
     "semantic_hash": ""
   },
   "src/features/farmer/MachineDetailsModal.tsx": {
@@ -240,9 +240,9 @@
     "semantic_hash": "a3150907ddf2842367caa98e12a33298"
   },
   "src/store/kisanOpsStore.ts": {
-    "mtime": 1787393200.08745,
-    "seen": 1787393396.5374448,
-    "ast_hash": "b57c6f88c2e3cb899995447f2e3c6a87",
+    "mtime": 1787396257.440389,
+    "seen": 1787396547.2346814,
+    "ast_hash": "fdc5369d04b0e618d9916d10dd7083bc",
     "semantic_hash": ""
   },
   "src/types/index.ts": {
@@ -795,6 +795,12 @@
     "mtime": 1787392408.9276564,
     "seen": 1787392614.6158009,
     "ast_hash": "5f649c21404f2676a90484709f34d6b1",
+    "semantic_hash": ""
+  },
+  "src/components/common/BrandedReceiptModal.tsx": {
+    "mtime": 1787395983.4215598,
+    "seen": 1787396547.2344732,
+    "ast_hash": "9ae50b00a6d478d151a86ed234c89245",
     "semantic_hash": ""
   }
 }

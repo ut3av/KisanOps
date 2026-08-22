@@ -59,31 +59,7 @@ export interface AppState {
   isDemoLoaded: boolean;
 }
 
-const STORAGE_KEY = 'kisanops_app_state_v1';
-
-function createFreshFarmForUser(user: UserProfile): Farm {
-  return {
-    id: `farm-${user.id}`,
-    farmerId: user.id,
-    farmName: `${user.fullName}'s Farm`,
-    district: user.district || 'Sehore',
-    village: user.village || 'Bilkisganj',
-    state: 'Madhya Pradesh',
-    sizeAcres: 6.0,
-    latitude: 23.1872,
-    longitude: 77.1008,
-    soilType: 'Medium Black Clayey Loam',
-    irrigationType: 'Canal',
-    crop: {
-      id: `crop-${user.id}`,
-      cropName: 'Wheat (Sharbati)',
-      season: 'Rabi',
-      sowingDate: '2025-11-15',
-      expectedHarvestDate: '2026-08-28',
-      cropStage: 'Pre-harvest',
-    },
-  };
-}
+const STORAGE_KEY = 'kisanops_app_state_v2';
 
 function createCleanUnconfiguredFarm(user: UserProfile): Farm {
   return {
@@ -392,7 +368,7 @@ export function useKisanOpsStore() {
         };
       } else {
         // Newly created account / custom user: create fresh personalized profile
-        const freshFarm = createFreshFarmForUser(profile);
+        const freshFarm = createCleanUnconfiguredFarm(profile);
         const freshCredit = createFreshAgriCreditForUser(profile);
         const welcomeNotification: InAppNotification = {
           id: `notif-welcome-${Date.now()}`,
@@ -489,14 +465,21 @@ export function useKisanOpsStore() {
         };
       }
 
+      // Automatically generate immediate branded tax invoice & receipt
+      const initialInvoice = calculateFinalInvoice({
+        booking: newBooking,
+        actualHours: newBooking.bookedHours,
+      });
+      globalState.invoices = [initialInvoice, ...globalState.invoices.filter(inv => inv.bookingId !== newBooking.id)];
+
       globalState.bookings = [newBooking, ...globalState.bookings];
       globalState.notifications = [
         {
           id: `notif-bk-${Date.now()}`,
-          title: `New Booking: ${bookingNumber}`,
-          message: `${newBooking.farmerName} booked ${newBooking.machineModel} for ${newBooking.activity}.`,
+          title: `Booking Confirmed: ${bookingNumber}`,
+          message: `${newBooking.farmerName} booked ${newBooking.machineModel} for ${newBooking.activity}. Tax receipt #${initialInvoice.invoiceNumber} is ready.`,
           type: 'BOOKING',
-          linkUrl: '/chc/bookings',
+          linkUrl: '/farmer/rentals',
           isRead: false,
           createdAt: new Date().toISOString(),
         },

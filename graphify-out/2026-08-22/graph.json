@@ -1297,6 +1297,18 @@
       "source_location": "L29"
     },
     {
+      "id": "src_store_kisanopsstore_createcleanunconfiguredfarm",
+      "label": "createCleanUnconfiguredFarm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "kisanOpsStore.ts",
+      "file_type": "code",
+      "norm_label": "createcleanunconfiguredfarm()",
+      "source_file": "src/store/kisanOpsStore.ts",
+      "source_location": "L64"
+    },
+    {
       "id": "src_store_kisanopsstore_createfreshagricreditforuser",
       "label": "createFreshAgriCreditForUser()",
       "_callable": true,
@@ -1306,19 +1318,7 @@
       "file_type": "code",
       "norm_label": "createfreshagricreditforuser()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L88"
-    },
-    {
-      "id": "src_store_kisanopsstore_createfreshfarmforuser",
-      "label": "createFreshFarmForUser()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "kisanOpsStore.ts",
-      "file_type": "code",
-      "norm_label": "createfreshfarmforuser()",
-      "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L64"
+      "source_location": "L86"
     },
     {
       "id": "src_store_kisanopsstore_getcleanproductionstate",
@@ -1330,7 +1330,7 @@
       "file_type": "code",
       "norm_label": "getcleanproductionstate()",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L136"
+      "source_location": "L127"
     },
     {
       "id": "src_store_kisanopsstore_getinitialstate",
@@ -2026,7 +2026,7 @@
       "file_type": "code",
       "norm_label": "chcsettings()",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L16"
+      "source_location": "L18"
     },
     {
       "id": "src_features_chc_demandintelligence_demandintelligence",
@@ -2050,7 +2050,7 @@
       "file_type": "code",
       "norm_label": "fleetmanagement()",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L24"
+      "source_location": "L28"
     },
     {
       "id": "src_features_chc_livetelematics_livetelematics",
@@ -2134,7 +2134,7 @@
       "file_type": "code",
       "norm_label": "farmprofile()",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L17"
+      "source_location": "L24"
     },
     {
       "id": "src_features_landing_components_ctabanner_ctabanner",
@@ -7077,7 +7077,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -7089,7 +7089,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -7125,7 +7125,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L25",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -7137,7 +7137,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -7425,7 +7425,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L18",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -7437,7 +7437,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L22",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -7694,7 +7694,7 @@
     },
     {
       "source": "src_store_kisanopsstore_getcleanproductionstate",
-      "target": "src_store_kisanopsstore_createfreshfarmforuser",
+      "target": "src_store_kisanopsstore_createcleanunconfiguredfarm",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7826,7 +7826,7 @@
     },
     {
       "source": "src_store_kisanopsstore_usekisanopsstore",
-      "target": "src_store_kisanopsstore_createfreshfarmforuser",
+      "target": "src_store_kisanopsstore_createcleanunconfiguredfarm",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7893,7 +7893,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L617",
+      "source_location": "L722",
       "weight": 1.0
     },
     {
@@ -7905,7 +7905,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L628",
+      "source_location": "L733",
       "weight": 1.0
     },
     {
@@ -9981,7 +9981,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -9993,7 +9993,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -10041,7 +10041,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -10053,7 +10053,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10065,7 +10065,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10077,7 +10077,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10089,7 +10089,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L20",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -10101,7 +10101,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L21",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -10677,7 +10677,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L13",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -10689,7 +10689,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L14",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -10701,7 +10701,31 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L15",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmprofile",
+      "target": "src_types_index_farm",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmprofile",
+      "target": "src_types_index_farmcrop",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -13869,7 +13893,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -13881,7 +13905,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -13953,7 +13977,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -13965,7 +13989,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -13977,7 +14001,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L20",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -13989,7 +14013,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L21",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -14625,7 +14649,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L13",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -14637,7 +14661,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L14",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -14649,7 +14673,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L15",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmprofile",
+      "target": "src_types_index",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/FarmProfile.tsx",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -18153,7 +18189,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -18175,7 +18211,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L24",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -18329,7 +18365,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L17",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -19473,7 +19509,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L136",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -19566,7 +19602,7 @@
     },
     {
       "source": "src_store_kisanopsstore",
-      "target": "src_store_kisanopsstore_createfreshfarmforuser",
+      "target": "src_store_kisanopsstore_createcleanunconfiguredfarm",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19583,7 +19619,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/store/kisanOpsStore.ts",
-      "source_location": "L88",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -21256,5 +21292,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5f6f8828530413e41fd5b28e11bac11a497f0ccf"
+  "built_at_commit": "864b80b03c348536ac511f9c1c59ee161b5b9f9a"
 }

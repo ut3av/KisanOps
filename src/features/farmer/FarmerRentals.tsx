@@ -21,6 +21,7 @@ import { generatePdfInvoice } from '../../lib/billingEngine';
 import { BookingStatus } from '../../types';
 import { usePageTitle } from '../../hooks/usePageTitle';
 import { SEEDED_PROFILES } from '../../data/seedData';
+import { BrandedReceiptModal } from '../../components/common/BrandedReceiptModal';
 import clsx from 'clsx';
 
 export const FarmerRentals: React.FC = () => {
@@ -35,6 +36,7 @@ export const FarmerRentals: React.FC = () => {
   const userBookings = isDemo ? bookings : bookings.filter(b => b.farmerId === currentUser.id);
 
   const [selectedBookingId, setSelectedBookingId] = useState<string>(userBookings[0]?.id || '');
+  const [showReceiptModal, setShowReceiptModal] = useState<boolean>(false);
 
   const activeBooking = userBookings.find(b => b.id === selectedBookingId) || userBookings[0];
   const bookingInvoice = invoices.find(inv => inv.bookingId === activeBooking?.id);
@@ -269,13 +271,22 @@ export const FarmerRentals: React.FC = () => {
                   </div>
                 </div>
 
-                <button
-                  onClick={() => generatePdfInvoice(bookingInvoice)}
-                  className="btn-primary text-xs py-2 px-4 shadow-sm flex items-center gap-1.5"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>Download Invoice PDF</span>
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setShowReceiptModal(true)}
+                    className="btn-secondary text-xs py-2 px-3.5 flex items-center gap-1.5 shadow-2xs font-bold"
+                  >
+                    <FileText className="w-4 h-4 text-agri-700" />
+                    <span>View Branded Receipt</span>
+                  </button>
+                  <button
+                    onClick={() => generatePdfInvoice(bookingInvoice)}
+                    className="btn-primary text-xs py-2 px-4 shadow-sm flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 font-bold"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>Download PDF</span>
+                  </button>
+                </div>
               </div>
 
               {/* Invoice Itemized Table */}
@@ -318,6 +329,14 @@ export const FarmerRentals: React.FC = () => {
                 </table>
               </div>
             </div>
+          )}
+
+          {/* Branded Receipt Modal */}
+          {showReceiptModal && bookingInvoice && (
+            <BrandedReceiptModal
+              invoice={bookingInvoice}
+              onClose={() => setShowReceiptModal(false)}
+            />
           )}
         </div>
       ) : (

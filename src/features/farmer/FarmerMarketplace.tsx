@@ -111,7 +111,7 @@ export const FarmerMarketplace: React.FC = () => {
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Real-time equipment availability from Custom Hiring Centres in Sehore & surrounding hubs.
+            Real-time equipment availability from Custom Hiring Centres {state.farm.district ? `in ${state.farm.district} & surrounding hubs` : 'across regional hubs'}.
           </p>
         </div>
 
