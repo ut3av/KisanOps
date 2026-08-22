@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Wheat,
@@ -24,11 +24,12 @@ import {
   RotateCw
 } from 'lucide-react';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
-import { ActivityType, Machine } from '../../types';
+import { ActivityType, Machine, AvailabilitySnapshot } from '../../types';
 import { AgriCreditGauge } from '../../components/common/AgriCreditGauge';
 import { WeatherRadarCard } from '../../components/common/WeatherRadarCard';
 import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
+import { getNearbyMachineAvailability } from '../../lib/availabilityService';
 import { usePageTitle } from '../../hooks/usePageTitle';
 import { SEEDED_PROFILES } from '../../data/seedData';
 import { MachineThumbnail } from '../../components/common/MachineThumbnail';
@@ -50,6 +51,38 @@ export const FarmerHome: React.FC = () => {
 
   const [isFarmModalOpen, setIsFarmModalOpen] = useState(false);
   const [selectedMachineForModal, setSelectedMachineForModal] = useState<Machine | null>(null);
+
+  // Real-time Geospatial Availability State
+  const [selectedRadiusKm, setSelectedRadiusKm] = useState<number>(25);
+  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string>('ALL');
+  const [availabilitySnapshot, setAvailabilitySnapshot] = useState<AvailabilitySnapshot | null>(null);
+
+  useEffect(() => {
+    let isCancelled = false;
+    const fetchAvailability = async () => {
+      const snap = await getNearbyMachineAvailability(
+        {
+          latitude: farm.latitude || 23.1642,
+          longitude: farm.longitude || 77.1215,
+          radiusKm: selectedRadiusKm,
+          machineCategory: selectedCategoryFilter as any,
+        },
+        {
+          machines: state.machines,
+          chcs: state.chcs,
+          bookings: state.bookings,
+          maintenanceAlerts: state.maintenanceAlerts,
+        }
+      );
+      if (!isCancelled) {
+        setAvailabilitySnapshot(snap);
+      }
+    };
+    fetchAvailability();
+    return () => {
+      isCancelled = true;
+    };
+  }, [farm.latitude, farm.longitude, selectedRadiusKm, selectedCategoryFilter, state.machines, state.bookings, state.maintenanceAlerts, state.chcs]);
 
   // Form state for configuring farm
   const [formData, setFormData] = useState({
@@ -477,6 +510,207 @@ export const FarmerHome: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Real-Time Geospatial CHC Machinery Availability Module */}
+      {isFarmConfigured && (
+        <div className="bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-subtle space-y-5">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                </span>
+                <h3 className="text-lg sm:text-xl font-extrabold text-slate-900">
+                  Live Machinery Available Near Your Farm
+                </h3>
+                <span className="text-xs bg-emerald-100 text-emerald-800 font-extrabold px-2.5 py-0.5 rounded-full">
+                  PostGIS Verified
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 mt-1 flex items-center gap-1.5 flex-wrap">
+                <MapPin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>
+                  Anchored to <strong>{farm.farmName}</strong> ({farm.latitude ? farm.latitude.toFixed(4) : '23.1642'}° N, {farm.longitude ? farm.longitude.toFixed(4) : '77.1215'}° E)
+                </span>
+                <button
+                  onClick={handleOpenFarmModal}
+                  className="text-emerald-700 underline font-bold hover:text-emerald-900 ml-1 cursor-pointer"
+                >
+                  Adjust Pin
+                </button>
+              </p>
+            </div>
+
+            {/* Geofenced Radius Selector */}
+            <div className="flex flex-wrap items-center gap-1.5 bg-slate-50 p-1.5 rounded-2xl border border-slate-200/80">
+              <span className="text-[11px] font-bold text-slate-500 uppercase px-2">Radius:</span>
+              {[5, 10, 15, 25, 50].map(r => (
+                <button
+                  key={r}
+                  onClick={() => setSelectedRadiusKm(r)}
+                  className={clsx(
+                    'px-2.5 py-1 text-xs font-bold rounded-xl transition-all cursor-pointer',
+                    selectedRadiusKm === r
+                      ? 'bg-emerald-600 text-white shadow-xs'
+                      : 'text-slate-700 hover:bg-slate-200/60'
+                  )}
+                >
+                  {r} km
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Real-time Summary Header */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-emerald-50/70 border border-emerald-200/70 rounded-2xl p-4">
+            <div>
+              <div className="text-base sm:text-lg font-black text-emerald-950">
+                {availabilitySnapshot ? availabilitySnapshot.totalAvailable : '...'} machines available within {selectedRadiusKm} km
+              </div>
+              <div className="text-xs text-emerald-800 font-medium">
+                Found across {availabilitySnapshot ? availabilitySnapshot.chcsInRadius : 0} regional CHCs (Total {availabilitySnapshot?.totalInRadius || 0} units registered in geofence)
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => navigate(`/farmer/marketplace?radius=${selectedRadiusKm}`)}
+                className="btn-primary text-xs py-2 px-3.5 flex items-center gap-1.5 shadow-xs cursor-pointer"
+              >
+                <span>Browse All {availabilitySnapshot?.totalAvailable || 0}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Dynamic Category Chips with Counts */}
+          <div className="flex flex-wrap gap-2 pt-1">
+            {[
+              { label: 'All Equipment', value: 'ALL', count: availabilitySnapshot?.totalAvailable || 0, icon: '🚜' },
+              { label: 'Tractors', value: 'TRACTOR', count: availabilitySnapshot?.byType['TRACTOR'] || 0, icon: '🚜' },
+              { label: 'Harvesters', value: 'HARVESTER', count: availabilitySnapshot?.byType['HARVESTER'] || 0, icon: '🌾' },
+              { label: 'Rotavators', value: 'ROTAVATOR', count: availabilitySnapshot?.byType['ROTAVATOR'] || 0, icon: '🔄' },
+              { label: 'Seeders', value: 'SEEDER', count: availabilitySnapshot?.byType['SEEDER'] || 0, icon: '🌱' },
+              { label: 'Sprayers', value: 'SPRAYER', count: availabilitySnapshot?.byType['SPRAYER'] || 0, icon: '💧' },
+            ].map(cat => (
+              <button
+                key={cat.value}
+                onClick={() => setSelectedCategoryFilter(cat.value)}
+                className={clsx(
+                  'px-3.5 py-2 rounded-xl text-xs font-bold border transition-all flex items-center gap-2 cursor-pointer',
+                  selectedCategoryFilter === cat.value
+                    ? 'bg-slate-900 border-slate-900 text-white shadow-xs'
+                    : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
+                )}
+              >
+                <span>{cat.icon}</span>
+                <span>{cat.label}</span>
+                <span className={clsx(
+                  'text-[10px] px-1.5 py-0.5 rounded-full font-mono font-extrabold',
+                  selectedCategoryFilter === cat.value ? 'bg-emerald-500 text-white' : 'bg-slate-100 text-slate-700'
+                )}>
+                  {cat.count}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Machine Grid Preview */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+            {availabilitySnapshot?.machines
+              .filter(m => selectedCategoryFilter === 'ALL' || m.category === selectedCategoryFilter)
+              .slice(0, 6)
+              .map(m => {
+                const dynamicPrice = calculateDynamicPrice(m, {
+                  demandIndex: 94,
+                  shortageUnits: 2,
+                  distanceKm: m.distanceKm || 3.2,
+                  config: {
+                    minSurgeMultiplier: state.chcs.find(c => c.id === m.chcId)?.minSurgeMultiplier ?? 0.80,
+                    maxSurgeMultiplier: state.chcs.find(c => c.id === m.chcId)?.maxSurgeMultiplier ?? 1.30,
+                  },
+                });
+
+                return (
+                  <div
+                    key={m.id}
+                    className="border border-slate-200 rounded-2xl p-4 bg-white hover:border-emerald-500/60 hover:shadow-md transition-all flex flex-col justify-between space-y-3 group"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-slate-100 text-slate-700">
+                          {m.category}
+                        </span>
+                        <span
+                          className={clsx(
+                            'text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1',
+                            m.locationStatus === 'LIVE'
+                              ? 'bg-emerald-100 text-emerald-800'
+                              : m.locationStatus === 'RECENT'
+                              ? 'bg-amber-100 text-amber-800'
+                              : 'bg-slate-100 text-slate-600'
+                          )}
+                        >
+                          <span
+                            className={clsx(
+                              'w-1.5 h-1.5 rounded-full',
+                              m.locationStatus === 'LIVE'
+                                ? 'bg-emerald-600 animate-pulse'
+                                : m.locationStatus === 'RECENT'
+                                ? 'bg-amber-600'
+                                : 'bg-slate-400'
+                            )}
+                          />
+                          {m.locationFreshnessText}
+                        </span>
+                      </div>
+
+                      <div className="font-extrabold text-sm text-slate-900 group-hover:text-emerald-800 transition-colors">
+                        {m.brand} {m.model}
+                      </div>
+                      <div className="text-[11px] text-slate-500 font-mono mt-0.5">
+                        {m.identifier} • {m.chcName}
+                      </div>
+
+                      <div className="flex items-center gap-3 text-xs text-slate-600 mt-2">
+                        <span className="font-bold text-slate-800 flex items-center gap-1">
+                          <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                          {m.distanceKm} km from farm
+                        </span>
+                        <span>•</span>
+                        <span className="text-emerald-700 font-bold">
+                          {m.healthScore}% Health
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                      <div>
+                        <div className="text-sm font-black text-slate-900">₹{dynamicPrice.quotedRatePerHour}/hr</div>
+                        <div className="text-[10px] text-slate-500">Live rate</div>
+                      </div>
+
+                      <button
+                        onClick={() => setSelectedMachineForModal(m)}
+                        disabled={!m.isBookable}
+                        className={clsx(
+                          'text-xs font-bold py-1.5 px-3 rounded-xl transition-all flex items-center gap-1 cursor-pointer',
+                          m.isBookable
+                            ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs'
+                            : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                        )}
+                      >
+                        <Zap className="w-3 h-3" />
+                        <span>{m.isBookable ? 'Book Now' : 'Reserved'}</span>
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      )}
 
       {/* Hero Recommended Machine Section */}
       {topMatch && isFarmConfigured ? (

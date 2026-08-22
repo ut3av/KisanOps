@@ -134,6 +134,9 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
     current_crop: farm.crop?.cropName || 'Wheat',
     soil_type: farm.soilType || 'Medium Black Clayey Loam',
     available_credit: agriCredit.availableCredit,
+    farm_latitude: farm.latitude || 23.1642,
+    farm_longitude: farm.longitude || 77.1215,
+    default_radius_km: 25,
   });
 
   // Handle Speech-to-Text Recording

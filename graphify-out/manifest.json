@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/components/common/LeafletFleetMap.tsx": {
-    "mtime": 1787416539.6098065,
-    "seen": 1787416566.503111,
-    "ast_hash": "edfde8ab5ab21710364328be959c80ee",
+    "mtime": 1787436550.6163082,
+    "seen": 1787437012.7328348,
+    "ast_hash": "c0003124b76b921bf66f786318087a8e",
     "semantic_hash": ""
   },
   "src/components/common/StatCard.tsx": {
@@ -78,9 +78,9 @@
     "semantic_hash": ""
   },
   "src/data/seedData.ts": {
-    "mtime": 1787397133.1078606,
-    "seen": 1787397789.1391842,
-    "ast_hash": "220232535c897e53d3460c5bc9708af9",
+    "mtime": 1787436325.7156677,
+    "seen": 1787437012.7329192,
+    "ast_hash": "87213f21ea5b598625b8ac3bb683127e",
     "semantic_hash": ""
   },
   "src/features/admin/AdminDashboard.tsx": {
@@ -120,9 +120,9 @@
     "semantic_hash": ""
   },
   "src/features/chc/FleetManagement.tsx": {
-    "mtime": 1787435402.908597,
-    "seen": 1787435728.248133,
-    "ast_hash": "3aa9aee2dab2ac2f6474753939e36648",
+    "mtime": 1787436834.3308692,
+    "seen": 1787437012.7329552,
+    "ast_hash": "3f2a38de9d696781b99d170aaac874e8",
     "semantic_hash": ""
   },
   "src/features/chc/LiveTelematics.tsx": {
@@ -144,9 +144,9 @@
     "semantic_hash": ""
   },
   "src/features/farmer/BookingModal.tsx": {
-    "mtime": 1787435565.589768,
-    "seen": 1787435728.2481577,
-    "ast_hash": "5543ea484514bc615af8917a278a0dfa",
+    "mtime": 1787436593.4180934,
+    "seen": 1787437012.7329779,
+    "ast_hash": "f6d2d8e6561fd276aa9fdf42750d7039",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmProfile.tsx": {
@@ -162,15 +162,15 @@
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerHome.tsx": {
-    "mtime": 1787435347.5935588,
-    "seen": 1787435728.2481701,
-    "ast_hash": "ecc81e1bee743ed365cb3237d593e18a",
+    "mtime": 1787436431.7072265,
+    "seen": 1787437012.7329915,
+    "ast_hash": "873cba025ad20d18d1ba9817328a4187",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerMarketplace.tsx": {
-    "mtime": 1787435382.4976778,
-    "seen": 1787435728.2481747,
-    "ast_hash": "7e545c07e0ac4f26b695f60bbc936110",
+    "mtime": 1787436490.861737,
+    "seen": 1787437012.732995,
+    "ast_hash": "b07ac36b8d3a150629eaab97a6cbf067",
     "semantic_hash": ""
   },
   "src/features/farmer/FarmerRentals.tsx": {
@@ -240,15 +240,15 @@
     "semantic_hash": "a3150907ddf2842367caa98e12a33298"
   },
   "src/store/kisanOpsStore.ts": {
-    "mtime": 1787396257.440389,
-    "seen": 1787396547.2346814,
-    "ast_hash": "fdc5369d04b0e618d9916d10dd7083bc",
+    "mtime": 1787436378.9824882,
+    "seen": 1787437012.7333727,
+    "ast_hash": "33b83a4d2276bef8777a50b3a1bd1d31",
     "semantic_hash": ""
   },
   "src/types/index.ts": {
-    "mtime": 1787434995.9106486,
-    "seen": 1787435728.2484784,
-    "ast_hash": "17cc7efa5a9553c27b6a4b9b6e614283",
+    "mtime": 1787436261.2039733,
+    "seen": 1787437012.7333784,
+    "ast_hash": "9eb8c9092465c9cde07f64fc2dba2362",
     "semantic_hash": ""
   },
   "supabase/migrations/20260821000000_initial_schema.sql": {
@@ -696,9 +696,9 @@
     "semantic_hash": ""
   },
   "src/lib/dbService.ts": {
-    "mtime": 1787389591.061718,
-    "seen": 1787390088.3071847,
-    "ast_hash": "50f6586c0f6721e2c7345700dd586325",
+    "mtime": 1787436347.4091277,
+    "seen": 1787437012.7331624,
+    "ast_hash": "a9415eb1cde7e4158a5387eb39f1d3a5",
     "semantic_hash": ""
   },
   "src/lib/iotIngestionEngine.ts": {
@@ -810,9 +810,9 @@
     "semantic_hash": ""
   },
   "src/components/voice/VoiceAssistantModal.tsx": {
-    "mtime": 1787399004.2706773,
-    "seen": 1787399681.8191617,
-    "ast_hash": "c4ce16bc5a019e05570c4a239de42e61",
+    "mtime": 1787436765.2629695,
+    "seen": 1787437012.7329142,
+    "ast_hash": "fc0350a19f0958e6bfac04d9fbf5edbd",
     "semantic_hash": ""
   },
   "src/routes/voice.routes.ts": {
@@ -834,21 +834,21 @@
     "semantic_hash": ""
   },
   "src/services/intent/intent.schema.ts": {
-    "mtime": 1787398670.1345117,
-    "seen": 1787399681.8192616,
-    "ast_hash": "4859ad06a0053c20d37dbb1fa8ee00e2",
+    "mtime": 1787436708.9887412,
+    "seen": 1787437012.7332256,
+    "ast_hash": "64e39808578f90b4cd24c303028f88b9",
     "semantic_hash": ""
   },
   "src/services/intent/intent.service.ts": {
-    "mtime": 1787398859.3855677,
-    "seen": 1787399681.8192627,
-    "ast_hash": "550c5b061db5dbaa945a3aaa26b178d7",
+    "mtime": 1787436734.1398597,
+    "seen": 1787437012.7332296,
+    "ast_hash": "6c7474ec7afe529e4759a4306ab9a87f",
     "semantic_hash": ""
   },
   "src/services/machinery/machinery-matcher.service.ts": {
-    "mtime": 1787399434.597163,
-    "seen": 1787399681.8192642,
-    "ast_hash": "68f7ff25e18d7960099c6e75e713f235",
+    "mtime": 1787436751.3805165,
+    "seen": 1787437012.7332342,
+    "ast_hash": "cf0a3dd466dba41147df6d25aa4deaa0",
     "semantic_hash": ""
   },
   "src/services/response/response.service.ts": {
@@ -876,9 +876,9 @@
     "semantic_hash": ""
   },
   "src/types/voice.ts": {
-    "mtime": 1787398476.5330493,
-    "seen": 1787399681.819274,
-    "ast_hash": "fdb6f186e311806337dcf7ac6e423e04",
+    "mtime": 1787436641.2423897,
+    "seen": 1787437012.733383,
+    "ast_hash": "97f02545d31c143df05440dd0c69d9cd",
     "semantic_hash": ""
   },
   "src/utils/date-parser.ts": {
@@ -897,6 +897,24 @@
     "mtime": 1787411041.1315136,
     "seen": 1787412482.698827,
     "ast_hash": "49c642b67ab100ab1edf3468570f4629",
+    "semantic_hash": ""
+  },
+  "src/lib/__tests__/geospatialAvailability.test.ts": {
+    "mtime": 1787436970.6597984,
+    "seen": 1787437012.7331252,
+    "ast_hash": "782a3cf41b6cc81bafa9a67e524cf25c",
+    "semantic_hash": ""
+  },
+  "src/lib/availabilityService.ts": {
+    "mtime": 1787436276.1742592,
+    "seen": 1787437012.7331476,
+    "ast_hash": "a099139c22d822fbc0d208caac84cb02",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260823000000_realtime_geospatial_availability.sql": {
+    "mtime": 1787436239.4380205,
+    "seen": 1787437012.7334087,
+    "ast_hash": "03506ae706ba46d444dab9c6ae763c78",
     "semantic_hash": ""
   }
 }

@@ -15,6 +15,7 @@ import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { ActivityType, Machine } from '../../types';
 import { scoreMachineForFarmer } from '../../lib/recommendationEngine';
 import { calculateDynamicPrice } from '../../lib/pricingEngine';
+import { calculateGeospatialDistance, getLocationFreshness, isMachineBookable } from '../../lib/availabilityService';
 import { MachineDetailsModal } from './MachineDetailsModal';
 import { MachineThumbnail } from '../../components/common/MachineThumbnail';
 import { LeafletFleetMap } from '../../components/common/LeafletFleetMap';
@@ -30,34 +31,34 @@ export const FarmerMarketplace: React.FC = () => {
   const [searchParams] = useSearchParams();
 
   const initialActivity = (searchParams.get('activity') as ActivityType) || 'HARVESTING';
+  const initialRadius = parseInt(searchParams.get('radius') || '25', 10);
 
   const selectedActivity: ActivityType = initialActivity;
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [maxDistance, setMaxDistance] = useState<number>(35);
+  const [maxDistance, setMaxDistance] = useState<number>(initialRadius || 25);
   const [minHealth, setMinHealth] = useState<number>(85);
   const [sortBy, setSortBy] = useState<'MATCH' | 'PRICE_ASC' | 'DISTANCE_ASC' | 'HEALTH_DESC'>('MATCH');
   const [viewMode, setViewMode] = useState<'LIST' | 'MAP'>('LIST');
 
   const [selectedMachineForModal, setSelectedMachineForModal] = useState<Machine | null>(null);
 
-  const { farm, machines, chcs, currentTelemetry } = state;
+  const { farm, machines, chcs, currentTelemetry, bookings, maintenanceAlerts } = state;
 
   // Process scored and priced machines
   const processedMachines = useMemo(() => {
     return machines
-      .filter(m => {
-        if (selectedCategory !== 'ALL' && m.category !== selectedCategory) return false;
-        if (searchQuery) {
-          const q = searchQuery.toLowerCase();
-          const matchName = `${m.brand} ${m.model} ${m.category} ${m.identifier}`.toLowerCase();
-          if (!matchName.includes(q)) return false;
-        }
-        if (m.distanceKm && m.distanceKm > maxDistance) return false;
-        if (m.healthScore < minHealth) return false;
-        return true;
-      })
       .map(machine => {
+        const chc = chcs.find(c => c.id === machine.chcId);
+        const mLat = machine.latitude || chc?.latitude || 23.2030;
+        const mLon = machine.longitude || chc?.longitude || 77.0844;
+        const farmLat = farm.latitude || 23.1642;
+        const farmLon = farm.longitude || 77.1215;
+
+        const distanceKm = calculateGeospatialDistance(farmLat, farmLon, mLat, mLon);
+        const freshness = getLocationFreshness(machine.locationUpdatedAt, machine.locationSource);
+        const bookableCheck = isMachineBookable(machine, bookings, maintenanceAlerts);
+
         const scoreResult = scoreMachineForFarmer(machine, {
           farm,
           activity: selectedActivity,
@@ -67,7 +68,7 @@ export const FarmerMarketplace: React.FC = () => {
         const priceQuote = calculateDynamicPrice(machine, {
           demandIndex: 94,
           shortageUnits: 2,
-          distanceKm: machine.distanceKm || 3.2,
+          distanceKm,
           config: {
             minSurgeMultiplier: machineChc?.minSurgeMultiplier ?? 0.80,
             maxSurgeMultiplier: machineChc?.maxSurgeMultiplier ?? 1.30,
@@ -75,20 +76,40 @@ export const FarmerMarketplace: React.FC = () => {
         });
 
         return {
-          machine,
+          machine: {
+            ...machine,
+            distanceKm,
+            locationStatus: freshness.status,
+            locationFreshnessText: freshness.text,
+          },
           matchScore: scoreResult.matchScore,
           matchReasons: scoreResult.reasons,
           priceQuote,
+          distanceKm,
+          freshness,
+          isBookable: bookableCheck.isBookable,
+          unavailabilityReason: bookableCheck.unavailabilityReason,
         };
+      })
+      .filter(item => {
+        if (selectedCategory !== 'ALL' && item.machine.category !== selectedCategory) return false;
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          const matchName = `${item.machine.brand} ${item.machine.model} ${item.machine.category} ${item.machine.identifier}`.toLowerCase();
+          if (!matchName.includes(q)) return false;
+        }
+        if (item.distanceKm > maxDistance) return false;
+        if (item.machine.healthScore < minHealth) return false;
+        return true;
       })
       .sort((a, b) => {
         if (sortBy === 'MATCH') return b.matchScore - a.matchScore;
         if (sortBy === 'PRICE_ASC') return a.priceQuote.quotedRatePerHour - b.priceQuote.quotedRatePerHour;
-        if (sortBy === 'DISTANCE_ASC') return (a.machine.distanceKm || 0) - (b.machine.distanceKm || 0);
+        if (sortBy === 'DISTANCE_ASC') return a.distanceKm - b.distanceKm;
         if (sortBy === 'HEALTH_DESC') return b.machine.healthScore - a.machine.healthScore;
         return 0;
       });
-  }, [machines, farm, chcs, selectedActivity, selectedCategory, searchQuery, maxDistance, minHealth, sortBy]);
+  }, [machines, farm, chcs, bookings, maintenanceAlerts, selectedActivity, selectedCategory, searchQuery, maxDistance, minHealth, sortBy]);
 
   const categories: { label: string; value: string }[] = [
     { label: 'All Equipment', value: 'ALL' },
@@ -270,6 +291,16 @@ export const FarmerMarketplace: React.FC = () => {
                     <MapPin className="w-3 h-3 text-agri-700 shrink-0" />
                     <span>{machine.distanceKm} km away</span>
                   </div>
+
+                  <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1 shadow-xs">
+                    <span
+                      className={clsx(
+                        'w-1.5 h-1.5 rounded-full',
+                        machine.locationStatus === 'LIVE' ? 'bg-emerald-500 animate-pulse' : machine.locationStatus === 'RECENT' ? 'bg-amber-500' : 'bg-slate-400'
+                      )}
+                    />
+                    <span className="text-slate-700">{machine.locationFreshnessText}</span>
+                  </div>
                 </div>
 
                 {/* Card Body */}
@@ -316,16 +347,16 @@ export const FarmerMarketplace: React.FC = () => {
               <div className="p-5 pt-0 flex items-center gap-2">
                 <button
                   onClick={() => setSelectedMachineForModal(machine)}
-                  className="btn-secondary text-xs py-2 px-3 flex-1"
+                  className="btn-secondary text-xs py-2 px-3 flex-1 cursor-pointer"
                 >
                   View Details
                 </button>
 
                 <button
                   onClick={() => setSelectedMachineForModal(machine)}
-                  className="btn-primary text-xs py-2 px-4 shadow-sm flex items-center gap-1"
+                  className="btn-primary text-xs py-2 px-4 shadow-sm flex items-center gap-1 cursor-pointer"
                 >
-                  <span>Book</span>
+                  <span>Book Equipment</span>
                   <Zap className="w-3.5 h-3.5" />
                 </button>
               </div>

@@ -83,6 +83,17 @@ export interface CHC {
   maxSurgeMultiplier?: number;
 }
 
+export type LocationSourceType = 
+  | 'gps_tracker' 
+  | 'operator_app' 
+  | 'chc_manual' 
+  | 'last_known' 
+  | 'map_pin' 
+  | 'manual' 
+  | 'admin_verified';
+
+export type LocationFreshnessStatus = 'LIVE' | 'RECENT' | 'STALE';
+
 export interface FarmCrop {
   id: string;
   cropName: string;
@@ -106,6 +117,9 @@ export interface Farm {
   soilType?: string;
   crop: FarmCrop;
   boundaryPolygon?: [number, number][];
+  locationAccuracy?: number;
+  locationSource?: LocationSourceType;
+  locationUpdatedAt?: string;
 }
 
 export interface Machine {
@@ -132,6 +146,10 @@ export interface Machine {
   latitude: number;
   longitude: number;
   distanceKm?: number;
+  locationSource?: LocationSourceType;
+  locationAccuracy?: number;
+  locationUpdatedAt?: string;
+  locationStatus?: LocationFreshnessStatus;
   operatorName?: string;
   operatorPhone?: string;
   operatorRating?: number;
@@ -142,6 +160,44 @@ export interface Machine {
     hydraulicCapacityKg?: number;
     transmission?: string;
   };
+}
+
+export interface NearbyAvailabilityParams {
+  latitude: number;
+  longitude: number;
+  radiusKm?: number; // 5, 10, 15, 25, 50 (default 25)
+  startTime?: string;
+  endTime?: string;
+  machineCategory?: MachineCategory | 'ALL';
+}
+
+export interface AvailableMachineItem extends Machine {
+  distanceKm: number;
+  locationStatus: LocationFreshnessStatus;
+  locationFreshnessText: string;
+  isBookable: boolean;
+  unavailabilityReason?: string;
+}
+
+export interface AvailabilitySnapshot {
+  center: {
+    latitude: number;
+    longitude: number;
+  };
+  radiusKm: number;
+  totalAvailable: number;
+  totalInRadius: number;
+  chcsInRadius: number;
+  machines: AvailableMachineItem[];
+  byType: Record<string, number>;
+  lastUpdatedAt: string;
+  isStale?: boolean;
+}
+
+export interface LocationFreshnessInfo {
+  status: LocationFreshnessStatus;
+  text: string;
+  minutesAgo: number;
 }
 
 export interface TelemetryPoint {

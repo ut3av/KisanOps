@@ -183,7 +183,7 @@
       "file_type": "code",
       "norm_label": "agricreditprofile",
       "source_file": "src/types/index.ts",
-      "source_location": "L254"
+      "source_location": "L256"
     },
     {
       "id": "src_types_index_chc",
@@ -209,7 +209,7 @@
       "file_type": "code",
       "norm_label": "demandforecast",
       "source_file": "src/types/index.ts",
-      "source_location": "L185"
+      "source_location": "L187"
     },
     {
       "id": "src_types_index_farm",
@@ -222,7 +222,7 @@
       "file_type": "code",
       "norm_label": "farm",
       "source_file": "src/types/index.ts",
-      "source_location": "L93"
+      "source_location": "L95"
     },
     {
       "id": "src_types_index_inappnotification",
@@ -235,7 +235,7 @@
       "file_type": "code",
       "norm_label": "inappnotification",
       "source_file": "src/types/index.ts",
-      "source_location": "L340"
+      "source_location": "L342"
     },
     {
       "id": "src_types_index_invoice",
@@ -248,7 +248,7 @@
       "file_type": "code",
       "norm_label": "invoice",
       "source_file": "src/types/index.ts",
-      "source_location": "L313"
+      "source_location": "L315"
     },
     {
       "id": "src_types_index_machineallocationrecommendation",
@@ -261,7 +261,7 @@
       "file_type": "code",
       "norm_label": "machineallocationrecommendation",
       "source_file": "src/types/index.ts",
-      "source_location": "L201"
+      "source_location": "L203"
     },
     {
       "id": "src_types_index_machinestatus",
@@ -287,7 +287,7 @@
       "file_type": "code",
       "norm_label": "predictivemaintenancealert",
       "source_file": "src/types/index.ts",
-      "source_location": "L160"
+      "source_location": "L162"
     },
     {
       "id": "src_types_index_telemetrypoint",
@@ -300,7 +300,7 @@
       "file_type": "code",
       "norm_label": "telemetrypoint",
       "source_file": "src/types/index.ts",
-      "source_location": "L145"
+      "source_location": "L147"
     },
     {
       "id": "src_types_index_userprofile",
@@ -521,7 +521,7 @@
       "file_type": "code",
       "norm_label": "booking",
       "source_file": "src/types/index.ts",
-      "source_location": "L270"
+      "source_location": "L272"
     },
     {
       "id": "src_types_voice_bookingdraft",
@@ -664,7 +664,7 @@
       "file_type": "code",
       "norm_label": "brandedreceiptmodalprops",
       "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L20"
+      "source_location": "L12"
     },
     {
       "id": "src_lib_billingengine_billingcalculationinput",
@@ -703,7 +703,7 @@
       "file_type": "code",
       "norm_label": "invoiceitem",
       "source_file": "src/types/index.ts",
-      "source_location": "L306"
+      "source_location": "L308"
     },
     {
       "id": "src_components_common_agricreditgauge_agricreditgaugeprops",
@@ -755,7 +755,7 @@
       "file_type": "code",
       "norm_label": "bookingmodalprops",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L21"
+      "source_location": "L15"
     },
     {
       "id": "src_features_farmer_machinedetailsmodal_machinedetailsmodalprops",
@@ -872,7 +872,7 @@
       "file_type": "code",
       "norm_label": "demandfactorbreakdown",
       "source_file": "src/types/index.ts",
-      "source_location": "L177"
+      "source_location": "L179"
     },
     {
       "id": "src_types_index_farmcrop",
@@ -885,7 +885,7 @@
       "file_type": "code",
       "norm_label": "farmcrop",
       "source_file": "src/types/index.ts",
-      "source_location": "L84"
+      "source_location": "L86"
     },
     {
       "id": "src_types_index_machine",
@@ -898,7 +898,7 @@
       "file_type": "code",
       "norm_label": "machine",
       "source_file": "src/types/index.ts",
-      "source_location": "L109"
+      "source_location": "L111"
     },
     {
       "id": "src_types_index_machinecategory",
@@ -924,7 +924,7 @@
       "file_type": "code",
       "norm_label": "machinerecommendationscore",
       "source_file": "src/types/index.ts",
-      "source_location": "L239"
+      "source_location": "L241"
     },
     {
       "id": "src_types_index_paymentmethod",
@@ -963,7 +963,7 @@
       "file_type": "code",
       "norm_label": "pricequote",
       "source_file": "src/types/index.ts",
-      "source_location": "L220"
+      "source_location": "L222"
     },
     {
       "id": "src_types_index_pricingruleconfig",
@@ -976,7 +976,7 @@
       "file_type": "code",
       "norm_label": "pricingruleconfig",
       "source_file": "src/types/index.ts",
-      "source_location": "L350"
+      "source_location": "L352"
     },
     {
       "id": "src_components_common_razorpaycheckoutmodal_razorpaycheckoutmodalprops",
@@ -1210,7 +1210,7 @@
       "file_type": "code",
       "norm_label": "subsidyrecord",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L48"
+      "source_location": "L35"
     },
     {
       "id": "src_features_admin_admindashboard_telematicsalert",
@@ -1223,7 +1223,7 @@
       "file_type": "code",
       "norm_label": "telematicsalert",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L123"
+      "source_location": "L110"
     },
     {
       "id": "src_features_landing_components_ctabanner_ctabannerprops",
@@ -1448,7 +1448,7 @@
       "file_type": "code",
       "norm_label": "loginpage()",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L28"
+      "source_location": "L26"
     },
     {
       "id": "src_lib_dbservice_fetchinitialplatformdata",
@@ -2108,7 +2108,7 @@
       "file_type": "code",
       "norm_label": "brandedreceiptmodal()",
       "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L25"
+      "source_location": "L17"
     },
     {
       "id": "src_features_farmer_farmerrentals_farmerrentals",
@@ -2120,7 +2120,7 @@
       "file_type": "code",
       "norm_label": "farmerrentals()",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L27"
+      "source_location": "L21"
     },
     {
       "id": "src_lib_billingengine_calculatefinalinvoice",
@@ -2204,7 +2204,7 @@
       "file_type": "code",
       "norm_label": "bookingmodal()",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L28"
+      "source_location": "L22"
     },
     {
       "id": "src_features_farmer_farmerhome_farmerhome",
@@ -2216,7 +2216,7 @@
       "file_type": "code",
       "norm_label": "farmerhome()",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L43"
+      "source_location": "L38"
     },
     {
       "id": "src_features_farmer_farmermarketplace_farmermarketplace",
@@ -2228,7 +2228,7 @@
       "file_type": "code",
       "norm_label": "farmermarketplace()",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L27"
+      "source_location": "L24"
     },
     {
       "id": "src_features_farmer_machinedetailsmodal_machinedetailsmodal",
@@ -2528,7 +2528,7 @@
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/App.tsx",
-      "source_location": "L62"
+      "source_location": "L61"
     },
     {
       "id": "src_components_common_interactivecursor_interactivecursor",
@@ -2648,7 +2648,7 @@
       "file_type": "code",
       "norm_label": "admindashboard()",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L167"
+      "source_location": "L154"
     },
     {
       "id": "src_features_auth_landingroleselect_landingroleselect",
@@ -2672,7 +2672,7 @@
       "file_type": "code",
       "norm_label": "bookingsmanager()",
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L21"
+      "source_location": "L19"
     },
     {
       "id": "src_features_chc_chcoverview_chcoverview",
@@ -2696,7 +2696,7 @@
       "file_type": "code",
       "norm_label": "chcsettings()",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L18"
+      "source_location": "L11"
     },
     {
       "id": "src_features_chc_demandintelligence_demandintelligence",
@@ -2720,7 +2720,7 @@
       "file_type": "code",
       "norm_label": "fleetmanagement()",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L28"
+      "source_location": "L23"
     },
     {
       "id": "src_features_chc_livetelematics_livetelematics",
@@ -2744,7 +2744,7 @@
       "file_type": "code",
       "norm_label": "predictivemaintenance()",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L20"
+      "source_location": "L12"
     },
     {
       "id": "src_features_chc_revenueanalytics_revenueanalytics",
@@ -2792,7 +2792,7 @@
       "file_type": "code",
       "norm_label": "farmprofile()",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L27"
+      "source_location": "L23"
     },
     {
       "id": "src_features_landing_components_ctabanner_ctabanner",
@@ -3044,7 +3044,7 @@
       "file_type": "code",
       "norm_label": "operatordashboard()",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L30"
+      "source_location": "L22"
     },
     {
       "id": "src_hooks_usepagetitle_usepagetitle",
@@ -6992,7 +6992,7 @@
       "file_type": "code",
       "norm_label": "queryclient",
       "source_file": "src/App.tsx",
-      "source_location": "L53"
+      "source_location": "L52"
     },
     {
       "id": "src_components_common_interactivecursor",
@@ -7091,7 +7091,7 @@
       "file_type": "code",
       "norm_label": "districts",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L39"
+      "source_location": "L26"
     },
     {
       "id": "src_features_admin_admindashboard_smam_subsidy_ledger",
@@ -7102,7 +7102,7 @@
       "file_type": "code",
       "norm_label": "smam_subsidy_ledger",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L63"
+      "source_location": "L50"
     },
     {
       "id": "src_features_admin_admindashboard_telematics_alerts",
@@ -7113,7 +7113,7 @@
       "file_type": "code",
       "norm_label": "telematics_alerts",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L134"
+      "source_location": "L121"
     },
     {
       "id": "src_features_auth_landingroleselect",
@@ -7726,7 +7726,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L34",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -7858,19 +7858,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L168",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_admin_admindashboard_admindashboard",
-      "target": "src_store_kisanopsstore_usekisanopsstore",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L172",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -7906,7 +7894,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L114",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -7918,7 +7906,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L135",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -7930,7 +7918,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L29",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -7942,7 +7930,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L33",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -7954,7 +7942,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L22",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -7966,7 +7954,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L26",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -8002,7 +7990,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L19",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -8014,7 +8002,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L23",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -8050,7 +8038,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L29",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -8062,7 +8050,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L33",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -8103,18 +8091,6 @@
     },
     {
       "source": "src_features_chc_predictivemaintenance_predictivemaintenance",
-      "target": "src_lib_maintenanceengine_calculatemachinehealth",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L152",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_chc_predictivemaintenance_predictivemaintenance",
       "target": "src_hooks_usepagetitle_usepagetitle",
       "relation": "calls",
       "_origin": "ast",
@@ -8122,7 +8098,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L21",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_chc_predictivemaintenance_predictivemaintenance",
+      "target": "src_lib_maintenanceengine_calculatemachinehealth",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/chc/PredictiveMaintenance.tsx",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -8134,7 +8122,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L25",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -8182,7 +8170,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L34",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -8218,7 +8206,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L218",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -8230,7 +8218,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L222",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -8242,7 +8230,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L44",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -8254,7 +8242,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L48",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -8266,7 +8254,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L28",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -8278,7 +8266,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L32",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -8290,7 +8278,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L64",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -8302,7 +8290,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L69",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -8314,7 +8302,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L28",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_farmerrentals_farmerrentals",
+      "target": "src_store_kisanopsstore_usekisanopsstore",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/farmer/FarmerRentals.tsx",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -8326,19 +8326,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L283",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmerrentals_farmerrentals",
-      "target": "src_store_kisanopsstore_usekisanopsstore",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L32",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -8350,7 +8338,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L28",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -8362,7 +8350,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L32",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -8494,7 +8482,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L31",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -8506,7 +8494,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L35",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -8902,7 +8890,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L21",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -8974,7 +8962,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L22",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -8986,7 +8974,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L23",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -8998,7 +8986,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L24",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -10167,7 +10155,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_common_interactivecursor_interactivecursor",
+      "target": "src_components_common_scrolltotop_scrolltotop",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10179,18 +10167,6 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_common_scrolltotop_scrolltotop",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
       "target": "src_features_farmer_farmerhome_farmerhome",
       "relation": "imports",
       "_origin": "ast",
@@ -10198,7 +10174,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -10210,7 +10186,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L32",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -10222,7 +10198,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L33",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -10234,7 +10210,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L34",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -10246,7 +10222,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L35",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -10258,7 +10234,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L38",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -10270,7 +10246,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L39",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -10282,7 +10258,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L40",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -10294,7 +10270,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -10306,7 +10282,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L42",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -10318,7 +10294,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L43",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -10330,7 +10306,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L44",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -10342,7 +10318,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -10354,7 +10330,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L48",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -10366,7 +10342,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L51",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -10419,18 +10395,6 @@
     },
     {
       "source": "src_components_common_brandedreceiptmodal",
-      "target": "src_types_index_invoice",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_common_brandedreceiptmodal",
       "target": "src_lib_billingengine_generatepdfinvoice",
       "relation": "imports",
       "_origin": "ast",
@@ -10438,7 +10402,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L18",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_brandedreceiptmodal",
+      "target": "src_types_index_invoice",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -11055,18 +11031,6 @@
     },
     {
       "source": "src_features_admin_admindashboard",
-      "target": "src_store_kisanopsstore_usekisanopsstore",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_admin_admindashboard",
       "target": "src_components_common_statcard_statcard",
       "relation": "imports",
       "_origin": "ast",
@@ -11074,7 +11038,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L34",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -11086,7 +11050,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L35",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -11134,7 +11098,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L21",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -11146,7 +11110,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L22",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -11158,7 +11122,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L22",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -11170,7 +11134,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L23",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -11182,7 +11146,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L23",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -11194,7 +11158,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L24",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -11206,7 +11170,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L25",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -11218,7 +11182,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -11230,19 +11194,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_chc_bookingsmanager",
-      "target": "src_types_index_bookingstatus",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L17",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -11254,7 +11206,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L18",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -11326,7 +11278,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L15",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -11338,7 +11290,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L16",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -11386,7 +11338,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L22",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -11398,7 +11350,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L23",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -11410,7 +11362,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L23",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -11422,7 +11374,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L23",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -11434,7 +11386,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L24",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -11446,7 +11398,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L25",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -11518,7 +11470,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L15",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -11530,7 +11482,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L16",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -11542,7 +11494,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L17",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -11595,54 +11547,6 @@
     },
     {
       "source": "src_features_farmer_bookingmodal",
-      "target": "src_types_index_activitytype",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_bookingmodal",
-      "target": "src_types_index_machine",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_bookingmodal",
-      "target": "src_types_index_paymentmethod",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_bookingmodal",
-      "target": "src_types_index_pricequote",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_bookingmodal",
       "target": "src_store_kisanopsstore_usekisanopsstore",
       "relation": "imports",
       "_origin": "ast",
@@ -11650,7 +11554,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L16",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -11662,7 +11566,55 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L18",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_bookingmodal",
+      "target": "src_types_index_activitytype",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/BookingModal.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_bookingmodal",
+      "target": "src_types_index_machine",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/BookingModal.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_bookingmodal",
+      "target": "src_types_index_paymentmethod",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/BookingModal.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_bookingmodal",
+      "target": "src_types_index_pricequote",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/BookingModal.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -11710,7 +11662,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L31",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -11722,7 +11674,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L32",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -11734,19 +11686,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmerhome",
-      "target": "src_types_index_pricequote",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L32",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -11758,7 +11698,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L33",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -11770,7 +11710,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L34",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -11782,7 +11722,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L35",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -11794,7 +11734,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L36",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -11806,7 +11746,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L37",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -11818,7 +11758,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L38",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -11830,7 +11770,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L39",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -11842,7 +11782,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L40",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -11854,7 +11794,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L17",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -11866,7 +11806,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L18",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -11878,19 +11818,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmermarketplace",
-      "target": "src_types_index_machinecategory",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L18",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -11902,7 +11830,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L19",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -11914,7 +11842,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L20",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -11926,7 +11854,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L21",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -11938,7 +11866,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L22",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -11950,7 +11878,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L23",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -11962,7 +11890,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L24",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -11974,7 +11902,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L17",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -11986,7 +11914,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L18",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -11998,7 +11926,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L19",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -12010,7 +11938,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L20",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -12022,7 +11950,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L21",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -12034,7 +11962,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L22",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -12046,7 +11974,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L23",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -12058,7 +11986,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L24",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -12070,7 +11998,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L21",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -12082,7 +12010,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L22",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -12094,31 +12022,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmprofile",
-      "target": "src_types_index_farm",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmprofile",
-      "target": "src_types_index_farmcrop",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L24",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -12802,19 +12706,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_operator_operatordashboard",
-      "target": "src_components_common_leafletfleetmap_leafletfleetmap",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L25",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -12826,7 +12718,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L26",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -12838,7 +12730,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L27",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -14883,7 +14775,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_common_interactivecursor",
+      "target": "src_components_common_scrolltotop",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14895,18 +14787,6 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_common_scrolltotop",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
       "target": "src_features_farmer_farmerhome",
       "relation": "imports_from",
       "_origin": "ast",
@@ -14914,7 +14794,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -14926,7 +14806,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L32",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -14938,7 +14818,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L33",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -14950,7 +14830,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L34",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -14962,7 +14842,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L35",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -14974,7 +14854,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L38",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -14986,7 +14866,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L39",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -14998,7 +14878,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L40",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -15010,7 +14890,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -15022,7 +14902,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L42",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -15034,7 +14914,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L43",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -15046,7 +14926,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L44",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -15058,7 +14938,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -15070,7 +14950,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L48",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -15082,7 +14962,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L51",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -15159,18 +15039,6 @@
     },
     {
       "source": "src_components_common_brandedreceiptmodal",
-      "target": "src_types_index",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_common_brandedreceiptmodal",
       "target": "src_lib_billingengine",
       "relation": "imports_from",
       "_origin": "ast",
@@ -15178,7 +15046,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L18",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_common_brandedreceiptmodal",
+      "target": "src_types_index",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/common/BrandedReceiptModal.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -15807,18 +15687,6 @@
     },
     {
       "source": "src_features_admin_admindashboard",
-      "target": "src_store_kisanopsstore",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_admin_admindashboard",
       "target": "src_components_common_statcard",
       "relation": "imports_from",
       "_origin": "ast",
@@ -15826,7 +15694,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L34",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -15838,7 +15706,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L35",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -15910,7 +15778,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L21",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -15922,7 +15790,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L22",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -15934,7 +15802,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L23",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -15946,7 +15814,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L24",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -15958,7 +15826,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L25",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -15982,7 +15850,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -15994,7 +15862,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L17",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -16006,7 +15874,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L18",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -16102,7 +15970,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L15",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -16114,7 +15982,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L16",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -16186,7 +16054,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L22",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -16198,7 +16066,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L23",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -16210,7 +16078,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L24",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -16222,7 +16090,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L25",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -16318,7 +16186,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L15",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -16330,7 +16198,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L16",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -16342,7 +16210,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L17",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -16431,18 +16299,6 @@
     },
     {
       "source": "src_features_farmer_bookingmodal",
-      "target": "src_types_index",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_bookingmodal",
       "target": "src_store_kisanopsstore",
       "relation": "imports_from",
       "_origin": "ast",
@@ -16450,7 +16306,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L16",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -16462,7 +16318,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L18",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_farmer_bookingmodal",
+      "target": "src_types_index",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/farmer/BookingModal.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -16534,7 +16402,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L31",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -16546,7 +16414,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L32",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -16558,7 +16426,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L33",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -16570,7 +16438,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L34",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -16582,7 +16450,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L35",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -16594,7 +16462,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L36",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -16606,7 +16474,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L37",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -16618,7 +16486,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L38",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -16630,7 +16498,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L39",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -16642,7 +16510,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L40",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -16666,7 +16534,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L17",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -16678,7 +16546,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L18",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -16690,7 +16558,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L19",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -16702,7 +16570,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L20",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -16714,7 +16582,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L21",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -16726,7 +16594,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L22",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -16738,7 +16606,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L23",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -16750,7 +16618,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L24",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -16774,7 +16642,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L17",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -16786,7 +16654,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L18",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -16798,7 +16666,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L19",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -16810,7 +16678,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L20",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -16822,7 +16690,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L21",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -16834,7 +16702,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L22",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -16846,7 +16714,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L23",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -16858,7 +16726,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L24",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -16882,7 +16750,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L21",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -16894,7 +16762,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L22",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -16906,19 +16774,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_farmer_farmprofile",
-      "target": "src_types_index",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L24",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -17866,19 +17722,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_operator_operatordashboard",
-      "target": "src_components_common_leafletfleetmap",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L25",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -17890,7 +17734,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L26",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -17902,7 +17746,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L27",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -20356,7 +20200,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L53",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -20367,7 +20211,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L62",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -20400,7 +20244,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L20",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -20411,7 +20255,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/BrandedReceiptModal.tsx",
-      "source_location": "L25",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -21049,7 +20893,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L123",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -21060,7 +20904,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L134",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -21071,7 +20915,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L167",
+      "source_location": "L154",
       "weight": 1.0
     },
     {
@@ -21082,7 +20926,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L39",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -21093,7 +20937,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L48",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -21104,7 +20948,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/admin/AdminDashboard.tsx",
-      "source_location": "L63",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -21126,7 +20970,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/auth/LoginPage.tsx",
-      "source_location": "L28",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -21137,7 +20981,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/BookingsManager.tsx",
-      "source_location": "L21",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -21159,7 +21003,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/CHCSettings.tsx",
-      "source_location": "L18",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -21181,7 +21025,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/FleetManagement.tsx",
-      "source_location": "L28",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -21203,7 +21047,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/chc/PredictiveMaintenance.tsx",
-      "source_location": "L20",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -21269,7 +21113,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L21",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -21280,7 +21124,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/BookingModal.tsx",
-      "source_location": "L28",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -21302,7 +21146,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmerHome.tsx",
-      "source_location": "L43",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -21313,7 +21157,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmerMarketplace.tsx",
-      "source_location": "L27",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -21324,7 +21168,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmerRentals.tsx",
-      "source_location": "L27",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -21335,7 +21179,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/farmer/FarmProfile.tsx",
-      "source_location": "L27",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -21808,7 +21652,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/operator/OperatorDashboard.tsx",
-      "source_location": "L30",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -22787,7 +22631,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L109",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -22809,7 +22653,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L145",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -22820,7 +22664,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L160",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -22831,7 +22675,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L177",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -22842,7 +22686,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L185",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -22853,7 +22697,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L201",
+      "source_location": "L203",
       "weight": 1.0
     },
     {
@@ -22875,7 +22719,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L220",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -22886,7 +22730,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L239",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -22897,7 +22741,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L254",
+      "source_location": "L256",
       "weight": 1.0
     },
     {
@@ -22908,7 +22752,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L270",
+      "source_location": "L272",
       "weight": 1.0
     },
     {
@@ -22941,7 +22785,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L306",
+      "source_location": "L308",
       "weight": 1.0
     },
     {
@@ -22952,7 +22796,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L313",
+      "source_location": "L315",
       "weight": 1.0
     },
     {
@@ -22963,7 +22807,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L340",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -22974,7 +22818,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L350",
+      "source_location": "L352",
       "weight": 1.0
     },
     {
@@ -23029,7 +22873,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L84",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -23040,7 +22884,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/index.ts",
-      "source_location": "L93",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -24812,5 +24656,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0dee7039c55aeb6707ce4877538a72fe46bf898d"
+  "built_at_commit": "399d567f55de6bef756257178ec4c7411483c17c"
 }

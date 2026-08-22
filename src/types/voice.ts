@@ -18,6 +18,7 @@ export interface FarmerRequirementIntent {
   machine_type_required: string | null;
   urgency: 'low' | 'normal' | 'urgent' | null;
   additional_requirements: string | null;
+  search_radius_km?: number | null;
 }
 
 export interface TranscriptionResult {
@@ -37,6 +38,9 @@ export interface FarmerContext {
   current_crop?: string;
   soil_type?: string;
   available_credit?: number;
+  farm_latitude?: number;
+  farm_longitude?: number;
+  default_radius_km?: number;
 }
 
 export interface MatchedMachineResult {

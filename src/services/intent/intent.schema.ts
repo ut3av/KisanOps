@@ -20,6 +20,7 @@ export const FarmerRequirementIntentSchema = z.object({
   machine_type_required: z.string().nullable(),
   urgency: UrgencyEnum.nullable(),
   additional_requirements: z.string().nullable(),
+  search_radius_km: z.number().positive().nullable().optional(),
 });
 
 export type FarmerRequirementIntentDto = z.infer<typeof FarmerRequirementIntentSchema>;

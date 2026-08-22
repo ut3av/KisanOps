@@ -17,6 +17,7 @@ import {
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { Machine, MachineStatus, MachineCategory } from '../../types';
 import { MachineThumbnail } from '../../components/common/MachineThumbnail';
+import { getLocationFreshness } from '../../lib/availabilityService';
 import { usePageTitle } from '../../hooks/usePageTitle';
 import clsx from 'clsx';
 
@@ -25,7 +26,7 @@ export const FleetManagement: React.FC = () => {
     'Fleet Registry & Machinery Status',
     'Track machinery availability, health scores, and technical specifications.'
   );
-  const { state, addMachine, loadDemoData } = useKisanOpsStore();
+  const { state, addMachine, updateMachineStatus, loadDemoData } = useKisanOpsStore();
   const { machines, currentTelemetry, chcs } = state;
 
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
@@ -533,6 +534,78 @@ export const FleetManagement: React.FC = () => {
                   showCategoryBadge={true}
                 />
               </div>
+
+              {/* Live Status and Location Freshness Inspector */}
+              {(() => {
+                const freshness = getLocationFreshness(
+                  selectedMachine.locationUpdatedAt,
+                  selectedMachine.locationSource
+                );
+
+                return (
+                  <div className="space-y-2.5 pt-1">
+                    <div className="bg-slate-50 p-3 rounded-2xl border border-slate-200 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[11px] font-bold text-slate-700">
+                          Operational Status:
+                        </span>
+                        <select
+                          value={selectedMachine.status}
+                          onChange={e => {
+                            const newStatus = e.target.value as MachineStatus;
+                            updateMachineStatus(selectedMachine.id, newStatus);
+                            setSelectedMachine({
+                              ...selectedMachine,
+                              status: newStatus,
+                            });
+                          }}
+                          className="bg-white border border-slate-300 rounded-xl px-2.5 py-1 text-xs font-bold text-slate-800 focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                        >
+                          <option value="AVAILABLE">AVAILABLE (PostGIS Ready)</option>
+                          <option value="ACTIVE">ACTIVE (In Field)</option>
+                          <option value="DISPATCHED">DISPATCHED (In Transit)</option>
+                          <option value="RESERVED">RESERVED (Booked)</option>
+                          <option value="MAINTENANCE">MAINTENANCE (Offline)</option>
+                        </select>
+                      </div>
+
+                      <div className="flex items-center justify-between text-[11px] text-slate-600 pt-1 border-t border-slate-200/80">
+                        <span>Telemetry GPS Anchor:</span>
+                        <span className="font-mono font-bold text-slate-800">
+                          {selectedMachine.latitude ? selectedMachine.latitude.toFixed(4) : '23.2030'}° N,{' '}
+                          {selectedMachine.longitude ? selectedMachine.longitude.toFixed(4) : '77.0844'}° E
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between text-[11px] text-slate-600">
+                        <span>Location Freshness:</span>
+                        <span
+                          className={clsx(
+                            'font-bold px-2 py-0.5 rounded-full flex items-center gap-1',
+                            freshness.status === 'LIVE'
+                              ? 'bg-emerald-100 text-emerald-800'
+                              : freshness.status === 'RECENT'
+                              ? 'bg-amber-100 text-amber-800'
+                              : 'bg-slate-200 text-slate-700'
+                          )}
+                        >
+                          <span
+                            className={clsx(
+                              'w-1.5 h-1.5 rounded-full',
+                              freshness.status === 'LIVE'
+                                ? 'bg-emerald-600 animate-pulse'
+                                : freshness.status === 'RECENT'
+                                ? 'bg-amber-600'
+                                : 'bg-slate-400'
+                            )}
+                          />
+                          {freshness.text} ({selectedMachine.locationSource || 'last_known'})
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
 
               <div className="grid grid-cols-2 gap-2">
                 <div className="bg-surface-50 p-2.5 rounded-xl border border-slate-200/70">

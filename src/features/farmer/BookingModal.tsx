@@ -5,11 +5,13 @@ import {
   ShieldCheck,
   CreditCard,
   Sparkles,
+  AlertTriangle,
 } from 'lucide-react';
 import { Machine, PriceQuote, ActivityType, PaymentMethod } from '../../types';
 import { useKisanOpsStore } from '../../store/kisanOpsStore';
 import { useNavigate } from 'react-router-dom';
 import { RazorpayCheckoutModal } from '../../components/common/RazorpayCheckoutModal';
+import { validateMachineAvailabilityBeforeBooking } from '../../lib/availabilityService';
 import clsx from 'clsx';
 
 interface BookingModalProps {
@@ -26,16 +28,16 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   onClose,
 }) => {
   const { state, createBooking } = useKisanOpsStore();
+  const { farm, agriCredit } = state;
   const navigate = useNavigate();
 
   const [bookedHours, setBookedHours] = useState<number>(6.0);
-  const [startDate, setStartDate] = useState<string>('2026-08-22');
+  const [startDate, setStartDate] = useState<string>(new Date().toISOString().split('T')[0]);
   const [startTime, setStartTime] = useState<string>('08:00');
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('AGRICREDIT_DEFERRED');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [showRazorpayModal, setShowRazorpayModal] = useState<boolean>(false);
-
-  const { farm, agriCredit } = state;
+  const [conflictError, setConflictError] = useState<string | null>(null);
 
   // Calculation lines
   const hourlyRate = priceQuote.quotedRatePerHour;
@@ -51,10 +53,33 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   const executeFinalBooking = (paymentStatus: 'AUTHORIZED' | 'CAPTURED' = 'AUTHORIZED') => {
     setIsSubmitting(true);
+    setConflictError(null);
 
     const startDateTime = `${startDate}T${startTime}:00.000Z`;
     const endHour = (parseInt(startTime.split(':')[0], 10) + bookedHours) % 24;
     const endDateTime = `${startDate}T${endHour.toString().padStart(2, '0')}:00:00.000Z`;
+
+    // 1. Fresh Server Pre-Validation Check
+    const validation = validateMachineAvailabilityBeforeBooking(
+      machine.id,
+      startDateTime,
+      endDateTime,
+      {
+        machines: state.machines,
+        bookings: state.bookings,
+        maintenanceAlerts: state.maintenanceAlerts,
+      }
+    );
+
+    if (!validation.valid) {
+      setIsSubmitting(false);
+      setShowRazorpayModal(false);
+      setConflictError(
+        validation.message ||
+          'यह मशीन अभी किसी अन्य किसान द्वारा बुक कर ली गई है। कृपया दूसरी मशीन चुनें।'
+      );
+      return;
+    }
 
     setTimeout(() => {
       createBooking({
@@ -92,6 +117,30 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   };
 
   const handleConfirmBooking = () => {
+    setConflictError(null);
+    const startDateTime = `${startDate}T${startTime}:00.000Z`;
+    const endHour = (parseInt(startTime.split(':')[0], 10) + bookedHours) % 24;
+    const endDateTime = `${startDate}T${endHour.toString().padStart(2, '0')}:00:00.000Z`;
+
+    const validation = validateMachineAvailabilityBeforeBooking(
+      machine.id,
+      startDateTime,
+      endDateTime,
+      {
+        machines: state.machines,
+        bookings: state.bookings,
+        maintenanceAlerts: state.maintenanceAlerts,
+      }
+    );
+
+    if (!validation.valid) {
+      setConflictError(
+        validation.message ||
+          'यह मशीन अभी किसी अन्य किसान द्वारा बुक कर ली गई है। कृपया दूसरी मशीन चुनें।'
+      );
+      return;
+    }
+
     if (paymentMethod === 'UPI' || paymentMethod === 'CARD') {
       setShowRazorpayModal(true);
     } else {
@@ -124,6 +173,16 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         </div>
 
         <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1">
+          {conflictError && (
+            <div className="p-3.5 bg-rose-50 border border-rose-200 text-rose-800 rounded-2xl text-xs font-semibold flex items-start gap-2.5 animate-in fade-in">
+              <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+              <div className="space-y-0.5">
+                <div className="font-bold">मशीन अनुपलब्ध (Unavailable)</div>
+                <div>{conflictError}</div>
+              </div>
+            </div>
+          )}
+
           {/* Farm Destination */}
           <div className="bg-surface-50 p-3.5 rounded-2xl border border-slate-200/80 flex items-center gap-3">
             <div className="p-2 bg-emerald-100 text-emerald-800 rounded-xl">

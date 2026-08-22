@@ -244,6 +244,17 @@ function startGlobalSimulationLoop() {
         ...globalState.currentTelemetry,
         [targetMachineId]: telemetryPoint,
       },
+      machines: globalState.machines.map(m =>
+        m.id === targetMachineId
+          ? {
+              ...m,
+              latitude: telemetryPoint.latitude,
+              longitude: telemetryPoint.longitude,
+              locationUpdatedAt: telemetryPoint.timestamp,
+              locationSource: 'gps_tracker',
+            }
+          : m
+      ),
     };
 
     // Background sync of telemetry point to Supabase
@@ -701,6 +712,63 @@ export function useKisanOpsStore() {
       globalState = {
         ...globalState,
         machines: [newMachine, ...globalState.machines],
+      };
+      notify();
+    },
+
+    updateMachineStatus: (machineId: string, status: MachineStatus) => {
+      globalState = {
+        ...globalState,
+        machines: globalState.machines.map(m =>
+          m.id === machineId
+            ? {
+                ...m,
+                status,
+                locationUpdatedAt: new Date().toISOString(),
+              }
+            : m
+        ),
+      };
+      notify();
+    },
+
+    updateMachineLocation: (
+      machineId: string,
+      latitude: number,
+      longitude: number,
+      source: any = 'operator_app'
+    ) => {
+      globalState = {
+        ...globalState,
+        machines: globalState.machines.map(m =>
+          m.id === machineId
+            ? {
+                ...m,
+                latitude,
+                longitude,
+                locationSource: source,
+                locationUpdatedAt: new Date().toISOString(),
+              }
+            : m
+        ),
+      };
+      notify();
+    },
+
+    updateFarmCoordinates: (
+      latitude: number,
+      longitude: number,
+      source: any = 'map_pin'
+    ) => {
+      globalState = {
+        ...globalState,
+        farm: {
+          ...globalState.farm,
+          latitude,
+          longitude,
+          locationSource: source,
+          locationUpdatedAt: new Date().toISOString(),
+        },
       };
       notify();
     },

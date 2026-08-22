@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Polyline, Polygon, LayersControl } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Polyline, Polygon, Circle, LayersControl } from 'react-leaflet';
 import L from 'leaflet';
 import { CHC, Farm, Machine, TelemetryPoint } from '../../types';
 import { SEHORE_DEMO_ROUTE } from '../../lib/telematicsEngine';
@@ -155,6 +155,7 @@ interface LeafletFleetMapProps {
   center?: [number, number];
   zoom?: number;
   scrollWheelZoom?: boolean;
+  serviceRadiusKm?: number;
 }
 
 export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
@@ -168,6 +169,7 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
   center = [23.185, 77.105], // Sehore region midpoint
   zoom = 12,
   scrollWheelZoom = true,
+  serviceRadiusKm,
 }) => {
   const [isMounted, setIsMounted] = useState(false);
   const [baseLayer, setBaseLayer] = useState<MapBaseLayerType>('AGRO_SATELLITE');
@@ -361,21 +363,36 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
           </Polygon>
         )}
 
-        {/* Farm Location Marker */}
+        {/* Farm Location Marker & Geofence Service Radius */}
         {farm && (
-          <Marker position={[farm.latitude, farm.longitude]} icon={farmIcon}>
-            <Popup>
-              <div className="text-xs p-1 max-w-[220px]">
-                <div className="font-bold text-slate-900">{farm.farmName}</div>
-                <div className="text-slate-600 font-medium mt-0.5">{farm.village}, {farm.district}</div>
-                <div className="mt-1.5 pt-1.5 border-t border-slate-200 text-[11px] text-slate-700">
-                  <div><strong>Acreage:</strong> {farm.sizeAcres} Acres</div>
-                  <div><strong>Crop:</strong> {farm.crop.cropName}</div>
-                  <div><strong>Irrigation:</strong> {farm.irrigationType}</div>
+          <>
+            {serviceRadiusKm && (
+              <Circle
+                center={[farm.latitude, farm.longitude]}
+                radius={serviceRadiusKm * 1000}
+                pathOptions={{
+                  color: '#059669',
+                  fillColor: '#10B981',
+                  fillOpacity: 0.06,
+                  weight: 2,
+                  dashArray: '6, 6',
+                }}
+              />
+            )}
+            <Marker position={[farm.latitude, farm.longitude]} icon={farmIcon}>
+              <Popup>
+                <div className="text-xs p-1 max-w-[220px]">
+                  <div className="font-bold text-slate-900">{farm.farmName}</div>
+                  <div className="text-slate-600 font-medium mt-0.5">{farm.village}, {farm.district}</div>
+                  <div className="mt-1.5 pt-1.5 border-t border-slate-200 text-[11px] text-slate-700">
+                    <div><strong>Acreage:</strong> {farm.sizeAcres} Acres</div>
+                    <div><strong>Crop:</strong> {farm.crop.cropName}</div>
+                    <div><strong>Service Radius:</strong> {serviceRadiusKm || 25} km</div>
+                  </div>
                 </div>
-              </div>
-            </Popup>
-          </Marker>
+              </Popup>
+            </Marker>
+          </>
         )}
 
         {/* CHC Hub Markers */}
@@ -447,6 +464,10 @@ export const LeafletFleetMap: React.FC<LeafletFleetMapProps> = ({
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-emerald-500 shrink-0" />
           <span className="font-medium text-slate-800">Farm Boundary (8-Acre Wheat)</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded-full border-2 border-emerald-600 border-dashed shrink-0" />
+          <span className="font-medium text-slate-800">Geofence Service Boundary ({serviceRadiusKm || 25} km)</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-sky-500 shrink-0 animate-pulse" />

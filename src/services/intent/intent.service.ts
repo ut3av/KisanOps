@@ -159,7 +159,16 @@ export class IntentService {
       targetLocation = context.district;
     }
 
-    // 6. Urgency detection
+    // 6. Radius Detection
+    let searchRadiusKm: number | null = existingIntent?.search_radius_km || null;
+    const radiusMatch = raw.match(/(\d+)\s*(km|किमी|किलोमीटर|kilometer|kms)/i);
+    if (radiusMatch) {
+      searchRadiusKm = parseInt(radiusMatch[1], 10);
+    } else if (context?.default_radius_km) {
+      searchRadiusKm = context.default_radius_km;
+    }
+
+    // 7. Urgency detection
     let urgency: 'low' | 'normal' | 'urgent' | null = existingIntent?.urgency || null;
     if (
       lower.includes('जल्दी') ||
@@ -183,6 +192,7 @@ export class IntentService {
       machine_type_required: machineTypeRequired,
       urgency: urgency || 'normal',
       additional_requirements: null,
+      search_radius_km: searchRadiusKm || 25,
     };
 
     // Safe Zod validation
